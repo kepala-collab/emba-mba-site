@@ -57,7 +57,7 @@ export default function CorporateTrainingPage() {
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The training tracks</span></div></Reveal>
           <Reveal><h2 className="sec-h">Ten capability tracks for the next five years.</h2></Reveal>
-          <div className="mt-m" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 16 }} className="ct-grid">
+          <div className="mt-m ct-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 16 }}>
             {CORP_TRAINING.map((cat, i) => (
               <Reveal key={cat.c} delay={(i % 2) * 60}>
                 <div className="card" style={{ height: "100%" }}>
