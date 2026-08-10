@@ -42,3 +42,5 @@ next-env.d.ts
 
 .vercel
 .env*
+# ...but keep the committed template (no secrets in it)
+!.env.production.example

@@ -6,10 +6,10 @@ export const SITE = {
   provider: "Asian Business Consulting",
   providerShort: "ABC",
   tagline: "Connecting the Dots",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://emba-mba-site.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://futurereadymba.com",
   whatsapp: "60129818533",
   phone: "+60 12-981 8533",
-  email: "allan.asianbiz@gmail.com",
+  email: "support@futurereadymba.com",
   director: "Rostam Affandi Ahmad",
   venue: "TheFoodTree@OWG, Glenmarie",
 };
