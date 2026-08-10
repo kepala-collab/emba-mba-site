@@ -7,10 +7,10 @@ export const SITE = {
   providerShort: "ABC",
   tagline: "Connecting the Dots",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://emba-mba-site.vercel.app",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "60163319236",
-  phone: "+60 16-331 9236",
+  whatsapp: "60129818533",
+  phone: "+60 12-981 8533",
   email: "allan.asianbiz@gmail.com",
-  director: "Allan Gan",
+  director: "Rostam Affandi Ahmad",
   venue: "TheFoodTree@OWG, Glenmarie",
 };
 

@@ -31,7 +31,7 @@ export default function ContactPage() {
             <Reveal delay={80}>
               <div className="mt-m" style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                 <div>
-                  <p className="mono sec-k" style={{ marginBottom: 4 }}>Programme Director</p>
+                  <p className="mono sec-k" style={{ marginBottom: 4 }}>Programme Coordinator</p>
                   <p style={{ margin: 0, color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.15rem" }}>{SITE.director}</p>
                   <p style={{ margin: "2px 0 0", color: "var(--muted)", fontSize: ".9rem" }}>{SITE.provider}</p>
                 </div>

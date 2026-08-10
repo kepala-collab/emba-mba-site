@@ -23,7 +23,7 @@ export default function CtaSection({
               ))}
             </ul>
             <p className="fine" style={{ marginTop: 22 }}>
-              {SITE.director} · Programme Director, {SITE.provider} · {SITE.phone} · {SITE.email}
+              {SITE.director} · Programme Coordinator · {SITE.phone} · {SITE.email}
             </p>
           </Reveal>
           <Reveal delay={80}><LeadForm programme={programme} /></Reveal>

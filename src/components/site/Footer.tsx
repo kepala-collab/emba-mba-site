@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Contact</h4>
-            <a>{SITE.director} · Programme Director</a>
+            <a>{SITE.director} · Programme Coordinator</a>
             <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             <Link href="/apply">Apply Now</Link>
