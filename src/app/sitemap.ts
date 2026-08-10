@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/content";
 
 const PRIMARY = ["", "/executive-mba", "/apply"];
-const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq"];
+const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq", "/corporate-training"];
 const CLUSTER = [
   "/hrd-corp-claimable", "/online-executive-mba", "/executive-mba-vs-mba",
   "/ai-executive-mba", "/mba-for-working-professionals", "/programmes/shift-hr",

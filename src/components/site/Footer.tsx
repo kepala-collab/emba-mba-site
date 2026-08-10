@@ -20,6 +20,7 @@ export default function Footer() {
           <div>
             <h4>Programme</h4>
             {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
+            <Link href="/corporate-training">Corporate Training</Link>
             <Link href="/faq">FAQ</Link>
           </div>
           <div>

@@ -12,6 +12,7 @@ const HUB = [
   { href: "/faculty", k: "Faculty", h: "Practitioners, not lecturers", d: "Seven professors who advise Fortune-500 boards and Bank Negara Malaysia." },
   { href: "/fees", k: "Investment", h: "RM10,000 → RM6,000", d: "The RM4,000 scholarship, 100% HRD Corp claims, installments and the money-back guarantee." },
   { href: "/intakes", k: "2026 Intakes", h: "Three cohorts open", d: "Cohorts 16–18 — one weekend a month in KL, or fully online." },
+  { href: "/corporate-training", k: "For Teams", h: "Corporate Training", d: "HRD Corp claimable training for your whole team — 10 AI-era capability tracks." },
 ];
 
 export default function Home() {

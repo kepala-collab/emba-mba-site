@@ -178,6 +178,21 @@ export const ASSOCIATES = [
   "University of Malaya", "Genos International", "IAC",
 ];
 
+// ABC's Future Ready Corporate Training Series (2026–2030) — HRD Corp claimable.
+// Categories with their "potential programmes" (menu; fees/dates supplied by ABC per engagement).
+export const CORP_TRAINING = [
+  { c: "AI Leadership & Enterprise AI Adoption", p: ["AI Leadership for Executives", "AI for Managers", "Agentic AI in the Workplace", "AI Productivity Masterclass", "Prompt Engineering for Business", "AI Workflow Automation", "Responsible AI & AI Governance"] },
+  { c: "Digital Transformation & Operational Excellence", p: ["AI-Driven Operational Excellence", "Lean Six Sigma Essentials", "Business Process Reengineering", "Process Automation", "Continuous Improvement Systems", "Digital Workflow Optimisation"] },
+  { c: "Future-Ready Leadership", p: ["Future-Ready Leadership", "Adaptive Leadership", "Coaching for Performance", "Leading Hybrid Teams", "Leadership Agility", "High Performance Leadership"] },
+  { c: "Strategic Thinking & Business Acumen", p: ["Strategic Thinking Masterclass", "Business Acumen for Managers", "Systems Thinking", "Scenario Planning", "Strategic Decision Making", "Business Model Innovation"] },
+  { c: "Data Analytics for Business Leaders", p: ["Data-Driven Decision Making", "Business Analytics for Managers", "HR Analytics", "Sales Analytics", "KPI & Dashboard Development", "Power BI for Business"] },
+  { c: "Customer Experience Transformation", p: ["CX Excellence", "Service Transformation", "Customer Journey Mapping", "Design Thinking", "AI in Customer Service", "Voice of Customer Strategies"] },
+  { c: "Change Leadership & Transformation", p: ["Leading Change", "Change Management", "Transformation Leadership", "Building Agile Organisations", "Managing Resistance to Change", "Change Communication"] },
+  { c: "Human Skills in the AI Era", p: ["Critical Thinking", "Emotional Intelligence", "Creative Problem Solving", "Collaboration & Influence", "Communication Excellence", "Negotiation Skills"] },
+  { c: "Cybersecurity & AI Governance", p: ["Cybersecurity Awareness", "Data Privacy & PDPA", "AI Governance", "Responsible AI", "Digital Risk Management", "Information Security Essentials"] },
+  { c: "ESG & Sustainable Leadership", p: ["ESG Leadership", "Sustainability Strategy", "Responsible Governance", "Climate Risk Awareness", "Ethical Leadership", "Sustainable Business Practices"] },
+];
+
 export const COMPLIANCE =
   "This programme is not a regulated qualification and is not MQA-accredited; it is a professional programme recognised by CMI (UK). HRD Corp claimable for eligible Malaysian employers. Scholarship for Malaysian participants. Personal data is processed under Malaysia's PDPA 2010.";
 

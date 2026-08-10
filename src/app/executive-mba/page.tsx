@@ -164,9 +164,21 @@ export default function ExecutiveMbaPage() {
               </div>
             ))}
           </div></Reveal>
+          <Reveal className="mt-m">
+            <div className="cert-img-grid" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 26, alignItems: "center", background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 16, padding: 22 }}>
+              <div style={{ background: "#fff", borderRadius: 10, padding: 10, border: "1px solid var(--line-2)", flex: "none" }}>
+                <Image src="/brand/cmi-certificate.png" alt="Specimen CMI (UK) certificate — Executive Master's in Business Administration on Future Ready Business Leadership" width={340} height={295} style={{ width: 300, height: "auto", display: "block", borderRadius: 4 }} />
+              </div>
+              <div>
+                <div className="mono sec-k" style={{ fontSize: ".72rem" }}>The credential you earn</div>
+                <h3 style={{ fontSize: "1.35rem", margin: "10px 0 8px" }}>Recognised by CMI (UK) — signed by their Chief Executive.</h3>
+                <p style={{ color: "var(--ink-2)", margin: 0, fontSize: ".95rem" }}>Your Executive Master&rsquo;s in Business Administration on Future Ready Business Leadership is recognised against CMI Professional Standards. Specimen shown.</p>
+              </div>
+            </div>
+          </Reveal>
           <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "70ch" }}>Recognised by the Chartered Management Institute (UK), the professional body for management with {FACTS.cmiMembers} members worldwide. {COMPLIANCE}</p></Reveal>
         </div>
-        <style>{`@media(max-width:760px){.cert-grid{grid-template-columns:1fr!important}}`}</style>
+        <style>{`@media(max-width:760px){.cert-grid,.cert-img-grid{grid-template-columns:1fr!important}}`}</style>
       </section>
 
       {/* 7 · FORMAT & DELIVERY */}
