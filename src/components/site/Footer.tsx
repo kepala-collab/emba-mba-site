@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import RdrMark from "./RdrMark";
 import { SITE, COMPLIANCE, NAV, OPERATOR } from "@/lib/content";
 
 export default function Footer() {
@@ -9,9 +9,7 @@ export default function Footer() {
         <div className="foot">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-              <span style={{ flex: "none", width: 40, height: 40, borderRadius: "50%", overflow: "hidden", background: "#fff", border: "1px solid var(--line-2)" }}>
-                <Image src={OPERATOR.logo} alt={OPERATOR.name} width={48} height={48} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </span>
+              <RdrMark size={40} />
               <strong style={{ color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.05rem" }}>{OPERATOR.name}</strong>
             </div>
             <p>

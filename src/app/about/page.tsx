@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import RdrMark from "@/components/site/RdrMark";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import { SITE, FACTS, CLIENTS, ASSOCIATES, OPERATOR } from "@/lib/content";
@@ -96,9 +96,7 @@ export default function AboutPage() {
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Who runs this site</span></div>
             <h2 className="sec-h">Operated by Right Dots Resources.</h2>
             <div style={{ display: "flex", gap: 22, alignItems: "flex-start", marginTop: 8 }}>
-              <span style={{ flex: "none", width: 64, height: 64, borderRadius: "50%", overflow: "hidden", background: "#fff", border: "1px solid var(--line-2)" }}>
-                <Image src={OPERATOR.logo} alt={OPERATOR.name} width={80} height={80} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </span>
+              <RdrMark size={64} />
               <p className="lead" style={{ color: "var(--ink-2)", margin: 0 }}>
                 This site is operated by <strong style={{ color: "#fff" }}>{OPERATOR.name}</strong> — an authorised
                 marketing and enrolment partner for the programme, and an independent company separate from {SITE.provider}.
