@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Future Ready Executive MBA",
   },
   description:
-    "A CMI (UK)-endorsed Executive MBA in Future-Ready Business Leadership — 6 intensive days over 3 months, HRD Corp claimable. Install the thinking frameworks of elite leaders.",
+    "A CMI (UK)-endorsed Executive MBA in Future-Ready Business Leadership — 3 months to your CMI certification, then Chartered Manager (a 6-month programme). HRD Corp claimable.",
   keywords: [
     "executive MBA Malaysia", "CMI UK MBA", "HRD Corp claimable MBA", "future ready leadership",
     "online executive MBA", "executive education Malaysia", "MBA for working professionals",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Future Ready Executive MBA",
     title: "Future Ready Executive MBA (CMI UK)",
-    description: "Install the thinking of elite leaders in 6 days over 3 months. CMI (UK)-endorsed, HRD Corp claimable.",
+    description: "Install the thinking of elite leaders over 3 months. CMI (UK)-endorsed, HRD Corp claimable.",
     url: SITE.url,
   },
   twitter: { card: "summary_large_image", title: "Future Ready Executive MBA (CMI UK)" },

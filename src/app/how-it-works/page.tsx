@@ -154,7 +154,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Think better in six days. Prove it on your own business." />
+      <CtaSection programme="Executive MBA" heading="Think better in three months. Prove it on your own business." />
     </>
   );
 }

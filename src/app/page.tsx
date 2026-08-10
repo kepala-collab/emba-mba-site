@@ -6,11 +6,11 @@ import CtaSection from "@/components/site/CtaSection";
 import { FACTS, CLIENTS } from "@/lib/content";
 
 const HUB = [
-  { href: "/executive-mba", k: "The Programme", h: "A CMI (UK) MBA, in 6 days", d: "What the Future Ready Executive MBA is, who it's for, and why it works." },
+  { href: "/executive-mba", k: "The Programme", h: "A CMI (UK) MBA, in 3 months", d: "What the Future Ready Executive MBA is, who it's for, and why it works." },
   { href: "/how-it-works", k: "The Method", h: "F.A.S.T. thinking", d: "The seven thinking disciplines that install judgment, not just knowledge." },
   { href: "/curriculum", k: "Curriculum", h: "12 modules, 3 stages", d: "From value creation to capturing value, ending in a real capstone project." },
   { href: "/faculty", k: "Faculty", h: "Practitioners, not lecturers", d: "Seven professors who advise Fortune-500 boards and Bank Negara Malaysia." },
-  { href: "/fees", k: "Investment", h: "RM10,000 → RM5,000", d: "The scholarship, HRD Corp claims, installments and the money-back guarantee." },
+  { href: "/fees", k: "Investment", h: "RM10,000 → RM6,000", d: "The RM4,000 scholarship, 100% HRD Corp claims, installments and the money-back guarantee." },
   { href: "/intakes", k: "2026 Intakes", h: "Three cohorts open", d: "Cohorts 16–18 — one weekend a month in KL, or fully online." },
 ];
 
@@ -55,7 +55,7 @@ export default function Home() {
                   <Image src="/brand/emba-lockup.png" alt="Executive MBA — Future Ready Business Leadership" width={720} height={459} style={{ width: "100%", height: "auto" }} priority />
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--line)", marginTop: 20, borderRadius: 10, overflow: "hidden" }}>
-                  {[["6 days", "Over ~3 months"], ["12", "Framework modules"], [FACTS.priceNet, "After MY scholarship"], ["MCMI", "Chartered pathway"]].map(([b, s]) => (
+                  {[["3 months", "3 sessions to cert"], ["12", "Framework modules"], [FACTS.priceNet, "After scholarship"], ["CMgr", "6-month pathway"]].map(([b, s]) => (
                     <div key={s} style={{ background: "var(--surface)", padding: 16 }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.5rem", display: "block", color: "#fff" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".62rem", letterSpacing: ".08em", color: "var(--muted)" }}>{s}</span>

@@ -17,7 +17,7 @@ const RECEIVE = [
   "A personal call from our programme team about your fit",
   "2026 intake dates and current seat availability",
   "HRD Corp claim guidance for eligible employers",
-  "Scholarship eligibility — up to 50% for Malaysians",
+  "Scholarship — RM4,000 off for Malaysian participants (pay RM6,000)",
 ];
 
 export default function ApplyPage() {

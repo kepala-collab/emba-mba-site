@@ -6,7 +6,7 @@ import { FACTS } from "@/lib/content";
 export const metadata = {
   title: "Executive MBA for SME Owners & Founders",
   description:
-    "Stop being the bottleneck in your own business. A CMI (UK)-endorsed Executive MBA for SME owners — think like a CEO, build a business that scales without you, in 6 days over 3 months. HRD Corp claimable.",
+    "Stop being the bottleneck in your own business. A CMI (UK)-endorsed Executive MBA for SME owners — think like a CEO, build a business that scales without you, over 3 months (3 sessions). HRD Corp claimable.",
 };
 
 const jsonLd = {
@@ -14,7 +14,7 @@ const jsonLd = {
   "@type": "Course",
   name: "Executive MBA for SME Owners & Founders — Future Ready",
   description:
-    "A CMI (UK)-endorsed Executive MBA for SME owners and founders who are stuck as the operator of their own business. Over roughly six days across three months, install the thinking frameworks that turn an owner into a CEO who builds systems, delegates and scales. A professional programme recognised against CMI Professional Standards, not an MQA-regulated academic degree.",
+    "A CMI (UK)-endorsed Executive MBA for SME owners and founders who are stuck as the operator of their own business. Over three months across three sessions, install the thinking frameworks that turn an owner into a CEO who builds systems, delegates and scales. A professional programme recognised against CMI Professional Standards, not an MQA-regulated academic degree.",
   provider: {
     "@type": "Organization",
     name: "Asian Business Consulting",

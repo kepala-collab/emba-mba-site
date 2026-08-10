@@ -6,7 +6,7 @@ import { MODULES, FACTS } from "@/lib/content";
 export const metadata = {
   title: "Curriculum — The 12 Modules",
   description:
-    "The Future Ready Executive MBA curriculum: 12 framework modules across three stages — Creating, Delivering and Capturing Value — delivered in 6 days over 3 months with a real business capstone.",
+    "The Future Ready Executive MBA curriculum: 12 framework modules across three stages — Creating, Delivering and Capturing Value — delivered over 3 months across 3 sessions with a real business capstone.",
 };
 
 const STAGES = [
@@ -115,7 +115,7 @@ export default function CurriculumPage() {
               ))}
             </div>
           </Reveal>
-          <p className="fine mt-s">Module sequencing may be adapted per cohort; every participant covers all twelve frameworks across the six days.</p>
+          <p className="fine mt-s">Module sequencing may be adapted per cohort; every participant covers all twelve frameworks across the three sessions.</p>
         </div>
       </section>
 

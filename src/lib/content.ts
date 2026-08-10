@@ -21,19 +21,35 @@ export const OPERATOR = {
   reg: "202603145615 (003856919-U)",
   address:
     "No. 86, Jalan Desa Bakti, Taman Desa, Jalan Klang Lama, 58100 Kuala Lumpur, Wilayah Persekutuan, Malaysia",
-  logo: "/brand/rdr-emblem.png",
+  logo: "/brand/rdr-mark.svg",
 };
 
 export const FACTS = {
-  durationLong: "6 intensive days over ~3 months",
-  durationShort: "6 days · ~3 months",
+  durationLong: "3 months, across 3 sessions",
+  durationShort: "3 months · 3 sessions",
+  durationFull: "6 months",
   priceStd: "RM10,000",
-  priceNet: "RM5,000",
+  scholarshipAmt: "RM4,000",
+  priceNet: "RM6,000",
   priceIntl: "USD 2,500",
   gradsApprox: "~200",
   cohorts: "13",
   cmiMembers: "200,000+",
 };
+
+// The full 6-month programme runs in two stages.
+export const STAGES = [
+  {
+    t: "Months 1–3 · 3 sessions",
+    h: "CMI (UK) Certification",
+    d: "Earn your Executive MBA certification in Future-Ready Business Leadership, awarded by the Chartered Management Institute (UK) — one weekend a month across three sessions.",
+  },
+  {
+    t: "Months 4–6",
+    h: "Chartered Manager (CMgr)",
+    d: "Progress to the Chartered Manager qualification — a chartered professional status for management, akin to a Chartered Accountant in finance.",
+  },
+];
 
 export const FORCES = [
   { n: "01", t: "Markets are re-pricing overnight" },
@@ -123,18 +139,18 @@ export const INTAKES = [
 ];
 
 export const INCLUSIONS = [
-  { b: "6 days of live facilitation", s: "Framework workshops led by practitioners who advise Fortune-500 and Bursa-listed boards." },
+  { b: "Live facilitation across three sessions", s: "Framework workshops led by practitioners who advise Fortune-500 and Bursa-listed boards." },
   { b: "Personal leadership diagnostics", s: "Assessments that show exactly where your thinking is costing you." },
   { b: "Executive coaching & project review", s: "One-to-one guidance applied to your real business, not a case study." },
   { b: "The Leverage Management System (LMS)", s: "A permanent toolkit of frameworks, references and prompts you keep for life." },
   { b: "A live capstone transformation project", s: "Leave with a board-ready growth plan — no thesis, no exam." },
-  { b: "CMI (UK) recognition + Chartered pathway", s: "A globally respected credential and a route to Chartered Manager (MCMI)." },
+  { b: "CMI (UK) certification + Chartered Manager (CMgr)", s: "Your Executive MBA certification, then progression to Chartered Manager — a chartered professional status for management." },
   { b: `An alumni network of ${FACTS.gradsApprox} leaders`, s: "The room becomes your informal board for years after." },
 ];
 
 export const COMPARISON = [
-  { k: "Time", us: "6 days over ~3 months", them: "1.5–2 years" },
-  { k: "Investment", us: "RM10,000 (RM5,000 w/ scholarship)", them: "RM60,000–150,000+" },
+  { k: "Time", us: "6 months (MBA cert in 3, then Chartered Manager)", them: "1.5–2 years" },
+  { k: "Investment", us: "RM10,000 (RM6,000 w/ scholarship)", them: "RM60,000–150,000+" },
   { k: "Format", us: "One weekend a month · keep working", them: "Career pause or heavy nightly load" },
   { k: "Assessment", us: "A real business project", them: "Exams & a thesis" },
   { k: "What you build", us: "Thinking frameworks + AI fluency", them: "Theory & case memorisation" },
@@ -142,7 +158,7 @@ export const COMPARISON = [
 ];
 
 export const FAQS = [
-  { q: "How can an MBA-level programme take only 6 days?", a: "Because we teach context, not content. You're not memorising cases — you're installing frameworks and AI-enabled thinking you apply immediately to your own business. Depth comes from application, not seat-time." },
+  { q: "How is the programme structured?", a: "It runs over 6 months. The first 3 months — three sessions, one weekend a month — earn your CMI (UK) Executive MBA certification; the next 3 months take you to Chartered Manager (CMgr) status. You apply everything to your own business, so depth comes from application, not seat-time. No exams, no thesis." },
   { q: "Is it MQA-recognised?", a: "No — MQA governs academic degrees. This is a professional programme recognised by the Chartered Management Institute (CMI), UK, and is globally respected. It is deliberately not an academic degree." },
   { q: "I'm too busy to attend everything.", a: "Sessions run one weekend a month. Miss one and you catch up by video or re-sit it in a later cohort — no penalty." },
   { q: "What if it isn't worth it?", a: "Sit the first two days. If you don't see the value, return the manual and we arrange a refund within a month. The risk sits with us." },

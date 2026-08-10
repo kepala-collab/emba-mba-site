@@ -6,7 +6,7 @@ import { FACTS, THINKING_EDGE } from "@/lib/content";
 export const metadata = {
   title: "AI-Ready Executive MBA — Lead the AI Era",
   description:
-    "An AI-ready, CMI (UK)-endorsed Executive MBA: build an AI-driven business strategy and future-proof your leadership in 6 days over 3 months. Context over content — think better, decide faster.",
+    "An AI-ready, CMI (UK)-endorsed Executive MBA: build an AI-driven business strategy and future-proof your leadership over 3 months (3 sessions). Context over content — think better, decide faster.",
 };
 
 const BUSINESS_PILLARS = [

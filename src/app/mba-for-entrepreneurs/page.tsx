@@ -6,7 +6,7 @@ import { FACTS, THINKING_EDGE } from "@/lib/content";
 export const metadata = {
   title: "Executive MBA for Entrepreneurs & Founders",
   description:
-    "A founder-speed Executive MBA: install strategic + first-principles thinking and AI fluency to build, scale and lead your venture — 6 days over 3 months, CMI (UK)-endorsed. No 2-year detour.",
+    "A founder-speed Executive MBA: install strategic + first-principles thinking and AI fluency to build, scale and lead your venture — over 3 months (3 sessions), CMI (UK)-endorsed. No 2-year detour.",
 };
 
 export default function MbaForEntrepreneursPage() {
@@ -42,7 +42,7 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "Six days, not two years", p: `The whole programme runs across ${FACTS.durationLong}. You keep shipping while you learn — no runway burned on a career pause.` },
+    { h: "Months, not years", p: `Your MBA certification runs across ${FACTS.durationLong}; the full programme is ${FACTS.durationFull} to Chartered Manager. You keep shipping while you learn — no runway burned on a career pause.` },
     { h: "One weekend a month, or online", p: "Sessions land one weekend a month, with a fully online track. Fit it around the launch, the raise and the customer calls that can't move." },
     { h: "Applied the moment you learn it", p: "No thesis, no exams. Every framework goes straight into the venture you're building — the value shows up in this quarter's work." },
     { h: "Catch up without penalty", p: "Travelling for a pitch or heads-down on a release? Catch a session by video or re-sit it with a later cohort at no extra cost." },

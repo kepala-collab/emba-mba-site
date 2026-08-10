@@ -6,7 +6,7 @@ import { FACTS, INCLUSIONS, COMPARISON, SITE } from "@/lib/content";
 export const metadata = {
   title: "Investment, Scholarship & HRD Corp",
   description:
-    "The Future Ready Executive MBA is RM10,000 — or RM5,000 with the Malaysian EMBA Scholarship. HRD Corp claimable, installments available, and money-back guaranteed after Session 1.",
+    "The Future Ready Executive MBA is RM10,000 — or RM6,000 with the RM4,000 Malaysian EMBA Scholarship. 100% HRD Corp claimable for eligible employers, installments available, money-back guaranteed after Session 1.",
 };
 
 export default function FeesPage() {
@@ -26,7 +26,8 @@ export default function FeesPage() {
           <Reveal>
             <p className="sec-sub">
               No hidden modules, no upsells, no thesis fees. The price below is the whole
-              programme — and for Malaysians, the Malaysian EMBA Scholarship halves it.
+              programme — and for Malaysian participants, the {FACTS.scholarshipAmt} EMBA Scholarship
+              brings it down to {FACTS.priceNet}.
             </p>
           </Reveal>
 
@@ -67,10 +68,10 @@ export default function FeesPage() {
                   {FACTS.priceNet}
                 </div>
                 <p style={{ color: "var(--ink-2)", fontSize: ".95rem", margin: "10px 0 0" }}>
-                  after the Malaysian EMBA Scholarship — <b style={{ color: "#fff" }}>{FACTS.priceStd}</b> standard.
+                  after the {FACTS.scholarshipAmt} Malaysian EMBA Scholarship — <b style={{ color: "#fff" }}>{FACTS.priceStd}</b> standard.
                 </p>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 18, padding: ".5rem .9rem", borderRadius: 999, background: "rgba(232,193,124,.12)", border: "1px solid rgba(232,193,124,.4)", color: "var(--amber)", fontFamily: "var(--font-plex-mono)", fontSize: ".66rem", letterSpacing: ".1em", textTransform: "uppercase" }}>
-                  ★ HRD Corp claimable · installments
+                  ★ 100% HRD Corp claimable · installments
                 </div>
                 <Link href="/apply" className="btn btn-primary" style={{ width: "100%", marginTop: 22 }}>
                   Claim your seat →
@@ -157,16 +158,16 @@ export default function FeesPage() {
           <Reveal>
             <p className="sec-sub">
               The {SITE.name} is HRD Corp claimable for eligible Malaysian employers. If your company
-              contributes to the Human Resource Development levy, the programme fee can typically be
-              claimed against your available balance — turning a personal cost into a funded
-              investment in your leadership.
+              contributes to the Human Resource Development levy, the full programme fee can be claimed
+              — up to 100% — against your available balance, turning a personal cost into a
+              fully-funded investment in your leadership.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div className="card" style={{ display: "grid", gap: 14 }}>
               {[
                 ["Who qualifies", "Employees of registered Malaysian employers contributing to the HRD Corp levy."],
-                ["What it covers", "The programme fee, subject to your company's eligibility and available levy balance."],
+                ["What it covers", "The full programme fee — up to 100% — subject to your company's eligibility and available levy balance."],
                 ["How to claim", `The ${SITE.providerShort} programme team guides your HR or finance lead through the HRD Corp submission before your cohort begins.`],
               ].map(([h, p]) => (
                 <div key={h} style={{ display: "flex", gap: 16 }}>

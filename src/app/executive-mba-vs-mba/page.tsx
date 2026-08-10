@@ -6,12 +6,12 @@ import { COMPARISON, FACTS, FAQS } from "@/lib/content";
 export const metadata = {
   title: "Executive MBA vs a Traditional MBA — Which Is Worth It?",
   description:
-    "Executive MBA vs a traditional MBA: time, cost, format and outcomes compared. A CMI (UK)-endorsed Future Ready Executive MBA in 6 days over 3 months vs 1.5–2 years — decide what actually fits a working leader.",
+    "Executive MBA vs a traditional MBA: time, cost, format and outcomes compared. A CMI (UK)-endorsed Future Ready Executive MBA — 3 months to certification (a 6-month programme with Chartered Manager) vs 1.5–2 years — decide what actually fits a working leader.",
 };
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS.filter((f) =>
-  ["Is it MQA-recognised?", "How can an MBA-level programme take only 6 days?", "What if it isn't worth it?"].includes(f.q)
+  ["Is it MQA-recognised?", "How is the programme structured?", "What if it isn't worth it?"].includes(f.q)
 );
 
 const faqLd = {

@@ -6,7 +6,7 @@ import { FACTS, INTAKES, SITE, CLIENTS } from "@/lib/content";
 export const metadata = {
   title: "Executive MBA in Malaysia (CMI UK, HRD Corp)",
   description:
-    "The Future Ready Executive MBA in Kuala Lumpur — CMI (UK)-endorsed, HRD Corp claimable, RM10,000 (RM5,000 with the Malaysian scholarship). 6 days over 3 months at Glenmarie, or fully online.",
+    "The Future Ready Executive MBA in Kuala Lumpur — CMI (UK)-endorsed, HRD Corp claimable, RM10,000 (RM6,000 with the RM4,000 Malaysian scholarship). Over 3 months at Glenmarie, or fully online.",
 };
 
 const REASONS = [

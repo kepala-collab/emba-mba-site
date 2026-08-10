@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { SITE, FACTS, THINKING_EDGE, MODULES, INCLUSIONS, INTAKES, COMPLIANCE } from "@/lib/content";
+import { SITE, FACTS, THINKING_EDGE, MODULES, INCLUSIONS, INTAKES, STAGES, COMPLIANCE } from "@/lib/content";
 
 export const metadata = {
   title: "Executive MBA — Future Ready Business Leadership (CMI UK)",
-  description: "A CMI (UK)-endorsed Executive MBA in Future-Ready Business Leadership — 6 days over 3 months, HRD Corp claimable, RM10,000 (RM5,000 with the Malaysian scholarship). No thesis, no exams.",
+  description: "A CMI (UK)-endorsed Executive MBA — 3 months to your CMI certification, then Chartered Manager (a 6-month programme). HRD Corp claimable, RM10,000 (RM6,000 with the RM4,000 Malaysian scholarship). No thesis, no exams.",
 };
 
 const courseSchema = {
@@ -152,25 +152,19 @@ export default function ExecutiveMbaPage() {
       {/* 6 · CERTIFICATION */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Certification</span></div></Reveal>
-          <Reveal><h2 className="sec-h">A globally respected credential — and a pathway to Chartered.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Certification · 6-month programme</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Two qualifications, one programme.</h2></Reveal>
+          <Reveal><p className="sec-sub">Over six months you earn your CMI (UK) Executive MBA certification, then progress to Chartered Manager (CMgr) — a chartered professional status for management, akin to a Chartered Accountant in finance.</p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }} className="cert-grid">
-            <div className="card">
-              <h3 style={{ fontSize: "1.18rem", margin: "0 0 8px" }}>CMI (UK) recognition</h3>
-              <p style={{ margin: 0, color: "var(--muted)", fontSize: ".95rem" }}>
-                The programme is recognised by the Chartered Management Institute (UK), the professional body for
-                management with {FACTS.cmiMembers} members worldwide — a credential that travels globally.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ fontSize: "1.18rem", margin: "0 0 8px" }}>Chartered Manager (MCMI) pathway</h3>
-              <p style={{ margin: 0, color: "var(--muted)", fontSize: ".95rem" }}>
-                Graduation opens the route toward Chartered Manager status (MCMI) — the highest professional
-                recognition a UK manager can hold.
-              </p>
-            </div>
+            {STAGES.map((s, i) => (
+              <div key={s.h} className="card">
+                <div className="mono sec-k" style={{ fontSize: ".72rem" }}>Stage {i + 1} · {s.t}</div>
+                <h3 style={{ fontSize: "1.18rem", margin: "12px 0 8px" }}>{s.h}</h3>
+                <p style={{ margin: 0, color: "var(--muted)", fontSize: ".95rem" }}>{s.d}</p>
+              </div>
+            ))}
           </div></Reveal>
-          <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "70ch" }}>{COMPLIANCE}</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "70ch" }}>Recognised by the Chartered Management Institute (UK), the professional body for management with {FACTS.cmiMembers} members worldwide. {COMPLIANCE}</p></Reveal>
         </div>
         <style>{`@media(max-width:760px){.cert-grid{grid-template-columns:1fr!important}}`}</style>
       </section>

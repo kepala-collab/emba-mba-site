@@ -31,7 +31,7 @@ const STEPS = [
 const HRD_FAQS = [
   {
     q: "Is the Executive MBA HRD Corp claimable?",
-    a: `Yes — for eligible Malaysian employers. ${SITE.provider} is an HRD Corp Approved Training Provider and the programme runs under SBL-Khas, so the fee can typically be claimed against your available levy balance. Claimable amounts and approval are always subject to HRDC eligibility and are determined by HRD Corp, not by ${SITE.provider}.`,
+    a: `Yes — for eligible Malaysian employers. ${SITE.provider} is an HRD Corp Approved Training Provider and the programme runs under SBL-Khas, so the full fee — up to 100% — can be claimed against your available levy balance. Claimable amounts and approval are always subject to HRDC eligibility and are determined by HRD Corp, not by ${SITE.provider}.`,
   },
   {
     q: "Do you handle the paperwork?",
@@ -76,8 +76,8 @@ export default function HrdCorpClaimablePage() {
             <p className="sec-sub">
               {SITE.provider} is an HRD Corp (HRDC) Approved Training Provider. The Future
               Ready Executive MBA — endorsed by the Chartered Management Institute (CMI), UK —
-              is <b style={{ color: "var(--ink)" }}>HRD Corp claimable for eligible Malaysian
-              employers</b>. Fund your team&rsquo;s leadership from the levy you already pay,
+              is <b style={{ color: "var(--ink)" }}>up to 100% HRD Corp claimable for eligible
+              Malaysian employers</b>. Fund your team&rsquo;s leadership from the levy you already pay,
               and we handle the full SBL-Khas claim paperwork.
             </p>
           </Reveal>
