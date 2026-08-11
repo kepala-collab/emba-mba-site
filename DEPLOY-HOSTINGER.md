@@ -21,6 +21,8 @@ commit the real password or a populated `.env.production` file.
 
 ```dotenv
 NEXT_PUBLIC_SITE_URL=https://futurereadymba.com
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=0x4AAAAAAEM-BhpyOxghbYJZ
+TURNSTILE_VERIFY_URL=https://turnstile-siteverify-future-ready-mba.bisol-future-ready-mba.workers.dev/siteverify
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=u606386577_emba
@@ -29,8 +31,15 @@ DB_PASSWORD=<Hostinger database password>
 ```
 
 The MySQL user is local to the Hostinger account; no public remote-access rule is
-needed. The lead API creates its `leads` table on first use and inserts values with
-parameterised queries.
+needed. Before deploying, run `database/migrations/001_create_leads.sql` once with
+an administrative database account. The application runtime user should have only
+`INSERT` permission on `u606386577_emba.leads`; it must not have schema-changing or
+database-wide privileges. The request route never creates or alters tables.
+
+Cloudflare Turnstile is configured for `futurereadymba.com`, `localhost`, and
+`127.0.0.1`. The site key and verification Worker URL are public configuration;
+the Turnstile secret exists only as a Cloudflare Worker secret and must never be
+copied into this repository or Hostinger.
 
 ## Build and deploy
 
@@ -59,7 +68,12 @@ After each deployment:
 3. Check `/robots.txt`, `/sitemap.xml`, `/zh`, and one insight article.
 4. Submit a clearly labelled test enquiry through the form.
 5. Confirm the test row exists in the Hostinger MySQL `leads` table, then remove it.
+6. Confirm `/.well-known/security.txt` is reachable and the HSTS,
+   `X-Content-Type-Options`, and `X-Frame-Options` headers are present.
+7. Hostinger replaces the application CSP response header with
+   `upgrade-insecure-requests`; confirm the HTML contains the full
+   `Content-Security-Policy` meta policy from `src/app/layout.tsx`.
 
 If content looks stale, clear the Hostinger website cache. If the site returns an
 application error, inspect the Node.js build/runtime logs and confirm all five
-database environment variables are present.
+database and Turnstile environment variables are present.

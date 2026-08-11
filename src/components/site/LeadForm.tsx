@@ -1,8 +1,35 @@
 "use client";
-import { useId, useState } from "react";
+import Script from "next/script";
+import { useEffect, useId, useRef, useState } from "react";
 import { SITE } from "@/lib/content";
 
 type Lang = "en" | "zh";
+
+type TurnstileApi = {
+  render: (
+    container: HTMLElement,
+    options: {
+      sitekey: string;
+      action: string;
+      theme: "dark";
+      size: "flexible";
+      callback: (token: string) => void;
+      "expired-callback": () => void;
+      "error-callback": () => void;
+    },
+  ) => string;
+  remove: (widgetId: string) => void;
+  reset: (widgetId: string) => void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: TurnstileApi;
+  }
+}
+
+const TURNSTILE_SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEM-BhpyOxghbYJZ";
 
 const T = {
   en: {
@@ -13,6 +40,9 @@ const T = {
     consent: "I agree to be contacted about this programme and understand my data is handled under Malaysia’s PDPA 2010.",
     submit: "Apply Now →", sending: "Sending…",
     err: "Please complete the required fields and tick consent, then try again.",
+    verify: "Please complete the security check before submitting.",
+    verifyErr: "The security check could not load. Please refresh and try again.",
+    security: "Security verification",
     fine: "Free · No obligation · PDPA-compliant",
     okK: "Application received", okH: (n: string) => `Thank you${n ? `, ${n}` : ""}. Your application is in.`,
     okP: "Our programme team will be in touch shortly to discuss your fit, the next intake, HRD Corp and scholarship options. Want to talk sooner? Message us directly.",
@@ -27,6 +57,9 @@ const T = {
     consent: "我同意就本课程接受联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）处理。",
     submit: "立即报名 →", sending: "提交中…",
     err: "请填写必填字段并勾选同意，然后重试。",
+    verify: "提交前请先完成安全验证。",
+    verifyErr: "安全验证无法加载。请刷新页面后重试。",
+    security: "安全验证",
     fine: "免费 · 无需承诺 · 符合 PDPA",
     okK: "报名已收到", okH: (n: string) => `谢谢您${n ? `，${n}` : ""}。您的报名已提交。`,
     okP: "我们的课程团队将尽快与您联系，讨论您的适合度、下一期开课、HRD Corp 索赔及奖学金选项。想更快了解？直接给我们发消息。",
@@ -54,27 +87,100 @@ export default function LeadForm({
   const t = T[lang];
   const uid = useId();
   const id = (k: string) => `${uid}-${k}`;
-  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err" | "verify">("idle");
   const [firstName, setFirstName] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileLoadError, setTurnstileLoadError] = useState(false);
+  const turnstileContainer = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    let retryTimer: number | undefined;
+    let attempts = 0;
+
+    const mountWidget = () => {
+      if (cancelled || turnstileWidgetId.current || !turnstileContainer.current) return;
+      if (!window.turnstile) {
+        attempts += 1;
+        if (attempts >= 50) {
+          setTurnstileLoadError(true);
+          return;
+        }
+        retryTimer = window.setTimeout(mountWidget, 200);
+        return;
+      }
+
+      try {
+        turnstileWidgetId.current = window.turnstile.render(turnstileContainer.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          action: "lead-submit",
+          theme: "dark",
+          size: "flexible",
+          callback: (token) => {
+            setTurnstileToken(token);
+            setTurnstileLoadError(false);
+            setStatus((current) => (current === "verify" ? "idle" : current));
+          },
+          "expired-callback": () => setTurnstileToken(""),
+          "error-callback": () => {
+            setTurnstileToken("");
+            setTurnstileLoadError(true);
+          },
+        });
+      } catch {
+        if (!cancelled) {
+          setTurnstileLoadError(true);
+        }
+      }
+    };
+
+    mountWidget();
+    return () => {
+      cancelled = true;
+      if (retryTimer) window.clearTimeout(retryTimer);
+      if (turnstileWidgetId.current && window.turnstile) {
+        window.turnstile.remove(turnstileWidgetId.current);
+      }
+      turnstileWidgetId.current = null;
+    };
+  }, []);
+
+  function resetTurnstile() {
+    if (turnstileWidgetId.current && window.turnstile) {
+      window.turnstile.reset(turnstileWidgetId.current);
+    }
+    setTurnstileToken("");
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = e.currentTarget;
-    const data = Object.fromEntries(new FormData(f).entries());
+    const formData = new FormData(f);
+    formData.delete("cf-turnstile-response");
+    const data = Object.fromEntries(formData.entries());
     // Honeypot: bots fill hidden fields. Silently "succeed" without sending.
     if (data.website) { setFirstName(String(data.name || "").split(" ")[0]); setStatus("ok"); return; }
     if (!(data.consent as string)) { setStatus("err"); return; }
+    if (!turnstileToken) { setStatus("verify"); return; }
     setStatus("sending");
     setFirstName(String(data.name || "").split(" ")[0]);
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, ...collectMeta(), programme_interest: programme, source }),
+        body: JSON.stringify({
+          ...data,
+          ...collectMeta(),
+          programme_interest: programme,
+          source,
+          turnstile_token: turnstileToken,
+        }),
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("ok");
     } catch {
+      resetTurnstile();
       setStatus("err");
     }
   }
@@ -95,6 +201,12 @@ export default function LeadForm({
 
   return (
     <form className="form" onSubmit={onSubmit} noValidate>
+      <Script
+        id="cloudflare-turnstile"
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        strategy="afterInteractive"
+        onError={() => setTurnstileLoadError(true)}
+      />
       {/* Honeypot — visually hidden, off-screen, not announced to users */}
       <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
         <label htmlFor={id("website")}>Leave this field empty</label>
@@ -131,10 +243,15 @@ export default function LeadForm({
         <input type="checkbox" name="consent" value="yes" required />
         <span>{t.consent}</span>
       </label>
-      <button className="btn btn-primary" type="submit" disabled={status === "sending"} style={{ width: "100%" }}>
+      <div className="turnstile-wrap" aria-label={t.security}>
+        <div ref={turnstileContainer} />
+      </div>
+      {turnstileLoadError && <p className="status err" role="alert">{t.verifyErr}</p>}
+      <button className="btn btn-primary" type="submit" disabled={status === "sending" || !turnstileToken} style={{ width: "100%" }}>
         {status === "sending" ? t.sending : t.submit}
       </button>
       {status === "err" && <p className="status err">{t.err}</p>}
+      {status === "verify" && <p className="status err">{t.verify}</p>}
       <p className="fine center" style={{ margin: 0 }}>{t.fine}</p>
     </form>
   );

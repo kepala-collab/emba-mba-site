@@ -40,6 +40,8 @@ secrets is at `web/.env.production.example`.
 | Variable | Purpose | Example / note |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin (metadata, sitemap, JSON-LD, hreflang) | `https://futurereadymba.com` |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Public Turnstile widget key | safe to expose in client builds |
+| `TURNSTILE_VERIFY_URL` | Managed Worker used for server-side token verification | public URL; no secret in Hostinger |
 | `DB_HOST` | MySQL hostname | `localhost` on Hostinger |
 | `DB_PORT` | MySQL port | `3306` |
 | `DB_NAME` | Hostinger database | `u606386577_emba` |
@@ -51,10 +53,15 @@ secrets is at `web/.env.production.example`.
 ## 4. Lead capture (Hostinger MySQL)
 
 - **Database:** `u606386577_emba`
-- **Table:** `leads` — created idempotently by the server route on first use
+- **Table:** `leads` — provisioned once by `database/migrations/001_create_leads.sql`
 - **Columns include:** name, email, phone, company, participant_type, programme_interest,
   page_path, referrer, utm_source/medium/campaign/term/content, **source**
-- **Flow:** `LeadForm` (client) → `POST /api/lead` → parameterised MySQL insert
+- **Flow:** `LeadForm` (client) → `POST /api/lead` → managed Turnstile verification
+  Worker → parameterised MySQL insert
+- **Target runtime DB permissions:** `INSERT` on `u606386577_emba.leads` only; no DDL.
+  Verify the Hostinger database user privileges in hPanel after provisioning.
+- **API controls:** same-origin checks, 16 KiB body cap, strict field validation,
+  per-IP throttling, bounded DB/verification timeouts, and no-store responses
 - **Lead source tags** (the `source` field — use to attribute each lead):
   - `emba-hub` — main English site
   - `zh-hub` — Chinese site (`/zh`)
@@ -105,6 +112,7 @@ legacy/meridian/           ARCHIVED old static-HTML "Meridian" placeholder site 
 
 ```bash
 npm install
+npm run lint     # Oxc; warnings fail the check
 npm run dev      # local dev
 npm run build    # production build
 npm start        # serve the production build (next start)
