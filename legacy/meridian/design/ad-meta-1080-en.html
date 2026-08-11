@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;overflow:hidden;font-family:"Inter",sans-serif;
+  background:radial-gradient(800px 700px at 50% 0%,#1d3a63 0%,#0b1f3a 50%,#071527 100%);
+  color:#fff;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
+body::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent,black 30%,black 70%,transparent)}
+.hook{border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:999px;padding:14px 34px;font-size:26px;font-weight:600;color:rgba(255,255,255,.92);margin-bottom:52px;position:relative}
+h1{font-family:"Fraunces",serif;font-weight:600;font-size:88px;line-height:1.1;position:relative}
+h1 em{font-style:italic;color:#e3c766}
+.strike{position:relative;display:inline-block}
+.strike::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:7px;background:#c9a227;transform:rotate(-4deg);border-radius:4px}
+.sub{font-size:30px;color:rgba(255,255,255,.8);margin-top:44px;max-width:780px;position:relative}
+.cta{margin-top:56px;background:linear-gradient(135deg,#c9a227,#b08c1d);border-radius:20px;padding:26px 64px;font-size:32px;font-weight:800;color:#fff;box-shadow:0 18px 50px rgba(201,162,39,.45);position:relative}
+.brand{position:absolute;bottom:52px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;font-family:"Fraunces",serif;font-size:24px;font-weight:600}
+.mark{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#c9a227,#8d6f14);display:grid;place-items:center;font-size:23px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="hook">For professionals who keep saying "next year"</div>
+<h1>Your MBA:<br><span class="strike">3 years</span> <em>12 months.</em></h1>
+<div class="sub">Fully accredited. Weekend + online in KL. No GMAT. No career break.</div>
+<div class="cta">Check If I Qualify — Free</div>
+<div class="brand"><div class="mark">M</div>Meridian Global MBA</div>
+</body>
+</html>

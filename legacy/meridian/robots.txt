@@ -1,0 +1,14 @@
+# Meridian Global MBA — robots.txt
+# NOTE: replace www.yourdomain.com with the real domain before launch.
+
+User-agent: *
+Allow: /
+# Paid landing pages & post-conversion pages stay out of organic search
+Disallow: /lp-google.html
+Disallow: /lp-meta.html
+Disallow: /thankyou.html
+Disallow: /zh/lp-google.html
+Disallow: /zh/lp-meta.html
+Disallow: /zh/thankyou.html
+
+Sitemap: https://www.yourdomain.com/sitemap.xml

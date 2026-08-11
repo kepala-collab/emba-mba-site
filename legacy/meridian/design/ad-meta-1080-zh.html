@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;overflow:hidden;font-family:"Noto Sans SC",sans-serif;
+  background:radial-gradient(800px 700px at 50% 0%,#1d3a63 0%,#0b1f3a 50%,#071527 100%);
+  color:#fff;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
+body::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent,black 30%,black 70%,transparent)}
+.hook{border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:999px;padding:14px 34px;font-size:26px;font-weight:500;color:rgba(255,255,255,.92);margin-bottom:52px;position:relative}
+h1{font-family:"Noto Serif SC",serif;font-weight:600;font-size:84px;line-height:1.25;position:relative}
+h1 em{font-style:normal;color:#e3c766}
+.strike{position:relative;display:inline-block}
+.strike::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:7px;background:#c9a227;transform:rotate(-3deg);border-radius:4px}
+.sub{font-size:30px;color:rgba(255,255,255,.8);margin-top:44px;max-width:800px;position:relative;line-height:1.6}
+.cta{margin-top:56px;background:linear-gradient(135deg,#c9a227,#b08c1d);border-radius:20px;padding:26px 64px;font-size:32px;font-weight:700;color:#fff;box-shadow:0 18px 50px rgba(201,162,39,.45);position:relative}
+.brand{position:absolute;bottom:52px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;font-family:"Noto Serif SC",serif;font-size:24px;font-weight:600}
+.mark{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#c9a227,#8d6f14);display:grid;place-items:center;font-family:"Fraunces",serif;font-size:23px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="hook">写给年年说"明年再读"的您</div>
+<h1>读MBA：<span class="strike">3年</span> <em>12个月</em></h1>
+<div class="sub">全面认证 · 吉隆坡周末+线上授课 · 免GMAT · 不必辞职</div>
+<div class="cta">免费评估入学资格</div>
+<div class="brand"><div class="mark">M</div>Meridian商学院</div>
+</body>
+</html>

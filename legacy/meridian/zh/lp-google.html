@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12个月考取国际认证MBA — 在职专业人士专属 | Meridian Global MBA</title>
+<meta name="description" content="最快12个月考取由全球合作大学颁发的国际认证MBA。专为马来西亚在职专业人士设计，周末+线上授课。">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23c9a227'/><text x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1f3a;--navy-deep:#071527;--navy-mid:#12294a;
+  --gold:#c9a227;--gold-light:#e3c766;
+  --ink:#1a2536;--slate:#5b6b80;--mist:#f4f6f9;--paper:#fff;--line:#e3e8ef;
+  --green:#0e8a4d;
+  --font-display:"Fraunces","Noto Serif SC",serif;--font-body:"Inter","Noto Sans SC",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);line-height:1.75;font-size:1rem}
+h1,h2,h3{font-family:var(--font-display);color:var(--navy);line-height:1.3}
+a{text-decoration:none;color:inherit}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;border:none;transition:.2s;font-family:var(--font-body)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#b08c1d);color:#fff;box-shadow:0 6px 18px rgba(201,162,39,.4)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,162,39,.5)}
+.reveal{opacity:0;transform:translateY(24px);transition:.6s cubic-bezier(.22,.61,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+.bar{background:var(--navy-deep);color:#fff;padding:14px 0}
+.bar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#8d6f14);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:#fff}
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:.98rem}
+.brand-name span{display:block;font-family:var(--font-body);font-size:.62rem;letter-spacing:.14em;color:var(--gold-light);font-weight:600}
+.bar-phone{font-size:.85rem;color:rgba(255,255,255,.85);font-weight:600}
+.bar-phone strong{color:var(--gold-light)}
+
+.hero{background:radial-gradient(1100px 560px at 72% 10%,#1d3a63 0%,var(--navy) 45%,var(--navy-deep) 100%);color:#fff;padding:64px 0 80px}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,39,.15);border:1px solid rgba(201,162,39,.45);color:var(--gold-light);border-radius:999px;padding:7px 16px;font-size:.8rem;font-weight:700;margin-bottom:18px}
+.hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:600;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero-sub{color:rgba(255,255,255,.8);font-size:1.1rem;max-width:520px;margin-bottom:26px}
+.hero-usps{list-style:none;margin-bottom:28px}
+.hero-usps li{display:flex;gap:12px;padding:8px 0;color:rgba(255,255,255,.9);font-size:.98rem;font-weight:500}
+.hero-usps svg{color:var(--gold-light);flex-shrink:0;margin-top:6px}
+.trustline{display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:.8rem;color:rgba(255,255,255,.6)}
+.trustline strong{color:#fff;display:block;font-size:.92rem}
+
+.lead-card{background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.35);padding:34px;color:var(--ink)}
+.lead-card h2{font-size:1.35rem;margin-bottom:6px}
+.lead-card .sub{font-size:.88rem;color:var(--slate);margin-bottom:18px}
+.lead-card label{display:block;font-size:.8rem;font-weight:700;margin:14px 0 6px;color:var(--navy)}
+.lead-card input,.lead-card select{width:100%;padding:14px 16px;border-radius:10px;border:1.5px solid var(--line);font-family:var(--font-body);font-size:.95rem;outline:none;transition:border-color .2s;background:#fff;color:var(--ink)}
+.lead-card input:focus,.lead-card select:focus{border-color:var(--gold)}
+.lead-card .btn{width:100%;margin-top:22px}
+.micro{font-size:.72rem;color:var(--slate);text-align:center;margin-top:12px}
+.guarantee{display:flex;align-items:center;gap:10px;background:#eef8f1;border:1px solid #cfe9d8;color:var(--green);border-radius:10px;padding:11px 14px;font-size:.8rem;font-weight:600;margin-top:16px}
+
+.progress{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:8px}
+.progress span{display:block;height:100%;width:50%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:99px;transition:width .4s ease}
+.step-label{font-size:.7rem;font-weight:700;color:var(--slate);letter-spacing:.08em;margin-bottom:14px}
+.fstep{display:none}
+.fstep.active{display:block;animation:stepIn .35s ease}
+@keyframes stepIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q{font-weight:700;color:var(--navy);font-size:.95rem;margin:14px 0 12px}
+.opts{display:grid;gap:10px}
+.opt{padding:15px 18px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-family:var(--font-body);font-weight:600;font-size:.95rem;color:var(--navy);cursor:pointer;text-align:left;transition:.15s;display:flex;justify-content:space-between;align-items:center}
+.opt::after{content:"→";color:var(--gold);opacity:0;transition:.15s}
+.opt:hover,.opt:focus-visible{border-color:var(--gold);background:#fdf9ec}
+.opt:hover::after{opacity:1}
+.back{background:none;border:none;color:var(--slate);font-size:.82rem;font-weight:600;cursor:pointer;margin-top:14px;font-family:var(--font-body);display:block}
+.next-note{font-size:.78rem;color:var(--slate);margin-top:12px;text-align:center}
+
+.trustbar{background:var(--mist);border-bottom:1px solid var(--line);padding:26px 0}
+.trust-grid{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;align-items:center}
+.trust-item{display:flex;align-items:center;gap:12px;color:var(--slate);font-size:.88rem;font-weight:600}
+.trust-item svg{color:var(--gold)}
+
+.section{padding:84px 0}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--gold);margin-bottom:12px}
+.section-head{max-width:640px;margin:0 auto 48px;text-align:center}
+.section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600;margin-bottom:14px}
+.section-head p{color:var(--slate)}
+
+.compare{background:var(--mist)}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(11,31,58,.08)}
+.compare-table th,.compare-table td{padding:18px 24px;text-align:left;font-size:.94rem;border-bottom:1px solid var(--line)}
+.compare-table thead th{background:var(--navy);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.9rem}
+.compare-table thead th:last-child{background:linear-gradient(135deg,var(--gold),#b08c1d)}
+.compare-table td:first-child{font-weight:600;color:var(--navy)}
+.compare-table td:last-child{background:#fdf9ec;font-weight:600}
+.compare-table tr:last-child td{border-bottom:none}
+.table-scroll{overflow-x:auto}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 28px;position:relative}
+.step-card::before{counter-increment:s;content:counter(s);position:absolute;top:-18px;left:26px;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#b08c1d);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;box-shadow:0 6px 14px rgba(201,162,39,.35)}
+.step-card h3{font-size:1.1rem;margin:8px 0 8px}
+.step-card p{color:var(--slate);font-size:.92rem}
+
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.quote{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
+.stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;font-size:.95rem}
+.quote p{font-size:.92rem;color:var(--slate);margin-bottom:16px}
+.quote-who{display:flex;gap:12px;align-items:center}
+.avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#8d6f14);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.quote-who strong{font-size:.88rem;display:block;color:var(--navy)}
+.quote-who span{font-size:.76rem;color:var(--slate)}
+
+.faq-list{max-width:720px;margin:0 auto}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:20px 0;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-display);font-size:1.4rem;color:var(--gold);transition:.25s}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq p{padding:0 32px 20px 0;color:var(--slate);font-size:.93rem}
+
+.final{background:linear-gradient(140deg,var(--navy),var(--navy-deep));color:#fff;text-align:center;padding:88px 0}
+.final h2{color:#fff;font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:14px}
+.final p{color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 30px}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -6px 24px rgba(0,0,0,.15);padding:12px 16px;display:none;z-index:40}
+.sticky-cta .btn{width:100%;padding:14px}
+
+.footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:36px 0 90px;font-size:.78rem;text-align:center}
+.footer p{max-width:760px;margin:0 auto 10px}
+
+@media(max-width:920px){
+  .hero-inner{grid-template-columns:1fr}
+  .steps,.quotes{grid-template-columns:1fr}
+  .sticky-cta{display:block}
+  .bar-phone span{display:none}
+}
+@media(max-width:400px){
+  .container{padding:0 14px}
+  .hero{padding:44px 0 60px}
+  .hero h1{font-size:1.6rem}
+  .lead-card{padding:26px 20px}
+  .btn{padding:15px 22px;font-size:.95rem}
+  .trust-grid{gap:18px}
+  .compare-table th,.compare-table td{padding:14px;font-size:.85rem}
+}
+@media (min-width:1440px){
+  html{font-size:18px}
+  .container{max-width:1320px}
+}
+@media (min-width:1920px){
+  html{font-size:20px}
+  .container{max-width:1480px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="container bar-inner">
+    <div class="brand">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Meridian Global MBA<span>与[全球合作大学]学术合作</span></span>
+    </div>
+    <div class="bar-phone"><span>咨询顾问热线：</span><strong>+60 3-2727 8800</strong></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        快速通道学制 · 2027年1月班 现正招生
+      </span>
+      <h1>不必辞职，<em>最快12个月</em>考取国际认证MBA。</h1>
+      <p class="hero-sub">由[全球合作大学]颁发、全球认可的MBA学位，专为马来西亚在职专业人士设计。学制约为传统MBA的一半——认证相同，学位含金量相同。</p>
+      <ul class="hero-usps">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>12–14个月完成学业，而非一般的24–36个月</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>学位由全球合作大学颁发，获国际全面认证</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>周末+线上授课模式——事业零中断</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>有工作经验者免考GMAT</li>
+      </ul>
+      <div class="trustline">
+        <div><strong>MQA</strong>认证</div>
+        <div><strong>HRD Corp</strong>可申请补贴</div>
+        <div><strong>4,000+</strong>校友网络</div>
+        <div><strong>4.8/5</strong>学员评分</div>
+      </div>
+    </div>
+
+    <form class="lead-card reveal" id="leadForm">
+      <div class="progress" aria-hidden="true"><span id="g-bar"></span></div>
+      <p class="step-label"><span id="g-step">第1步（共2步）</span> · 只需30秒</p>
+
+      <div class="fstep active" id="g-s1">
+        <h2>免费索取课程指南</h2>
+        <p class="sub">课程大纲、学费、入学条件与快速通道详解，即刻发送。</p>
+        <p class="q">您有多少年的工作经验？</p>
+        <div class="opts" role="group" aria-label="工作年限">
+          <button type="button" class="opt" data-exp="3年以下">3年以下</button>
+          <button type="button" class="opt" data-exp="3 – 5 年">3 – 5 年</button>
+          <button type="button" class="opt" data-exp="5 – 10 年">5 – 10 年</button>
+          <button type="button" class="opt" data-exp="10年以上">10年以上</button>
+        </div>
+        <div class="guarantee">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          完全免费，绝无任何义务。您的资料严格保密。
+        </div>
+      </div>
+
+      <div class="fstep" id="g-s2">
+        <h2>指南发送到哪里？</h2>
+        <p class="sub">最后一步——课程指南将即刻发送到您的邮箱。</p>
+        <input type="hidden" id="g-exp" name="experience" value="">
+        <label for="g-name">姓名</label>
+        <input id="g-name" type="text" autocomplete="name" placeholder="请输入您的姓名" required>
+        <label for="g-email">电子邮箱</label>
+        <input id="g-email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" required>
+        <label for="g-phone">手机号码（WhatsApp）</label>
+        <input id="g-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+60 12-345 6789" required>
+        <button class="btn btn-gold" type="submit">立即发送免费指南
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="next-note">接下来：指南即刻送达您的邮箱，顾问将于一个工作日内致电。</p>
+        <button type="button" class="back" id="g-back">&larr; 返回上一步</button>
+      </div>
+
+      <p class="micro">提交即表示您同意接收课程相关信息，可随时取消订阅。</p>
+    </form>
+  </div>
+</section>
+
+<div class="trustbar">
+  <div class="container trust-grid">
+    <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>获[认证机构]认证</div>
+    <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>学位由[全球合作大学]颁发</div>
+    <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>4,000+在职专业人士校友</div>
+    <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>1998年创校 · 吉隆坡</div>
+  </div>
+</div>
+
+<section class="section compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">为何选择快速通道</span>
+      <h2>同样的认证MBA，一半的时间。</h2>
+      <p>快速通道学制认可您的职业经验——把时间花在学习新知识上，而不是重复您每天在工作中已经驾轻就熟的内容。</p>
+    </div>
+    <div class="table-scroll reveal">
+      <table class="compare-table">
+        <thead><tr><th></th><th>传统MBA</th><th>Meridian快速通道MBA</th></tr></thead>
+        <tbody>
+          <tr><td>学制</td><td>24 – 36 个月</td><td>12 – 14 个月</td></tr>
+          <tr><td>认证</td><td>受认证</td><td>全面认证——学位含金量完全相同</td></tr>
+          <tr><td>上课模式</td><td>多为工作日到校</td><td>周末+线上，兼顾事业</td></tr>
+          <tr><td>GMAT</td><td>通常必考</td><td>有工作经验即可豁免</td></tr>
+          <tr><td>经验学分</td><td>极少认可</td><td>内置工作经验学分认可机制</td></tr>
+          <tr><td>时间成本</td><td>2–3年的两头奔波</td><td>专注拼搏一年</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">如何进行</span>
+      <h2>三步，拿下您的MBA。</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step-card"><h3>确认入学资格</h3><p>与顾问进行15分钟通话，确认您的经验是否符合快速通道资格，以及可获得哪些课程豁免。</p></div>
+      <div class="step-card"><h3>边工作边学习</h3><p>每月两个周末到校，配合线上模块。作业直接应用于您自己的企业。</p></div>
+      <div class="step-card"><h3>约12个月后毕业</h3><p>获颁[全球合作大学]认证MBA学位，并加入4,000+领袖校友网络。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--mist)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">真实成果</span>
+      <h2>和您一样的专业人士，都选择了它。</h2>
+    </div>
+    <div class="quotes reveal">
+      <div class="quote"><div class="stars">★★★★★</div><p>"因为时间问题，我把MBA搁置了好多年。12个月听起来可行——事实证明确实可行。毕业三个月后我就升职了。"</p><div class="quote-who"><div class="avatar">AR</div><div><strong>Amirah R.</strong><span>快消品行业区域总监</span></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"工作经验豁免让我不必重修做了十年的东西。高效、严谨，而且尊重我的时间。"</p><div class="quote-who"><div class="avatar">DL</div><div><strong>Daniel L.</strong><span>金融科技创始人</span></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"公司通过HRD Corp承担了大部分学费。顾问还帮我准备了赞助方案——光这一点就值得咨询一次。"</p><div class="quote-who"><div class="avatar">PK</div><div><strong>Priya K.</strong><span>物流企业运营副总裁</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">常见问题</span>
+      <h2>大家常问的问题。</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq"><summary>12个月的MBA真的受认证吗？</summary><p>是的。学位由[全球合作大学]颁发，并获[认证机构]认证。学制缩短源于工作经验学分认可与高密度模块化设计——绝非削减课程内容。</p></details>
+      <details class="faq"><summary>需要考GMAT吗？</summary><p>不需要。拥有足够工作经验的申请者可获豁免。15分钟的资格评估通话即可确认。</p></details>
+      <details class="faq"><summary>学费是多少？</summary><p>完整的学费、分期方案与奖学金信息，都在免费课程指南中详细列明。提供免息分期，符合条件的雇主还可申请HRD Corp补贴。</p></details>
+      <details class="faq"><summary>经常出差怎么办？</summary><p>所有线上课程均有录播，每个模块都设有补课安排。课程正是为日程繁忙的专业人士而设计。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container reveal">
+    <h2>您的MBA，距离您只有12个月。</h2>
+    <p>下载免费课程指南，或预约15分钟顾问通话。2027年1月班申请将于2026年11月30日截止。</p>
+    <a href="#leadForm" class="btn btn-gold" onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth'})">免费索取指南</a>
+  </div>
+</section>
+
+<div class="sticky-cta">
+  <a href="#leadForm" class="btn btn-gold">免费索取课程指南</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Meridian Global MBA · 与[全球合作大学]学术合作 · 版权所有 · <a href="../lp-google.html" style="text-decoration:underline">English</a></p>
+    <p>[占位声明：认证详情、条款与隐私政策链接。页面所示数据为占位示例，以最终公布为准。]</p>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Two-step lead form
+const form=document.getElementById('leadForm'),
+  s1=document.getElementById('g-s1'),s2=document.getElementById('g-s2'),
+  bar=document.getElementById('g-bar'),lbl=document.getElementById('g-step');
+document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+  document.getElementById('g-exp').value=b.dataset.exp;
+  s1.classList.remove('active');s2.classList.add('active');
+  bar.style.width='100%';lbl.textContent='第2步（共2步）';
+  document.getElementById('g-name').focus();
+}));
+document.getElementById('g-back').addEventListener('click',()=>{
+  s2.classList.remove('active');s1.classList.add('active');
+  bar.style.width='50%';lbl.textContent='第1步（共2步）';
+});
+const SUPABASE_URL='https://jqlgtxaultqxdhlrmhwl.supabase.co';
+const SUPABASE_KEY='sb_publishable_HErWXQwP-9OnIZwJJXBnXg_By2DGsuu';
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=form.querySelector('button[type=submit]');
+  btn.disabled=true;btn.textContent='提交中…';
+  try{
+    await fetch(SUPABASE_URL+'/rest/v1/leads',{
+      method:'POST',
+      headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify({
+        source:'google-ads-zh',
+        name:document.getElementById('g-name').value,
+        email:document.getElementById('g-email').value,
+        phone:document.getElementById('g-phone').value,
+        experience:document.getElementById('g-exp').value
+      }),
+      keepalive:true
+    });
+  }catch(err){/* never block the user on a network hiccup */}
+  location.href='thankyou.html?src=google';
+});
+</script>
+</body>
+</html>
