@@ -6,7 +6,8 @@ export default function CtaSection({
   programme = "Executive MBA",
   heading = "Your next cohort won't wait. Neither should your thinking.",
   sub = "Apply now and our programme team will be in touch to discuss your fit, the next intake, HRD Corp claims and scholarship eligibility. No obligation.",
-}: { programme?: string; heading?: string; sub?: string }) {
+  source = "emba-hub",
+}: { programme?: string; heading?: string; sub?: string; source?: string }) {
   return (
     <section id="apply" className="section" style={{ background: "var(--bg-2)" }}>
       <div className="wrap">
@@ -26,7 +27,7 @@ export default function CtaSection({
               {SITE.director} · Programme Coordinator · {SITE.phone} · {SITE.email}
             </p>
           </Reveal>
-          <Reveal delay={80}><LeadForm programme={programme} /></Reveal>
+          <Reveal delay={80}><LeadForm programme={programme} source={source} /></Reveal>
         </div>
       </div>
       <style>{`@media(max-width:820px){.cta-grid{grid-template-columns:1fr!important;gap:34px!important}}`}</style>

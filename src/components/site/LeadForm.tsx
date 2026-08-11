@@ -2,7 +2,10 @@
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/content";
 
-export default function LeadForm({ programme = "Executive MBA" }: { programme?: string }) {
+export default function LeadForm({
+  programme = "Executive MBA",
+  source = "emba-hub",
+}: { programme?: string; source?: string }) {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
   const [firstName, setFirstName] = useState("");
   const [utm, setUtm] = useState<Record<string, string>>({});
@@ -28,7 +31,7 @@ export default function LeadForm({ programme = "Executive MBA" }: { programme?: 
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, ...utm, programme_interest: programme, source: "emba-hub" }),
+        body: JSON.stringify({ ...data, ...utm, programme_interest: programme, source }),
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("ok");
