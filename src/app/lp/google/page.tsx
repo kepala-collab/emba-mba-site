@@ -10,7 +10,7 @@ export const metadata = {
     "Earn a CMI (UK)-recognised Executive MBA in 3 months of weekends, then progress to Chartered Manager. RM10,000 → RM6,000 with scholarship. HRD Corp claimable. Apply free.",
   // Ad landing page — keep it out of organic index so it doesn't compete with SEO pages.
   robots: { index: false, follow: false },
-  alternates: { canonical: "/lp/google" },
+  alternates: { canonical: "/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
 };
 
 const SOURCE = "lp-google";

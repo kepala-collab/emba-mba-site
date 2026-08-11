@@ -9,7 +9,7 @@ export const metadata = {
   description:
     "A CMI (UK) Executive MBA built for working leaders in Malaysia. 3 months of weekends, then Chartered Manager. RM6,000 after scholarship. HRD Corp claimable. See if you qualify.",
   robots: { index: false, follow: false },
-  alternates: { canonical: "/lp/meta" },
+  alternates: { canonical: "/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
 };
 
 const SOURCE = "lp-meta";
