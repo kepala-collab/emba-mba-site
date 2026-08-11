@@ -1,156 +1,65 @@
-# Deploying Future Ready EMBA to the Hostinger VPS
+# Deploying Future Ready EMBA to Hostinger
 
-The site is a Next.js 16 app that runs a small Node server (`next start`). We run it
-with **PM2** and put **Nginx** in front for the domain + SSL. Leads keep flowing to
-the existing **Supabase** table — nothing changes there.
+Production runs as a managed Node.js application on the existing Hostinger Business
+Web Hosting plan. A VPS, Vercel, and Supabase are not required.
 
-You only do the first-time setup once. After that, updates are 3 commands (see the
-bottom of this file).
+## Production resources
 
----
+- Domain: `futurereadymba.com`
+- Hostinger website account: `u606386577`
+- Hosting order: `1009802178`
+- Data center: Kuala Lumpur
+- Runtime: Node.js 22
+- Source: `https://github.com/kepala-collab/emba-mba-site`
+- Database: `u606386577_emba`
+- Database user: `u606386577_emba_app`
 
-## What you need before starting
+## Environment
 
-- SSH access to the VPS (Hostinger hPanel → VPS → SSH details, or the browser terminal)
-- The Supabase **anon key** (same value as in your local `web/.env.local`)
-- The domain `futurereadymba.com` pointing at the VPS IP (Hostinger DNS → A record
-  `@` and `www` → your VPS IPv4). DNS can take up to a few hours to propagate.
+Configure these values in the Hostinger Node.js application environment. Never
+commit the real password or a populated `.env.production` file.
 
----
-
-## 1. Point the domain at the VPS
-
-In hPanel → **Domains → DNS / Nameservers** for futurereadymba.com, set:
-
-| Type | Name | Value            |
-|------|------|------------------|
-| A    | @    | `<your VPS IP>`  |
-| A    | www  | `<your VPS IP>`  |
-
-Check it resolves:  `ping futurereadymba.com`  → should show the VPS IP.
-
----
-
-## 2. Install the runtime (once)
-
-SSH in, then:
-
-```bash
-# Node 22 LTS via nodesource
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt-get install -y nodejs nginx git
-
-# PM2 process manager
-sudo npm install -g pm2
-```
-
----
-
-## 3. Get the code
-
-The GitHub repo is **private**, so give the VPS read access one of two ways:
-
-**Option A — Deploy key (recommended, read-only):**
-```bash
-ssh-keygen -t ed25519 -C "vps-futurereadymba" -f ~/.ssh/id_ed25519 -N ""
-cat ~/.ssh/id_ed25519.pub
-```
-Copy that public key into GitHub → repo **future-ready-emba** → Settings → Deploy keys
-→ Add. Then:
-```bash
-sudo mkdir -p /var/www && sudo chown $USER /var/www
-cd /var/www
-git clone git@github.com:naveenedmarker-cloud/future-ready-emba.git
-```
-
-**Option B — HTTPS with a Personal Access Token:** clone
-`https://github.com/naveenedmarker-cloud/future-ready-emba.git` and paste a GitHub PAT
-when prompted for the password.
-
----
-
-## 4. Configure environment + build
-
-```bash
-cd /var/www/future-ready-emba
-cp .env.production.example .env.production
-nano .env.production        # paste the real NEXT_PUBLIC_SUPABASE_ANON_KEY, save
-```
-
-`.env.production` should read:
-```
+```dotenv
 NEXT_PUBLIC_SITE_URL=https://futurereadymba.com
-NEXT_PUBLIC_SUPABASE_URL=https://jqlgtxaultqxdhlrmhwl.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=<your real anon key>
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=u606386577_emba
+DB_USER=u606386577_emba_app
+DB_PASSWORD=<Hostinger database password>
 ```
 
-Then install and build:
+The MySQL user is local to the Hostinger account; no public remote-access rule is
+needed. The lead API creates its `leads` table on first use and inserts values with
+parameterised queries.
+
+## Build and deploy
+
+Use the repository root (the folder containing `package.json`):
+
 ```bash
 npm ci
+npm run lint
 npm run build
 ```
 
-> The `NEXT_PUBLIC_*` values are baked in at build time, so `.env.production` must
-> exist **before** `npm run build`. If you change them later, rebuild.
+Deploy the source through Hostinger's Node.js application deployment. Exclude
+`node_modules`, `.next`, `.git`, local environment files, and every other path
+matched by `.gitignore`; Hostinger installs dependencies and builds the app on its
+server. The package declares Node.js 22 and uses these scripts:
 
----
+- Build: `npm run build`
+- Start: `npm start`
 
-## 5. Start the app under PM2
+## Verification
 
-```bash
-pm2 start ecosystem.config.js
-pm2 save                       # remember the process across reboots
-pm2 startup                    # run the one line it prints, to enable boot autostart
-```
+After each deployment:
 
-Verify it's serving locally:  `curl -I http://127.0.0.1:3000`  → `200 OK`.
+1. Confirm the Hostinger build state is `completed` and inspect the build log.
+2. Open `https://futurereadymba.com` and confirm the real Future Ready EMBA copy loads.
+3. Check `/robots.txt`, `/sitemap.xml`, `/zh`, and one insight article.
+4. Submit a clearly labelled test enquiry through the form.
+5. Confirm the test row exists in the Hostinger MySQL `leads` table, then remove it.
 
----
-
-## 6. Put Nginx in front
-
-```bash
-sudo cp deploy/nginx-futurereadymba.conf /etc/nginx/sites-available/futurereadymba
-sudo ln -s /etc/nginx/sites-available/futurereadymba /etc/nginx/sites-enabled/
-sudo rm -f /etc/nginx/sites-enabled/default   # drop the Nginx welcome page
-sudo nginx -t && sudo systemctl reload nginx
-```
-
-Now `http://futurereadymba.com` should load the site.
-
----
-
-## 7. Enable HTTPS (free, auto-renewing)
-
-```bash
-sudo apt-get install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d futurereadymba.com -d www.futurereadymba.com
-```
-
-Choose "redirect HTTP to HTTPS" when asked. Certbot edits the Nginx config and sets up
-auto-renewal. Done — `https://futurereadymba.com` is live.
-
----
-
-## Updating the site later
-
-Whenever new changes are pushed to GitHub `main`:
-
-```bash
-cd /var/www/future-ready-emba
-git pull
-npm ci && npm run build
-pm2 restart futurereadymba
-```
-
-That's it — three lines and the update is live with zero downtime on restart.
-
----
-
-## Troubleshooting
-
-- **502 Bad Gateway** → the Node app isn't running. `pm2 status`, then `pm2 logs futurereadymba`.
-- **Leads not saving** → the anon key in `.env.production` is wrong/missing, or you
-  didn't rebuild after changing it. Check `pm2 logs` for "Supabase insert failed".
-- **Old content still showing** → you pulled but didn't rebuild. Re-run step in "Updating".
-- **Domain not resolving** → DNS hasn't propagated yet, or the A records are wrong.
+If content looks stale, clear the Hostinger website cache. If the site returns an
+application error, inspect the Node.js build/runtime logs and confirm all five
+database environment variables are present.

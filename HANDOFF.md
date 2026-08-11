@@ -12,7 +12,7 @@ Executive MBA delivered by **Asian Business Consulting (ABC)**. The site is oper
 closes and delivers. (RDR ≠ ABC — never present ABC's track record as RDR's.)
 
 - **Domain:** https://futurereadymba.com
-- **Current live host:** Vercel — https://emba-mba-site.vercel.app (until Hostinger cutover)
+- **Production host:** Hostinger Business Web Hosting (Node.js)
 - **Languages:** English + Simplified Chinese (`/zh`)
 
 ---
@@ -26,32 +26,35 @@ closes and delivers. (RDR ≠ ABC — never present ABC's track record as RDR's.
 | Fonts | next/font/google — Fraunces (display), Archivo (body), IBM Plex Mono (labels) |
 | Styling | Custom dark design system via CSS variables in `src/app/globals.css` ("Architecture of Thinking") |
 | Data | Content-driven from `src/lib/content.ts` (single source of truth) |
-| Leads | POST `src/app/api/lead/route.ts` → Supabase REST |
+| Leads | POST `src/app/api/lead/route.ts` → Hostinger MySQL |
 | Build output | `output: "standalone"` (see `next.config.ts`) |
 
 ---
 
 ## 3. Environment variables
 
-All are `NEXT_PUBLIC_*` and **inlined at build time** — they must be set *before* `npm run build`.
-Real values live in `web/.env.local` (local) and the Vercel project env (prod). A committed template
-with no secrets is at `web/.env.production.example`.
+`NEXT_PUBLIC_SITE_URL` is available to the build. Database settings are server-only and must
+be configured in the Hostinger Node.js application environment. A committed template with no
+secrets is at `web/.env.production.example`.
 
 | Variable | Purpose | Example / note |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin (metadata, sitemap, JSON-LD, hreflang) | `https://futurereadymba.com` |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | `https://jqlgtxaultqxdhlrmhwl.supabase.co` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon/publishable key (public by design; protected by RLS) | copy from `.env.local` — do **not** commit |
+| `DB_HOST` | MySQL hostname | `localhost` on Hostinger |
+| `DB_PORT` | MySQL port | `3306` |
+| `DB_NAME` | Hostinger database | `u606386577_emba` |
+| `DB_USER` | Hostinger database user | `u606386577_emba_app` |
+| `DB_PASSWORD` | Database password | server-only — never commit |
 
 ---
 
-## 4. Lead capture (Supabase)
+## 4. Lead capture (Hostinger MySQL)
 
-- **Project ref:** `jqlgtxaultqxdhlrmhwl`
-- **Table:** `public.leads` — RLS allows **anon INSERT only** (policy `anon_insert_leads`)
+- **Database:** `u606386577_emba`
+- **Table:** `leads` — created idempotently by the server route on first use
 - **Columns include:** name, email, phone, company, participant_type, programme_interest,
   page_path, referrer, utm_source/medium/campaign/term/content, **source**
-- **Flow:** `LeadForm` (client) → `POST /api/lead` → Supabase `/rest/v1/leads`
+- **Flow:** `LeadForm` (client) → `POST /api/lead` → parameterised MySQL insert
 - **Lead source tags** (the `source` field — use to attribute each lead):
   - `emba-hub` — main English site
   - `zh-hub` — Chinese site (`/zh`)
@@ -75,7 +78,7 @@ src/app/
   lp/google, lp/meta       EN ad landing pages (noindex, source-tagged)
   zh/                      Chinese homepage funnel (single comprehensive page)
   zh/lp/google, zh/lp/meta Chinese ad landing pages
-  api/lead/route.ts        lead POST handler → Supabase
+  api/lead/route.ts        lead POST handler → Hostinger MySQL
   sitemap.ts, robots.ts
 src/components/site/       Header, Footer, LeadForm, CtaSection, Reveal, NodeCanvas,
                            WhatsAppFloat, RdrMark
@@ -103,7 +106,7 @@ legacy/meridian/           ARCHIVED old static-HTML "Meridian" placeholder site 
 ```bash
 npm install
 npm run dev      # local dev
-npm run build    # production build (needs env vars set first)
+npm run build    # production build
 npm start        # serve the production build (next start)
 ```
 
@@ -116,25 +119,11 @@ npm start        # serve the production build (next start)
 
 ---
 
-## 9. Deployment options
+## 9. Deployment
 
-### A. Vercel (current, easiest "push-to-deploy + env keys")
-Native Node + GitHub integration + free auto-renewing SSL + env vars in dashboard.
-This IS the "traditional Node upload via GitHub, then set environment keys" experience.
-Point `futurereadymba.com` at the Vercel project and it's done.
-
-### B. Hostinger VPS (self-hosted)
-Hostinger **shared/Web Hosting is PHP/MySQL only — it cannot run Node.js/Next.js.** Running this app
-on Hostinger requires the **VPS**. Two ways on the VPS:
-- **Coolify** (recommended): install Coolify → connect this GitHub repo → paste the 3 env vars in the
-  UI → it builds and auto-deploys on every push, with automatic Let's Encrypt SSL. This is the
-  GitHub-upload + env-keys experience, self-hosted.
-- **Manual**: Node 22 + PM2 + Nginx + certbot — see `DEPLOY-HOSTINGER.md`.
-- The **Hostinger MCP / API app** lets an AI manage the VPS, domains and DNS via API — it *automates*
-  the VPS, it does **not** turn shared hosting into Node hosting.
-
-### C. Any Node PaaS (Railway, Render, etc.)
-Same as Vercel conceptually: connect repo, set the 3 env vars, deploy.
+Production uses Hostinger Business Web Hosting's managed Node.js runtime, not a VPS.
+The canonical source remains the private GitHub repository. See `DEPLOY-HOSTINGER.md`
+for the environment, build, deployment, and verification checklist.
 
 ---
 

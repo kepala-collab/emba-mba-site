@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Emit a self-contained server bundle (.next/standalone) for the Hostinger VPS.
+  // Emit a self-contained server bundle for Hostinger Node.js hosting.
   output: "standalone",
   images: {
     // Allow our own trusted SVG brand mark to be served via next/image.

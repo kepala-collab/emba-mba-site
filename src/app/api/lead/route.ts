@@ -1,22 +1,29 @@
 import { NextResponse } from "next/server";
-
-const URL_BASE = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+import { ensureLeadsTable, getDatabasePool } from "@/lib/db";
 
 const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
 
 // Only accept posts that originate from our own site (blocks drive-by bot POSTs).
-const ALLOWED_HOST = (() => {
-  try { return new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://futurereadymba.com").host; }
-  catch { return "futurereadymba.com"; }
+const ALLOWED_HOSTNAMES = (() => {
+  try {
+    const hostname = new URL(
+      process.env.NEXT_PUBLIC_SITE_URL || "https://futurereadymba.com",
+    ).hostname;
+    return new Set([hostname, `www.${hostname.replace(/^www\./, "")}`]);
+  } catch {
+    return new Set(["futurereadymba.com", "www.futurereadymba.com"]);
+  }
 })();
 
 function originAllowed(req: Request): boolean {
   const o = req.headers.get("origin") || req.headers.get("referer");
   if (!o) return false;
   try {
-    const h = new URL(o).host;
-    return h === ALLOWED_HOST || h.endsWith(".vercel.app") || h.startsWith("localhost") || h.startsWith("127.0.0.1");
+    const hostname = new URL(o).hostname;
+    const isLocalDevelopment =
+      process.env.NODE_ENV !== "production" &&
+      (hostname === "localhost" || hostname === "127.0.0.1");
+    return ALLOWED_HOSTNAMES.has(hostname) || isLocalDevelopment;
   } catch {
     return false;
   }
@@ -59,26 +66,34 @@ export async function POST(req: Request) {
       source: str(b.source) || "emba-hub",
     };
 
-    const res = await fetch(`${URL_BASE}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        apikey: KEY,
-        Authorization: `Bearer ${KEY}`,
-        "Content-Type": "application/json",
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify(row),
-    });
-
-    if (!res.ok) {
-      const t = await res.text();
-      console.error("Supabase insert failed:", res.status, t);
-      return NextResponse.json({ error: "Insert failed" }, { status: 502 });
-    }
+    await ensureLeadsTable();
+    await getDatabasePool().execute(
+      `INSERT INTO leads (
+        name, email, phone, company, participant_type, programme_interest,
+        page_path, referrer, utm_source, utm_medium, utm_campaign, utm_term,
+        utm_content, source
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        row.name,
+        row.email,
+        row.phone,
+        row.company,
+        row.participant_type,
+        row.programme_interest,
+        row.page_path,
+        row.referrer,
+        row.utm_source,
+        row.utm_medium,
+        row.utm_campaign,
+        row.utm_term,
+        row.utm_content,
+        row.source,
+      ],
+    );
 
     return NextResponse.json({ ok: true });
-  } catch (e) {
-    console.error("Lead route error:", e);
-    return NextResponse.json({ error: "Bad request" }, { status: 400 });
+  } catch (error) {
+    console.error("Lead route error:", error);
+    return NextResponse.json({ error: "Unable to submit enquiry" }, { status: 500 });
   }
 }

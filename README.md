@@ -11,8 +11,8 @@ and handed to the ABC programme team to close.
 - **Next.js 16** (App Router) · **React 19** · **TypeScript**
 - **Tailwind CSS v4** + a custom dark design system (`src/app/globals.css`)
 - **next/font** — Fraunces (display), Archivo (body), IBM Plex Mono (labels)
-- **Supabase** — lead capture (`/api/lead` → `public.leads`)
-- **Vercel** — hosting & deploy
+- **Hostinger MySQL** — lead capture (`/api/lead` → `leads`)
+- **Hostinger Business Web Hosting** — Node.js hosting, database, DNS, and SSL
 - Data-driven from a single content module: **`src/lib/content.ts`**
 
 ## Structure
@@ -32,13 +32,15 @@ Shared components live in `src/components/site/` (Header, Footer, LeadForm, CtaS
 Create `.env.local` (not committed):
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...   # publishable / anon key (client-safe)
-NEXT_PUBLIC_WHATSAPP=60123456789
-NEXT_PUBLIC_SITE_URL=https://emba-mba-site.vercel.app
+NEXT_PUBLIC_SITE_URL=https://futurereadymba.com
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=u606386577_emba
+DB_USER=u606386577_emba_app
+DB_PASSWORD=...                     # server-only; never commit
 ```
 
-The same values must be set in the Vercel project settings for production.
+Production values belong in the Hostinger Node.js application environment.
 
 ## Develop
 
@@ -50,9 +52,8 @@ npm run build    # production build
 
 ## Deploy
 
-```bash
-vercel deploy --prod --yes
-```
+See [`DEPLOY-HOSTINGER.md`](DEPLOY-HOSTINGER.md). Production runs directly on
+Hostinger; Vercel and Supabase are not required.
 
 ---
 
