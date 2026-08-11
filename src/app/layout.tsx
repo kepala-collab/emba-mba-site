@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import WhatsAppFloat from "@/components/site/WhatsAppFloat";
+import LangSync from "@/components/site/LangSync";
 import { SITE, COMPLIANCE } from "@/lib/content";
 
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], display: "swap" });
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${fraunces.variable} ${archivo.variable} ${plexMono.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
+        <LangSync />
         <Header />
         <main>{children}</main>
         <Footer />

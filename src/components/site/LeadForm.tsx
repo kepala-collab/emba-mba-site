@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useId, useState } from "react";
 import { SITE } from "@/lib/content";
 
 type Lang = "en" | "zh";
@@ -35,30 +35,34 @@ const T = {
   },
 } as const;
 
+// Read attribution/context at submit time (avoids a setState-in-effect and stays SSR-safe).
+function collectMeta(): Record<string, string> {
+  const p = new URLSearchParams(window.location.search);
+  const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+  const m: Record<string, string> = {};
+  keys.forEach((k) => { const v = p.get(k); if (v) m[k] = v; });
+  m.page_path = window.location.pathname;
+  m.referrer = document.referrer || "";
+  return m;
+}
+
 export default function LeadForm({
   programme = "Executive MBA",
   source = "emba-hub",
   lang = "en",
 }: { programme?: string; source?: string; lang?: Lang }) {
   const t = T[lang];
+  const uid = useId();
+  const id = (k: string) => `${uid}-${k}`;
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
   const [firstName, setFirstName] = useState("");
-  const [utm, setUtm] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    const p = new URLSearchParams(window.location.search);
-    const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
-    const got: Record<string, string> = {};
-    keys.forEach((k) => { const v = p.get(k); if (v) got[k] = v; });
-    got.page_path = window.location.pathname;
-    got.referrer = document.referrer || "";
-    setUtm(got);
-  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = e.currentTarget;
     const data = Object.fromEntries(new FormData(f).entries());
+    // Honeypot: bots fill hidden fields. Silently "succeed" without sending.
+    if (data.website) { setFirstName(String(data.name || "").split(" ")[0]); setStatus("ok"); return; }
     if (!(data.consent as string)) { setStatus("err"); return; }
     setStatus("sending");
     setFirstName(String(data.name || "").split(" ")[0]);
@@ -66,7 +70,7 @@ export default function LeadForm({
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, ...utm, programme_interest: programme, source }),
+        body: JSON.stringify({ ...data, ...collectMeta(), programme_interest: programme, source }),
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("ok");
@@ -91,28 +95,33 @@ export default function LeadForm({
 
   return (
     <form className="form" onSubmit={onSubmit} noValidate>
+      {/* Honeypot — visually hidden, off-screen, not announced to users */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+        <label htmlFor={id("website")}>Leave this field empty</label>
+        <input id={id("website")} name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="fld">
-        <label htmlFor="lf-name">{t.name}</label>
-        <input id="lf-name" name="name" placeholder={t.namePh} autoComplete="name" required />
+        <label htmlFor={id("name")}>{t.name}</label>
+        <input id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" required />
       </div>
       <div className="two">
         <div className="fld">
-          <label htmlFor="lf-phone">{t.phone}</label>
-          <input id="lf-phone" name="phone" type="tel" placeholder="+60" autoComplete="tel" required />
+          <label htmlFor={id("phone")}>{t.phone}</label>
+          <input id={id("phone")} name="phone" type="tel" placeholder="+60" autoComplete="tel" required />
         </div>
         <div className="fld">
-          <label htmlFor="lf-email">{t.email}</label>
-          <input id="lf-email" name="email" type="email" placeholder={t.emailPh} autoComplete="email" required />
+          <label htmlFor={id("email")}>{t.email}</label>
+          <input id={id("email")} name="email" type="email" placeholder={t.emailPh} autoComplete="email" required />
         </div>
       </div>
       <div className="two">
         <div className="fld">
-          <label htmlFor="lf-company">{t.company}</label>
-          <input id="lf-company" name="company" placeholder={t.companyPh} autoComplete="organization" />
+          <label htmlFor={id("company")}>{t.company}</label>
+          <input id={id("company")} name="company" placeholder={t.companyPh} autoComplete="organization" />
         </div>
         <div className="fld">
-          <label htmlFor="lf-type">{t.participant}</label>
-          <select id="lf-type" name="participant_type" defaultValue="malaysian">
+          <label htmlFor={id("type")}>{t.participant}</label>
+          <select id={id("type")} name="participant_type" defaultValue="malaysian">
             <option value="malaysian">{t.malaysian}</option>
             <option value="international">{t.international}</option>
           </select>

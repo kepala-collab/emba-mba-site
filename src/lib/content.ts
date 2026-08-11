@@ -133,9 +133,9 @@ export const FACULTY: Faculty[] = [
 ];
 
 export const INTAKES = [
-  { co: "Cohort 16", s1: "5–6 Jun", s2: "3–4 Jul", s3: "31 Jul–1 Aug", seats: "Filling" },
-  { co: "Cohort 17", s1: "21–22 Aug", s2: "18–19 Sep", s3: "16–17 Oct", seats: "Open" },
+  { co: "Cohort 17", s1: "21–22 Aug", s2: "18–19 Sep", s3: "16–17 Oct", seats: "Filling" },
   { co: "Cohort 18", s1: "30–31 Oct", s2: "20–21 Nov", s3: "4–5 Dec", seats: "Open" },
+  { co: "Cohort 19", s1: "5–6 Feb ’27", s2: "5–6 Mar ’27", s3: "2–3 Apr ’27", seats: "Open" },
 ];
 
 export const INCLUSIONS = [

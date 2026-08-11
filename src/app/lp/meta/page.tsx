@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
-import LeadForm from "@/components/site/LeadForm";
 import CtaSection from "@/components/site/CtaSection";
 import { SITE, FACTS, THINKING_EDGE, INCLUSIONS, CLIENTS, COMPLIANCE } from "@/lib/content";
 

@@ -4,16 +4,16 @@ import CtaSection from "@/components/site/CtaSection";
 import { INTAKES, SITE, FACTS } from "@/lib/content";
 
 export const metadata = {
-  title: "2026 Intakes & Schedule",
+  title: "2026–27 Intakes & Schedule",
   description:
-    "Upcoming 2026 cohorts for the Future Ready Executive MBA in Kuala Lumpur — Cohorts 16, 17 and 18. One weekend a month at TheFoodTree@OWG, Glenmarie. Seats limited per cohort.",
+    "Upcoming cohorts for the Future Ready Executive MBA in Kuala Lumpur — Cohorts 17, 18 and 19. One weekend a month at TheFoodTree@OWG, Glenmarie. Seats limited per cohort.",
 };
 
 const courseJsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
   name: "Future Ready Executive MBA",
-  description: `Executive MBA in Kuala Lumpur, ${FACTS.durationLong}, one weekend a month. 2026 cohorts: Cohort 16 (5–6 Jun, 3–4 Jul, 31 Jul–1 Aug), Cohort 17 (21–22 Aug, 18–19 Sep, 16–17 Oct), Cohort 18 (30–31 Oct, 20–21 Nov, 4–5 Dec) at ${SITE.venue}. Seats limited per cohort.`,
+  description: `Executive MBA in Kuala Lumpur, ${FACTS.durationLong}, one weekend a month. Cohort 17 (21–22 Aug, 18–19 Sep, 16–17 Oct), Cohort 18 (30–31 Oct, 20–21 Nov, 4–5 Dec) and Cohort 19 (Feb–Apr 2027) at ${SITE.venue}. Seats limited per cohort.`,
   provider: {
     "@type": "Organization",
     name: SITE.provider,
@@ -43,15 +43,15 @@ export default function IntakesPage() {
       {/* 1 — INTRO */}
       <section className="section">
         <span className="eyebrow">
-          <span className="l" /> 2026 Intakes
+          <span className="l" /> 2026–27 Intakes
         </span>
         <Reveal>
           <h1 className="sec-h">
-            Three cohorts open for 2026 in <span className="acc">Kuala Lumpur</span>.
+            Three cohorts open in <span className="acc">Kuala Lumpur</span>.
           </h1>
         </Reveal>
         <p className="sec-sub">
-          Cohorts 16, 17 and 18 are now taking applications. Each runs one weekend a
+          Cohorts 17, 18 and 19 are now taking applications. Each runs one weekend a
           month — {FACTS.durationLong} — so you keep leading your business while you
           transform how you think.
         </p>
@@ -63,7 +63,7 @@ export default function IntakesPage() {
 
       {/* 2 — INTAKE TABLE */}
       <section className="section">
-        <span className="sec-k mono">The 2026 schedule</span>
+        <span className="sec-k mono">The schedule</span>
         <Reveal>
           <h2 className="sec-h">Pick the cohort that fits your calendar.</h2>
         </Reveal>
@@ -97,7 +97,7 @@ export default function IntakesPage() {
           </table>
         </div>
         <p className="fine mt-s">
-          All 2026 dates. Sessions run Friday–Saturday. Dates are confirmed but may shift
+          Sessions run Friday–Saturday. Dates are confirmed but may shift
           slightly by venue or public-holiday adjustment.
         </p>
       </section>
@@ -140,7 +140,7 @@ export default function IntakesPage() {
       {/* 4 — URGENCY + CTA */}
       <section className="section center">
         <Reveal>
-          <h2 className="sec-h">Cohort 16 is already filling.</h2>
+          <h2 className="sec-h">Cohort 17 is already filling.</h2>
         </Reveal>
         <p className="sec-sub">
           Seats release in application order and the earliest cohort is the first to close.
@@ -148,7 +148,7 @@ export default function IntakesPage() {
         </p>
         <div className="mt-m">
           <Link href="/apply" className="btn btn-primary">
-            Apply for a 2026 seat
+            Apply for your seat
           </Link>
         </div>
         <p className="fine mt-s">

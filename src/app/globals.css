@@ -129,6 +129,9 @@ footer.site{background:var(--bg-2);border-top:1px solid var(--line);padding:56px
 .foot h4{font-family:var(--font-plex-mono),monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
 .foot a{display:block;color:var(--ink-2);font-size:.9rem;margin:8px 0}
 .foot a:hover{color:var(--crimson)}
+.foot .foot-contact{display:block;color:var(--ink-2);font-size:.9rem;margin:8px 0}
+.navlinks .langswitch{border:1px solid var(--line-2);border-radius:999px;padding:4px 11px;font-size:.78rem;font-family:var(--font-plex-mono),monospace;color:var(--ink-2);transition:color .15s,border-color .15s}
+.navlinks .langswitch:hover{color:#fff;border-color:var(--crimson)}
 @media(max-width:760px){.foot{grid-template-columns:1fr 1fr}}
 
 .wa-float{position:fixed;right:20px;bottom:20px;z-index:70;width:56px;height:56px;border-radius:50%;

@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
             <div>
               <h4>联系我们</h4>
-              <a>{SITE.director} · 课程协调员</a>
+              <span className="foot-contact">{SITE.director} · 课程协调员</span>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               <Link href="/zh#apply">立即报名</Link>
@@ -79,7 +79,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Contact</h4>
-            <a>{SITE.director} · Programme Coordinator</a>
+            <span className="foot-contact">{SITE.director} · Programme Coordinator</span>
             <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             <Link href="/apply">Apply Now</Link>
