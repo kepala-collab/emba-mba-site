@@ -5,6 +5,13 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import { FACTS, CLIENTS } from "@/lib/content";
 
+export const metadata = {
+  alternates: {
+    canonical: "/",
+    languages: { "en": "/", "zh-Hans": "/zh", "x-default": "/" },
+  },
+};
+
 const HUB = [
   { href: "/executive-mba", k: "The Programme", h: "A CMI (UK) MBA, in 3 months", d: "What the Future Ready Executive MBA is, who it's for, and why it works." },
   { href: "/how-it-works", k: "The Method", h: "F.A.S.T. thinking", d: "The seven thinking disciplines that install judgment, not just knowledge." },

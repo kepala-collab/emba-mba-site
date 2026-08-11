@@ -1,8 +1,50 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import RdrMark from "./RdrMark";
 import { SITE, COMPLIANCE, NAV, OPERATOR } from "@/lib/content";
 
+const COMPLIANCE_ZH =
+  "本课程并非受监管的学历资格，也未经 MQA 认证；这是一项由英国特许管理协会（CMI）认可的专业课程。符合条件的马来西亚雇主可通过 HRD Corp 申请索赔。马来西亚学员可享奖学金。个人资料依据马来西亚 2010 年个人资料保护法（PDPA）处理。";
+
 export default function Footer() {
+  const pathname = usePathname() || "/";
+  const zh = pathname === "/zh" || pathname.startsWith("/zh/") || pathname.startsWith("/zh#");
+  const year = new Date().getFullYear();
+
+  if (zh) {
+    return (
+      <footer className="site">
+        <div className="wrap">
+          <div className="foot" style={{ gridTemplateColumns: "1.6fr 1fr" }}>
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+                <RdrMark size={40} />
+                <strong style={{ color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.05rem" }}>{OPERATOR.name}</strong>
+              </div>
+              <p>
+                本网站由 {OPERATOR.name} 运营 —— Future Ready 高管 MBA 的授权招生伙伴。本课程由 {SITE.provider} 提供，
+                并获英国特许管理协会（CMI）认可。
+              </p>
+            </div>
+            <div>
+              <h4>联系我们</h4>
+              <a>{SITE.director} · 课程协调员</a>
+              <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <Link href="/zh#apply">立即报名</Link>
+              <Link href="/">English site →</Link>
+            </div>
+          </div>
+          <p className="fine" style={{ marginTop: 16 }}>
+            © {year} {OPERATOR.name}（注册号 {OPERATOR.reg}）。{OPERATOR.address}。
+          </p>
+          <p className="fine" style={{ marginTop: 8 }}>{COMPLIANCE_ZH}</p>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="site">
       <div className="wrap">
@@ -41,6 +83,7 @@ export default function Footer() {
             <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             <Link href="/apply">Apply Now</Link>
+            <Link href="/zh">中文网站 →</Link>
           </div>
         </div>
         <div style={{ display: "flex", gap: 22, flexWrap: "wrap", marginTop: 24 }}>
@@ -49,7 +92,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="fine" style={{ marginTop: 16 }}>
-          © {new Date().getFullYear()} {OPERATOR.name} (Reg. No. {OPERATOR.reg}). {OPERATOR.address}.
+          © {year} {OPERATOR.name} (Reg. No. {OPERATOR.reg}). {OPERATOR.address}.
         </p>
         <p className="fine" style={{ marginTop: 8 }}>{COMPLIANCE}</p>
       </div>
