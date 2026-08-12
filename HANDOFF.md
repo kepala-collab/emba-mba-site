@@ -47,21 +47,26 @@ secrets is at `web/.env.production.example`.
 | `DB_NAME` | Hostinger database | `u606386577_emba` |
 | `DB_USER` | Hostinger database user | `u606386577_emba_app` |
 | `DB_PASSWORD` | Database password | server-only — never commit |
+| `LEAD_HASH_SECRET` | HMAC key for pseudonymous abuse fingerprints and deduplication | 32+ random bytes; server-only — never commit |
 
 ---
 
 ## 4. Lead capture (Hostinger MySQL)
 
 - **Database:** `u606386577_emba`
-- **Table:** `leads` — provisioned once by `database/migrations/001_create_leads.sql`
+- **Tables:** `leads` plus `lead_rate_limits` — provisioned by the ordered SQL files in
+  `database/migrations/`
 - **Columns include:** name, email, phone, company, participant_type, programme_interest,
   page_path, referrer, utm_source/medium/campaign/term/content, **source**
 - **Flow:** `LeadForm` (client) → `POST /api/lead` → managed Turnstile verification
   Worker → parameterised MySQL insert
-- **Target runtime DB permissions:** `INSERT` on `u606386577_emba.leads` only; no DDL.
+- **Target runtime DB permissions:** `SELECT`, `INSERT`, and `UPDATE` on
+  `u606386577_emba.*`; no DDL or `DELETE`.
   Verify the Hostinger database user privileges in hPanel after provisioning.
 - **API controls:** same-origin checks, 16 KiB body cap, strict field validation,
-  per-IP throttling, bounded DB/verification timeouts, and no-store responses
+  process-local and durable IP/subnet/email/phone throttling, daily duplicate suppression,
+  bounded DB/verification timeouts, and no-store responses. Abuse identifiers are stored as
+  keyed SHA-256 fingerprints rather than raw IP/email/phone values.
 - **Lead source tags** (the `source` field — use to attribute each lead):
   - `emba-hub` — main English site
   - `zh-hub` — Chinese site (`/zh`)

@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import { getDatabasePool } from "@/lib/db";
+import {
+  consumeDurableLeadRateLimit,
+  leadDedupeHash,
+  normalizeClientIp,
+} from "@/lib/lead-abuse";
 
 const MAX_BODY_BYTES = 16 * 1024;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -74,10 +79,12 @@ function requestIp(req: Request): string {
     req.headers.get("cf-connecting-ip") ||
     req.headers.get("x-real-ip") ||
     req.headers.get("x-forwarded-for")?.split(",")[0];
-  return (forwarded?.trim() || "unknown").slice(0, 64);
+  return normalizeClientIp(forwarded) || "unknown";
 }
 
 function consumeRateLimit(ip: string): { allowed: boolean; retryAfter: number } {
+  if (ip === "unknown") return { allowed: true, retryAfter: 0 };
+
   const now = Date.now();
   const current = rateLimits.get(ip);
 
@@ -263,7 +270,8 @@ async function verifyTurnstile(
 }
 
 export async function POST(req: Request) {
-  const rateLimit = consumeRateLimit(requestIp(req));
+  const ip = requestIp(req);
+  const rateLimit = consumeRateLimit(ip);
   if (!rateLimit.allowed) {
     return json(
       { error: "Too many requests. Please try again later." },
@@ -290,7 +298,7 @@ export async function POST(req: Request) {
     const turnstileToken = text(input.turnstile_token, 2048, true);
     if (!row || !turnstileToken) return json({ error: "Invalid submission" }, 400);
 
-    const turnstile = await verifyTurnstile(turnstileToken, requestIp(req));
+    const turnstile = await verifyTurnstile(turnstileToken, ip);
     if (turnstile === "unavailable") {
       return json({ error: "Security verification unavailable" }, 503);
     }
@@ -298,12 +306,27 @@ export async function POST(req: Request) {
       return json({ error: "Security verification failed" }, 400);
     }
 
-    await getDatabasePool().execute({
+    const pool = getDatabasePool();
+    const durableRateLimit = await consumeDurableLeadRateLimit(pool, {
+      ip: ip === "unknown" ? null : ip,
+      email: row.email,
+      phone: row.phone,
+    });
+    if (!durableRateLimit.allowed) {
+      return json(
+        { error: "Too many requests. Please try again later." },
+        429,
+        { "Retry-After": String(durableRateLimit.retryAfter) },
+      );
+    }
+
+    await pool.execute({
       sql: `INSERT INTO leads (
         name, email, phone, company, participant_type, programme_interest,
         page_path, referrer, utm_source, utm_medium, utm_campaign, utm_term,
-        utm_content, source
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        utm_content, source, dedupe_hash, dedupe_date
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, UTC_DATE())
+      ON DUPLICATE KEY UPDATE id = id`,
       values: [
         row.name,
         row.email,
@@ -319,6 +342,7 @@ export async function POST(req: Request) {
         row.utm_term,
         row.utm_content,
         row.source,
+        leadDedupeHash(row.email, row.phone),
       ],
       timeout: 5_000,
     });

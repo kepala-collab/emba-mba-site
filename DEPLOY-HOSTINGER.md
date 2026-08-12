@@ -28,13 +28,19 @@ DB_PORT=3306
 DB_NAME=u606386577_emba
 DB_USER=u606386577_emba_app
 DB_PASSWORD=<Hostinger database password>
+LEAD_HASH_SECRET=<32+ random bytes, stored only in Hostinger>
 ```
 
 The MySQL user is local to the Hostinger account; no public remote-access rule is
-needed. Before deploying, run `database/migrations/001_create_leads.sql` once with
-an administrative database account. The application runtime user should have only
-`INSERT` permission on `u606386577_emba.leads`; it must not have schema-changing or
-database-wide privileges. The request route never creates or alters tables.
+needed. Before deploying, run every SQL file in `database/migrations/` in numerical
+order with an administrative database account. The application runtime user should
+have only `SELECT`, `INSERT`, and `UPDATE` on `u606386577_emba.*`; it must not have
+DDL or `DELETE` privileges. The request route never creates or alters tables.
+
+`LEAD_HASH_SECRET` keys privacy-preserving rate-limit fingerprints and daily lead
+deduplication. Generate it independently from the database password, never expose it
+to the browser, and rotate it only as a planned security operation because rotation
+starts new rate-limit and deduplication identities.
 
 Cloudflare Turnstile is configured for `futurereadymba.com`, `localhost`, and
 `127.0.0.1`. The site key and verification Worker URL are public configuration;
@@ -75,5 +81,5 @@ After each deployment:
    `Content-Security-Policy` meta policy from `src/app/layout.tsx`.
 
 If content looks stale, clear the Hostinger website cache. If the site returns an
-application error, inspect the Node.js build/runtime logs and confirm all five
-database and Turnstile environment variables are present.
+application error, inspect the Node.js build/runtime logs and confirm the database,
+Turnstile, and hashing-secret environment variables are present.
