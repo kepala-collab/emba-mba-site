@@ -1,11 +1,20 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import RdrMark from "./RdrMark";
-import { SITE, COMPLIANCE, NAV, OPERATOR } from "@/lib/content";
+import { SITE, NAV, OPERATOR } from "@/lib/content";
+import PrivacyChoicesButton from "@/components/site/PrivacyChoicesButton";
 
-const COMPLIANCE_ZH =
-  "本课程并非受监管的学历资格，也未经 MQA 认证；这是一项由英国特许管理协会（CMI）认可的专业课程。符合条件的马来西亚雇主可通过 HRD Corp 申请索赔。马来西亚学员可享奖学金。个人资料依据马来西亚 2010 年个人资料保护法（PDPA）处理。";
+const LEGAL_LINKS = [
+  ["/privacy", "Privacy Policy"],
+  ["/terms", "Terms & Conditions"],
+  ["/contact", "Legal & privacy contact"],
+] as const;
+
+const LEGAL_LINKS_ZH = [
+  ["/zh/privacy", "隐私政策"],
+  ["/zh/terms", "条款与条件"],
+  ["/zh/contact", "法律与隐私联系"],
+] as const;
 
 export default function Footer() {
   const pathname = usePathname() || "/";
@@ -16,30 +25,34 @@ export default function Footer() {
     return (
       <footer className="site">
         <div className="wrap">
-          <div className="foot" style={{ gridTemplateColumns: "1.6fr 1fr" }}>
+          <div className="foot foot-zh">
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-                <RdrMark size={40} />
-                <strong style={{ color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.05rem" }}>{OPERATOR.name}</strong>
-              </div>
-              <p>
-                本网站由 {OPERATOR.name} 运营 —— Future Ready 高管 MBA 的授权招生伙伴。本课程由 {SITE.provider} 提供，
-                并获英国特许管理协会（CMI）认可。
-              </p>
-            </div>
-            <div>
-              <h4>联系我们</h4>
+              <h2>联系我们</h2>
               <span className="foot-contact">{SITE.director} · 课程协调员</span>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <Link href="/zh#apply">立即报名</Link>
+              <Link href="/zh/apply">立即报名</Link>
+              <Link href="/zh/executive-mba">课程详情</Link>
+              <Link href="/zh/curriculum">课程大纲</Link>
+              <Link href="/zh/fees">学费与奖学金</Link>
+              <Link href="/zh/intakes">开课日期</Link>
+              <Link href="/zh/faculty">导师团队</Link>
+              <Link href="/zh/faq">常见问题</Link>
               <Link href="/">English site →</Link>
             </div>
           </div>
-          <p className="fine" style={{ marginTop: 16 }}>
-            © {year} {OPERATOR.name}（注册号 {OPERATOR.reg}）。{OPERATOR.address}。
-          </p>
-          <p className="fine" style={{ marginTop: 8 }}>{COMPLIANCE_ZH}</p>
+          <section className="legal-footer" aria-label="法律与合规信息">
+            <nav className="footer-legal-links" aria-label="法律与隐私链接">
+              {LEGAL_LINKS_ZH.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+              <PrivacyChoicesButton label="隐私选择" />
+            </nav>
+            <div className="legal-copy">
+              <p>© {year} {OPERATOR.name}。商业注册号：{OPERATOR.reg}。注册地址：{OPERATOR.address}。</p>
+              <p><strong>合作伙伴声明：</strong>{OPERATOR.name} 是本课程获授权的 Global 及本地课程合作伙伴，负责市场推广、课程咨询、报价及报名协调。</p>
+              <p><strong>课程声明：</strong>Future Ready 高管 MBA 是由 {SITE.provider} 提供并获英国特许管理协会（CMI）认可的专业发展课程；并非经 MQA 认证的学术资格。HRD Corp 索赔须视雇主及课程资格而定；奖学金须符合相关条件及名额。</p>
+              <p><strong>资料保护：</strong>个人资料由 {OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。详情请参阅隐私政策。</p>
+            </div>
+          </section>
         </div>
       </footer>
     );
@@ -50,23 +63,13 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-              <RdrMark size={40} />
-              <strong style={{ color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.05rem" }}>{OPERATOR.name}</strong>
-            </div>
-            <p>
-              This site is operated by {OPERATOR.name}, an authorised marketing &amp; enrolment partner for the
-              Future Ready Executive MBA — a CMI (UK)-endorsed programme delivered by {SITE.provider}.
-            </p>
-          </div>
-          <div>
-            <h4>Programme</h4>
+            <h2>Programme</h2>
             {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
             <Link href="/corporate-training">Corporate Training</Link>
             <Link href="/faq">FAQ</Link>
           </div>
           <div>
-            <h4>Popular</h4>
+            <h2>Popular</h2>
             <Link href="/hrd-corp-claimable">HRD Corp Claimable</Link>
             <Link href="/online-executive-mba">Online Executive MBA</Link>
             <Link href="/executive-mba-vs-mba">Executive MBA vs MBA</Link>
@@ -78,23 +81,26 @@ export default function Footer() {
             <Link href="/programmes/shift-hr">SHIFT! HR Workshop</Link>
           </div>
           <div>
-            <h4>Contact</h4>
+            <h2>Contact</h2>
             <span className="foot-contact">{SITE.director} · Programme Coordinator</span>
             <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            <Link href="/apply">Apply Now</Link>
+            <Link href="/apply">Arrange a programme conversation</Link>
             <Link href="/zh">中文网站 →</Link>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 22, flexWrap: "wrap", marginTop: 24 }}>
-          {[["/about", "About"], ["/contact", "Contact"], ["/privacy", "Privacy Policy"], ["/terms", "Terms & Conditions"]].map(([href, label]) => (
-            <Link key={href} href={href} style={{ color: "var(--ink-2)", fontSize: ".86rem" }}>{label}</Link>
-          ))}
-        </div>
-        <p className="fine" style={{ marginTop: 16 }}>
-          © {year} {OPERATOR.name} (Reg. No. {OPERATOR.reg}). {OPERATOR.address}.
-        </p>
-        <p className="fine" style={{ marginTop: 8 }}>{COMPLIANCE}</p>
+        <section className="legal-footer" aria-label="Legal and compliance information">
+          <nav className="footer-legal-links" aria-label="Legal and privacy links">
+            {LEGAL_LINKS.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+            <PrivacyChoicesButton label="Privacy choices" />
+          </nav>
+          <div className="legal-copy">
+            <p>© {year} {OPERATOR.name}. Business Registration No. {OPERATOR.reg}. Registered business address: {OPERATOR.address}.</p>
+            <p><strong>Partner notice:</strong> {OPERATOR.name} is the authorised {OPERATOR.role} for marketing, programme enquiries, pricing and enrolment coordination.</p>
+            <p><strong>Programme notice:</strong> The Future Ready Executive MBA is a professional development programme delivered by {SITE.provider} and recognised by CMI (UK). It is not an MQA-accredited academic or regulated qualification. Foundation Chartered Manager, membership grades, post-nominals and Chartered status remain subject to the provider&rsquo;s current CMI arrangement, CMI confirmation, eligibility, assessment, active membership and applicable fees. HRD Corp claims and scholarships are subject to eligibility and availability.</p>
+            <p><strong>Data protection:</strong> Personal data is processed by {OPERATOR.name} in accordance with Malaysia&rsquo;s Personal Data Protection Act 2010 [Act 709], as amended. See the Privacy Policy for details.</p>
+          </div>
+        </section>
       </div>
     </footer>
   );

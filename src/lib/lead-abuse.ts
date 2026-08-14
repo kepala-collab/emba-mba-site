@@ -140,11 +140,17 @@ export function leadDedupeHash(email: string, phone: string): Buffer {
   );
 }
 
-export async function consumeDurableLeadRateLimit(
+export function leadEmailRecipientHash(email: string): Buffer {
+  return privateFingerprint("lead-email-recipient", email.trim().toLowerCase());
+}
+
+async function consumeDurableRateLimitRules(
   pool: Pool,
-  input: { ip: string | null; email: string; phone: string },
+  inputRules: RateLimitRule[],
 ): Promise<DurableRateLimitResult> {
-  const rules = rulesFor(input.ip, input.email, input.phone).map((rule) => ({
+  if (!inputRules.length) return { allowed: true, retryAfter: 0 };
+
+  const rules = inputRules.map((rule) => ({
     ...rule,
     fingerprint: privateFingerprint(rule.scope, rule.value),
   }));
@@ -214,4 +220,27 @@ export async function consumeDurableLeadRateLimit(
   } finally {
     connection.release();
   }
+}
+
+export function consumeDurableLeadRateLimit(
+  pool: Pool,
+  input: { ip: string | null; email: string; phone: string },
+): Promise<DurableRateLimitResult> {
+  return consumeDurableRateLimitRules(pool, rulesFor(input.ip, input.email, input.phone));
+}
+
+export function consumeDurableChatRateLimit(
+  pool: Pool,
+  ip: string | null,
+): Promise<DurableRateLimitResult> {
+  if (!ip) return Promise.resolve({ allowed: true, retryAfter: 0 });
+  const subnet = subnetFor(ip);
+
+  return consumeDurableRateLimitRules(pool, [
+    { scope: "chat-ip-ten-min", value: ip, windowSeconds: 600, maximum: 8 },
+    { scope: "chat-ip-day", value: ip, windowSeconds: 86_400, maximum: 40 },
+    ...(subnet
+      ? [{ scope: "chat-subnet-hour", value: subnet, windowSeconds: 3_600, maximum: 150 }]
+      : []),
+  ]);
 }

@@ -4,8 +4,8 @@ import { SITE } from "@/lib/content";
 
 export default function CtaSection({
   programme = "Executive MBA",
-  heading = "Your next cohort won't wait. Neither should your thinking.",
-  sub = "Apply now and our programme team will be in touch to discuss your fit, the next intake, HRD Corp claims and scholarship eligibility. No obligation.",
+  heading = "Start with a conversation, not a commitment.",
+  sub = "Tell us how you would like to explore the programme: a short call, an online information meeting, an in-person meeting at an agreed location, or details by email first. The programme team will discuss fit, schedules, HRD Corp and scholarship eligibility — no sales obligation.",
   source = "emba-hub",
 }: { programme?: string; heading?: string; sub?: string; source?: string }) {
   return (
@@ -17,7 +17,7 @@ export default function CtaSection({
             <h2 className="sec-h">{heading}</h2>
             <p className="sec-sub">{sub}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "24px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
-              {["A personal call to discuss your goals & fit", "2026 intake availability & scheduling", "HRD Corp claim & scholarship eligibility"].map((t) => (
+              {["Choose a call, online meeting, in-person meeting or details first", "Review the 2026 class schedule before deciding", "Understand HRD Corp and scholarship eligibility"].map((t) => (
                 <li key={t} style={{ paddingLeft: 26, position: "relative", color: "var(--ink-2)" }}>
                   <span style={{ position: "absolute", left: 0, color: "var(--crimson)", fontFamily: "var(--font-plex-mono)" }}>→</span>{t}
                 </li>
@@ -27,7 +27,7 @@ export default function CtaSection({
               {SITE.director} · Programme Coordinator · {SITE.phone} · {SITE.email}
             </p>
           </Reveal>
-          <Reveal delay={80}><LeadForm programme={programme} source={source} /></Reveal>
+          <Reveal delay={80}><LeadForm programme={programme} source={source} placement="footer-cta" /></Reveal>
         </div>
       </div>
       <style>{`@media(max-width:820px){.cta-grid{grid-template-columns:1fr!important;gap:34px!important}}`}</style>

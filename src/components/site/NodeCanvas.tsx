@@ -11,7 +11,7 @@ export default function NodeCanvas() {
     if (!x) return;
     const dpr = window.devicePixelRatio || 1;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let W = 0, H = 0, raf = 0;
+    let W = 0, H = 0, raf = 0, visible = true;
     let P: { x: number; y: number; vx: number; vy: number }[] = [];
     const size = () => {
       const r = c.parentElement!.getBoundingClientRect();
@@ -52,12 +52,28 @@ export default function NodeCanvas() {
         x.beginPath(); x.arc(p.x, p.y, (i % 8 === 0 ? 2.3 : 1.5) * dpr, 0, 7); x.fill();
       }
       x.globalAlpha = 1;
-      if (!reduce) raf = requestAnimationFrame(frame);
+      if (!reduce && visible && !document.hidden) raf = requestAnimationFrame(frame);
     };
     init(); frame();
-    const onResize = () => { cancelAnimationFrame(raf); init(); frame(); };
+    const restart = () => {
+      cancelAnimationFrame(raf);
+      if (visible && !document.hidden) frame();
+    };
+    const onResize = () => { cancelAnimationFrame(raf); init(); restart(); };
+    const onVisibilityChange = () => restart();
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      restart();
+    }, { rootMargin: "120px 0px" });
+    observer.observe(c);
     window.addEventListener("resize", onResize);
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", onResize); };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      cancelAnimationFrame(raf);
+      observer.disconnect();
+      window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
   }, []);
   return <canvas ref={ref} className="node-canvas" aria-hidden="true" />;
 }

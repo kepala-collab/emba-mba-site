@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
+import type { ResultSetHeader } from "mysql2/promise";
 import { getDatabasePool } from "@/lib/db";
 import {
   consumeDurableLeadRateLimit,
   leadDedupeHash,
+  leadEmailRecipientHash,
   normalizeClientIp,
 } from "@/lib/lead-abuse";
+import { processLeadEmailOutbox } from "@/lib/lead-email";
 
 const MAX_BODY_BYTES = 16 * 1024;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -43,14 +46,22 @@ type LeadRow = {
   phone: string;
   company: string | null;
   participant_type: "malaysian" | "international";
+  contact_preference: "programme_call" | "in_person_meeting" | "online_meeting" | "details_first" | null;
   programme_interest: string | null;
   page_path: string | null;
+  page_language: "en" | "zh" | null;
+  landing_page: string | null;
   referrer: string | null;
+  first_referrer: string | null;
   utm_source: string | null;
   utm_medium: string | null;
   utm_campaign: string | null;
   utm_term: string | null;
   utm_content: string | null;
+  click_id_type: string | null;
+  click_id: string | null;
+  attribution_session_id: string | null;
+  attribution_json: string | null;
   source: string;
 };
 
@@ -154,6 +165,12 @@ async function readJsonBody(req: Request): Promise<unknown> {
 
 // oxlint-disable-next-line no-control-regex -- Control bytes are rejected deliberately.
 const CONTROL_CHARACTERS = /[\u0000-\u001F\u007F]/;
+const CLICK_ID_TYPES = new Set([
+  "gclid", "gbraid", "wbraid", "fbclid", "msclkid", "ttclid",
+  "li_fat_id", "rdt_cid", "epik", "sccid",
+]);
+const CLICK_ID_VALUE = /^[A-Za-z0-9._~-]+$/;
+const ATTRIBUTION_SESSION_ID = /^[A-Za-z0-9-]{16,64}$/;
 
 function text(
   value: unknown,
@@ -181,35 +198,69 @@ function parseLead(value: unknown): LeadRow | null {
   const company = text(body.company, 160);
   const programme = text(body.programme_interest, 160);
   const pagePath = text(body.page_path, 2048);
+  const pageLanguage = text(body.page_language, 8);
+  const landingPage = text(body.landing_page, 2048);
   const referrer = text(body.referrer, 2048);
+  const firstReferrer = text(body.first_referrer, 2048);
   const source = text(body.source, 100) || "emba-hub";
   const utmSource = text(body.utm_source, 255);
   const utmMedium = text(body.utm_medium, 255);
   const utmCampaign = text(body.utm_campaign, 255);
   const utmTerm = text(body.utm_term, 255);
   const utmContent = text(body.utm_content, 255);
+  const clickIdType = text(body.click_id_type, 32);
+  const clickId = text(body.click_id, 255);
+  const attributionSessionId = text(body.attribution_session_id, 64);
+  const attributionJson = text(body.attribution_json, 4096);
   const participantType = body.participant_type;
+  const contactPreference = text(body.contact_preference, 32);
 
   if (!name || !email || !phone || body.consent !== "yes") return null;
   if (
     company === undefined ||
     programme === undefined ||
     pagePath === undefined ||
+    pageLanguage === undefined ||
+    landingPage === undefined ||
     referrer === undefined ||
+    firstReferrer === undefined ||
     utmSource === undefined ||
     utmMedium === undefined ||
     utmCampaign === undefined ||
     utmTerm === undefined ||
-    utmContent === undefined
+    utmContent === undefined ||
+    clickIdType === undefined ||
+    clickId === undefined ||
+    attributionSessionId === undefined ||
+    attributionJson === undefined
+    || contactPreference === undefined
   ) return null;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
   if (!/^\+?[0-9().\-\s]{7,32}$/.test(phone) || phone.replace(/\D/g, "").length < 7) return null;
   if (participantType !== "malaysian" && participantType !== "international") return null;
+  if (
+    contactPreference !== null &&
+    !["programme_call", "in_person_meeting", "online_meeting", "details_first"].includes(contactPreference)
+  ) return null;
+  if (pageLanguage !== null && pageLanguage !== "en" && pageLanguage !== "zh") return null;
   if (pagePath && !pagePath.startsWith("/")) return null;
-  if (referrer) {
+  if (landingPage && !landingPage.startsWith("/")) return null;
+  for (const urlValue of [referrer, firstReferrer]) {
+    if (!urlValue) continue;
     try {
-      const protocol = new URL(referrer).protocol;
+      const protocol = new URL(urlValue).protocol;
       if (protocol !== "http:" && protocol !== "https:") return null;
+    } catch {
+      return null;
+    }
+  }
+  if ((clickIdType && !CLICK_ID_TYPES.has(clickIdType)) || (clickId && !CLICK_ID_VALUE.test(clickId))) return null;
+  if ((clickIdType && !clickId) || (!clickIdType && clickId)) return null;
+  if (attributionSessionId && !ATTRIBUTION_SESSION_ID.test(attributionSessionId)) return null;
+  if (attributionJson) {
+    try {
+      const parsed: unknown = JSON.parse(attributionJson);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
     } catch {
       return null;
     }
@@ -221,14 +272,22 @@ function parseLead(value: unknown): LeadRow | null {
     phone,
     company,
     participant_type: participantType,
+    contact_preference: contactPreference as LeadRow["contact_preference"],
     programme_interest: programme,
     page_path: pagePath,
+    page_language: pageLanguage,
+    landing_page: landingPage,
     referrer,
+    first_referrer: firstReferrer,
     utm_source: utmSource,
     utm_medium: utmMedium,
     utm_campaign: utmCampaign,
     utm_term: utmTerm,
     utm_content: utmContent,
+    click_id_type: clickIdType,
+    click_id: clickId,
+    attribution_session_id: attributionSessionId,
+    attribution_json: attributionJson,
     source,
   };
 }
@@ -320,32 +379,77 @@ export async function POST(req: Request) {
       );
     }
 
-    await pool.execute({
-      sql: `INSERT INTO leads (
-        name, email, phone, company, participant_type, programme_interest,
-        page_path, referrer, utm_source, utm_medium, utm_campaign, utm_term,
-        utm_content, source, dedupe_hash, dedupe_date
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, UTC_DATE())
-      ON DUPLICATE KEY UPDATE id = id`,
-      values: [
-        row.name,
-        row.email,
-        row.phone,
-        row.company,
-        row.participant_type,
-        row.programme_interest,
-        row.page_path,
-        row.referrer,
-        row.utm_source,
-        row.utm_medium,
-        row.utm_campaign,
-        row.utm_term,
-        row.utm_content,
-        row.source,
-        leadDedupeHash(row.email, row.phone),
-      ],
-      timeout: 5_000,
-    });
+    const connection = await pool.getConnection();
+    let leadId: number;
+    try {
+      await connection.beginTransaction();
+      const [insertResult] = await connection.execute<ResultSetHeader>({
+        sql: `INSERT INTO leads (
+          name, email, phone, company, participant_type, contact_preference, programme_interest,
+          page_path, page_language, landing_page, referrer, first_referrer, utm_source, utm_medium,
+          utm_campaign, utm_term, utm_content, click_id_type, click_id,
+          attribution_session_id, attribution_json, source, dedupe_hash, dedupe_date
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, UTC_DATE())
+        ON DUPLICATE KEY UPDATE id = LAST_INSERT_ID(id)`,
+        values: [
+          row.name,
+          row.email,
+          row.phone,
+          row.company,
+          row.participant_type,
+          row.contact_preference,
+          row.programme_interest,
+          row.page_path,
+          row.page_language,
+          row.landing_page,
+          row.referrer,
+          row.first_referrer,
+          row.utm_source,
+          row.utm_medium,
+          row.utm_campaign,
+          row.utm_term,
+          row.utm_content,
+          row.click_id_type,
+          row.click_id,
+          row.attribution_session_id,
+          row.attribution_json,
+          row.source,
+          leadDedupeHash(row.email, row.phone),
+        ],
+        timeout: 5_000,
+      });
+      leadId = Number(insertResult.insertId);
+      if (!Number.isSafeInteger(leadId) || leadId < 1) {
+        throw new Error("Lead insert did not return a valid identifier");
+      }
+
+      await connection.execute({
+        sql: `INSERT IGNORE INTO lead_email_outbox (
+          lead_id, template_key, language, recipient_hash, queued_date
+        ) VALUES (?, 'application_received', ?, ?, UTC_DATE())`,
+        values: [
+          leadId,
+          row.page_language === "zh" ? "zh" : "en",
+          leadEmailRecipientHash(row.email),
+        ],
+        timeout: 5_000,
+      });
+      await connection.commit();
+    } catch (error) {
+      await connection.rollback();
+      throw error;
+    } finally {
+      connection.release();
+    }
+
+    try {
+      await processLeadEmailOutbox(pool, { limit: 1, leadId });
+    } catch (error) {
+      // The application is already safely stored; the cron processor will retry email.
+      console.error("Lead acknowledgement dispatch deferred", {
+        type: error instanceof Error ? error.name : "UnknownError",
+      });
+    }
 
     return json({ ok: true });
   } catch (error) {

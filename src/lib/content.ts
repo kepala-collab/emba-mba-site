@@ -11,43 +11,107 @@ export const SITE = {
   phone: "+60 12-981 8533",
   email: "support@futurereadymba.com",
   director: "Rostam Affandi Ahmad",
-  venue: "TheFoodTree@OWG, Glenmarie",
+  providerUrl: process.env.NEXT_PUBLIC_PROVIDER_URL || "",
+  providerLinkedIn: process.env.NEXT_PUBLIC_PROVIDER_LINKEDIN || "",
 };
 
-// The company that operates this site and captures leads (the channel partner).
-// Distinct from SITE.provider (Asian Business Consulting), which delivers the programme.
+// The Global and Local Programme Partner that operates this site and handles
+// enquiries, pricing and enrolment coordination. Distinct from SITE.provider
+// (Asian Business Consulting), which provides and delivers the programme.
 export const OPERATOR = {
   name: "Right Dots Resources",
+  role: "Global and Local Programme Partner",
   reg: "202603145615 (003856919-U)",
   address:
     "No. 86, Jalan Desa Bakti, Taman Desa, Jalan Klang Lama, 58100 Kuala Lumpur, Wilayah Persekutuan, Malaysia",
   logo: "/brand/rdr-mark.svg",
+  linkedIn: process.env.NEXT_PUBLIC_OPERATOR_LINKEDIN || "",
 };
 
+export const FEES = {
+  standard: { amount: 10000, label: "RM10,000.00" },
+  malaysia: {
+    scholarshipProvider: "LIFE Innoversity",
+    scholarshipAmount: 4000,
+    scholarshipLabel: "RM4,000.00",
+    participantAmount: 6000,
+    participantLabel: "RM6,000.00",
+  },
+} as const;
+
 export const FACTS = {
-  durationLong: "3 months, across 3 sessions",
-  durationShort: "3 months · 3 sessions",
-  durationFull: "6 months",
-  priceStd: "RM10,000",
-  scholarshipAmt: "RM4,000",
-  priceNet: "RM6,000",
+  durationLong: "6 months",
+  durationShort: "6 months",
+  certificationPhase: "First 3 months · 3 sessions",
+  charteredPhase: "Months 4–6 · supported CMgr pathway",
+  priceStd: FEES.standard.label,
+  scholarshipProvider: FEES.malaysia.scholarshipProvider,
+  scholarshipAmt: FEES.malaysia.scholarshipLabel,
+  priceNet: FEES.malaysia.participantLabel,
   priceIntl: "USD 2,500",
   gradsApprox: "~200",
   cohorts: "13",
   cmiMembers: "200,000+",
 };
 
-// The full 6-month programme runs in two stages.
+export const PROGRAMME_PRICING = {
+  individuals: [
+    {
+      key: "global-online",
+      title: "Global Online EMBA Public Programme",
+      audience: "Open to participants worldwide, irrespective of country",
+      price: `${FACTS.priceIntl} per person`,
+      actionHref: "/online-executive-mba",
+      actionLabel: "Explore the global online programme",
+    },
+    {
+      key: "country-online",
+      title: "Country-Specific Online EMBA Public Programme",
+      audience: "Online delivery organised for a specific country or market",
+      price: `Contact ${OPERATOR.name} for country-specific pricing`,
+      actionHref: "/contact",
+      actionLabel: "Request country-specific pricing",
+    },
+    {
+      key: "local-onsite",
+      title: "On-Site Localised EMBA Public Programme",
+      audience: "In-person delivery adapted to the local market",
+      price: `Contact ${OPERATOR.name} for localised on-site pricing`,
+      actionHref: "/contact",
+      actionLabel: "Request an on-site proposal",
+    },
+  ],
+  companies: {
+    title: "Customisable in-house Managers Development Programme (MDP)",
+    description:
+      "A company-specific management development pathway can be designed around the organisation's requirements. Subject to the agreed programme design and completion requirements, it can include an EMBA programme certificate recognised against CMI Professional Standards.",
+    price: "Pricing is scoped to requirements and remains subject to the proposal, enrolment terms and conditions.",
+  },
+} as const;
+
+// The marketed journey runs for six months: the programme certificate phase
+// occupies the first three months, followed by supported preparation for the
+// separate, eligibility-based Chartered Manager assessment route.
 export const STAGES = [
   {
     t: "Months 1–3 · 3 sessions",
-    h: "CMI (UK) Certification",
-    d: "Earn your Executive MBA certification in Future-Ready Business Leadership, awarded by the Chartered Management Institute (UK) — one weekend a month across three sessions.",
+    h: "Executive MBA programme certificate",
+    d: "Complete six training days across the first three monthly sessions and the applied business project. Successful participants receive the Executive MBA programme certificate recognised against CMI Professional Standards, subject to the provider's current CMI arrangement.",
   },
   {
-    t: "Months 4–6",
-    h: "Chartered Manager (CMgr)",
-    d: "Progress to the Chartered Manager qualification — a chartered professional status for management, akin to a Chartered Accountant in finance.",
+    t: "Professional recognition · current CMI terms apply",
+    h: "Foundation Chartered Manager — fCMgr",
+    d: "Current CMI guidance says learners completing a CMI Recognised programme can achieve Foundation Chartered Manager status and use fCMgr after their name. Activation, continued use and renewal remain subject to the provider's current CMI arrangement, CMI confirmation and active membership.",
+  },
+  {
+    t: "Months 4–6 · supported assessment pathway",
+    h: "Chartered Manager — CMgr MCMI",
+    d: "Participants who meet CMI's entry criteria move into a supported Chartered Manager phase: organising evidence of applied leadership and results, preparing the written application and preparing for the professional discussion. CMgr MCMI is awarded only after successful CMI assessment; eligibility, timing, membership and fees remain under CMI's control.",
+  },
+  {
+    t: "Senior recognition · experience applies",
+    h: "Fellow or Chartered Fellow",
+    d: "Experienced strategic leaders may later qualify to apply for FCMI or CMgr FCMI. Current CMI criteria include 10 years of management experience, with at least three at strategic level; approval and continuing membership remain with CMI.",
   },
 ];
 
@@ -70,6 +134,12 @@ export const THINKING_EDGE = [
 ];
 
 export const FLOW = ["Right Thinking", "Right Questions", "Right Ideas", "Right Solutions", "Exceptional Value"];
+
+export const SIGNATURE_QUOTE = {
+  text: "With the Executive MBA, ‘We Connect The Dots’ for your future.",
+  attribution: "Dr. Xavier Johnson",
+  role: "Chief Business Methodologist",
+} as const;
 
 export const MODULES = [
   { c: "M01", p: "F.A.S.T. Methodology" },
@@ -133,36 +203,40 @@ export const FACULTY: Faculty[] = [
 ];
 
 export const INTAKES = [
-  { co: "Cohort 17", s1: "21–22 Aug", s2: "18–19 Sep", s3: "16–17 Oct", seats: "Filling" },
-  { co: "Cohort 18", s1: "30–31 Oct", s2: "20–21 Nov", s3: "4–5 Dec", seats: "Open" },
-  { co: "Cohort 19", s1: "5–6 Feb ’27", s2: "5–6 Mar ’27", s3: "2–3 Apr ’27", seats: "Open" },
+  { co: "Cohort 17", language: "English", s1: "22–23 Aug", s2: "19–20 Sep", s3: "17–18 Oct", startDate: "2026-08-22", endDate: "2026-10-18", days: "Sat–Sun", time: "9am–6pm", seats: "Open" },
+  { co: "Cohort 18", language: "English", s1: "25–26 Sep", s2: "23–24 Oct", s3: "13–14 Nov", startDate: "2026-09-25", endDate: "2026-11-14", days: "Fri–Sat", time: "9am–6pm", seats: "Open" },
+  { co: "Cohort 19", language: "English", s1: "30–31 Oct", s2: "20–21 Nov", s3: "4–5 Dec", startDate: "2026-10-30", endDate: "2026-12-05", days: "Fri–Sat", time: "9am–6pm", seats: "Open" },
+  { co: "Cohort 2", language: "Mandarin", s1: "4–5 Sep", s2: "9–10 Oct", s3: "6–7 Nov", startDate: "2026-09-04", endDate: "2026-11-07", days: "Fri–Sat", time: "9am–6pm", seats: "Open" },
+  { co: "Cohort 3", language: "Mandarin", s1: "30–31 Oct", s2: "20–21 Nov", s3: "4–5 Dec", startDate: "2026-10-30", endDate: "2026-12-05", days: "Fri–Sat", time: "9am–6pm", seats: "Open" },
 ];
 
 export const INCLUSIONS = [
-  { b: "Live facilitation across three sessions", s: "Framework workshops led by practitioners who advise Fortune-500 and Bursa-listed boards." },
+  { b: "Live facilitation across three sessions", s: "Framework workshops led by experienced business practitioners and consultants." },
   { b: "Personal leadership diagnostics", s: "Assessments that show exactly where your thinking is costing you." },
   { b: "Executive coaching & project review", s: "One-to-one guidance applied to your real business, not a case study." },
   { b: "The Leverage Management System (LMS)", s: "A permanent toolkit of frameworks, references and prompts you keep for life." },
   { b: "A live capstone transformation project", s: "Leave with a board-ready growth plan — no thesis, no exam." },
-  { b: "CMI (UK) certification + Chartered Manager (CMgr)", s: "Your Executive MBA certification, then progression to Chartered Manager — a chartered professional status for management." },
+  { b: "A structured six-month professional pathway", s: "The first three months lead to the CMI-recognised programme certificate; months four to six provide supported preparation for eligible participants pursuing CMI's separate Chartered Manager assessment." },
   { b: `An alumni network of ${FACTS.gradsApprox} leaders`, s: "The room becomes your informal board for years after." },
 ];
 
 export const COMPARISON = [
-  { k: "Time", us: "6 months (MBA cert in 3, then Chartered Manager)", them: "1.5–2 years" },
-  { k: "Investment", us: "RM10,000 (RM6,000 w/ scholarship)", them: "RM60,000–150,000+" },
-  { k: "Format", us: "One weekend a month · keep working", them: "Career pause or heavy nightly load" },
-  { k: "Assessment", us: "A real business project", them: "Exams & a thesis" },
-  { k: "What you build", us: "Thinking frameworks + AI fluency", them: "Theory & case memorisation" },
-  { k: "Credential", us: "CMI (UK) · Chartered Manager pathway", them: "Academic degree" },
+  { k: "Duration", them: "Commonly 18–24 months, depending on the institution and study mode", us: "Six-month professional pathway: three months to the programme certificate, then three months of supported CMgr assessment preparation" },
+  { k: "Focus", them: "Academic content, theory, research and case analysis", us: "Business context, strategic judgment and reusable decision frameworks" },
+  { k: "Assessment", them: "Often assignments, examinations and a dissertation or thesis; formats vary", us: "An applied project on the participant's own business; no traditional exams or thesis" },
+  { k: "Faculty role", them: "Usually academic faculty, sometimes alongside industry practitioners", us: "Business practitioners, consultants and executive coaches" },
+  { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "F.A.S.T. methodology plus 12 practical business frameworks" },
+  { k: "Format", them: "Full-time, part-time, evening, weekend or online formats vary by institution", us: "One scheduled weekend session a month while participants continue working" },
+  { k: "Investment", them: "Varies by institution and programme", us: "RM10,000.00 standard; RM6,000.00 for Malaysian participants after the RM4,000.00 LIFE Innoversity scholarship" },
+  { k: "Credential", them: "An academic MBA degree when awarded by an appropriately accredited institution", us: "A professional programme recognised by CMI (UK); not an MQA-accredited academic degree" },
 ];
 
 export const FAQS = [
-  { q: "How is the programme structured?", a: "It runs over 6 months. The first 3 months — three sessions, one weekend a month — earn your CMI (UK) Executive MBA certification; the next 3 months take you to Chartered Manager (CMgr) status. You apply everything to your own business, so depth comes from application, not seat-time. No exams, no thesis." },
+  { q: "How is the programme structured?", a: "It is a six-month professional pathway. During months one to three, participants complete six training days across the first three monthly sessions, coaching and an applied business project leading to the CMI-recognised Executive MBA programme certificate. During months four to six, participants who meet CMI entry criteria receive structured support to prepare for the separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment and is not automatic." },
   { q: "Is it MQA-recognised?", a: "No — MQA governs academic degrees. This is a professional programme recognised by the Chartered Management Institute (CMI), UK, and is globally respected. It is deliberately not an academic degree." },
   { q: "I'm too busy to attend everything.", a: "Sessions run one weekend a month. Miss one and you catch up by video or re-sit it in a later cohort — no penalty." },
-  { q: "What if it isn't worth it?", a: "Sit the first two days. If you don't see the value, return the manual and we arrange a refund within a month. The risk sits with us." },
-  { q: "Can my company claim it?", a: "Yes — the programme is HRD Corp claimable for eligible Malaysian employers, and installment plans are available for individuals." },
+  { q: "What if it isn't worth it?", a: "A Session 1 refund arrangement is available under the provider's current written terms. You must notify the programme team promptly after the first two training days, stop participating and return all issued materials. Confirm the applicable deadline, payment scope and processing details in writing before enrolment." },
+  { q: "Can my company claim it?", a: "An eligible HRD Corp-registered Malaysian employer may apply to claim up to 100% of the approved programme fee from its levy for an employee, subject to programme registration, prior grant approval, sufficient levy balance and HRD Corp's current rules. The employer—not the individual—makes the application." },
   { q: "Who is it for?", a: "Owners, directors, GMs and senior managers — typically 35–55 with 10+ years of experience — who need to lead transformation, not just manage operations." },
 ];
 
@@ -194,7 +268,7 @@ export const CORP_TRAINING = [
 ];
 
 export const COMPLIANCE =
-  "This programme is not a regulated qualification and is not MQA-accredited; it is a professional programme recognised by CMI (UK). HRD Corp claimable for eligible Malaysian employers. Scholarship for Malaysian participants. Personal data is processed under Malaysia's PDPA 2010.";
+  "This professional development programme is recognised by CMI (UK) and is not an MQA-accredited academic qualification. HRD Corp claims are subject to employer and programme eligibility; scholarships are subject to eligibility and availability. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.";
 
 export type NavItem = { href: string; label: string };
 export const NAV: NavItem[] = [

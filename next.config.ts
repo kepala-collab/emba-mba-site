@@ -27,8 +27,24 @@ const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.futurereadymba.com" }],
+        destination: "https://futurereadymba.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/zh/:path*",
+        headers: [{ key: "Content-Language", value: "zh-Hans" }],
+      },
+    ];
   },
   images: {
     // Allow our own trusted SVG brand mark to be served via next/image.

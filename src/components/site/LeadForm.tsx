@@ -2,31 +2,10 @@
 import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 import { SITE } from "@/lib/content";
+import { getLeadAttribution, trackEvent } from "@/lib/analytics";
+import "@/lib/turnstile";
 
 type Lang = "en" | "zh";
-
-type TurnstileApi = {
-  render: (
-    container: HTMLElement,
-    options: {
-      sitekey: string;
-      action: string;
-      theme: "dark";
-      size: "flexible";
-      callback: (token: string) => void;
-      "expired-callback": () => void;
-      "error-callback": () => void;
-    },
-  ) => string;
-  remove: (widgetId: string) => void;
-  reset: (widgetId: string) => void;
-};
-
-declare global {
-  interface Window {
-    turnstile?: TurnstileApi;
-  }
-}
 
 const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEM-BhpyOxghbYJZ";
@@ -37,53 +16,59 @@ const T = {
     phone: "Phone / WhatsApp", email: "Email", emailPh: "you@company.com",
     company: "Company", companyPh: "Organisation",
     participant: "Participant", malaysian: "Malaysian", international: "International",
-    consent: "I agree to be contacted about this programme and understand my data is handled under Malaysia’s PDPA 2010.",
-    submit: "Apply Now →", sending: "Sending…",
+    conversation: "How would you like to continue?",
+    conversationOptions: [
+      ["programme_call", "A short call about programme fit"],
+      ["in_person_meeting", "An in-person meeting at an agreed location"],
+      ["online_meeting", "An online information meeting"],
+      ["details_first", "Send details first — no call yet"],
+    ],
+    consent: "I agree to be contacted about this programme and understand my data is handled under Malaysia’s PDPA 2010, as amended.",
+    submit: "Request a conversation →", sending: "Sending…",
     err: "Please complete the required fields and tick consent, then try again.",
     verify: "Please complete the security check before submitting.",
-    verifyErr: "The security check could not load. Please refresh and try again.",
+    verifyErr: "The security check could not load. Refresh the page or continue securely on WhatsApp.",
+    verifyFallback: "Continue on WhatsApp →",
     security: "Security verification",
-    fine: "Free · No obligation · PDPA-compliant",
-    okK: "Application received", okH: (n: string) => `Thank you${n ? `, ${n}` : ""}. Your application is in.`,
-    okP: "Our programme team will be in touch shortly to discuss your fit, the next intake, HRD Corp and scholarship options. Want to talk sooner? Message us directly.",
+    fine: "Exploratory · No obligation · PDPA-compliant",
+    okK: "Request received", okH: (n: string) => `Thank you${n ? `, ${n}` : ""}. We’ll follow your preference.`,
+    okP: "The programme team will contact you in the way you selected to discuss fit, schedules, HRD Corp and scholarship options. This is a conversation, not an admission or payment commitment.",
     okWa: "Continue on WhatsApp →",
-    waMsg: (n: string) => `Hi, I'm ${n || "interested"} — I just applied for the Future Ready Executive MBA (CMI UK).`,
+    waMsg: (n: string) => `Hi, I'm ${n || "interested"} — I requested a conversation about the Future Ready Executive MBA (CMI UK).`,
   },
   zh: {
     name: "姓名", namePh: "您的姓名",
     phone: "电话 / WhatsApp", email: "电邮", emailPh: "you@company.com",
     company: "公司", companyPh: "所属机构",
     participant: "学员类型", malaysian: "马来西亚公民", international: "国际学员",
-    consent: "我同意就本课程接受联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）处理。",
-    submit: "立即报名 →", sending: "提交中…",
+    conversation: "您希望如何进一步了解？",
+    conversationOptions: [
+      ["programme_call", "简短通话，了解课程是否适合"],
+      ["in_person_meeting", "在双方同意的地点面谈"],
+      ["online_meeting", "线上课程说明会"],
+      ["details_first", "先发送资料，暂不通话"],
+    ],
+    consent: "我同意就本课程接受联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）及其修订处理。",
+    submit: "预约沟通 →", sending: "提交中…",
     err: "请填写必填字段并勾选同意，然后重试。",
     verify: "提交前请先完成安全验证。",
-    verifyErr: "安全验证无法加载。请刷新页面后重试。",
+    verifyErr: "安全验证无法加载。请刷新页面，或通过 WhatsApp 安全联系我们。",
+    verifyFallback: "通过 WhatsApp 联系我们 →",
     security: "安全验证",
-    fine: "免费 · 无需承诺 · 符合 PDPA",
-    okK: "报名已收到", okH: (n: string) => `谢谢您${n ? `，${n}` : ""}。您的报名已提交。`,
-    okP: "我们的课程团队将尽快与您联系，讨论您的适合度、下一期开课、HRD Corp 索赔及奖学金选项。想更快了解？直接给我们发消息。",
+    fine: "先了解 · 无需承诺 · 符合 PDPA",
+    okK: "沟通请求已收到", okH: (n: string) => `谢谢您${n ? `，${n}` : ""}。我们会按您的选择联系。`,
+    okP: "课程团队将按您选择的方式沟通适合度、排期、HRD Corp 及奖学金。这只是了解课程，不等于录取或付款承诺。",
     okWa: "继续使用 WhatsApp →",
-    waMsg: (n: string) => `您好，我是 ${n || "意向学员"} — 我刚报名了 Future Ready 高管 MBA（英国 CMI）。`,
+    waMsg: (n: string) => `您好，我是 ${n || "意向学员"} — 我想进一步了解 Future Ready 高管 MBA（英国 CMI）。`,
   },
 } as const;
-
-// Read attribution/context at submit time (avoids a setState-in-effect and stays SSR-safe).
-function collectMeta(): Record<string, string> {
-  const p = new URLSearchParams(window.location.search);
-  const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
-  const m: Record<string, string> = {};
-  keys.forEach((k) => { const v = p.get(k); if (v) m[k] = v; });
-  m.page_path = window.location.pathname;
-  m.referrer = document.referrer || "";
-  return m;
-}
 
 export default function LeadForm({
   programme = "Executive MBA",
   source = "emba-hub",
   lang = "en",
-}: { programme?: string; source?: string; lang?: Lang }) {
+  placement = "primary",
+}: { programme?: string; source?: string; lang?: Lang; placement?: string }) {
   const t = T[lang];
   const uid = useId();
   const id = (k: string) => `${uid}-${k}`;
@@ -93,6 +78,30 @@ export default function LeadForm({
   const [turnstileLoadError, setTurnstileLoadError] = useState(false);
   const turnstileContainer = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
+  const formElement = useRef<HTMLFormElement>(null);
+  const formViewed = useRef(false);
+  const formStarted = useRef(false);
+  const formId = `${source}:${programme}:${lang}:${placement}`.toLowerCase().replace(/[^a-z0-9]+/g, "_");
+  const formContext = {
+    form_id: formId,
+    form_source: source,
+    form_location: placement,
+    programme,
+    form_language: lang,
+  };
+
+  useEffect(() => {
+    const form = formElement.current;
+    if (!form || formViewed.current) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting) || formViewed.current) return;
+      formViewed.current = true;
+      trackEvent("lead_form_view", formContext);
+      observer.disconnect();
+    }, { threshold: 0.25 });
+    observer.observe(form);
+    return () => observer.disconnect();
+  });
 
   useEffect(() => {
     let cancelled = false;
@@ -156,30 +165,53 @@ export default function LeadForm({
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = e.currentTarget;
+    if (!f.reportValidity()) return;
     const formData = new FormData(f);
     formData.delete("cf-turnstile-response");
     const data = Object.fromEntries(formData.entries());
     // Honeypot: bots fill hidden fields. Silently "succeed" without sending.
     if (data.website) { setFirstName(String(data.name || "").split(" ")[0]); setStatus("ok"); return; }
-    if (!(data.consent as string)) { setStatus("err"); return; }
-    if (!turnstileToken) { setStatus("verify"); return; }
+    if (!(data.consent as string)) {
+      trackEvent("lead_form_error", { ...formContext, error_type: "consent_required" });
+      setStatus("err");
+      return;
+    }
+    if (!turnstileToken) {
+      trackEvent("lead_form_error", { ...formContext, error_type: "security_verification_required" });
+      setStatus("verify");
+      return;
+    }
+    trackEvent("lead_form_submit", formContext);
     setStatus("sending");
     setFirstName(String(data.name || "").split(" ")[0]);
+    let responseStatus: number | undefined;
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
-          ...collectMeta(),
+          ...getLeadAttribution(),
           programme_interest: programme,
           source,
           turnstile_token: turnstileToken,
         }),
       });
+      responseStatus = res.status;
       if (!res.ok) throw new Error(await res.text());
+      trackEvent("generate_lead", {
+        ...formContext,
+        lead_type: "programme_conversation_request",
+        participant_type: data.participant_type,
+        contact_preference: data.contact_preference,
+      });
       setStatus("ok");
     } catch {
+      trackEvent("lead_form_error", {
+        ...formContext,
+        error_type: responseStatus ? "api_rejected" : "network_error",
+        http_status: responseStatus,
+      });
       resetTurnstile();
       setStatus("err");
     }
@@ -192,7 +224,7 @@ export default function LeadForm({
         <p className="mono sec-k">{t.okK}</p>
         <h3 style={{ fontSize: "1.5rem", color: "#fff" }}>{t.okH(firstName)}</h3>
         <p className="fine">{t.okP}</p>
-        <a className="btn btn-wa" href={`https://wa.me/${SITE.whatsapp}?text=${msg}`} target="_blank" rel="noopener">
+        <a className="btn btn-wa" href={`https://wa.me/${SITE.whatsapp}?text=${msg}`} target="_blank" rel="noopener" data-track-event="contact_click" data-track-id="lead_success_whatsapp" data-track-location="lead_success" data-contact-method="whatsapp" data-contact-language={lang}>
           {t.okWa}
         </a>
       </div>
@@ -200,7 +232,21 @@ export default function LeadForm({
   }
 
   return (
-    <form className="form" onSubmit={onSubmit} noValidate>
+    <form
+      ref={formElement}
+      className="form"
+      onSubmit={onSubmit}
+      onFocusCapture={() => {
+        if (formStarted.current) return;
+        formStarted.current = true;
+        trackEvent("lead_form_start", formContext);
+      }}
+      aria-busy={status === "sending"}
+      data-form-id={formId}
+      data-form-source={source}
+      data-form-location={placement}
+      data-programme={programme}
+    >
       <Script
         id="cloudflare-turnstile"
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
@@ -214,22 +260,30 @@ export default function LeadForm({
       </div>
       <div className="fld">
         <label htmlFor={id("name")}>{t.name}</label>
-        <input id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" required />
+        <input id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" autoCapitalize="words" enterKeyHint="next" required />
       </div>
       <div className="two">
         <div className="fld">
           <label htmlFor={id("phone")}>{t.phone}</label>
-          <input id={id("phone")} name="phone" type="tel" placeholder="+60" autoComplete="tel" required />
+          <input id={id("phone")} name="phone" type="tel" inputMode="tel" placeholder="+60" autoComplete="tel" enterKeyHint="next" required />
         </div>
         <div className="fld">
           <label htmlFor={id("email")}>{t.email}</label>
-          <input id={id("email")} name="email" type="email" placeholder={t.emailPh} autoComplete="email" required />
+          <input id={id("email")} name="email" type="email" inputMode="email" placeholder={t.emailPh} autoComplete="email" enterKeyHint="next" required />
         </div>
+      </div>
+      <div className="fld">
+        <label htmlFor={id("conversation")}>{t.conversation}</label>
+        <select id={id("conversation")} name="contact_preference" defaultValue="programme_call">
+          {t.conversationOptions.map(([value, label]) => (
+            <option key={value} value={value}>{label}</option>
+          ))}
+        </select>
       </div>
       <div className="two">
         <div className="fld">
           <label htmlFor={id("company")}>{t.company}</label>
-          <input id={id("company")} name="company" placeholder={t.companyPh} autoComplete="organization" />
+          <input id={id("company")} name="company" placeholder={t.companyPh} autoComplete="organization" autoCapitalize="words" enterKeyHint="next" />
         </div>
         <div className="fld">
           <label htmlFor={id("type")}>{t.participant}</label>
@@ -246,12 +300,28 @@ export default function LeadForm({
       <div className="turnstile-wrap" aria-label={t.security}>
         <div ref={turnstileContainer} />
       </div>
-      {turnstileLoadError && <p className="status err" role="alert">{t.verifyErr}</p>}
+      {turnstileLoadError && (
+        <div className="turnstile-fallback" role="alert">
+          <p>{t.verifyErr}</p>
+          <a
+            href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(t.waMsg(""))}`}
+            target="_blank"
+            rel="noopener"
+            data-track-event="contact_click"
+            data-track-id="turnstile_fallback_whatsapp"
+            data-track-location="lead_form_security_fallback"
+            data-contact-method="whatsapp"
+            data-contact-language={lang}
+          >
+            {t.verifyFallback}
+          </a>
+        </div>
+      )}
       <button className="btn btn-primary" type="submit" disabled={status === "sending" || !turnstileToken} style={{ width: "100%" }}>
         {status === "sending" ? t.sending : t.submit}
       </button>
-      {status === "err" && <p className="status err">{t.err}</p>}
-      {status === "verify" && <p className="status err">{t.verify}</p>}
+      {status === "err" && <p className="status err" role="alert">{t.err}</p>}
+      {status === "verify" && <p className="status err" role="alert">{t.verify}</p>}
       <p className="fine center" style={{ margin: 0 }}>{t.fine}</p>
     </form>
   );
