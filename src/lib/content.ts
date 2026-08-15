@@ -190,6 +190,15 @@ export const CERTIFICATE_POSITIONING = {
   reviewedAt: "2026-08-14",
 } as const;
 
+export const CMI_PATHWAY = {
+  reviewedAt: "15 August 2026",
+  charteredManager: "https://www.managers.org.uk/membership/chartered-manager/",
+  routes: "https://www.managers.org.uk/membership/chartered-manager/routes-to-chartered-manager-status/",
+  malaysia: "https://www.managers.org.uk/community/regional-networks/malaysia/",
+  international: "https://www.managers.org.uk/community/cmi-internationally/",
+  recognition: CERTIFICATE_POSITIONING.cmiRecognitionSource,
+} as const;
+
 export const MODULES = [
   { c: "M01", p: "F.A.S.T. structured decision method" },
   { c: "M02", p: "Identify the value customers need" },
@@ -281,6 +290,8 @@ export const COMPARISON = [
 
 export const FAQS = [
   { q: "How is the programme structured?", a: "The programme runs for six months. During months one to three, participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. During months four to six, participants who meet CMI entry criteria receive support to prepare for the separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment and is not automatic." },
+  { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },
+  { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
   { q: "Is it MQA-recognised?", a: "No. This is a professional development programme approved and endorsed by CMI against its Professional Standard. It is not an MQA-accredited academic degree or a regulated qualification." },
   { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   { q: "What are the refund terms?", a: REFUND_TERMS.description },

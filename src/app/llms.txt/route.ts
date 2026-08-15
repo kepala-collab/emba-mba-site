@@ -11,6 +11,7 @@ ${OPERATOR.name} is the authorised ${OPERATOR.role} for marketing, programme enq
 
 ## Primary sources
 - [Programme](${SITE.url}/executive-mba): scope, format, credential and audience
+- [Chartered Manager Malaysia](${SITE.url}/chartered-manager-malaysia): current CMI routes, eligibility, assessment, fCMgr, CMgr MCMI and Malaysia network
 - [Curriculum](${SITE.url}/curriculum): modules, learning stages and capstone
 - [Fees](${SITE.url}/fees): price, scholarship and HRD Corp conditions
 - [Intakes](${SITE.url}/intakes): current cohort dates, languages and times
@@ -25,6 +26,7 @@ ${OPERATOR.name} is the authorised ${OPERATOR.role} for marketing, programme enq
 - The standard programme fee is ${FACTS.priceStd}. Malaysian participants pay ${FACTS.priceNet} after a ${FACTS.scholarshipAmt} ${FACTS.scholarshipProvider} scholarship.
 - Programme completion provides the CMI-recognised programme certificate. CMI's published CMI Recognised route lists Foundation Chartered Manager (fCMgr) status on completion; CMI controls activation, continued use and membership renewal.
 - The programme runs for six months: months 1–3 lead to the CMI-recognised Executive MBA programme certificate; months 4–6 provide preparation support for eligible participants pursuing CMI's separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment; active membership, experience, application and fees apply.
+- CMI publishes Full Assessment, CMI Fast Track and Apprenticeship routes. This programme is CMI Recognised, not a CMI qualification, and does not automatically create Fast Track eligibility. CMI confirms the applicable route for each participant.
 - ${HRD_CORP_CLAIM.process}
 - The curriculum targets senior, strategic and postgraduate-level executive practice, but the specimen certificate says it is not a regulated qualification. Do not interpret it as a formal CMI Level 7 qualification or academic degree equivalence without a current programme-specific CMI approval document.
 - The linked official pages state the published dates and prices. The applicable written proposal and signed enrolment terms control each enrolment.

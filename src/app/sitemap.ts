@@ -3,9 +3,9 @@ import { SITE } from "@/lib/content";
 import { LOCALE_PAIRS } from "@/lib/locale-routes";
 
 const REVIEW_DATES = {
-  programme: new Date("2026-08-14T00:00:00+08:00"),
-  commercial: new Date("2026-08-14T00:00:00+08:00"),
-  insights: new Date("2026-08-14T00:00:00+08:00"),
+  programme: new Date("2026-08-15T00:00:00+08:00"),
+  commercial: new Date("2026-08-15T00:00:00+08:00"),
+  insights: new Date("2026-08-15T00:00:00+08:00"),
   legal: new Date("2026-08-14T00:00:00+08:00"),
 } as const;
 
@@ -14,7 +14,7 @@ const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "
 const CLUSTER = [
   "/hrd-corp-claimable", "/online-executive-mba", "/executive-mba-vs-mba",
   "/ai-executive-mba", "/mba-for-working-professionals", "/programmes/shift-hr",
-  "/executive-mba-malaysia", "/mba-for-sme-owners", "/mba-for-entrepreneurs",
+  "/executive-mba-malaysia", "/chartered-manager-malaysia", "/mba-for-sme-owners", "/mba-for-entrepreneurs",
 ];
 const INSIGHTS = [
   "/insights", "/insights/first-principles-thinking",
@@ -23,7 +23,7 @@ const INSIGHTS = [
 ];
 const ZH_CORE = [
   "/zh/executive-mba", "/zh/curriculum", "/zh/fees", "/zh/intakes",
-  "/zh/faculty", "/zh/faq", "/zh/apply", "/zh/contact", "/zh/privacy", "/zh/terms",
+  "/zh/faculty", "/zh/faq", "/zh/chartered-manager-malaysia", "/zh/apply", "/zh/contact", "/zh/privacy", "/zh/terms",
 ];
 const ZH_RESOURCES = [
   "/zh/resources", "/zh/resources/advancement-brief",

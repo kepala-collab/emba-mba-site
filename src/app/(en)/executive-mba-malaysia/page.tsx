@@ -129,7 +129,8 @@ export default function ExecutiveMbaMalaysiaPage() {
           <p className="fine mt-s">
             {HRD_CORP_CLAIM.responsibility} See{" "}
             <Link href="/hrd-corp-claimable">employer-led HRD Corp funding</Link>. Full programme
-            detail on the <Link href="/executive-mba">Executive MBA</Link> page.
+            detail on the <Link href="/executive-mba">Executive MBA</Link> page, or review the{" "}
+            <Link href="/chartered-manager-malaysia">Chartered Manager route in Malaysia</Link>.
           </p>
         </div>
       </section>

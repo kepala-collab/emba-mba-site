@@ -5,6 +5,7 @@ const root = resolve(process.cwd(), ".next", "server", "app");
 const checks = [
   { file: "index.html", path: "/", hreflang: true },
   { file: "executive-mba.html", path: "/executive-mba", hreflang: true },
+  { file: "chartered-manager-malaysia.html", path: "/chartered-manager-malaysia", hreflang: true },
   { file: "curriculum.html", path: "/curriculum", hreflang: true },
   { file: "fees.html", path: "/fees", hreflang: true },
   { file: "intakes.html", path: "/intakes", hreflang: true },
@@ -12,6 +13,7 @@ const checks = [
   { file: "faq.html", path: "/faq", hreflang: true },
   { file: "zh.html", path: "/zh", hreflang: true },
   { file: "zh/executive-mba.html", path: "/zh/executive-mba", hreflang: true },
+  { file: "zh/chartered-manager-malaysia.html", path: "/zh/chartered-manager-malaysia", hreflang: true },
   { file: "zh/curriculum.html", path: "/zh/curriculum", hreflang: true },
   { file: "zh/fees.html", path: "/zh/fees", hreflang: true },
   { file: "zh/intakes.html", path: "/zh/intakes", hreflang: true },

@@ -122,7 +122,7 @@ export default function ExecutiveMbaPage() {
                 <p className="mono">Months 4–6</p>
                 <h3>Chartered Manager assessment preparation</h3>
                 <p>Eligible participants receive support to organise evidence and prepare for CMI&rsquo;s written application and professional discussion. CMI decides eligibility and awards CMgr MCMI only after successful assessment.</p>
-                <Link href="#credential" className="text-action">Understand the recognition <span aria-hidden="true">↗</span></Link>
+                <Link href="/chartered-manager-malaysia" className="text-action">See the official CMI routes <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>
           </div>
@@ -221,6 +221,7 @@ export default function ExecutiveMbaPage() {
                 <li><strong>{STAGES[2].h}:</strong> {STAGES[2].d}</li>
               </ol>
               <p className="fine">Fellow and Chartered Fellow are later CMI membership routes based on experience and CMI assessment. Programme completion alone does not confer those grades.</p>
+              <Link href="/chartered-manager-malaysia" className="btn btn-ghost">Chartered Manager routes in Malaysia <span aria-hidden="true">→</span></Link>
             </div>
           </Reveal>
         </div>

@@ -12,6 +12,7 @@ const RESOURCES = [
   ["01", "课程匹配检查", "回答四道问题，建立一份用于核对目标、时间、费用与认可的私人清单。不评分、不储存，也不会传送选择。", "/zh/diagnostic", "开始检查"],
   ["02", "Executive MBA 课程指南", "阅读或打印课程结构、马来西亚学员完整费用、CMI 认可及选择课程前应确认的问题。", "/zh/resources/advancement-brief", "打开课程指南"],
   ["03", "如何比较管理课程", "从教学内容、实际应用、时间、证书及费用五个方面比较专业管理课程。", "/zh/insights/advancement-question", "阅读比较指南"],
+  ["04", "马来西亚 Chartered Manager", "了解 CMI 当前申请路线、资格、评估费用、fCMgr、CMgr MCMI 及马来西亚专业网络。", "/zh/chartered-manager-malaysia", "了解专业路线"],
 ] as const;
 
 export default function ResourcesPage() {

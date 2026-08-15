@@ -37,6 +37,7 @@ export default function Footer() {
             <div>
               <h2>课程</h2>
               <Link href="/zh/executive-mba">课程详情</Link>
+              <Link href="/zh/chartered-manager-malaysia">特许经理人路线</Link>
               <Link href="/zh/curriculum">课程大纲</Link>
               <Link href="/zh/fees">学费与奖学金</Link>
               <Link href="/zh/intakes">开课日期</Link>
@@ -81,6 +82,7 @@ export default function Footer() {
             <Link href="/ai-executive-mba">AI-Enabled Leadership</Link>
             <Link href="/mba-for-working-professionals">For Working Professionals</Link>
             <Link href="/executive-mba-malaysia">Executive MBA Malaysia</Link>
+            <Link href="/chartered-manager-malaysia">Chartered Manager Malaysia</Link>
             <Link href="/mba-for-sme-owners">For SME Owners</Link>
             <Link href="/mba-for-entrepreneurs">For Entrepreneurs</Link>
             <Link href="/programmes/shift-hr">SHIFT! HR Workshop</Link>

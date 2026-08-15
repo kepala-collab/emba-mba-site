@@ -90,6 +90,8 @@ export const CORE_PAGES_ZH = {
 
 export const FAQS_ZH = [
   ["课程如何安排？", "课程为期六个月。首三个月完成六个培训日、三个周末课程、辅导与企业项目，并在达到要求后取得获 CMI 认可的 Executive MBA 课程证书。第四至第六个月为符合 CMI 条件者提供特许经理人评估准备支持；CMgr MCMI 仅在通过 CMI 评估后授予，并非自动取得。"],
+  ["完成课程后会自动成为 Chartered Manager 吗？", "不会。完成课程后可取得 CMI Certificate of Recognition；根据 CMI 公布的 CMI Recognised 方案，学员可取得 Foundation Chartered Manager 身份。完整 Chartered Manager（CMgr）属于独立专业评估；申请路线、资格、评估、会员与费用均由 CMI 决定。"],
+  ["我可以通过哪一条 Chartered Manager 路线申请？", "CMI 目前公布 Full Assessment、CMI Fast Track 及 Apprenticeship 三条路线。Full Assessment 的公开条件包括相关管理、商业或领导学位加三年管理经验，或没有相关资格但具至少五年管理经验。Fast Track 要求申请人在五年内完成 CMI 指定资格，并具至少三年管理经验。本课程属于 CMI Recognised programme，并非 CMI qualification；每位学员适用的路线必须由 CMI 确认。"],
   ["这是 MQA 认证的学位吗？", "不是。这是由英国 CMI 认可的专业发展课程，并非 MQA 认证的学术学位。"],
   ["公司可以使用 HRD Corp levy 吗？", HRD_CORP_CLAIM_ZH],
   ["如果无法出席某次课程怎么办？", "请在课程开始前联系课程团队。ABC 将以书面方式确认指定视频或指定后续班次的补课安排。"],

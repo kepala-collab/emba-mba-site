@@ -76,7 +76,7 @@ test("narrow layouts retain the product name and never overflow", async ({ page 
 });
 
 test("priority content pages reflow without horizontal overflow", async ({ page }) => {
-  const routes = ["/", "/executive-mba", "/fees", "/zh", "/zh/executive-mba", "/zh/fees"];
+  const routes = ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees"];
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     for (const route of routes) {
@@ -141,9 +141,10 @@ test("mobile programme fit check returns to its factual result", async ({ page }
 });
 
 test("priority pages have no automated accessibility violations after hydration", async ({ page }) => {
+  test.setTimeout(90_000);
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
-    for (const route of ["/", "/executive-mba", "/fees", "/apply", "/zh", "/zh/executive-mba", "/zh/fees", "/zh/apply"]) {
+    for (const route of ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/apply", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees", "/zh/apply"]) {
       await goto(page, route);
       await page.waitForTimeout(700);
       const results = await new AxeBuilder({ page }).exclude("iframe").analyze();

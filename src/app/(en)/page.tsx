@@ -33,10 +33,10 @@ const RESOURCES = [
   },
   {
     n: "03",
-    title: "Employer Funding Guide",
-    body: "Prepare a conversation about the business need, schedule, fee and employer-led HRD Corp application.",
-    href: "/resources#employer-guide",
-    action: "Open the funding guide",
+    title: "Chartered Manager Guide",
+    body: "Compare fCMgr and CMgr MCMI, CMI's official eligibility routes, assessment process and Malaysia network.",
+    href: "/chartered-manager-malaysia",
+    action: "Understand the CMI route",
   },
 ] as const;
 
@@ -158,7 +158,7 @@ export default function Home() {
                 <p className="mono">Months 04–06</p>
                 <h3>Prepare for Chartered Manager assessment</h3>
                 <p>Eligible participants receive support to organise evidence and prepare for CMI&rsquo;s separate assessment. Chartered Manager status is not automatic.</p>
-                <Link href="/executive-mba#credential" className="text-action">Understand the CMI route <span aria-hidden="true">↗</span></Link>
+                <Link href="/chartered-manager-malaysia" className="text-action">Understand the CMI route <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>
           </div>
@@ -175,7 +175,7 @@ export default function Home() {
               <p className="mono sec-k">Programme recognition</p>
               <h2>A CMI-recognised programme certificate.</h2>
               <p>{CERTIFICATE_POSITIONING.distinction}</p>
-              <Link href="/executive-mba#credential" className="text-action">See exactly what the certificate means <span aria-hidden="true">↗</span></Link>
+              <Link href="/chartered-manager-malaysia" className="text-action">See the certificate and Chartered pathway <span aria-hidden="true">↗</span></Link>
             </article>
           </Reveal>
           <Reveal delay={70}>

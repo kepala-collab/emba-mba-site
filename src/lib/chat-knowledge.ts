@@ -1,5 +1,6 @@
 import {
   CERTIFICATE_POSITIONING,
+  CMI_PATHWAY,
   DELIVERY_CONTROL,
   FACTS,
   HRD_CORP_CLAIM,
@@ -38,6 +39,10 @@ VERIFIED PROGRAMME FACTS
 - Structure: a six-month programme. Months 1–3 comprise six training days across the first three monthly sessions, coaching and an applied project leading to the CMI-recognised Executive MBA programme certificate. Months 4–6 provide preparation support for CMI's separate Chartered Manager assessment for participants who meet CMI entry criteria. No traditional exams or thesis in the programme-certificate phase.
 - CMI professional recognition: graduates receive the programme certificate recognised against CMI Professional Standards. CMI's published CMI Recognised route lists Foundation Chartered Manager status (fCMgr) on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal. Do not describe MCMI as "M(CMI)" or promise MCMI automatically.
 - Chartered progression: the final three months support participants who meet CMI's entry criteria in preparing evidence, a written application and the professional discussion for CMI's separate Chartered Manager assessment. CMI awards CMgr MCMI only after successful assessment and controls experience, membership, application and fee requirements. It is not automatic. CMI's published post-nominal formats include fCMgr, MCMI, CMgr MCMI and CMgr FCMI.
+- Current Chartered Manager routes: CMI publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment requires either a management, business or leadership-focused degree plus three years in a management role, or at least five years of management experience without a management-specific qualification. CMI Fast Track requires one of CMI's specified qualifications completed within the last five years plus at least three years in a management role. The Future Ready Executive MBA is CMI Recognised, not a CMI qualification, so never promise Fast Track eligibility. CMI must confirm the route.
+- Current published CMI assessment prices checked ${CMI_PATHWAY.reviewedAt}: Full Assessment £750 + VAT; CMI Fast Track £162 + VAT; continuing membership fees may also apply. State the review date and tell visitors to verify CMI's current page before payment.
+- CMI Malaysia: CMI's official Malaysia regional network supports professional development, thought leadership and professional connections. CMI says non-members may attend its events and activities. CMI also says it has members in more than 170 countries. Do not imply that programme enrolment guarantees access to a particular event or benefit.
+- Chartered Manager sources: ${CMI_PATHWAY.charteredManager}; routes ${CMI_PATHWAY.routes}; Malaysia network ${CMI_PATHWAY.malaysia}; international network ${CMI_PATHWAY.international}.
 - Level statement: describe the learning as aimed at senior, strategic and postgraduate-level executive practice. Do not call the programme a formal CMI Level 7 qualification, a regulated postgraduate qualification, academically higher than a degree or degree-equivalent unless a current programme-specific CMI approval document confirms that exact claim. The specimen certificate says the programme is not a regulated qualification.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
@@ -53,7 +58,7 @@ VERIFIED PROGRAMME FACTS
 - The applicable written proposal or enrolment terms state the delivery format, certificate wording, complete fees, scholarship, intake dates and acceptance requirements for the participant.
 - Current published intakes:\n${intakeFacts()}
 - Private review resources: /diagnostic creates a no-data programme-fit checklist; /resources/advancement-brief is a printable factual programme guide; /resources contains the employer conversation guide and programme comparison checklist.
-- Useful website paths: /executive-mba, /curriculum, /fees, /intakes, /faculty, /faq, /resources, /diagnostic, /apply, /contact. Chinese equivalents begin with /zh/ where published.
+- Useful website paths: /executive-mba, /chartered-manager-malaysia, /curriculum, /fees, /intakes, /faculty, /faq, /resources, /diagnostic, /apply, /contact. Chinese equivalents begin with /zh/ where published.
 `;
 
   const instructions = language === "zh"
