@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { MODULES, FACTS } from "@/lib/content";
+import { DELIVERY_CONTROL, MODULES, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/curriculum", {
@@ -16,35 +16,35 @@ const STAGES = [
     lvl: "Level 1",
     approach: "Workshop-Based Learning",
     outcome: "Creating Value",
-    p: "Live, facilitated framework workshops where you learn to see any business as a value-creation system — and redesign it.",
+    p: "Live, facilitated framework workshops for analysing an organisation as a value-creation system.",
   },
   {
     lvl: "Level 2",
     approach: "Coaching-Based Learning",
     outcome: "Delivering Value",
-    p: "One-to-one executive coaching that turns frameworks into leadership behaviour, so value moves from the whiteboard into the organisation.",
+    p: "One-to-one executive coaching that applies the frameworks to the participant's role and organisational context.",
   },
   {
     lvl: "Level 3",
     approach: "Project-Based Learning",
     outcome: "Capturing Value",
-    p: "A real transformation project applied to your own business — where the thinking finally shows up as measurable results.",
+    p: "A transformation project applied to your own business, with defined actions, owners and measures.",
   },
 ];
 
 // Truthful, plain-English one-line benefits, indexed to MODULES order (M01–M12).
 const BENEFIT: Record<string, string> = {
-  M01: "Frame any business as a value-creation system you can redesign.",
-  M02: "Start from the job your customer is truly hiring you to do.",
-  M03: "Read the landscape early and act before the shift becomes obvious.",
-  M04: "Name the few issues that actually decide the future of the business.",
-  M05: "Craft a distinctive strategy across the four dimensions that matter.",
+  M01: "Analyse an organisation as a value-creation system.",
+  M02: "Define the customer need, alternatives and evidence of value.",
+  M03: "Examine external signals, plausible change and strategic implications.",
+  M04: "Identify the business issues that require strategic attention and define why they matter.",
+  M05: "Develop strategy across the four dimensions defined by the 4D method.",
   M06: "Turn strategy into a sequenced, accountable action plan.",
-  M07: "Lead differently for each situation instead of one fixed style.",
-  M08: "Run interventions that unlock how your teams actually perform.",
-  M09: "Connect every part of the business into one coherent system.",
-  M10: "Guide people through change without losing momentum or trust.",
-  M11: "Build influence deliberately, not by luck or position.",
+  M07: "Select a leadership response according to the situation and team needs.",
+  M08: "Plan team interventions with a defined purpose, process and review point.",
+  M09: "Map relationships between functions, decisions and business results.",
+  M10: "Plan the people, process and review stages of organisational change.",
+  M11: "Plan influence according to the stakeholder, decision and evidence required.",
   M12: "Engage the full ecosystem of stakeholders around a shared outcome.",
 };
 
@@ -60,14 +60,15 @@ export default function CurriculumPage() {
           </Reveal>
           <Reveal>
             <h1 style={{ fontSize: "clamp(2.3rem,5vw,3.8rem)", letterSpacing: "-.02em", lineHeight: 1.06, maxWidth: "18ch" }}>
-              A complete <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>operating system</em> for future-ready leadership.
+              Twelve modules for <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>business-wide decision-making</em>.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub" style={{ maxWidth: "56ch" }}>
               Twelve framework modules, structured across three stages of value and delivered in{" "}
-              <b style={{ color: "#fff" }}>{FACTS.durationLong}</b>. No exams. No thesis. You build judgment you apply to
-              your own business from day one — and leave with a plan, not a transcript.
+              <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b>. The programme-certificate phase has no traditional
+              examination or thesis. Participants apply selected frameworks to their own organisational context and
+              submit a transformation plan for faculty review.
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -84,7 +85,7 @@ export default function CurriculumPage() {
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Three stages of value</span></div></Reveal>
           <Reveal><h2 className="sec-h">Creating, delivering and capturing value — in that order.</h2></Reveal>
-          <Reveal><p className="sec-sub">Each stage uses a different mode of learning, because different outcomes demand different work. Together they carry an idea from the whiteboard to the bottom line.</p></Reveal>
+          <Reveal><p className="sec-sub">Each stage uses a different mode of learning: facilitated workshops, one-to-one coaching and an applied business project.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="stage-grid">
               {STAGES.map((s, i) => (
@@ -105,20 +106,20 @@ export default function CurriculumPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The framework library · M01–M12</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Twelve modules. One compounding way of thinking.</h2></Reveal>
-          <Reveal><p className="sec-sub">Each module is a reusable framework — not a lecture to forget, but a tool you keep. Read left to right, they build from seeing value to leading the people who deliver it.</p></Reveal>
+          <Reveal><h2 className="sec-h">Twelve modules organised around value and execution.</h2></Reveal>
+          <Reveal><p className="sec-sub">The modules progress from defining value to planning delivery, leadership and stakeholder engagement.</p></Reveal>
           <Reveal className="mt-m">
             <div className="mods">
               {MODULES.map((m) => (
                 <div key={m.c} className="m">
                   <div className="c">{m.c}</div>
-                  <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.02rem", color: "#fff" }}>{m.p}</p>
+                  <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.02rem", color: "var(--ink)" }}>{m.p}</p>
                   <p style={{ color: "var(--muted)", fontSize: ".82rem" }}>{BENEFIT[m.c]}</p>
                 </div>
               ))}
             </div>
           </Reveal>
-          <p className="fine mt-s">Module sequencing may be adapted per cohort; every participant covers all twelve frameworks across the three sessions.</p>
+          <p className="fine mt-s">{DELIVERY_CONTROL.modules}</p>
         </div>
       </section>
 
@@ -127,26 +128,25 @@ export default function CurriculumPage() {
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The capstone</span></div></Reveal>
           <Reveal>
-            <h2 className="sec-h">Your final assessment is a real transformation — for your own business.</h2>
+            <h2 className="sec-h">An applied project based on the participant&rsquo;s own organisation.</h2>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              There is no exam and no thesis. Instead, you apply the frameworks to a genuine challenge inside your own
-              organisation and build a board-ready transformation project. You present it to a review panel of faculty
-              and practitioners — the same people who advise listed boards — and leave with a plan you can execute the
-              following Monday.
+              There is no traditional examination or thesis in the programme-certificate phase. Participants select
+              a business challenge within their responsibility, apply relevant frameworks and prepare a sequenced
+              transformation plan for faculty review. The plan identifies decisions, actions, owners and measures.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--line)", border: "1px solid var(--line)", borderRadius: 14, overflow: "hidden" }} className="cap-grid">
               {[
-                ["Your business", "The project is anchored to a live challenge you actually own."],
-                ["Applied, not theoretical", "Every framework from M01–M12 is put to work on one real problem."],
-                ["Reviewed by a panel", "You defend your thinking to faculty and senior practitioners."],
-                ["A plan, not a transcript", "You walk away with a sequenced, board-ready growth plan."],
+                ["Your organisation", "The project addresses a business challenge within the participant's responsibility."],
+                ["Applied assessment", "Participants select the programme frameworks relevant to the defined problem."],
+                ["Faculty review", "Faculty review the problem definition, reasoning and proposed action."],
+                ["A sequenced plan", "The final plan states the decisions, actions, owners and measures."],
               ].map(([b, s]) => (
                 <div key={b} style={{ background: "var(--surface)", padding: 22 }}>
-                  <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.15rem", color: "#fff", display: "block", marginBottom: 8 }}>{b}</b>
+                  <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.15rem", color: "var(--ink)", display: "block", marginBottom: 8 }}>{b}</b>
                   <span style={{ color: "var(--muted)", fontSize: ".92rem", lineHeight: 1.5 }}>{s}</span>
                 </div>
               ))}

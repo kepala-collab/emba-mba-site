@@ -61,9 +61,9 @@ export default function FirstPrinciplesThinkingPage() {
             </h1>
             <ArticleAttribution />
             <p className="sec-sub" style={{ maxWidth: "62ch" }}>
-              The most consequential strategic moves rarely come from studying the
-              competition more closely. They come from setting convention aside and
-              reasoning up from what is actually true. Here is what first-principles
+              First-principles thinking starts by separating verified facts from
+              inherited conventions, then builds a decision from the verified facts.
+              Here is what first-principles
               thinking is, why leaders drift away from it, and a method you can use
               on Monday.
             </p>
@@ -77,17 +77,15 @@ export default function FirstPrinciplesThinkingPage() {
               which a thing is known. First-principles thinking is simply the habit
               of breaking a problem down to those foundational truths and reasoning
               back up from them, rather than reasoning by analogy to what others have
-              already done. It is a discipline associated with scientists and with
-              many of the most effective operators in business, precisely because it
-              refuses to inherit conclusions it has not tested.
+              already done. The discipline refuses to inherit a conclusion that has
+              not been tested against the current problem.
             </p>
             <p>
-              Most of the time we do the opposite. We reason by analogy:{" "}
+              Analogy uses the pattern:{" "}
               <strong>this looks like that, and that worked, so we will do this.</strong>{" "}
-              Analogy is fast and usually safe, which is exactly why it dominates. But
-              it copies not only what worked in another context but also every
-              assumption baked into it — assumptions that may never have applied to
-              you.
+              It transfers both the earlier solution and its assumptions. First-principles
+              analysis tests each transferred assumption against the current context
+              before accepting it.
             </p>
 
             <h2>Why leaders default to copying</h2>
@@ -109,7 +107,7 @@ export default function FirstPrinciplesThinkingPage() {
             <h2>A practical method</h2>
             <p>
               First-principles thinking is not a flash of genius; it is a repeatable
-              sequence. Four steps carry most of the value:
+              sequence with four steps:
             </p>
             <ul>
               <li>
@@ -131,8 +129,8 @@ export default function FirstPrinciplesThinkingPage() {
               </li>
               <li>
                 <strong>Rebuild from the truths.</strong> With only the verified
-                fundamentals in hand, construct the solution forward. You will often
-                land somewhere no benchmark would have pointed you.
+                fundamentals in hand, construct the solution forward. The result is
+                derived from verified constraints instead of copied from a benchmark.
               </li>
             </ul>
 

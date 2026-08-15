@@ -2,19 +2,19 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
-import { FACTS, FAQS } from "@/lib/content";
+import { COMPARISON_SCOPE, FACTS, FAQS, REFUND_TERMS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/executive-mba-vs-mba", {
-  title: "Executive MBA vs Traditional MBA",
+  title: "Executive MBA vs Academic MBA",
   description:
     "Compare the Future Ready professional Executive MBA with an academic MBA across format, assessment, credential and time commitment so you can choose the right route.",
 });
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS.filter((f) =>
-  ["Is it MQA-recognised?", "How is the programme structured?", "What if it isn't worth it?"].includes(f.q)
+  ["Is it MQA-recognised?", "How is the programme structured?", "What are the refund terms?"].includes(f.q)
 );
 
 const faqLd = {
@@ -36,21 +36,21 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA vs MBA · the honest version</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA vs academic MBA · defined comparison</span></div>
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Executive MBA vs a traditional MBA — which is actually worth it?
+              Executive MBA vs an academic MBA — choose by the outcome you require.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              If you&rsquo;re a busy leader weighing the two, you don&rsquo;t need a brochure — you need a
-              straight comparison. Below is an honest look at time, cost, format and outcomes, so you
-              can decide what fits your career rather than pause it. One caveat we&rsquo;ll repeat: the
-              {" "}<Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link> is a
-              professional programme recognised by CMI (UK), not an MQA-regulated academic degree — so
-              the right choice genuinely depends on what you need the credential to do.
+              Compare the routes by credential, assessment, format, time and published price. The{" "}
+              <Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link> is a
+              professional programme approved and endorsed by CMI; it is not an MQA-accredited academic
+              degree or a regulated qualification. Choose an academic MBA when your objective requires
+              an academic degree. Choose this programme when your objective is applied management
+              development while continuing to work.
             </p>
           </Reveal>
         </div>
@@ -60,14 +60,13 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Side by side</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Agility at a glance: eight things leaders actually compare.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Eight attributes compared on the same page.</h2></Reveal>
           <Reveal className="mt-s">
             <ProgrammeComparison />
           </Reveal>
           <p className="fine mt-s">
-            Traditional-MBA figures are typical ranges and vary widely by school and country. This is a
-            professional programme recognised by CMI (UK); it is not equivalent to, or a substitute for,
-            an MQA-regulated academic degree. See the full <Link href="/fees" className="acc">investment breakdown</Link>.
+            {COMPARISON_SCOPE} The Future Ready programme is not equivalent to, or a substitute for,
+            an MQA-accredited academic degree. See the full <Link href="/fees" className="acc">investment breakdown</Link>.
           </p>
         </div>
       </section>
@@ -76,36 +75,35 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Who should choose which</span></div></Reveal>
-          <Reveal><h2 className="sec-h">There&rsquo;s no universal winner — only the right fit.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Choose according to the credential and learning format required.</h2></Reveal>
           <div
             className="choose-grid mt-m"
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}
           >
             <Reveal>
               <div className="card" style={{ height: "100%" }}>
-                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>Choose a traditional academic MBA if…</div>
+                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>Choose an academic MBA if…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12 }}>
-                  You need a regulated degree — or a full career reset.
+                  Your next step requires an academic or regulated degree.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   If your goal requires an MQA-accredited or academic qualification — for a licensing
-                  body, a PhD pathway, an academic career, or a hard credential ceiling in your sector —
-                  a traditional MBA is the correct route. It also suits those switching industries
-                  entirely and willing to invest 1.5–2 years and the higher fee to do it.
+                  body, a PhD pathway, an academic career, or a stated qualification requirement in your sector —
+                  an academic MBA is the correct route. Compare each institution&rsquo;s published entry
+                  requirements, curriculum, duration, fees and recognition before enrolling.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <div className="card" style={{ height: "100%", border: "1px solid var(--line-2)", background: "linear-gradient(180deg,var(--surface-2),var(--surface))" }}>
                 <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>Choose this Executive MBA if…</div>
-                <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "#fff" }}>
-                  You&rsquo;re a working leader who needs judgment, speed and a credential — without pausing your career.
+                <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "var(--ink)" }}>
+                  You require a professional programme with applied business work and a part-time format.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  If you already lead and want sharper thinking, AI-enabled decision frameworks and a
-                  globally respected CMI (UK) credential applied to your real business — in
-                  {" "}{FACTS.durationLong}, one weekend a month — this is built for you. No thesis, no
-                  exams, no career break.
+                  This route is designed for participants with strategic or business-wide responsibility who want
+                  structured decision frameworks, an applied project and a CMI Certificate of Recognition. The
+                  six-month pathway uses one scheduled weekend a month during the programme-certificate phase.
                 </p>
               </div>
             </Reveal>
@@ -118,28 +116,26 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Is an executive MBA worth it?</span></div></Reveal>
-          <Reveal><h2 className="sec-h">A candid answer.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Choose according to the result you require.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              &ldquo;Worth it&rdquo; depends on what you&rsquo;re optimising for. If you measure value by the
-              academic letters after your name, an MQA-regulated degree is the honest answer — and we&rsquo;ll
-              tell you so. If you measure it by the return on time and money — better decisions, sharper
-              strategy, a credential you earn in {FACTS.durationShort} rather than years, and a network of
-              senior peers — then a programme like this can be worth considerably more than its
-              {" "}<Link href="/fees" className="acc">{FACTS.priceNet} Malaysian participant fee in 2026</Link> (after the {FACTS.scholarshipProvider} scholarship; {FACTS.priceStd} standard).
+              Define the result you need before comparing price. Choose an MQA-accredited academic MBA
+              when your next step requires an academic degree. Choose this programme when you need a
+              six-month professional pathway, an applied business project, CMI recognition against its
+              Professional Standard and continued employment during study. The published 2026 Malaysian
+              participant fee is <Link href="/fees" className="acc">{FACTS.priceNet}</Link> after the{" "}
+              {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship; the standard fee is {FACTS.priceStd}.
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub mt-s">
-              We won&rsquo;t promise a raise, a promotion or a business outcome — no honest programme can, and
-              anyone who does should worry you. What we will say plainly: you keep earning while you learn,
-              you apply every framework to your own business as you go, and if Session 1 doesn&rsquo;t change how
-              you think, you can withdraw for a refund. For most working leaders, that risk-to-reward ratio
-              is the real test of &ldquo;worth it&rdquo; — not the price tag alone.
+              The programme does not guarantee a raise, promotion, employment or business result.
+              Participants continue working during the programme and apply the frameworks to their own
+              business project. {REFUND_TERMS.description}
             </p>
           </Reveal>
           <Reveal className="center mt-m">
-            <Link href="/apply" className="btn btn-primary">See if it fits your goals →</Link>
+            <Link href="/apply" className="btn btn-primary">Discuss which route fits your requirements →</Link>
           </Reveal>
         </div>
       </section>

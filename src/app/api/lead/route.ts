@@ -1,5 +1,6 @@
+import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
-import type { ResultSetHeader } from "mysql2/promise";
+import type { ResultSetHeader, RowDataPacket } from "mysql2/promise";
 import { getDatabasePool } from "@/lib/db";
 import {
   consumeDurableLeadRateLimit,
@@ -8,6 +9,22 @@ import {
   normalizeClientIp,
 } from "@/lib/lead-abuse";
 import { processLeadEmailOutbox } from "@/lib/lead-email";
+import {
+  appendLeadAuditEvent,
+  CONVERSION_SITE_ID,
+  enqueueLeadIntegrationEvent,
+  isContactWindow,
+  isLeadIntent,
+  isUuid,
+  LEAD_CONSENT_VERSION,
+  LEAD_FORM_VERSION,
+  safeExperimentsJson,
+  type ContactWindow,
+  type LeadIntent,
+} from "@/lib/lead-conversion";
+import { processLeadIntegrationOutbox } from "@/lib/lead-integration";
+
+export const runtime = "nodejs";
 
 const MAX_BODY_BYTES = 16 * 1024;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -41,12 +58,17 @@ const rateLimits =
 globalForLeadSecurity.embaLeadRateLimits = rateLimits;
 
 type LeadRow = {
+  lead_uuid: string;
+  submission_id: string;
   name: string;
   email: string;
   phone: string;
   company: string | null;
   participant_type: "malaysian" | "international";
-  contact_preference: "programme_call" | "in_person_meeting" | "online_meeting" | "details_first" | null;
+  contact_preference: "programme_call" | "in_person_meeting" | "online_meeting" | "details_first" | "whatsapp" | null;
+  lead_intent: LeadIntent | null;
+  cohort_key: string | null;
+  preferred_contact_window: ContactWindow | null;
   programme_interest: string | null;
   page_path: string | null;
   page_language: "en" | "zh" | null;
@@ -62,8 +84,11 @@ type LeadRow = {
   click_id: string | null;
   attribution_session_id: string | null;
   attribution_json: string | null;
+  experiment_json: string | null;
   source: string;
 };
+
+type LeadReferenceRow = RowDataPacket & { lead_uuid: string };
 
 type TurnstileResult = {
   success?: boolean;
@@ -192,6 +217,9 @@ function text(
 function parseLead(value: unknown): LeadRow | null {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   const body = value as Record<string, unknown>;
+  const submissionId = body.submission_id === undefined
+    ? randomUUID()
+    : (isUuid(body.submission_id) ? body.submission_id : null);
   const name = text(body.name, 120, true);
   const email = text(body.email, 254, true);
   const phone = text(body.phone, 32, true);
@@ -212,10 +240,19 @@ function parseLead(value: unknown): LeadRow | null {
   const clickId = text(body.click_id, 255);
   const attributionSessionId = text(body.attribution_session_id, 64);
   const attributionJson = text(body.attribution_json, 4096);
+  const experimentJson = safeExperimentsJson(body.experiment_json);
   const participantType = body.participant_type;
   const contactPreference = text(body.contact_preference, 32);
+  const leadIntent = body.lead_intent === undefined || body.lead_intent === null || body.lead_intent === ""
+    ? null
+    : body.lead_intent;
+  const cohortKey = text(body.cohort_key, 64);
+  const preferredContactWindow = body.preferred_contact_window === undefined ||
+    body.preferred_contact_window === null || body.preferred_contact_window === ""
+    ? null
+    : body.preferred_contact_window;
 
-  if (!name || !email || !phone || body.consent !== "yes") return null;
+  if (!submissionId || !name || !email || !phone || body.consent !== "yes") return null;
   if (
     company === undefined ||
     programme === undefined ||
@@ -232,16 +269,21 @@ function parseLead(value: unknown): LeadRow | null {
     clickIdType === undefined ||
     clickId === undefined ||
     attributionSessionId === undefined ||
-    attributionJson === undefined
-    || contactPreference === undefined
+    attributionJson === undefined ||
+    experimentJson === undefined ||
+    cohortKey === undefined ||
+    contactPreference === undefined
   ) return null;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
   if (!/^\+?[0-9().\-\s]{7,32}$/.test(phone) || phone.replace(/\D/g, "").length < 7) return null;
   if (participantType !== "malaysian" && participantType !== "international") return null;
   if (
     contactPreference !== null &&
-    !["programme_call", "in_person_meeting", "online_meeting", "details_first"].includes(contactPreference)
+    !["programme_call", "in_person_meeting", "online_meeting", "details_first", "whatsapp"].includes(contactPreference)
   ) return null;
+  if (leadIntent !== null && !isLeadIntent(leadIntent)) return null;
+  if (preferredContactWindow !== null && !isContactWindow(preferredContactWindow)) return null;
+  if (cohortKey && !/^[a-z0-9][a-z0-9_-]{0,63}$/.test(cohortKey)) return null;
   if (pageLanguage !== null && pageLanguage !== "en" && pageLanguage !== "zh") return null;
   if (pagePath && !pagePath.startsWith("/")) return null;
   if (landingPage && !landingPage.startsWith("/")) return null;
@@ -267,12 +309,17 @@ function parseLead(value: unknown): LeadRow | null {
   }
 
   return {
+    lead_uuid: randomUUID(),
+    submission_id: submissionId,
     name,
     email,
     phone,
     company,
     participant_type: participantType,
     contact_preference: contactPreference as LeadRow["contact_preference"],
+    lead_intent: leadIntent as LeadIntent | null,
+    cohort_key: cohortKey,
+    preferred_contact_window: preferredContactWindow as ContactWindow | null,
     programme_interest: programme,
     page_path: pagePath,
     page_language: pageLanguage,
@@ -288,6 +335,7 @@ function parseLead(value: unknown): LeadRow | null {
     click_id: clickId,
     attribution_session_id: attributionSessionId,
     attribution_json: attributionJson,
+    experiment_json: experimentJson,
     source,
   };
 }
@@ -333,20 +381,20 @@ export async function POST(req: Request) {
   const rateLimit = consumeRateLimit(ip);
   if (!rateLimit.allowed) {
     return json(
-      { error: "Too many requests. Please try again later." },
+      { error: "Too many requests. Please try again later.", code: "rate_limited" },
       429,
       { "Retry-After": String(rateLimit.retryAfter) },
     );
   }
-  if (!originAllowed(req)) return json({ error: "Forbidden" }, 403);
+  if (!originAllowed(req)) return json({ error: "Forbidden", code: "origin_rejected" }, 403);
   if (!req.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
-    return json({ error: "Unsupported media type" }, 415);
+    return json({ error: "Unsupported media type", code: "unsupported_media_type" }, 415);
   }
 
   try {
     const body = await readJsonBody(req);
     if (!body || typeof body !== "object" || Array.isArray(body)) {
-      return json({ error: "Invalid submission" }, 400);
+      return json({ error: "Invalid submission", code: "invalid_submission" }, 400);
     }
     const input = body as Record<string, unknown>;
 
@@ -355,14 +403,14 @@ export async function POST(req: Request) {
 
     const row = parseLead(input);
     const turnstileToken = text(input.turnstile_token, 2048, true);
-    if (!row || !turnstileToken) return json({ error: "Invalid submission" }, 400);
+    if (!row || !turnstileToken) return json({ error: "Invalid submission", code: "invalid_submission" }, 400);
 
     const turnstile = await verifyTurnstile(turnstileToken, ip);
     if (turnstile === "unavailable") {
-      return json({ error: "Security verification unavailable" }, 503);
+      return json({ error: "Security verification unavailable", code: "security_unavailable" }, 503);
     }
     if (turnstile !== "valid") {
-      return json({ error: "Security verification failed" }, 400);
+      return json({ error: "Security verification failed", code: "security_failed" }, 400);
     }
 
     const pool = getDatabasePool();
@@ -373,7 +421,7 @@ export async function POST(req: Request) {
     });
     if (!durableRateLimit.allowed) {
       return json(
-        { error: "Too many requests. Please try again later." },
+        { error: "Too many requests. Please try again later.", code: "rate_limited" },
         429,
         { "Retry-After": String(durableRateLimit.retryAfter) },
       );
@@ -381,23 +429,37 @@ export async function POST(req: Request) {
 
     const connection = await pool.getConnection();
     let leadId: number;
+    let leadReference = "";
+    let isNewLead = false;
     try {
       await connection.beginTransaction();
       const [insertResult] = await connection.execute<ResultSetHeader>({
         sql: `INSERT INTO leads (
-          name, email, phone, company, participant_type, contact_preference, programme_interest,
+          lead_uuid, submission_id, site_id,
+          name, email, phone, company, participant_type, contact_preference,
+          lead_intent, cohort_key, preferred_contact_window, programme_interest,
           page_path, page_language, landing_page, referrer, first_referrer, utm_source, utm_medium,
           utm_campaign, utm_term, utm_content, click_id_type, click_id,
-          attribution_session_id, attribution_json, source, dedupe_hash, dedupe_date
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, UTC_DATE())
+          attribution_session_id, attribution_json, consent_version, consent_at,
+          form_version, experiment_json, source, dedupe_hash, dedupe_date
+        ) VALUES (
+          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+          UTC_TIMESTAMP(6), ?, ?, ?, ?, UTC_DATE()
+        )
         ON DUPLICATE KEY UPDATE id = LAST_INSERT_ID(id)`,
         values: [
+          row.lead_uuid,
+          row.submission_id,
+          CONVERSION_SITE_ID,
           row.name,
           row.email,
           row.phone,
           row.company,
           row.participant_type,
           row.contact_preference,
+          row.lead_intent,
+          row.cohort_key,
+          row.preferred_contact_window,
           row.programme_interest,
           row.page_path,
           row.page_language,
@@ -413,6 +475,9 @@ export async function POST(req: Request) {
           row.click_id,
           row.attribution_session_id,
           row.attribution_json,
+          LEAD_CONSENT_VERSION,
+          LEAD_FORM_VERSION,
+          row.experiment_json,
           row.source,
           leadDedupeHash(row.email, row.phone),
         ],
@@ -421,6 +486,38 @@ export async function POST(req: Request) {
       leadId = Number(insertResult.insertId);
       if (!Number.isSafeInteger(leadId) || leadId < 1) {
         throw new Error("Lead insert did not return a valid identifier");
+      }
+      isNewLead = insertResult.affectedRows === 1;
+      const [referenceRows] = await connection.execute<LeadReferenceRow[]>({
+        sql: "SELECT lead_uuid FROM leads WHERE id = ? LIMIT 1 FOR UPDATE",
+        values: [leadId],
+        timeout: 5_000,
+      });
+      const storedReference = referenceRows[0]?.lead_uuid;
+      if (!isUuid(storedReference)) {
+        throw new Error("Lead insert did not return a valid public reference");
+      }
+      leadReference = storedReference;
+
+      if (isNewLead) {
+        await appendLeadAuditEvent(connection, {
+          leadId,
+          eventUuid: row.submission_id,
+          eventType: "lead.created",
+          actorType: "public",
+          toStage: "new",
+          metadata: {
+            form_version: LEAD_FORM_VERSION,
+            language: row.page_language || "en",
+            intent: row.lead_intent,
+            cohort_key: row.cohort_key,
+          },
+        });
+        await enqueueLeadIntegrationEvent(connection, {
+          leadId,
+          eventUuid: row.submission_id,
+          eventType: "lead.created",
+        });
       }
 
       await connection.execute({
@@ -451,17 +548,28 @@ export async function POST(req: Request) {
       });
     }
 
-    return json({ ok: true });
+    if (isNewLead) {
+      try {
+        await processLeadIntegrationOutbox(pool, { limit: 1, leadId });
+      } catch (error) {
+        // The lead and integration event are durable; the cron processor will retry.
+        console.error("Lead integration dispatch deferred", {
+          type: error instanceof Error ? error.name : "UnknownError",
+        });
+      }
+    }
+
+    return json({ ok: true, lead_reference: leadReference });
   } catch (error) {
     if (error instanceof BodyTooLargeError) {
-      return json({ error: "Request too large" }, 413);
+      return json({ error: "Request too large", code: "request_too_large" }, 413);
     }
     if (error instanceof SyntaxError) {
-      return json({ error: "Invalid JSON" }, 400);
+      return json({ error: "Invalid JSON", code: "invalid_json" }, 400);
     }
     console.error("Lead submission failed", {
       type: error instanceof Error ? error.name : "UnknownError",
     });
-    return json({ error: "Unable to submit enquiry" }, 500);
+    return json({ error: "Unable to submit enquiry", code: "submission_failed" }, 500);
   }
 }

@@ -1,29 +1,29 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, THINKING_EDGE } from "@/lib/content";
+import { FACTS, HRD_CORP_CLAIM, THINKING_EDGE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ai-executive-mba", {
-  title: "AI-Ready Executive MBA — Lead the AI Era",
+  title: "Executive MBA for AI-Enabled Leadership",
   description:
-    "An AI-ready Executive MBA recognised by CMI (UK): build an AI-driven business strategy during the first three monthly sessions of a six-month professional pathway.",
+    "Apply the Future Ready Executive MBA frameworks to AI adoption, data-informed decisions, process redesign and responsible implementation.",
 });
 
 const BUSINESS_PILLARS = [
-  ["AI Strategy", "Build an AI-ready, innovation-driven business strategy from first principles."],
-  ["Data Insights", "Turn raw signals into decisions — read the board before competitors do."],
-  ["Automation", "Redesign how work gets done so your team compounds output, not busywork."],
-  ["Innovation", "Make innovation the operating currency, not a once-a-year offsite."],
-  ["Growth", "Transform a traditional business into a future-ready, scalable organisation."],
+  ["AI priorities", "Connect AI use cases to the organisation's strategic objectives and operating constraints."],
+  ["Data interpretation", "Separate reliable signals from incomplete, irrelevant or misleading data."],
+  ["Process redesign", "Map where automation changes tasks, controls, hand-offs and decision rights."],
+  ["Innovation governance", "Define how ideas are selected, tested, measured and stopped."],
+  ["Value measurement", "Assign an owner, baseline and success measure to each initiative."],
 ];
 
 const CAREER_PILLARS = [
-  ["Leadership", "Lead transformation in an AI era, not just manage yesterday's operations."],
-  ["Future Skills", "Install the durable, human skills automation can't replace."],
-  ["Decision Making", "Decide faster under uncertainty using AI-enabled frameworks."],
-  ["Influence", "Move stakeholders and teams toward a shared, future-facing vision."],
-  ["Impact", "Convert new thinking into measurable results your board can see."],
+  ["Leadership", "Set the purpose, boundaries and accountability for AI-enabled work."],
+  ["Critical judgment", "Question model outputs, assumptions, evidence quality and unintended effects."],
+  ["Decision design", "Clarify which decisions remain human-led and where tools provide support."],
+  ["Stakeholder alignment", "Explain the proposed change, its controls and its effect on teams and customers."],
+  ["Implementation", "Translate a selected use case into an action plan with owners and measures."],
 ];
 
 export default function AiExecutiveMbaPage() {
@@ -32,22 +32,22 @@ export default function AiExecutiveMbaPage() {
       {/* 1 · HERO INTRO */}
       <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">AI-Ready Leadership · Recognised by CMI (UK)</span></div></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">AI-enabled leadership · CMI-recognised programme</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.4rem,5.4vw,4rem)", letterSpacing: "-.02em", lineHeight: 1.05, maxWidth: "20ch" }}>
-              AI is reshaping industries. Innovation is the new <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>currency.</em>
+              Lead AI adoption as a <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>business decision.</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
-              This is the same CMI (UK)-recognised <Link href="/executive-mba" className="acc">Future-Ready Executive MBA</Link>, seen through an
-              AI lens. It gives you the mindset, strategies and practical tools to lead with impact, drive transformation and
-              future-proof your career — in <b style={{ color: "#fff" }}>{FACTS.durationLong}</b>.
+              This page explains how the CMI-recognised <Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link>{" "}
+              applies its decision frameworks to AI strategy, data, automation, governance and implementation.
+              It is the same <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b> programme, not a separate software or technical certification.
             </p>
           </Reveal>
           <Reveal delay={160}>
             <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(1.3rem,3vw,1.9rem)", lineHeight: 1.3, margin: "26px 0 30px", maxWidth: "24ch" }}>
-              Lead today. <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Transform tomorrow.</em>
+              From use-case selection to <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>governed execution.</em>
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -62,14 +62,14 @@ export default function AiExecutiveMbaPage() {
       {/* 2 · WHAT YOU'LL BUILD WITH AI */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What you&rsquo;ll build with AI</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Two engines: an AI-ready business, and an AI-ready you.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What the AI lens covers</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Business design and leadership responsibility.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "56ch" }}>
-            You leave able to build an AI-ready, innovation-driven business strategy and transform a traditional
-            organisation into a future-ready one — while sharpening the leadership that makes it stick.
+            Effective adoption requires both: a sound business case and clear human accountability. The programme
+            examines the organisation, the decision process and the leader&rsquo;s role in implementation.
           </p></Reveal>
 
-          <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Business · AI Strategy · Data · Automation · Innovation · Growth</div></Reveal>
+          <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Business · priorities · data · process · governance · measures</div></Reveal>
           <Reveal className="mt-s"><div className="grid-forces">
             {BUSINESS_PILLARS.map(([h, p]) => (
               <div key={h} className="card">
@@ -79,7 +79,7 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
 
-          <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Career · Leadership · Future Skills · Decisions · Influence · Impact</div></Reveal>
+          <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Leadership · judgment · decision rights · alignment · implementation</div></Reveal>
           <Reveal className="mt-s"><div className="grid-forces">
             {CAREER_PILLARS.map(([h, p]) => (
               <div key={h} className="card">
@@ -94,12 +94,12 @@ export default function AiExecutiveMbaPage() {
       {/* 3 · CONTEXT OVER CONTENT */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Context over content</span></div></Reveal>
-          <Reveal><h2 className="sec-h">In an AI era, the edge is asking better questions — not memorising answers.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Questions before tools</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Start with the business problem, not the model.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "58ch" }}>
-            AI already holds the content. Our <Link href="/how-it-works" className="acc">F.A.S.T. method</Link> teaches you to prompt it well,
-            frame the real problem and ask the questions most leaders never think to — so AI becomes leverage, not a crutch.
-            These are the same thinking disciplines the programme installs, now aimed squarely at AI-enabled decisions.
+            The <Link href="/how-it-works" className="acc">F.A.S.T. method</Link> begins by defining the desired outcome,
+            relevant evidence, constraints and risks. Only then does the leader decide whether AI is appropriate and
+            how its output will be reviewed.
           </p></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {THINKING_EDGE.slice(0, 3).map((e) => (
@@ -116,15 +116,15 @@ export default function AiExecutiveMbaPage() {
       {/* 4 · SAME-PROGRAMME FACTS STRIP */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Same programme · Same credential</span></div></Reveal>
-          <Reveal><h2 className="sec-h">An AI angle on a professional programme recognised by CMI (UK).</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme facts</span></div></Reveal>
+          <Reveal><h2 className="sec-h">The AI focus does not change the programme&rsquo;s formal status.</h2></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {[
               ["Recognised by CMI (UK)", "The programme is recognised against CMI Professional Standards and is not an MQA-regulated academic degree."],
-              ["HRD Corp", "Eligible registered employers may apply to claim up to 100% of the approved fee, subject to prior approval and sufficient levy balance."],
+              ["HRD Corp", HRD_CORP_CLAIM.short],
               ["Format", "Six-month professional pathway: three monthly programme sessions, then supported CMgr assessment preparation for eligible participants."],
               ["Investment", FACTS.priceStd + " standard → " + FACTS.priceNet + " for Malaysian participants after the " + FACTS.scholarshipAmt + " LIFE Innoversity scholarship."],
-              ["No exams, no thesis", "You leave with a board-ready, AI-ready transformation plan for your own business."],
+              ["Applied project", "Participants complete a transformation plan for their own business; there is no traditional examination or thesis."],
             ].map(([h, p]) => (
               <div key={h} className="card">
                 <h3 style={{ fontSize: "1.1rem", margin: "0 0 8px" }}>{h}</h3>
@@ -133,8 +133,8 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
           <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "72ch" }}>
-            This is a professional programme recognised by CMI (UK) — not an MQA-regulated academic degree. It builds
-            AI-ready leadership and strategy; it does not guarantee any specific income or business outcome.
+            This is a professional programme recognised by CMI (UK), not an MQA-accredited academic degree or a
+            regulated qualification. It does not guarantee income, promotion or a business result.
           </p></Reveal>
         </div>
       </section>
@@ -143,20 +143,20 @@ export default function AiExecutiveMbaPage() {
       <section className="section">
         <div className="wrap center">
           <Reveal><h2 className="sec-h" style={{ maxWidth: "22ch", marginInline: "auto" }}>
-            The AI shift isn&rsquo;t waiting for your next planning cycle.
+            Review the programme before choosing an intake.
           </h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "54ch", marginInline: "auto" }}>
-            Every quarter you delay, competitors compound their advantage. Seats are limited per cohort — start the
-            conversation now and we&rsquo;ll map the AI-ready path for you and your business.
+            Review the published intakes and choose a cohort whose dates fit your responsibilities.
+            The programme team will explain the curriculum, format and application requirements.
           </p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
-            <Link href="/apply" className="btn btn-primary">Apply now →</Link>
+            <Link href="/apply" className="btn btn-primary">Discuss the AI leadership focus →</Link>
             <Link href="/executive-mba" className="btn btn-ghost">Explore the full programme</Link>
           </div></Reveal>
         </div>
       </section>
 
-      <CtaSection programme="AI Executive MBA" heading="Future-proof your business. Future-proof yourself." />
+      <CtaSection programme="AI Executive MBA" heading="Discuss how the programme applies to your AI priorities." />
     </>
   );
 }

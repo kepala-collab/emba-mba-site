@@ -60,9 +60,9 @@ export default function Page() {
             </h1>
             <ArticleAttribution />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              Most failed products are not badly built — they are built for a
-              customer who does not exist. Design thinking is the discipline that
-              closes that gap: a human-centred, iterative way of solving problems
+              A well-built product still fails when it solves the wrong customer
+              problem. Design thinking addresses that risk through a human-centred,
+              iterative way of solving problems
               that starts from real needs rather than internal assumptions, and
               that treats every idea as a hypothesis to be tested, not a decision
               to be defended.
@@ -80,9 +80,9 @@ export default function Page() {
               you already like and hunting for a market to justify it.
             </p>
             <p>
-              It is deliberately iterative rather than linear. You expect to be
-              wrong early, cheaply, and often, so that you can be right later
-              when it counts. That posture — curiosity before conviction — is
+              It is deliberately iterative rather than linear. Teams test assumptions
+              with low-cost prototypes before committing to a full launch, then revise
+              the solution using observed evidence. That posture — curiosity before conviction — is
               what separates it from conventional planning.
             </p>
 
@@ -112,8 +112,8 @@ export default function Page() {
                 &ldquo;improve efficiency.&rdquo;
               </li>
               <li>
-                <strong>Ideate.</strong> Generate many possible answers before
-                narrowing. Quantity and range matter here; judgement comes later.
+                <strong>Ideate.</strong> Generate alternative answers before
+                narrowing. Range matters here; judgement comes after alternatives exist.
                 The aim is to escape the first, obvious idea.
               </li>
               <li>
@@ -132,8 +132,8 @@ export default function Page() {
             <h2>Why it matters for leaders and strategy</h2>
             <p>
               For an executive, the appeal is commercial, not aesthetic. Design
-              thinking systematically reduces the most expensive risk in any
-              venture: building something nobody wants. By forcing evidence early,
+              thinking systematically reduces a critical commercial risk:
+              building something customers do not choose. By forcing evidence early,
               it moves the moment of failure from an expensive launch to a cheap
               prototype.
             </p>
@@ -168,7 +168,7 @@ export default function Page() {
               Consider a mid-market bank losing younger customers to fintech
               apps. The instinctive response is a feature race: add budgeting
               charts, redesign the dashboard, ship faster. Sitting with actual
-              customers usually tells a different story. They are not buying
+              customer interviews can reveal a different job. They are not buying
               charts; they are hiring a service to answer one anxious question —
               &ldquo;can I afford this right now, without a nasty surprise
               later?&rdquo;
@@ -179,21 +179,19 @@ export default function Page() {
               shift redirects the whole roadmap — toward real-time affordability
               signals and plain-language alerts — and away from a pile of
               features that would have tested well in a meeting and poorly in a
-              life. Same customers, same data; a different, more honest
-              definition of the job.
+              use. The customer group and source data have not changed; the team has
+              produced a more precise definition of the customer&rsquo;s job.
             </p>
 
             <h2>Common traps</h2>
             <ul>
               <li>
-                <strong>Skipping empathy.</strong> Teams jump to ideation because
-                it feels productive, encoding their own assumptions as facts. The
-                research you skip is the research your customers pay for.
+                <strong>Skipping customer research.</strong> Moving directly to
+                ideation can turn internal assumptions into product requirements.
               </li>
               <li>
-                <strong>Prototyping too late.</strong> Perfectionism disguised as
-                diligence. If your first prototype is not slightly embarrassing,
-                you built it too slowly and learned too little.
+                <strong>Prototyping too late.</strong> A high-fidelity first prototype
+                increases the cost of changing direction before the main assumptions have been tested.
               </li>
               <li>
                 <strong>Treating it as a workshop gimmick.</strong> Sticky notes
@@ -226,7 +224,7 @@ export default function Page() {
 
       <CtaSection
         programme="Executive MBA"
-        heading="Design what the market actually wants."
+        heading="Test what customers value before committing resources."
       />
     </>
   );

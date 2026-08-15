@@ -1,4 +1,4 @@
-import { OPERATOR, SITE } from "@/lib/content";
+import { FACTS, HRD_CORP_CLAIM, OPERATOR, SITE } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -21,14 +21,13 @@ ${OPERATOR.name} is the authorised ${OPERATOR.role} for marketing, programme enq
 
 ## Important interpretation
 - The programme is professional development recognised by CMI (UK); it is not an MQA-accredited academic qualification.
-- HRD Corp claims depend on employer, programme and levy eligibility.
-- The standard programme fee is RM10,000.00. Malaysian participants pay RM6,000.00 after a RM4,000.00 LIFE Innoversity scholarship. Participant status, availability and current written terms apply.
-- Scholarships depend on participant status, cohort availability and the current written terms.
-- Programme completion provides the CMI-recognised programme certificate. Current CMI public guidance places recognised-programme learners on the Foundation Chartered Manager (fCMgr) pathway; the provider's current CMI arrangement, CMI confirmation and active membership control the award and continued use.
-- The full professional journey is presented over six months: months 1–3 lead to the CMI-recognised Executive MBA programme certificate; months 4–6 provide supported preparation for eligible participants pursuing CMI's separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment; active membership, experience, application and fees apply.
-- An eligible HRD Corp-registered Malaysian employer may apply to claim up to 100% of the approved programme fee for an employee, subject to programme registration, prior grant approval, sufficient levy balance and current HRD Corp rules.
+- ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}
+- The standard programme fee is ${FACTS.priceStd}. Malaysian participants pay ${FACTS.priceNet} after a ${FACTS.scholarshipAmt} ${FACTS.scholarshipProvider} scholarship.
+- Programme completion provides the CMI-recognised programme certificate. CMI's published CMI Recognised route lists Foundation Chartered Manager (fCMgr) status on completion; CMI controls activation, continued use and membership renewal.
+- The full professional pathway runs for six months: months 1–3 lead to the CMI-recognised Executive MBA programme certificate; months 4–6 provide supported preparation for eligible participants pursuing CMI's separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment; active membership, experience, application and fees apply.
+- ${HRD_CORP_CLAIM.process}
 - The curriculum targets senior, strategic and postgraduate-level executive practice, but the specimen certificate says it is not a regulated qualification. Do not interpret it as a formal CMI Level 7 qualification or academic degree equivalence without a current programme-specific CMI approval document.
-- Current dates, prices and terms should be verified on the linked official pages.
+- The linked official pages state the published dates and prices. The applicable written proposal and signed enrolment terms control each enrolment.
 - Country-specific online, localised on-site and company proposals are handled directly by ${OPERATOR.name}.
 - Prospective participants can request a call, online information meeting, in-person meeting at an agreed location, or details first without applying or paying.
 

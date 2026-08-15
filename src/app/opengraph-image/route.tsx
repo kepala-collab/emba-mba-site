@@ -8,8 +8,8 @@ export function GET() {
   return new ImageResponse(
     <div
       style={{
-        background: "linear-gradient(135deg, #080b12 0%, #111827 58%, #290a12 100%)",
-        color: "#f8fafc",
+        background: "linear-gradient(135deg, #f8fbff 0%, #eef6ff 55%, #dcecff 100%)",
+        color: "#102747",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -20,21 +20,21 @@ export function GET() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-        <div style={{ width: 54, height: 6, background: "#cf2338" }} />
-        <div style={{ fontSize: 23, letterSpacing: 5, textTransform: "uppercase", color: "#cbd5e1" }}>
-          Recognised by CMI UK · Malaysia
+        <div style={{ width: 54, height: 6, background: "#1d63d8" }} />
+        <div style={{ fontSize: 23, letterSpacing: 5, textTransform: "uppercase", color: "#405674" }}>
+          The Working Scholar · Malaysia
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", maxWidth: 980 }}>
         <div style={{ fontSize: 76, lineHeight: 1.03, fontWeight: 700, letterSpacing: -3 }}>
-          Future Ready Executive MBA
+          Experience is where the work begins.
         </div>
-        <div style={{ marginTop: 26, fontSize: 32, lineHeight: 1.3, color: "#d7dde7" }}>
-          Think better. Decide faster. Lead what comes next.
+        <div style={{ marginTop: 26, fontSize: 32, lineHeight: 1.3, color: "#405674" }}>
+          Future Ready Executive MBA — structured inquiry for what comes next.
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#aeb8c7" }}>
-        <span>Professional executive leadership programme</span>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#667891" }}>
+        <span>Professional development · CMI boundary made clear</span>
         <span>futurereadymba.com</span>
       </div>
     </div>,

@@ -1,38 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { setAnalyticsConsent } from "@/lib/analytics";
 import { usePathname } from "next/navigation";
+import { useFloatingUi } from "@/components/site/FloatingUiContext";
 
 const CONSENT_STORAGE_KEY = "fr_emba_consent_v1";
 export const CONSENT_PREFERENCES_EVENT = "future-ready:open-consent";
 
 export default function ConsentBanner() {
-  const [visible, setVisible] = useState(false);
+  const { consentVisible, setConsentStatus } = useFloatingUi();
   const pathname = usePathname() || "/";
   const zh = pathname === "/zh" || pathname.startsWith("/zh/");
 
   useEffect(() => {
     try {
-      setVisible(!window.localStorage.getItem(CONSENT_STORAGE_KEY));
+      setConsentStatus(window.localStorage.getItem(CONSENT_STORAGE_KEY) ? "resolved" : "required");
     } catch {
-      setVisible(true);
+      setConsentStatus("required");
     }
-  }, []);
+  }, [setConsentStatus]);
 
   useEffect(() => {
-    const open = () => setVisible(true);
+    const open = () => setConsentStatus("required");
     window.addEventListener(CONSENT_PREFERENCES_EVENT, open);
     return () => window.removeEventListener(CONSENT_PREFERENCES_EVENT, open);
-  }, []);
+  }, [setConsentStatus]);
 
   const choose = (analytics: "granted" | "denied") => {
     setAnalyticsConsent({ analytics, marketing: "denied" });
-    setVisible(false);
+    setConsentStatus("resolved");
   };
 
-  if (!visible) return null;
+  if (!consentVisible) return null;
 
   return (
     <aside className="consent-banner" aria-label={zh ? "分析与隐私选择" : "Analytics privacy choice"}>
@@ -41,7 +42,7 @@ export default function ConsentBanner() {
         <p>
           {zh
             ? "我们使用必要储存保障安全及记录报名来源。可选分析工具只会在您允许后加载；目前没有启用广告像素。"
-            : "We use essential storage for security and application attribution. Optional analytics helps us improve the site and loads only with your permission. No advertising pixels are active. "}
+            : "Essential storage protects the site and records enquiry attribution. Analytics loads only if you allow it. No advertising pixels are active. "}
           <Link href={zh ? "/zh/privacy" : "/privacy"}>{zh ? "隐私政策" : "Privacy policy"}</Link>
         </p>
       </div>

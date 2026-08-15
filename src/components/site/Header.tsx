@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import { useEffect, useRef, type MouseEvent as ReactMouseEvent } from "react";
 import { NAV } from "@/lib/content";
 import { pairedRoute } from "@/lib/locale-routes";
+import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import RdrMark from "./RdrMark";
 
 const NAV_ZH = [
@@ -12,6 +13,7 @@ const NAV_ZH = [
   { href: "/zh/faculty", label: "导师" },
   { href: "/zh/fees", label: "学费" },
   { href: "/zh/intakes", label: "开课日期" },
+  { href: "/zh/resources", label: "决策资料" },
 ];
 
 export default function Header() {
@@ -22,7 +24,11 @@ export default function Header() {
   const links = zh ? NAV_ZH : NAV;
   const pair = pairedRoute(pathname);
   const languageHref = zh ? (pair?.en || "/") : (pair?.zh || "/zh");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const {
+    navigationOpen: menuOpen,
+    setNavigationOpen: setMenuOpen,
+    setAssistantOpen,
+  } = useFloatingUi();
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -37,7 +43,7 @@ export default function Header() {
     document.body.style.overflow = "hidden";
     const inertTargets = [
       ...document.querySelectorAll<HTMLElement>(
-        "main,footer,.wa-float,.navbar .brand-link,.navbar .mobile-navcta"
+        "main,footer,.wa-float,.programme-assistant-launcher,.consent-banner,.navbar .brand-link,.navbar .mobile-navcta"
       ),
     ];
     const previousInert = inertTargets.map((target) => target.inert);
@@ -80,6 +86,7 @@ export default function Header() {
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
+  const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
   const handleApplyClick = (event: ReactMouseEvent<HTMLAnchorElement>) => {
     closeMenu();
 
@@ -106,7 +113,7 @@ export default function Header() {
     <>
       <header className={`navbar${menuOpen ? " menu-open" : ""}`}>
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Right Dot Resources — Future Ready Executive MBA, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Right Dots Resources, home">
             <RdrMark size={38} />
             <span className="brand-title">
               Future&nbsp;Ready <span className="acc brand-product">EMBA</span>
@@ -114,7 +121,7 @@ export default function Header() {
           </Link>
           <nav className="navlinks desktop-nav" aria-label={zh ? "主导航" : "Primary navigation"}>
             {links.map((n) => (
-              <Link key={n.href} href={n.href}>{n.label}</Link>
+              <Link key={n.href} href={n.href} className={isActive(n.href) ? "is-active" : undefined} aria-current={isActive(n.href) ? "page" : undefined}>{n.label}</Link>
             ))}
             <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
               {zh ? "EN" : "中文"}
@@ -130,7 +137,7 @@ export default function Header() {
               aria-label={menuOpen ? (zh ? "关闭菜单" : "Close menu") : (zh ? "打开菜单" : "Open menu")}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
-              onClick={() => setMenuOpen((open) => !open)}
+              onClick={() => setMenuOpen(!menuOpen)}
             >
               <span className="menu-icon" aria-hidden="true"><i /><i /></span>
               <span>{menuOpen ? (zh ? "关闭" : "Close") : (zh ? "菜单" : "Menu")}</span>
@@ -163,7 +170,7 @@ export default function Header() {
             </div>
             <nav aria-label={zh ? "移动主导航" : "Mobile primary navigation"}>
               {links.map((n, index) => (
-                <Link key={n.href} href={n.href} onClick={closeMenu}>
+                <Link key={n.href} href={n.href} onClick={closeMenu} aria-current={isActive(n.href) ? "page" : undefined}>
                   <span className="mobile-nav-index">{String(index + 1).padStart(2, "0")}</span>
                   <span>{n.label}</span>
                   <span aria-hidden="true">↗</span>
@@ -174,6 +181,16 @@ export default function Header() {
               <Link href={languageHref} className="mobile-language" onClick={closeMenu}>
                 <span>{zh ? "English site" : "中文网站"}</span><span aria-hidden="true">→</span>
               </Link>
+              <button
+                type="button"
+                className="btn btn-ghost mobile-assistant-action"
+                onClick={() => setAssistantOpen(true)}
+                data-track-event="chat_open"
+                data-track-id="mobile_menu_assistant"
+                data-track-location="mobile_navigation"
+              >
+                {zh ? "询问课程助手 →" : "Ask the programme assistant →"}
+              </button>
               <Link href={applyHref} className="btn btn-primary" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_menu_apply" data-track-location="mobile_navigation">
                 {zh ? "预约课程沟通 →" : "Arrange a programme conversation →"}
               </Link>

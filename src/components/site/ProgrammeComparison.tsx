@@ -19,11 +19,11 @@ export default function ProgrammeComparison({ lang = "en", compact = false }: Pr
     <div
       className="programme-comparison"
       role="region"
-      aria-label={zh ? "传统 MBA 与 Future Ready 高管 MBA 对比" : "Traditional MBA and Future Ready Executive MBA comparison"}
+      aria-label={zh ? "参考型学术 MBA 与 Future Ready 高管 MBA 对比" : "Reference academic MBA and Future Ready Executive MBA comparison"}
     >
       <div className="programme-comparison-head" aria-hidden="true">
         <span>{zh ? "比较项目" : "At a glance"}</span>
-        <span>{zh ? "传统 MBA" : "Traditional MBA"}</span>
+        <span>{zh ? "参考型学术 MBA" : "Reference academic MBA"}</span>
         <span className="future">{zh ? "Future Ready 高管 MBA" : "Future Ready Executive MBA"}</span>
       </div>
       <dl className="programme-comparison-list">
@@ -31,7 +31,7 @@ export default function ProgrammeComparison({ lang = "en", compact = false }: Pr
           <div className="programme-comparison-row" key={row.k}>
             <dt>{row.k}</dt>
             <dd>
-              <span className="programme-comparison-mobile-label">{zh ? "传统 MBA" : "Traditional MBA"}</span>
+              <span className="programme-comparison-mobile-label">{zh ? "参考型学术 MBA" : "Reference academic MBA"}</span>
               {row.them}
             </dd>
             <dd className="future">

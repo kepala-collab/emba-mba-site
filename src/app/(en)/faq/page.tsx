@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/faq", {
   title: "Frequently Asked Questions",
   description:
-    "Straight answers on the Future Ready Executive MBA (CMI UK): duration, MQA recognition, HRD Corp claims, fees, scheduling and the money-back guarantee.",
+    "Exact answers on the Future Ready Executive MBA: duration, CMI recognition, MQA status, HRD Corp process, fees, scheduling and written refund terms.",
 });
 
 const faqJsonLd = {
@@ -32,17 +32,16 @@ export default function FaqPage() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">Straight answers · CMI (UK)</span>
+              <span className="mono sec-k">Programme facts · CMI (UK)</span>
             </div>
           </Reveal>
           <Reveal>
-            <h1 className="sec-h">The questions serious people ask.</h1>
+            <h1 className="sec-h">Questions to answer before you decide.</h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              No brochure spin. The honest detail on duration, recognition, funding and
-              our money-back guarantee for the Future Ready Executive MBA &mdash; so you
-              can decide with your eyes open.
+              Programme facts on duration, recognition, funding, fees, attendance and
+              written refund terms &mdash; with the responsible decision-maker named for each condition.
             </p>
           </Reveal>
 
@@ -56,8 +55,8 @@ export default function FaqPage() {
           </Reveal>
 
           <p className="fine center mt-s">
-            Still weighing it up? Book a 15-minute call with the programme team &mdash;
-            no obligation, no scripted pitch.
+            Need to discuss your situation? Request a 15-minute call with the programme team.
+            A conversation request is not an admission or payment commitment.
           </p>
         </div>
       </section>

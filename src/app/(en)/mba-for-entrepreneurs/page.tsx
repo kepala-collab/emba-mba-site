@@ -18,35 +18,35 @@ export default function MbaForEntrepreneursPage() {
   const built = [
     {
       h: "First-principles problem solving",
-      p: `${firstPrinciples?.p ?? "Strip a problem to its atoms and rebuild a disruptive answer."} It is how founders find the wedge competitors can't see.`,
+      p: `${firstPrinciples?.p ?? "Separate verified constraints from inherited assumptions."} Use the result to define and test a differentiated proposition.`,
     },
     {
       h: "Business-model & JTBD thinking",
-      p: "Design around the job your customer is truly hiring you to do — so you build product and pricing the market actually pulls, not what you hope it wants.",
+      p: "Define the customer job, evidence, alternatives and willingness to pay before committing product and pricing decisions.",
     },
     {
-      h: "AI fluency, built in",
-      p: "Use AI as leverage across strategy, research and execution — the multiplier a lean founding team runs on.",
+      h: "AI-enabled decision review",
+      p: "Evaluate where AI supports research, analysis or workflow—and where human review and accountability remain necessary.",
     },
     {
-      h: "Board- & investor-grade strategy",
-      p: `${systems?.p ?? "Trace cause to third-order consequence before you commit."} Speak the language of the board and the term sheet with a strategy that holds up under scrutiny.`,
+      h: "Strategy for stakeholder review",
+      p: `${systems?.p ?? "Trace cause to third-order consequence before you commit."} Document the assumptions, choices, actions and measures for review by co-founders, boards or investors.`,
     },
     {
-      h: "A network of operators",
-      p: "A room of founders, directors and GMs who become your informal board — the peers you call when the next hard decision lands.",
+      h: "Cross-functional perspectives",
+      p: "Work through decisions with participants who hold responsibility across ownership, general management and senior functions.",
     },
     {
-      h: "Structure for the chaos",
+      h: "Structure for competing priorities",
       p: framework?.p ?? "Turn overwhelming complexity into a decision you can act on.",
     },
   ];
 
   const format = [
-    { h: "Months, not years", p: "The full journey runs for six months: three months to the CMI-recognised programme certificate, then three months of supported Chartered Manager assessment preparation for eligible participants." },
-    { h: "One weekend a month, or online", p: "Sessions land one weekend a month, with a fully online track. Fit it around the launch, the raise and the customer calls that can't move." },
-    { h: "Applied the moment you learn it", p: "No thesis, no exams. Every framework goes straight into the venture you're building — the value shows up in this quarter's work." },
-    { h: "Catch up without penalty", p: "Travelling for a pitch or heads-down on a release? Catch a session by video or re-sit it with a later cohort at no extra cost." },
+    { h: "Months, not years", p: "The full pathway runs for six months: three months to the CMI-recognised programme certificate, then three months of supported Chartered Manager assessment preparation for eligible participants." },
+    { h: "One weekend a month, or online", p: "The certificate phase uses one scheduled weekend a month; the global online route removes the need for physical attendance." },
+    { h: "Applied during the programme", p: "There is no traditional thesis or examination. Participants apply the frameworks to the venture or organisation they lead." },
+    { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   ];
 
   return (
@@ -60,16 +60,14 @@ export default function MbaForEntrepreneursPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Founders don&apos;t have two years. <span className="acc">You need the frameworks now.</span>
+              Frameworks for decisions made while <span className="acc">building the venture.</span>
             </h1>
           </Reveal>
           <p className="sec-sub">
-            You&apos;re building a venture in real time — deciding what to ship, where to focus and how to
-            spend runway that won&apos;t wait. A traditional MBA asks you to step off the field for eighteen
-            months to learn theory. That&apos;s not a trade a founder can make. The Future Ready Executive
-            MBA installs the thinking a founder actually runs on — first-principles problem solving,
-            systems thinking and Job-To-Be-Done value creation — in {FACTS.durationLong}, applied to the
-            business you&apos;re building right now.
+            Founders make linked decisions about customers, product, pricing, capital, capability and timing.
+            The Future Ready Executive MBA applies first-principles, systems and Job-To-Be-Done frameworks
+            to those decisions across {FACTS.durationLong}. The applied project uses the venture or organisation
+            the participant is building.
           </p>
           <p className="mono sec-k mt-s">
             Six months · three monthly programme weekends + supported CMgr assessment preparation · recognised by CMI (UK)
@@ -87,14 +85,14 @@ export default function MbaForEntrepreneursPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Built for how founders move</span>
+            <span className="mono sec-k">Founder decision areas</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">The thinking that turns an idea into a venture that scales.</h2>
+            <h2 className="sec-h">From proposition to an executable business model.</h2>
           </Reveal>
           <p className="sec-sub">
-            Not a survey of management theory — a compact set of frameworks you deploy the moment the
-            next decision lands. Speed comes from application, not seat-time.
+            These frameworks structure customer evidence, strategic choices, resource allocation,
+            stakeholder communication and implementation.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {built.map((x) => (
@@ -107,8 +105,8 @@ export default function MbaForEntrepreneursPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            AI runs through the whole programme, not a bolt-on module — see the{" "}
-            <Link href="/ai-executive-mba" className="acc">AI-powered Executive MBA</Link>.
+            See how the programme applies its decision frameworks to{" "}
+            <Link href="/ai-executive-mba" className="acc">AI-enabled leadership</Link>.
           </p>
         </div>
       </section>
@@ -121,15 +119,13 @@ export default function MbaForEntrepreneursPage() {
             <span className="mono sec-k">Applied to your venture</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">The capstone is a real growth plan for your business.</h2>
+            <h2 className="sec-h">The applied project addresses your own business challenge.</h2>
           </Reveal>
           <p className="sec-sub">
-            There is no case study and no thesis. Your capstone is a live plan for the venture you&apos;re
-            actually building — where growth comes from, what the model has to become, and the moves
-            that get you there. You leave with a board-ready strategy you can put in front of a
-            co-founder, a board or an investor. Every framework is stress-tested against your real
-            numbers and your real market, so the work you do in the room is the work your business
-            needs — not an academic exercise you file and forget.
+            There is no traditional thesis or examination. Participants define a live challenge,
+            apply the programme frameworks and produce a sequenced transformation plan for faculty review.
+            The plan identifies assumptions, decisions, actions, owners and measures for discussion with
+            co-founders, boards or investors.
           </p>
           <p className="fine mt-s">
             No funding or growth is promised — the frameworks and the plan are yours; the outcomes
@@ -147,11 +143,11 @@ export default function MbaForEntrepreneursPage() {
             <span className="mono sec-k">Why the format works for founders</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Keep building while you level up.</h2>
+            <h2 className="sec-h">Continue operating while completing the programme.</h2>
           </Reveal>
           <p className="sec-sub">
-            The format is designed for people who can&apos;t disappear for two years. It slots into a
-            founder&apos;s week and pays back in the venture itself.
+            The certificate phase uses three monthly weekend sessions, followed by three months of
+            supported Chartered Manager assessment preparation for participants who meet CMI&rsquo;s criteria.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {format.map((x) => (
@@ -170,20 +166,19 @@ export default function MbaForEntrepreneursPage() {
       <section className="section">
         <div className="wrap center">
           <Reveal>
-            <h2 className="sec-h">Ready to build like the founder your venture needs?</h2>
+            <h2 className="sec-h">Review the programme against your venture&rsquo;s current decisions.</h2>
           </Reveal>
           <p className="sec-sub">
-            Bring the venture you&apos;re building. In {FACTS.durationLong} you&apos;ll leave with the frameworks,
-            the AI fluency and a growth plan you can act on — for {FACTS.priceStd}, or {FACTS.priceNet}{" "}
+            The programme runs for {FACTS.durationLong}. The standard fee is {FACTS.priceStd}, or {FACTS.priceNet}{" "}
             for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship.
           </p>
           <p className="mt-s">
-            <Link href="/apply" className="btn btn-primary">Start your application</Link>
+            <Link href="/apply" className="btn btn-primary">Discuss your programme fit</Link>
           </p>
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Think like the founder your venture needs." />
+      <CtaSection programme="Executive MBA" heading="Discuss the decisions your venture needs to structure." />
     </>
   );
 }

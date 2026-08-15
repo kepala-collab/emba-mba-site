@@ -12,6 +12,10 @@ export const LOCALE_PAIRS: LocalePair[] = [
   { en: "/contact", zh: "/zh/contact" },
   { en: "/privacy", zh: "/zh/privacy" },
   { en: "/terms", zh: "/zh/terms" },
+  { en: "/resources", zh: "/zh/resources" },
+  { en: "/diagnostic", zh: "/zh/diagnostic" },
+  { en: "/resources/advancement-brief", zh: "/zh/resources/advancement-brief" },
+  { en: "/insights/advancement-question", zh: "/zh/insights/advancement-question" },
 ];
 
 export function languageAlternates(path: string) {

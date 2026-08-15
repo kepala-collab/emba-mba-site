@@ -7,7 +7,7 @@ const path = "/zh/apply";
 
 export const metadata = withSeo(path, {
   title: "预约 Future Ready 高管 MBA 课程沟通",
-  description: "选择简短通话、线上说明会、在双方同意的地点面谈或先收取资料；无需承诺。",
+  description: "选择简短通话、线上说明会、在双方同意的地点面谈或先收取资料；提交咨询不等于录取或付款。",
 });
 
 export default function Page() {

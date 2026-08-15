@@ -3,7 +3,7 @@ import { SITE } from "@/lib/content";
 import { languageAlternates } from "@/lib/locale-routes";
 
 const DEFAULT_DESCRIPTION =
-  "A six-month professional Executive MBA pathway: three months to the CMI-recognised programme certificate, followed by three months of supported Chartered Manager assessment preparation. Eligible employers may claim up to 100% through HRD Corp, subject to approval and levy balance.";
+  "A six-month professional Executive MBA pathway: three months to the CMI-recognised programme certificate, followed by three months of supported Chartered Manager assessment preparation. HRD Corp-registered Malaysian employers apply for funding before training; HRD Corp decides eligibility and the approved amount.";
 
 export const PROVIDER_ID = `${SITE.url}/#programme-provider`;
 export const OPERATOR_ID = `${SITE.url}/#website-operator`;

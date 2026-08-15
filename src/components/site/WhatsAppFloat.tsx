@@ -3,8 +3,10 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/content";
+import { useFloatingUi } from "@/components/site/FloatingUiContext";
 
 export default function WhatsAppFloat() {
+  const { persistentActionsVisible } = useFloatingUi();
   const pathname = usePathname() || "/";
   const zh = pathname === "/zh" || pathname.startsWith("/zh/");
   const label = zh ? "WhatsApp 咨询课程" : "Chat with us on WhatsApp";
@@ -32,15 +34,17 @@ export default function WhatsAppFloat() {
     return () => observer.disconnect();
   }, [pathname]);
 
+  const suppressed = formVisible || !persistentActionsVisible;
+
   return (
     <a
-      className={`wa-float${formVisible ? " is-suppressed" : ""}`}
+      className={`wa-float${suppressed ? " is-suppressed" : ""}`}
       href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      aria-hidden={formVisible}
-      tabIndex={formVisible ? -1 : undefined}
+      aria-hidden={suppressed}
+      tabIndex={suppressed ? -1 : undefined}
       data-track-event="contact_click"
       data-track-id="global_whatsapp"
       data-track-location="persistent_contact"

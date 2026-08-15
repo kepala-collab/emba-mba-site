@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, THINKING_EDGE, MODULES, SITE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, FACTS, THINKING_EDGE, MODULES, SITE } from "@/lib/content";
 import JsonLd from "@/components/site/JsonLd";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
@@ -55,13 +55,14 @@ export default function OnlineExecutiveMbaPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              The <span className="acc">fully online</span> Executive MBA recognised by CMI (UK) for global leaders.
+              The <span className="acc">fully online</span> route for participants joining from any country.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            The International track runs entirely online. The first three months deliver the live programme and project; the next three provide supported CMgr assessment preparation for eligible participants, with no physical attendance required. Built for globally distributed and remote cohorts, it
-            delivers the same framework-driven transformation as our in-person{" "}
-            <Link href="/executive-mba" className="acc">Executive MBA</Link>, wherever you lead from.
+            The International track follows the same six-month structure as the in-person{" "}
+            <Link href="/executive-mba" className="acc">Executive MBA</Link> without requiring travel.
+            The first three months comprise live sessions, coaching and an applied business project;
+            the next three provide supported Chartered Manager assessment preparation for eligible participants.
           </p>
           <p className="mono sec-k mt-s">
             Six-month professional pathway · {FACTS.priceIntl} per person · Recognised against CMI Professional Standards
@@ -77,19 +78,19 @@ export default function OnlineExecutiveMbaPage() {
             <span className="mono sec-k">Why online works here</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Live facilitation, real coaching — not a video library.</h2>
+            <h2 className="sec-h">Live sessions, individual coaching and an applied project.</h2>
           </Reveal>
           <p className="sec-sub">
-            This is not self-paced e-learning. Every session is live-facilitated online, paired with
-            personal diagnostics, one-to-one project coaching and a permanent LMS toolkit you keep for
-            life. There is no thesis and there are no exams — instead you apply each framework directly
-            to your own business as you go, and leave with a board-ready transformation plan.
+            This is a live, facilitator-led programme rather than a self-paced video course. It includes
+            personal diagnostics, one-to-one project coaching and continued access to the programme LMS.
+            There is no traditional thesis or examination in the programme-certificate phase. Participants
+            apply the frameworks to their own organisational context and submit a transformation plan for faculty review.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {[
-              { h: "Live online facilitation", p: "Framework workshops delivered in real time by practitioners — no pre-recorded modules." },
-              { h: "Diagnostics + 1:1 coaching", p: "Personal leadership diagnostics and project coaching applied to your real business." },
-              { h: "No thesis, no exams", p: "You are assessed on an ROI-driven business project, not memorisation or written papers." },
+              { h: "Live online facilitation", p: "Practitioners deliver the framework workshops in real time." },
+              { h: "Diagnostics + 1:1 coaching", p: "Personal leadership diagnostics and project coaching are applied to the participant's organisational context." },
+              { h: "Applied assessment", p: "Participants complete an applied business project instead of a traditional thesis or examination." },
             ].map((x) => (
               <Reveal key={x.h}>
                 <div className="card">
@@ -107,14 +108,14 @@ export default function OnlineExecutiveMbaPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">The F.A.S.T. thinking edge</span>
+            <span className="mono sec-k">The F.A.S.T. method</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Thinking frameworks that travel across any border.</h2>
+            <h2 className="sec-h">A consistent decision method across locations and industries.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme installs a stack of thinking frameworks you can apply the moment a session
-            ends — regardless of industry, market or time zone.
+            The programme teaches seven thinking disciplines for analysing business context, testing
+            assumptions, comparing options and planning action. The four examples below form part of that method.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {THINKING_EDGE.slice(0, 4).map((t) => (
@@ -168,9 +169,9 @@ export default function OnlineExecutiveMbaPage() {
           <p className="sec-sub">
             The global online public-programme fee of {FACTS.priceIntl} per person applies irrespective of
             the participant&rsquo;s country and is inclusive of live online facilitation, leadership diagnostics,
-            project coaching and lifetime LMS access. The programme certificate states that the programme
-            is recognised against CMI Professional Standards. Eligible graduates may separately apply for Chartered Manager subject to CMI requirements. CMI brings {FACTS.cmiMembers} members and
-            more than 75 years of standing behind your credential.
+            project coaching and retained LMS access. {CERTIFICATE_POSITIONING.distinction} During months
+            four to six, participants who meet CMI&rsquo;s entry criteria receive support to prepare for CMI&rsquo;s
+            separate Chartered Manager assessment. CMI awards CMgr MCMI only after successful assessment.
           </p>
           <p className="fine mt-s">
             This is a professional programme recognised by CMI (UK) — not an MQA-regulated academic
@@ -187,12 +188,11 @@ export default function OnlineExecutiveMbaPage() {
             <span className="mono sec-k">A global cohort</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Learn alongside leaders from around the world.</h2>
+            <h2 className="sec-h">Open to participants irrespective of country.</h2>
           </Reveal>
           <p className="sec-sub">
-            Because it is fully online, the International track brings together a global cohort — you
-            build your thinking, and your network, alongside senior leaders across markets and
-            continents. That room becomes an informal board you keep long after the final session.
+            The online format accepts participants irrespective of country. Cohort composition is confirmed
+            from the participants enrolled in that intake; no country mix is promised in advance.
           </p>
           <p className="mt-s">
             <Link href="/apply" className="btn btn-primary">Apply for the online cohort</Link>
@@ -200,7 +200,7 @@ export default function OnlineExecutiveMbaPage() {
         </div>
       </section>
 
-      <CtaSection programme="Online Executive MBA" heading="Join the next global online cohort." />
+      <CtaSection programme="Online Executive MBA" heading="Discuss the fully online route and next intake." />
     </>
   );
 }

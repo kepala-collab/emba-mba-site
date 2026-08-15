@@ -35,7 +35,7 @@ type OutboxRow = RowDataPacket & {
   contact_preference: ContactPreference | null;
 };
 
-type ContactPreference = "programme_call" | "in_person_meeting" | "online_meeting" | "details_first";
+type ContactPreference = "programme_call" | "in_person_meeting" | "online_meeting" | "details_first" | "whatsapp";
 
 type ClaimedOutboxRow = Omit<OutboxRow, "attempt_count" | "message_id"> & {
   attempt_count: number;
@@ -158,12 +158,14 @@ export function buildApplicationReceivedEmail(input: {
         in_person_meeting: "在双方同意的地点面谈",
         online_meeting: "线上课程说明会",
         details_first: "先发送资料，暂不通话",
+        whatsapp: "通过 WhatsApp 沟通",
       }[preference]
     : {
         programme_call: "a short programme-fit call",
         in_person_meeting: "an in-person meeting at an agreed location",
         online_meeting: "an online information meeting",
         details_first: "programme details first, with no call yet",
+        whatsapp: "a WhatsApp conversation",
       }[preference];
 
   if (language === "zh") {

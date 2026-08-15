@@ -15,7 +15,7 @@ export const ROOT_METADATA: Metadata = {
   applicationName: "Future Ready EMBA",
   manifest: "/manifest.webmanifest",
   title: {
-    default: "Future Ready Executive MBA (CMI UK) | Asian Business Consulting",
+    default: "Future Ready Executive MBA — Working Scholar",
     template: "%s | Future Ready",
   },
   description:
@@ -23,16 +23,16 @@ export const ROOT_METADATA: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Future Ready Executive MBA",
-    title: "Future Ready Executive MBA (CMI UK)",
-    description: "Build future-ready leadership through a six-month professional pathway recognised by CMI (UK), with supported Chartered Manager assessment preparation.",
+    title: "Future Ready Executive MBA — Working Scholar",
+    description: "A six-month professional development pathway for experienced working adults, with an applied business project and supported Chartered Manager assessment preparation.",
     url: "/",
     locale: "en_MY",
     images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630, alt: "Future Ready Executive MBA" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Future Ready Executive MBA (CMI UK)",
-    description: "A professional leadership programme for working leaders, recognised by CMI (UK).",
+    title: "Future Ready Executive MBA — Working Scholar",
+    description: "Structured inquiry, applied business frameworks and a clear professional recognition pathway for experienced working adults.",
     images: [`${SITE.url}/opengraph-image`],
   },
   icons: {
@@ -46,7 +46,7 @@ export const ROOT_METADATA: Metadata = {
   appleWebApp: {
     capable: true,
     title: "Future Ready EMBA",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
   },
   verification,
   category: "executive education",

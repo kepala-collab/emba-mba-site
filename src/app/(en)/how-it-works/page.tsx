@@ -12,26 +12,26 @@ export const metadata = withSeo("/how-it-works", {
 
 // Truthful, generic amplifications of each discipline — no fabricated claims.
 const EDGE_MORE: Record<string, string> = {
-  "01 · Systems": "You stop treating symptoms and start reading the structure that keeps producing them.",
-  "02 · First-Principle": "Borrowed answers get replaced with reasoning you can defend from the ground up.",
-  "03 · Design-Integrative": "Analysis and imagination stop fighting each other and start compounding.",
-  "04 · Framework": "A repeatable structure means the hard call gets easier the next time, not harder.",
-  "05 · Five-Fold": "Blind spots shrink because every decision is pressure-tested from angles you would have skipped.",
-  "06 · 4D Strategic": "Direction, drivers, definition and delivery line up instead of pulling in different directions.",
-  "07 · Holistic": "People, capital and growth are read as one system, so the plan survives contact with reality.",
+  "01 · Systems": "Trace how incentives, information flows and delays combine to produce the result.",
+  "02 · First-Principle": "Separate verified constraints from inherited assumptions before building an answer.",
+  "03 · Design-Integrative": "Use analysis and creative exploration together when one mode cannot resolve the problem.",
+  "04 · Framework": "Apply a repeatable structure to define the question, evidence, options and decision criteria.",
+  "05 · Five-Fold": "Review the decision through five defined perspectives before committing resources.",
+  "06 · 4D Strategic": "Connect direction, drivers, definition and delivery in one strategy process.",
+  "07 · Holistic": "Evaluate people, capital, customers and growth as parts of the same operating system.",
 };
 
 const OUTCOMES = [
-  { i: "01", h: "Sharper decisions, made faster", p: "You reach the defensible call sooner because you can see the structure of the problem, not just its noise." },
-  { i: "02", h: "Opportunities you spot first", p: "Reading systems and second-order effects means you notice the opening while competitors are still reacting." },
-  { i: "03", h: "Composure under uncertainty", p: "When the data is incomplete, a framework gives you a way to move — deliberately, not anxiously." },
-  { i: "04", h: "Judgment your team can trust", p: "Your reasoning becomes visible and repeatable, so the people around you can align and act on it." },
+  { i: "01", h: "Structured decisions", p: "Define the problem, evidence, assumptions, options and decision criteria before committing." },
+  { i: "02", h: "System-level analysis", p: "Trace second-order effects across customers, people, economics and execution." },
+  { i: "03", h: "Action under uncertainty", p: "Use a framework to identify what is known, what requires testing and which decision cannot wait." },
+  { i: "04", h: "Visible reasoning", p: "Document how a decision was reached so teams can review, align and execute." },
 ];
 
 const DELIVERY = [
-  { h: "Live framework workshops", p: "Each discipline is taught as a working tool, then applied on real cases in the room — not lectured at you." },
-  { h: "Facilitated coaching", p: "You are challenged on your own thinking by facilitators, so the frameworks become instinct, not notes." },
-  { h: "A real project, your own business", p: "You build a live transformation plan for your organisation as you go — the coursework is the work." },
+  { h: "Live framework workshops", p: "Faculty introduce each discipline, demonstrate its use and guide participants through applied cases." },
+  { h: "Facilitated coaching", p: "Coaching reviews how you frame the problem, use evidence and translate the framework into action." },
+  { h: "Applied business project", p: "You use the frameworks to develop a transformation plan for your own organisation." },
 ];
 
 export default function HowItWorks() {
@@ -43,21 +43,20 @@ export default function HowItWorks() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The Method · F.A.S.T.</span></div></Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              We teach context, not content. Information is free — <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>judgment isn&rsquo;t.</em>
+              Content informs the decision. <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Context determines it.</em>
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Any fact you need is a search away. What no search returns is the instinct to ask the right question,
-              read a situation whole, and decide well when the data is incomplete. That instinct is what this programme
-              installs. Its engine is <b style={{ color: "#fff" }}>Framework Adaptive Systems Thinking (F.A.S.T.)</b> —
-              seven thinking disciplines that compound into judgment you carry into every room after.
+              Access to information is not the same as knowing which question to ask, which evidence matters or
+              which trade-off to accept. <b style={{ color: "var(--ink)" }}>Framework Adaptive Systems Thinking (F.A.S.T.)</b>{" "}
+              brings seven thinking disciplines into one repeatable decision process.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
-              Most executive education loads you with more to know. F.A.S.T. changes <em style={{ fontStyle: "italic" }}>how you know</em> —
-              so the frameworks keep working long after the content of any single case has gone stale.
+              F.A.S.T. develops <em style={{ fontStyle: "italic" }}>how you analyse</em>, not only what you know.
+              The seven frameworks are designed for reuse after individual case examples become outdated.
             </p>
           </Reveal>
         </div>
@@ -67,8 +66,8 @@ export default function HowItWorks() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The seven disciplines</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Seven ways of thinking. One compounding edge.</h2></Reveal>
-          <Reveal><p className="sec-sub">Each discipline is a distinct lens. Learned together, they become a single way of reading complexity that most leaders never develop.</p></Reveal>
+          <Reveal><h2 className="sec-h">Seven disciplines, used as one decision process.</h2></Reveal>
+          <Reveal><p className="sec-sub">Each discipline is a distinct lens. Used together, the seven lenses provide a defined process for reading complexity and testing a decision.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="edge-grid">
               {THINKING_EDGE.map((e) => (
@@ -89,8 +88,8 @@ export default function HowItWorks() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The thinking flow</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Better thinking is a chain — and it ends in value.</h2></Reveal>
-          <Reveal><p className="sec-sub">The disciplines are not academic. They run in sequence: right thinking asks the right questions, which surface the right ideas, which become the right solutions — and exceptional value at the end of the line.</p></Reveal>
+          <Reveal><h2 className="sec-h">From a well-framed question to measurable value.</h2></Reveal>
+          <Reveal><p className="sec-sub">The F.A.S.T. sequence connects problem framing, questions, options, solutions and value. Each stage produces the input required by the next.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14, padding: 26, border: "1px solid var(--line)", borderRadius: 16, background: "linear-gradient(180deg,var(--surface),transparent)" }}>
               {FLOW.map((s, i) => (
@@ -112,8 +111,8 @@ export default function HowItWorks() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What this means for you</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Thinking better isn&rsquo;t abstract. It shows up in the work.</h2></Reveal>
-          <Reveal><p className="sec-sub">These are capabilities the method is built to develop — not guaranteed outcomes. What you do with them is yours.</p></Reveal>
+          <Reveal><h2 className="sec-h">Capabilities you can apply to live decisions.</h2></Reveal>
+          <Reveal><p className="sec-sub">The method develops decision capabilities; business outcomes depend on the participant&rsquo;s evidence, choices and execution.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }} className="edge-grid">
               {OUTCOMES.map((o) => (
@@ -133,7 +132,7 @@ export default function HowItWorks() {
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How it&rsquo;s delivered</span></div></Reveal>
           <Reveal><h2 className="sec-h">Learned by doing, in {FACTS.durationLong}.</h2></Reveal>
-          <Reveal><p className="sec-sub">No lecture halls, no thesis, no exams. The method is delivered as workshops, coaching and a real project — because judgment is built by using it, not by memorising it.</p></Reveal>
+          <Reveal><p className="sec-sub">The programme uses workshops, coaching and an applied business project instead of a traditional thesis or examination.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="edge-grid">
               {DELIVERY.map((d, i) => (
@@ -155,7 +154,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Think better in six months. Prove it on your own business." />
+      <CtaSection programme="Executive MBA" heading="Explore how the F.A.S.T. method applies to your role." />
     </>
   );
 }

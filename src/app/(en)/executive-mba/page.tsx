@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
+import IntakeSchedule from "@/components/site/IntakeSchedule";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import JsonLd from "@/components/site/JsonLd";
-import { SITE, FACTS, THINKING_EDGE, MODULES, INCLUSIONS, INTAKES, STAGES, COMPLIANCE } from "@/lib/content";
+import { SITE, FACTS, THINKING_EDGE, MODULES, INCLUSIONS, STAGES, COMPLIANCE, HRD_CORP_CLAIM } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/executive-mba", {
@@ -42,19 +42,19 @@ export default function ExecutiveMbaPage() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The Programme · Recognised by CMI (UK)</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.4rem,5.4vw,4rem)", letterSpacing: "-.02em", lineHeight: 1.05, maxWidth: "18ch" }}>
-              An Executive MBA built for how leaders actually <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>think.</em>
+              A six-month professional pathway for leaders who make <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>business-wide decisions.</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p className="sec-sub" style={{ maxWidth: "56ch" }}>
               The Future-Ready Executive MBA is a professional leadership programme run by {SITE.provider} and recognised by CMI (UK) against CMI Professional Standards.
-              It installs the thinking frameworks that senior operators spend decades earning through a six-month professional journey. The first three months lead to the CMI-recognised Executive MBA programme certificate; the next three support eligible participants preparing for CMI&rsquo;s separate Chartered Manager assessment. The programme phase has no traditional thesis or exams, and you leave with a board-ready transformation plan for your own business.
+              It teaches seven named thinking disciplines through a six-month professional pathway. The first three months lead to the CMI-recognised Executive MBA programme certificate; the next three support participants who meet CMI&rsquo;s entry criteria in preparing for CMI&rsquo;s separate Chartered Manager assessment. The programme phase has no traditional thesis or exams, and successful participants complete a transformation plan for their own business.
             </p>
           </Reveal>
           <Reveal delay={160}>
             <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(1.3rem,3vw,1.9rem)", lineHeight: 1.3, margin: "26px 0 30px", maxWidth: "24ch" }}>
-              <b style={{ color: "#fff" }}>{FACTS.priceStd}</b> standard —{" "}
-              <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>{FACTS.priceNet}</em> for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. Eligible employers may apply to claim up to 100% through HRD Corp, subject to approval and levy balance.
+              <b style={{ color: "var(--ink)" }}>{FACTS.priceStd}</b> standard —{" "}
+              <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>{FACTS.priceNet}</em> for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. {HRD_CORP_CLAIM.short}
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -68,7 +68,7 @@ export default function ExecutiveMbaPage() {
               <span className="chip"><Image src="/brand/cmi-logo.png" alt="Chartered Management Institute UK" width={90} height={30} style={{ height: 30, width: "auto" }} /></span>
               <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp Claimable" width={42} height={42} style={{ height: 42, width: "auto" }} /></span>
               <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".1em" }}>
-                Recognised against CMI Professional Standards · HRD Corp claimable for eligible employers<br />{FACTS.gradsApprox} graduates · {FACTS.cohorts} cohorts reported by ABC
+                CMI Certificate of Recognition · HRD Corp employer grant route<br />{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · {FACTS.cohorts} cohorts reported by ABC
               </span>
             </div>
           </Reveal>
@@ -79,9 +79,9 @@ export default function ExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Who it&rsquo;s for</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Built for the people who carry the decisions.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Designed for roles with business-wide accountability.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "52ch" }}>
-            Typically leaders aged 35&ndash;55 with 10+ years of experience who are responsible for direction, not just delivery.
+            Business owners, directors, general managers and senior managers responsible for strategy, transformation, innovation or growth.
           </p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14 }} className="who-grid">
             {[
@@ -103,8 +103,8 @@ export default function ExecutiveMbaPage() {
       {/* 3 · F.A.S.T. THINKING EDGE */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The F.A.S.T. thinking edge</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Seven disciplines that compound into judgment.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The F.A.S.T. method</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Seven disciplines used as one decision process.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "52ch" }}>
             Framework Adaptive Systems Thinking — the instinct to see what others miss and decide when others freeze.
           </p></Reveal>
@@ -125,7 +125,7 @@ export default function ExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The curriculum · 12 modules</span></div></Reveal>
-          <Reveal><h2 className="sec-h">A full transformation curriculum — nothing padded.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Twelve modules organised around one applied project.</h2></Reveal>
           <Reveal className="mt-m"><div className="mods">
             {MODULES.map((m) => (
               <div key={m.c} className="m">
@@ -142,7 +142,7 @@ export default function ExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What&rsquo;s included</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Everything you need to change how you lead.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Programme components included in the published fee.</h2></Reveal>
           <Reveal className="mt-m"><div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }} className="incl-grid">
             {INCLUSIONS.map((inc) => (
               <div key={inc.b} className="card" style={{ display: "flex", gap: 14 }}>
@@ -162,8 +162,8 @@ export default function ExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme certificate · optional progression</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Three months to the programme certificate. Three months toward Chartered recognition.</h2></Reveal>
-          <Reveal><p className="sec-sub">The complete journey is designed over six months. Months one to three deliver the Executive MBA programme and CMI-recognised certificate. Months four to six support eligible participants in preparing the evidence, written application and professional discussion required for CMI&rsquo;s separate Chartered Manager assessment. The designation is comparable in professional logic to other chartered titles—but it is specifically for demonstrated management and leadership practice.</p></Reveal>
+          <Reveal><h2 className="sec-h">Three months to the programme certificate. Three months of CMgr assessment preparation.</h2></Reveal>
+          <Reveal><p className="sec-sub">The complete pathway runs for six months. Months one to three deliver the Executive MBA programme and CMI-recognised certificate. During months four to six, participants who meet CMI&rsquo;s entry criteria prepare the evidence, written application and professional discussion required for CMI&rsquo;s separate Chartered Manager assessment. CMI awards CMgr MCMI only after successful assessment.</p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }} className="cert-grid">
             {STAGES.map((s, i) => (
               <div key={s.h} className="card">
@@ -182,12 +182,12 @@ export default function ExecutiveMbaPage() {
               </div>
               <div>
                 <div className="mono sec-k" style={{ fontSize: ".72rem" }}>The credential you earn</div>
-                <h3 style={{ fontSize: "1.35rem", margin: "10px 0 8px" }}>Recognised by CMI (UK) — signed by their Chief Executive.</h3>
-                <p style={{ color: "var(--ink-2)", margin: 0, fontSize: ".95rem" }}>Your Executive Master&rsquo;s in Business Administration on Future Ready Business Leadership is recognised against CMI Professional Standards. Specimen shown.</p>
+                <h3 style={{ fontSize: "1.35rem", margin: "10px 0 8px" }}>CMI Certificate of Recognition</h3>
+                <p style={{ color: "var(--ink-2)", margin: 0, fontSize: ".95rem" }}>The specimen records recognition against CMI Professional Standards and bears the signature of CMI Chief Executive Ann Francke OBE. CMI controls the format, wording and signatory of the certificate issued to each successful participant.</p>
               </div>
             </div>
           </Reveal>
-          <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "70ch" }}>Recognised by the Chartered Management Institute (UK), the professional body for management with {FACTS.cmiMembers} members worldwide. {COMPLIANCE}</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "70ch" }}>{COMPLIANCE}</p></Reveal>
         </div>
         <style>{`@media(max-width:760px){.cert-grid,.cert-img-grid{grid-template-columns:1fr!important}}`}</style>
       </section>
@@ -203,7 +203,7 @@ export default function ExecutiveMbaPage() {
               <h3 style={{ fontSize: "1.2rem", margin: "12px 0 8px" }}>Live, in-person delivery</h3>
               <p style={{ margin: 0, color: "var(--muted)", fontSize: ".95rem" }}>
                 Weekend facilitation, 9am&ndash;6pm, across the first three months. Cohort 17 runs Saturday&ndash;Sunday; the other currently published cohorts run Friday&ndash;Saturday. Months four to six support eligible participants preparing for CMI&rsquo;s Chartered Manager assessment. {FACTS.priceStd} standard,
-                {" "}{FACTS.priceNet} for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. Eligible employers may apply to claim up to 100% through HRD Corp, subject to approval and levy balance.
+                {" "}{FACTS.priceNet} for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. {HRD_CORP_CLAIM.short}
               </p>
             </div>
             <div className="card">
@@ -211,7 +211,7 @@ export default function ExecutiveMbaPage() {
               <h3 style={{ fontSize: "1.2rem", margin: "12px 0 8px" }}>Join live from anywhere</h3>
               <p style={{ margin: 0, color: "var(--muted)", fontSize: ".95rem" }}>
                 The same framework curriculum delivered live online for international participants at{" "}
-                <b style={{ color: "#fff" }}>{FACTS.priceIntl}</b> — no travel, same cohort experience.
+                <b style={{ color: "var(--ink)" }}>{FACTS.priceIntl}</b> — live online delivery with the same curriculum and coaching structure.
               </p>
             </div>
           </div></Reveal>
@@ -225,14 +225,7 @@ export default function ExecutiveMbaPage() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">2026 Intakes · English and Mandarin</span></div></Reveal>
           <Reveal><h2 className="sec-h">Five published cohort schedules for 2026.</h2></Reveal>
           <Reveal className="mt-s">
-            <ScrollableTableRegion kind="intake" label="2026 Executive MBA intake schedule">
-              <table className="intake">
-                <thead><tr><th>Cohort</th><th>Language</th><th>Session 1</th><th>Session 2</th><th>Session 3</th><th>Days</th></tr></thead>
-                <tbody>{INTAKES.map((c) => (
-                  <tr key={`${c.language}-${c.co}`}><td className="co">{c.co}</td><td>{c.language}</td><td><span className="s">{c.s1}</span></td><td><span className="s">{c.s2}</span></td><td><span className="s">{c.s3}</span></td><td className="seats">{c.days}<br />{c.time}</td></tr>
-                ))}</tbody>
-              </table>
-            </ScrollableTableRegion>
+            <IntakeSchedule label="2026 Executive MBA intake schedule" />
           </Reveal>
           <Reveal className="mt-s"><Link href="/intakes" className="btn btn-ghost">See all 2026 intakes →</Link></Reveal>
         </div>

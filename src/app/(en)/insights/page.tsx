@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/insights", {
   title: "Insights — Thinking Frameworks for Leaders",
   description:
-    "Ideas on how the best leaders think: first-principles reasoning, systems thinking and design thinking — the mental models behind the Future Ready Executive MBA.",
+    "Practical introductions to first-principles reasoning, systems thinking and design thinking for business decisions.",
 });
 
 const ARTICLES = [
@@ -17,21 +17,21 @@ const ARTICLES = [
     title: "First-Principles Thinking for Business Leaders",
     slug: "/insights/first-principles-thinking",
     blurb:
-      "How to strip a problem to bedrock and rebuild a disruptive answer — the reasoning method behind breakthrough strategy.",
+      "How to separate verified constraints from assumptions and develop options from foundational facts.",
   },
   {
     kicker: "Thinking",
     title: "Systems Thinking for Leaders",
     slug: "/insights/systems-thinking-for-leaders",
     blurb:
-      "See the whole board: how to anticipate second- and third-order consequences before you commit.",
+      "How to examine relationships, feedback loops and second-order consequences before deciding.",
   },
   {
     kicker: "Thinking",
     title: "Design Thinking for Business",
     slug: "/insights/design-thinking-for-business",
     blurb:
-      "Fuse creativity, logic and strategy to build what customers actually want.",
+      "How to combine customer evidence, prototypes and commercial constraints before committing resources.",
   },
 ];
 
@@ -40,7 +40,7 @@ const jsonLd = {
   "@type": "CollectionPage",
   name: "Insights — Thinking Frameworks for Leaders",
   description:
-    "Notes on the reasoning frameworks that separate operators from leaders — first-principles, systems and design thinking.",
+    "Practical introductions to first-principles, systems and design thinking for business decisions.",
   hasPart: {
     "@type": "ItemList",
     itemListElement: ARTICLES.map((a, i) => ({
@@ -67,8 +67,8 @@ export default function InsightsPage() {
             </div>
             <h1 className="sec-h">Thinking frameworks for leaders</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              Better decisions come from better thinking. Notes on the frameworks
-              that separate operators from leaders.
+              Practical introductions to three reasoning methods used in the programme:
+              first-principles, systems and design thinking.
             </p>
           </Reveal>
 
@@ -123,15 +123,14 @@ export default function InsightsPage() {
           </div>
 
           <p className="fine mt-s">
-            More frameworks are published each intake as the faculty add to the
-            series.
+            Each article identifies its sources and the date of its latest substantive review.
           </p>
         </div>
       </section>
 
       <CtaSection
         programme="Executive MBA"
-        heading="Don't just read about better thinking. Install it."
+        heading="Apply the thinking methods to your own business decisions."
       />
     </>
   );

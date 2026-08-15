@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, SITE } from "@/lib/content";
+import { FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -35,19 +35,19 @@ const jsonLd = {
 };
 
 export default function MbaForSmeOwnersPage() {
-  const frustrations = [
-    { h: "Operator, not CEO", p: "You own the business, but you spend your days running it — pricing jobs, chasing invoices, fixing what breaks. The title says founder; the calendar says operator." },
-    { h: "It can't scale past you", p: "Every important decision, key client and hard problem still routes through you. Growth stalls at the ceiling of your own hours, because the business is you." },
-    { h: "No time to think strategically", p: "You know you should be working on the business, not in it — but the day fills before you get there. Strategy keeps losing to the inbox." },
-    { h: "Succession & exit are unclear", p: "You'd like to scale, step back or one day sell — but a business that depends this much on you is hard to hand over and hard to value." },
-    { h: "Always firefighting", p: "You lead by reacting. Each week is another round of urgent problems, and the important work that would change the trajectory never gets its turn." },
+  const challenges = [
+    { h: "Operational dependence", p: "Pricing, approvals, client decisions and problem resolution still depend on the owner." },
+    { h: "Limited decision capacity", p: "Business growth increases the number of decisions faster than one person can process them." },
+    { h: "Strategy without protected time", p: "Immediate operational work repeatedly takes priority over market, capability and investment decisions." },
+    { h: "Unclear succession", p: "Roles, decision rights and operating knowledge are not documented well enough for leadership transfer." },
+    { h: "Reactive management", p: "Teams address urgent symptoms without changing the process or incentive that produces them." },
   ];
 
   const fit = [
-    { h: "One weekend a month", p: "Sessions run Friday and Saturday, once a month during the three-month programme-certificate phase. Your business keeps running while you build the way you lead it — no career break, no long absence from the helm." },
-    { h: "Your own business is the capstone", p: "There is no thesis and no exam. Every framework is applied to your real company as you learn it, so you leave with a board-ready plan for the business you actually run — not a case study." },
-    { h: "Up to 100% through HRD Corp", p: "An eligible HRD Corp-registered employer may apply to claim up to 100% of the approved programme fee, subject to programme registration, prior approval and sufficient levy balance." },
-    { h: "Scholarship for Malaysians", p: `${FACTS.scholarshipProvider} provides a ${FACTS.scholarshipAmt} scholarship for Malaysian participants, bringing the fee from ${FACTS.priceStd} to ${FACTS.priceNet}; installment options are also available.` },
+    { h: "One scheduled weekend a month", p: "The three certificate-phase sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort." },
+    { h: "Your business is the applied project", p: "There is no traditional thesis or examination. Participants use the frameworks to develop a transformation plan for their own organisation." },
+    { h: "Employer-applied HRD Corp funding", p: HRD_CORP_CLAIM.short },
+    { h: "Scholarship for Malaysians", p: `${FACTS.scholarshipProvider} provides a ${FACTS.scholarshipAmt} scholarship for Malaysian participants, bringing the fee from ${FACTS.priceStd} to ${FACTS.priceNet}; instalment options are listed on the Fees page.` },
   ];
 
   return (
@@ -63,15 +63,13 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              The business depends too much on you — <span className="acc">and you know it</span>.
+              Build the systems that reduce <span className="acc">owner dependence</span>.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            You built it. It works. But somewhere along the way you became the single point of
-            failure — the person every decision waits for, the reason a week away feels risky. You
-            wanted to own a business; instead the business owns your time. The Future Ready Executive
-            MBA is for owners who want to stop being the bottleneck and start thinking like the CEO
-            of a company that can run — and grow — without them in every room.
+            The Future Ready Executive MBA helps SME owners examine where decisions, client knowledge
+            and operating control remain concentrated in one person. The programme applies systems,
+            strategy and leadership frameworks to delegation, capability building, succession and growth.
           </p>
           <p className="mono sec-k mt-s">
             Six months · three monthly programme weekends + supported CMgr assessment preparation · recognised by CMI (UK)
@@ -89,17 +87,16 @@ export default function MbaForSmeOwnersPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Sound familiar?</span>
+            <span className="mono sec-k">Operating indicators</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">The founder&apos;s trap has a shape. This is it.</h2>
+            <h2 className="sec-h">Where owner dependence appears in the business.</h2>
           </Reveal>
           <p className="sec-sub">
-            If more than one of these lands, you are not failing — you are simply running the
-            business with the tools that got you here, which are not the tools that get you out.
+            Use these indicators to identify which operating constraint the applied project should address.
           </p>
           <div className="mt-m grid-forces">
-            {frustrations.map((x) => (
+            {challenges.map((x) => (
               <Reveal key={x.h}>
                 <div className="card">
                   <h3 className="mono sec-k">{x.h}</h3>
@@ -119,21 +116,20 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">What changes</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">From operator to strategist — by changing how you think.</h2>
+            <h2 className="sec-h">Move recurring decisions into defined operating systems.</h2>
           </Reveal>
           <p className="sec-sub">
-            The bottleneck is rarely effort; it is the operating system. This programme installs the
-            thinking frameworks that let an owner step up out of the day-to-day. It builds capability
-            — it does not promise a number. What you do with it is yours.
+            The programme focuses on the operating system around the owner: decision rights, processes,
+            information flows, leadership capability and measures. It develops management capability;
+            growth and return depend on the decisions and execution that follow.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             <Reveal>
               <div className="card">
                 <h3 className="mono sec-k">See the whole board</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Systems and first-principle thinking let you trace a decision to its third-order
-                  consequence — so you work on the few moves that shift the business, instead of
-                  reacting to every fire the day throws up.
+                  Systems and first-principles thinking trace how a decision affects customers,
+                  people, cash, capacity and execution before resources are committed.
                 </p>
               </div>
             </Reveal>
@@ -141,8 +137,8 @@ export default function MbaForSmeOwnersPage() {
               <div className="card">
                 <h3 className="mono sec-k">Build systems, not dependencies</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Learn to turn what only lives in your head into repeatable process — so the
-                  business can make good decisions without routing every one through you.
+                  Convert owner-held knowledge into documented processes, decision criteria and
+                  escalation rules that other leaders can use.
                 </p>
               </div>
             </Reveal>
@@ -150,8 +146,8 @@ export default function MbaForSmeOwnersPage() {
               <div className="card">
                 <h3 className="mono sec-k">Delegate with a framework</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Situational leadership and facilitative frameworks give you a way to hand off
-                  real ownership — not just tasks — so your people grow into the load you carry.
+                  Use situational leadership and facilitation frameworks to assign outcomes,
+                  decision authority, support and review points—not only tasks.
                 </p>
               </div>
             </Reveal>
@@ -160,8 +156,7 @@ export default function MbaForSmeOwnersPage() {
                 <h3 className="mono sec-k">Plan to scale or exit</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
                   A structured strategy gives you a defensible view of where the business goes next
-                  — the groundwork for scaling, stepping back, or making it something you could
-                  one day hand over.
+                  — the groundwork for a defined scale, succession or exit plan.
                 </p>
               </div>
             </Reveal>
@@ -181,11 +176,11 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Why it fits owners</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Designed for someone who can&apos;t leave the business behind.</h2>
+            <h2 className="sec-h">A format that allows owners to remain in the business.</h2>
           </Reveal>
           <p className="sec-sub">
-            An owner can&apos;t disappear for two years — and shouldn&apos;t have to. The format,
-            the funding and the capstone are all built around a person who is still running the show.
+            The certificate phase uses three monthly weekend sessions, and the applied project is based
+            on the participant&rsquo;s own organisation. Funding and payment routes are explained separately.
           </p>
           <div className="mt-m grid-forces">
             {fit.map((x) => (
@@ -199,8 +194,8 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <p className="fine mt-s">
             This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
-            academic degree. When you&apos;re ready,{" "}
-            <Link href="/apply" className="acc">start your application</Link>.
+            academic degree. <Link href="/apply" className="acc">Arrange a programme conversation</Link>{" "}
+            before choosing an intake.
           </p>
         </div>
       </section>
@@ -209,11 +204,11 @@ export default function MbaForSmeOwnersPage() {
       <section className="section center">
         <div className="wrap">
           <Reveal>
-            <h2 className="sec-h">Your business shouldn&apos;t stop when you do.</h2>
+            <h2 className="sec-h">Decide which owner dependency the programme should address.</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
-            The next cohort is a room of owners and directors working through exactly this — the
-            move from running the business to leading it. Bring yours.
+            Discuss your operating challenge with the programme team and confirm whether the applied
+            project, schedule and participant profile fit your objectives.
           </p>
           <p className="mt-s">
             <Link href="/apply" className="btn btn-primary">Arrange a programme conversation</Link>
@@ -221,7 +216,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Build a business that runs without you." />
+      <CtaSection programme="Executive MBA" heading="Discuss the systems your business needs beyond the owner." />
     </>
   );
 }

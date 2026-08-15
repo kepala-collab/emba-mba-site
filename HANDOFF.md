@@ -169,6 +169,6 @@ for the environment, build, deployment, and verification checklist.
 
 - Coordinator: **Rostam Affandi Ahmad** · WhatsApp/phone **+60 12-981 8533** · **support@futurereadymba.com**
 - Global and Local Programme Partner / operator: Right Dots Resources · Reg. 202603145615 (003856919-U)
-- Pricing: standard fee **RM10,000.00**. Malaysian participants pay **RM6,000.00** after a **RM4,000.00 LIFE Innoversity scholarship**. Eligible HRD Corp-registered employers may apply to claim up to 100% of the approved programme fee for employees, subject to programme registration, prior approval and sufficient levy balance.
+- Pricing: standard fee **RM10,000.00**. Malaysian participants pay **RM5,000.00** after a **RM5,000.00 LIFE Innoversity scholarship**. HRD Corp determines employer funding eligibility and the approved amount; the employer submits its grant application before training.
 - Structure: six-month professional pathway. Months 1–3 comprise six training days across three monthly sessions and the applied project leading to the CMI-recognised Executive MBA programme certificate. Months 4–6 provide supported preparation for eligible participants pursuing CMI's separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment.
 - Compliance: not MQA-accredited; CMI (UK)-recognised professional programme; PDPA 2010

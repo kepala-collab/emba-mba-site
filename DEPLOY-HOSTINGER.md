@@ -36,6 +36,12 @@ SMTP_PASSWORD=<Hostinger mailbox password>
 EMAIL_FROM_NAME=Future Ready Programme Team
 EMAIL_REPLY_TO=support@futurereadymba.com
 EMAIL_CRON_SECRET=<separate 32+ random bytes, stored only in Hostinger>
+NEXT_PUBLIC_EXPERIMENTS_ENABLED=false
+# Configure the four values below only when an authorised CRM receiver is ready.
+CONVERSION_WEBHOOK_URL=<authorised HTTPS CRM webhook>
+CONVERSION_WEBHOOK_SECRET=<separate 32+ random bytes>
+CONVERSION_CRON_SECRET=<separate 32+ random bytes>
+LEAD_LIFECYCLE_SECRET=<separate 32+ random bytes>
 GROQ_API_KEY=<server-only Groq API key>
 GROQ_MODEL=openai/gpt-oss-120b
 ```
@@ -69,6 +75,11 @@ Migration `003_add_lead_attribution.sql` must be applied before deploying the
 analytics-ready release; the lead insert expects its attribution columns to exist.
 Migration `004_create_lead_email_outbox.sql` must be applied before deploying the
 transactional email release; lead submission and email retry processing use this table.
+Migration `005_add_lead_contact_preference.sql` records the requested conversation route.
+Migration `006_add_conversion_lifecycle.sql` is required before deploying the Conversion
+OS release; it adds replay-safe lead references, intent/cohort data, lifecycle audit and
+the CRM integration outbox. The migration is additive and must be backed up and applied
+before the new application build starts receiving requests.
 
 `LEAD_HASH_SECRET` keys privacy-preserving rate-limit fingerprints and daily lead
 deduplication. Generate it independently from the database password, never expose it
@@ -93,6 +104,17 @@ The cron endpoint returns counts only and never logs applicant contact details. 
 the cron secret out of the repository, use a value different from `LEAD_HASH_SECRET`,
 and rotate it if the cron command is ever exposed.
 
+When the CRM webhook is configured, add a second five-minute cron job:
+
+```cron
+*/5 * * * * curl -fsS -X POST -H "Authorization: Bearer <CONVERSION_CRON_SECRET>" https://futurereadymba.com/api/internal/integration-outbox
+```
+
+Use the same secret to read `/api/internal/conversion-health`. The health response contains
+counts and queue ages only. Webhook payloads contain applicant contact data and therefore
+may be sent only to an authorised processor. Signature verification, lifecycle usage,
+alert thresholds and rollback order are documented in `CONVERSION-OPERATIONS.md`.
+
 ## Build and deploy
 
 Use the repository root (the folder containing `package.json`):
@@ -100,6 +122,8 @@ Use the repository root (the folder containing `package.json`):
 ```bash
 npm ci
 npm run lint
+npm run typecheck
+npm test
 npm run build
 ```
 
@@ -140,12 +164,15 @@ After each deployment:
    then remove the row.
 7. Confirm the matching `lead_email_outbox` row reaches `sent` and the English or
    Chinese acknowledgement arrives once with the expected subject and reply-to.
-8. Ask one English and one Chinese programme question in the assistant. Confirm
+8. Confirm `lead_audit_events` has one `lead.created` event, the integration event is
+   delivered once, replaying the same submission ID creates no duplicate, and the
+   authenticated conversion health endpoint reports `ok`.
+9. Ask one English and one Chinese programme question in the assistant. Confirm
    answers use published facts, the browser never receives the Groq key, and personal
    contact details are rejected before transmission.
-9. Confirm `/.well-known/security.txt` is reachable and the HSTS,
+10. Confirm `/.well-known/security.txt` is reachable and the HSTS,
    `X-Content-Type-Options`, and `X-Frame-Options` headers are present.
-10. Hostinger replaces the application CSP response header with
+11. Hostinger replaces the application CSP response header with
    `upgrade-insecure-requests`; confirm the HTML contains the full
    `Content-Security-Policy` meta policy from `src/app/layout.tsx`.
 

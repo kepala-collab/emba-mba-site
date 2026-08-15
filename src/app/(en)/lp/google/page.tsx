@@ -2,7 +2,7 @@ import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
 import CtaSection from "@/components/site/CtaSection";
-import { SITE, FACTS, INCLUSIONS, COMPARISON, CLIENTS, COMPLIANCE, OPERATOR } from "@/lib/content";
+import { SITE, FACTS, INCLUSIONS, COMPARISON, CLIENTS, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/lp/google", {
@@ -34,23 +34,23 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.12rem", maxWidth: "46ch", margin: "22px 0 26px" }}>
-                  Recognised by the Chartered Management Institute (UK). Earn your Executive MBA certification in three sessions,
-                  then ask about the separate <b style={{ color: "#fff" }}>Chartered Manager (CMgr)</b> application route if you meet CMI requirements.
-                  No traditional thesis or exams.
+                  The programme is recognised by the Chartered Management Institute (UK). The first three months comprise six
+                  training days across three sessions, coaching and an applied business project leading to the programme certificate.
+                  Eligible participants then receive three months of support for CMI&rsquo;s separate <b style={{ color: "var(--ink)" }}>Chartered Manager (CMgr)</b> assessment.
                 </p>
               </Reveal>
               <Reveal delay={150}>
                 <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
                   <span className="chip"><Image src="/brand/cmi-logo.png" alt="Chartered Management Institute UK" width={80} height={28} style={{ height: 28, width: "auto" }} /></span>
                   <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp Claimable" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
-                  <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".8rem" }}>{FACTS.gradsApprox} leaders trained · {FACTS.cohorts} cohorts</span>
+                  <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".8rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · {FACTS.cohorts} cohorts reported by ABC</span>
                 </div>
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 months", "Certificate + supported CMgr pathway"], [`${FACTS.priceStd} → ${FACTS.priceNet}`, "Malaysian participant fee"], ["Up to 100%", "Eligible employers may apply through HRD Corp"]].map(([b, s]) => (
+                  {[["6 months", "Certificate + supported CMgr pathway"], [`${FACTS.priceStd} → ${FACTS.priceNet}`, "Malaysian participant fee"], ["Before training", "Employer submits the HRD Corp application"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
-                      <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "#fff" }}>{b}</b>
+                      <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>
                     </div>
                   ))}
@@ -62,9 +62,9 @@ export default function GoogleLandingPage() {
             <div className="lpg-form">
               <Reveal delay={120}>
                 <div className="card" style={{ padding: 26, background: "linear-gradient(180deg,var(--surface),var(--bg-2))", border: "1px solid var(--line-2)" }}>
-                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Free · Two minutes</p>
-                  <h2 style={{ fontSize: "1.3rem", color: "#fff", marginBottom: 8, lineHeight: 1.25 }}>Check your eligibility &amp; next intake</h2>
-                  <p className="fine" style={{ marginBottom: 18 }}>Tell us where you are and our programme team calls you back — fit, dates, scholarship and HRD Corp, no obligation.</p>
+                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Programme enquiry · No payment required</p>
+                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.25 }}>Discuss eligibility and the next intake</h2>
+                  <p className="fine" style={{ marginBottom: 18 }}>Choose how the programme team should contact you. The team will explain fit, published dates, the Malaysian scholarship and the employer-led HRD Corp process.</p>
                   <LeadForm programme="Executive MBA" source={SOURCE} placement="hero" />
                 </div>
               </Reveal>
@@ -87,7 +87,7 @@ export default function GoogleLandingPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What&rsquo;s included</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Everything you need to lead transformation — not just manage.</h2></Reveal>
+          <Reveal><h2 className="sec-h">The components included in the programme fee.</h2></Reveal>
           <div className="insight-grid mt-m">
             {INCLUSIONS.slice(0, 6).map((it, i) => (
               <Reveal key={it.b} delay={(i % 3) * 60}>
@@ -102,17 +102,18 @@ export default function GoogleLandingPage() {
         </div>
       </section>
 
-      {/* WHY THIS VS A TRADITIONAL MBA */}
+      {/* WHY THIS VS A REFERENCE ACADEMIC MBA */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Why this, not a 2-year MBA</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Same credibility. A fraction of the time and cost.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Defined programme comparison</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Compare purpose, format, assessment and credential.</h2></Reveal>
+          <Reveal><p className="sec-sub">The academic reference below is defined as an 18–24 month MBA using academic modules, assignments or examinations, and a dissertation or thesis. It does not describe every academic MBA.</p></Reveal>
           <div className="mt-s" style={{ display: "grid", gap: 1, background: "var(--line)", borderRadius: 14, overflow: "hidden", border: "1px solid var(--line)" }}>
             {COMPARISON.map((row) => (
               <div key={row.k} className="lpg-cmp" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr 1.3fr", gap: 1, background: "var(--line)" }}>
                 <div style={{ background: "var(--surface)", padding: "14px 16px" }}><span className="mono sec-k" style={{ fontSize: ".7rem" }}>{row.k}</span></div>
-                <div style={{ background: "var(--bg)", padding: "14px 16px", color: "#fff", fontSize: ".92rem" }}><span className="acc mono" style={{ fontSize: ".62rem", display: "block", marginBottom: 2 }}>THIS PROGRAMME</span>{row.us}</div>
-                <div style={{ background: "var(--surface)", padding: "14px 16px", color: "var(--muted)", fontSize: ".92rem" }}><span className="mono" style={{ fontSize: ".62rem", display: "block", marginBottom: 2 }}>TRADITIONAL MBA</span>{row.them}</div>
+                <div style={{ background: "var(--bg)", padding: "14px 16px", color: "var(--ink)", fontSize: ".92rem" }}><span className="acc mono" style={{ fontSize: ".62rem", display: "block", marginBottom: 2 }}>THIS PROGRAMME</span>{row.us}</div>
+                <div style={{ background: "var(--surface)", padding: "14px 16px", color: "var(--muted)", fontSize: ".92rem" }}><span className="mono" style={{ fontSize: ".62rem", display: "block", marginBottom: 2 }}>REFERENCE ACADEMIC MBA</span>{row.them}</div>
               </div>
             ))}
           </div>
@@ -122,8 +123,8 @@ export default function GoogleLandingPage() {
       <CtaSection
         programme="Executive MBA"
         source={SOURCE}
-        heading="Ready to earn your Executive MBA?"
-        sub="Register free and our programme team will confirm your eligibility, the next intake dates, your scholarship and HRD Corp claim. No obligation."
+        heading="Discuss programme fit before you apply."
+        sub={`Request a programme-fit conversation. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process. ${HRD_CORP_CLAIM.responsibility}`}
       />
 
       <section className="section" style={{ paddingTop: 0 }}>

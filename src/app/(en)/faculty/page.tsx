@@ -3,7 +3,7 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import JsonLd from "@/components/site/JsonLd";
-import { FACULTY, SITE } from "@/lib/content";
+import { DELIVERY_CONTROL, FACULTY, SITE } from "@/lib/content";
 import { PROVIDER_ID, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/faculty", {
@@ -41,12 +41,20 @@ export default function FacultyPage() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Faculty &amp; Project Coaches</span></div>
             <h1 className="sec-h" style={{ fontSize: "clamp(2.1rem,4.4vw,3.2rem)" }}>
-              Practitioners who have led at the top — not lecturers who read about it.
+              Practitioners and coaches with cross-functional business experience.
             </h1>
             <p className="sec-sub">
               The faculty and one-to-one coaches bring experience across corporate leadership, consulting,
               manufacturing, finance, talent and transformation. They teach through applied business work.
             </p>
+          </Reveal>
+
+          <Reveal className="mt-m">
+            <dl className="faculty-authority-grid">
+              <div><dt>Published panel</dt><dd>{FACULTY.length} named practitioners and coaches with individual biographies</dd></div>
+              <div><dt>Cohort assignment</dt><dd>ABC confirms the assigned faculty in the briefing issued before Session 1</dd></div>
+              <div><dt>Applied role</dt><dd>Teaching, project feedback and coaching connected to participant business contexts</dd></div>
+            </dl>
           </Reveal>
 
           <div className="mt-m faculty-grid mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 16 }}>
@@ -69,15 +77,14 @@ export default function FacultyPage() {
 
           <Reveal className="mt-m">
             <p className="fine" style={{ maxWidth: "64ch" }}>
-              Every cohort is supported by one-to-one executive coaching and C-suite guest mentors, so the
-              frameworks land as real decisions inside your own business. Faculty are drawn from {SITE.provider}&rsquo;s
-              panel of consultants and may vary by cohort.
+              The programme includes one-to-one executive coaching and may include guest mentors.
+              Faculty are drawn from {SITE.provider}&rsquo;s panel of consultants. {DELIVERY_CONTROL.faculty}
             </p>
           </Reveal>
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Learn directly from leaders who've done it." />
+      <CtaSection programme="Executive MBA" heading="Discuss the faculty, coaching and programme format." />
       <style>{`@media(max-width:760px){.faculty-grid .card{flex-direction:column!important}}`}</style>
     </>
   );

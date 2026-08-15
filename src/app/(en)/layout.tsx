@@ -10,7 +10,7 @@ const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], displa
 const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500"], display: "swap" });
 
 export const metadata = ROOT_METADATA;
-export const viewport: Viewport = { themeColor: "#06080E", colorScheme: "dark", viewportFit: "cover" };
+export const viewport: Viewport = { themeColor: "#F7FBFF", colorScheme: "light", viewportFit: "cover" };
 
 export default function EnglishRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -18,7 +18,7 @@ export default function EnglishRootLayout({ children }: Readonly<{ children: Rea
       <head>
         <meta httpEquiv="Content-Security-Policy" content={contentSecurityPolicyMeta} />
       </head>
-      <body>
+      <body data-theme="working-scholar">
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

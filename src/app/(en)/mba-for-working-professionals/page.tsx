@@ -2,7 +2,8 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
-import { FACTS, INTAKES, SITE, COMPARISON } from "@/lib/content";
+import IntakeSchedule from "@/components/site/IntakeSchedule";
+import { COMPARISON, COMPARISON_SCOPE, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -37,17 +38,17 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "One weekend a month", p: "Sessions run one scheduled weekend a month. Your working week stays intact — no nightly classes, no long career break." },
-    { h: "Or fully online", p: "Prefer to lead from your desk? Take the entire programme online, live-facilitated end to end, with the same coaching and frameworks as the in-person track." },
-    { h: "Catch up or re-sit", p: "Travelling or slammed at work? Miss a session and catch up by video, or re-sit it with a later cohort — at no penalty and no extra fee." },
-    { h: "Apply it on Monday", p: "There is no thesis and there are no exams. Every framework is applied to your own business the moment you learn it, so the value shows up in your work immediately." },
+    { h: "One scheduled weekend a month", p: "The programme-certificate phase comprises three scheduled sessions, each running over one weekend." },
+    { h: "Or fully online", p: "The programme is also available through live online sessions, with the same coaching and frameworks as the in-person track." },
+    { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
+    { h: "Apply it to current work", p: "There is no traditional thesis or examination. Participants apply the frameworks to a business challenge they currently own." },
   ];
 
   const audience = [
     { h: "Owners & entrepreneurs", p: "Founders scaling past what instinct alone can carry." },
-    { h: "Directors & GMs", p: "Leaders accountable for whole business units and their numbers." },
-    { h: "Senior managers", p: "Operators stepping up from managing tasks to leading transformation." },
-    { h: "Established professionals", p: "Typically 35–55 with 10+ years — leading teams today, not pausing to study." },
+    { h: "Directors & GMs", p: "Leaders accountable for business-unit strategy, performance and delivery." },
+    { h: "Senior managers", p: "Managers moving from functional delivery into cross-functional decision responsibility." },
+    { h: "Established professionals", p: "Professionals accountable for strategy, transformation, innovation or growth." },
   ];
 
   return (
@@ -63,14 +64,14 @@ export default function MbaForWorkingProfessionalsPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              An Executive MBA designed around your career, <span className="acc">not against it</span>.
+              An Executive MBA schedule designed for participants who remain <span className="acc">in their professional roles</span>.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Most MBAs ask you to pause a career you have spent a decade building. This one does not.
-            The Future Ready Executive MBA runs across just {FACTS.durationLong}, so you keep leading
-            your team, running your business and drawing your salary while you level up. It is built
-            for people who lead today — and refuse to step off the field to do it.
+            The Future Ready Executive MBA is designed for participants who remain in their roles while studying.
+            The programme runs across {FACTS.durationLong}. The certificate phase uses one scheduled
+            weekend a month, followed by supported Chartered Manager assessment preparation for
+            participants who meet CMI&rsquo;s entry criteria.
           </p>
           <p className="mono sec-k mt-s">
             Six months · three monthly programme weekends + supported CMgr assessment preparation · recognised by CMI (UK)
@@ -91,11 +92,11 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">How it fits your week</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Built for a full calendar and a demanding role.</h2>
+            <h2 className="sec-h">A published schedule for participants who remain at work.</h2>
           </Reveal>
           <p className="sec-sub">
-            No career break. No exam season. Just a rhythm that slots into a working life and pays
-            back in the work itself.
+            Review the three session dates before enrolling. The applied project connects the programme
+            to a business challenge within the participant&rsquo;s current role.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {fit.map((x) => (
@@ -110,28 +111,28 @@ export default function MbaForWorkingProfessionalsPage() {
         </div>
       </section>
 
-      {/* 3 · Comparison vs a traditional MBA */}
+      {/* 3 · Comparison vs a reference academic MBA */}
       <section className="section">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Against a traditional MBA</span>
+            <span className="mono sec-k">Against a reference academic MBA</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">The same ambition — without the two-year hole in your career.</h2>
+            <h2 className="sec-h">Compare two routes with different formats and credentials.</h2>
           </Reveal>
           <p className="sec-sub">
-            A conventional MBA can mean 1.5–2 years of nights, weekends and, often, a pause in your
-            earning and your career. Here is how the format compares.
+            The reference academic MBA in this comparison runs for 18–24 months and uses academic
+            assessment plus a dissertation or thesis. Here is how the two defined formats compare.
           </p>
           <Reveal className="mt-s">
-            <ScrollableTableRegion kind="comparison" label="Executive MBA and traditional MBA format comparison">
+            <ScrollableTableRegion kind="comparison" label="Executive MBA and reference academic MBA format comparison">
               <table className="cmp">
                 <thead>
                   <tr>
                     <th></th>
                     <th className="us">This Executive MBA</th>
-                    <th>A traditional MBA</th>
+                    <th>Reference academic MBA</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -147,8 +148,9 @@ export default function MbaForWorkingProfessionalsPage() {
             </ScrollableTableRegion>
           </Reveal>
           <p className="fine mt-s">
+            {COMPARISON_SCOPE}{" "}
             This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
-            academic degree. Chosen for outcomes and speed, not academic equivalence. See the full{" "}
+            academic degree. Choose according to the credential and learning format you require. See the full{" "}
             <Link href="/fees" className="acc">fees &amp; inclusions</Link>.
           </p>
         </div>
@@ -168,32 +170,7 @@ export default function MbaForWorkingProfessionalsPage() {
             Current Malaysian public cohorts run 9am&ndash;6pm; Cohort 17 uses Saturday&ndash;Sunday and the other published cohorts use Friday&ndash;Saturday. A fully online option is also available.
           </p>
           <Reveal className="mt-s">
-            <ScrollableTableRegion kind="intake" label="2026 working-professional intake schedule">
-              <table className="intake">
-                <thead>
-                  <tr>
-                    <th>Cohort</th>
-                    <th>Language</th>
-                    <th>Session 1</th>
-                    <th>Session 2</th>
-                    <th>Session 3</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {INTAKES.map((c) => (
-                    <tr key={`${c.language}-${c.co}`}>
-                      <td className="co">{c.co}</td>
-                      <td>{c.language}</td>
-                      <td><span className="s">{c.s1}</span></td>
-                      <td><span className="s">{c.s2}</span></td>
-                      <td><span className="s">{c.s3}</span></td>
-                      <td className="seats">{c.seats}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </ScrollableTableRegion>
+            <IntakeSchedule label="2026 working-professional intake schedule" />
           </Reveal>
           <p className="mt-s">
             <Link href="/intakes" className="btn btn-primary">See all 2026 intakes</Link>
@@ -209,11 +186,11 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Who it&apos;s for</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">For leaders who won&apos;t pause their careers to grow.</h2>
+            <h2 className="sec-h">For professionals with strategic or business-wide responsibility.</h2>
           </Reveal>
           <p className="sec-sub">
-            The room is built for senior people carrying real responsibility — those who need to lead
-            transformation, not just manage operations.
+            The programme is designed for owners, directors, general managers and senior managers
+            responsible for strategy, transformation, innovation or growth.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {audience.map((x) => (
@@ -226,14 +203,14 @@ export default function MbaForWorkingProfessionalsPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            Eligible HRD Corp-registered employers may apply to claim up to 100% of the approved fee, subject to prior approval and sufficient levy balance. The {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship brings the fee from{" "}
-            {FACTS.priceStd} to {FACTS.priceNet} for Malaysian participants. Ready when you are —{" "}
-            <Link href="/apply" className="acc">start your application</Link>.
+            {HRD_CORP_CLAIM.short} The {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship brings the fee from{" "}
+            {FACTS.priceStd} to {FACTS.priceNet} for Malaysian participants.{" "}
+            <Link href="/apply" className="acc">Arrange a programme conversation</Link>.
           </p>
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Level up without pausing your career." />
+      <CtaSection programme="Executive MBA" heading="Review the schedule against your current role." />
     </>
   );
 }

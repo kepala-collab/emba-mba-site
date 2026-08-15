@@ -33,7 +33,7 @@ export default function ContactPage() {
               <div className="mt-m" style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                 <div>
                   <p className="mono sec-k" style={{ marginBottom: 4 }}>Programme Coordinator</p>
-                  <p style={{ margin: 0, color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.15rem" }}>{SITE.director}</p>
+                  <p style={{ margin: 0, color: "var(--ink)", fontFamily: "var(--font-fraunces)", fontSize: "1.15rem" }}>{SITE.director}</p>
                   <p style={{ margin: "2px 0 0", color: "var(--muted)", fontSize: ".9rem" }}>{SITE.provider}</p>
                 </div>
                 <div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
           <Reveal delay={120}>
             <div className="card" style={{ padding: 28 }}>
               <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Choose the next step</p>
-              <h2 style={{ fontSize: "1.35rem", color: "#fff", marginBottom: 20, lineHeight: 1.25 }}>Arrange a programme conversation</h2>
+              <h2 style={{ fontSize: "1.35rem", color: "var(--ink)", marginBottom: 20, lineHeight: 1.25 }}>Arrange a programme conversation</h2>
               <LeadForm programme="Executive MBA" />
             </div>
           </Reveal>

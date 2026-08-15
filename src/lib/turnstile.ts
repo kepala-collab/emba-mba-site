@@ -4,7 +4,7 @@ export type TurnstileApi = {
     options: {
       sitekey: string;
       action: string;
-      theme: "dark";
+      theme: "light";
       size?: "normal" | "flexible" | "compact";
       execution?: "execute";
       appearance?: "interaction-only";

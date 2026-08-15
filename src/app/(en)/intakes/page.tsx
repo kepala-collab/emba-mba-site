@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
+import IntakeSchedule from "@/components/site/IntakeSchedule";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { INTAKES, SITE } from "@/lib/content";
+import { DELIVERY_CONTROL, INTAKES, SITE } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -53,11 +53,10 @@ export default function IntakesPage() {
           </h1>
         </Reveal>
         <p className="sec-sub">
-          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are now published. The listed weekends cover the first-three-month programme-certificate phase. Months four to six provide supported Chartered Manager assessment preparation for eligible participants, so you keep leading your business throughout the journey.
+          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The listed weekends cover the first-three-month programme-certificate phase. Months four to six provide supported Chartered Manager assessment preparation for eligible participants.
         </p>
         <p className="fine mt-s">
-          Seats are limited per cohort and released in application order. When a cohort
-          fills, it closes — the next start date moves further out.
+          Cohort capacity and availability are confirmed by the programme team when it responds to an enquiry.
         </p>
       </section>
 
@@ -65,42 +64,16 @@ export default function IntakesPage() {
       <section className="section">
         <span className="sec-k mono">The schedule</span>
         <Reveal>
-          <h2 className="sec-h">Pick the cohort that fits your calendar.</h2>
+          <h2 className="sec-h">Choose a cohort that fits your calendar.</h2>
         </Reveal>
         <p className="sec-sub">
           Every cohort covers the same three weekend sessions. Choose the run that lets
           you commit to all three.
         </p>
 
-        <ScrollableTableRegion kind="intake" label="Complete Executive MBA intake schedule" className="mt-m">
-          <table className="intake">
-            <thead>
-              <tr>
-                <th>Cohort</th>
-                <th>Language</th>
-                <th>Session 1</th>
-                <th>Session 2</th>
-                <th>Session 3</th>
-                <th>Days / time</th>
-              </tr>
-            </thead>
-            <tbody>
-              {INTAKES.map((c) => (
-                <tr key={`${c.language}-${c.co}`}>
-                  <td className="co">{c.co}</td>
-                  <td>{c.language}</td>
-                  <td className="s mono">{c.s1}</td>
-                  <td className="s mono">{c.s2}</td>
-                  <td className="s mono">{c.s3}</td>
-                  <td className="seats">{c.days}<br />{c.time}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </ScrollableTableRegion>
+        <div className="mt-m"><IntakeSchedule label="Complete Executive MBA intake schedule" /></div>
         <p className="fine mt-s">
-          Cohort 17 runs Saturday–Sunday; the other published cohorts run Friday–Saturday. All listed sessions run 9am–6pm. Dates are confirmed but may shift
-          slightly due to operational or public-holiday adjustments.
+          Cohort 17 runs Saturday–Sunday; the other published cohorts run Friday–Saturday. All listed sessions run 9am–6pm. {DELIVERY_CONTROL.schedule}
         </p>
       </section>
 
@@ -108,7 +81,7 @@ export default function IntakesPage() {
       <section className="section">
         <span className="sec-k mono">How the schedule works</span>
         <Reveal>
-          <h2 className="sec-h">Built for people who cannot pause their careers.</h2>
+          <h2 className="sec-h">Schedule and attendance arrangements.</h2>
         </Reveal>
         <div
           className="mt-m"
@@ -118,19 +91,18 @@ export default function IntakesPage() {
             <h3 style={{ margin: 0 }}>One weekend a month</h3>
             <p style={{ margin: "0.5rem 0 0", color: "var(--muted)" }}>
               Each session runs 9am–6pm. Cohort 17 uses Saturday–Sunday; the remaining published cohorts use Friday–Saturday. Three weekends
-              during the three-month programme-certificate phase — no nightly grind, no career break.
+              during the three-month programme-certificate phase. Participants continue in their professional roles between sessions.
             </p>
           </div>
           <div className="card">
-            <h3 style={{ margin: 0 }}>Miss a session? You still finish.</h3>
+            <h3 style={{ margin: 0 }}>If you cannot attend a session</h3>
             <p style={{ margin: "0.5rem 0 0", color: "var(--muted)" }}>
-              If work pulls you away, catch up by video before the next weekend — or re-sit
-              that session with a later cohort at no extra cost. No penalty, no falling
-              behind.
+              Contact the programme team before the session. ABC records the approved catch-up
+              method in writing: video access or attendance in a named later cohort.
             </p>
           </div>
           <div className="card">
-            <h3 style={{ margin: 0 }}>Overseas? Join fully online.</h3>
+            <h3 style={{ margin: 0 }}>Fully online option</h3>
             <p style={{ margin: "0.5rem 0 0", color: "var(--muted)" }}>
               The International option delivers the same programme entirely online, so
               leaders outside Malaysia can join without travelling.
@@ -156,10 +128,7 @@ export default function IntakesPage() {
         </p>
       </section>
 
-      <CtaSection
-        programme="Executive MBA"
-        heading="Choose the schedule first. Decide after the conversation."
-      />
+      <CtaSection programme="Executive MBA" heading="Confirm the schedule and attendance requirements." />
     </div>
   );
 }

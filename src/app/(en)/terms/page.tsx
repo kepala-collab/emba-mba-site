@@ -1,5 +1,5 @@
 import Reveal from "@/components/site/Reveal";
-import { SITE, OPERATOR } from "@/lib/content";
+import { FACTS, HRD_CORP_CLAIM, OPERATOR, REFUND_TERMS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/terms", {
@@ -37,37 +37,33 @@ export default function TermsPage() {
 
           <h2>Programme information</h2>
           <p>
-            Programme details, fees, schedules, intake dates and availability are provided for general information,
-            are supplied by ABC, and may change without notice. Confirmed details are provided by the ABC programme
-            team. The Executive MBA is a <strong>professional programme recognised by the Chartered Management
-            Institute (CMI), UK</strong>; it is <strong>not a regulated qualification and is not MQA-accredited</strong>,
-            and is not an academic degree.
+            This Site publishes the programme details supplied by ABC. The applicable written proposal and signed
+            enrolment terms state the price, delivery format, completion requirements and certificate for each
+            participant. If ABC changes a published intake date, registered participants receive the replacement date
+            in writing. The Executive MBA is a <strong>professional programme approved and endorsed by the Chartered
+            Management Institute (CMI), UK</strong>; it is <strong>not a regulated qualification, an MQA-accredited
+            academic degree or any other academic degree</strong>.
           </p>
 
           <h2>No guarantees</h2>
           <p>
-            Nothing on this Site is a guarantee of admission, HRD Corp claim approval, scholarship award, employment,
-            income, promotion or any specific business outcome. HRD Corp claimability applies to eligible Malaysian
-            employers and is subject to HRD Corp&rsquo;s eligibility and approval.
+            Nothing on this Site guarantees admission, HRD Corp grant approval, employment, income, promotion or a
+            business result. The standard fee is {FACTS.priceStd}; Malaysian participants pay {FACTS.priceNet} after
+            the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. {HRD_CORP_CLAIM.responsibility}
           </p>
 
           <h2>Programme assistant</h2>
           <p>
             The optional programme assistant uses automated AI to answer questions from a bounded set of programme
-            facts. Its answers may be incomplete or inaccurate and do not constitute admission, pricing, scholarship,
-            HRD Corp or enrolment confirmation. Do not submit personal, identity, confidential or payment information
+            facts. AI answers are informational and do not constitute admission, pricing, scholarship, HRD Corp or
+            enrolment confirmation. Do not submit personal, identity, confidential or payment information
             through the assistant. The applicable written proposal and signed enrolment terms always prevail.
           </p>
 
           <h2>Session 1 refund arrangement</h2>
           <p>
-            ABC currently offers a refund arrangement for an enrolled participant who attends the first two training
-            days and concludes that the programme is not suitable. To request it, the participant must notify the ABC
-            programme team promptly after Session 1, stop participating and return all issued manuals and programme
-            materials in reusable condition. The request, the amount eligible for refund and the processing timetable
-            are governed by the written enrolment terms issued by ABC. Employer-funded and HRD Corp claims may require
-            additional cancellation steps. Ask the programme team to confirm the current written terms before payment;
-            where these Site terms differ from the signed enrolment terms, the signed enrolment terms prevail.
+            {REFUND_TERMS.description} The signed terms also state the cancellation steps for employer-funded
+            enrolments and HRD Corp grants. Where this Site differs from the signed enrolment terms, the signed terms control.
           </p>
 
           <h2>Credential and Chartered Manager</h2>
@@ -81,8 +77,8 @@ export default function TermsPage() {
           <h2>Enquiries &amp; enrolment</h2>
           <p>
             Submitting the enquiry form registers your interest and allows the programme team to contact you. It does
-            not create a binding agreement. Enrolment, fees and any scholarship are subject to ABC&rsquo;s own terms and
-            confirmation.
+            not create a binding agreement. A binding enrolment begins only when the participant accepts ABC&rsquo;s written
+            enrolment terms and completes the payment step stated in those terms.
           </p>
 
           <h2>Intellectual property</h2>

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "product": {
+    "name": "Future Ready Conversion OS",
+    "stage": "building",
+    "personas": [
+      "prospective_participant",
+      "employer_or_hr_sponsor",
+      "programme_coordinator",
+      "operations_owner"
+    ],
+    "channels": ["web", "email", "whatsapp", "crm_webhook"],
+    "regions": ["Malaysia", "international"],
+    "compliance_obligations": [
+      "Malaysia Personal Data Protection Act 2010 Act 709 as amended",
+      "consent evidence and data minimisation",
+      "controlled retention and deletion",
+      "marketing analytics consent"
+    ]
+  },
+  "tenancy": {
+    "model": "siloed",
+    "isolation_controls": [
+      "fixed_site_identifier_on_every_lead",
+      "public_create_only_lead_endpoint",
+      "secret_authenticated_internal_endpoints",
+      "no_public_lead_read_api",
+      "no_pii_in_browser_analytics"
+    ]
+  },
+  "capabilities": {
+    "foundation": "now",
+    "service_core": "now",
+    "crm_core": "now",
+    "routing_and_sla": "next",
+    "knowledge_and_self_service": "now",
+    "automation": "now",
+    "ai_assistance": "now",
+    "enterprise_administration": "later",
+    "analytics_and_operations": "now"
+  },
+  "architecture": {
+    "style": "modular-monolith",
+    "systems_of_record": {
+      "customer": "mysql_leads",
+      "service": "mysql_lead_lifecycle",
+      "crm": "configurable_signed_webhook_consumer",
+      "audit": "append_only_lead_audit_events",
+      "attachments": "not_in_scope",
+      "search": "not_in_scope",
+      "analytics": "consent_gated_data_layer_and_privacy_safe_rum"
+    },
+    "delivery_guarantees": [
+      "durable_lead_before_success_response",
+      "client_submission_idempotency",
+      "transactional_outbox",
+      "idempotent_consumers",
+      "transactional_email_and_integration_outboxes",
+      "signed_versioned_webhook_payloads",
+      "bounded_retries_and_dead_letters"
+    ]
+  },
+  "security": {
+    "sso_protocols": [],
+    "provisioning_protocols": [],
+    "mfa_required": false,
+    "server_side_authorization": true,
+    "audit_append_only": true,
+    "encryption_in_transit": true,
+    "encryption_at_rest": true,
+    "data_lifecycle_documented": true,
+    "operator_access_time_bound_and_audited": true
+  },
+  "ai": {
+    "enabled": true,
+    "authorized_retrieval": true,
+    "citations_required": false,
+    "human_approval_for_consequential_actions": true,
+    "evaluation_and_kill_switch_required": true
+  },
+  "reliability": {
+    "availability_slo_percent": 99.5,
+    "rpo_minutes": 60,
+    "rto_minutes": 240,
+    "durable_inbound_before_acknowledgement": true,
+    "restore_exercises_required": true
+  },
+  "delivery": {
+    "current_slice": "visitor selects intent and cohort, submits once, receives durable acknowledgement, and the programme team receives a retryable lifecycle event",
+    "acceptance_criteria": [
+      "a repeated submission_id creates one logical lead",
+      "lead success is returned only after durable lead, audit and outbox writes commit",
+      "no public route can read or mutate an existing lead",
+      "CRM delivery is signed, versioned, retryable and dead-lettered",
+      "the two-step form preserves user input after validation or network failure",
+      "field analytics contain no names, email addresses, phone numbers or free text",
+      "the complete workflow is keyboard and mobile accessible"
+    ],
+    "next_action": "Apply migration 006 in staging, configure webhook secrets, then run the release-readiness gates",
+    "known_risks": [
+      "Hostinger backup and point-in-time recovery capability requires operational verification",
+      "production CRM endpoint and data-processing terms are not configured",
+      "traffic volume is not yet sufficient for statistically powered experiments",
+      "the current Codex session requires restart before Chrome DevTools MCP tools become callable"
+    ]
+  }
+}

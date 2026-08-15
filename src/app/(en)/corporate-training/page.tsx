@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CORP_TRAINING, SITE } from "@/lib/content";
+import { CORP_TRAINING, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -36,15 +36,15 @@ export default function CorporateTrainingPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ fontSize: "clamp(2.1rem,4.4vw,3.2rem)", maxWidth: "20ch" }}>
-              Build a workforce ready to lead, transform and thrive in the AI era.
+              Develop the capabilities your organisation has defined as priorities.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
               Beyond the Executive MBA, {SITE.provider} runs a full corporate training series for teams and
-              organisations — <b style={{ color: "var(--ink)" }}>10 tracks, ~60 programmes</b>, delivered in-house and
-              <b style={{ color: "var(--ink)" }}> HRD Corp claimable</b> for eligible Malaysian employers. Every track
-              is built around the same F.A.S.T. thinking that powers the EMBA.
+              organisations — <b style={{ color: "var(--ink)" }}>10 tracks, 61 listed programmes</b>, delivered in-house and
+              supported by an <b style={{ color: "var(--ink)" }}> employer-led HRD Corp application route</b>.
+              The programme team supplies the employer with the quotation, schedule, course content and trainer documents.
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -60,7 +60,7 @@ export default function CorporateTrainingPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The training tracks</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Ten capability tracks for the next five years.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Ten capability tracks in the 2026–2030 programme series.</h2></Reveal>
           <div className="mt-m ct-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 16 }}>
             {CORP_TRAINING.map((cat, i) => (
               <Reveal key={cat.c} delay={(i % 2) * 60}>
@@ -77,8 +77,9 @@ export default function CorporateTrainingPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            Programmes shown are the current series menu; specific syllabi, durations and fees are scoped per
-            engagement. Claimable amounts and approval are determined by HRD Corp.
+            The 61 names above are the published series menu. The formal proposal for an engagement states
+            its selected syllabus, duration, participant count, delivery format, complete fee and payment terms.
+            HRD Corp determines grant eligibility and the approved amount.
           </p>
         </div>
         <style>{`@media(max-width:820px){.ct-grid{grid-template-columns:1fr!important}}`}</style>
@@ -88,18 +89,18 @@ export default function CorporateTrainingPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How it works</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Customised for your team. Claimed through your levy.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Define the requirement, delivery model and funding process.</h2></Reveal>
           <Reveal className="mt-s">
             <div className="card" style={{ display: "grid", gap: 14 }}>
               {[
                 ["Choose your tracks", "Pick the capabilities your organisation needs from the ten tracks above — or blend programmes into a tailored pathway."],
                 ["Delivered in-house", `${SITE.provider}, an HRD Corp Approved Training Provider, delivers on-site or online, customised to your business context.`],
-                ["HRD Corp claimable", "For eligible Malaysian employers, the programme fee can be claimed against your HRD Corp levy — the team guides your HR lead through the submission."],
+                ["Employer-led HRD Corp route", HRD_CORP_CLAIM.short],
               ].map(([h, p]) => (
                 <div key={h} style={{ display: "flex", gap: 16 }}>
                   <span className="mono acc" style={{ fontSize: ".8rem", flex: "none", marginTop: 3 }}>→</span>
                   <span>
-                    <b style={{ color: "#fff", fontFamily: "var(--font-fraunces)", fontSize: "1.08rem", display: "block" }}>{h}</b>
+                    <b style={{ color: "var(--ink)", fontFamily: "var(--font-fraunces)", fontSize: "1.08rem", display: "block" }}>{h}</b>
                     <span style={{ color: "var(--ink-2)", fontSize: ".93rem" }}>{p}</span>
                   </span>
                 </div>
@@ -113,18 +114,17 @@ export default function CorporateTrainingPage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">In-house Managers Development Programme</span></div></Reveal>
-          <Reveal><h2 className="sec-h">A company-specific MDP with an eligible EMBA certificate pathway.</h2></Reveal>
+          <Reveal><h2 className="sec-h">A company-specific MDP defined in one written proposal.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              A customisable in-house Managers Development Programme can be designed around your
-              organisation&rsquo;s leadership priorities, business context and delivery requirements. Subject
-              to the agreed programme design and completion requirements, it can include an EMBA programme
-              certificate recognised against CMI Professional Standards.
+              ABC designs the in-house Managers Development Programme against the organisation&rsquo;s written
+              requirements. The formal proposal states the modules, delivery format, completion requirements,
+              complete fee and whether the engagement includes the CMI-recognised EMBA programme certificate.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div className="card" style={{ display: "grid", gap: 12 }}>
-              <p style={{ margin: 0, color: "var(--ink-2)" }}>Pricing is scoped to the number of participants, delivery model, programme design and support requirements, and remains subject to the formal proposal, terms and conditions.</p>
+              <p style={{ margin: 0, color: "var(--ink-2)" }}>The formal proposal states the participant count, delivery model, programme design, support requirements, complete fee, payment schedule and acceptance terms.</p>
               <Link href="/contact" className="btn btn-primary" style={{ justifySelf: "start" }}>Request an MDP proposal →</Link>
             </div>
           </Reveal>
@@ -133,8 +133,8 @@ export default function CorporateTrainingPage() {
 
       <CtaSection
         programme="Corporate Training"
-        heading="Upskill your team for the AI era."
-        sub="Tell us your goals and our team will send the relevant syllabi, HRD Corp guidance, and a proposal tailored to your organisation. No obligation."
+        heading="Request a corporate training proposal."
+        sub="Send the organisation's required capabilities, participant count and delivery preference. The team will respond with the relevant syllabus, employer-led HRD Corp process and a written proposal. An enquiry does not accept the proposal."
       />
     </>
   );

@@ -59,11 +59,9 @@ export default function SystemsThinkingForLeaders() {
             </h1>
             <ArticleAttribution />
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              The best leaders do not just solve the problem in front of them.
-              They see the structure that keeps producing it. That shift — from
-              reacting to isolated events to reading the system that generates
-              them — is the difference between firefighting forever and changing
-              the conditions once.
+              Systems thinking helps leaders examine the structure that repeatedly
+              produces a problem. It moves the analysis from isolated events to the
+              relationships, feedback loops and delays that influence the result.
             </p>
           </Reveal>
 
@@ -73,28 +71,27 @@ export default function SystemsThinkingForLeaders() {
               Systems thinking is the discipline of seeing the whole rather than
               the parts: the interconnections between elements, the feedback
               loops that link cause and effect, and the delays that separate an
-              action from its full consequence. It stands in contrast to the
-              linear, reductionist habit most of us are trained in — break a
-              problem into pieces, fix the broken piece, move on.
+              action from its full consequence. It stands in contrast to a
+              linear, reductionist method: break a problem into pieces, fix one
+              piece and treat it as independent from the rest.
             </p>
             <p>
               That habit works beautifully for machines, where parts are largely
               independent. It fails for organisations, markets and teams, where
               everything is connected to everything else. In a system, the
-              behaviour you observe is rarely caused by a single part. It emerges
-              from how the parts are wired together.
+              behaviour you observe can emerge from the connections between parts,
+              not only from a single part.
             </p>
 
             <blockquote>
-              A bad system will beat a good person every time. If you want
-              different behaviour, change the structure — not the people inside
-              it.
+              When a system repeatedly produces the same result, change the rules,
+              incentives or information flows that produce the behaviour.
             </blockquote>
 
             <h2>Why it matters for leaders</h2>
             <p>
-              Most serious business problems are systemic. A fix in one place
-              quietly creates a problem in another: you tighten credit terms and
+              A business problem is systemic when changing one part changes another.
+              For example, you tighten credit terms and
               lose your best customers; you cut headcount and watch quality erode
               two quarters later; you launch an incentive and get exactly the
               wrong behaviour it technically rewards. Incentives, feedback loops
@@ -114,9 +111,9 @@ export default function SystemsThinkingForLeaders() {
             <p>
               A <strong>stock</strong> is anything that accumulates — cash,
               inventory, trust, talent, technical debt. A <strong>flow</strong>{" "}
-              is the rate that fills or drains it. Leaders often obsess over
-              flows (this month&rsquo;s sales) while ignoring the stock that
-              actually determines resilience (the reservoir of loyal customers).
+              is the rate that fills or drains it. Measuring only a flow, such as
+              this month&rsquo;s sales, hides the stock that determines resilience, such
+              as the reservoir of loyal customers.
             </p>
             <h3>Reinforcing and balancing loops</h3>
             <p>
@@ -128,10 +125,9 @@ export default function SystemsThinkingForLeaders() {
             </p>
             <h3>Delays</h3>
             <p>
-              Cause and effect are rarely close in time. The gap between an
-              action and its visible result is where most bad decisions are made,
-              because we assume the absence of a consequence means there is no
-              consequence.
+              A delay separates an action from its visible result. Treating that
+              delay as proof that no consequence exists leads to a false conclusion
+              and a premature second intervention.
             </p>
 
             <h2>A concrete example</h2>
@@ -183,10 +179,10 @@ export default function SystemsThinkingForLeaders() {
                 the loops, not the boxes.
               </li>
               <li>
-                <strong>Look for leverage points.</strong> Some interventions
-                barely move the system; a few change everything. Rules,
-                incentives and information flows are usually far higher leverage
-                than effort or exhortation.
+                <strong>Look for leverage points.</strong> Test rules, incentives
+                and information flows before adding effort. Each changes how the
+                system directs behaviour, rather than asking people to push harder
+                inside the same structure.
               </li>
               <li>
                 <strong>Anticipate second- and third-order effects.</strong>{" "}

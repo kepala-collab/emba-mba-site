@@ -5,7 +5,7 @@ import { SITE } from "@/lib/content";
 export default function CtaSection({
   programme = "Executive MBA",
   heading = "Start with a conversation, not a commitment.",
-  sub = "Tell us how you would like to explore the programme: a short call, an online information meeting, an in-person meeting at an agreed location, or details by email first. The programme team will discuss fit, schedules, HRD Corp and scholarship eligibility — no sales obligation.",
+  sub = "Tell us how you would like to explore the programme: a short call, an online information meeting, an in-person meeting at an agreed location, or details by email first. The programme team will explain fit, published schedules, Malaysian participant pricing and the employer-led HRD Corp process. An enquiry is not an admission or payment commitment.",
   source = "emba-hub",
 }: { programme?: string; heading?: string; sub?: string; source?: string }) {
   return (
@@ -17,7 +17,7 @@ export default function CtaSection({
             <h2 className="sec-h">{heading}</h2>
             <p className="sec-sub">{sub}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "24px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
-              {["Choose a call, online meeting, in-person meeting or details first", "Review the 2026 class schedule before deciding", "Understand HRD Corp and scholarship eligibility"].map((t) => (
+              {["Choose a call, online meeting, in-person meeting or details first", "Review the published 2026 schedule before deciding", "Understand Malaysian pricing and the employer-led HRD Corp process"].map((t) => (
                 <li key={t} style={{ paddingLeft: 26, position: "relative", color: "var(--ink-2)" }}>
                   <span style={{ position: "absolute", left: 0, color: "var(--crimson)", fontFamily: "var(--font-plex-mono)" }}>→</span>{t}
                 </li>

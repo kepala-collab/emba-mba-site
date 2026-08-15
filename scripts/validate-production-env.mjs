@@ -43,6 +43,48 @@ for (const key of ["LEAD_HASH_SECRET", "EMAIL_CRON_SECRET"]) {
   if (Buffer.byteLength(value, "utf8") < 32) failures.push(`${key}: must contain at least 32 bytes`);
 }
 
+const conversionKeys = [
+  "CONVERSION_WEBHOOK_URL",
+  "CONVERSION_WEBHOOK_SECRET",
+  "CONVERSION_CRON_SECRET",
+  "LEAD_LIFECYCLE_SECRET",
+];
+const conversionConfigured = conversionKeys.some((key) => values.get(key));
+if (conversionConfigured) {
+  for (const key of conversionKeys) {
+    const value = values.get(key) || "";
+    if (!value) failures.push(`${key}: required when CRM/lifecycle integration is enabled`);
+    else if (placeholders.test(value)) failures.push(`${key}: placeholder value`);
+  }
+  for (const key of ["CONVERSION_WEBHOOK_SECRET", "CONVERSION_CRON_SECRET", "LEAD_LIFECYCLE_SECRET"]) {
+    const value = values.get(key) || "";
+    if (Buffer.byteLength(value, "utf8") < 32) failures.push(`${key}: must contain at least 32 bytes`);
+  }
+  try {
+    const webhookUrl = new URL(values.get("CONVERSION_WEBHOOK_URL") || "");
+    if (webhookUrl.protocol !== "https:" || webhookUrl.username || webhookUrl.password || webhookUrl.hash) {
+      failures.push("CONVERSION_WEBHOOK_URL: must be a credential-free HTTPS URL without a fragment");
+    }
+  } catch {
+    failures.push("CONVERSION_WEBHOOK_URL: invalid URL");
+  }
+  const secretValues = [
+    "LEAD_HASH_SECRET",
+    "EMAIL_CRON_SECRET",
+    "CONVERSION_WEBHOOK_SECRET",
+    "CONVERSION_CRON_SECRET",
+    "LEAD_LIFECYCLE_SECRET",
+  ].map((key) => values.get(key)).filter(Boolean);
+  if (new Set(secretValues).size !== secretValues.length) {
+    failures.push("Every hashing, cron, webhook and lifecycle secret must be different");
+  }
+}
+
+const experimentsEnabled = values.get("NEXT_PUBLIC_EXPERIMENTS_ENABLED");
+if (experimentsEnabled && !["true", "false"].includes(experimentsEnabled)) {
+  failures.push("NEXT_PUBLIC_EXPERIMENTS_ENABLED: must be true or false");
+}
+
 if (values.get("LEAD_HASH_SECRET") && values.get("LEAD_HASH_SECRET") === values.get("EMAIL_CRON_SECRET")) {
   failures.push("LEAD_HASH_SECRET and EMAIL_CRON_SECRET must be different");
 }
@@ -56,12 +98,14 @@ const optional = [
   "GOOGLE_SITE_VERIFICATION",
   "BING_SITE_VERIFICATION",
   "NEXT_PUBLIC_GTM_ID",
+  "NEXT_PUBLIC_EXPERIMENTS_ENABLED",
   "INDEXNOW_KEY",
   "INDEXNOW_CRON_SECRET",
   "NEXT_PUBLIC_PROVIDER_URL",
   "NEXT_PUBLIC_PROVIDER_LINKEDIN",
   "NEXT_PUBLIC_OPERATOR_LINKEDIN",
   "GROQ_MODEL",
+  ...conversionKeys,
 ];
 const inactive = optional.filter((key) => !values.get(key));
 console.log(`Required production variables are present in ${file}.`);

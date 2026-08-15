@@ -6,6 +6,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/content";
 import { trackEvent } from "@/lib/analytics";
 import { getTurnstileApi as turnstileApi } from "@/lib/turnstile";
+import { useFloatingUi } from "@/components/site/FloatingUiContext";
 
 type Lang = "en" | "zh";
 type Message = { role: "user" | "assistant"; content: string };
@@ -24,13 +25,13 @@ const COPY = {
     sending: "Thinking…",
     close: "Close assistant",
     clear: "Clear conversation",
-    disclosure: "AI-generated answers may make mistakes. Written programme and enrolment terms prevail.",
+    disclosure: "AI answers are informational, not formal confirmation. Written programme and enrolment terms control.",
     privacy: "Do not enter personal, identity, payment or confidential information.",
     personalData: "For your privacy, please remove personal contact or identity details and ask the question again.",
     unavailable: "The assistant is unavailable right now. Please contact the programme team on WhatsApp.",
     security: "Security verification could not be completed. Please try again or use WhatsApp.",
     human: "Continue with a person on WhatsApp",
-    prompts: ["What does the programme cost?", "How is it recognised?", "When is the next intake?"],
+    prompts: ["What does the programme cost?", "How is it recognised?", "How does the certificate differ from an attendance certificate?", "When is the next intake?"],
     waMessage: "Hi, I have a question about the Future Ready Executive MBA.",
   },
   zh: {
@@ -43,13 +44,13 @@ const COPY = {
     sending: "正在整理…",
     close: "关闭课程助手",
     clear: "清除对话",
-    disclosure: "答案由 AI 生成，可能出错；正式课程资料及报名条款为准。",
+    disclosure: "AI 答案仅供参考，并非正式确认；正式课程资料及报名条款为准。",
     privacy: "请勿输入个人、身份、付款或机密资料。",
     personalData: "为了保护您的隐私，请删除个人联系或身份证明资料后重新提问。",
     unavailable: "课程助手暂时无法使用，请通过 WhatsApp 联系课程团队。",
     security: "无法完成安全验证，请重试或使用 WhatsApp。",
     human: "通过 WhatsApp 联系真人",
-    prompts: ["课程费用是多少？", "课程获得什么认可？", "下一期何时开课？"],
+    prompts: ["课程费用是多少？", "课程获得什么认可？", "这与一般 HRD Corp 培训有何不同？", "下一期何时开课？"],
     waMessage: "您好，我想咨询 Future Ready 高管 MBA。",
   },
 } as const;
@@ -68,7 +69,11 @@ export default function ProgrammeAssistant() {
   const pathname = usePathname() || "/";
   const lang: Lang = pathname === "/zh" || pathname.startsWith("/zh/") ? "zh" : "en";
   const t = COPY[lang];
-  const [open, setOpen] = useState(false);
+  const {
+    assistantOpen: open,
+    persistentActionsVisible,
+    setAssistantOpen: setOpen,
+  } = useFloatingUi();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -115,6 +120,11 @@ export default function ProgrammeAssistant() {
     if (!open) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const inertTargets = [
+      ...document.querySelectorAll<HTMLElement>(".navbar,main,footer,.wa-float,.consent-banner"),
+    ];
+    const previousInert = inertTargets.map((target) => target.inert);
+    inertTargets.forEach((target) => { target.inert = true; });
     window.setTimeout(() => inputRef.current?.focus(), 80);
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -141,6 +151,7 @@ export default function ProgrammeAssistant() {
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      inertTargets.forEach((target, index) => { target.inert = previousInert[index]; });
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
@@ -167,7 +178,7 @@ export default function ProgrammeAssistant() {
         turnstileWidgetId.current = turnstile.render(turnstileContainer.current, {
           sitekey: TURNSTILE_SITE_KEY,
           action: "programme-chat",
-          theme: "dark",
+          theme: "light",
           appearance: "interaction-only",
           callback: (token) => {
             turnstileToken.current = token;
@@ -311,12 +322,12 @@ export default function ProgrammeAssistant() {
       />
       <button
         ref={launcherRef}
-        className={`programme-assistant-launcher${formVisible ? " is-suppressed" : ""}`}
+        className={`programme-assistant-launcher${formVisible || !persistentActionsVisible ? " is-suppressed" : ""}`}
         type="button"
         aria-haspopup="dialog"
         aria-expanded={open}
-        aria-hidden={formVisible}
-        tabIndex={formVisible ? -1 : undefined}
+        aria-hidden={formVisible || !persistentActionsVisible}
+        tabIndex={formVisible || !persistentActionsVisible ? -1 : undefined}
         onClick={() => {
           setOpen(true);
           trackEvent("chat_open", { chat_language: lang, chat_location: "persistent_assistant" });

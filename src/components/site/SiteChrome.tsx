@@ -9,6 +9,7 @@ import ProgrammeAssistant from "@/components/site/ProgrammeAssistant";
 import JsonLd from "@/components/site/JsonLd";
 import { SITE, COMPLIANCE, OPERATOR } from "@/lib/content";
 import { OPERATOR_ID, PROVIDER_ID, WEBSITE_ID } from "@/lib/seo";
+import { FloatingUiProvider } from "@/components/site/FloatingUiContext";
 
 export default function SiteChrome({ children }: Readonly<{ children: React.ReactNode }>) {
   const providerSameAs = [SITE.providerUrl, SITE.providerLinkedIn].filter(Boolean);
@@ -82,12 +83,15 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
       <JsonLd data={structuredData} />
       <GoogleTagManager />
       <Suspense fallback={null}><AnalyticsBridge /></Suspense>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      <ConsentBanner />
-      <ProgrammeAssistant />
-      <WhatsAppFloat />
+      <FloatingUiProvider>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
+        <Header />
+        <main id="main-content" tabIndex={-1}>{children}</main>
+        <Footer />
+        <ConsentBanner />
+        <ProgrammeAssistant />
+        <WhatsAppFloat />
+      </FloatingUiProvider>
     </>
   );
 }

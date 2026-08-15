@@ -4,12 +4,13 @@ import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
 import { SITE, FACTS, INTAKES, CLIENTS } from "@/lib/content";
+import { HRD_CORP_CLAIM_ZH, PROGRAMME_AUDIENCE_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh", {
   title: "高管 MBA（英国 CMI 认可）· 六个月专业路径",
   description:
-    "六个月专业路径：首三个月完成获英国 CMI 认可的 Executive MBA 课程证书阶段，随后三个月为符合条件者提供特许经理人评估准备支持。标准费用 RM10,000.00；马来西亚学员获 RM4,000.00 奖学金后实付 RM6,000.00。",
+    "六个月专业路径：首三个月完成获英国 CMI 认可的 Executive MBA 课程证书阶段，随后三个月为符合条件者提供特许经理人评估准备支持。标准费用 RM10,000.00；马来西亚学员获 RM5,000.00 奖学金后实付 RM5,000.00。",
   alternates: {
     canonical: "/zh",
     languages: { "en": "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -17,42 +18,42 @@ export const metadata = withSeo("/zh", {
   openGraph: {
     type: "website",
     title: "高管 MBA（英国 CMI 认可）· 六个月专业路径",
-    description: "首三个月完成课程证书阶段，随后三个月为符合条件者提供特许经理人评估准备支持。奖学金与 HRD Corp 索赔须符合条件。",
+    description: "首三个月完成课程证书阶段，随后三个月为符合 CMI 条件者提供特许经理人评估准备支持。HRD Corp 注册雇主须在开课前提交申请。",
     locale: "zh_MY",
     url: `${SITE.url}/zh`,
   },
   twitter: {
     title: "高管 MBA（英国 CMI 认可）· 六个月专业路径",
-    description: "首三个月完成课程证书阶段，随后三个月为符合条件者提供特许经理人评估准备支持。奖学金与 HRD Corp 索赔须符合条件。",
+    description: "首三个月完成课程证书阶段，随后三个月为符合 CMI 条件者提供特许经理人评估准备支持。HRD Corp 注册雇主须在开课前提交申请。",
   },
 });
 
 const SOURCE = "zh-hub";
 
 const FORCES_ZH = [
-  "市场正在一夜之间重新定价",
-  "科技正在瓦解整个行业",
-  "AI 正在改写工作的方式",
-  "客户期待去年还不存在的东西",
-  "竞争对手的适应速度比你更快",
+  "市场变化正在重塑价格与需求",
+  "科技正在改变行业边界与商业模式",
+  "AI 正在改变工作流程与决策方式",
+  "客户需求持续变化",
+  "竞争者正在调整其产品与运营方式",
 ];
 
 const EDGE_ZH = [
-  { i: "01 · 系统思维", h: "看清全局", p: "在行动前，把因果推演到第三层后果。" },
-  { i: "02 · 第一性原理", h: "拆解到本质", p: "把问题拆到最小单位，再重建出颠覆性的答案。" },
-  { i: "03 · 设计整合", h: "融合逻辑与创意", p: "在同一步棋中同时掌握战略与想象力。" },
-  { i: "04 · 框架思维", h: "为混沌立序", p: "把压倒性的复杂，转化为可执行的决策。" },
-  { i: "05 · 五重视角", h: "以五个视角思考", p: "从多数领导者看不到的角度，压力测试每一个决定。" },
-  { i: "06 · 4D 战略", h: "对齐各方力量", p: "描绘、驱动、定义与交付 —— 汇聚成一套连贯战略。" },
-  { i: "07 · 整体思维", h: "连接人与业务", p: "对齐人才、创新与增长，创造真正的影响力。" },
+  { i: "01 · 系统思维", h: "理解整体系统", p: "在决策前分析原因、相互依赖关系及潜在后果。" },
+  { i: "02 · 第一性原理", h: "检验基本假设", p: "区分事实、限制与假设，再依据证据设计选项。" },
+  { i: "03 · 设计整合", h: "结合分析与创新", p: "在战略逻辑、使用者需要及实际限制之间取得平衡。" },
+  { i: "04 · 框架思维", h: "梳理复杂信息", p: "把复杂信息整理成可说明、可执行的决策。" },
+  { i: "05 · 五重视角", h: "审视五个角度", p: "从五个明确的商业视角评估每项决定。" },
+  { i: "06 · 4D 战略", h: "连接战略与执行", p: "以描绘、驱动、定义及交付组成连贯的规划流程。" },
+  { i: "07 · 整体思维", h: "连接人才与业务", p: "综合考虑人才能力、创新及商业要求。" },
 ];
 
 const FAQ_ZH = [
   { q: "课程如何安排？", a: "这是六个月专业路径。首三个月包含六个培训日、三个周末课程、辅导及企业项目，并在完成要求后取得获 CMI 认可的 Executive MBA 课程证书。第四至第六个月为符合 CMI 条件者提供特许经理人评估准备支持；CMgr MCMI 仅在通过 CMI 评估后授予。" },
-  { q: "是否获 MQA 认证？", a: "否 —— MQA 管辖的是学术学位。本课程是由英国特许管理协会（CMI）认可的专业课程，享有全球认可。它刻意不是一个学术学位。" },
-  { q: "我太忙，无法全程出席。", a: "课程每月一个周末。错过一次可通过视频补课，或在往后的班次重修 —— 不设惩罚。" },
-  { q: "公司可以索赔吗？", a: "符合条件且拥有足够 levy 余额的 HRD Corp 注册马来西亚雇主，可在开课前为员工申请最高 100% 的获批准课程费用。最终资格、金额及批准由 HRD Corp 决定；个人也可查询分期付款。" },
-  { q: "适合谁参加？", a: "企业主、董事、总经理与高级管理者 —— 通常为 35–55 岁、拥有 10 年以上经验 —— 需要领导转型，而不仅仅是管理运营的人。" },
+  { q: "是否获 MQA 认证？", a: "否。本课程由英国特许管理协会（CMI）依据其专业标准批准及认可；完成者获 CMI 课程认可证书。本课程并非 MQA 认证的学术学位或受监管资格。" },
+  { q: "如果无法出席某次课程怎么办？", a: "请在课程开始前联系课程团队。ABC 将以书面方式确认指定视频或指定后续班次的补课安排。" },
+  { q: "公司可以使用 HRD Corp levy 吗？", a: HRD_CORP_CLAIM_ZH },
+  { q: "适合谁参加？", a: PROGRAMME_AUDIENCE_ZH },
 ];
 
 export default function ZhHome() {
@@ -66,18 +67,18 @@ export default function ZhHome() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">英国 CMI 认可 · HRD Corp 可索赔</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.8vw,3.5rem)", letterSpacing: "-.01em", lineHeight: 1.14, marginTop: 6 }}>
-                  你的企业，终将由<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>思考最出色</em>的人掌舵。确保那个人是你。
+                  你的企业将由认为自己已<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>“准备好迎接未来”</em>的人来经营。
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "40ch", margin: "22px 0 28px", lineHeight: 1.9 }}>
-                  一个由英国特许管理协会（CMI）认可的六个月专业路径：<b style={{ color: "#fff" }}>首三个月完成课程证书阶段，随后三个月准备 CMI 特许经理人评估</b>，
-                  为你装上顶尖领导者的思维框架。没有论文，没有考试 —— 只有更锋利的头脑，以及一份属于你自己企业的转型方案。
+                  一个由英国特许管理协会（CMI）认可的六个月专业路径：<b style={{ color: "var(--ink)" }}>首三个月完成课程证书阶段，随后三个月准备 CMI 特许经理人评估</b>，
+                  课程教授七套定义明确的思维框架。没有传统论文或考试；评估以学员自身企业的应用项目为基础。
                 </p>
               </Reveal>
               <Reveal delay={150}>
                 <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 28 }}>
-                  <Link href="#apply" className="btn btn-primary">立即报名 →</Link>
+                  <Link href="#apply" className="btn btn-primary">咨询课程 →</Link>
                   <Link href="#programme" className="btn btn-ghost">了解课程</Link>
                 </div>
               </Reveal>
@@ -85,7 +86,7 @@ export default function ZhHome() {
                 <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", paddingTop: 24, borderTop: "1px solid var(--line)" }}>
                   <span className="chip"><Image src="/brand/cmi-logo.png" alt="英国特许管理协会 CMI" width={82} height={28} style={{ height: 28, width: "auto" }} /></span>
                   <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp 可索赔" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
-                  <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>已培养 {FACTS.gradsApprox} 位领导者 · {FACTS.cohorts} 届</span>
+                  <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次课程 · ABC 报告已完成 {FACTS.cohorts} 届</span>
                 </div>
               </Reveal>
             </div>
@@ -94,9 +95,9 @@ export default function ZhHome() {
             <div className="zh-form">
               <Reveal delay={120}>
                 <div className="card nested-form-card" id="apply-top" style={{ padding: 26, background: "linear-gradient(180deg,var(--surface),var(--bg-2))", border: "1px solid var(--line-2)" }}>
-                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>免费 · 两分钟</p>
-                  <h2 style={{ fontSize: "1.3rem", color: "#fff", marginBottom: 8, lineHeight: 1.3 }}>查询你的资格与下一期开课</h2>
-                  <p className="fine" style={{ marginBottom: 18 }}>留下资料，我们的课程团队会尽快回电 —— 说明适合度、开课日期、奖学金与 HRD Corp，无需承诺。</p>
+                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>课程咨询 · 无需付款</p>
+                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.3 }}>了解适合对象与下一期开课</h2>
+                  <p className="fine" style={{ marginBottom: 18 }}>选择联系方式后，课程团队会说明适合对象、已公布日期、马来西亚奖学金及雇主申请 HRD Corp 的流程。</p>
                   <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" placement="hero" />
                 </div>
               </Reveal>
@@ -129,7 +130,7 @@ export default function ZhHome() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">为什么是现在</span></div></Reveal>
-          <Reveal><h2 className="sec-h">昨天让你成功的思维，正是今天困住你的原因。</h2></Reveal>
+          <Reveal><h2 className="sec-h">商业环境变化时，决策方法也需要更新。</h2></Reveal>
           <ul style={{ listStyle: "none", padding: 0, margin: "26px 0 0", display: "grid", gap: 12 }}>
             {FORCES_ZH.map((f, i) => (
               <Reveal key={f}>
@@ -147,7 +148,7 @@ export default function ZhHome() {
       <section id="method" className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">教学方法</span></div></Reveal>
-          <Reveal><h2 className="sec-h">真正改变的，是你判断的方式 —— 七种思维。</h2></Reveal>
+          <Reveal><h2 className="sec-h">七种思维方法，组成一套决策流程。</h2></Reveal>
           <div className="insight-grid mt-m">
             {EDGE_ZH.map((t, i) => (
               <Reveal key={t.i} delay={(i % 3) * 60}>
@@ -190,7 +191,7 @@ export default function ZhHome() {
       <section id="credential" className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">你将取得的证书</span></div></Reveal>
-          <Reveal><h2 className="sec-h">获英国 CMI 认可 —— 由其首席执行官亲笔签署。</h2></Reveal>
+          <Reveal><h2 className="sec-h">课程获 CMI 批准、认可与背书；完成者获 CMI 课程认可证书。</h2></Reveal>
           <Reveal className="mt-m">
             <div className="zh-cert" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 26, alignItems: "center", background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 16, padding: 22 }}>
               <div style={{ background: "#fff", borderRadius: 10, padding: 10, border: "1px solid var(--line-2)" }}>
@@ -198,7 +199,7 @@ export default function ZhHome() {
               </div>
               <div>
                 <p style={{ color: "var(--ink-2)", margin: 0, fontSize: "1rem", lineHeight: 1.9 }}>
-                  你的「面向未来的商业领导力」高管 MBA，依据 CMI 专业标准获得认可。CMI 是全球拥有超过 {FACTS.cmiMembers} 名会员的管理专业机构。（图为证书样本。）
+                  课程依据 CMI 专业标准获批及认可；完成要求后获颁 CMI 课程认可证书。图中样本带有 CMI 首席执行官 Ann Francke OBE 的签名；CMI 决定正式证书的格式、文字及签署人。
                 </p>
               </div>
             </div>
@@ -210,18 +211,18 @@ export default function ZhHome() {
       <section id="fees" className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">学费投资</span></div></Reveal>
-          <Reveal><h2 className="sec-h">同等的公信力，只需一小部分的时间与费用。</h2></Reveal>
+          <Reveal><h2 className="sec-h">先确认完整费用、奖学金及资助流程。</h2></Reveal>
           <Reveal className="mt-m">
             <div className="zh-fees" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", borderRadius: 14, overflow: "hidden", border: "1px solid var(--line)" }}>
-              {[[`${FACTS.priceStd}`, "标准费用"], [`${FACTS.priceNet}`, "马来西亚学员实付"], ["最高 100%", "合资格雇主可申请 HRD Corp"]].map(([b, s]) => (
+              {[[`${FACTS.priceStd}`, "标准费用"], [`${FACTS.priceNet}`, "马来西亚学员实付"], ["开课前", "雇主提交 HRD Corp 申请"]].map(([b, s]) => (
                 <div key={s} style={{ background: "var(--surface)", padding: "20px 16px", textAlign: "center" }}>
-                  <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.5rem", display: "block", color: "#fff" }}>{b}</b>
+                  <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.5rem", display: "block", color: "var(--ink)" }}>{b}</b>
                   <span className="mono" style={{ fontSize: ".62rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>
                 </div>
               ))}
             </div>
           </Reveal>
-          <Reveal><p className="fine mt-s" style={{ lineHeight: 1.8 }}>标准费用为 {FACTS.priceStd}；LIFE Innoversity 为马来西亚学员提供 {FACTS.scholarshipAmt} 奖学金，学员实付 {FACTS.priceNet}。符合条件且拥有足够 levy 余额的 HRD Corp 注册雇主，可在开课前申请最高 100% 的获批准课程费用；最终资格、金额及批准由 HRD Corp 决定。提供分期付款。国际学员：{FACTS.priceIntl}。</p></Reveal>
+          <Reveal><p className="fine mt-s" style={{ lineHeight: 1.8 }}>标准费用为 {FACTS.priceStd}；LIFE Innoversity 为马来西亚学员提供 {FACTS.scholarshipAmt} 奖学金，学员实付 {FACTS.priceNet}。{HRD_CORP_CLAIM_ZH} 个人分期方案列于费用页面。全球线上公开课程：每人 {FACTS.priceIntl}。</p></Reveal>
         </div>
       </section>
 
@@ -255,12 +256,12 @@ export default function ZhHome() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">常见问题</span></div></Reveal>
-          <Reveal><h2 className="sec-h">你可能想知道的。</h2></Reveal>
+          <Reveal><h2 className="sec-h">报名之前需要确认的事项。</h2></Reveal>
           <div className="mt-m" style={{ display: "grid", gap: 14 }}>
             {FAQ_ZH.map((f) => (
               <Reveal key={f.q}>
                 <div className="card">
-                  <h3 style={{ fontSize: "1.08rem", marginBottom: 8, color: "#fff" }}>{f.q}</h3>
+                  <h3 style={{ fontSize: "1.08rem", marginBottom: 8, color: "var(--ink)" }}>{f.q}</h3>
                   <p style={{ margin: 0, color: "var(--ink-2)", lineHeight: 1.9, fontSize: ".95rem" }}>{f.a}</p>
                 </div>
               </Reveal>
@@ -275,10 +276,10 @@ export default function ZhHome() {
           <div className="zh-apply" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 52, alignItems: "start" }}>
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">索取资讯</span></div>
-              <h2 className="sec-h">下一届不会等人。你的思维也不该等。</h2>
-              <p className="sec-sub" style={{ lineHeight: 1.9 }}>立即报名，我们的课程团队将与你联系，说明适合度、下一期开课、HRD Corp 索赔与奖学金资格。无需承诺。</p>
+              <h2 className="sec-h">先确认课程是否符合你的目标。</h2>
+              <p className="sec-sub" style={{ lineHeight: 1.9 }}>你可预约简短通话、线上说明会、面谈，或先收取资料。课程团队会说明适合对象、已公布日期、马来西亚奖学金及雇主申请 HRD Corp 的流程；咨询不等于录取或付款承诺。</p>
               <ul style={{ listStyle: "none", padding: 0, margin: "24px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
-                {["一对一沟通你的目标与适合度", "2026 各班次名额与排期", "HRD Corp 索赔与奖学金资格"].map((t) => (
+                {["一对一沟通你的目标与适合度", "已公布的 2026 班次日期", "马来西亚学员费用与雇主申请 HRD Corp 的流程"].map((t) => (
                   <li key={t} style={{ paddingLeft: 26, position: "relative", color: "var(--ink-2)" }}>
                     <span style={{ position: "absolute", left: 0, color: "var(--crimson)" }}>→</span>{t}
                   </li>
@@ -287,9 +288,15 @@ export default function ZhHome() {
               <p className="fine" style={{ marginTop: 22 }}>{SITE.director} · 课程协调员 · {SITE.phone} · {SITE.email}</p>
             </Reveal>
             <Reveal delay={80}>
-              <div className="card nested-form-card" style={{ padding: 26 }}>
-                <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" placement="footer-cta" />
-              </div>
+              <aside className="card conversation-choice-card">
+                <p className="mono sec-k">由你选择下一步</p>
+                <h3>先看资料，或在准备好时再沟通。</h3>
+                <p>你可继续查看完整课程、学费与开课日期。若希望课程团队按你选择的方式联系，请使用独立咨询页面。</p>
+                <div className="working-hero-actions">
+                  <Link href="/zh/apply" className="btn btn-primary">选择沟通方式 →</Link>
+                  <Link href="/zh/fees" className="text-action">查看完整费用 →</Link>
+                </div>
+              </aside>
             </Reveal>
           </div>
         </div>
@@ -298,7 +305,6 @@ export default function ZhHome() {
       <style>{`
         @media(max-width:900px){
           .zh-hero{grid-template-columns:1fr!important;gap:30px!important}
-          .zh-form{order:-1}
           .zh-cert{grid-template-columns:1fr!important}
           .zh-fees{grid-template-columns:1fr!important}
           .zh-apply{grid-template-columns:1fr!important;gap:34px!important}

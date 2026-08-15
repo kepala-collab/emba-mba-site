@@ -32,10 +32,10 @@ export const FEES = {
   standard: { amount: 10000, label: "RM10,000.00" },
   malaysia: {
     scholarshipProvider: "LIFE Innoversity",
-    scholarshipAmount: 4000,
-    scholarshipLabel: "RM4,000.00",
-    participantAmount: 6000,
-    participantLabel: "RM6,000.00",
+    scholarshipAmount: 5000,
+    scholarshipLabel: "RM5,000.00",
+    participantAmount: 5000,
+    participantLabel: "RM5,000.00",
   },
 } as const;
 
@@ -44,15 +44,47 @@ export const FACTS = {
   durationShort: "6 months",
   certificationPhase: "First 3 months · 3 sessions",
   charteredPhase: "Months 4–6 · supported CMgr pathway",
+  trainingDays: "6",
+  liveSessions: "3",
+  moduleCount: "12",
+  publishedIntakes: "5",
   priceStd: FEES.standard.label,
   scholarshipProvider: FEES.malaysia.scholarshipProvider,
   scholarshipAmt: FEES.malaysia.scholarshipLabel,
   priceNet: FEES.malaysia.participantLabel,
   priceIntl: "USD 2,500",
-  gradsApprox: "~200",
   cohorts: "13",
-  cmiMembers: "200,000+",
 };
+
+export const PROGRAMME_AUDIENCE =
+  "Business owners, directors, general managers and senior managers responsible for strategy, transformation, innovation or growth.";
+
+export const HRD_CORP_CLAIM = {
+  short:
+    "An HRD Corp-registered Malaysian employer submits the grant application in e-TRiS before training. HRD Corp determines eligibility and the approved amount under its Allowable Cost Matrix; funding cannot exceed the employer's available levy balance.",
+  process:
+    "The employer submits the grant application before training. The programme team supplies the quotation, schedule, course content and trainer documents. After the approved training is completed, the training provider and employer submit their respective claim documents within HRD Corp's stated deadline.",
+  responsibility:
+    "The employer—not the participant—applies for the grant. HRD Corp—not the programme provider—decides approval and the approved amount.",
+} as const;
+
+export const REFUND_TERMS = {
+  title: "Written Session 1 refund terms",
+  description:
+    "ABC's signed enrolment terms define refund eligibility, the notice deadline, the refundable amount, the condition for returning issued materials and the processing date. Participants receive and review those terms before payment. No refund promise applies outside the signed terms.",
+} as const;
+
+export const DELIVERY_CONTROL = {
+  schedule:
+    "The dates shown are the published 2026 schedule. If ABC changes a date, registered participants receive the replacement date in writing.",
+  faculty:
+    "ABC confirms the faculty assigned to each cohort in the cohort briefing issued before Session 1.",
+  modules:
+    "Every cohort covers all 12 modules. The cohort timetable states the teaching sequence.",
+} as const;
+
+export const COMPARISON_SCOPE =
+  "This table defines its reference academic MBA as an 18–24 month programme built around academic modules, assignments or examinations, and a dissertation or thesis. It does not describe every MBA programme.";
 
 export const PROGRAMME_PRICING = {
   individuals: [
@@ -84,8 +116,8 @@ export const PROGRAMME_PRICING = {
   companies: {
     title: "Customisable in-house Managers Development Programme (MDP)",
     description:
-      "A company-specific management development pathway can be designed around the organisation's requirements. Subject to the agreed programme design and completion requirements, it can include an EMBA programme certificate recognised against CMI Professional Standards.",
-    price: "Pricing is scoped to requirements and remains subject to the proposal, enrolment terms and conditions.",
+      "ABC designs the in-house management development pathway against the organisation's written requirements. The formal proposal specifies the modules, delivery format, completion requirements and certificate.",
+    price: "The formal proposal states the complete fee and payment terms before the company accepts the engagement.",
   },
 } as const;
 
@@ -96,12 +128,12 @@ export const STAGES = [
   {
     t: "Months 1–3 · 3 sessions",
     h: "Executive MBA programme certificate",
-    d: "Complete six training days across the first three monthly sessions and the applied business project. Successful participants receive the Executive MBA programme certificate recognised against CMI Professional Standards, subject to the provider's current CMI arrangement.",
+    d: "Complete six training days across three monthly sessions, the coaching requirements and the applied business project. Successful participants are awarded the CMI Certificate of Recognition for the Executive MBA programme.",
   },
   {
-    t: "Professional recognition · current CMI terms apply",
+    t: "Professional recognition",
     h: "Foundation Chartered Manager — fCMgr",
-    d: "Current CMI guidance says learners completing a CMI Recognised programme can achieve Foundation Chartered Manager status and use fCMgr after their name. Activation, continued use and renewal remain subject to the provider's current CMI arrangement, CMI confirmation and active membership.",
+    d: "CMI's published terms for CMI Recognised programmes state that learners receive Foundation Chartered Manager status on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal.",
   },
   {
     t: "Months 4–6 · supported assessment pathway",
@@ -111,7 +143,7 @@ export const STAGES = [
   {
     t: "Senior recognition · experience applies",
     h: "Fellow or Chartered Fellow",
-    d: "Experienced strategic leaders may later qualify to apply for FCMI or CMgr FCMI. Current CMI criteria include 10 years of management experience, with at least three at strategic level; approval and continuing membership remain with CMI.",
+    d: "CMI lists 10 years of management experience, including three years at strategic level, for its Fellow route. CMI assesses every application and controls continuing membership and post-nominal use.",
   },
 ];
 
@@ -124,13 +156,13 @@ export const FORCES = [
 ];
 
 export const THINKING_EDGE = [
-  { i: "01 · Systems", h: "See the whole board", p: "Trace cause to third-order consequence before you commit." },
-  { i: "02 · First-Principle", h: "Break it to bedrock", p: "Strip a problem to its atoms and rebuild a disruptive answer." },
-  { i: "03 · Design-Integrative", h: "Fuse logic + creativity", p: "Hold strategy and imagination in the same move." },
-  { i: "04 · Framework", h: "Structure the chaos", p: "Turn overwhelming complexity into a decision you can act on." },
-  { i: "05 · Five-Fold", h: "Think in five lenses", p: "Stress-test every call from angles most leaders never see." },
-  { i: "06 · 4D Strategic", h: "Align the forces", p: "Draw, drive, define and deliver — in one coherent strategy." },
-  { i: "07 · Holistic", h: "Connect people + business", p: "Align human capital, innovation and growth for real impact." },
+  { i: "01 · Systems", h: "Trace the wider system", p: "Examine causes, dependencies and likely consequences before deciding." },
+  { i: "02 · First-Principle", h: "Test the foundations", p: "Separate verified constraints from assumptions, then build options from the evidence." },
+  { i: "03 · Design-Integrative", h: "Combine analysis and invention", p: "Develop options that balance strategic logic, user needs and practical constraints." },
+  { i: "04 · Framework", h: "Structure complexity", p: "Organise complex information into a decision that can be explained and acted upon." },
+  { i: "05 · Five-Fold", h: "Review five perspectives", p: "Evaluate each decision through five defined business perspectives." },
+  { i: "06 · 4D Strategic", h: "Connect strategy to delivery", p: "Use Draw, Drive, Define and Deliver as one coherent planning process." },
+  { i: "07 · Holistic", h: "Connect people and business", p: "Consider human capability, innovation and commercial requirements together." },
 ];
 
 export const FLOW = ["Right Thinking", "Right Questions", "Right Ideas", "Right Solutions", "Exceptional Value"];
@@ -139,6 +171,22 @@ export const SIGNATURE_QUOTE = {
   text: "With the Executive MBA, ‘We Connect The Dots’ for your future.",
   attribution: "Dr. Xavier Johnson",
   role: "Chief Business Methodologist",
+} as const;
+
+export const CERTIFICATE_POSITIONING = {
+  headline: "Approved, Awarded & Endorsed by CMI, UK 🇬🇧",
+  credential: "CMI Certificate of Recognition",
+  distinction:
+    "CMI has approved and endorsed the programme against CMI's Professional Standard. Successful participants are awarded a CMI Certificate of Recognition. The certificate records professional programme completion; it is not a regulated qualification or an academic degree.",
+  professionalRelevance:
+    "The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome.",
+  specimenSignatory:
+    "The provider-supplied specimen certificate bears the signature of Ann Francke OBE, Chief Executive of CMI. CMI controls the final certificate format, wording and authorised signatory at the date of issue.",
+  signatoryContext:
+    "CMI states that Ann Francke was awarded an OBE in 2020 for services to workplace equality. OBE means Officer of the Order of the British Empire, an official UK honour for distinguished achievement or service. The honour belongs to the signatory and does not alter the programme certificate's formal status.",
+  cmiRecognitionSource: "https://www.managers.org.uk/our-services/cmi-recognition/",
+  annFranckeSource: "https://www.managers.org.uk/about-cmi/governance/executive-team/",
+  reviewedAt: "2026-08-14",
 } as const;
 
 export const MODULES = [
@@ -161,25 +209,25 @@ export const FACULTY: Faculty[] = [
   {
     n: "Dr. Xavier Johnson", r: "Chief Business Methodologist",
     focus: "Strategic Thinking · F.A.S.T. · BOLT",
-    b: "30+ years in strategic business thinking and business organisation leadership (BOLT). Architect of the F.A.S.T. Transformation methodology. Author, speaker, musician and corporate transformation expert.",
+    b: "Works in strategic business thinking and business organisation leadership (BOLT). Architect of the F.A.S.T. Transformation methodology. Author, speaker, musician and corporate transformation practitioner.",
     img: "/brand/faculty/xavier-johnson.png",
   },
   {
     n: "Ir. Dr. Jonas Anthony", r: "Chief Business Consultant",
     focus: "Lean · Industry 4.0 · TQM",
-    b: "Executive leadership in one of Malaysia's largest Japanese manufacturing conglomerates. Distinguished expert in Lean, Industry 4.0 and Total Quality Management. Renowned leadership mentor, industry advisor and academic contributor.",
+    b: "Held executive leadership responsibility in a Japanese manufacturing conglomerate. Works in Lean, Industry 4.0 and Total Quality Management as a leadership mentor, industry advisor and academic contributor.",
     img: "/brand/faculty/jonas-anthony.png",
   },
   {
     n: "Dr. Eugene D'Cruz", r: "Faculty & Coach",
     focus: "Transformational HR · Talent Development",
-    b: "20+ years in transformational HR and business leadership across diverse global industries. Bridges global expertise with academic excellence. Innovator in strategic leadership and talent development.",
+    b: "Works in transformational HR, business leadership, strategic leadership and talent development across multiple industries.",
     img: "/brand/faculty/eugene-dcruz.png",
   },
   {
     n: "Dr. Simona Carman Costea", r: "Faculty & Coach",
     focus: "Change Leadership · OD · Cross-Cultural",
-    b: "Expert in leading large-scale change initiatives across Asia. Specialist in organisational development and cross-cultural leadership. Certified change coach with a strong academic and consulting background.",
+    b: "Leads change initiatives across Asia and works in organisational development and cross-cultural leadership. Certified change coach with academic and consulting experience.",
     img: "/brand/faculty/simona-costea.png",
   },
   {
@@ -191,13 +239,13 @@ export const FACULTY: Faculty[] = [
   {
     n: "Dr. Chin Nyuk Sang", r: "Faculty & Coach",
     focus: "Financial Policy · Sustainability",
-    b: "Key architect in financial-sector policy and talent development at Bank Negara Malaysia. Recognised expert in future-proofing business, sustainability and viability. Academic leader and advocate for financial literacy.",
+    b: "Worked in financial-sector policy and talent development at Bank Negara Malaysia. Focuses on business sustainability, viability and financial literacy.",
     img: "/brand/faculty/chin-nyuk-sang.png",
   },
   {
     n: "Lee Mean Yeit", r: "Faculty & Coach",
     focus: "Business Excellence · Coaching",
-    b: "Over 15 years of leadership across government, conglomerates and large corporations, integrating business excellence with personal transformation and purpose-driven leadership. Helps professionals and leaders unlock their potential through strategic business expertise, coaching, wealth, wisdom and mindfulness.",
+    b: "Leadership experience across government, conglomerates and large corporations, integrating business excellence with coaching, purpose, wealth, wisdom and mindfulness.",
     img: "/brand/faculty/lee-mean-yeit.png",
   },
 ];
@@ -211,33 +259,32 @@ export const INTAKES = [
 ];
 
 export const INCLUSIONS = [
-  { b: "Live facilitation across three sessions", s: "Framework workshops led by experienced business practitioners and consultants." },
-  { b: "Personal leadership diagnostics", s: "Assessments that show exactly where your thinking is costing you." },
-  { b: "Executive coaching & project review", s: "One-to-one guidance applied to your real business, not a case study." },
-  { b: "The Leverage Management System (LMS)", s: "A permanent toolkit of frameworks, references and prompts you keep for life." },
-  { b: "A live capstone transformation project", s: "Leave with a board-ready growth plan — no thesis, no exam." },
-  { b: "A structured six-month professional pathway", s: "The first three months lead to the CMI-recognised programme certificate; months four to six provide supported preparation for eligible participants pursuing CMI's separate Chartered Manager assessment." },
-  { b: `An alumni network of ${FACTS.gradsApprox} leaders`, s: "The room becomes your informal board for years after." },
+  { b: "Six training days across three sessions", s: "Practitioner-led framework workshops scheduled once a month during the certificate phase." },
+  { b: "Personal leadership diagnostics", s: "Structured assessments identify the participant's decision patterns and development priorities." },
+  { b: "Executive coaching & project review", s: "One-to-one guidance applied to the participant's own organisational context." },
+  { b: "The Leverage Management System (LMS)", s: "Participants retain the programme frameworks, references and working templates." },
+  { b: "An applied business project", s: "Produce a business transformation plan for faculty review; there is no traditional thesis or examination." },
+  { b: "CMI certificate and professional pathway", s: "Successful completion leads to the CMI Certificate of Recognition; months four to six prepare eligible participants for CMI's separate Chartered Manager assessment." },
 ];
 
 export const COMPARISON = [
-  { k: "Duration", them: "Commonly 18–24 months, depending on the institution and study mode", us: "Six-month professional pathway: three months to the programme certificate, then three months of supported CMgr assessment preparation" },
-  { k: "Focus", them: "Academic content, theory, research and case analysis", us: "Business context, strategic judgment and reusable decision frameworks" },
-  { k: "Assessment", them: "Often assignments, examinations and a dissertation or thesis; formats vary", us: "An applied project on the participant's own business; no traditional exams or thesis" },
-  { k: "Faculty role", them: "Usually academic faculty, sometimes alongside industry practitioners", us: "Business practitioners, consultants and executive coaches" },
+  { k: "Duration", them: "18–24 months", us: "Six months: three months to the programme certificate, followed by three months of supported CMgr assessment preparation" },
+  { k: "Focus", them: "Academic theory, research and case analysis", us: "Business context, strategic judgment and reusable decision frameworks" },
+  { k: "Assessment", them: "Assignments or examinations plus a dissertation or thesis", us: "An applied project on the participant's own business; no traditional examination or thesis" },
+  { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
   { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "F.A.S.T. methodology plus 12 practical business frameworks" },
-  { k: "Format", them: "Full-time, part-time, evening, weekend or online formats vary by institution", us: "One scheduled weekend session a month while participants continue working" },
-  { k: "Investment", them: "Varies by institution and programme", us: "RM10,000.00 standard; RM6,000.00 for Malaysian participants after the RM4,000.00 LIFE Innoversity scholarship" },
-  { k: "Credential", them: "An academic MBA degree when awarded by an appropriately accredited institution", us: "A professional programme recognised by CMI (UK); not an MQA-accredited academic degree" },
+  { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "One scheduled weekend session a month during the certificate phase while participants continue working" },
+  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard; Malaysian participants pay RM5,000.00 after the RM5,000.00 LIFE Innoversity scholarship" },
+  { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
 ];
 
 export const FAQS = [
   { q: "How is the programme structured?", a: "It is a six-month professional pathway. During months one to three, participants complete six training days across the first three monthly sessions, coaching and an applied business project leading to the CMI-recognised Executive MBA programme certificate. During months four to six, participants who meet CMI entry criteria receive structured support to prepare for the separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment and is not automatic." },
-  { q: "Is it MQA-recognised?", a: "No — MQA governs academic degrees. This is a professional programme recognised by the Chartered Management Institute (CMI), UK, and is globally respected. It is deliberately not an academic degree." },
-  { q: "I'm too busy to attend everything.", a: "Sessions run one weekend a month. Miss one and you catch up by video or re-sit it in a later cohort — no penalty." },
-  { q: "What if it isn't worth it?", a: "A Session 1 refund arrangement is available under the provider's current written terms. You must notify the programme team promptly after the first two training days, stop participating and return all issued materials. Confirm the applicable deadline, payment scope and processing details in writing before enrolment." },
-  { q: "Can my company claim it?", a: "An eligible HRD Corp-registered Malaysian employer may apply to claim up to 100% of the approved programme fee from its levy for an employee, subject to programme registration, prior grant approval, sufficient levy balance and HRD Corp's current rules. The employer—not the individual—makes the application." },
-  { q: "Who is it for?", a: "Owners, directors, GMs and senior managers — typically 35–55 with 10+ years of experience — who need to lead transformation, not just manage operations." },
+  { q: "Is it MQA-recognised?", a: "No. This is a professional development programme approved and endorsed by CMI against its Professional Standard. It is not an MQA-accredited academic degree or a regulated qualification." },
+  { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
+  { q: "What are the refund terms?", a: REFUND_TERMS.description },
+  { q: "Can my company use its HRD Corp levy?", a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}` },
+  { q: "Who is the programme for?", a: PROGRAMME_AUDIENCE },
 ];
 
 export const CLIENTS = [
@@ -268,7 +315,7 @@ export const CORP_TRAINING = [
 ];
 
 export const COMPLIANCE =
-  "This professional development programme is recognised by CMI (UK) and is not an MQA-accredited academic qualification. HRD Corp claims are subject to employer and programme eligibility; scholarships are subject to eligibility and availability. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.";
+  "CMI has approved and endorsed this professional development programme against its Professional Standard and awards the CMI Certificate of Recognition to successful participants. It is not an MQA-accredited academic degree or a regulated qualification. HRD Corp determines every grant approval and approved amount. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.";
 
 export type NavItem = { href: string; label: string };
 export const NAV: NavItem[] = [
@@ -277,5 +324,5 @@ export const NAV: NavItem[] = [
   { href: "/curriculum", label: "Curriculum" },
   { href: "/fees", label: "Investment" },
   { href: "/intakes", label: "2026 Intakes" },
-  { href: "/insights", label: "Insights" },
+  { href: "/resources", label: "Resources" },
 ];

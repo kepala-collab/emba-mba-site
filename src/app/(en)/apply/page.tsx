@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
-import { SITE, FACTS, INCLUSIONS } from "@/lib/content";
+import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
+import { CERTIFICATE_POSITIONING, SITE, FACTS, INCLUSIONS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/apply", {
   title: "Arrange a Programme Conversation",
   description:
-    "Arrange a no-obligation call, online information meeting or in-person programme meeting, or ask for details first.",
+    "Request a call, online information meeting, in-person programme meeting at an agreed location, or programme details by email.",
 });
 
 const waText = encodeURIComponent(
@@ -16,19 +17,19 @@ const waText = encodeURIComponent(
 
 const RECEIVE = [
   "Your choice of a call, online meeting, in-person meeting or details first",
-  "2026 intake dates and current seat availability",
-  "Up to 100% HRD Corp claim guidance for eligible employers",
-  "Malaysian participant fee — RM6,000.00 after the RM4,000.00 LIFE Innoversity scholarship",
+  "Published 2026 intake dates and the Open status shown for each cohort",
+  "The employer-led HRD Corp application process and required programme documents",
+  "Malaysian participant fee — RM5,000.00 after the RM5,000.00 LIFE Innoversity scholarship",
 ];
 
 export default function ApplyPage() {
   return (
     <>
       <style>{`
-        .apply-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+        .apply-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: start; }
+        .apply-grid > * { min-width: 0; }
         @media (max-width: 880px) {
-          .apply-grid { grid-template-columns: 1fr; gap: 40px; }
-          .apply-right { order: -1; }
+          .apply-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
         }
       `}</style>
 
@@ -63,15 +64,21 @@ export default function ApplyPage() {
                 >
                   <span className="chip" style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
                     <Image src="/brand/cmi-logo.png" alt="CMI (UK)" width={26} height={26} style={{ objectFit: "contain" }} />
-                    Recognised by CMI (UK)
+                    {CERTIFICATE_POSITIONING.headline}
                   </span>
                   <span className="chip" style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
                     <Image src="/brand/hrdcorp-badge.png" alt="HRD Corp" width={26} height={26} style={{ objectFit: "contain" }} />
                     HRD Corp claimable
                   </span>
                   <span className="mono sec-k" style={{ opacity: 0.85 }}>
-                    {FACTS.gradsApprox} leaders trained · {FACTS.cohorts} cohorts
+                    {FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · {FACTS.cohorts} cohorts reported by ABC
                   </span>
+                </div>
+              </Reveal>
+
+              <Reveal delay={120}>
+                <div className="apply-programme-introduction">
+                  <ProgrammeIntroduction image="conversation" />
                 </div>
               </Reveal>
 
@@ -114,7 +121,7 @@ export default function ApplyPage() {
 
               <Reveal delay={260}>
                 <p className="fine" style={{ marginTop: 26, maxWidth: "44ch" }}>
-                  {INCLUSIONS[0].b} · {INCLUSIONS[4].b} · {INCLUSIONS[5].b}. Our team walks you through the full breakdown on your call.
+                  {INCLUSIONS[0].b} · {INCLUSIONS[4].b} · {INCLUSIONS[5].b}. Our team provides the full breakdown during your chosen conversation or in the details sent to you.
                 </p>
               </Reveal>
             </div>
@@ -123,8 +130,8 @@ export default function ApplyPage() {
             <div className="apply-right">
               <Reveal delay={120}>
                 <div className="card apply-form-card" style={{ padding: 28 }}>
-                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>No-pressure enquiry</p>
-                  <h2 style={{ fontSize: "1.35rem", color: "#fff", marginBottom: 20, lineHeight: 1.25 }}>
+                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Programme enquiry · No payment required</p>
+                  <h2 style={{ fontSize: "1.35rem", color: "var(--ink)", marginBottom: 20, lineHeight: 1.25 }}>
                     How would you like to explore it?
                   </h2>
                   <LeadForm programme="Executive MBA" />
@@ -140,7 +147,7 @@ export default function ApplyPage() {
               style={{ marginTop: 44, display: "block", textAlign: "center", padding: "14px 20px" }}
             >
               <span className="mono sec-k">
-                Free · No obligation · PDPA-compliant · Your details go straight to the programme team.
+                Programme enquiry · No payment required · Submitted to the programme team under the Privacy Policy.
               </span>
             </div>
           </Reveal>

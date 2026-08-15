@@ -74,6 +74,8 @@ export default function AnalyticsBridge() {
         action_location: location,
         contact_method: contactMethod,
         contact_language: contactMethod ? contactLanguage : undefined,
+        cohort_key: element.dataset.trackCohort,
+        lead_intent: element.dataset.trackIntent,
         destination_path: href && href.startsWith(window.location.origin) ? new URL(href).pathname : undefined,
       };
 

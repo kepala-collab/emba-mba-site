@@ -233,6 +233,10 @@ function readConsent(): AnalyticsConsent {
   }
 }
 
+export function getAnalyticsConsent(): AnalyticsConsent {
+  return readConsent();
+}
+
 function emit(event: DataLayerEvent) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(event);

@@ -3,7 +3,7 @@ import RdrMark from "@/components/site/RdrMark";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { SITE, FACTS, CLIENTS, ASSOCIATES, OPERATOR } from "@/lib/content";
+import { SITE, FACTS, CLIENTS, OPERATOR } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/about", {
@@ -13,10 +13,10 @@ export const metadata = withSeo("/about", {
 });
 
 const MODELS = [
-  { k: "F.A.S.T.", d: "Framework Adaptive Systems Thinking — the proprietary engine behind the programme." },
-  { k: "B.I.G", d: "Business Innovation & Growth — turning thinking into innovation, profit and growth." },
+  { k: "F.A.S.T.", d: "Framework Adaptive Systems Thinking — the programme's structured decision method." },
+  { k: "B.I.G", d: "Business Innovation & Growth — a model for linking strategic analysis, innovation and commercial requirements." },
   { k: "PPCB Model", d: "People, Process, Customer, Business — the four pillars of a future-ready organisation." },
-  { k: "Consult-Think-Transfer", d: "How methodology is transferred into your people, not just taught." },
+  { k: "Consult-Think-Transfer", d: "A model for applying the programme methods within the participant's workplace." },
 ];
 
 export default function AboutPage() {
@@ -28,21 +28,20 @@ export default function AboutPage() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">About</span></div>
             <h1 className="sec-h" style={{ fontSize: "clamp(2.1rem,4.4vw,3.2rem)", maxWidth: "20ch" }}>
-              A business innovation &amp; growth company — not a lecture hall.
+              The programme provider, methodology and editorial standards.
             </h1>
             <p className="sec-sub">
-              The Future Ready Executive MBA is delivered by <strong style={{ color: "#fff" }}>{SITE.provider}</strong> (ABC) —
-              &ldquo;{SITE.tagline}&rdquo;. ABC is an <strong style={{ color: "#fff" }}>HRD Corp Approved Training Provider</strong> and
-              its company profile identifies it as the approved training centre for this Executive MBA, which is
-              <strong style={{ color: "#fff" }}> recognised by CMI against CMI Professional Standards</strong>.
-              For years, ABC has helped Malaysia&rsquo;s leading organisations turn better thinking into measurable growth.
+              The Future Ready Executive MBA is delivered by <strong style={{ color: "var(--ink)" }}>{SITE.provider}</strong> (ABC) —
+              &ldquo;{SITE.tagline}&rdquo;. ABC is an <strong style={{ color: "var(--ink)" }}>HRD Corp Approved Training Provider</strong> and
+              its company profile identifies it as the approved training centre for this Executive MBA. CMI has
+              <strong style={{ color: "var(--ink)" }}> approved and endorsed the programme against its Professional Standard</strong>.
             </p>
           </Reveal>
 
           <Reveal className="mt-m">
             <div className="stats">
-              <div><b>{FACTS.gradsApprox}</b><span>Leaders trained</span></div>
-              <div><b>{FACTS.cohorts}</b><span>Cohorts since 2024</span></div>
+              <div><b>{FACTS.trainingDays}</b><span>Certificate-phase training days</span></div>
+              <div><b>{FACTS.cohorts}</b><span>Cohorts reported by ABC</span></div>
               <div><b>HRD Corp</b><span>Approved provider</span></div>
               <div><b>CMI (UK)</b><span>Recognised programme</span></div>
             </div>
@@ -59,7 +58,10 @@ export default function AboutPage() {
               Educational articles are prepared by the Asian Business Consulting editorial team and reviewed against the current programme source materials. Commercial and regulatory details—fees, dates, scholarships, HRD Corp treatment and credential wording—are checked before publication and reviewed after a material programme change or at least quarterly.
             </p>
             <p className="fine mt-s">
-              The website operator publishes the approved material but does not independently award the credential. Where an official external source is available, we link to it. Prospective participants should confirm time-sensitive conditions with the programme team before paying or submitting an employer claim.
+              The website operator publishes the approved material but does not award the credential. Official external
+              sources are linked where available. The applicable written proposal and signed enrolment terms control the
+              participant&rsquo;s price, schedule, delivery format and completion requirements. HRD Corp controls employer
+              grant approval and the approved amount.
             </p>
           </Reveal>
         </div>
@@ -69,8 +71,8 @@ export default function AboutPage() {
         <div className="wrap">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The methodology</span></div>
-            <h2 className="sec-h">Proprietary frameworks, built for results.</h2>
-            <p className="sec-sub">ABC&rsquo;s work runs on proven, proprietary models that turn strategy into execution.</p>
+            <h2 className="sec-h">Four named models used in the programme.</h2>
+            <p className="sec-sub">ABC uses these models to structure problem definition, strategy, execution and transfer into the workplace.</p>
           </Reveal>
           <div className="insight-grid mt-m">
             {MODELS.map((m) => (
@@ -102,11 +104,6 @@ export default function AboutPage() {
               ))}
             </div>
           </Reveal>
-          <Reveal className="mt-m">
-            <p className="mono sec-k" style={{ marginBottom: 14 }}>Professional bodies, methods and associates listed by ABC</p>
-            <p style={{ color: "var(--ink-2)", maxWidth: "70ch" }}>{ASSOCIATES.join(" · ")}</p>
-            <p className="fine" style={{ maxWidth: "72ch", marginTop: 12 }}>The nature and current status of each relationship varies. Ask the programme team for documentary confirmation where a relationship is material to your decision.</p>
-          </Reveal>
         </div>
       </section>
 
@@ -118,10 +115,10 @@ export default function AboutPage() {
             <div style={{ display: "flex", gap: 22, alignItems: "flex-start", marginTop: 8 }}>
               <RdrMark size={64} />
               <p className="lead" style={{ color: "var(--ink-2)", margin: 0 }}>
-                This site is operated by <strong style={{ color: "#fff" }}>{OPERATOR.name}</strong> — the authorised
+                This site is operated by <strong style={{ color: "var(--ink)" }}>{OPERATOR.name}</strong> — the authorised
                 {" "}{OPERATOR.role} for programme enquiries, local pricing and enrolment coordination, and an independent
                 company separate from {SITE.provider}. When you enquire or apply, {OPERATOR.name} works with the ABC
-                programme team to guide you through fit, intakes, HRD Corp claims, scholarships and enrolment.
+                programme team to explain programme fit, intakes, HRD Corp applications, scholarships and enrolment.
               </p>
             </div>
             <p className="fine" style={{ marginTop: 18 }}>
@@ -131,7 +128,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Ready to think — and lead — differently?" />
+      <CtaSection programme="Executive MBA" heading="Discuss the programme, provider and next intake." />
     </>
   );
 }
