@@ -13,6 +13,7 @@
     "audit:content": "node scripts/content-clarity-audit.mjs",
     "audit:release": "node scripts/release-audit.mjs",
     "audit:styles": "node scripts/style-budget-audit.mjs",
+    "release:id": "node scripts/release-fingerprint.mjs",
     "validate:env": "node scripts/validate-production-env.mjs",
     "validate:env:contract": "node scripts/validate-production-env.mjs .env.production.example --schema",
     "verify:public-release": "node scripts/verify-public-release.mjs",

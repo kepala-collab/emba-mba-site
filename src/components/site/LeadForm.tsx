@@ -546,7 +546,7 @@ export default function LeadForm({
           <input type="checkbox" name="consent" value="yes" required />
           <span>{t.consent}</span>
         </label>
-        <div className="turnstile-wrap" aria-label={t.security}><div ref={turnstileContainer} data-action="turnstile-spin-v1" /></div>
+        <div className="turnstile-wrap" role="group" aria-label={t.security}><div ref={turnstileContainer} data-action="turnstile-spin-v1" /></div>
         {turnstileLoadError && (
           <div className="turnstile-fallback" role="alert">
             <p>{t.verifyErr}</p>

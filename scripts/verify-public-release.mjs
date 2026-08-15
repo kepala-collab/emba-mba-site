@@ -1,10 +1,7 @@
-const siteUrl = process.env.RELEASE_CHECK_URL || "https://futurereadymba.com";
-const expectedRelease = process.env.RELEASE_ID || process.argv[2];
+import { computeReleaseFingerprint } from "./release-fingerprint.mjs";
 
-if (!expectedRelease) {
-  console.error("Set RELEASE_ID or pass the expected release ID as the first argument.");
-  process.exit(1);
-}
+const siteUrl = process.env.RELEASE_CHECK_URL || "https://futurereadymba.com";
+const expectedRelease = process.env.RELEASE_ID || process.argv[2] || computeReleaseFingerprint();
 
 const response = await fetch(`${siteUrl}/?release_check=${Date.now()}`, {
   cache: "no-store",

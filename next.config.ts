@@ -5,10 +5,14 @@ import { contentSecurityPolicyHeader } from "./src/lib/content-security-policy";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 function releaseId() {
-  if (process.env.RELEASE_ID) return process.env.RELEASE_ID;
+  const explicit = process.env.RELEASE_ID?.trim();
+  if (explicit && /^[A-Za-z0-9._-]{1,64}$/.test(explicit)) return explicit;
   if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA.slice(0, 12);
   try {
-    return execFileSync("git", ["rev-parse", "--short=12", "HEAD"], { encoding: "utf8" }).trim();
+    return execFileSync(process.execPath, ["scripts/release-fingerprint.mjs"], {
+      cwd: process.cwd(),
+      encoding: "utf8",
+    }).trim();
   } catch {
     return "unversioned";
   }

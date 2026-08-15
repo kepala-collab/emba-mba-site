@@ -61,7 +61,7 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
         </ScrollableTableRegion>
       </div>
 
-      <div className="intake-card-list" role="list" aria-label={regionLabel}>
+      <ul className="intake-card-list" aria-label={regionLabel}>
         {INTAKES.map((cohort) => {
           const key = cohortKey(cohort.language, cohort.co);
           const intent = cohort.language === "Mandarin" ? "mandarin" : "individual_self_funded";
@@ -75,7 +75,7 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
             : (cohort.seats === "Open" ? "Open for enquiries" : "Confirm availability");
 
           return (
-            <article className="intake-card" role="listitem" key={`mobile-${key}`}>
+            <li className="intake-card" key={`mobile-${key}`}>
               <header>
                 <div>
                   <p className="mono">{language}</p>
@@ -92,10 +92,10 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
               <Link className="intake-card-action" href={href} data-track-event="cohort_select" data-track-id={`mobile_cohort_${key}`} data-track-location="intake_schedule_mobile" data-track-cohort={key} data-track-intent={intent}>
                 {zh ? "咨询此班次 →" : "Discuss this cohort →"}
               </Link>
-            </article>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

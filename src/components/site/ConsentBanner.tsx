@@ -41,8 +41,8 @@ export default function ConsentBanner() {
         <strong>{zh ? "隐私选择" : "Privacy choice"}</strong>
         <p>
           {zh
-            ? "我们使用必要储存保障安全及记录报名来源。可选分析工具只会在您允许后加载；目前没有启用广告像素。"
-            : "Essential storage protects the site and records enquiry attribution. Analytics loads only if you allow it. No advertising pixels are active. "}
+            ? "必要储存用于安全及记录咨询来源。分析工具只会在您允许后加载；目前没有启用广告像素。"
+            : "Essential storage protects enquiries. Optional analytics loads only with your permission. No advertising pixels are active. "}
           <Link href={zh ? "/zh/privacy" : "/privacy"}>{zh ? "隐私政策" : "Privacy policy"}</Link>
         </p>
       </div>

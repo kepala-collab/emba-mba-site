@@ -15,7 +15,7 @@ async function goto(page: Page, route: string) {
 }
 
 async function dismissConsent(page: Page) {
-  const button = page.getByRole("button", { name: /Essential only/i });
+  const button = page.getByRole("button", { name: /Essential only|仅必要功能/i });
   await page.waitForTimeout(400);
   if (await button.isVisible()) {
     await button.click();
@@ -140,12 +140,39 @@ test("mobile programme fit check returns to its factual result", async ({ page }
   expect(result?.y || 9999).toBeLessThan(180);
 });
 
-test("priority pages have no serious automated accessibility violations", async ({ page }) => {
-  for (const route of ["/", "/executive-mba", "/fees", "/apply", "/zh", "/zh/executive-mba", "/zh/fees", "/zh/apply"]) {
+test("priority pages have no automated accessibility violations after hydration", async ({ page }) => {
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
+    for (const route of ["/", "/executive-mba", "/fees", "/apply", "/zh", "/zh/executive-mba", "/zh/fees", "/zh/apply"]) {
+      await goto(page, route);
+      await page.waitForTimeout(700);
+      const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
+      expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
+    }
+  }
+});
+
+test("consent choice stays compact and visibly identifies its privacy link", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await goto(page, "/");
+  await page.waitForTimeout(700);
+  const banner = page.locator(".consent-banner");
+  await expect(banner).toBeVisible();
+  const box = await banner.boundingBox();
+  expect(box?.height || 9999).toBeLessThanOrEqual(160);
+  const decoration = await banner.getByRole("link", { name: "Privacy policy" }).evaluate((link) => getComputedStyle(link).textDecorationLine);
+  expect(decoration).toContain("underline");
+});
+
+test("lead contact steps have no automated accessibility violations", async ({ page }) => {
+  await mockTurnstile(page);
+  for (const route of ["/apply", "/zh/apply"]) {
     await goto(page, route);
+    await dismissConsent(page);
+    await page.getByRole("button", { name: route.startsWith("/zh") ? /继续填写联系方式/i : /Continue to contact details/i }).click();
+    await page.waitForTimeout(300);
     const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
-    const blocking = results.violations.filter((violation) => ["serious", "critical"].includes(violation.impact || ""));
-    expect(blocking, `${route}: ${blocking.map((item) => item.id).join(", ")}`).toEqual([]);
+    expect(results.violations, `${route}: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
   }
 });
 
