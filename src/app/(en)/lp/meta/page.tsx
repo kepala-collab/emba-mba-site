@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/lp/meta", {
   title: "Executive MBA for Working Leaders | Future Ready",
   description:
-    "A six-month professional Executive MBA pathway for working leaders: three monthly programme sessions followed by supported Chartered Manager assessment preparation.",
+    "A six-month professional management programme for working leaders: three monthly programme sessions followed by Chartered Manager assessment preparation for eligible participants.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
 });
@@ -30,7 +30,7 @@ export default function MetaLandingPage() {
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.16rem", maxWidth: "50ch", margin: "24px auto 30px" }}>
-              A six-month professional pathway: three months of monthly programme sessions leading to the CMI-recognised Executive MBA certificate, followed by three months of supported Chartered Manager assessment preparation for eligible participants—without pausing your career.
+              A six-month programme: three months of monthly sessions leading to the CMI-recognised Executive MBA certificate, followed by three months of Chartered Manager assessment preparation for eligible participants—while you continue working.
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -42,7 +42,7 @@ export default function MetaLandingPage() {
             <div style={{ display: "flex", gap: 14, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
               <span className="chip"><Image src="/brand/cmi-logo.png" alt="CMI (UK)" width={78} height={26} style={{ height: 26, width: "auto" }} /></span>
               <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp Claimable" width={36} height={36} style={{ height: 36, width: "auto" }} /></span>
-              <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".78rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · {FACTS.cohorts} cohorts reported by ABC</span>
+              <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".78rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · English and Mandarin cohorts</span>
             </div>
           </Reveal>
         </div>

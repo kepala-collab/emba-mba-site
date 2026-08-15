@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/programmes/shift-hr", {
   title: "SHIFT! HR Transformation Workshop",
   description:
-    "A two-day HR transformation workshop covering strategic partnership, consulting frameworks, simulations and the four-step loop. HRD Corp claimable for eligible employers.",
+    "A two-day HR transformation workshop covering strategic partnership, consulting frameworks, simulations and a four-step implementation loop.",
 });
 
 const PROBLEMS = [
@@ -71,7 +71,7 @@ export default function ShiftHrPage() {
       <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">HRD Corp claimable HR training · 2 days · Malaysia</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Employer-led HRD Corp application · 2 days · Malaysia</span></div>
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "20ch" }}>
@@ -89,7 +89,7 @@ export default function ShiftHrPage() {
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href="#apply" className="btn btn-primary">Enquire about SHIFT! →</Link>
-              <Link href="/hrd-corp-claimable" className="btn">HRD Corp claimable</Link>
+              <Link href="/hrd-corp-claimable" className="btn">Review the HRD Corp process</Link>
             </div>
           </Reveal>
         </div>
@@ -150,7 +150,7 @@ export default function ShiftHrPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Format &amp; fee</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Two days. Instructor-led. HRD Corp claimable.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Two days. Instructor-led. Employer funding subject to HRD Corp approval.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               SHIFT! runs over Day 1 and Day 2, each with a morning session (9:00am&ndash;12:30pm)

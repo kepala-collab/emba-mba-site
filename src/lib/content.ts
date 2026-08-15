@@ -43,7 +43,7 @@ export const FACTS = {
   durationLong: "6 months",
   durationShort: "6 months",
   certificationPhase: "First 3 months · 3 sessions",
-  charteredPhase: "Months 4–6 · supported CMgr pathway",
+  charteredPhase: "Months 4–6 · CMgr assessment preparation",
   trainingDays: "6",
   liveSessions: "3",
   moduleCount: "12",
@@ -57,9 +57,10 @@ export const FACTS = {
 };
 
 export const PROGRAMME_AUDIENCE =
-  "Business owners, directors, general managers and senior managers responsible for strategy, transformation, innovation or growth.";
+  "Business owners, directors, general managers and senior managers responsible for business results, teams, cross-functional decisions or growth plans.";
 
 export const HRD_CORP_CLAIM = {
+  label: "Employer-led HRD Corp funding · subject to approval",
   short:
     "An HRD Corp-registered Malaysian employer submits the grant application in e-TRiS before training. HRD Corp determines eligibility and the approved amount under its Allowable Cost Matrix; funding cannot exceed the employer's available levy balance.",
   process:
@@ -90,7 +91,7 @@ export const PROGRAMME_PRICING = {
   individuals: [
     {
       key: "global-online",
-      title: "Global Online EMBA Public Programme",
+      title: "Global Online Executive MBA",
       audience: "Open to participants worldwide, irrespective of country",
       price: `${FACTS.priceIntl} per person`,
       actionHref: "/online-executive-mba",
@@ -98,7 +99,7 @@ export const PROGRAMME_PRICING = {
     },
     {
       key: "country-online",
-      title: "Country-Specific Online EMBA Public Programme",
+      title: "Country-Specific Online Programme",
       audience: "Online delivery organised for a specific country or market",
       price: `Contact ${OPERATOR.name} for country-specific pricing`,
       actionHref: "/contact",
@@ -106,7 +107,7 @@ export const PROGRAMME_PRICING = {
     },
     {
       key: "local-onsite",
-      title: "On-Site Localised EMBA Public Programme",
+      title: "Local In-Person Programme",
       audience: "In-person delivery adapted to the local market",
       price: `Contact ${OPERATOR.name} for localised on-site pricing`,
       actionHref: "/contact",
@@ -114,14 +115,14 @@ export const PROGRAMME_PRICING = {
     },
   ],
   companies: {
-    title: "Customisable in-house Managers Development Programme (MDP)",
+    title: "Custom company programme (MDP)",
     description:
-      "ABC designs the in-house management development pathway against the organisation's written requirements. The formal proposal specifies the modules, delivery format, completion requirements and certificate.",
+      "ABC designs the in-house management development programme around the organisation's written requirements. The formal proposal specifies the modules, delivery format, completion requirements and certificate.",
     price: "The formal proposal states the complete fee and payment terms before the company accepts the engagement.",
   },
 } as const;
 
-// The marketed journey runs for six months: the programme certificate phase
+// The marketed programme runs for six months: the programme certificate phase
 // occupies the first three months, followed by supported preparation for the
 // separate, eligibility-based Chartered Manager assessment route.
 export const STAGES = [
@@ -136,7 +137,7 @@ export const STAGES = [
     d: "CMI's published terms for CMI Recognised programmes state that learners receive Foundation Chartered Manager status on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal.",
   },
   {
-    t: "Months 4–6 · supported assessment pathway",
+    t: "Months 4–6 · assessment preparation",
     h: "Chartered Manager — CMgr MCMI",
     d: "Participants who meet CMI's entry criteria move into a supported Chartered Manager phase: organising evidence of applied leadership and results, preparing the written application and preparing for the professional discussion. CMgr MCMI is awarded only after successful CMI assessment; eligibility, timing, membership and fees remain under CMI's control.",
   },
@@ -174,7 +175,7 @@ export const SIGNATURE_QUOTE = {
 } as const;
 
 export const CERTIFICATE_POSITIONING = {
-  headline: "Approved, Awarded & Endorsed by CMI, UK 🇬🇧",
+  headline: "Programme approved & endorsed by CMI (UK) · certificate awarded by CMI",
   credential: "CMI Certificate of Recognition",
   distinction:
     "CMI has approved and endorsed the programme against CMI's Professional Standard. Successful participants are awarded a CMI Certificate of Recognition. The certificate records professional programme completion; it is not a regulated qualification or an academic degree.",
@@ -190,18 +191,18 @@ export const CERTIFICATE_POSITIONING = {
 } as const;
 
 export const MODULES = [
-  { c: "M01", p: "F.A.S.T. Methodology" },
-  { c: "M02", p: "Job-To-Be-Done value creation" },
-  { c: "M03", p: "Future Foresight & landscape sensing" },
-  { c: "M04", p: "Critical business issues" },
-  { c: "M05", p: "Strategic DNA · 4D crafting" },
-  { c: "M06", p: "Strategic Business Action Planning" },
-  { c: "M07", p: "Transformational situational leadership" },
-  { c: "M08", p: "Facilitative team intervention" },
-  { c: "M09", p: "Integrated business systems thinking" },
-  { c: "M10", p: "BOLT transformation journey" },
-  { c: "M11", p: "Influence by design" },
-  { c: "M12", p: "Stakeholder ecosystem engagement" },
+  { c: "M01", p: "F.A.S.T. structured decision method" },
+  { c: "M02", p: "Identify the value customers need" },
+  { c: "M03", p: "Anticipate market and industry change" },
+  { c: "M04", p: "Define the critical business issue" },
+  { c: "M05", p: "Shape strategic direction with 4D" },
+  { c: "M06", p: "Turn strategy into an action plan" },
+  { c: "M07", p: "Lead people through change" },
+  { c: "M08", p: "Facilitate team problem-solving" },
+  { c: "M09", p: "Understand the business as a system" },
+  { c: "M10", p: "Build a BOLT implementation plan" },
+  { c: "M11", p: "Communicate and influence decisions" },
+  { c: "M12", p: "Align the stakeholder ecosystem" },
 ];
 
 export type Faculty = { n: string; r: string; focus: string; b: string; img: string };
@@ -260,11 +261,11 @@ export const INTAKES = [
 
 export const INCLUSIONS = [
   { b: "Six training days across three sessions", s: "Practitioner-led framework workshops scheduled once a month during the certificate phase." },
-  { b: "Personal leadership diagnostics", s: "Structured assessments identify the participant's decision patterns and development priorities." },
+  { b: "Guided management self-assessment", s: "Review current decision habits and select specific areas to improve during the programme." },
   { b: "Executive coaching & project review", s: "One-to-one guidance applied to the participant's own organisational context." },
   { b: "The Leverage Management System (LMS)", s: "Participants retain the programme frameworks, references and working templates." },
-  { b: "An applied business project", s: "Produce a business transformation plan for faculty review; there is no traditional thesis or examination." },
-  { b: "CMI certificate and professional pathway", s: "Successful completion leads to the CMI Certificate of Recognition; months four to six prepare eligible participants for CMI's separate Chartered Manager assessment." },
+  { b: "An applied business project", s: "Produce a written action plan for a current business issue and submit it for faculty review; there is no traditional thesis or examination." },
+  { b: "CMI certificate and Chartered Manager preparation", s: "Successful completion leads to the CMI Certificate of Recognition; months four to six prepare eligible participants for CMI's separate Chartered Manager assessment." },
 ];
 
 export const COMPARISON = [
@@ -279,7 +280,7 @@ export const COMPARISON = [
 ];
 
 export const FAQS = [
-  { q: "How is the programme structured?", a: "It is a six-month professional pathway. During months one to three, participants complete six training days across the first three monthly sessions, coaching and an applied business project leading to the CMI-recognised Executive MBA programme certificate. During months four to six, participants who meet CMI entry criteria receive structured support to prepare for the separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment and is not automatic." },
+  { q: "How is the programme structured?", a: "The programme runs for six months. During months one to three, participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. During months four to six, participants who meet CMI entry criteria receive support to prepare for the separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment and is not automatic." },
   { q: "Is it MQA-recognised?", a: "No. This is a professional development programme approved and endorsed by CMI against its Professional Standard. It is not an MQA-accredited academic degree or a regulated qualification." },
   { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   { q: "What are the refund terms?", a: REFUND_TERMS.description },
@@ -319,10 +320,10 @@ export const COMPLIANCE =
 
 export type NavItem = { href: string; label: string };
 export const NAV: NavItem[] = [
-  { href: "/executive-mba", label: "The Programme" },
-  { href: "/how-it-works", label: "The Method" },
+  { href: "/executive-mba", label: "Programme" },
+  { href: "/how-it-works", label: "How It Works" },
   { href: "/curriculum", label: "Curriculum" },
-  { href: "/fees", label: "Investment" },
-  { href: "/intakes", label: "2026 Intakes" },
-  { href: "/resources", label: "Resources" },
+  { href: "/fees", label: "Fees" },
+  { href: "/intakes", label: "2026 Dates" },
+  { href: "/resources", label: "Guides" },
 ];

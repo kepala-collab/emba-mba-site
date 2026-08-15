@@ -8,22 +8,22 @@ import { HRD_CORP_CLAIM_ZH, PROGRAMME_AUDIENCE_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh", {
-  title: "高管 MBA（英国 CMI 认可）· 六个月专业路径",
+  title: "六个月高管 MBA · 为在职管理者设计",
   description:
-    "六个月专业路径：首三个月完成获英国 CMI 认可的 Executive MBA 课程证书阶段，随后三个月为符合条件者提供特许经理人评估准备支持。标准费用 RM10,000.00；马来西亚学员获 RM5,000.00 奖学金后实付 RM5,000.00。",
+    "为经验丰富的在职管理者设计：首三个月完成获英国 CMI 认可的 Executive MBA 课程证书，随后三个月准备特许经理人评估。马来西亚学员实付 RM5,000.00。",
   alternates: {
     canonical: "/zh",
     languages: { "en": "/", "zh-Hans": "/zh", "x-default": "/" },
   },
   openGraph: {
     type: "website",
-    title: "高管 MBA（英国 CMI 认可）· 六个月专业路径",
+    title: "六个月高管 MBA · 为在职管理者设计",
     description: "首三个月完成课程证书阶段，随后三个月为符合 CMI 条件者提供特许经理人评估准备支持。HRD Corp 注册雇主须在开课前提交申请。",
     locale: "zh_MY",
     url: `${SITE.url}/zh`,
   },
   twitter: {
-    title: "高管 MBA（英国 CMI 认可）· 六个月专业路径",
+    title: "六个月高管 MBA · 为在职管理者设计",
     description: "首三个月完成课程证书阶段，随后三个月为符合 CMI 条件者提供特许经理人评估准备支持。HRD Corp 注册雇主须在开课前提交申请。",
   },
 });
@@ -49,7 +49,7 @@ const EDGE_ZH = [
 ];
 
 const FAQ_ZH = [
-  { q: "课程如何安排？", a: "这是六个月专业路径。首三个月包含六个培训日、三个周末课程、辅导及企业项目，并在完成要求后取得获 CMI 认可的 Executive MBA 课程证书。第四至第六个月为符合 CMI 条件者提供特许经理人评估准备支持；CMgr MCMI 仅在通过 CMI 评估后授予。" },
+  { q: "课程如何安排？", a: "课程为期六个月。首三个月包含六个培训日、三个周末课程、辅导及企业项目，并在完成要求后取得获 CMI 认可的 Executive MBA 课程证书。第四至第六个月为符合 CMI 条件者提供特许经理人评估准备支持；CMgr MCMI 仅在通过 CMI 评估后授予。" },
   { q: "是否获 MQA 认证？", a: "否。本课程由英国特许管理协会（CMI）依据其专业标准批准及认可；完成者获 CMI 课程认可证书。本课程并非 MQA 认证的学术学位或受监管资格。" },
   { q: "如果无法出席某次课程怎么办？", a: "请在课程开始前联系课程团队。ABC 将以书面方式确认指定视频或指定后续班次的补课安排。" },
   { q: "公司可以使用 HRD Corp levy 吗？", a: HRD_CORP_CLAIM_ZH },
@@ -64,28 +64,27 @@ export default function ZhHome() {
         <div className="wrap">
           <div className="zh-hero" style={{ display: "grid", gridTemplateColumns: "1.1fr .9fr", gap: 48, alignItems: "start" }}>
             <div>
-              <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">英国 CMI 认可 · HRD Corp 可索赔</span></div></Reveal>
+              <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">六个月高管 MBA · 为在职管理者设计</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.8vw,3.5rem)", letterSpacing: "-.01em", lineHeight: 1.14, marginTop: 6 }}>
-                  你的企业将由认为自己已<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>“准备好迎接未来”</em>的人来经营。
+                  为下一阶段管理职责，建立更完整的商业能力。
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "40ch", margin: "22px 0 28px", lineHeight: 1.9 }}>
-                  一个由英国特许管理协会（CMI）认可的六个月专业路径：<b style={{ color: "var(--ink)" }}>首三个月完成课程证书阶段，随后三个月准备 CMI 特许经理人评估</b>，
-                  课程教授七套定义明确的思维框架。没有传统论文或考试；评估以学员自身企业的应用项目为基础。
+                  首三个月完成六个培训日、辅导及企业项目，并取得获 CMI 认可的课程证书。第四至第六个月为符合 CMI 条件的学员提供特许经理人评估准备支持。整个课程期间可继续工作。
                 </p>
               </Reveal>
               <Reveal delay={150}>
                 <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 28 }}>
-                  <Link href="#apply" className="btn btn-primary">咨询课程 →</Link>
-                  <Link href="#programme" className="btn btn-ghost">了解课程</Link>
+                  <Link href="/zh/executive-mba" className="btn btn-primary">查看六个月课程安排 →</Link>
+                  <Link href="/zh/apply" className="btn btn-ghost">向课程团队提问</Link>
                 </div>
               </Reveal>
               <Reveal delay={190}>
                 <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", paddingTop: 24, borderTop: "1px solid var(--line)" }}>
                   <span className="chip"><Image src="/brand/cmi-logo.png" alt="英国特许管理协会 CMI" width={82} height={28} style={{ height: 28, width: "auto" }} /></span>
-                  <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp 可索赔" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
+                  <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="雇主可申请 HRD Corp 资助；以 HRD Corp 审批为准" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
                   <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次课程 · ABC 报告已完成 {FACTS.cohorts} 届</span>
                 </div>
               </Reveal>
@@ -121,7 +120,7 @@ export default function ZhHome() {
         <div className="wrap"><p className="mono center" style={{ color: "var(--muted)", marginBottom: 14, fontSize: ".78rem" }}>以下机构列于 ABC 的公司简介；列名不代表对本网站或课程作出认可</p></div>
         <div style={{ display: "flex", gap: 30, flexWrap: "wrap", justifyContent: "center", padding: "0 24px" }}>
           {CLIENTS.slice(0, 9).map((c) => (
-            <span key={c} style={{ fontFamily: "var(--font-fraunces)", fontSize: "1rem", color: "var(--ink-2)", opacity: 0.7 }}>{c}</span>
+            <span key={c} style={{ fontFamily: "var(--font-fraunces)", fontSize: "1rem", color: "var(--ink-2)" }}>{c}</span>
           ))}
         </div>
       </div>
@@ -133,12 +132,14 @@ export default function ZhHome() {
           <Reveal><h2 className="sec-h">商业环境变化时，决策方法也需要更新。</h2></Reveal>
           <ul style={{ listStyle: "none", padding: 0, margin: "26px 0 0", display: "grid", gap: 12 }}>
             {FORCES_ZH.map((f, i) => (
-              <Reveal key={f}>
-                <li style={{ display: "flex", gap: 14, alignItems: "center", padding: "14px 0", borderBottom: "1px solid var(--line)" }}>
+              <li key={f}>
+                <Reveal>
+                  <div style={{ display: "flex", gap: 14, alignItems: "center", padding: "14px 0", borderBottom: "1px solid var(--line)" }}>
                   <span className="mono acc" style={{ fontSize: ".8rem" }}>{String(i + 1).padStart(2, "0")}</span>
                   <span style={{ color: "var(--ink-2)", fontSize: "1.05rem" }}>{f}</span>
-                </li>
-              </Reveal>
+                  </div>
+                </Reveal>
+              </li>
             ))}
           </ul>
         </div>
@@ -179,7 +180,7 @@ export default function ZhHome() {
             <Reveal delay={60}>
               <div className="card">
                 <div className="mono acc" style={{ fontSize: ".74rem", marginBottom: 8 }}>第 4–6 个月 · 评估准备支持</div>
-                <h3 style={{ fontSize: "1.25rem", marginBottom: 8 }}>特许经理人（CMgr）路径</h3>
+                <h3 style={{ fontSize: "1.25rem", marginBottom: 8 }}>特许经理人（CMgr）申请流程</h3>
                 <p style={{ margin: 0, color: "var(--ink-2)", lineHeight: 1.9 }}>符合 CMI 条件的学员将在三个月内整理领导成果证据、准备书面申请及专业讨论。CMgr MCMI 仅在通过 CMI 独立评估后授予；经验、会员、评估及费用要求由 CMI 决定。</p>
               </div>
             </Reveal>

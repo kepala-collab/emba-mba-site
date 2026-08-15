@@ -5,7 +5,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/privacy", {
   title: "Privacy Policy",
   description:
-    "How personal data submitted through this website is collected, used, shared and protected under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.",
+    "How this website collects, uses, shares and protects personal data under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.",
   robots: { index: true, follow: true },
 });
 

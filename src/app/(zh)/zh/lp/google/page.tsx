@@ -6,9 +6,9 @@ import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/lp/google", {
-  title: "马来西亚高管 MBA — 英国 CMI 认可，六个月专业路径",
+  title: "马来西亚高管 MBA — 英国 CMI 认可，六个月课程",
   description:
-    "六个月专业路径：首三个月完成获英国 CMI 认可的课程证书阶段，随后三个月准备 CMI 特许经理人评估。HRD Corp 注册雇主须在开课前提交申请。",
+    "六个月专业管理课程：首三个月完成获英国 CMI 认可的课程证书阶段，随后三个月为符合条件者准备 CMI 特许经理人评估。HRD Corp 注册雇主须在开课前提交申请。",
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
 });
@@ -20,8 +20,8 @@ const INCLUDED = [
   ["个人领导力诊断", "以结构化评估识别你的决策模式及发展重点。"],
   ["高管教练与项目辅导", "一对一指导，应用于你真实的企业，而非案例研究。"],
   ["杠杆管理系统（LMS）", "完成课程后保留框架、参考及工作模板。"],
-  ["真实的顶点转型项目", "提交一份供导师评审的企业转型方案；没有传统论文或考试。"],
-  ["CMI（英国）认可 + CMgr 路径", "课程获 CMI 认可；符合条件的毕业学员可另行申请特许经理人，身份并非自动授予。"],
+  ["企业应用项目", "提交一份供导师评审的企业行动方案；没有传统论文或考试。"],
+  ["CMI（英国）认可 + CMgr 申请准备", "课程获 CMI 认可；符合条件的毕业学员可另行申请特许经理人，身份并非自动授予。"],
 ];
 
 const CMP = [
@@ -42,7 +42,7 @@ export default function ZhGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">英国 CMI 认可 · HRD Corp 可索赔</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  一个获认可的马来西亚高管 MBA —— <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>六个月</em> 的专业成长路径。
+                  一个获认可的马来西亚高管 MBA —— <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>六个月</em> 的专业管理课程。
                 </h1>
               </Reveal>
               <Reveal delay={110}>

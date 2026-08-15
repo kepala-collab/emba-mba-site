@@ -94,6 +94,7 @@ type TurnstileResult = {
   success?: boolean;
   hostname?: string;
   action?: string;
+  "error-codes"?: string[];
   _worker?: { worker_version?: string };
 };
 
@@ -356,7 +357,12 @@ async function verifyTurnstile(
       cache: "no-store",
       signal: AbortSignal.timeout(7_000),
     });
-    if (!response.ok) return "unavailable";
+    if (!response.ok) {
+      console.warn("Lead Turnstile verification endpoint rejected the request", {
+        status: response.status,
+      });
+      return "unavailable";
+    }
     const result = (await response.json()) as TurnstileResult;
     const localHostname =
       process.env.NODE_ENV !== "production" &&
@@ -365,13 +371,24 @@ async function verifyTurnstile(
       (typeof result.hostname === "string" && ALLOWED_HOSTNAMES.has(result.hostname)) ||
       localHostname;
 
-    return result.success === true &&
+    const valid = result.success === true &&
       result.action === TURNSTILE_ACTION &&
       validHostname &&
-      typeof result._worker?.worker_version === "string"
-      ? "valid"
-      : "invalid";
-  } catch {
+      typeof result._worker?.worker_version === "string";
+    if (!valid) {
+      console.warn("Lead Turnstile verification failed", {
+        success: result.success === true,
+        action: result.action || "missing",
+        hostname: result.hostname || "missing",
+        workerVersionPresent: typeof result._worker?.worker_version === "string",
+        errorCodes: result["error-codes"] || [],
+      });
+    }
+    return valid ? "valid" : "invalid";
+  } catch (error) {
+    console.warn("Lead Turnstile verification was unavailable", {
+      reason: error instanceof Error ? error.name : "unknown",
+    });
     return "unavailable";
   }
 }

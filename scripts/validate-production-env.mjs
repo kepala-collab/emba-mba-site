@@ -1,7 +1,8 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const file = process.argv[2] || ".env.production";
+const schemaOnly = process.argv.includes("--schema");
+const file = process.argv.slice(2).find((argument) => !argument.startsWith("--")) || ".env.production";
 const raw = readFileSync(resolve(process.cwd(), file), "utf8");
 const values = new Map();
 
@@ -35,10 +36,10 @@ const failures = [];
 for (const key of required) {
   const value = values.get(key) || "";
   if (!value) failures.push(`${key}: missing`);
-  else if (placeholders.test(value)) failures.push(`${key}: placeholder value`);
+  else if (!schemaOnly && placeholders.test(value)) failures.push(`${key}: placeholder value`);
 }
 
-for (const key of ["LEAD_HASH_SECRET", "EMAIL_CRON_SECRET"]) {
+for (const key of schemaOnly ? [] : ["LEAD_HASH_SECRET", "EMAIL_CRON_SECRET"]) {
   const value = values.get(key) || "";
   if (Buffer.byteLength(value, "utf8") < 32) failures.push(`${key}: must contain at least 32 bytes`);
 }
@@ -50,7 +51,7 @@ const conversionKeys = [
   "LEAD_LIFECYCLE_SECRET",
 ];
 const conversionConfigured = conversionKeys.some((key) => values.get(key));
-if (conversionConfigured) {
+if (conversionConfigured && !schemaOnly) {
   for (const key of conversionKeys) {
     const value = values.get(key) || "";
     if (!value) failures.push(`${key}: required when CRM/lifecycle integration is enabled`);
@@ -85,7 +86,7 @@ if (experimentsEnabled && !["true", "false"].includes(experimentsEnabled)) {
   failures.push("NEXT_PUBLIC_EXPERIMENTS_ENABLED: must be true or false");
 }
 
-if (values.get("LEAD_HASH_SECRET") && values.get("LEAD_HASH_SECRET") === values.get("EMAIL_CRON_SECRET")) {
+if (!schemaOnly && values.get("LEAD_HASH_SECRET") && values.get("LEAD_HASH_SECRET") === values.get("EMAIL_CRON_SECRET")) {
   failures.push("LEAD_HASH_SECRET and EMAIL_CRON_SECRET must be different");
 }
 
@@ -98,6 +99,9 @@ const optional = [
   "GOOGLE_SITE_VERIFICATION",
   "BING_SITE_VERIFICATION",
   "NEXT_PUBLIC_GTM_ID",
+  "NEXT_PUBLIC_PROGRAMME_VIDEO_URL",
+  "NEXT_PUBLIC_PROGRAMME_VIDEO_CAPTIONS_URL",
+  "RELEASE_ID",
   "NEXT_PUBLIC_EXPERIMENTS_ENABLED",
   "INDEXNOW_KEY",
   "INDEXNOW_CRON_SECRET",
@@ -107,6 +111,19 @@ const optional = [
   "GROQ_MODEL",
   ...conversionKeys,
 ];
+const videoConfigured = Boolean(values.get("NEXT_PUBLIC_PROGRAMME_VIDEO_URL"));
+const captionsConfigured = Boolean(values.get("NEXT_PUBLIC_PROGRAMME_VIDEO_CAPTIONS_URL"));
+if (videoConfigured !== captionsConfigured) {
+  failures.push("NEXT_PUBLIC_PROGRAMME_VIDEO_URL and NEXT_PUBLIC_PROGRAMME_VIDEO_CAPTIONS_URL must be configured together");
+}
+const gtmId = values.get("NEXT_PUBLIC_GTM_ID");
+if (gtmId && !/^GTM-[A-Z0-9]+$/.test(gtmId)) failures.push("NEXT_PUBLIC_GTM_ID: invalid GTM container ID");
+
+if (failures.length) {
+  console.error(`Production environment validation failed:\n${failures.join("\n")}`);
+  process.exit(1);
+}
+
 const inactive = optional.filter((key) => !values.get(key));
-console.log(`Required production variables are present in ${file}.`);
+console.log(schemaOnly ? `Production environment contract is complete in ${file}.` : `Required production variables are present in ${file}.`);
 if (inactive.length) console.log(`Optional integrations not configured: ${inactive.join(", ")}`);

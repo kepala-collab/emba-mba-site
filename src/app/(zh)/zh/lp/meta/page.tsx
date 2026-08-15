@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/zh/lp/meta", {
   title: "面向在职领导者的高管 MBA | Future Ready",
   description:
-    "专为在职领导者打造的六个月专业路径：首三个月完成获英国 CMI 认可的课程证书阶段，随后三个月准备 CMI 特许经理人评估。",
+    "面向在职管理者的六个月专业管理课程：首三个月完成获英国 CMI 认可的课程证书阶段，随后三个月为符合条件者准备 CMI 特许经理人评估。",
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
 });
@@ -46,7 +46,7 @@ export default function ZhMetaLP() {
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              一个由英国 CMI 认可的六个月专业路径：首三个月以每月一个周末完成课程证书阶段；随后三个月为符合条件者准备 CMI 特许经理人评估。无需暂停事业，并完成一份属于你自己企业的转型方案。
+              由英国 CMI 认可的六个月专业管理课程：首三个月以每月一个周末完成课程证书阶段；随后三个月为符合条件者准备 CMI 特许经理人评估。您可以继续工作，并完成一份针对自己企业议题的行动方案。
             </p>
           </Reveal>
           <Reveal delay={160}>

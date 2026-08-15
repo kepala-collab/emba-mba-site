@@ -4,20 +4,20 @@ import { SITE } from "@/lib/content";
 
 export default function CtaSection({
   programme = "Executive MBA",
-  heading = "Start with a conversation, not a commitment.",
-  sub = "Tell us how you would like to explore the programme: a short call, an online information meeting, an in-person meeting at an agreed location, or details by email first. The programme team will explain fit, published schedules, Malaysian participant pricing and the employer-led HRD Corp process. An enquiry is not an admission or payment commitment.",
+  heading = "Get the facts you need to decide.",
+  sub = "Choose a call, online meeting, in-person meeting or email. The programme team will answer questions about suitability, dates, fees, recognition and employer-led HRD Corp funding. An enquiry does not commit you to enrol or pay.",
   source = "emba-hub",
 }: { programme?: string; heading?: string; sub?: string; source?: string }) {
   return (
     <section id="apply" className="section" style={{ background: "var(--bg-2)" }}>
       <div className="wrap">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 52, alignItems: "start" }} className="cta-grid">
+        <div className="cta-grid">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Request information</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme enquiry</span></div>
             <h2 className="sec-h">{heading}</h2>
             <p className="sec-sub">{sub}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "24px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
-              {["Choose a call, online meeting, in-person meeting or details first", "Review the published 2026 schedule before deciding", "Understand Malaysian pricing and the employer-led HRD Corp process"].map((t) => (
+              {["Choose how the team should contact you", "Confirm programme fit, available dates and the exact fee", "Decide your next step after receiving the information"].map((t) => (
                 <li key={t} style={{ paddingLeft: 26, position: "relative", color: "var(--ink-2)" }}>
                   <span style={{ position: "absolute", left: 0, color: "var(--crimson)", fontFamily: "var(--font-plex-mono)" }}>→</span>{t}
                 </li>
@@ -30,7 +30,6 @@ export default function CtaSection({
           <Reveal delay={80}><LeadForm programme={programme} source={source} placement="footer-cta" /></Reveal>
         </div>
       </div>
-      <style>{`@media(max-width:820px){.cta-grid{grid-template-columns:1fr!important;gap:34px!important}}`}</style>
     </section>
   );
 }

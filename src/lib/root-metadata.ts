@@ -15,24 +15,24 @@ export const ROOT_METADATA: Metadata = {
   applicationName: "Future Ready EMBA",
   manifest: "/manifest.webmanifest",
   title: {
-    default: "Future Ready Executive MBA — Working Scholar",
+    default: "Future Ready Executive MBA Malaysia",
     template: "%s | Future Ready",
   },
   description:
-    "A six-month Executive MBA pathway: three months to the CMI-recognised programme certificate, then supported Chartered Manager assessment preparation.",
+    "A six-month professional management programme: certificate work in months 1–3, followed by preparation for eligible participants pursuing CMI’s separate Chartered Manager assessment.",
   openGraph: {
     type: "website",
     siteName: "Future Ready Executive MBA",
-    title: "Future Ready Executive MBA — Working Scholar",
-    description: "A six-month professional development pathway for experienced working adults, with an applied business project and supported Chartered Manager assessment preparation.",
+    title: "Future Ready Executive MBA Malaysia",
+    description: "A six-month management programme for experienced working leaders, with an applied business project, a CMI-recognised certificate and Chartered Manager assessment preparation.",
     url: "/",
     locale: "en_MY",
     images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630, alt: "Future Ready Executive MBA" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Future Ready Executive MBA — Working Scholar",
-    description: "Structured inquiry, applied business frameworks and a clear professional recognition pathway for experienced working adults.",
+    title: "Future Ready Executive MBA Malaysia",
+    description: "A six-month management programme for experienced working leaders, with clear fees, schedule and CMI recognition information.",
     images: [`${SITE.url}/opengraph-image`],
   },
   icons: {

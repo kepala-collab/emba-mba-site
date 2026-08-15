@@ -4,7 +4,7 @@ import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/insights/advancement-question", {
-  title: "进阶问题：专业学习必须带来什么能力？",
+  title: "如何比较专业管理课程",
   description: "在职管理者以能力、应用、证据、时间及认可清晰度，比较高管专业发展课程的实用框架。",
   openGraph: { type: "article" },
 });
@@ -12,8 +12,8 @@ export const metadata = withSeo("/zh/insights/advancement-question", {
 export default function AdvancementQuestionPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "首页", path: "/zh" }, { name: "决策资料", path: "/zh/resources" }, { name: "进阶问题", path: "/zh/insights/advancement-question" }]} />
-      <header className="resource-hero"><div className="wrap maxw-820"><p className="mono sec-k">Working Scholar / 决策文章</p><h1>进阶问题。</h1><p>严谨的学习，必须让你更有能力处理哪一项工作？</p></div></header>
+      <BreadcrumbJsonLd items={[{ name: "首页", path: "/zh" }, { name: "课程资料", path: "/zh/resources" }, { name: "如何比较管理课程", path: "/zh/insights/advancement-question" }]} />
+      <header className="resource-hero"><div className="wrap maxw-820"><p className="mono sec-k">课程比较指南</p><h1>如何比较管理课程。</h1><p>先确认需要提升的工作能力，再比较教学、时间、认可与完整费用。</p></div></header>
       <article className="section"><div className="wrap prose">
         <ArticleAttribution lang="zh" />
         <p>经验丰富的在职人士重返有结构的学习，并不只是因为缺少资料。更常见的原因是：现有职责已经超出他们整理信息、检验假设与作出决策的方法。</p>
@@ -23,8 +23,8 @@ export default function AdvancementQuestionPage() {
         <h2>把边界视为价值的一部分</h2><p>认可说明必须明确区分课程获得什么批准、学员完成后获颁什么、哪些专业称号需要独立评估，以及由谁决定申请资格、会员与费用。</p>
         <h2>确认时间与费用可以执行</h2><p>把实际日期、出席要求、企业项目与完整费用，逐项对照你现有的工作及家庭责任。无法执行的时间安排，不会因为品牌语言而变得可行。</p>
         <blockquote>根据课程帮助你分析的工作质量作出选择，不根据承诺留下的空白作出选择。</blockquote>
-        <p><Link className="text-action" href="/zh/diagnostic">使用私人进阶决策工具 <span aria-hidden="true">↗</span></Link></p>
-        <p><Link className="text-action" href="/zh/resources/advancement-brief">打开高管进阶决策简报 <span aria-hidden="true">↗</span></Link></p>
+        <p><Link className="text-action" href="/zh/diagnostic">建立私人课程匹配清单 <span aria-hidden="true">↗</span></Link></p>
+        <p><Link className="text-action" href="/zh/resources/advancement-brief">打开 Executive MBA 课程指南 <span aria-hidden="true">↗</span></Link></p>
       </div></article>
     </>
   );

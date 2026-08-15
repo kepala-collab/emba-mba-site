@@ -4,14 +4,14 @@ import { FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/resources", {
-  title: "Executive MBA Decision Resources",
-  description: "Private, practical resources for comparing programme fit, method, time, recognition, fees, scholarship and the employer-led HRD Corp process.",
+  title: "Executive MBA Programme Guides",
+  description: "Practical guides for reviewing programme fit, structure, recognition, fees, scholarship and the employer-led HRD Corp process.",
 });
 
 const DOSSIERS = [
-  ["01", "Executive Readiness Diagnostic", "Identify the evidence required for your next professional-development decision. No score, storage or submission.", "/diagnostic", "Start privately"],
-  ["02", "Executive Advancement Brief", "Read or print the programme structure, exact Malaysian fee, recognition boundary and questions to resolve.", "/resources/advancement-brief", "Open the brief"],
-  ["03", "The Advancement Question", "A short essay on choosing professional development by the work it must help you do—not by prestige language alone.", "/insights/advancement-question", "Read the essay"],
+  ["01", "Programme Fit Check", "Answer four questions and create a private checklist for reviewing your goals, schedule, fees and recognition. No score, storage or submission.", "/diagnostic", "Start the check"],
+  ["02", "Executive MBA Programme Guide", "Read or print the programme structure, exact Malaysian fee, CMI recognition and questions to resolve.", "/resources/advancement-brief", "Open the guide"],
+  ["03", "How to Compare Leadership Programmes", "A short guide to comparing capability, application, schedule, recognition and fees.", "/insights/advancement-question", "Read the guide"],
 ] as const;
 
 export default function ResourcesPage() {
@@ -19,9 +19,9 @@ export default function ResourcesPage() {
     <>
       <header className="resource-hero">
         <div className="wrap">
-          <p className="mono sec-k">Working Scholar / study materials</p>
-          <h1>Useful before you give us anything.</h1>
-          <p>Understand the programme privately. These materials do not require contact details and make the time, fee, recognition and funding boundaries explicit.</p>
+          <p className="mono sec-k">Programme guides · no contact details required</p>
+          <h1>Check the details before you enquire.</h1>
+          <p>Review programme fit, structure, fees, CMI recognition and employer funding at your own pace.</p>
         </div>
       </header>
 
@@ -44,8 +44,8 @@ export default function ResourcesPage() {
           <Reveal>
             <article className="guide-card">
               <p className="mono sec-k">Employer conversation guide</p>
-              <h2>Build the case around work that matters.</h2>
-              <p>Use the employer conversation to connect development to an actual organisational need.</p>
+              <h2>Explain the business reason for attending.</h2>
+              <p>Connect the programme to a specific organisational need and an applied project.</p>
               <ol>
                 <li>Define the business decision, capability gap or transformation question.</li>
                 <li>Identify how the applied project can address that context.</li>
@@ -57,8 +57,8 @@ export default function ResourcesPage() {
           </Reveal>
           <Reveal delay={60}>
             <article className="guide-card" id="decision-checklist">
-              <p className="mono sec-k">Neutral decision checklist</p>
-              <h2>Questions to ask before choosing.</h2>
+              <p className="mono sec-k">Programme comparison checklist</p>
+              <h2>Confirm these points before choosing.</h2>
               <ul>
                 <li>What work must this learning help me do more effectively?</li>
                 <li>What is taught, applied and assessed—and by whom?</li>

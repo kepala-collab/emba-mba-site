@@ -36,7 +36,12 @@ const ALLOWED_ORIGINS = new Set([
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 type RateBucket = { count: number; resetAt: number };
-type TurnstileResult = { success?: boolean; hostname?: string; action?: string };
+type TurnstileResult = {
+  success?: boolean;
+  hostname?: string;
+  action?: string;
+  "error-codes"?: string[];
+};
 type GroqResponse = {
   choices?: Array<{ message?: { content?: string } }>;
 };
@@ -186,17 +191,34 @@ async function verifyTurnstile(token: string, ip: string | null): Promise<boolea
       cache: "no-store",
       signal: AbortSignal.timeout(7_000),
     });
-    if (!response.ok) return false;
+    if (!response.ok) {
+      console.warn("Chat Turnstile verification endpoint rejected the request", {
+        status: response.status,
+      });
+      return false;
+    }
     const result = (await response.json()) as TurnstileResult;
     const localHostname =
       process.env.NODE_ENV !== "production" &&
       (result.hostname === "localhost" || result.hostname === "127.0.0.1");
-    return Boolean(
+    const valid = Boolean(
       result.success &&
       result.action === TURNSTILE_ACTION &&
       ((typeof result.hostname === "string" && ALLOWED_HOSTNAMES.has(result.hostname)) || localHostname),
     );
-  } catch {
+    if (!valid) {
+      console.warn("Chat Turnstile verification failed", {
+        success: result.success === true,
+        action: result.action || "missing",
+        hostname: result.hostname || "missing",
+        errorCodes: result["error-codes"] || [],
+      });
+    }
+    return valid;
+  } catch (error) {
+    console.warn("Chat Turnstile verification was unavailable", {
+      reason: error instanceof Error ? error.name : "unknown",
+    });
     return false;
   }
 }

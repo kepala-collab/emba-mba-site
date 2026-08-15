@@ -32,15 +32,18 @@ export default function Footer() {
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               <Link href="/zh/apply">预约课程沟通</Link>
+              <Link href="/">English site →</Link>
+            </div>
+            <div>
+              <h2>课程</h2>
               <Link href="/zh/executive-mba">课程详情</Link>
               <Link href="/zh/curriculum">课程大纲</Link>
               <Link href="/zh/fees">学费与奖学金</Link>
               <Link href="/zh/intakes">开课日期</Link>
               <Link href="/zh/faculty">导师团队</Link>
               <Link href="/zh/resources">决策资料</Link>
-              <Link href="/zh/diagnostic">私人决策工具</Link>
+              <Link href="/zh/diagnostic">课程匹配检查</Link>
               <Link href="/zh/faq">常见问题</Link>
-              <Link href="/">English site →</Link>
             </div>
           </div>
           <section className="legal-footer" aria-label="法律与合规信息">

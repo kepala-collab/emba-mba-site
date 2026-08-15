@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
+import { execFileSync } from "node:child_process";
+import { contentSecurityPolicyHeader } from "./src/lib/content-security-policy";
 
 const isDevelopment = process.env.NODE_ENV === "development";
+
+function releaseId() {
+  if (process.env.RELEASE_ID) return process.env.RELEASE_ID;
+  if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA.slice(0, 12);
+  try {
+    return execFileSync("git", ["rev-parse", "--short=12", "HEAD"], { encoding: "utf8" }).trim();
+  } catch {
+    return "unversioned";
+  }
+}
+
+const currentReleaseId = releaseId();
 
 const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -8,6 +22,8 @@ const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
   { key: "Origin-Agent-Cluster", value: "?1" },
+  { key: "Content-Security-Policy", value: contentSecurityPolicyHeader },
+  { key: "X-Release-ID", value: currentReleaseId },
   {
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()",
@@ -39,7 +55,27 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
-      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/:path*",
+        headers: [
+          ...securityHeaders,
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate, s-maxage=300, stale-while-revalidate=60",
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "public, s-maxage=300, stale-while-revalidate=60",
+          },
+        ],
+      },
+      {
+        source: "/api/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store, max-age=0" },
+          { key: "CDN-Cache-Control", value: "no-store" },
+        ],
+      },
       {
         source: "/zh/:path*",
         headers: [{ key: "Content-Language", value: "zh-Hans" }],

@@ -6,9 +6,9 @@ import { SITE, FACTS, INCLUSIONS, COMPARISON, CLIENTS, COMPLIANCE, OPERATOR, HRD
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/lp/google", {
-  title: "Executive MBA in Malaysia — CMI (UK), 6-Month Pathway",
+  title: "Executive MBA Malaysia — CMI-Recognised Programme",
   description:
-    "A six-month professional pathway: three months to the CMI-recognised Executive MBA programme certificate, then three months of supported Chartered Manager assessment preparation.",
+    "A six-month programme: three months to the CMI-recognised Executive MBA programme certificate, then three months of Chartered Manager assessment preparation support.",
   // Ad landing page — keep it out of organic index so it doesn't compete with SEO pages.
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
@@ -29,7 +29,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.6vw,3.4rem)", letterSpacing: "-.02em", lineHeight: 1.06, marginTop: 6 }}>
-                  A professional Executive MBA pathway in Malaysia — over <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>6 months</em>.
+                  A professional management programme in Malaysia — completed over <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>6 months</em>.
                 </h1>
               </Reveal>
               <Reveal delay={110}>
@@ -43,12 +43,12 @@ export default function GoogleLandingPage() {
                 <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
                   <span className="chip"><Image src="/brand/cmi-logo.png" alt="Chartered Management Institute UK" width={80} height={28} style={{ height: 28, width: "auto" }} /></span>
                   <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp Claimable" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
-                  <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".8rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · {FACTS.cohorts} cohorts reported by ABC</span>
+                  <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".8rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · English and Mandarin cohorts</span>
                 </div>
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 months", "Certificate + supported CMgr pathway"], [`${FACTS.priceStd} → ${FACTS.priceNet}`, "Malaysian participant fee"], ["Before training", "Employer submits the HRD Corp application"]].map(([b, s]) => (
+                  {[["6 months", "Certificate + CMgr assessment preparation"], [`${FACTS.priceStd} → ${FACTS.priceNet}`, "Malaysian participant fee"], ["Before training", "Employer submits the HRD Corp application"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>

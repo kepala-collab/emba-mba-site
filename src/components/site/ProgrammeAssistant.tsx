@@ -78,7 +78,8 @@ export default function ProgrammeAssistant() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [error, setError] = useState("");
-  const [formVisible, setFormVisible] = useState(false);
+  const [obstructionVisible, setObstructionVisible] = useState(false);
+  const [turnstileScriptReady, setTurnstileScriptReady] = useState(false);
   const dialogRef = useRef<HTMLElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
@@ -102,17 +103,17 @@ export default function ProgrammeAssistant() {
   }, [pathname]);
 
   useEffect(() => {
-    const forms = [...document.querySelectorAll(".form")];
-    if (!forms.length) {
-      setFormVisible(false);
+    const obstructions = [...document.querySelectorAll(".form, .programme-film")];
+    if (!obstructions.length) {
+      setObstructionVisible(false);
       return;
     }
     const visibility = new Map<Element, boolean>();
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => visibility.set(entry.target, entry.isIntersecting));
-      setFormVisible([...visibility.values()].some(Boolean));
+      setObstructionVisible([...visibility.values()].some(Boolean));
     }, { threshold: 0.08 });
-    forms.forEach((form) => observer.observe(form));
+    obstructions.forEach((element) => observer.observe(element));
     return () => observer.disconnect();
   }, [pathname]);
 
@@ -171,7 +172,8 @@ export default function ProgrammeAssistant() {
       const turnstile = turnstileApi();
       if (!turnstile) {
         attempts += 1;
-        if (attempts < 50) timer = window.setTimeout(mountWidget, 200);
+        if (attempts < 75) timer = window.setTimeout(mountWidget, 200);
+        else trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_unavailable" });
         return;
       }
       try {
@@ -179,9 +181,11 @@ export default function ProgrammeAssistant() {
           sitekey: TURNSTILE_SITE_KEY,
           action: "programme-chat",
           theme: "light",
+          execution: "execute",
           appearance: "interaction-only",
           callback: (token) => {
             turnstileToken.current = token;
+            trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "token_received" });
             pendingVerification.current?.(token);
           },
           "expired-callback": () => {
@@ -190,18 +194,23 @@ export default function ProgrammeAssistant() {
           },
           "error-callback": () => {
             turnstileToken.current = null;
+            trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "challenge_error" });
             pendingVerification.current?.(null);
           },
           "timeout-callback": () => {
             turnstileToken.current = null;
+            trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "challenge_timeout" });
             pendingVerification.current?.(null);
           },
           "unsupported-callback": () => {
             turnstileToken.current = null;
+            trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "browser_unsupported" });
             pendingVerification.current?.(null);
           },
         });
+        trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "rendered" });
       } catch {
+        trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "render_failed" });
         pendingVerification.current?.(null);
       }
     };
@@ -216,7 +225,7 @@ export default function ProgrammeAssistant() {
         turnstileWidgetId.current = null;
       }
     };
-  }, [open]);
+  }, [open, turnstileScriptReady]);
 
   useEffect(() => () => {
     const turnstile = turnstileApi();
@@ -242,6 +251,7 @@ export default function ProgrammeAssistant() {
     return new Promise((resolve) => {
       const turnstile = turnstileApi();
       if (!turnstileWidgetId.current || !turnstile) {
+        trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "execute_unavailable" });
         resolve(null);
         return;
       }
@@ -255,6 +265,13 @@ export default function ProgrammeAssistant() {
       };
       const timeout = window.setTimeout(() => finish(null), 12_000);
       pendingVerification.current = finish;
+      try {
+        turnstile.execute(turnstileWidgetId.current);
+        trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "executed" });
+      } catch {
+        trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "execute_failed" });
+        finish(null);
+      }
     });
   }
 
@@ -319,15 +336,24 @@ export default function ProgrammeAssistant() {
         id="cloudflare-turnstile"
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
+        data-action="turnstile-spin-v1"
+        onReady={() => {
+          setTurnstileScriptReady(true);
+          trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_ready" });
+        }}
+        onError={() => {
+          setTurnstileScriptReady(false);
+          trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_error" });
+        }}
       />
       <button
         ref={launcherRef}
-        className={`programme-assistant-launcher${formVisible || !persistentActionsVisible ? " is-suppressed" : ""}`}
+        className={`programme-assistant-launcher${obstructionVisible || !persistentActionsVisible ? " is-suppressed" : ""}`}
         type="button"
         aria-haspopup="dialog"
         aria-expanded={open}
-        aria-hidden={formVisible || !persistentActionsVisible}
-        tabIndex={formVisible || !persistentActionsVisible ? -1 : undefined}
+        aria-hidden={obstructionVisible || !persistentActionsVisible}
+        tabIndex={obstructionVisible || !persistentActionsVisible ? -1 : undefined}
         onClick={() => {
           setOpen(true);
           trackEvent("chat_open", { chat_language: lang, chat_location: "persistent_assistant" });
@@ -385,7 +411,7 @@ export default function ProgrammeAssistant() {
                 />
                 <button type="submit" disabled={!input.trim() || status === "sending"}>{status === "sending" ? t.sending : t.send}</button>
               </form>
-              <div ref={turnstileContainer} className="programme-assistant-turnstile" aria-hidden="true" />
+              <div ref={turnstileContainer} className="programme-assistant-turnstile" aria-hidden="true" data-action="turnstile-spin-v1" />
               <p className="programme-assistant-privacy">{t.privacy}</p>
               <div className="programme-assistant-actions">
                 <button type="button" onClick={() => { setMessages([]); setError(""); setStatus("idle"); inputRef.current?.focus(); }}>{t.clear}</button>

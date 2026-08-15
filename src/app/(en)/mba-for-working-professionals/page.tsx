@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/mba-for-working-professionals", {
   title: "Executive MBA for Working Professionals",
   description:
-    "An Executive MBA for working professionals: one weekend a month for the three-month programme-certificate phase or fully online, recognised by CMI (UK), with no traditional thesis.",
+    "An Executive MBA for working professionals: one weekend a month during the certificate phase or fully online, with no traditional thesis.",
 });
 
 const jsonLd = {

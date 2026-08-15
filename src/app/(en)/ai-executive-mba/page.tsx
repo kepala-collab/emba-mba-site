@@ -122,7 +122,7 @@ export default function AiExecutiveMbaPage() {
             {[
               ["Recognised by CMI (UK)", "The programme is recognised against CMI Professional Standards and is not an MQA-regulated academic degree."],
               ["HRD Corp", HRD_CORP_CLAIM.short],
-              ["Format", "Six-month professional pathway: three monthly programme sessions, then supported CMgr assessment preparation for eligible participants."],
+              ["Format", "Six-month programme: three monthly programme sessions, then CMgr assessment preparation support for eligible participants."],
               ["Investment", FACTS.priceStd + " standard → " + FACTS.priceNet + " for Malaysian participants after the " + FACTS.scholarshipAmt + " LIFE Innoversity scholarship."],
               ["Applied project", "Participants complete a transformation plan for their own business; there is no traditional examination or thesis."],
             ].map(([h, p]) => (

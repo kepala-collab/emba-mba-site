@@ -124,7 +124,13 @@ npm ci
 npm run lint
 npm run typecheck
 npm test
+npm run audit:seo
+npm run audit:content
+npm run audit:styles
+npm run validate:env:contract
 npm run build
+npm run audit:release
+npm run test:e2e
 ```
 
 Deploy the source through Hostinger's Node.js application deployment. Exclude
@@ -136,6 +142,10 @@ server. The package declares Node.js 22 and uses these scripts:
 - Post-build: `npm run postbuild` runs automatically after `npm run build` and copies
   `public/` plus `.next/static/` into the standalone deployment bundle
 - Start: `npm start` (runs Next.js's generated standalone server)
+
+Set `RELEASE_ID` to the Git commit SHA (or another unique immutable release ID) in
+Hostinger before the build. The application also derives this value automatically
+from `GITHUB_SHA` or the checked-out Git commit when those are available.
 
 ## Search visibility environment
 
@@ -170,12 +180,18 @@ After each deployment:
 9. Ask one English and one Chinese programme question in the assistant. Confirm
    answers use published facts, the browser never receives the Groq key, and personal
    contact details are rejected before transmission.
-10. Confirm `/.well-known/security.txt` is reachable and the HSTS,
+10. Purge the Hostinger website/CDN cache. Cache invalidation is a required release
+   step, not an optional recovery action.
+11. Run `npm run verify:public-release -- <release-id>`. This verifies the public
+   `X-Release-ID`, complete CSP response header, and HTML shared-cache TTL.
+12. Confirm `/.well-known/security.txt` is reachable and the HSTS,
    `X-Content-Type-Options`, and `X-Frame-Options` headers are present.
-11. Hostinger replaces the application CSP response header with
-   `upgrade-insecure-requests`; confirm the HTML contains the full
-   `Content-Security-Policy` meta policy from `src/app/layout.tsx`.
+13. Confirm the response `Content-Security-Policy` contains at least
+   `default-src 'self'` and `frame-ancestors 'none'`. A minimal
+   `upgrade-insecure-requests` header is a failed release and must be corrected at
+   the Hostinger/CDN response-header layer before sign-off.
 
-If content looks stale, clear the Hostinger website cache. If the site returns an
-application error, inspect the Node.js build/runtime logs and confirm the database,
-Turnstile, and hashing-secret environment variables are present.
+If the public release verifier fails, keep the release unsigned-off, purge the cache,
+and inspect Hostinger/CDN header overrides. If the site returns an application error,
+inspect the Node.js build/runtime logs and confirm the database, Turnstile, and
+hashing-secret environment variables are present.

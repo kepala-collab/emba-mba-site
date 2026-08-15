@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/hrd-corp-claimable", {
   title: "HRD Corp Claimable Executive MBA",
   description:
-    "How HRD Corp-registered Malaysian employers apply before training, how HRD Corp determines the approved amount and which programme documents the provider supplies.",
+    "How registered Malaysian employers apply before training, which documents are supplied, and how HRD Corp decides eligibility and funding.",
 });
 
 const STEPS = [
@@ -32,7 +32,7 @@ const STEPS = [
 
 const HRD_FAQS = [
   {
-    q: "Is the Executive MBA HRD Corp claimable?",
+    q: "Can my employer apply for HRD Corp funding?",
     a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}`,
   },
   {
@@ -64,7 +64,7 @@ export default function HrdCorpClaimablePage() {
       <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">HRD Corp claimable MBA · SBL-Khas · Malaysia</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Employer-led HRD Corp application · SBL-Khas · Malaysia</span></div>
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
@@ -121,7 +121,7 @@ export default function HrdCorpClaimablePage() {
           <Reveal>
             <p className="sec-sub">
               HRD Corp states the approved amount in its grant decision. The programme comprises a
-              six-month professional pathway: three months to the programme certificate followed by
+              six-month programme: three months to the programme certificate followed by
               three months of supported Chartered Manager assessment preparation. The programme includes:
             </p>
           </Reveal>

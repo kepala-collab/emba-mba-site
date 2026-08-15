@@ -41,7 +41,7 @@ export default function AboutPage() {
           <Reveal className="mt-m">
             <div className="stats">
               <div><b>{FACTS.trainingDays}</b><span>Certificate-phase training days</span></div>
-              <div><b>{FACTS.cohorts}</b><span>Cohorts reported by ABC</span></div>
+              <div><b>{FACTS.cohorts}</b><span>Cohorts in ABC programme records</span></div>
               <div><b>HRD Corp</b><span>Approved provider</span></div>
               <div><b>CMI (UK)</b><span>Recognised programme</span></div>
             </div>

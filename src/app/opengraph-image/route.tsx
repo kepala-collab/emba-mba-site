@@ -22,19 +22,19 @@ export function GET() {
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
         <div style={{ width: 54, height: 6, background: "#1d63d8" }} />
         <div style={{ fontSize: 23, letterSpacing: 5, textTransform: "uppercase", color: "#405674" }}>
-          The Working Scholar · Malaysia
+          Six-month Executive MBA · Malaysia
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", maxWidth: 980 }}>
         <div style={{ fontSize: 76, lineHeight: 1.03, fontWeight: 700, letterSpacing: -3 }}>
-          Experience is where the work begins.
+          Build the management capability for your next leadership role.
         </div>
         <div style={{ marginTop: 26, fontSize: 32, lineHeight: 1.3, color: "#405674" }}>
-          Future Ready Executive MBA — structured inquiry for what comes next.
+          Six training days, an applied business project and Chartered Manager assessment preparation.
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#667891" }}>
-        <span>Professional development · CMI boundary made clear</span>
+        <span>Professional development · CMI-recognised programme certificate</span>
         <span>futurereadymba.com</span>
       </div>
     </div>,

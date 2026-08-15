@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/mba-for-entrepreneurs", {
   title: "Executive MBA for Entrepreneurs & Founders",
   description:
-    "A six-month Executive MBA pathway for founders: strategic leadership, a CMI-recognised programme certificate and supported CMgr preparation.",
+    "A six-month professional management programme for founders, with a CMI-recognised programme certificate and supported CMgr assessment preparation.",
 });
 
 export default function MbaForEntrepreneursPage() {
@@ -43,7 +43,7 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "Months, not years", p: "The full pathway runs for six months: three months to the CMI-recognised programme certificate, then three months of supported Chartered Manager assessment preparation for eligible participants." },
+    { h: "A defined six-month schedule", p: "Months one to three lead to the CMI-recognised programme certificate. Months four to six support eligible participants preparing for the separate Chartered Manager assessment." },
     { h: "One weekend a month, or online", p: "The certificate phase uses one scheduled weekend a month; the global online route removes the need for physical attendance." },
     { h: "Applied during the programme", p: "There is no traditional thesis or examination. Participants apply the frameworks to the venture or organisation they lead." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },

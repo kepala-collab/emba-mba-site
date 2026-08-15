@@ -172,6 +172,7 @@ export default function LeadForm({
   const [leadReference, setLeadReference] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileLoadError, setTurnstileLoadError] = useState(false);
+  const [turnstileScriptReady, setTurnstileScriptReady] = useState(false);
   const turnstileContainer = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
   const formElement = useRef<HTMLFormElement>(null);
@@ -221,6 +222,7 @@ export default function LeadForm({
         attempts += 1;
         if (attempts >= 75) {
           setTurnstileLoadError(true);
+          trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "script_unavailable" });
           return;
         }
         retryTimer = window.setTimeout(mountWidget, 200);
@@ -235,16 +237,32 @@ export default function LeadForm({
           callback: (token) => {
             setTurnstileToken(token);
             setTurnstileLoadError(false);
+            trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "token_received" });
             setStatus((current) => current === "verify" ? "idle" : current);
           },
           "expired-callback": () => setTurnstileToken(""),
           "error-callback": () => {
             setTurnstileToken("");
             setTurnstileLoadError(true);
+            trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "challenge_error" });
+          },
+          "timeout-callback": () => {
+            setTurnstileToken("");
+            setTurnstileLoadError(true);
+            trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "challenge_timeout" });
+          },
+          "unsupported-callback": () => {
+            setTurnstileToken("");
+            setTurnstileLoadError(true);
+            trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "browser_unsupported" });
           },
         });
+        trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "rendered" });
       } catch {
-        if (!cancelled) setTurnstileLoadError(true);
+        if (!cancelled) {
+          setTurnstileLoadError(true);
+          trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "render_failed" });
+        }
       }
     };
 
@@ -257,7 +275,7 @@ export default function LeadForm({
       }
       turnstileWidgetId.current = null;
     };
-  }, [step]);
+  }, [step, turnstileScriptReady]);
 
   function markStarted() {
     if (formStarted.current) return;
@@ -420,7 +438,15 @@ export default function LeadForm({
           id="cloudflare-turnstile"
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
           strategy="afterInteractive"
-          onError={() => setTurnstileLoadError(true)}
+          data-action="turnstile-spin-v1"
+          onReady={() => {
+            setTurnstileScriptReady(true);
+            trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "script_ready" });
+          }}
+          onError={() => {
+            setTurnstileLoadError(true);
+            trackEvent("turnstile_widget", { ...formContext, verification_surface: "lead_form", verification_state: "script_error" });
+          }}
         />
       )}
 
@@ -520,7 +546,7 @@ export default function LeadForm({
           <input type="checkbox" name="consent" value="yes" required />
           <span>{t.consent}</span>
         </label>
-        <div className="turnstile-wrap" aria-label={t.security}><div ref={turnstileContainer} /></div>
+        <div className="turnstile-wrap" aria-label={t.security}><div ref={turnstileContainer} data-action="turnstile-spin-v1" /></div>
         {turnstileLoadError && (
           <div className="turnstile-fallback" role="alert">
             <p>{t.verifyErr}</p>

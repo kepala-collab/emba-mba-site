@@ -8,7 +8,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/online-executive-mba", {
   title: "Online Executive MBA (CMI UK) — Fully Remote",
   description:
-    "Join the six-month Future Ready Executive MBA pathway online: live programme sessions, an applied project and supported CMgr preparation for eligible participants.",
+    "Join the six-month Future Ready Executive MBA online through live sessions, an applied project and supported CMgr preparation for eligible participants.",
 });
 
 const jsonLd = {
@@ -65,7 +65,7 @@ export default function OnlineExecutiveMbaPage() {
             the next three provide supported Chartered Manager assessment preparation for eligible participants.
           </p>
           <p className="mono sec-k mt-s">
-            Six-month professional pathway · {FACTS.priceIntl} per person · Recognised against CMI Professional Standards
+            Six-month programme · {FACTS.priceIntl} per person · Recognised against CMI Professional Standards
           </p>
         </div>
       </section>

@@ -93,7 +93,7 @@ export default function CorporateTrainingPage() {
           <Reveal className="mt-s">
             <div className="card" style={{ display: "grid", gap: 14 }}>
               {[
-                ["Choose your tracks", "Pick the capabilities your organisation needs from the ten tracks above — or blend programmes into a tailored pathway."],
+                ["Choose your tracks", "Select the capabilities your organisation needs from the ten tracks above, or combine programmes in one written proposal."],
                 ["Delivered in-house", `${SITE.provider}, an HRD Corp Approved Training Provider, delivers on-site or online, customised to your business context.`],
                 ["Employer-led HRD Corp route", HRD_CORP_CLAIM.short],
               ].map(([h, p]) => (

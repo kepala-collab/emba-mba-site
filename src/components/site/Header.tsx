@@ -116,7 +116,7 @@ export default function Header() {
           <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Right Dots Resources, home">
             <RdrMark size={38} />
             <span className="brand-title">
-              Future&nbsp;Ready <span className="acc brand-product">EMBA</span>
+              <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
             </span>
           </Link>
           <nav className="navlinks desktop-nav" aria-label={zh ? "主导航" : "Primary navigation"}>

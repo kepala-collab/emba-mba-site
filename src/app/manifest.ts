@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     id: "/",
     name: "Future Ready Executive MBA",
     short_name: "Future Ready EMBA",
-    description: "A six-month professional development pathway for experienced working adults, approved and endorsed by CMI against its Professional Standard.",
+    description: "A six-month professional management programme for experienced working adults, approved and endorsed by CMI against its Professional Standard.",
     start_url: "/",
     scope: "/",
     display: "standalone",

@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import CtaSection from "@/components/site/CtaSection";
-import DecisionBrief from "@/components/site/DecisionBrief";
 import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
 import Reveal from "@/components/site/Reveal";
-import { CERTIFICATE_POSITIONING, FACTS, SIGNATURE_QUOTE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, FACTS, FACULTY, SIGNATURE_QUOTE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/", {
-  title: "Future Ready Executive MBA — Working Scholar",
+  title: "Executive MBA Malaysia for Working Managers",
   description:
-    "Six-month professional development for experienced working adults, with applied frameworks, a CMI-recognised programme certificate and Chartered Manager assessment preparation.",
+    "A six-month Executive MBA professional development programme for working managers, with a CMI-recognised certificate and CMgr assessment preparation.",
   alternates: {
     canonical: "/",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -20,31 +19,24 @@ export const metadata = withSeo("/", {
 const RESOURCES = [
   {
     n: "01",
-    title: "Executive Readiness Diagnostic",
-    body: "A private five-minute reflection on the capability your next role is asking for. No score and no data sent.",
-    href: "/diagnostic",
-    action: "Start privately",
+    title: "Programme Guide",
+    body: "Review the structure, curriculum, fee, schedule and recognition in one concise document.",
+    href: "/resources/advancement-brief",
+    action: "Read the guide",
   },
   {
     n: "02",
-    title: "Executive Advancement Brief",
-    body: "A concise decision dossier covering fit, learning structure, exact fees, recognition boundaries and next steps.",
-    href: "/resources/advancement-brief",
-    action: "Open the brief",
+    title: "Programme Fit Check",
+    body: "Answer four questions and create a private checklist for reviewing programme fit. No score and no data sent.",
+    href: "/diagnostic",
+    action: "Start the check",
   },
   {
     n: "03",
-    title: "Employer Conversation Guide",
-    body: "Frame the business need, learning application, schedule, scholarship and employer-led HRD Corp process.",
+    title: "Employer Funding Guide",
+    body: "Prepare a conversation about the business need, schedule, fee and employer-led HRD Corp application.",
     href: "/resources#employer-guide",
-    action: "Review the guide",
-  },
-  {
-    n: "04",
-    title: "Questions to Ask Before Choosing",
-    body: "A neutral checklist for comparing time, method, assessment, recognition, fees, claims and support.",
-    href: "/resources#decision-checklist",
-    action: "Use the checklist",
+    action: "Open the funding guide",
   },
 ] as const;
 
@@ -57,34 +49,33 @@ export default function Home() {
             <Reveal>
               <div className="eyebrow">
                 <span className="l" />
-                <span className="mono sec-k">Future Ready Executive MBA / Working Scholar</span>
+                <span className="mono sec-k">Six-month Executive MBA · designed for working managers</span>
               </div>
             </Reveal>
             <Reveal delay={50}>
               <h1>
-                Your experience brought you here.
-                <em>Structured inquiry helps you see what comes next.</em>
+                Build the management capability for your next leadership role.
               </h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                For working adults ready to examine the questions behind the next role, build stronger judgement and turn a professional context into a clearer direction.
+                Complete the programme certificate during months 1–3, then receive three months of support to prepare for CMI&rsquo;s separate Chartered Manager assessment if you meet CMI&rsquo;s criteria. Continue working throughout the programme.
               </p>
             </Reveal>
             <Reveal delay={140}>
               <div className="working-hero-actions">
-                <Link href="#decision-brief" className="btn btn-primary" data-track-event="cta_click" data-track-id="hero_decision_brief" data-track-location="hero">
-                  Open the Decision Brief <span aria-hidden="true">↗</span>
+                <Link href="#programme-at-a-glance" className="btn btn-primary" data-track-event="cta_click" data-track-id="hero_programme_overview" data-track-location="hero">
+                  See how the programme works <span aria-hidden="true">↗</span>
                 </Link>
-                <Link href="/executive-mba" className="text-action">
-                  See the programme <span aria-hidden="true">↗</span>
+                <Link href="/diagnostic" className="text-action">
+                  Check programme fit <span aria-hidden="true">↗</span>
                 </Link>
               </div>
             </Reveal>
             <Reveal delay={180}>
               <div className="working-hero-proof" aria-label="Programme facts">
-                <span>{FACTS.durationLong} professional development pathway</span>
-                <span>{CERTIFICATE_POSITIONING.headline}</span>
+                <span>{FACTS.priceNet} for Malaysian participants after scholarship</span>
+                <span>Approved and endorsed by CMI against its Professional Standard</span>
               </div>
             </Reveal>
           </div>
@@ -95,18 +86,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="decision-brief" className="section working-decision-section">
-        <div className="wrap">
-          <Reveal><DecisionBrief /></Reveal>
-        </div>
-      </section>
-
-      <section className="working-fact-band" aria-label="Programme at a glance">
+      <section id="programme-at-a-glance" className="working-fact-band" aria-label="Programme at a glance">
         <div className="wrap working-fact-grid">
-          <div><strong>06</strong><span>months of structured professional development</span></div>
-          <div><strong>07</strong><span>F.A.S.T. disciplines for usable judgement</span></div>
-          <div><strong>12</strong><span>framework modules across three value movements</span></div>
-          <div><strong>{FACTS.priceNet.replace(".00", "")}</strong><span>participant fee after the scholarship for Malaysians</span></div>
+          <div><strong>6 months</strong><span>total professional development programme</span></div>
+          <div><strong>6 days</strong><span>of in-person training across months 1–3</span></div>
+          <div><strong>12 modules</strong><span>applied to one real business project</span></div>
+          <div><strong>{FACTS.priceNet.replace(".00", "")}</strong><span>for Malaysians after the published scholarship</span></div>
         </div>
       </section>
 
@@ -114,10 +99,10 @@ export default function Home() {
         <div className="wrap working-two-column">
           <Reveal>
             <div>
-              <div className="eyebrow"><span className="l" /><span className="mono sec-k">The Working Scholar model</span></div>
-              <h2 className="sec-h">Not another abstract credential.</h2>
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">What you will learn</span></div>
+              <h2 className="sec-h">Make clearer business decisions and turn them into action.</h2>
               <p className="sec-sub">
-                The programme begins with professional experience. It provides a repeatable way to see systems, test assumptions, form options and make the work in front of you more workable.
+                The F.A.S.T. method helps you define the real problem, test assumptions, compare options and build an action plan for your organisation.
               </p>
               <figure className="working-method-visual">
                 <Image
@@ -128,14 +113,14 @@ export default function Home() {
                   sizes="(max-width: 860px) 100vw, 44vw"
                 />
               </figure>
-              <Link href="/how-it-works" className="text-action working-inline-action">Explore the learning method <span aria-hidden="true">↗</span></Link>
+              <Link href="/how-it-works" className="text-action working-inline-action">See the learning method <span aria-hidden="true">↗</span></Link>
             </div>
           </Reveal>
           <div className="working-model-steps">
             {[
-              ["01", "Examine the question", "Begin with the decision or capability that now carries more consequence."],
-              ["02", "Connect the evidence", "Use frameworks and applied inquiry to see the relationships that matter."],
-              ["03", "Put judgement to work", "Carry the structure into an applied business project and the next decision."],
+              ["01", "Define the real problem", "Identify the decision, evidence and constraints that matter."],
+              ["02", "Compare practical options", "Use the programme frameworks to test assumptions and likely consequences."],
+              ["03", "Build an action plan", "Apply the work to a business project in your own organisational context."],
             ].map(([n, h, p], index) => (
               <Reveal key={n} delay={index * 60}>
                 <article>
@@ -153,29 +138,27 @@ export default function Home() {
           <Reveal>
             <div className="working-section-head">
               <div>
-                <p className="mono sec-k">The six-month decision brief</p>
-                <h2 className="sec-h">Build the system. Then extend the practice.</h2>
+                <p className="mono sec-k">Programme structure</p>
+                <h2 className="sec-h">Six months. Two clearly separated stages.</h2>
               </div>
-              <p>The stages are connected, but the programme certificate and Chartered Manager assessment are not collapsed into one promise.</p>
+              <p>First complete the programme certificate. Chartered Manager is a separate CMI assessment with its own eligibility, assessment and fees.</p>
             </div>
           </Reveal>
           <div className="working-pathway-grid">
             <Reveal>
-              <article className="working-pathway-card">
+              <article className="working-pathway-card" data-step="01">
                 <p className="mono">Months 01–03</p>
-                <span className="working-pathway-number">01</span>
-                <h3>Programme certificate phase</h3>
-                <p>Six training days across three sessions, coaching, diagnostics, the Leverage Management System and an applied business project.</p>
-                <Link href="/curriculum" className="text-action">Explore the curriculum <span aria-hidden="true">↗</span></Link>
+                <h3>Complete the Executive MBA programme</h3>
+                <p>Attend six training days across three monthly sessions, receive coaching and complete an applied business project.</p>
+                <Link href="/curriculum" className="text-action">See what you will study <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>
             <Reveal delay={70}>
-              <article className="working-pathway-card working-pathway-card-blue">
+              <article className="working-pathway-card working-pathway-card-blue" data-step="02">
                 <p className="mono">Months 04–06</p>
-                <span className="working-pathway-number">02</span>
-                <h3>Supported assessment preparation</h3>
-                <p>Support for eligible participants pursuing Chartered Manager assessment, which is controlled by CMI and is not automatic.</p>
-                <Link href="/executive-mba#credential" className="text-action">Read the recognition boundary <span aria-hidden="true">↗</span></Link>
+                <h3>Prepare for Chartered Manager assessment</h3>
+                <p>Eligible participants receive support to organise evidence and prepare for CMI&rsquo;s separate assessment. Chartered Manager status is not automatic.</p>
+                <Link href="/executive-mba#credential" className="text-action">Understand the CMI route <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>
           </div>
@@ -189,23 +172,23 @@ export default function Home() {
               <div className="working-recognition-mark">
                 <Image src="/brand/cmi-logo.png" alt="Chartered Management Institute" width={150} height={50} />
               </div>
-              <p className="mono sec-k">Recognition with the boundary visible</p>
-              <h2>Clarity is part of the value.</h2>
+              <p className="mono sec-k">Programme recognition</p>
+              <h2>A CMI-recognised programme certificate.</h2>
               <p>{CERTIFICATE_POSITIONING.distinction}</p>
-              <Link href="/executive-mba#credential" className="text-action">Understand the certificate <span aria-hidden="true">↗</span></Link>
+              <Link href="/executive-mba#credential" className="text-action">See exactly what the certificate means <span aria-hidden="true">↗</span></Link>
             </article>
           </Reveal>
           <Reveal delay={70}>
             <article className="working-investment-card">
-              <p className="mono sec-k">A complete financial decision</p>
-              <h2>See the investment without the fog.</h2>
+              <p className="mono sec-k">Malaysian participant fee</p>
+              <h2>Pay {FACTS.priceNet} after the published scholarship.</h2>
               <dl>
                 <div><dt>Standard programme fee</dt><dd>{FACTS.priceStd}</dd></div>
                 <div><dt>LIFE Innoversity scholarship</dt><dd>− {FACTS.scholarshipAmt}</dd></div>
                 <div className="working-investment-total"><dt>Malaysian participant fee</dt><dd>{FACTS.priceNet}</dd></div>
               </dl>
-              <p className="fine">HRD Corp determines employer funding eligibility and the approved amount. The employer—not the participant—submits the grant application.</p>
-              <Link href="/fees" className="btn btn-primary">Review fees and funding <span aria-hidden="true">↗</span></Link>
+              <p className="fine">Your employer may apply for HRD Corp funding before training. HRD Corp decides eligibility and the approved amount.</p>
+              <Link href="/fees" className="btn btn-primary">See fees and funding <span aria-hidden="true">↗</span></Link>
             </article>
           </Reveal>
         </div>
@@ -216,10 +199,10 @@ export default function Home() {
           <Reveal>
             <div className="working-section-head">
               <div>
-                <p className="mono sec-k">Study materials</p>
-                <h2 className="sec-h">Useful before you give us anything.</h2>
+                <p className="mono sec-k">Before you enquire</p>
+                <h2 className="sec-h">Check the details at your own pace.</h2>
               </div>
-              <p>Explore privately, understand the programme and prepare the right questions before choosing whether to speak with the team.</p>
+              <p>Review programme fit, fees and employer funding first. Contact the team only when you have a specific question.</p>
             </div>
           </Reveal>
           <div className="working-resource-grid">
@@ -234,27 +217,46 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-          <Reveal><div className="working-resources-footer"><Link href="/resources" className="btn btn-ghost">Open all study materials <span aria-hidden="true">↗</span></Link></div></Reveal>
+          <Reveal><div className="working-resources-footer"><Link href="/resources" className="btn btn-ghost">View all programme guides <span aria-hidden="true">↗</span></Link></div></Reveal>
         </div>
       </section>
 
-      <section className="section working-quote-section">
-        <div className="wrap maxw-820">
+      <section className="section working-faculty-section">
+        <div className="wrap working-faculty-grid">
           <Reveal>
-            <figure className="working-quote">
-              <p className="mono sec-k">A principle Dr. Xavier always emphasises</p>
-              <blockquote>&ldquo;{SIGNATURE_QUOTE.text}&rdquo;</blockquote>
-              <figcaption><strong>{SIGNATURE_QUOTE.attribution}</strong><span>{SIGNATURE_QUOTE.role}</span></figcaption>
-            </figure>
+            <div className="working-faculty-intro">
+              <p className="mono sec-k">Who leads the learning</p>
+              <h2 className="sec-h">Named practitioners, confirmed for each cohort.</h2>
+              <p>ABC draws the teaching and coaching team from its published faculty panel and confirms the assigned faculty before Session 1.</p>
+              <figure className="working-faculty-quote">
+                <blockquote>&ldquo;{SIGNATURE_QUOTE.text}&rdquo;</blockquote>
+                <figcaption>{SIGNATURE_QUOTE.attribution} · {SIGNATURE_QUOTE.role}</figcaption>
+              </figure>
+              <Link href="/faculty" className="btn btn-ghost">Meet all faculty and coaches <span aria-hidden="true">→</span></Link>
+            </div>
           </Reveal>
+          <div className="working-faculty-list">
+            {FACULTY.slice(0, 3).map((faculty, index) => (
+              <Reveal key={faculty.n} delay={index * 45}>
+                <article>
+                  <Image src={faculty.img} alt={faculty.n} width={92} height={92} sizes="72px" />
+                  <div>
+                    <h3>{faculty.n}</h3>
+                    <p>{faculty.r}</p>
+                    <span className="mono">{faculty.focus}</span>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       <CtaSection
         programme="Executive MBA"
         source="working-scholar-home"
-        heading="A useful conversation starts with the actual question."
-        sub="Discuss programme fit, curriculum, dates, fees, the scholarship, recognition or the employer-led HRD Corp process. You can ask for details first; an enquiry is not an admission or payment commitment."
+        heading="Ask questions before you decide."
+        sub="Choose a call, online meeting, in-person meeting or email. The programme team will explain fit, dates, fees, recognition and the employer-led HRD Corp process. An enquiry does not commit you to enrol or pay."
       />
     </>
   );

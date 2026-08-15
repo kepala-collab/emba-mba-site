@@ -18,16 +18,13 @@ const directives = [
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
+  "frame-ancestors 'none'",
   ...(isDevelopment ? [] : ["upgrade-insecure-requests"]),
 ];
 
-export const contentSecurityPolicyMeta = directives.join("; ");
-export const contentSecurityPolicyHeader = [
-  ...directives.slice(1),
-  "frame-ancestors 'none'",
-  // Keep a broadly compatible fallback last for proxies that rewrite CSP.
-  // Hostinger currently replaces the application header with its own
-  // upgrade-insecure-requests policy; the HTML meta policy enforces the
-  // stricter supported directives and X-Frame-Options denies framing.
-  `default-src 'self' 'unsafe-inline' data: blob: https://challenges.cloudflare.com${analyticsScriptSources}${analyticsImageSources}`,
-].join("; ");
+// `frame-ancestors` is header-only. Omitting it from the meta policy avoids a
+// browser console error while the response header still enforces it.
+export const contentSecurityPolicyMeta = directives
+  .filter((directive) => !directive.startsWith("frame-ancestors"))
+  .join("; ");
+export const contentSecurityPolicyHeader = directives.join("; ");

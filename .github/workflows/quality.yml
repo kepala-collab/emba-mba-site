@@ -1,0 +1,46 @@
+name: Quality and release readiness
+
+on:
+  pull_request:
+  push:
+    branches: [main, "codex/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_PUBLIC_SITE_URL: https://futurereadymba.com
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+      TURNSTILE_VERIFY_URL: https://example.com/siteverify
+      LEAD_HASH_SECRET: ci-lead-hash-secret-0000000000000001
+      GROQ_API_KEY: ci-server-only-key
+      RELEASE_ID: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run audit:seo
+      - run: npm run audit:content
+      - run: npm run audit:styles
+      - run: npm run validate:env:contract
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run build
+      - run: npm run audit:release
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14

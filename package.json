@@ -12,9 +12,13 @@
     "audit:seo": "node scripts/seo-audit.mjs",
     "audit:content": "node scripts/content-clarity-audit.mjs",
     "audit:release": "node scripts/release-audit.mjs",
+    "audit:styles": "node scripts/style-budget-audit.mjs",
     "validate:env": "node scripts/validate-production-env.mjs",
+    "validate:env:contract": "node scripts/validate-production-env.mjs .env.production.example --schema",
+    "verify:public-release": "node scripts/verify-public-release.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "start": "node .next/standalone/server.js",
     "lint": "oxlint . --deny-warnings"
   },
@@ -33,6 +37,8 @@
     "web-vitals": "^6.1.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^8.0.1",

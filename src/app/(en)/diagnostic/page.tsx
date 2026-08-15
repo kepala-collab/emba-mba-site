@@ -2,8 +2,8 @@ import ExecutiveDiagnostic from "@/components/site/ExecutiveDiagnostic";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/diagnostic", {
-  title: "Private Executive Readiness Diagnostic",
-  description: "A private, non-predictive reflection to identify the programme evidence required for your next decision. No score, storage or data submission.",
+  title: "Private Programme Fit Check",
+  description: "Answer four questions and create a private checklist for reviewing programme fit, schedule, fees and recognition. No score, storage or data submission.",
 });
 
 export default function DiagnosticPage() {

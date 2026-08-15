@@ -1,34 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const QUESTIONS = [
   {
     question: "Which situation best describes why you are looking now?",
     options: [
       "My role is becoming broader than my current management toolkit.",
-      "I am facing a consequential business decision or transformation.",
+      "I am facing an important business decision or operating change.",
       "I want structured professional development without leaving work.",
       "I need clearer evidence before choosing any programme.",
     ],
   },
   {
-    question: "Where would stronger structure create the greatest value?",
+    question: "Where would a more structured approach help?",
     options: [
       "Seeing the whole system before acting.",
       "Separating verified constraints from assumptions.",
-      "Turning strategy into a workable business plan.",
+      "Turning strategy into a practical business plan.",
       "Leading people and stakeholders through change.",
     ],
   },
   {
-    question: "What would make serious learning workable?",
+    question: "Which learning arrangement fits your responsibilities?",
     options: [
       "A published schedule that fits around full-time work.",
       "Applying the learning to my own business context.",
       "Practitioner guidance instead of a traditional thesis route.",
-      "A clear view of fees, recognition and employer funding boundaries.",
+      "Clear information about fees, recognition and employer funding.",
     ],
   },
   {
@@ -36,7 +36,7 @@ const QUESTIONS = [
     options: [
       "The method, modules and applied project requirements.",
       "The exact time commitment and published intake dates.",
-      "The CMI recognition and Chartered Manager boundaries.",
+      "What the CMI recognition means and how Chartered Manager assessment works.",
       "The Malaysian fee, scholarship and HRD Corp process.",
     ],
   },
@@ -44,28 +44,28 @@ const QUESTIONS = [
 
 const RESULT_COPY = [
   {
-    title: "Capability expansion",
-    body: "Start by examining the seven F.A.S.T. disciplines and how they convert experience into a more repeatable decision process.",
+    title: "Management capability",
+    body: "Start with the seven F.A.S.T. disciplines and how they support a repeatable business decision process.",
     href: "/how-it-works",
     action: "Explore the method",
   },
   {
-    title: "Applied business judgement",
+    title: "Applied business project",
     body: "Review the curriculum and the applied business project. The useful test is whether the work can address a real organisational question.",
     href: "/curriculum",
     action: "Review the curriculum",
   },
   {
-    title: "Workable commitment",
+    title: "Schedule and time commitment",
     body: "Compare the six-month structure with the published 2026 dates before deciding whether the schedule fits your responsibilities.",
     href: "/intakes",
     action: "See the intakes",
   },
   {
-    title: "Decision clarity",
-    body: "Read the exact fee, scholarship, recognition and funding boundaries in one place before requesting a conversation.",
+    title: "Fees and recognition",
+    body: "Read the exact fee, scholarship, CMI recognition and employer-funding process before requesting a conversation.",
     href: "/resources/advancement-brief",
-    action: "Open the brief",
+    action: "Open the programme guide",
   },
 ] as const;
 
@@ -93,7 +93,7 @@ const QUESTIONS_ZH = [
     options: [
       "已公布并适合全职工作的上课时间。",
       "把学习应用到自己的商业情境。",
-      "以实践者指导取代传统论文路径。",
+      "以实践者指导取代传统论文模式。",
       "清楚列明费用、认可与雇主资助边界。",
     ],
   },
@@ -131,34 +131,36 @@ const RESULT_COPY_ZH = [
     title: "明确的决策资料",
     body: "提出沟通请求前，先在一份资料中查看完整费用、奖学金、认可与资助边界。",
     href: "/zh/resources/advancement-brief",
-    action: "打开决策简报",
+    action: "打开课程指南",
   },
 ] as const;
 
 const UI_COPY = {
   en: {
-    eyebrow: "Private reflection / no data sent",
-    title: "What is your next role asking of you?",
-    intro: "This is a decision aid, not a psychometric assessment or admission test. Your selections stay in this browser and are not transmitted or stored.",
-    resultEyebrow: "A useful place to begin",
-    meaning: "What this means",
-    meaningBody: "Your answers indicate where clearer evidence may help your decision. They do not predict eligibility, performance or career outcomes.",
-    next: "What to examine next",
-    nextBody: "Check the method, time, recognition and total financial commitment against the actual responsibilities you carry.",
+    eyebrow: "Programme fit check / no data sent",
+    title: "Which programme details matter to you?",
+    intro: "Answer four questions to create a private review checklist. Your selections stay in this browser and are not transmitted or stored. This is not an admission test or a prediction of career outcomes.",
+    resultEyebrow: "Your private review checklist",
+    resultTitle: "Use your answers to check programme fit.",
+    resultBody: "These are the priorities you selected. Review them against the published programme information before deciding whether to speak with the team.",
+    selected: "Your selected priorities",
+    next: "Check these four programme facts",
+    talk: "Ask the programme team",
     restart: "Start again",
     back: "Back",
     result: "See a starting point",
     continue: "Continue",
   },
   zh: {
-    eyebrow: "私人思考工具 / 不会传送资料",
-    title: "你的下一项职责需要什么能力？",
-    intro: "这是决策辅助工具，不是心理测评或入学考试。你的选择只保留在当前浏览器页面，不会被传送或储存。",
-    resultEyebrow: "一个可行的起点",
-    meaning: "这项结果说明什么",
-    meaningBody: "你的选择显示哪一类资料能帮助当前决策。结果不会预测申请资格、学习表现或职业成果。",
-    next: "接下来应查看什么",
-    nextBody: "把教学方法、时间、认可与完整费用，逐项对照你现在承担的责任。",
+    eyebrow: "课程匹配检查 / 不会传送资料",
+    title: "哪些课程资料对您最重要？",
+    intro: "回答四道问题，建立一份私人审阅清单。您的选择只保留在当前浏览器页面，不会被传送或储存。这不是入学测试，也不会预测职业结果。",
+    resultEyebrow: "您的私人审阅清单",
+    resultTitle: "根据您的选择，逐项检查课程是否合适。",
+    resultBody: "以下是您选择的重点。请先与已公布的课程资料逐项核对，再决定是否联系课程团队。",
+    selected: "您选择的重点",
+    next: "核对四项课程事实",
+    talk: "向课程团队提问",
     restart: "重新开始",
     back: "返回",
     result: "查看建议起点",
@@ -174,11 +176,13 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
   const [answers, setAnswers] = useState<number[]>([]);
   const complete = step >= questions.length;
   const selected = answers[step];
-  const resultIndex = answers.length
-    ? answers.reduce((sum, answer) => sum + answer, 0) % results.length
-    : 0;
-  const result = results[resultIndex];
+  const cardRef = useRef<HTMLElement>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (!complete) return;
+    requestAnimationFrame(() => resultRef.current?.scrollIntoView({ block: "start" }));
+  }, [complete]);
   const choose = (index: number) => {
     setAnswers((current) => {
       const next = [...current];
@@ -193,7 +197,7 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
   };
 
   return (
-    <section className="diagnostic-card" aria-live="polite">
+    <section ref={cardRef} className="diagnostic-card" aria-live="polite">
       <div className="diagnostic-head">
         <p className="mono sec-k">{copy.eyebrow}</p>
         <h1>{copy.title}</h1>
@@ -204,22 +208,34 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
       </div>
 
       {complete ? (
-        <div className="diagnostic-result">
+        <div ref={resultRef} className="diagnostic-result">
           <p className="mono sec-k">{copy.resultEyebrow}</p>
-          <h2>{result.title}</h2>
-          <p>{result.body}</p>
+          <h2>{copy.resultTitle}</h2>
+          <p>{copy.resultBody}</p>
+          <h3 className="diagnostic-result-label">{copy.selected}</h3>
+          <ol className="diagnostic-answer-list">
+            {questions.map((question, index) => (
+              <li key={question.question}>
+                <span className="mono">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <strong>{question.question}</strong>
+                  <p>{question.options[answers[index] ?? 0]}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <h3 className="diagnostic-result-label">{copy.next}</h3>
           <div className="diagnostic-result-grid">
-            <div>
-              <h3>{copy.meaning}</h3>
-              <p>{copy.meaningBody}</p>
-            </div>
-            <div>
-              <h3>{copy.next}</h3>
-              <p>{copy.nextBody}</p>
-            </div>
+            {results.map((item) => (
+              <div key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <Link className="text-action" href={item.href}>{item.action} <span aria-hidden="true">↗</span></Link>
+              </div>
+            ))}
           </div>
-          <div className="working-hero-actions">
-            <Link className="btn btn-primary" href={result.href}>{result.action} <span aria-hidden="true">↗</span></Link>
+          <div className="diagnostic-actions diagnostic-result-actions">
+            <Link className="btn btn-primary" href={lang === "zh" ? "/zh/apply" : "/apply"}>{copy.talk} <span aria-hidden="true">→</span></Link>
             <button className="btn btn-ghost" type="button" onClick={restart}>{copy.restart}</button>
           </div>
         </div>

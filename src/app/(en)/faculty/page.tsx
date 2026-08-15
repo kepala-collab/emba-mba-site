@@ -9,7 +9,7 @@ import { PROVIDER_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/faculty", {
   title: "Faculty & Coaches",
   description:
-    "Meet the business practitioners and project coaches behind the Future Ready Executive MBA, with experience across strategy, operations, finance, talent and transformation.",
+    "Meet the Future Ready Executive MBA practitioners and coaches across strategy, operations, finance, talent and transformation.",
 });
 
 export default function FacultyPage() {

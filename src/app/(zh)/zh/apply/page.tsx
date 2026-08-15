@@ -21,7 +21,10 @@ export default function Page() {
             <h1 className="sec-h">选择最适合您的了解方式</h1>
             <p className="sec-sub">可选择简短通话、线上说明会、在双方同意的地点面谈，或先收取资料。提交资料不等于录取或付款承诺。</p>
           </Reveal>
-          <Reveal className="mt-m"><LeadForm source="zh-apply" programme="Executive MBA" lang="zh" /></Reveal>
+          <Reveal className="mt-m">
+            <h2 className="sec-h" style={{ fontSize: "1.55rem", marginBottom: 18 }}>告诉我们你希望如何继续</h2>
+            <LeadForm source="zh-apply" programme="Executive MBA" lang="zh" />
+          </Reveal>
         </div>
       </section>
     </>

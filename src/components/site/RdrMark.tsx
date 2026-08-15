@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// Right Dot Resources rocket logo, shown in a clean rounded chip.
+// Right Dots Resources rocket logo, shown in a clean rounded chip.
 export default function RdrMark({ size = 36 }: { size?: number }) {
   return (
     <span
@@ -18,7 +18,7 @@ export default function RdrMark({ size = 36 }: { size?: number }) {
     >
       <Image
         src="/brand/rdr-emblem.png"
-        alt="Right Dot Resources"
+        alt="Right Dots Resources"
         width={size}
         height={size}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}

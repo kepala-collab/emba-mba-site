@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/executive-mba-vs-mba", {
   title: "Executive MBA vs Academic MBA",
   description:
-    "Compare the Future Ready professional Executive MBA with an academic MBA across format, assessment, credential and time commitment so you can choose the right route.",
+    "Compare the Future Ready professional Executive MBA with an academic MBA across format, assessment, credential and time commitment.",
 });
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
@@ -103,7 +103,7 @@ export default function ExecutiveMbaVsMbaPage() {
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   This route is designed for participants with strategic or business-wide responsibility who want
                   structured decision frameworks, an applied project and a CMI Certificate of Recognition. The
-                  six-month pathway uses one scheduled weekend a month during the programme-certificate phase.
+                  six-month programme uses one scheduled weekend a month during the programme-certificate phase.
                 </p>
               </div>
             </Reveal>
@@ -121,7 +121,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Define the result you need before comparing price. Choose an MQA-accredited academic MBA
               when your next step requires an academic degree. Choose this programme when you need a
-              six-month professional pathway, an applied business project, CMI recognition against its
+              six-month programme, an applied business project, CMI recognition against its
               Professional Standard and continued employment during study. The published 2026 Malaysian
               participant fee is <Link href="/fees" className="acc">{FACTS.priceNet}</Link> after the{" "}
               {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship; the standard fee is {FACTS.priceStd}.

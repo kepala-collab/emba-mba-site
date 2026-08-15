@@ -9,12 +9,12 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/executive-mba-malaysia", {
   title: "Executive MBA in Malaysia (CMI UK, HRD Corp)",
   description:
-    "A six-month Executive MBA pathway in Malaysia with a CMI-recognised programme certificate, CMgr preparation, scholarship and HRD Corp eligibility.",
+    "A six-month professional management programme in Malaysia with a CMI-recognised programme certificate, CMgr preparation, scholarship and employer-led HRD Corp funding.",
 });
 
 const REASONS = [
   {
-    h: "HRD Corp claimable",
+    h: "Employer-led HRD Corp funding",
     p: `${HRD_CORP_CLAIM.short} The programme team supplies the quotation, schedule, course content and trainer documents.`,
   },
   {
@@ -22,7 +22,7 @@ const REASONS = [
     p: `The standard fee is ${FACTS.priceStd}. ${FACTS.scholarshipProvider} provides Malaysian participants with a ${FACTS.scholarshipAmt} scholarship, bringing the participant fee to ${FACTS.priceNet}.`,
   },
   {
-    h: "A six-month working-leader pathway",
+    h: "A six-month programme for working leaders",
     p: "The first three months use one scheduled weekend a month, 9am–6pm, to complete the programme-certificate phase. Months four to six provide supported Chartered Manager assessment preparation for eligible participants.",
   },
   {
@@ -128,7 +128,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </div>
           <p className="fine mt-s">
             {HRD_CORP_CLAIM.responsibility} See{" "}
-            <Link href="/hrd-corp-claimable">HRD Corp claimable</Link>. Full programme
+            <Link href="/hrd-corp-claimable">employer-led HRD Corp funding</Link>. Full programme
             detail on the <Link href="/executive-mba">Executive MBA</Link> page.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function ExecutiveMbaMalaysiaPage() {
         <div className="wrap">
           <Reveal><div className="stats">
             <div><b>{FACTS.trainingDays}</b><span>Certificate-phase training days</span></div>
-            <div><b>{FACTS.cohorts}</b><span>Cohorts reported by ABC</span></div>
+            <div><b>{FACTS.cohorts}</b><span>Cohorts in ABC programme records</span></div>
             <div><b>{FACTS.priceNet}</b><span>Malaysian participant fee</span></div>
             <div><b>Before training</b><span>Employer submits HRD Corp grant application</span></div>
           </div></Reveal>
@@ -192,8 +192,8 @@ export default function ExecutiveMbaMalaysiaPage() {
           </p>
           <p className="fine center mt-s">
             This is a professional programme recognised by CMI (UK); it is not an
-            MQA-regulated academic degree. HRD Corp claimable for eligible Malaysian
-            employers. You can <Link href="/apply">arrange a programme conversation</Link> before deciding.
+            MQA-regulated academic degree. Eligible Malaysian employers may apply for HRD Corp
+            funding before training; HRD Corp decides approval and the approved amount. You can <Link href="/apply">arrange a programme conversation</Link> before deciding.
           </p>
         </div>
       </section>

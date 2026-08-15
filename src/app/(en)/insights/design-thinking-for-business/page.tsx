@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/insights/design-thinking-for-business", {
   title: "Design Thinking for Business",
   description:
-    "A practical guide to design thinking for leaders: understand customers, define the right problem, prototype quickly and balance desirability, feasibility and viability.",
+    "A practical design-thinking guide for leaders: understand customers, define the problem, prototype and balance desirability, feasibility and viability.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
