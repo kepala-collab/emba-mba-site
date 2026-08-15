@@ -2,6 +2,7 @@ import Link from "next/link";
 import ArticleAttribution from "@/components/site/ArticleAttribution";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
+import CmiProgressionChart from "@/components/site/CmiProgressionChart";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import { CMI_PATHWAY, SITE } from "@/lib/content";
@@ -158,6 +159,8 @@ export default function CharteredManagerMalaysiaPage() {
             </div>
           </div>
         </section>
+
+        <CmiProgressionChart />
 
         <section className="section chartered-routes-section">
           <div className="wrap">

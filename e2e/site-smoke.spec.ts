@@ -91,6 +91,25 @@ test("priority content pages reflow without horizontal overflow", async ({ page 
   }
 });
 
+test("CMI progression chart separates qualification levels from the programme pathway", async ({ page }) => {
+  for (const [route, boundary] of [
+    ["/chartered-manager-malaysia", "No Level 7 claim is made for this programme."],
+    ["/zh/chartered-manager-malaysia", "本课程没有 Level 7 声明。"],
+  ] as const) {
+    for (const width of [320, 768, 1280]) {
+      await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
+      await goto(page, route);
+      const chart = page.locator(".cmi-progression-chart");
+      await expect(chart).toBeVisible();
+      await expect(chart.locator(".cmi-level-list > li")).toHaveCount(6);
+      await expect(chart.locator(".cmi-programme-list > li")).toHaveCount(4);
+      await expect(chart.getByText(boundary, { exact: true })).toBeVisible();
+      const box = await chart.boundingBox();
+      expect((box?.width || width + 1), `${route} chart at ${width}px`).toBeLessThanOrEqual(width);
+    }
+  }
+});
+
 test("mobile enquiry sections stack copy above a full-width form", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   for (const route of ["/", "/executive-mba", "/fees"]) {

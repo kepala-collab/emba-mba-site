@@ -197,6 +197,7 @@ export const CMI_PATHWAY = {
   malaysia: "https://www.managers.org.uk/community/regional-networks/malaysia/",
   international: "https://www.managers.org.uk/community/cmi-internationally/",
   recognition: CERTIFICATE_POSITIONING.cmiRecognitionSource,
+  qualifications: "https://www.managers.org.uk/education-and-learning/qualifications/qualifications-explained/",
 } as const;
 
 export const MODULES = [
