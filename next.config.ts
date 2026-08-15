@@ -5,15 +5,16 @@ import { contentSecurityPolicyHeader } from "./src/lib/content-security-policy";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 function releaseId() {
-  const explicit = process.env.RELEASE_ID?.trim();
-  if (explicit && /^[A-Za-z0-9._-]{1,64}$/.test(explicit)) return explicit;
-  if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA.slice(0, 12);
+  // Fingerprint the source that is actually being built. Hosting dashboards
+  // retain environment variables between deployments, which can otherwise
+  // leave a new release reporting an old ID.
   try {
     return execFileSync(process.execPath, ["scripts/release-fingerprint.mjs"], {
       cwd: process.cwd(),
       encoding: "utf8",
     }).trim();
   } catch {
+    if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA.slice(0, 12);
     return "unversioned";
   }
 }

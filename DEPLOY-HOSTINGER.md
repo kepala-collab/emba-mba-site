@@ -143,11 +143,11 @@ server. The package declares Node.js 22 and uses these scripts:
   `public/` plus `.next/static/` into the standalone deployment bundle
 - Start: `npm start` (runs Next.js's generated standalone server)
 
-Set `RELEASE_ID` to the Git commit SHA (or another unique immutable release ID) in
-Hostinger when the platform supports it. GitHub builds use `GITHUB_SHA`; archive
-builds automatically derive a deterministic `content-…` fingerprint from the
-runtime source and public assets when no explicit release ID is available. Run
-`npm run release:id` locally to calculate the archive fingerprint.
+The build derives `X-Release-ID` automatically from the runtime source and public
+assets in the deployment archive. Do not set a manual `RELEASE_ID` environment
+variable: hosting dashboards retain environment values between deployments, which
+can make a new release report an older identifier. Run `npm run release:id`
+locally to calculate the same deterministic `content-…` fingerprint.
 
 ## Search visibility environment
 
