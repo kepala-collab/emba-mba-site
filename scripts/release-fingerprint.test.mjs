@@ -1,6 +1,7 @@
 import { Buffer } from "node:buffer";
+import { readFileSync } from "node:fs";
 import { describe, expect, test } from "vitest";
-import { canonicalFileContent } from "./release-fingerprint.mjs";
+import { canonicalFileContent, computeReleaseFingerprint } from "./release-fingerprint.mjs";
 
 describe("release fingerprint canonicalization", () => {
   test("normalizes Windows and Unix text line endings to identical bytes", () => {
@@ -14,5 +15,11 @@ describe("release fingerprint canonicalization", () => {
     const binary = Buffer.from([0x00, 0x0d, 0x0a, 0xff]);
 
     expect(canonicalFileContent(binary).equals(binary)).toBe(true);
+  });
+
+  test("the frozen release manifest matches the current source", () => {
+    const declared = readFileSync("release-id.txt", "utf8").trim();
+
+    expect(declared).toBe(computeReleaseFingerprint());
   });
 });

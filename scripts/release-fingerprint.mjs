@@ -9,8 +9,10 @@ const INPUTS = [
   "package.json",
   "package-lock.json",
   "next.config.ts",
+  "scripts/check-release-manifest.mjs",
   "scripts/release-fingerprint.mjs",
   "scripts/prepare-standalone.mjs",
+  "scripts/sync-release-manifest.mjs",
 ];
 
 function collect(path) {

@@ -143,11 +143,12 @@ server. The package declares Node.js 22 and uses these scripts:
   `public/` plus `.next/static/` into the standalone deployment bundle
 - Start: `npm start` (runs Next.js's generated standalone server)
 
-The build derives `X-Release-ID` automatically from the runtime source and public
-assets in the deployment archive. Do not set a manual `RELEASE_ID` environment
-variable: hosting dashboards retain environment values between deployments, which
-can make a new release report an older identifier. Run `npm run release:id`
-locally to calculate the same deterministic `content-…` fingerprint.
+Before packaging, run `npm run release:sync` followed by `npm run release:check`.
+This freezes the deterministic source fingerprint in `release-id.txt`, which the
+build exposes as `X-Release-ID`. The frozen file prevents Hostinger's dependency
+installation from changing the approved archive identity. Do not set a manual
+`RELEASE_ID` environment variable; retained dashboard values are intentionally
+ignored.
 
 ## Search visibility environment
 

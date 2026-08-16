@@ -1,13 +1,21 @@
 import type { NextConfig } from "next";
 import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { contentSecurityPolicyHeader } from "./src/lib/content-security-policy";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
 function releaseId() {
-  // Fingerprint the source that is actually being built. Hosting dashboards
-  // retain environment variables between deployments, which can otherwise
-  // leave a new release reporting an old ID.
+  // Read the fingerprint frozen before upload. Hosting build systems can
+  // rewrite lock metadata during installation, so recomputing after install
+  // does not always describe the source archive that was approved.
+  try {
+    const declared = readFileSync("release-id.txt", "utf8").trim();
+    if (/^content-[a-f0-9]{12}$/.test(declared)) return declared;
+  } catch {
+    // Local development and older archives fall back to live computation.
+  }
+
   try {
     return execFileSync(process.execPath, ["scripts/release-fingerprint.mjs"], {
       cwd: process.cwd(),
