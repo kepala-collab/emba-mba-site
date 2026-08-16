@@ -56,9 +56,12 @@ test("core routes render without console failures", async ({ page }) => {
 test("desktop hero exposes its primary action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/");
-  const box = await page.getByRole("link", { name: /Request the programme guide/i }).boundingBox();
+  const box = await page.locator(".working-hero-actions").getByRole("link", { name: /Request the programme guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
+  const form = await page.locator(".working-hero-form form[data-form-id]").boundingBox();
+  expect(form).not.toBeNull();
+  expect(form?.y || 9999).toBeLessThan(800);
   await expect(page.getByRole("button", { name: /Ask the programme assistant/i })).toBeHidden();
 });
 
@@ -136,7 +139,7 @@ test("CMI progression chart separates qualification levels from the programme pa
 
 test("mobile enquiry sections stack copy above a full-width form", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  for (const route of ["/", "/executive-mba", "/fees"]) {
+  for (const route of ["/executive-mba", "/fees"]) {
     await goto(page, route);
     const grid = page.locator(".cta-grid");
     const form = grid.locator("form[data-form-id]");
@@ -148,6 +151,19 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
     const formBox = await form.boundingBox();
     expect(Math.abs((gridBox?.x || 0) - (formBox?.x || 0)), route).toBeLessThanOrEqual(24);
   }
+
+  await goto(page, "/");
+  const heroGrid = page.locator(".working-hero-grid");
+  const heroForm = heroGrid.locator("form[data-form-id]");
+  await expect(heroForm).toBeVisible();
+  await expect(heroForm.getByLabel("What are you planning for?")).toBeVisible();
+  await expect(heroForm.getByLabel("Preferred 2026 cohort (optional)")).toBeHidden();
+  const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
+  expect(columns).toBe(1);
+  await expect(page.locator(".home-video-section .programme-film")).toBeVisible();
+  await expect(page.locator(".home-video-section form[data-form-id]")).toHaveCount(0);
+  await heroForm.getByRole("button", { name: /Continue to contact details/i }).click();
+  await expect(heroForm.getByLabel("Preferred 2026 cohort (optional)")).toBeVisible();
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {

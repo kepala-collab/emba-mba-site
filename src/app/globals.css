@@ -169,7 +169,7 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,serif;font-weight:400;line-
 .lead-form-progress-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--steel),var(--crimson));transition:width .24s ease}
 .lead-form-step{border:0;padding:0;margin:0;min-width:0;display:flex;flex-direction:column;gap:14px}
 .lead-form-step[hidden]{display:none}
-.lead-form-step>h3,.lead-form-step-header h3,.lead-form-success h3{font-size:1.35rem;color:var(--ink);line-height:1.25}
+.lead-form-step>h2,.lead-form-step-header h2,.lead-form-success h3{font-size:1.35rem;color:var(--ink);line-height:1.25}
 .lead-form-intro{font-family:var(--font-archivo),ui-sans-serif,sans-serif;font-size:.92rem;line-height:1.65}
 .intent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .intent-option{position:relative;display:flex;gap:10px;align-items:flex-start;min-height:92px;padding:14px;border:1px solid var(--line-2);border-radius:12px;background:#fff;cursor:pointer;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}
@@ -187,6 +187,12 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,serif;font-weight:400;line-
 .lead-form-selection span{color:var(--muted)}
 .lead-form-selection strong{color:var(--ink)}
 .lead-form-selection small{width:100%;color:var(--steel)}
+.lead-form-compact{width:100%;padding:clamp(24px,3vw,34px);border-radius:22px;box-shadow:0 24px 70px rgba(24,67,117,.17)}
+.lead-form-compact .lead-form-step{gap:16px}
+.lead-form-compact .lead-form-step>h2{font-size:clamp(1.55rem,2.5vw,2rem)}
+.lead-form-compact .lead-form-intro{max-width:52ch}
+.lead-form-intent-select{padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--bg)}
+.lead-form-intent-select .form-helper{min-height:2.5em;margin-top:2px}
 .lead-reference{display:flex;flex-direction:column;gap:5px;margin:0;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--muted);font-size:.78rem}
 .lead-reference code{overflow-wrap:anywhere;color:var(--ink);font-size:.78rem}
 .intake-action-cell{min-width:150px}
@@ -526,6 +532,7 @@ main [style*="color: rgb(255, 255, 255)"]:not(.btn):not([style*="background: var
 .working-hero-proof{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font:500 .68rem/1.5 var(--font-plex-mono),monospace;letter-spacing:.05em;text-transform:uppercase}
 .working-hero-proof span{display:inline-flex;align-items:center;gap:9px}
 .working-hero-proof span::before{content:"";width:6px;height:6px;border:1px solid var(--steel);background:#fff}
+.working-hero-form{width:100%;max-width:560px;justify-self:end;scroll-margin-top:calc(var(--header-h) + 22px)}
 
 .programme-film{position:relative;padding:10px;border:1px solid var(--line-2);border-radius:24px;background:rgba(255,255,255,.8);box-shadow:var(--shadow-lg);backdrop-filter:blur(14px)}
 .programme-film-art{position:relative;aspect-ratio:4/4.4;min-height:450px;overflow:hidden;border-radius:17px;background:linear-gradient(145deg,#dcecff,#fafdff 53%,#c7dfff)}
@@ -557,6 +564,14 @@ main [style*="color: rgb(255, 255, 255)"]:not(.btn):not([style*="background: var
 .film-placeholder{display:grid;place-items:center;gap:18px;min-height:280px;padding:38px;background:linear-gradient(135deg,#e3f0ff,#f8fbff);text-align:center}
 .film-placeholder>div{display:grid;gap:10px;max-width:58ch}.film-placeholder strong{font:500 clamp(1.65rem,3vw,2.35rem)/1.1 var(--font-fraunces),serif}.film-placeholder p{max-width:54ch;margin:0;color:var(--ink-2)}
 .film-transcript{padding:28px}.film-transcript h3{font-size:1.35rem}.film-transcript p{color:var(--ink-2);line-height:1.75}
+.home-video-section{background:var(--bg-2)}
+.home-video-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(420px,1.18fr);align-items:center;gap:clamp(44px,7vw,88px)}
+.home-video-copy .sec-h{max-width:18ch}
+.home-video-points{display:grid;gap:12px;margin:26px 0 30px;padding:0;list-style:none}
+.home-video-points li{position:relative;padding-left:27px;color:var(--ink-2)}
+.home-video-points li::before{content:"→";position:absolute;left:0;color:var(--steel);font-family:var(--font-plex-mono),monospace}
+.home-video-frame{min-width:0}
+.home-video-frame .programme-film-art{min-height:0;aspect-ratio:16/10}
 .apply-programme-introduction{width:100%;max-width:560px;min-width:0;margin-top:30px}
 .apply-programme-introduction .programme-film-art{height:320px;min-height:0;aspect-ratio:auto}
 .apply-programme-introduction .programme-film-paper{top:14%;min-height:55%;padding:28px}
@@ -776,6 +791,9 @@ html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3,html[lan
   .working-hero-copy h1{max-width:14ch}
   .programme-film{max-width:650px}
   .programme-film-art{min-height:420px;aspect-ratio:5/4}
+  .working-hero-form{max-width:680px;justify-self:start}
+  .home-video-grid{grid-template-columns:1fr;gap:38px}
+  .home-video-frame{max-width:760px}
   .working-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .programme-overview-grid,.fees-hero-grid{grid-template-columns:minmax(0,1fr);gap:38px}
   .programme-summary-card,.fee-equation-card{max-width:720px}
@@ -816,6 +834,9 @@ html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3,html[lan
   .working-hero-grid{gap:34px}
   .working-hero-copy h1{max-width:16ch;font-size:clamp(2.3rem,11.7vw,3.35rem);line-height:1.01;letter-spacing:-.04em}
   .working-hero-lede{font-size:1rem}.working-hero-actions{align-items:stretch;flex-direction:column;gap:8px}.working-hero-actions .btn{width:100%}.working-hero-actions .text-action{justify-content:center}
+  .lead-form-compact{padding:22px 16px;border-radius:18px}
+  .lead-form-compact .lead-form-step>h3{font-size:1.6rem}
+  .home-video-copy .btn{width:100%}
   .programme-film{width:100%;max-width:100%;padding:7px;border-radius:18px}.programme-film-art{width:100%;min-height:0;aspect-ratio:4/4.7;border-radius:13px}.programme-film-paper{left:20px;right:20px;padding:26px}.programme-film-mark{width:68px;height:68px}.programme-film-mark img{width:58px;height:58px}
   .programme-film-control{align-items:flex-start}.programme-film-control strong{font-size:.82rem}.film-play{flex:none;padding-inline:12px}.programme-film-note{font-size:.64rem}
   .film-dialog-shell{padding:0}.film-dialog{width:100%;height:100dvh;max-height:none;border:0;border-radius:0}.film-dialog header{padding:18px}.film-placeholder{min-height:300px;padding:20px}.film-transcript{padding:22px}

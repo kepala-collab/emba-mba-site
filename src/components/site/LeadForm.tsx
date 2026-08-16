@@ -28,6 +28,10 @@ const TURNSTILE_SITE_KEY =
 const T = {
   en: {
     progress: (step: Step) => `Step ${step} of 2`,
+    compactKicker: "Programme enquiry",
+    compactTitle: "Get the programme guide.",
+    compactIntro: "Tell us what you need first. The programme team will send the relevant information and published 2026 dates.",
+    compactIntent: "What are you planning for?",
     stepOneKicker: "Your route",
     stepOneTitle: "What are you planning for?",
     stepOneIntro: "Choose the route that best describes your decision. The programme team will respond with the relevant information.",
@@ -92,6 +96,10 @@ const T = {
   },
   zh: {
     progress: (step: Step) => `第 ${step} 步，共 2 步`,
+    compactKicker: "课程咨询",
+    compactTitle: "索取课程资料。",
+    compactIntro: "请先告诉我们您的需求。课程团队会发送相关资料及已公布的 2026 开课日期。",
+    compactIntent: "您目前正在规划什么？",
     stepOneKicker: "您的需求",
     stepOneTitle: "您目前正在规划什么？",
     stepOneIntro: "请选择最符合您情况的选项。课程团队将提供相关资料并按您的选择跟进。",
@@ -160,6 +168,10 @@ function selectedIntentLabel(lang: Lang, intent: LeadIntent) {
   return T[lang].intents.find(([value]) => value === intent)?.[1] || "";
 }
 
+function selectedIntentDescription(lang: Lang, intent: LeadIntent) {
+  return T[lang].intents.find(([value]) => value === intent)?.[2] || "";
+}
+
 function cohortLabel(key: string, lang: Lang) {
   const cohort = INTAKES.find((item) => cohortKey(item.language, item.co) === key);
   if (!cohort) return "";
@@ -173,6 +185,7 @@ export default function LeadForm({
   lang = "en",
   placement = "primary",
   variant = "standard",
+  compact = false,
   defaultIntent,
   intentOptions,
 }: {
@@ -181,11 +194,13 @@ export default function LeadForm({
   lang?: Lang;
   placement?: string;
   variant?: LeadFormVariant;
+  compact?: boolean;
   defaultIntent?: LeadIntent;
   intentOptions?: readonly LeadIntent[];
 }) {
   const t = T[lang];
   const campaign = variant === "campaign";
+  const compactMode = compact && !campaign;
   const allowedIntents = intentOptions || (campaign ? CAMPAIGN_INTENTS[lang] : undefined);
   const initialIntent = defaultIntent || allowedIntents?.[0] || "individual_self_funded";
   const uid = useId();
@@ -217,6 +232,15 @@ export default function LeadForm({
     form_language: lang,
     form_version: "2026.08.v3",
   };
+
+  function changeIntent(value: LeadIntent) {
+    markStarted();
+    setIntent(value);
+    if (value === "mandarin" && !selectedCohort) {
+      const firstMandarin = INTAKES.find((item) => item.language === "Mandarin");
+      if (firstMandarin) setSelectedCohort(cohortKey(firstMandarin.language, firstMandarin.co));
+    }
+  }
 
   useEffect(() => {
     const context = conversionContextFromLocation();
@@ -457,7 +481,7 @@ export default function LeadForm({
   return (
     <form
       ref={formElement}
-      className={`form lead-form-progressive${campaign ? " lead-form-campaign" : ""}`}
+      className={`form lead-form-progressive${campaign ? " lead-form-campaign" : ""}${compactMode ? " lead-form-compact" : ""}`}
       onSubmit={onSubmit}
       onFocusCapture={markStarted}
       aria-busy={status === "sending"}
@@ -495,31 +519,41 @@ export default function LeadForm({
 
       <fieldset className="lead-form-step" disabled={step !== 1} hidden={step !== 1}>
         <legend className="sr-only">{t.stepOneTitle}</legend>
-        <p className="mono sec-k acc">{t.stepOneKicker}</p>
-        <h3>{t.stepOneTitle}</h3>
-        <p className="form-helper lead-form-intro">{t.stepOneIntro}</p>
-        <div className="intent-grid" role="radiogroup" aria-label={t.stepOneTitle}>
-          {t.intents.filter(([value]) => !allowedIntents || allowedIntents.includes(value)).map(([value, label, description]) => (
-            <label className={`intent-option${intent === value ? " is-selected" : ""}`} key={value}>
-              <input
-                type="radio"
-                name="lead_intent_choice"
-                value={value}
-                checked={intent === value}
-                onChange={() => {
-                  markStarted();
-                  setIntent(value);
-                  if (value === "mandarin" && !selectedCohort) {
-                    const firstMandarin = INTAKES.find((item) => item.language === "Mandarin");
-                    if (firstMandarin) setSelectedCohort(cohortKey(firstMandarin.language, firstMandarin.co));
-                  }
-                }}
-              />
-              <span><strong>{label}</strong><small>{description}</small></span>
-            </label>
-          ))}
-        </div>
-        {!campaign && (
+        <p className="mono sec-k acc">{compactMode ? t.compactKicker : t.stepOneKicker}</p>
+        <h2>{compactMode ? t.compactTitle : t.stepOneTitle}</h2>
+        <p className="form-helper lead-form-intro">{compactMode ? t.compactIntro : t.stepOneIntro}</p>
+        {compactMode ? (
+          <div className="fld lead-form-intent-select">
+            <label htmlFor={id("lead-intent")}>{t.compactIntent}</label>
+            <select
+              id={id("lead-intent")}
+              name="lead_intent_choice"
+              value={intent}
+              onChange={(event) => changeIntent(event.target.value as LeadIntent)}
+            >
+              {t.intents.filter(([value]) => !allowedIntents || allowedIntents.includes(value)).map(([value, label]) => (
+                <option key={value} value={value}>{label}</option>
+              ))}
+            </select>
+            <p className="form-helper">{selectedIntentDescription(lang, intent)}</p>
+          </div>
+        ) : (
+          <div className="intent-grid" role="radiogroup" aria-label={t.stepOneTitle}>
+            {t.intents.filter(([value]) => !allowedIntents || allowedIntents.includes(value)).map(([value, label, description]) => (
+              <label className={`intent-option${intent === value ? " is-selected" : ""}`} key={value}>
+                <input
+                  type="radio"
+                  name="lead_intent_choice"
+                  value={value}
+                  checked={intent === value}
+                  onChange={() => changeIntent(value)}
+                />
+                <span><strong>{label}</strong><small>{description}</small></span>
+              </label>
+            ))}
+          </div>
+        )}
+        {!campaign && !compactMode && (
           <div className="fld">
             <label htmlFor={id("cohort")}>{t.cohort}</label>
             <select id={id("cohort")} value={selectedCohort} onChange={(event) => setSelectedCohort(event.target.value)}>
@@ -539,11 +573,23 @@ export default function LeadForm({
         <div className="lead-form-step-header">
           <div>
             <p className="mono sec-k acc">{t.stepTwoKicker}</p>
-            <h3>{t.stepTwoTitle}</h3>
+            <h2>{t.stepTwoTitle}</h2>
           </div>
           <button className="lead-form-back" type="button" onClick={returnToRoute}>{t.back}</button>
         </div>
         <p className="lead-form-selection"><span>{t.selectedRoute}</span><strong>{selectedIntentLabel(lang, intent)}</strong>{selectedCohort && <small>{cohortLabel(selectedCohort, lang)}</small>}</p>
+        {!campaign && compactMode && (
+          <div className="fld">
+            <label htmlFor={id("cohort")}>{t.cohort}</label>
+            <select id={id("cohort")} value={selectedCohort} onChange={(event) => setSelectedCohort(event.target.value)}>
+              <option value="">{t.cohortUnknown}</option>
+              {INTAKES.map((cohort) => {
+                const key = cohortKey(cohort.language, cohort.co);
+                return <option key={key} value={key}>{cohortLabel(key, lang)} · {t.cohortOpen}</option>;
+              })}
+            </select>
+          </div>
+        )}
         <div className="fld">
           <label htmlFor={id("name")}>{t.name}</label>
           <input ref={firstContactField} id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" autoCapitalize="words" enterKeyHint="next" required />

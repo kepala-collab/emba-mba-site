@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
+import { trackEvent } from "@/lib/analytics";
 
 const VIDEO_URL = process.env.NEXT_PUBLIC_PROGRAMME_VIDEO_URL;
 const CAPTIONS_URL = process.env.NEXT_PUBLIC_PROGRAMME_VIDEO_CAPTIONS_URL;
 
 type ProgrammeIntroductionProps = {
   image?: "hero" | "conversation";
+  placement?: string;
 };
 
 const programmeImages = {
@@ -23,14 +25,32 @@ const programmeImages = {
   },
 } as const;
 
-export default function ProgrammeIntroduction({ image = "hero" }: ProgrammeIntroductionProps) {
+export default function ProgrammeIntroduction({ image = "hero", placement = "programme-introduction" }: ProgrammeIntroductionProps) {
   const { contentDialogOpen: open, setContentDialogOpen: setOpen } = useFloatingUi();
   const programmeImage = programmeImages[image];
   const [mounted, setMounted] = useState(false);
   const dialogRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const videoMilestones = useRef(new Set<number>());
   const hasVideo = Boolean(VIDEO_URL);
+
+  function openIntroduction() {
+    trackEvent("programme_introduction_open", {
+      content_type: hasVideo ? "video" : "text",
+      content_location: placement,
+    });
+    setOpen(true);
+  }
+
+  function trackVideoMilestone(milestone: number) {
+    if (videoMilestones.current.has(milestone)) return;
+    videoMilestones.current.add(milestone);
+    trackEvent(milestone === 0 ? "programme_video_start" : "programme_video_progress", {
+      content_location: placement,
+      video_progress: milestone,
+    });
+  }
 
   useEffect(() => setMounted(true), []);
 
@@ -98,7 +118,7 @@ export default function ProgrammeIntroduction({ image = "hero" }: ProgrammeIntro
             ref={triggerRef}
             type="button"
             className="film-play"
-            onClick={() => setOpen(true)}
+            onClick={openIntroduction}
             aria-haspopup="dialog"
           >
             <span aria-hidden="true">{hasVideo ? "▶" : "→"}</span>
@@ -124,7 +144,22 @@ export default function ProgrammeIntroduction({ image = "hero" }: ProgrammeIntro
               <button ref={closeRef} type="button" aria-label="Close programme introduction" onClick={() => { setOpen(false); triggerRef.current?.focus(); }}>×</button>
             </header>
             {hasVideo ? (
-              <video className="programme-video" controls preload="metadata" poster="/brand/emba-lockup.png">
+              <video
+                className="programme-video"
+                controls
+                preload="metadata"
+                poster={programmeImage.src}
+                onPlay={() => trackVideoMilestone(0)}
+                onTimeUpdate={(event) => {
+                  const video = event.currentTarget;
+                  if (!Number.isFinite(video.duration) || video.duration <= 0) return;
+                  const progress = (video.currentTime / video.duration) * 100;
+                  [25, 50, 75].forEach((milestone) => {
+                    if (progress >= milestone) trackVideoMilestone(milestone);
+                  });
+                }}
+                onEnded={() => trackVideoMilestone(100)}
+              >
                 <source src={VIDEO_URL} />
                 {CAPTIONS_URL && <track kind="captions" src={CAPTIONS_URL} srcLang="en" label="English" default />}
                 Your browser does not support embedded video. Read the transcript below.

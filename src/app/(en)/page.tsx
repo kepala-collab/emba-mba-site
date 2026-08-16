@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CtaSection from "@/components/site/CtaSection";
+import LeadForm from "@/components/site/LeadForm";
 import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
 import ProgrammeMarks from "@/components/site/ProgrammeMarks";
 import Reveal from "@/components/site/Reveal";
@@ -91,7 +91,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={140}>
               <div className="working-hero-actions">
-                <Link href="/apply" className="btn btn-primary" data-track-event="cta_click" data-track-id="hero_request_guide" data-track-location="hero">
+                <Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="hero_request_guide" data-track-location="hero">
                   Request the programme guide <span aria-hidden="true">→</span>
                 </Link>
                 <Link href="/executive-mba" className="text-action">
@@ -109,7 +109,15 @@ export default function Home() {
           </div>
 
           <Reveal delay={90}>
-            <ProgrammeIntroduction />
+            <div id="home-programme-guide" className="working-hero-form">
+              <LeadForm
+                programme="Executive MBA"
+                source="decision-led-home-hero"
+                placement="hero"
+                defaultIntent="details_first"
+                compact
+              />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -172,17 +180,30 @@ export default function Home() {
         </div>
       </section>
 
-      <CtaSection
-        programme="Executive MBA"
-        source="decision-led-home"
-        heading="See whether the programme fits your next move."
-        sub="Request the guide or choose a short call, online meeting, in-person meeting or email reply. The team will answer your specific questions; an enquiry is not an admission or payment commitment."
-        steps={[
-          "Receive the programme structure and published 2026 dates",
-          "Ask about role fit, fees, scholarship eligibility or employer funding",
-          "Decide whether to continue after you have the facts",
-        ]}
-      />
+      <section id="programme-introduction" className="section home-video-section">
+        <div className="wrap home-video-grid">
+          <Reveal>
+            <div className="home-video-copy">
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme introduction</span></div>
+              <h2 className="sec-h">See how the six-month programme works before you decide.</h2>
+              <p className="sec-sub">Use the programme introduction to understand the two stages, the applied project and the separate Chartered Manager preparation. A complete transcript is available, and no contact details are required.</p>
+              <ul className="home-video-points">
+                <li>Six training days across three monthly sessions</li>
+                <li>An applied project based on a live business challenge</li>
+                <li>Separate Chartered Manager preparation for eligible participants</li>
+              </ul>
+              <Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="video_request_guide" data-track-location="programme_introduction">
+                Request the programme guide <span aria-hidden="true">↑</span>
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="home-video-frame">
+              <ProgrammeIntroduction image="conversation" placement="home-video-section" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }
