@@ -51,7 +51,7 @@ export default function ResourcesPage() {
                 <li>Define the business decision, capability gap or transformation question.</li>
                 <li>Identify how the applied project can address that context.</li>
                 <li>Review the six training days and three-session certificate-phase schedule.</li>
-                <li>State the standard fee of {FACTS.priceStd}, the {FACTS.scholarshipAmt} scholarship and the Malaysian participant fee of {FACTS.priceNet}.</li>
+                <li>State the {FACTS.priceStd} standard fee and explain that the {FACTS.scholarshipAmount} scholarship is limited to eligible Malaysian applicants after assessment and written approval.</li>
                 <li>Ask the employer to determine whether it will pursue HRD Corp funding. The employer submits before training; HRD Corp decides eligibility and the approved amount.</li>
               </ol>
             </article>
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
                 <li>What is taught, applied and assessed—and by whom?</li>
                 <li>What exactly is awarded on programme completion?</li>
                 <li>Which later professional designation requires a separate assessment?</li>
-                <li>What is the complete fee after any published scholarship?</li>
+                <li>What scholarship criteria, availability and written approval apply to me?</li>
                 <li>Who decides employer-funding eligibility and the approved amount?</li>
                 <li>Can I see the dates, terms and material claims before paying?</li>
               </ul>

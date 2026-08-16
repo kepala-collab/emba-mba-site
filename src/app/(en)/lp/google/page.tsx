@@ -47,7 +47,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 months", "Certificate + CMgr assessment preparation"], [`${FACTS.priceStd} → ${FACTS.priceNet}`, "Malaysian participant fee"], ["Before training", "Employer submits the HRD Corp application"]].map(([b, s]) => (
+                  {[["6 months", "Certificate + CMgr assessment preparation"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"], ["Before training", "Employer submits the HRD Corp application"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>
@@ -62,7 +62,7 @@ export default function GoogleLandingPage() {
               <Reveal delay={120}>
                 <div className="card" style={{ padding: 26, background: "linear-gradient(180deg,var(--surface),var(--bg-2))", border: "1px solid var(--line-2)" }}>
                   <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Free 2026 programme plan · No payment required</p>
-                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.25 }}>Get the programme, schedule and scholarship plan</h2>
+                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.25 }}>Get the programme, schedule and scholarship eligibility guide</h2>
                   <p className="fine" style={{ marginBottom: 18 }}>Receive the concise guide and choose whether you want details first, WhatsApp or a short fit call. No enrolment commitment.</p>
                   <LeadForm programme="Executive MBA" source={SOURCE} placement="hero" variant="campaign" />
                 </div>
@@ -75,7 +75,7 @@ export default function GoogleLandingPage() {
       {/* FACTUAL PROOF — testimonial assets will be added only after permission and verification. */}
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.priceNet, "Malaysian participant fee after the published scholarship"]].map(([value, label]) => (
+          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
@@ -133,8 +133,8 @@ export default function GoogleLandingPage() {
       <CtaSection
         programme="Executive MBA"
         source={SOURCE}
-        heading="Get the 2026 programme and scholarship plan."
-        sub={`Receive the guide first, then choose whether you want WhatsApp or a short fit call. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process. ${HRD_CORP_CLAIM.responsibility}`}
+        heading="Get the 2026 programme and scholarship eligibility guide."
+        sub={`Receive the guide first, then choose whether you want WhatsApp or a short fit call. The team will explain the published intake, ${FACTS.priceStd} standard fee, scholarship assessment and employer-led HRD Corp process. Scholarship awards are not automatic. ${HRD_CORP_CLAIM.responsibility}`}
         formVariant="campaign"
         sectionId="request-plan-again"
         steps={["Receive the concise programme guide", "Review dates, fee and programme structure", "Choose your next step after you have the facts"]}

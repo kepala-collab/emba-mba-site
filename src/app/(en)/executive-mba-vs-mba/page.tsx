@@ -123,8 +123,8 @@ export default function ExecutiveMbaVsMbaPage() {
               when your next step requires an academic degree. Choose this programme when you need a
               six-month programme, an applied business project, CMI recognition against its
               Professional Standard and continued employment during study. The published 2026 Malaysian
-              participant fee is <Link href="/fees" className="acc">{FACTS.priceNet}</Link> after the{" "}
-              {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship; the standard fee is {FACTS.priceStd}.
+              standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the{" "}
+              <Link href="/fees" className="acc">{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</Link> after assessment and written approval.
             </p>
           </Reveal>
           <Reveal>

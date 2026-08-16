@@ -169,8 +169,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Review the programme against your venture&rsquo;s current decisions.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme runs for {FACTS.durationLong}. The standard fee is {FACTS.priceStd}, or {FACTS.priceNet}{" "}
-            for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship.
+            The programme runs for {FACTS.durationLong}. The standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship after assessment and written approval.
           </p>
           <p className="mt-s">
             <Link href="/apply" className="btn btn-primary">Discuss your programme fit</Link>

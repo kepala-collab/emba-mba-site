@@ -66,13 +66,13 @@ export default function AdvancementBriefPage() {
         <section className="brief-chapter">
           <span className="mono">05 / Investment</span>
           <div>
-            <h2>The complete Malaysian participant fee.</h2>
+            <h2>Standard fee and scholarship eligibility.</h2>
             <div className="brief-facts">
               <div><strong>{FACTS.priceStd}</strong><span>standard programme fee</span></div>
-              <div><strong>− {FACTS.scholarshipAmt}</strong><span>LIFE Innoversity scholarship</span></div>
-              <div><strong>{FACTS.priceNet}</strong><span>Malaysian participant fee</span></div>
+              <div><strong>− {FACTS.scholarshipAmount}</strong><span>scholarship for eligible Malaysian applicants</span></div>
+              <div><strong>{FACTS.priceAfterScholarship}</strong><span>payable only after scholarship approval</span></div>
             </div>
-            <p>{HRD_CORP_CLAIM.short} {HRD_CORP_CLAIM.responsibility}</p>
+            <p>{FACTS.scholarshipEligibility} An approved recipient pays {FACTS.priceAfterScholarship}. {HRD_CORP_CLAIM.short} {HRD_CORP_CLAIM.responsibility}</p>
           </div>
         </section>
 

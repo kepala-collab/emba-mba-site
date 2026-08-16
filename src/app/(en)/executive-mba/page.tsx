@@ -89,7 +89,7 @@ export default function ExecutiveMbaPage() {
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
                 <div><dt>Schedule</dt><dd>Six training days across three monthly sessions</dd></div>
                 <div><dt>Assessment</dt><dd>Applied business project; no traditional examination or thesis</dd></div>
-                <div><dt>Malaysian fee</dt><dd>{FACTS.priceNet} after the {FACTS.scholarshipAmt} scholarship</dd></div>
+                <div><dt>Scholarship</dt><dd>{FACTS.scholarshipAmount} for eligible Malaysian applicants</dd></div>
               </dl>
               <Link href="/fees" className="text-action">See the complete fee <span aria-hidden="true">↗</span></Link>
             </aside>

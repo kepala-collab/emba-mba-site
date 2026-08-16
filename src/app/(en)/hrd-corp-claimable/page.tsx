@@ -41,7 +41,7 @@ const HRD_FAQS = [
   },
   {
     q: "What if we're not HRDC-registered?",
-    a: `The standard fee is ${FACTS.priceStd}. Malaysian participants pay ${FACTS.priceNet} after the ${FACTS.scholarshipAmt} ${FACTS.scholarshipProvider} scholarship. Individual payment options are listed on the Fees page.`,
+    a: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive the ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}. Individual payment options are listed on the Fees page.`,
   },
 ];
 
@@ -157,7 +157,7 @@ export default function HrdCorpClaimablePage() {
               the HRD Corp-registered Malaysian employer submits the application before training.
               HRD Corp decides eligibility and the approved amount, which cannot exceed the employer&rsquo;s
               available levy balance. Not levy-registered, or joining as an
-              individual? Malaysian participants pay {FACTS.priceNet} after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship
+              individual? Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship after assessment and written approval
               or an installment plan.
             </p>
           </Reveal>

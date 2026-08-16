@@ -9,11 +9,11 @@ import RdrMark from "./RdrMark";
 
 const NAV_ZH = [
   { href: "/zh/executive-mba", label: "课程详情" },
+  { href: "/zh/how-it-works", label: "课程方法" },
   { href: "/zh/curriculum", label: "课程大纲" },
-  { href: "/zh/faculty", label: "导师" },
+  { href: "/zh/chartered-manager-malaysia", label: "CMI 认可" },
   { href: "/zh/fees", label: "学费" },
   { href: "/zh/intakes", label: "开课日期" },
-  { href: "/zh/resources", label: "决策资料" },
 ];
 
 export default function Header() {
@@ -149,10 +149,10 @@ export default function Header() {
             <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
               {zh ? "EN" : "中文"}
             </Link>
-            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? "预约沟通" : "Talk to Us"}</Link>
+            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? "索取课程资料" : "Get Programme Guide"}</Link>
           </nav>
           <div className="mobile-header-actions">
-            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "沟通" : "Talk"}</Link>
+            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "索取资料" : "Get Guide"}</Link>
             <button
               ref={toggleRef}
               className="mobile-menu-toggle"
@@ -215,7 +215,7 @@ export default function Header() {
                 {zh ? "询问课程助手 →" : "Ask the programme assistant →"}
               </button>
               <Link href={applyHref} className="btn btn-primary" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_menu_apply" data-track-location="mobile_navigation">
-                {zh ? "预约课程沟通 →" : "Arrange a programme conversation →"}
+                {zh ? "索取课程资料 →" : "Request the programme guide →"}
               </Link>
             </div>
           </div>

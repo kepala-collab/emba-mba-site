@@ -50,7 +50,7 @@ export default function ResourcesPage() {
                 <li>说明需要处理的商业决策、能力差距或转型议题。</li>
                 <li>确认企业应用项目如何回应这个情境。</li>
                 <li>检查六个培训日及三个课程周末是否可行。</li>
-                <li>列明标准费用 {FACTS.priceStd}、奖学金 {FACTS.scholarshipAmt} 及马来西亚学员实付 {FACTS.priceNet}。</li>
+                <li>列明标准费用 {FACTS.priceStd}，并说明 {FACTS.scholarshipAmount} 奖学金只供符合资格、通过评估并获书面批准的马来西亚申请者。</li>
                 <li>由雇主决定是否申请 HRD Corp 资助。雇主须在开课前提交；HRD Corp 决定资格与批准金额。</li>
               </ol>
             </article>
@@ -64,7 +64,7 @@ export default function ResourcesPage() {
                 <li>课程教授、应用及评估什么内容？由谁负责？</li>
                 <li>完成课程后，正式获颁什么？</li>
                 <li>哪一项专业称号需要另行通过评估？</li>
-                <li>奖学金后的完整费用是多少？</li>
+                <li>我需要符合哪些奖学金条件，名额及书面批准如何确认？</li>
                 <li>由谁决定雇主资助资格与批准金额？</li>
                 <li>付款前能否查看日期、条款及重要声明？</li>
               </ul>

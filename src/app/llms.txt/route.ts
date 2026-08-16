@@ -23,7 +23,7 @@ ${OPERATOR.name} is the authorised ${OPERATOR.role} for marketing, programme enq
 ## Important interpretation
 - The programme is professional development recognised by CMI (UK); it is not an MQA-accredited academic qualification.
 - ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}
-- The standard programme fee is ${FACTS.priceStd}. Malaysian participants pay ${FACTS.priceNet} after a ${FACTS.scholarshipAmt} ${FACTS.scholarshipProvider} scholarship.
+- The standard programme fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}; the scholarship is not automatic.
 - Programme completion provides the CMI-recognised programme certificate. CMI's published CMI Recognised route lists Foundation Chartered Manager (fCMgr) status on completion; CMI controls activation, continued use and membership renewal.
 - The programme runs for six months: months 1–3 lead to the CMI-recognised Executive MBA programme certificate; months 4–6 provide preparation support for eligible participants pursuing CMI's separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment; active membership, experience, application and fees apply.
 - CMI publishes Full Assessment, CMI Fast Track and Apprenticeship routes. This programme is CMI Recognised, not a CMI qualification, and does not automatically create Fast Track eligibility. CMI confirms the applicable route for each participant.

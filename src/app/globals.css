@@ -250,8 +250,12 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,serif;font-weight:400;line-
   .mobile-menu-toggle{width:48px;padding:0;font-size:0}
   .mobile-menu-toggle .menu-icon{display:grid}
 }
+@media(max-width:460px){
+  .brand-link{gap:8px}
+  .brand-title{font-size:.8rem}
+}
 @media(max-width:340px){
-  .brand-prefix{display:none}
+  .brand-title{font-size:.74rem}
   .brand-product{font-size:1rem}
 }
 

@@ -83,7 +83,7 @@ export default function ZhMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.priceNet, "奖学金后的马来西亚学员费用"]].map(([value, label]) => (
+          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
@@ -103,7 +103,7 @@ export default function ZhMetaLP() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>{FACTS.priceStd} 标准费用 → 马来西亚学员实付 <b style={{ color: "var(--ink)" }}>{FACTS.priceNet}</b>（LIFE Innoversity 奖学金 {FACTS.scholarshipAmt}）。{HRD_CORP_CLAIM_ZH} 分期付款方案列于费用页面。</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者经评估及书面批准后，可获 {FACTS.scholarshipAmount} LIFE Innoversity 奖学金；获批者实付 <b style={{ color: "var(--ink)" }}>{FACTS.priceAfterScholarship}</b>。奖学金并非自动获得。{HRD_CORP_CLAIM_ZH} 分期付款方案列于费用页面。</p></Reveal>
         </div>
       </section>
 

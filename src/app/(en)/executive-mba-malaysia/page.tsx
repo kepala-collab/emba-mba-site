@@ -18,8 +18,8 @@ const REASONS = [
     p: `${HRD_CORP_CLAIM.short} The programme team supplies the quotation, schedule, course content and trainer documents.`,
   },
   {
-    h: `Malaysian participant fee — ${FACTS.priceNet}`,
-    p: `The standard fee is ${FACTS.priceStd}. ${FACTS.scholarshipProvider} provides Malaysian participants with a ${FACTS.scholarshipAmt} scholarship, bringing the participant fee to ${FACTS.priceNet}.`,
+    h: `Malaysian scholarship — ${FACTS.scholarshipAmount}`,
+    p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive the ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}.`,
   },
   {
     h: "A six-month programme for working leaders",
@@ -83,8 +83,8 @@ export default function ExecutiveMbaMalaysiaPage() {
               The Future Ready Executive MBA — recognised by the Chartered Management
               Institute (CMI), UK — is delivered for Malaysian owners, directors and senior
               managers through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
-              The programme is priced in ringgit at {FACTS.priceStd}{" "}
-              (<b style={{ color: "var(--ink)" }}>{FACTS.priceNet}</b> for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship).
+              The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
+              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</b> after assessment and written approval.
               Participants apply the programme frameworks to their own organisation, market and operating context.
             </p>
           </Reveal>
@@ -111,7 +111,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal><h2 className="sec-h">Malaysian pricing, employer funding and published schedules.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              The programme combines a CMI Certificate of Recognition with a Malaysian participant fee,
+              The programme combines a CMI Certificate of Recognition with Malaysian scholarship eligibility,
               an employer-led HRD Corp process and English or Mandarin cohort schedules.
             </p>
           </Reveal>
@@ -141,7 +141,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal><div className="stats">
             <div><b>{FACTS.trainingDays}</b><span>Certificate-phase training days</span></div>
             <div><b>{FACTS.cohorts}</b><span>Cohorts in ABC programme records</span></div>
-            <div><b>{FACTS.priceNet}</b><span>Malaysian participant fee</span></div>
+            <div><b>{FACTS.scholarshipAmount}</b><span>scholarship for eligible Malaysian applicants</span></div>
             <div><b>Before training</b><span>Employer submits HRD Corp grant application</span></div>
           </div></Reveal>
         </div>

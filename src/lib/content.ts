@@ -36,6 +36,8 @@ export const FEES = {
     scholarshipLabel: "RM5,000.00",
     participantAmount: 5000,
     participantLabel: "RM5,000.00",
+    eligibility:
+      "Available to eligible Malaysian applicants only, subject to scholarship availability, assessment and written approval by the programme team.",
   },
 } as const;
 
@@ -50,6 +52,10 @@ export const FACTS = {
   publishedIntakes: "5",
   priceStd: FEES.standard.label,
   scholarshipProvider: FEES.malaysia.scholarshipProvider,
+  scholarshipAmount: FEES.malaysia.scholarshipLabel,
+  scholarshipEligibility: FEES.malaysia.eligibility,
+  priceAfterScholarship: FEES.malaysia.participantLabel,
+  // Backward-compatible aliases used only by archived release-verification copies.
   scholarshipAmt: FEES.malaysia.scholarshipLabel,
   priceNet: FEES.malaysia.participantLabel,
   priceIntl: "USD 2,500",
@@ -285,7 +291,7 @@ export const COMPARISON = [
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
   { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "F.A.S.T. methodology plus 12 practical business frameworks" },
   { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "One scheduled weekend session a month during the certificate phase while participants continue working" },
-  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard; Malaysian participants pay RM5,000.00 after the RM5,000.00 LIFE Innoversity scholarship" },
+  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard; eligible Malaysian applicants may receive a RM5,000.00 LIFE Innoversity scholarship after assessment and written approval" },
   { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
 ];
 
@@ -333,9 +339,9 @@ export const COMPLIANCE =
 export type NavItem = { href: string; label: string };
 export const NAV: NavItem[] = [
   { href: "/executive-mba", label: "Programme" },
-  { href: "/how-it-works", label: "How It Works" },
+  { href: "/how-it-works", label: "Method" },
   { href: "/curriculum", label: "Curriculum" },
+  { href: "/chartered-manager-malaysia", label: "Recognition" },
   { href: "/fees", label: "Fees" },
   { href: "/intakes", label: "2026 Dates" },
-  { href: "/resources", label: "Guides" },
 ];

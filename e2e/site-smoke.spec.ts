@@ -16,7 +16,7 @@ async function goto(page: Page, route: string) {
 
 async function dismissConsent(page: Page) {
   const button = page.getByRole("button", { name: /Essential only|仅必要功能/i });
-  await page.waitForTimeout(400);
+  await button.waitFor({ state: "visible", timeout: 2_500 }).catch(() => undefined);
   if (await button.isVisible()) {
     await button.click();
     await expect(button).toBeHidden();
@@ -45,7 +45,7 @@ async function mockTurnstile(page: Page) {
 
 test("core routes render without console failures", async ({ page }) => {
   const failures = await captureConsoleFailures(page);
-  for (const route of ["/", "/apply", "/fees", "/intakes", "/zh", "/zh/apply"]) {
+  for (const route of ["/", "/apply", "/fees", "/intakes", "/zh", "/zh/how-it-works", "/zh/apply"]) {
     const response = await goto(page, route);
     expect(response?.status(), route).toBe(200);
     await expect(page.locator("h1")).toHaveCount(1);
@@ -56,7 +56,7 @@ test("core routes render without console failures", async ({ page }) => {
 test("desktop hero exposes its primary action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/");
-  const box = await page.getByRole("link", { name: /See how the programme works/i }).boundingBox();
+  const box = await page.getByRole("link", { name: /Request the programme guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
   await expect(page.getByRole("button", { name: /Ask the programme assistant/i })).toBeHidden();
@@ -76,7 +76,7 @@ test("narrow layouts retain the product name and never overflow", async ({ page 
 });
 
 test("priority content pages reflow without horizontal overflow", async ({ page }) => {
-  const routes = ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees"];
+  const routes = ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/zh", "/zh/executive-mba", "/zh/how-it-works", "/zh/chartered-manager-malaysia", "/zh/fees"];
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     for (const route of routes) {
@@ -265,7 +265,7 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
   await page.getByLabel("Phone / WhatsApp").fill("+60123456789");
   await page.getByLabel("Email").fill("test@example.com");
   await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: /Request a conversation/i }).click();
+  await page.getByRole("button", { name: /Send my programme request/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
 });

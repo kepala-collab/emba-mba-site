@@ -19,7 +19,7 @@ const RECEIVE = [
   "Your choice of a call, online meeting, in-person meeting or details first",
   "Published 2026 intake dates and the Open status shown for each cohort",
   "The employer-led HRD Corp application process and required programme documents",
-  "Malaysian participant fee — RM5,000.00 after the RM5,000.00 LIFE Innoversity scholarship",
+  "The RM10,000.00 standard fee and eligibility review for the RM5,000.00 LIFE Innoversity scholarship",
 ];
 
 export default function ApplyPage() {
@@ -98,8 +98,8 @@ export default function ApplyPage() {
                 <p className="mono sec-k acc">Programme enquiry · No payment required</p>
                 <h2>Choose what you need first.</h2>
                 <p className="fine apply-fee-summary">
-                  Standard fee {FACTS.priceStd}. Malaysian participants pay {FACTS.priceNet} after the
-                  {` ${FACTS.scholarshipAmt} ${FACTS.scholarshipProvider}`} scholarship.
+                  Standard fee {FACTS.priceStd}. Eligible Malaysian applicants may receive the
+                  {` ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider}`} scholarship and pay {FACTS.priceAfterScholarship} after written approval. The scholarship is not automatic.
                 </p>
                 <LeadForm programme="Executive MBA" />
               </div>

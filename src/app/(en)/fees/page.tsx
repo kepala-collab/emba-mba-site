@@ -15,7 +15,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/fees", {
   title: "Executive MBA Fees, Scholarship & HRD Corp",
   description:
-    "The Malaysian participant fee is RM5,000 after a RM5,000 LIFE Innoversity scholarship. See inclusions, HRD Corp funding and payment information.",
+    "The standard fee is RM10,000. Eligible Malaysian applicants may receive a RM5,000 LIFE Innoversity scholarship, subject to availability and written approval.",
 });
 
 export default function FeesPage() {
@@ -29,15 +29,15 @@ export default function FeesPage() {
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Fees for Malaysian participants</span></div>
             </Reveal>
-            <Reveal delay={40}><h1>Pay {FACTS.priceNet} after the published scholarship.</h1></Reveal>
+            <Reveal delay={40}><h1>Standard fee {FACTS.priceStd}. Eligible Malaysians may qualify for a {FACTS.scholarshipAmount} scholarship.</h1></Reveal>
             <Reveal delay={80}>
               <p className="fees-hero-lede">
-                The standard programme fee is {FACTS.priceStd}. {FACTS.scholarshipProvider} provides Malaysian participants with a {FACTS.scholarshipAmt} scholarship, reducing the amount payable to {FACTS.priceNet}.
+                The {FACTS.scholarshipProvider} scholarship is not automatic. Applicants are assessed for eligibility and availability, and an award must be confirmed in writing. An approved recipient pays {FACTS.priceAfterScholarship}.
               </p>
             </Reveal>
             <Reveal delay={110}>
               <div className="fees-hero-actions">
-                <Link href="/apply" className="btn btn-primary">Ask about fees or enrolment <span aria-hidden="true">→</span></Link>
+                <Link href="/apply" className="btn btn-primary">Check scholarship eligibility <span aria-hidden="true">→</span></Link>
                 <Link href="#included" className="btn btn-ghost">See what the fee includes</Link>
               </div>
             </Reveal>
@@ -47,14 +47,14 @@ export default function FeesPage() {
           </div>
 
           <Reveal delay={70}>
-            <aside className="fee-equation-card" aria-label="Malaysian participant fee calculation">
-              <p className="mono sec-k">Published fee calculation</p>
+            <aside className="fee-equation-card" aria-label="Fee calculation for an approved Malaysian scholarship recipient">
+              <p className="mono sec-k">If the scholarship is approved</p>
               <dl>
                 <div><dt>Standard programme fee</dt><dd>{FACTS.priceStd}</dd></div>
-                <div><dt>{FACTS.scholarshipProvider} scholarship</dt><dd>− {FACTS.scholarshipAmt}</dd></div>
-                <div className="fee-equation-total"><dt>Malaysian participant pays</dt><dd>{FACTS.priceNet}</dd></div>
+                <div><dt>{FACTS.scholarshipProvider} scholarship</dt><dd>− {FACTS.scholarshipAmount}</dd></div>
+                <div className="fee-equation-total"><dt>Approved recipient pays</dt><dd>{FACTS.priceAfterScholarship}</dd></div>
               </dl>
-              <p>There is no application fee to request information or speak with the programme team.</p>
+              <p>{FACTS.scholarshipEligibility} There is no fee to request information or ask for an eligibility review.</p>
             </aside>
           </Reveal>
         </div>
@@ -64,9 +64,9 @@ export default function FeesPage() {
         <div className="wrap">
           <Reveal>
             <div className="reading-section-head">
-              <p className="mono sec-k">Included in {FACTS.priceNet}</p>
-              <h2 className="sec-h">What the Malaysian participant fee includes.</h2>
-              <p>The published Malaysian participant fee includes the programme components below.</p>
+              <p className="mono sec-k">Included in the programme fee</p>
+              <h2 className="sec-h">What your programme fee covers.</h2>
+              <p>The same programme components apply whether you pay the standard fee or receive an approved scholarship.</p>
             </div>
           </Reveal>
           <div className="fee-inclusion-grid">
@@ -159,7 +159,7 @@ export default function FeesPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Confirm the exact fee and payment terms." sub={`Ask about the ${FACTS.priceNet} Malaysian participant fee, payment options, international delivery or the employer-led HRD Corp process. An enquiry does not commit you to enrol or pay.`} />
+      <CtaSection programme="Executive MBA" heading="Confirm your fee before you decide." sub={`Ask about the ${FACTS.priceStd} standard fee, ${FACTS.scholarshipAmount} scholarship eligibility, payment options or the employer-led HRD Corp process. Scholarship awards are subject to availability, assessment and written approval. An enquiry does not commit you to enrol or pay.`} />
     </>
   );
 }

@@ -26,7 +26,7 @@ const INCLUDED = [
 
 const CMP = [
   ["时间", "六个月：三个月课程证书阶段 + 三个月 CMgr 评估准备", "18–24 个月"],
-  ["投资", "RM10,000.00 标准；马来西亚学员获 RM5,000.00 奖学金后实付 RM5,000.00", "授予院校公布的学费及附加费用"],
+  ["投资", "标准费用 RM10,000.00；符合资格的马来西亚申请者经评估及书面批准后可获 RM5,000.00 奖学金", "授予院校公布的学费及附加费用"],
   ["形式", "证书阶段每月一个周末；学员继续工作", "按授予院校公布的学术课程时间表修读"],
   ["考核", "学员自身企业的应用项目；没有传统考试或论文", "作业或考试，加上论文"],
   ["证书", "CMI 专业课程认可证书；并非 MQA 认证的学术学位", "由授予院校颁发的学术 MBA 学位"],
@@ -58,7 +58,7 @@ export default function ZhGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 个月", "课程证书 + CMgr 评估准备"], [`${FACTS.priceStd} → ${FACTS.priceNet}`, "马来西亚学员实付"], ["开课前", "雇主提交 HRD Corp 申请"]].map(([b, s]) => (
+                  {[["6 个月", "课程证书 + CMgr 评估准备"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"], ["开课前", "雇主提交 HRD Corp 申请"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>
@@ -84,7 +84,7 @@ export default function ZhGoogleLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.priceNet, "奖学金后的马来西亚学员费用"]].map(([value, label]) => (
+          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

@@ -46,7 +46,8 @@ VERIFIED PROGRAMME FACTS
 - Level statement: describe the learning as aimed at senior, strategic and postgraduate-level executive practice. Do not call the programme a formal CMI Level 7 qualification, a regulated postgraduate qualification, academically higher than a degree or degree-equivalent unless a current programme-specific CMI approval document confirms that exact claim. The specimen certificate says the programme is not a regulated qualification.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
-- Malaysian participant fee: ${FACTS.priceNet}. This is the ${FACTS.priceStd} standard fee less the ${FACTS.scholarshipAmt} ${FACTS.scholarshipProvider} scholarship for Malaysian participants.
+- Malaysian scholarship: eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
+- Fee after an approved scholarship: ${FACTS.priceAfterScholarship}. Never present this as the fee for every Malaysian participant or imply that nationality alone guarantees the award.
 - Global online public programme: ${FACTS.priceIntl} per person, open irrespective of country.
 - Country-specific online programme: ${PROGRAMME_PRICING.individuals[1].price}; a written proposal controls.
 - Localised on-site programme: ${PROGRAMME_PRICING.individuals[2].price}; a written proposal controls.
@@ -55,7 +56,7 @@ VERIFIED PROGRAMME FACTS
 - Attendance: sessions run 9am-6pm. English Cohort 17 runs Saturday-Sunday; the other published English and Mandarin cohorts run Friday-Saturday. ${DELIVERY_CONTROL.schedule} For a missed session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort.
 - Low-pressure enquiry options: prospective participants can request a short programme-fit call, an online information meeting, an in-person meeting at an agreed location, or programme details first with no call. A request is not admission or a payment commitment. Do not disclose or infer a physical venue or address.
 - Refund: ${REFUND_TERMS.description}
-- The applicable written proposal or enrolment terms state the delivery format, certificate wording, complete fees, scholarship, intake dates and acceptance requirements for the participant.
+- The applicable written proposal or enrolment terms state the delivery format, certificate wording, complete fees, any approved scholarship, intake dates and acceptance requirements for the participant.
 - Current published intakes:\n${intakeFacts()}
 - Private review resources: /diagnostic creates a no-data programme-fit checklist; /resources/advancement-brief is a printable factual programme guide; /resources contains the employer conversation guide and programme comparison checklist.
 - Useful website paths: /executive-mba, /chartered-manager-malaysia, /curriculum, /fees, /intakes, /faculty, /faq, /resources, /diagnostic, /apply, /contact. Chinese equivalents begin with /zh/ where published.

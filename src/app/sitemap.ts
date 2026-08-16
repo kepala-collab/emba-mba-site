@@ -22,7 +22,7 @@ const INSIGHTS = [
   "/insights/advancement-question",
 ];
 const ZH_CORE = [
-  "/zh/executive-mba", "/zh/curriculum", "/zh/fees", "/zh/intakes",
+  "/zh/executive-mba", "/zh/how-it-works", "/zh/curriculum", "/zh/fees", "/zh/intakes",
   "/zh/faculty", "/zh/faq", "/zh/chartered-manager-malaysia", "/zh/apply", "/zh/contact", "/zh/privacy", "/zh/terms",
 ];
 const ZH_RESOURCES = [

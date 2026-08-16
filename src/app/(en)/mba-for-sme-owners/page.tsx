@@ -47,7 +47,7 @@ export default function MbaForSmeOwnersPage() {
     { h: "One scheduled weekend a month", p: "The three certificate-phase sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort." },
     { h: "Your business is the applied project", p: "There is no traditional thesis or examination. Participants use the frameworks to develop a transformation plan for their own organisation." },
     { h: "Employer-applied HRD Corp funding", p: HRD_CORP_CLAIM.short },
-    { h: "Scholarship for Malaysians", p: `${FACTS.scholarshipProvider} provides a ${FACTS.scholarshipAmt} scholarship for Malaysian participants, bringing the fee from ${FACTS.priceStd} to ${FACTS.priceNet}; instalment options are listed on the Fees page.` },
+    { h: "Scholarship eligibility for Malaysians", p: `Eligible Malaysian applicants may receive the ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}; instalment options are listed on the Fees page.` },
   ];
 
   return (

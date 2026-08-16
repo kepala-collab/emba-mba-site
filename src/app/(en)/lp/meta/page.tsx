@@ -80,7 +80,7 @@ export default function MetaLandingPage() {
       {/* Factual proof only; participant stories will be added after permission and verification. */}
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.priceNet, "Malaysian participant fee after the published scholarship"]].map(([value, label]) => (
+          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
@@ -102,7 +102,7 @@ export default function MetaLandingPage() {
             ))}
           </div>
           <Reveal className="mt-s">
-            <p className="fine" style={{ marginTop: 26 }}>{FACTS.priceStd} standard → <b style={{ color: "var(--ink)" }}>{FACTS.priceNet}</b> for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. {HRD_CORP_CLAIM.short} Instalment options are listed on the Fees page.</p>
+            <p className="fine" style={{ marginTop: 26 }}>The standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship after assessment and written approval; approved recipients pay <b style={{ color: "var(--ink)" }}>{FACTS.priceAfterScholarship}</b>. {HRD_CORP_CLAIM.short} Instalment options are listed on the Fees page.</p>
           </Reveal>
         </div>
       </section>
@@ -110,8 +110,8 @@ export default function MetaLandingPage() {
       <CtaSection
         programme="Executive MBA"
         source={SOURCE}
-        heading="Get the 2026 programme and scholarship plan."
-        sub="Receive the guide first, then choose whether you want details by email, WhatsApp or a short fit call. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process."
+        heading="Get the 2026 programme and scholarship eligibility guide."
+        sub="Receive the guide first, then choose whether you want details by email, WhatsApp or a short fit call. The team will explain the published intake, standard fee, scholarship assessment and employer-led HRD Corp process. Scholarship awards are not automatic."
         formVariant="campaign"
         steps={["Receive the concise programme guide", "Review dates, fee and programme structure", "Choose your next step after you have the facts"]}
       />
