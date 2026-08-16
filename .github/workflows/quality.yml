@@ -29,12 +29,12 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
-      - run: npm run audit:seo
       - run: npm run audit:content
       - run: npm run audit:styles
       - run: npm run validate:env:contract
       - run: npm audit --omit=dev --audit-level=high
       - run: npm run build
+      - run: npm run audit:seo
       - run: npm run audit:release
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
