@@ -76,7 +76,7 @@ test("narrow layouts retain the product name and never overflow", async ({ page 
 });
 
 test("priority content pages reflow without horizontal overflow", async ({ page }) => {
-  const routes = ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees"];
+  const routes = ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees"];
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     for (const route of routes) {
@@ -87,6 +87,30 @@ test("priority content pages reflow without horizontal overflow", async ({ page 
       }));
       expect(dimensions.scroll, `${route} at ${width}px`).toBeLessThanOrEqual(dimensions.client);
       await expect(page.locator("main h1")).toHaveCount(1);
+    }
+  }
+});
+
+test("advancement brief keeps chapter and fact-card alignment across breakpoints", async ({ page }) => {
+  for (const width of [390, 768, 1280]) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
+    await goto(page, "/resources/advancement-brief");
+    const investment = page.locator(".brief-chapter").filter({ hasText: "05 / Investment" });
+    const facts = investment.locator(".brief-facts");
+    await expect(facts).toBeVisible();
+
+    const columns = await facts.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
+    expect(columns, `${width}px fact-card columns`).toBe(width <= 640 ? 1 : 3);
+
+    const valuesFit = await facts.locator("strong").evaluateAll((values) =>
+      values.every((value) => value.scrollWidth <= value.clientWidth + 1 && value.getClientRects().length === 1),
+    );
+    expect(valuesFit, `${width}px fact-card values`).toBe(true);
+
+    if (width === 1280) {
+      const label = await investment.locator(":scope > span").boundingBox();
+      const heading = await investment.locator("h2").boundingBox();
+      expect(Math.abs((label?.y || 0) - (heading?.y || 0))).toBeLessThanOrEqual(10);
     }
   }
 });
@@ -244,4 +268,75 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
   await page.getByRole("button", { name: /Request a conversation/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
+});
+
+test("paid campaign routes use focused chrome with one primary action", async ({ page }) => {
+  for (const route of ["/lp/google", "/lp/meta", "/zh/lp/google", "/zh/lp/meta"]) {
+    await goto(page, route);
+    await expect(page.locator(".campaign-navbar")).toBeVisible();
+    await expect(page.locator(".desktop-nav,.mobile-menu-toggle,.foot,.programme-assistant-launcher")).toHaveCount(0);
+    await expect(page.locator(".campaign-footer")).toBeVisible();
+    await expect(page.locator(".campaign-nav-actions .navcta")).toHaveCount(1);
+    await expect(page.locator(".wa-float")).toHaveAttribute("aria-hidden", "true");
+    await expect(page.locator('img[src*="cmi-logo-official.svg"]').first()).toBeVisible();
+    await expect(page.locator('img[src*="hrdcorp-claimable-official.png"]').first()).toBeVisible();
+    const markWidths = await page.locator(".programme-marks").first().locator("img").evaluateAll((images) => images.map((image) => image.getBoundingClientRect().width));
+    expect(markWidths.every((width) => width >= 72), `${route} official mark size`).toBe(true);
+  }
+});
+
+test("mobile campaign pages preserve the value proposition before the form", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of ["/lp/google", "/zh/lp/google"]) {
+    await goto(page, route);
+    const heading = await page.locator("main h1").boundingBox();
+    const form = await page.locator("#apply form[data-form-id]").boundingBox();
+    expect(heading).not.toBeNull();
+    expect(form).not.toBeNull();
+    expect(heading?.y || 9999, route).toBeLessThan(form?.y || 0);
+    const dimensions = await page.evaluate(() => ({ client: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth }));
+    expect(dimensions.scroll, route).toBeLessThanOrEqual(dimensions.client);
+  }
+});
+
+test("campaign lead capture removes nonessential questions and delivers the programme plan", async ({ page }) => {
+  await mockTurnstile(page);
+  await page.route("**/api/lead", async (route) => {
+    const request = route.request().postDataJSON() as Record<string, unknown>;
+    expect(request.turnstile_token).toBe("lead-test-token");
+    expect(request.company).toBeUndefined();
+    expect(request.preferred_contact_window).toBe("flexible");
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ lead_reference: "CAMPAIGN-LEAD" }),
+    });
+  });
+  await goto(page, "/lp/google");
+  const form = page.locator("#apply form[data-form-id]");
+  await expect(form.locator(".intent-option")).toHaveCount(3);
+  await expect(form.getByLabel(/Preferred 2026 cohort/i)).toHaveCount(0);
+  await form.getByRole("button", { name: /Continue for the programme plan/i }).click();
+  await expect(form.getByLabel("Company (optional)")).toHaveCount(0);
+  await expect(form.getByLabel("Preferred contact time")).toHaveCount(0);
+  await expect(form.getByLabel("How would you like to continue?").locator("option")).toHaveCount(3);
+  await form.getByLabel("Full name").fill("Campaign Participant");
+  await form.getByLabel("Phone / WhatsApp").fill("+60123456789");
+  await form.getByLabel("Email").fill("campaign@example.com");
+  await form.getByRole("checkbox").check();
+  await form.getByRole("button", { name: /Send my programme plan/i }).click();
+  await expect(page.getByText("CAMPAIGN-LEAD")).toBeVisible();
+  await expect(page.getByRole("link", { name: /Open the 2026 programme plan/i })).toHaveAttribute("href", "/resources/advancement-brief");
+});
+
+test("campaign routes have no automated accessibility violations", async ({ page }) => {
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
+    for (const route of ["/lp/google", "/lp/meta", "/zh/lp/google", "/zh/lp/meta"]) {
+      await goto(page, route);
+      await page.waitForTimeout(500);
+      const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
+      expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
+    }
+  }
 });

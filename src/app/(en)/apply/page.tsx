@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
 import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
-import { CERTIFICATE_POSITIONING, HRD_CORP_CLAIM, SITE, FACTS, INCLUSIONS } from "@/lib/content";
+import ProgrammeMarks from "@/components/site/ProgrammeMarks";
+import { SITE, FACTS, INCLUSIONS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/apply", {
@@ -39,14 +39,7 @@ export default function ApplyPage() {
           <div className="apply-support">
             <Reveal>
               <div className="apply-proof-list" aria-label="Programme facts">
-                <span className="chip apply-proof-chip">
-                  <Image src="/brand/cmi-logo.png" alt="CMI (UK)" width={26} height={26} />
-                  {CERTIFICATE_POSITIONING.headline}
-                </span>
-                <span className="chip apply-proof-chip">
-                  <Image src="/brand/hrdcorp-badge.png" alt="HRD Corp" width={26} height={26} />
-                  {HRD_CORP_CLAIM.label}
-                </span>
+                <ProgrammeMarks labelled />
                 <span className="mono sec-k">
                   {FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · English and Mandarin cohorts
                 </span>

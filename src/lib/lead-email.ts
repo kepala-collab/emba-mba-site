@@ -123,9 +123,9 @@ function escapeHtml(value: string): string {
 function programmeUrl(language: Language): string {
   let url: URL;
   try {
-    url = new URL(language === "zh" ? "/zh" : "/", SITE.url);
+    url = new URL(language === "zh" ? "/zh/resources/advancement-brief" : "/resources/advancement-brief", SITE.url);
   } catch {
-    url = new URL(language === "zh" ? "/zh" : "/", "https://futurereadymba.com");
+    url = new URL(language === "zh" ? "/zh/resources/advancement-brief" : "/resources/advancement-brief", "https://futurereadymba.com");
   }
   url.searchParams.set("utm_source", "transactional_email");
   url.searchParams.set("utm_medium", "email");
@@ -173,13 +173,13 @@ export function buildApplicationReceivedEmail(input: {
     const text = [
       `${personName}，您好：`,
       "",
-      "感谢您联系我们。我们已收到您提供的资料。",
+      "感谢您联系我们。我们已收到您的请求，课程资料可通过以下链接查看。",
       "",
       `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
       "",
       "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
       "",
-      `课程网站：${siteUrl}`,
+      `2026 课程资料：${siteUrl}`,
       `WhatsApp：${waUrl}`,
       "",
       "Future Ready Programme Team",
@@ -193,11 +193,11 @@ export function buildApplicationReceivedEmail(input: {
         language,
         preheader: "您的课程沟通请求已安全收到。",
         greeting: `${escapedName}，您好：`,
-        introduction: "感谢您联系我们。我们已收到您提供的资料。",
+        introduction: "感谢您联系我们。我们已收到您的请求，课程资料可通过以下链接查看。",
         nextHeading: "接下来",
         nextCopy: `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
         notice: "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
-        siteLabel: "浏览课程网站",
+        siteLabel: "查看 2026 课程资料",
         whatsAppLabel: "通过 WhatsApp 联系我们",
         siteUrl,
         waUrl,
@@ -209,13 +209,13 @@ export function buildApplicationReceivedEmail(input: {
   const text = [
     `Hello ${personName},`,
     "",
-    "Thank you for contacting us. We have received the information you submitted.",
+    "Thank you for contacting us. We received your request, and your programme plan is available below.",
     "",
     `Your preference: ${preferenceLabel}. The programme team will follow up accordingly.`,
     "",
     "This email confirms your conversation request only. It is not an offer of admission or a payment commitment.",
     "",
-    `Programme website: ${siteUrl}`,
+    `2026 programme plan: ${siteUrl}`,
     `WhatsApp: ${waUrl}`,
     "",
     "Future Ready Programme Team",
@@ -229,11 +229,11 @@ export function buildApplicationReceivedEmail(input: {
       language,
       preheader: "Your programme conversation request has been received securely.",
       greeting: `Hello ${escapedName},`,
-      introduction: "Thank you for contacting us. We have received the information you submitted.",
+      introduction: "Thank you for contacting us. We received your request, and your programme plan is available below.",
       nextHeading: "What happens next",
       nextCopy: `Your preference: ${preferenceLabel}. The programme team will follow up accordingly.`,
       notice: "This email confirms your conversation request only. It is not an offer of admission or a payment commitment.",
-      siteLabel: "Visit the programme website",
+      siteLabel: "Open the 2026 programme plan",
       whatsAppLabel: "Contact us on WhatsApp",
       siteUrl,
       waUrl,

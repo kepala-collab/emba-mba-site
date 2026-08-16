@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, type MouseEvent as ReactMouseEvent } from "react";
 import { NAV } from "@/lib/content";
-import { pairedRoute } from "@/lib/locale-routes";
+import { isCampaignRoute, pairedRoute } from "@/lib/locale-routes";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import RdrMark from "./RdrMark";
 
@@ -108,6 +108,29 @@ export default function Header() {
       window.scrollTo({ top: 0, left: 0, behavior });
     });
   };
+
+  if (isCampaignRoute(pathname)) {
+    return (
+      <header className="navbar campaign-navbar">
+        <div className="wrap in">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Right Dots Resources, home">
+            <RdrMark size={38} />
+            <span className="brand-title">
+              <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
+            </span>
+          </Link>
+          <nav className="campaign-nav-actions" aria-label={zh ? "课程资料操作" : "Programme plan actions"}>
+            <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
+              {zh ? "EN" : "中文"}
+            </Link>
+            <a href="#apply" className="navcta" data-track-event="cta_click" data-track-id="campaign_header_plan" data-track-location="campaign_header">
+              {zh ? "获取 2026 课程资料" : "Get the 2026 programme plan"}
+            </a>
+          </nav>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <>

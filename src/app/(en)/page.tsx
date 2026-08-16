@@ -170,7 +170,7 @@ export default function Home() {
           <Reveal>
             <article className="working-recognition-card">
               <div className="working-recognition-mark">
-                <Image src="/brand/cmi-logo.png" alt="Chartered Management Institute" width={150} height={50} />
+                <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute compact logo" width={96} height={66} />
               </div>
               <p className="mono sec-k">Programme recognition</p>
               <h2>A CMI-recognised programme certificate.</h2>

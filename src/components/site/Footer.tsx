@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FACTS, SITE, NAV, OPERATOR } from "@/lib/content";
 import PrivacyChoicesButton from "@/components/site/PrivacyChoicesButton";
+import { isCampaignRoute } from "@/lib/locale-routes";
 
 const LEGAL_LINKS = [
   ["/privacy", "Privacy Policy"],
@@ -20,6 +21,31 @@ export default function Footer() {
   const pathname = usePathname() || "/";
   const zh = pathname === "/zh" || pathname.startsWith("/zh/") || pathname.startsWith("/zh#");
   const year = new Date().getFullYear();
+
+  if (isCampaignRoute(pathname)) {
+    const legalLinks = zh ? LEGAL_LINKS_ZH : LEGAL_LINKS;
+    return (
+      <footer className="site campaign-footer">
+        <div className="wrap">
+          <section className="legal-footer" aria-label={zh ? "法律与合规信息" : "Legal and compliance information"}>
+            <nav className="footer-legal-links" aria-label={zh ? "法律与隐私链接" : "Legal and privacy links"}>
+              {legalLinks.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+              <PrivacyChoicesButton label={zh ? "隐私选择" : "Privacy choices"} />
+            </nav>
+            <div className="legal-copy">
+              <p>© {year} {OPERATOR.name}. {zh ? "商业注册号" : "Business Registration No."} {OPERATOR.reg}.</p>
+              <p><strong>{zh ? "课程声明：" : "Programme notice:"}</strong> {zh
+                ? `Future Ready 高管 MBA 是由 ${SITE.provider} 提供，并由 CMI 依据其专业标准批准及认可的专业发展课程；并非 MQA 认证的学术学位或受监管资格。CMI 决定会员等级、后缀称号、Chartered 评估、会员资格及费用。`
+                : `The Future Ready Executive MBA is a professional development programme delivered by ${SITE.provider} and approved and endorsed by CMI against its Professional Standard. It is not an MQA-accredited academic degree or a regulated qualification. CMI controls membership grades, post-nominals, Chartered assessment, membership and fees.`}</p>
+              <p><strong>{zh ? "资料保护：" : "Data protection:"}</strong> {zh
+                ? `个人资料由 ${OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。`
+                : `Personal data is processed by ${OPERATOR.name} in accordance with Malaysia’s Personal Data Protection Act 2010 [Act 709], as amended.`}</p>
+            </div>
+          </section>
+        </div>
+      </footer>
+    );
+  }
 
   if (zh) {
     return (

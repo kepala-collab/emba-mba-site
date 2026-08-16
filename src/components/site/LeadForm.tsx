@@ -13,6 +13,14 @@ type Lang = "en" | "zh";
 type Step = 1 | 2;
 type Status = "idle" | "sending" | "ok" | "error" | "verify";
 type ErrorType = "validation" | "rate_limit" | "service" | "network" | null;
+type LeadFormVariant = "standard" | "campaign";
+
+const CAMPAIGN_INTENTS: Record<Lang, readonly LeadIntent[]> = {
+  en: ["individual_self_funded", "employer_sponsored", "employer_evaluating"],
+  zh: ["individual_self_funded", "employer_sponsored", "mandarin"],
+};
+
+const CAMPAIGN_CONTACT_PREFERENCES = ["details_first", "whatsapp", "programme_call"] as const;
 
 const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEM-BhpyOxghbYJZ";
@@ -35,6 +43,7 @@ const T = {
     cohortOpen: "Open for enquiries",
     cohortUnknown: "I have not selected a cohort",
     continue: "Continue to contact details →",
+    campaignContinue: "Continue for the programme plan →",
     stepTwoKicker: "Your conversation",
     stepTwoTitle: "Where should the programme team respond?",
     back: "← Back",
@@ -61,6 +70,7 @@ const T = {
     helper: "We use email to confirm the request and follow the contact method you select.",
     consent: "I agree to be contacted about this programme and understand my data is handled under Malaysia’s PDPA 2010, as amended.",
     submit: "Request a conversation →", sending: "Sending securely…",
+    campaignSubmit: "Send my programme plan →",
     errors: {
       validation: "Check the highlighted information and consent, then submit again. Your entries have been kept.",
       rate_limit: "This network has reached the submission limit. Wait ten minutes, then submit the same request again.",
@@ -76,6 +86,7 @@ const T = {
     okH: (name: string) => `Thank you${name ? `, ${name}` : ""}. We’ll follow your preference.`,
     okP: "The programme team will discuss programme fit, your selected cohort, HRD Corp and scholarship options. This is a conversation, not an admission or payment commitment.",
     okRef: "Conversation reference",
+    okPlan: "Open the 2026 programme plan →",
     okWa: "Continue on WhatsApp →",
     waMsg: (name: string, cohort: string) => `Hi, I'm ${name || "interested"}. I requested a conversation about the Future Ready Executive MBA${cohort ? ` for ${cohort}` : ""}.`,
   },
@@ -96,6 +107,7 @@ const T = {
     cohortOpen: "开放咨询",
     cohortUnknown: "尚未选择班次",
     continue: "继续填写联系方式 →",
+    campaignContinue: "继续获取课程资料 →",
     stepTwoKicker: "沟通方式",
     stepTwoTitle: "课程团队应如何回复您？",
     back: "← 返回",
@@ -122,6 +134,7 @@ const T = {
     helper: "我们会通过电邮确认请求，并按您选择的方式联系。",
     consent: "我同意就本课程接受联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）及其修订处理。",
     submit: "预约沟通 →", sending: "正在安全提交…",
+    campaignSubmit: "发送课程资料给我 →",
     errors: {
       validation: "请检查资料及同意选项后再次提交。您填写的内容已保留。",
       rate_limit: "此网络已达到提交上限。请等待十分钟后再次提交同一请求。",
@@ -137,6 +150,7 @@ const T = {
     okH: (name: string) => `谢谢您${name ? `，${name}` : ""}。我们会按您的选择联系。`,
     okP: "课程团队将沟通课程适合度、所选班次、HRD Corp 及奖学金。这只是了解课程，不等于录取或付款承诺。",
     okRef: "沟通编号",
+    okPlan: "查看 2026 课程资料 →",
     okWa: "继续使用 WhatsApp →",
     waMsg: (name: string, cohort: string) => `您好，我是 ${name || "意向学员"}。我已提交 Future Ready 高管 MBA 沟通请求${cohort ? `，首选 ${cohort}` : ""}。`,
   },
@@ -158,16 +172,30 @@ export default function LeadForm({
   source = "emba-hub",
   lang = "en",
   placement = "primary",
-}: { programme?: string; source?: string; lang?: Lang; placement?: string }) {
+  variant = "standard",
+  defaultIntent,
+  intentOptions,
+}: {
+  programme?: string;
+  source?: string;
+  lang?: Lang;
+  placement?: string;
+  variant?: LeadFormVariant;
+  defaultIntent?: LeadIntent;
+  intentOptions?: readonly LeadIntent[];
+}) {
   const t = T[lang];
+  const campaign = variant === "campaign";
+  const allowedIntents = intentOptions || (campaign ? CAMPAIGN_INTENTS[lang] : undefined);
+  const initialIntent = defaultIntent || allowedIntents?.[0] || "individual_self_funded";
   const uid = useId();
   const id = (key: string) => `${uid}-${key}`;
   const [step, setStep] = useState<Step>(1);
   const [status, setStatus] = useState<Status>("idle");
   const [errorType, setErrorType] = useState<ErrorType>(null);
-  const [intent, setIntent] = useState<LeadIntent>("individual_self_funded");
+  const [intent, setIntent] = useState<LeadIntent>(initialIntent);
   const [selectedCohort, setSelectedCohort] = useState("");
-  const [contactPreference, setContactPreference] = useState("programme_call");
+  const [contactPreference, setContactPreference] = useState(campaign ? "details_first" : "programme_call");
   const [firstName, setFirstName] = useState("");
   const [leadReference, setLeadReference] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
@@ -187,13 +215,13 @@ export default function LeadForm({
     form_location: placement,
     programme,
     form_language: lang,
-    form_version: "2026.08.v2",
+    form_version: "2026.08.v3",
   };
 
   useEffect(() => {
     const context = conversionContextFromLocation();
-    setIntent(context.intent);
-    setSelectedCohort(context.cohort_key || "");
+    setIntent(!allowedIntents || allowedIntents.includes(context.intent) ? context.intent : initialIntent);
+    if (!campaign) setSelectedCohort(context.cohort_key || "");
   }, []);
 
   useEffect(() => {
@@ -414,6 +442,11 @@ export default function LeadForm({
         <h3>{t.okH(firstName)}</h3>
         <p className="fine">{t.okP}</p>
         {leadReference && <p className="lead-reference"><span>{t.okRef}</span><code>{leadReference}</code></p>}
+        {campaign && (
+          <a className="btn btn-primary" href={lang === "zh" ? "/zh/resources/advancement-brief" : "/resources/advancement-brief"} data-track-event="cta_click" data-track-id="lead_success_programme_plan" data-track-location="lead_success">
+            {t.okPlan}
+          </a>
+        )}
         <a className="btn btn-wa" href={`https://wa.me/${SITE.whatsapp}?text=${message}`} target="_blank" rel="noopener" data-track-event="contact_click" data-track-id="lead_success_whatsapp" data-track-location="lead_success" data-contact-method="whatsapp" data-contact-language={lang}>
           {t.okWa}
         </a>
@@ -424,7 +457,7 @@ export default function LeadForm({
   return (
     <form
       ref={formElement}
-      className="form lead-form-progressive"
+      className={`form lead-form-progressive${campaign ? " lead-form-campaign" : ""}`}
       onSubmit={onSubmit}
       onFocusCapture={markStarted}
       aria-busy={status === "sending"}
@@ -466,7 +499,7 @@ export default function LeadForm({
         <h3>{t.stepOneTitle}</h3>
         <p className="form-helper lead-form-intro">{t.stepOneIntro}</p>
         <div className="intent-grid" role="radiogroup" aria-label={t.stepOneTitle}>
-          {t.intents.map(([value, label, description]) => (
+          {t.intents.filter(([value]) => !allowedIntents || allowedIntents.includes(value)).map(([value, label, description]) => (
             <label className={`intent-option${intent === value ? " is-selected" : ""}`} key={value}>
               <input
                 type="radio"
@@ -486,17 +519,19 @@ export default function LeadForm({
             </label>
           ))}
         </div>
-        <div className="fld">
-          <label htmlFor={id("cohort")}>{t.cohort}</label>
-          <select id={id("cohort")} value={selectedCohort} onChange={(event) => setSelectedCohort(event.target.value)}>
-            <option value="">{t.cohortUnknown}</option>
-            {INTAKES.map((cohort) => {
-              const key = cohortKey(cohort.language, cohort.co);
-              return <option key={key} value={key}>{cohortLabel(key, lang)} · {t.cohortOpen}</option>;
-            })}
-          </select>
-        </div>
-        <button className="btn btn-primary" type="submit" style={{ width: "100%" }}>{t.continue}</button>
+        {!campaign && (
+          <div className="fld">
+            <label htmlFor={id("cohort")}>{t.cohort}</label>
+            <select id={id("cohort")} value={selectedCohort} onChange={(event) => setSelectedCohort(event.target.value)}>
+              <option value="">{t.cohortUnknown}</option>
+              {INTAKES.map((cohort) => {
+                const key = cohortKey(cohort.language, cohort.co);
+                return <option key={key} value={key}>{cohortLabel(key, lang)} · {t.cohortOpen}</option>;
+              })}
+            </select>
+          </div>
+        )}
+        <button className="btn btn-primary" type="submit" style={{ width: "100%" }}>{campaign ? t.campaignContinue : t.continue}</button>
       </fieldset>
 
       <fieldset className="lead-form-step" disabled={step !== 2 || status === "sending"} hidden={step !== 2}>
@@ -527,20 +562,27 @@ export default function LeadForm({
           <div className="fld">
             <label htmlFor={id("conversation")}>{t.conversation}</label>
             <select id={id("conversation")} name="contact_preference" value={contactPreference} onChange={(event) => setContactPreference(event.target.value)}>
-              {t.conversationOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+              {t.conversationOptions
+                .filter(([value]) => !campaign || CAMPAIGN_CONTACT_PREFERENCES.includes(value as (typeof CAMPAIGN_CONTACT_PREFERENCES)[number]))
+                .map(([value, label]) => <option key={value} value={value}>{label}</option>)}
             </select>
           </div>
+          {!campaign && (
+            <div className="fld">
+              <label htmlFor={id("contact-window")}>{t.contactWindow}</label>
+              <select id={id("contact-window")} name="preferred_contact_window" defaultValue="flexible">
+                {t.contactWindows.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+              </select>
+            </div>
+          )}
+        </div>
+        {campaign && <input type="hidden" name="preferred_contact_window" value="flexible" />}
+        {!campaign && (
           <div className="fld">
-            <label htmlFor={id("contact-window")}>{t.contactWindow}</label>
-            <select id={id("contact-window")} name="preferred_contact_window" defaultValue="flexible">
-              {t.contactWindows.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-            </select>
+            <label htmlFor={id("company")}>{t.company}</label>
+            <input id={id("company")} name="company" placeholder={t.companyPh} autoComplete="organization" autoCapitalize="words" enterKeyHint="next" />
           </div>
-        </div>
-        <div className="fld">
-          <label htmlFor={id("company")}>{t.company}</label>
-          <input id={id("company")} name="company" placeholder={t.companyPh} autoComplete="organization" autoCapitalize="words" enterKeyHint="next" />
-        </div>
+        )}
         <p className="form-helper">{t.helper}</p>
         <label className="check">
           <input type="checkbox" name="consent" value="yes" required />
@@ -554,7 +596,7 @@ export default function LeadForm({
           </div>
         )}
         <button className="btn btn-primary" type="submit" disabled={status === "sending"} style={{ width: "100%" }}>
-          {status === "sending" ? t.sending : t.submit}
+          {status === "sending" ? t.sending : campaign ? t.campaignSubmit : t.submit}
         </button>
         <div aria-live="polite" aria-atomic="true">
           {status === "error" && errorType && <p className="status err" role="alert">{t.errors[errorType]}</p>}

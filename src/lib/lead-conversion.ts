@@ -6,7 +6,7 @@ import { isContactWindow, isLeadIntent, type ContactWindow, type LeadIntent } fr
 export { isContactWindow, isLeadIntent, type ContactWindow, type LeadIntent };
 
 export const CONVERSION_SITE_ID = "future_ready_emba";
-export const LEAD_FORM_VERSION = "2026.08.v2";
+export const LEAD_FORM_VERSION = "2026.08.v3";
 export const LEAD_CONSENT_VERSION = "pdpa-2026.08";
 
 export function isUuid(value: unknown): value is string {

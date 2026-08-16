@@ -82,7 +82,7 @@ export default function ExecutiveMbaPage() {
           <Reveal delay={80}>
             <aside className="programme-summary-card" aria-label="Programme summary">
               <div className="programme-summary-brand">
-                <Image src="/brand/cmi-logo.png" alt="Chartered Management Institute" width={132} height={44} />
+                <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute compact logo" width={96} height={66} />
                 <span>Programme approved and endorsed against CMI&rsquo;s Professional Standard</span>
               </div>
               <dl>

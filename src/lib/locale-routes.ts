@@ -17,7 +17,13 @@ export const LOCALE_PAIRS: LocalePair[] = [
   { en: "/diagnostic", zh: "/zh/diagnostic" },
   { en: "/resources/advancement-brief", zh: "/zh/resources/advancement-brief" },
   { en: "/insights/advancement-question", zh: "/zh/insights/advancement-question" },
+  { en: "/lp/google", zh: "/zh/lp/google" },
+  { en: "/lp/meta", zh: "/zh/lp/meta" },
 ];
+
+export function isCampaignRoute(path: string) {
+  return path.startsWith("/lp/") || path.startsWith("/zh/lp/");
+}
 
 export function languageAlternates(path: string) {
   const pair = LOCALE_PAIRS.find((candidate) => candidate.en === path || candidate.zh === path);

@@ -7,6 +7,7 @@ import { SITE } from "@/lib/content";
 import { trackEvent } from "@/lib/analytics";
 import { getTurnstileApi as turnstileApi } from "@/lib/turnstile";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
+import { isCampaignRoute } from "@/lib/locale-routes";
 
 type Lang = "en" | "zh";
 type Message = { role: "user" | "assistant"; content: string };
@@ -329,6 +330,8 @@ export default function ProgrammeAssistant() {
   }
 
   const whatsappUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(t.waMessage)}`;
+
+  if (isCampaignRoute(pathname)) return null;
 
   return (
     <>

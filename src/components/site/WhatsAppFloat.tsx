@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/content";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
+import { isCampaignRoute } from "@/lib/locale-routes";
 
 export default function WhatsAppFloat() {
   const { persistentActionsVisible } = useFloatingUi();
@@ -34,7 +35,7 @@ export default function WhatsAppFloat() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  const suppressed = formVisible || !persistentActionsVisible;
+  const suppressed = isCampaignRoute(pathname) || formVisible || !persistentActionsVisible;
 
   return (
     <a

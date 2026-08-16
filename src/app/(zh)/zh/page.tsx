@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
+import ProgrammeMarks from "@/components/site/ProgrammeMarks";
 import { SITE, FACTS, INTAKES, CLIENTS } from "@/lib/content";
 import { HRD_CORP_CLAIM_ZH, PROGRAMME_AUDIENCE_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
@@ -83,8 +84,7 @@ export default function ZhHome() {
               </Reveal>
               <Reveal delay={190}>
                 <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", paddingTop: 24, borderTop: "1px solid var(--line)" }}>
-                  <span className="chip"><Image src="/brand/cmi-logo.png" alt="英国特许管理协会 CMI" width={82} height={28} style={{ height: 28, width: "auto" }} /></span>
-                  <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="雇主可申请 HRD Corp 资助；以 HRD Corp 审批为准" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
+                  <ProgrammeMarks lang="zh" labelled />
                   <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次课程 · ABC 报告已完成 {FACTS.cohorts} 届</span>
                 </div>
               </Reveal>

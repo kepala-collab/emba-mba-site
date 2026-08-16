@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
 import CtaSection from "@/components/site/CtaSection";
-import { SITE, FACTS, INCLUSIONS, COMPARISON, CLIENTS, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM } from "@/lib/content";
+import ProgrammeMarks from "@/components/site/ProgrammeMarks";
+import { SITE, FACTS, INCLUSIONS, COMPARISON, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/lp/google", {
@@ -25,24 +25,23 @@ export default function GoogleLandingPage() {
           <div className="lpg-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 48, alignItems: "start" }}>
             <div>
               <Reveal>
-                <div className="eyebrow"><span className="l" /><span className="mono sec-k">Recognised by CMI (UK) · HRD Corp Claimable</span></div>
+                <div className="eyebrow"><span className="l" /><span className="mono sec-k">For Malaysian managers comparing professional development options</span></div>
               </Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.6vw,3.4rem)", letterSpacing: "-.02em", lineHeight: 1.06, marginTop: 6 }}>
-                  A professional management programme in Malaysia — completed over <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>6 months</em>.
+                  Turn one live business challenge into a <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>management action plan</em>—without leaving work.
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.12rem", maxWidth: "46ch", margin: "22px 0 26px" }}>
-                  The programme is recognised by the Chartered Management Institute (UK). The first three months comprise six
-                  training days across three sessions, coaching and an applied business project leading to the programme certificate.
-                  Eligible participants then receive three months of support for CMI&rsquo;s separate <b style={{ color: "var(--ink)" }}>Chartered Manager (CMgr)</b> assessment.
+                  Complete six training days, coaching and an applied business project during months 1–3, leading to a
+                  CMI-recognised programme certificate. Eligible participants then receive three months of support for
+                  CMI&rsquo;s separate <b style={{ color: "var(--ink)" }}>Chartered Manager (CMgr)</b> assessment.
                 </p>
               </Reveal>
               <Reveal delay={150}>
                 <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
-                  <span className="chip"><Image src="/brand/cmi-logo.png" alt="Chartered Management Institute UK" width={80} height={28} style={{ height: 28, width: "auto" }} /></span>
-                  <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp Claimable" width={38} height={38} style={{ height: 38, width: "auto" }} /></span>
+                  <ProgrammeMarks labelled />
                   <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".8rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · English and Mandarin cohorts</span>
                 </div>
               </Reveal>
@@ -59,13 +58,13 @@ export default function GoogleLandingPage() {
             </div>
 
             {/* FORM CARD */}
-            <div className="lpg-form">
+            <div className="lpg-form" id="apply">
               <Reveal delay={120}>
                 <div className="card" style={{ padding: 26, background: "linear-gradient(180deg,var(--surface),var(--bg-2))", border: "1px solid var(--line-2)" }}>
-                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Programme enquiry · No payment required</p>
-                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.25 }}>Discuss eligibility and the next intake</h2>
-                  <p className="fine" style={{ marginBottom: 18 }}>Choose how the programme team should contact you. The team will explain fit, published dates, the Malaysian scholarship and the employer-led HRD Corp process.</p>
-                  <LeadForm programme="Executive MBA" source={SOURCE} placement="hero" />
+                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Free 2026 programme plan · No payment required</p>
+                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.25 }}>Get the programme, schedule and scholarship plan</h2>
+                  <p className="fine" style={{ marginBottom: 18 }}>Receive the concise guide and choose whether you want details first, WhatsApp or a short fit call. No enrolment commitment.</p>
+                  <LeadForm programme="Executive MBA" source={SOURCE} placement="hero" variant="campaign" />
                 </div>
               </Reveal>
             </div>
@@ -73,15 +72,26 @@ export default function GoogleLandingPage() {
         </div>
       </section>
 
-      {/* TRUST MARQUEE */}
-      <div style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", padding: "22px 0", background: "var(--bg-2)" }}>
-        <div className="wrap"><p className="mono center" style={{ color: "var(--muted)", marginBottom: 14, fontSize: ".78rem" }}>Organisations listed in ABC&rsquo;s company profile; inclusion does not imply endorsement</p></div>
-        <div style={{ display: "flex", gap: 30, flexWrap: "wrap", justifyContent: "center", padding: "0 24px" }}>
-          {CLIENTS.slice(0, 9).map((c) => (
-            <span key={c} style={{ fontFamily: "var(--font-fraunces)", fontSize: "1rem", color: "var(--ink-2)", opacity: 0.7 }}>{c}</span>
+      {/* FACTUAL PROOF — testimonial assets will be added only after permission and verification. */}
+      <div className="campaign-fact-band">
+        <div className="wrap campaign-fact-grid">
+          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.priceNet, "Malaysian participant fee after the published scholarship"]].map(([value, label]) => (
+            <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
       </div>
+
+      <section className="section campaign-method">
+        <div className="wrap">
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How the work becomes useful</span></div></Reveal>
+          <Reveal><h2 className="sec-h">A business issue enters. A structured action plan leaves.</h2></Reveal>
+          <div className="campaign-path mt-m">
+            {[["01", "Bring a current decision", "Start with a management issue that matters in your role or business."], ["02", "Apply the frameworks", "Use F.A.S.T. and the programme’s decision disciplines to test assumptions and options."], ["03", "Build the action plan", "Turn the analysis into a faculty-reviewed applied business project."], ["04", "Reuse the method", "Leave with a repeatable process for future cross-functional decisions."]].map(([number, title, copy]) => (
+              <Reveal key={number}><article><span className="mono">{number}</span><h3>{title}</h3><p>{copy}</p></article></Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* WHAT YOU GET */}
       <section className="section">
@@ -123,8 +133,11 @@ export default function GoogleLandingPage() {
       <CtaSection
         programme="Executive MBA"
         source={SOURCE}
-        heading="Discuss programme fit before you apply."
-        sub={`Request a programme-fit conversation. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process. ${HRD_CORP_CLAIM.responsibility}`}
+        heading="Get the 2026 programme and scholarship plan."
+        sub={`Receive the guide first, then choose whether you want WhatsApp or a short fit call. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process. ${HRD_CORP_CLAIM.responsibility}`}
+        formVariant="campaign"
+        sectionId="request-plan-again"
+        steps={["Receive the concise programme guide", "Review dates, fee and programme structure", "Choose your next step after you have the facts"]}
       />
 
       <section className="section" style={{ paddingTop: 0 }}>
@@ -136,7 +149,6 @@ export default function GoogleLandingPage() {
       <style>{`
         @media(max-width:900px){
           .lpg-grid{grid-template-columns:1fr!important;gap:30px!important}
-          .lpg-form{order:-1}
           .lpg-cmp{grid-template-columns:1fr!important}
         }
       `}</style>

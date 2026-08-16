@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { SITE, FACTS, THINKING_EDGE, INCLUSIONS, CLIENTS, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM } from "@/lib/content";
+import ProgrammeMarks from "@/components/site/ProgrammeMarks";
+import { SITE, FACTS, THINKING_EDGE, INCLUSIONS, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/lp/meta", {
@@ -25,26 +25,36 @@ export default function MetaLandingPage() {
           </Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.3rem,5vw,3.6rem)", letterSpacing: "-.02em", lineHeight: 1.08, margin: "10px auto 0", maxWidth: "18ch" }}>
-              Develop a repeatable way to frame complex <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>business decisions</em>.
+              The next leadership role will demand more than <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>experience alone</em>.
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.16rem", maxWidth: "50ch", margin: "24px auto 30px" }}>
-              A six-month programme: three months of monthly sessions leading to the CMI-recognised Executive MBA certificate, followed by three months of Chartered Manager assessment preparation for eligible participants—while you continue working.
+              Build a repeatable way to frame complex business decisions, test options and produce a faculty-reviewed action plan. The six-month format is designed around working managers.
             </p>
           </Reveal>
           <Reveal delay={160}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 26 }}>
-              <a href="#apply" className="btn btn-primary">Discuss programme fit →</a>
+              <a href="#apply" className="btn btn-primary">Get the 2026 programme plan →</a>
             </div>
           </Reveal>
           <Reveal delay={200}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
-              <span className="chip"><Image src="/brand/cmi-logo.png" alt="CMI (UK)" width={78} height={26} style={{ height: 26, width: "auto" }} /></span>
-              <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp Claimable" width={36} height={36} style={{ height: 36, width: "auto" }} /></span>
+              <ProgrammeMarks centered labelled />
               <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".08em", fontSize: ".78rem" }}>{FACTS.trainingDays} training days · {FACTS.liveSessions} sessions · English and Mandarin cohorts</span>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section campaign-shift" style={{ background: "var(--bg-2)" }}>
+        <div className="wrap">
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The practical shift</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Move from experience-led judgement to a decision process you can explain and repeat.</h2></Reveal>
+          <div className="campaign-outcome-grid mt-m">
+            <article><span className="mono">BEFORE</span><h3>Complex issues cross functions.</h3><p>Decisions rely on personal experience, assumptions stay untested and the reasoning is difficult to communicate.</p></article>
+            <article><span className="mono acc">AFTER</span><h3>The problem, options and action are visible.</h3><p>You use a structured method to define the issue, compare options and build a faculty-reviewed action plan around a live business need.</p></article>
+          </div>
         </div>
       </section>
 
@@ -67,12 +77,11 @@ export default function MetaLandingPage() {
         </div>
       </section>
 
-      {/* PROOF STRIP */}
-      <div style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", padding: "22px 0", background: "var(--bg-2)" }}>
-        <div className="wrap"><p className="mono center" style={{ color: "var(--muted)", marginBottom: 14, fontSize: ".78rem" }}>Organisations listed in ABC&rsquo;s company profile; inclusion does not imply endorsement</p></div>
-        <div style={{ display: "flex", gap: 30, flexWrap: "wrap", justifyContent: "center", padding: "0 24px" }}>
-          {CLIENTS.slice(0, 9).map((c) => (
-            <span key={c} style={{ fontFamily: "var(--font-fraunces)", fontSize: "1rem", color: "var(--ink-2)", opacity: 0.7 }}>{c}</span>
+      {/* Factual proof only; participant stories will be added after permission and verification. */}
+      <div className="campaign-fact-band">
+        <div className="wrap campaign-fact-grid">
+          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.priceNet, "Malaysian participant fee after the published scholarship"]].map(([value, label]) => (
+            <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
       </div>
@@ -82,16 +91,16 @@ export default function MetaLandingPage() {
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme inclusions</span></div></Reveal>
           <Reveal><h2 className="sec-h">Programme delivery, coaching, tools and assessment.</h2></Reveal>
-          <ul style={{ listStyle: "none", padding: 0, margin: "26px 0 0", display: "grid", gap: 14 }}>
+          <div role="list" style={{ padding: 0, margin: "26px 0 0", display: "grid", gap: 14 }}>
             {INCLUSIONS.slice(0, 7).map((it) => (
               <Reveal key={it.b}>
-                <li style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div role="listitem" style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <span className="acc" style={{ marginTop: 3, fontWeight: 700 }}>→</span>
                   <span><b style={{ color: "var(--ink)" }}>{it.b}.</b> <span style={{ color: "var(--ink-2)" }}>{it.s}</span></span>
-                </li>
+                </div>
               </Reveal>
             ))}
-          </ul>
+          </div>
           <Reveal className="mt-s">
             <p className="fine" style={{ marginTop: 26 }}>{FACTS.priceStd} standard → <b style={{ color: "var(--ink)" }}>{FACTS.priceNet}</b> for Malaysian participants after the {FACTS.scholarshipAmt} {FACTS.scholarshipProvider} scholarship. {HRD_CORP_CLAIM.short} Instalment options are listed on the Fees page.</p>
           </Reveal>
@@ -101,8 +110,10 @@ export default function MetaLandingPage() {
       <CtaSection
         programme="Executive MBA"
         source={SOURCE}
-        heading="Discuss programme fit and the next cohort."
-        sub="Request a programme-fit conversation. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process. An enquiry is not an admission or payment commitment."
+        heading="Get the 2026 programme and scholarship plan."
+        sub="Receive the guide first, then choose whether you want details by email, WhatsApp or a short fit call. The team will explain the published intake, Malaysian participant fee and employer-led HRD Corp process."
+        formVariant="campaign"
+        steps={["Receive the concise programme guide", "Review dates, fee and programme structure", "Choose your next step after you have the facts"]}
       />
 
       <section className="section" style={{ paddingTop: 0 }}>

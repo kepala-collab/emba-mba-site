@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
-import { SITE, FACTS, CLIENTS } from "@/lib/content";
+import ProgrammeMarks from "@/components/site/ProgrammeMarks";
+import { SITE, FACTS } from "@/lib/content";
 import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
@@ -41,23 +41,22 @@ export default function ZhMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">面向承担跨职能决策责任的在职领导者</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              建立一套可重复使用的方法，处理<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>复杂商业决策</em>。
+              下一阶段的领导责任，需要的不只是<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>工作经验</em>。
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              由英国 CMI 认可的六个月专业管理课程：首三个月以每月一个周末完成课程证书阶段；随后三个月为符合条件者准备 CMI 特许经理人评估。您可以继续工作，并完成一份针对自己企业议题的行动方案。
+              建立一套可重复使用的方法，界定复杂商业问题、检验选择，并完成一份由导师评审的企业行动方案。六个月课程为在职管理者而设。
             </p>
           </Reveal>
           <Reveal delay={160}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 26 }}>
-              <a href="#apply" className="btn btn-primary">咨询课程适合度 →</a>
+              <a href="#apply" className="btn btn-primary">获取 2026 课程资料 →</a>
             </div>
           </Reveal>
           <Reveal delay={200}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
-              <span className="chip"><Image src="/brand/cmi-logo.png" alt="CMI（英国）" width={78} height={26} style={{ height: 26, width: "auto" }} /></span>
-              <span className="chip"><Image src="/brand/hrdcorp-badge.png" alt="HRD Corp 可索赔" width={36} height={36} style={{ height: 36, width: "auto" }} /></span>
+              <ProgrammeMarks lang="zh" centered labelled />
               <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次课程 · ABC 报告已完成 {FACTS.cohorts} 届</span>
             </div>
           </Reveal>
@@ -82,11 +81,10 @@ export default function ZhMetaLP() {
         </div>
       </section>
 
-      <div style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", padding: "22px 0", background: "var(--bg-2)" }}>
-        <div className="wrap"><p className="mono center" style={{ color: "var(--muted)", marginBottom: 14, fontSize: ".78rem" }}>以下机构列于 ABC 的公司简介；列名不代表对本网站或课程作出认可</p></div>
-        <div style={{ display: "flex", gap: 30, flexWrap: "wrap", justifyContent: "center", padding: "0 24px" }}>
-          {CLIENTS.slice(0, 9).map((c) => (
-            <span key={c} style={{ fontFamily: "var(--font-fraunces)", fontSize: "1rem", color: "var(--ink-2)", opacity: 0.7 }}>{c}</span>
+      <div className="campaign-fact-band">
+        <div className="wrap campaign-fact-grid">
+          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.priceNet, "奖学金后的马来西亚学员费用"]].map(([value, label]) => (
+            <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
       </div>
@@ -95,27 +93,27 @@ export default function ZhMetaLP() {
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">课程包含</span></div></Reveal>
           <Reveal><h2 className="sec-h">课程教学、辅导、工具及评估项目。</h2></Reveal>
-          <ul style={{ listStyle: "none", padding: 0, margin: "26px 0 0", display: "grid", gap: 14 }}>
+          <div role="list" style={{ padding: 0, margin: "26px 0 0", display: "grid", gap: 14 }}>
             {WALK.map((w) => (
               <Reveal key={w}>
-                <li style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div role="listitem" style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <span className="acc" style={{ marginTop: 3, fontWeight: 700 }}>→</span>
                   <span style={{ color: "var(--ink-2)", fontSize: "1.02rem" }}>{w}</span>
-                </li>
+                </div>
               </Reveal>
             ))}
-          </ul>
+          </div>
           <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>{FACTS.priceStd} 标准费用 → 马来西亚学员实付 <b style={{ color: "var(--ink)" }}>{FACTS.priceNet}</b>（LIFE Innoversity 奖学金 {FACTS.scholarshipAmt}）。{HRD_CORP_CLAIM_ZH} 分期付款方案列于费用页面。</p></Reveal>
         </div>
       </section>
 
       <section id="apply" className="section">
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
-          <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>了解课程适合度与下一期开课。</h2></Reveal>
-          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>预约课程匹配沟通。课程团队会说明已公布的开课日期、马来西亚学员费用及雇主申请 HRD Corp 的流程。咨询不等于录取或付款承诺。</p></Reveal>
+          <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>获取 2026 课程及奖学金资料。</h2></Reveal>
+          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>先收取简明资料，再选择电邮、WhatsApp 或简短课程匹配通话。课程团队会说明已公布的开课日期、马来西亚学员费用及雇主申请 HRD Corp 的流程。</p></Reveal>
           <Reveal delay={80}>
             <div className="card" style={{ padding: 26, maxWidth: 520, margin: "26px auto 0", textAlign: "left" }}>
-              <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" />
+              <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" variant="campaign" />
             </div>
           </Reveal>
           <Reveal><p className="fine" style={{ marginTop: 20 }}>{SITE.director} · 课程协调员 · {SITE.phone} · {SITE.email}</p></Reveal>
