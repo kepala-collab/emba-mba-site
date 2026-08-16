@@ -49,8 +49,8 @@ if (!sharedMaxAge || sharedMaxAge > 300) failures.push(`HTML shared cache TTL is
 
 if (failures.length) {
   console.error(`Public release verification failed:\n${failures.join("\n")}`);
-  process.exit(1);
+  process.exitCode = 1;
+} else {
+  const cspMode = completeHeaderCsp ? "response-header CSP" : "HTML CSP fallback + X-Frame-Options DENY";
+  console.log(`Verified ${siteUrl}: release ${release}, ${cspMode}, HTML s-maxage=${sharedMaxAge}.`);
 }
-
-const cspMode = completeHeaderCsp ? "response-header CSP" : "HTML CSP fallback + X-Frame-Options DENY";
-console.log(`Verified ${siteUrl}: release ${release}, ${cspMode}, HTML s-maxage=${sharedMaxAge}.`);

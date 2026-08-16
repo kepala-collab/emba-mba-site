@@ -21,6 +21,15 @@ function collect(path) {
     .flatMap((name) => collect(resolve(path, name)));
 }
 
+export function canonicalFileContent(content) {
+  if (content.includes(0)) return content;
+
+  const text = content.toString("utf8");
+  if (!Buffer.from(text, "utf8").equals(content)) return content;
+
+  return Buffer.from(text.replaceAll("\r\n", "\n"), "utf8");
+}
+
 export function computeReleaseFingerprint(root = process.cwd()) {
   const hash = createHash("sha256");
   const files = INPUTS.flatMap((entry) => collect(resolve(root, entry)))
@@ -29,7 +38,7 @@ export function computeReleaseFingerprint(root = process.cwd()) {
   for (const file of files) {
     hash.update(relative(root, file).replaceAll("\\", "/"));
     hash.update("\0");
-    hash.update(readFileSync(file));
+    hash.update(canonicalFileContent(readFileSync(file)));
     hash.update("\0");
   }
 
