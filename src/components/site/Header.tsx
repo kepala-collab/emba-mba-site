@@ -113,7 +113,7 @@ export default function Header() {
     return (
       <header className="navbar campaign-navbar">
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Right Dots Resources, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Rocket eMBA, home">
             <RdrMark size={38} />
             <span className="brand-title">
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
@@ -136,7 +136,7 @@ export default function Header() {
     <>
       <header className={`navbar${menuOpen ? " menu-open" : ""}`}>
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Right Dots Resources, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA — Rocket eMBA, home">
             <RdrMark size={38} />
             <span className="brand-title">
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>

@@ -76,6 +76,24 @@ export default function FacultyPage() {
           </div>
 
           <Reveal className="mt-m">
+            <section aria-labelledby="faculty-community-title" style={{ borderTop: "1px solid var(--line)", paddingTop: "clamp(28px,4vw,48px)" }}>
+              <div className="reading-section-head">
+                <p className="mono sec-k">Programme community</p>
+                <h2 id="faculty-community-title" className="sec-h">Faculty, professional community and programme partners.</h2>
+                <p>An event photograph supplied by the programme team.</p>
+              </div>
+              <figure style={{ margin: "24px 0 0" }}>
+                <div style={{ overflow: "hidden", borderRadius: 18, border: "1px solid var(--line)", background: "var(--bg-2)" }}>
+                  <Image src="/brand/community/faculty-event.jpeg" alt="Faculty and programme community members at a professional event" width={2560} height={1440} sizes="(max-width: 900px) 100vw, 1120px" style={{ width: "100%", height: "auto", display: "block" }} />
+                </div>
+                <figcaption className="fine" style={{ marginTop: 10, maxWidth: "92ch" }}>
+                  From left: Allan Gan, Programme Director; Ms Goldie Polycarp, CMI (UK); Prof Nagarajah Lee Hun Leong, Senate Chairman, Wilmington Metropolitan University; Dr Xavier Johnson, Founding Director; Prof Emeritus Datuk Seri Dr Mohamed Mustafa Ishak, Regional Board Chairman of the Chartered Management Institute Malaysia; Ms Fara Adibah, CMI (UK); and Ir Dr Jonas Anthony, Faculty Director. Thank you to CMI (UK).
+                </figcaption>
+              </figure>
+            </section>
+          </Reveal>
+
+          <Reveal className="mt-m">
             <p className="fine" style={{ maxWidth: "64ch" }}>
               The programme includes one-to-one executive coaching and may include guest mentors.
               Faculty are drawn from {SITE.provider}&rsquo;s panel of consultants. {DELIVERY_CONTROL.faculty}

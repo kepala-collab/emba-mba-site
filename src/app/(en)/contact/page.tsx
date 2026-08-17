@@ -34,7 +34,7 @@ export default function ContactPage() {
                 <div>
                   <p className="mono sec-k" style={{ marginBottom: 4 }}>Programme Coordinator</p>
                   <p style={{ margin: 0, color: "var(--ink)", fontFamily: "var(--font-fraunces)", fontSize: "1.15rem" }}>{SITE.director}</p>
-                  <p style={{ margin: "2px 0 0", color: "var(--muted)", fontSize: ".9rem" }}>{SITE.provider}</p>
+                  <p style={{ margin: "2px 0 0", color: "var(--muted)", fontSize: ".9rem" }}>Future Ready Executive MBA</p>
                 </div>
                 <div>
                   <p className="mono sec-k" style={{ marginBottom: 6 }}>Direct lines</p>

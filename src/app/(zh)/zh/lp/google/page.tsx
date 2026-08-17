@@ -42,12 +42,12 @@ export default function ZhGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">为正在比较专业发展课程的马来西亚管理者而设</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  把一项真实商业挑战，转化为一份<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>管理行动方案</em>，同时继续工作。
+                  三个月完成获 CMI（英国）认可的 Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>课程证书阶段。</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.1rem", maxWidth: "44ch", margin: "22px 0 26px", lineHeight: 1.9 }}>
-                  首三个月完成三次课程、企业项目及获 CMI 认可的 Executive MBA 课程证书阶段；随后三个月为符合条件者准备 <b style={{ color: "var(--ink)" }}>特许经理人（CMgr MCMI）</b> 评估。CMgr 仅在通过 CMI 评估后授予。
+                  在继续工作的同时完成三次课程、企业项目及获 CMI 认可的课程证书阶段。随后三个月为符合条件者准备 <b style={{ color: "var(--ink)" }}>特许经理人（CMgr MCMI）</b> 独立评估；CMgr 仅在通过 CMI 评估后授予。
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -58,7 +58,7 @@ export default function ZhGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 个月", "课程证书 + CMgr 评估准备"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"], ["开课前", "雇主提交 HRD Corp 申请"]].map(([b, s]) => (
+                  {[["3 个月", "获 CMI 认可的课程证书阶段"], ["随后 3 个月", "符合条件者的 CMgr 评估准备"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>

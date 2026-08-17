@@ -14,7 +14,6 @@ type Step = 1 | 2;
 type Status = "idle" | "sending" | "ok" | "error" | "verify";
 type ErrorType = "validation" | "rate_limit" | "service" | "network" | null;
 type LeadFormVariant = "standard" | "campaign";
-type CampaignContactChannel = "email" | "whatsapp";
 
 const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEM-BhpyOxghbYJZ";
@@ -44,12 +43,7 @@ const T = {
     campaignContinue: "Continue for the programme guide →",
     campaignKicker: "Free working manager guide",
     campaignTitle: "Send me the 2026 programme guide.",
-    campaignIntro: "Includes the six-month structure, published dates, programme fee, scholarship criteria and a plain-English explanation of the CMI recognition.",
-    campaignChannel: "Choose one contact method",
-    campaignChannels: [
-      ["email", "Email", "Receive a confirmation by email; the guide opens after submission."],
-      ["whatsapp", "WhatsApp", "Use my WhatsApp number; the guide opens after submission."],
-    ] as const,
+    campaignIntro: "Includes the three-month CMI-recognised programme certificate stage, the following Chartered Manager preparation stage, published dates, programme fee and scholarship criteria.",
     stepTwoKicker: "Your contact details",
     stepTwoTitle: "Where should the programme team respond?",
     back: "← Back",
@@ -123,12 +117,7 @@ const T = {
     campaignContinue: "继续获取课程指南 →",
     campaignKicker: "免费在职经理指南",
     campaignTitle: "发送 2026 课程指南给我。",
-    campaignIntro: "内容包括六个月安排、已公布日期、课程费用、奖学金条件，以及对 CMI 认可的清晰说明。",
-    campaignChannel: "选择一种联系方式",
-    campaignChannels: [
-      ["email", "电邮", "通过电邮接收确认；提交后即可打开指南。"],
-      ["whatsapp", "WhatsApp", "使用我的 WhatsApp 号码；提交后即可打开指南。"],
-    ] as const,
+    campaignIntro: "内容包括三个月获 CMI 认可的课程证书阶段、随后 Chartered Manager 评估准备阶段、已公布日期、课程费用及奖学金条件。",
     stepTwoKicker: "沟通方式",
     stepTwoTitle: "课程团队应如何回复您？",
     back: "← 返回",
@@ -227,7 +216,6 @@ export default function LeadForm({
   const [intent, setIntent] = useState<LeadIntent>(initialIntent);
   const [selectedCohort, setSelectedCohort] = useState("");
   const [contactPreference, setContactPreference] = useState(campaign ? "details_first" : "programme_call");
-  const [campaignContactChannel, setCampaignContactChannel] = useState<CampaignContactChannel>("email");
   const [firstName, setFirstName] = useState("");
   const [leadReference, setLeadReference] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
@@ -615,39 +603,11 @@ export default function LeadForm({
           <input ref={firstContactField} id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" autoCapitalize="words" enterKeyHint="next" required />
         </div>
         {campaign ? (
-          <>
-            <div className="campaign-contact-choice" role="radiogroup" aria-labelledby={id("campaign-channel-label")}>
-              <p id={id("campaign-channel-label")}>{t.campaignChannel}</p>
-              <div className="campaign-contact-options">
-                {t.campaignChannels.map(([value, label, description]) => (
-                  <label className={campaignContactChannel === value ? "is-selected" : undefined} key={value}>
-                    <input
-                      type="radio"
-                      name="campaign_contact_channel"
-                      value={value}
-                      checked={campaignContactChannel === value}
-                      onChange={() => {
-                        setCampaignContactChannel(value);
-                        setContactPreference(value === "email" ? "details_first" : "whatsapp");
-                      }}
-                    />
-                    <span><strong>{label}</strong><small>{description}</small></span>
-                  </label>
-                ))}
-              </div>
-            </div>
-            {campaignContactChannel === "email" ? (
-              <div className="fld">
-                <label htmlFor={id("email")}>{t.email}</label>
-                <input id={id("email")} name="email" type="email" inputMode="email" placeholder={t.emailPh} autoComplete="email" enterKeyHint="done" required />
-              </div>
-            ) : (
-              <div className="fld">
-                <label htmlFor={id("phone")}>{t.phone}</label>
-                <input id={id("phone")} name="phone" type="tel" inputMode="tel" placeholder="+60" autoComplete="tel" enterKeyHint="done" required />
-              </div>
-            )}
-          </>
+          <div className="fld">
+            <label htmlFor={id("email")}>{t.email}</label>
+            <input id={id("email")} name="email" type="email" inputMode="email" placeholder={t.emailPh} autoComplete="email" enterKeyHint="done" required />
+            <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : "Your private decision guide will be sent automatically to this email address after submission."}</p>
+          </div>
         ) : (
           <>
             <div className="two">

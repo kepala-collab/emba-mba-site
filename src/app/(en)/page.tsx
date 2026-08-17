@@ -9,7 +9,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/", {
   title: "Executive MBA Malaysia for Working Managers",
   description:
-    "Build sharper management judgement through a six-month professional programme for working leaders, with an applied business project and CMI-recognised programme certificate.",
+    "Complete the CMI-recognised Executive MBA programme certificate stage in three months while continuing to work. Eligible participants then receive Chartered Manager assessment preparation support.",
   alternates: {
     canonical: "/",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -81,12 +81,12 @@ export default function Home() {
             </Reveal>
             <Reveal delay={50}>
               <h1>
-                Make better business decisions <em>without stepping away from work.</em>
+                Complete the CMI-recognised Executive MBA programme certificate stage <em>in 3 months.</em>
               </h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                Bring one current business challenge. Through six facilitated training days, coaching and an applied project, build an action plan you can explain and put into practice.
+                Continue working while you complete six facilitated training days, coaching and an applied project. The following three months provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
               </p>
             </Reveal>
             <Reveal delay={140}>

@@ -29,13 +29,12 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.6vw,3.4rem)", letterSpacing: "-.02em", lineHeight: 1.06, marginTop: 6 }}>
-                  Turn one live business challenge into a <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>management action plan</em>—without leaving work.
+                  Complete the CMI-recognised Executive MBA programme certificate stage <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>in 3 months.</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.12rem", maxWidth: "46ch", margin: "22px 0 26px" }}>
-                  Bring one current business challenge. Through six facilitated training days, coaching and an applied
-                  project, build an action plan you can explain and put into practice while you continue working.
+                  Continue working while you complete six facilitated training days, coaching and an applied project. The following three months provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -46,7 +45,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 months", "Certificate + CMgr assessment preparation"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"], ["Before training", "Employer submits the HRD Corp application"]].map(([b, s]) => (
+                  {[["3 months", "CMI-recognised programme certificate stage"], ["Then 3 months", "CMgr assessment preparation for eligible participants"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>

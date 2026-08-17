@@ -11,6 +11,7 @@ export const SITE = {
   phone: "+60 12-981 8533",
   email: "support@futurereadymba.com",
   director: "Rostam Affandi Ahmad",
+  principalTitle: "Chairman & Principal, Rocket eMBA",
   providerUrl: process.env.NEXT_PUBLIC_PROVIDER_URL || "",
   providerLinkedIn: process.env.NEXT_PUBLIC_PROVIDER_LINKEDIN || "",
 };

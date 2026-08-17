@@ -1,4 +1,6 @@
 import { randomUUID } from "node:crypto";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import nodemailer, { type Transporter } from "nodemailer";
 import type { Pool, RowDataPacket } from "mysql2/promise";
 import { SITE } from "@/lib/content";
@@ -12,6 +14,7 @@ const DEFAULT_SMTP_HOST = "smtp.hostinger.com";
 const DEFAULT_SMTP_PORT = 465;
 const DEFAULT_FROM_NAME = "Future Ready Programme Team";
 const DEFAULT_REPLY_TO = "support@futurereadymba.com";
+const DECISION_GUIDE_FILENAME = "future-ready-decision-guide.pdf";
 
 type Language = "en" | "zh";
 
@@ -134,6 +137,16 @@ function programmeUrl(language: Language): string {
   return url.toString();
 }
 
+function decisionGuideAttachment() {
+  const path = join(process.cwd(), "public", "downloads", DECISION_GUIDE_FILENAME);
+  if (!existsSync(path)) return [];
+  return [{
+    filename: "Future-Ready-Executive-MBA-Decision-Guide.pdf",
+    path,
+    contentType: "application/pdf",
+  }];
+}
+
 function whatsAppUrl(language: Language): string {
   const message = language === "zh"
     ? "您好，我已提交课程沟通请求，希望与课程团队进一步了解。"
@@ -173,7 +186,7 @@ export function buildApplicationReceivedEmail(input: {
     const text = [
       `${personName}，您好：`,
       "",
-      "感谢您联系我们。我们已收到您的请求，课程资料可通过以下链接查看。",
+      "感谢您联系我们。我们已收到您的请求；《课程决策指南》已随邮件附上，课程资料也可通过以下链接查看。",
       "",
       `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
       "",
@@ -193,7 +206,7 @@ export function buildApplicationReceivedEmail(input: {
         language,
         preheader: "您的课程沟通请求已安全收到。",
         greeting: `${escapedName}，您好：`,
-        introduction: "感谢您联系我们。我们已收到您的请求，课程资料可通过以下链接查看。",
+        introduction: "感谢您联系我们。我们已收到您的请求；《课程决策指南》已随邮件附上，课程资料也可通过以下链接查看。",
         nextHeading: "接下来",
         nextCopy: `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
         notice: "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
@@ -209,7 +222,7 @@ export function buildApplicationReceivedEmail(input: {
   const text = [
     `Hello ${personName},`,
     "",
-    "Thank you for contacting us. We received your request, and your programme plan is available below.",
+    "Thank you for contacting us. We received your request. Your private decision guide is attached, and your programme plan is available below.",
     "",
     `Your preference: ${preferenceLabel}. The programme team will follow up accordingly.`,
     "",
@@ -229,7 +242,7 @@ export function buildApplicationReceivedEmail(input: {
       language,
       preheader: "Your programme conversation request has been received securely.",
       greeting: `Hello ${escapedName},`,
-      introduction: "Thank you for contacting us. We received your request, and your programme plan is available below.",
+      introduction: "Thank you for contacting us. We received your request. Your private decision guide is attached, and your programme plan is available below.",
       nextHeading: "What happens next",
       nextCopy: `Your preference: ${preferenceLabel}. The programme team will follow up accordingly.`,
       notice: "This email confirms your conversation request only. It is not an offer of admission or a payment commitment.",
@@ -434,6 +447,7 @@ async function sendOutboxRow(
     subject: email.subject,
     text: email.text,
     html: email.html,
+    attachments: decisionGuideAttachment(),
     messageId: row.message_id,
     headers: {
       "Auto-Submitted": "auto-replied",

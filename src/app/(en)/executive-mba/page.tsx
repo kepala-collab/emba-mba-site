@@ -22,7 +22,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Six-Month Executive MBA Programme Malaysia",
   description:
-    "See who the Future Ready Executive MBA is for, what happens over six months, what you study, the CMI recognition and the Malaysian participant fee.",
+    "Complete the CMI-recognised Executive MBA programme certificate stage in three months, followed by three months of Chartered Manager assessment preparation support for eligible participants.",
 });
 
 const courseSchema = {
@@ -59,17 +59,17 @@ export default function ExecutiveMbaPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready Executive MBA</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>A six-month management programme for experienced working leaders.</h1>
+              <h1>Complete the CMI-recognised programme certificate stage in 3 months, while you continue working.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="programme-overview-lede">
-                Learn practical ways to analyse business problems, make strategic decisions and lead implementation. Apply the work to a real project while continuing in your current role.
+                The full programme runs for six months. Months one to three cover the Executive MBA programme certificate stage; months four to six provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
               </p>
             </Reveal>
             <Reveal delay={120}>
               <div className="programme-overview-actions">
                 <Link href="/apply" className="btn btn-primary">Ask about programme fit <span aria-hidden="true">→</span></Link>
-                <Link href="#structure" className="btn btn-ghost">See the six-month structure</Link>
+                <Link href="#structure" className="btn btn-ghost">See the two-stage structure</Link>
               </div>
             </Reveal>
             <Reveal delay={150}>

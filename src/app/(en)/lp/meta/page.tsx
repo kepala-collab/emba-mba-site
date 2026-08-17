@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/lp/meta", {
   title: "A Practical Management Programme for Working Leaders",
   description:
-    "Bring a current business challenge and build a structured management action plan through six facilitated training days, coaching and an applied project.",
+    "Complete the CMI-recognised Executive MBA programme certificate stage in three months while continuing to work, then receive Chartered Manager assessment preparation support if eligible.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
 });
@@ -37,16 +37,17 @@ export default function MetaLandingPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">For experienced Malaysian managers</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>Make better business decisions without stepping away from work.</h1>
+              <h1>Complete the CMI-recognised Executive MBA programme certificate stage in 3 months.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="cold-funnel-lede">
-                Bring one current business challenge. Through six facilitated training days, coaching and an applied project, build an action plan you can explain and put into practice.
+                Continue working while you complete six facilitated training days, coaching and an applied project. The following three months provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
               </p>
             </Reveal>
             <Reveal delay={130}>
               <ul className="cold-funnel-proof-list" aria-label="Programme highlights">
-                <li>Six-month professional development programme</li>
+                <li>Three-month CMI-recognised programme certificate stage</li>
+                <li>Three further months of CMgr assessment preparation for eligible participants</li>
                 <li>Designed around full-time work</li>
                 <li>No traditional examination or thesis</li>
               </ul>

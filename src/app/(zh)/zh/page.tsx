@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/zh", {
   title: "六个月高管 MBA · 为在职管理者设计",
   description:
-    "通过真实企业项目提升管理判断力。六个月专业发展课程包括三个集中课程、12 个管理框架及获 CMI 认可的课程证书。",
+    "三个月完成获 CMI（英国）认可的 Executive MBA 课程证书阶段，并可继续工作；符合条件者随后获得 Chartered Manager 独立评估准备支持。",
   alternates: {
     canonical: "/zh",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -51,11 +51,11 @@ export default function ZhHome() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready 高管 MBA · 为在职管理者设计</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>企业最终由真正准备好面对<em>未来</em>的人带领。</h1>
+              <h1>三个月完成获 CMI（英国）认可的 Executive MBA <em>课程证书阶段。</em></h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                以一个真实企业课题训练问题分析、管理判断及执行规划。课程为期六个月，并按在职管理者的工作安排设计。
+                在继续工作的同时，完成六个培训日、辅导及企业应用项目。随后三个月为符合条件的学员提供 CMI 独立 Chartered Manager 评估准备支持。
               </p>
             </Reveal>
             <Reveal delay={140}>
