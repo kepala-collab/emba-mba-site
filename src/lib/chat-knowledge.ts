@@ -28,7 +28,7 @@ VERIFIED PROGRAMME FACTS
 - Programme: ${SITE.name}.
 - Programme provider and delivery organisation: ${SITE.provider} (ABC).
 - Website operator and authorised ${OPERATOR.role}: ${OPERATOR.name}. It handles marketing, programme enquiries, country-specific and localised pricing, and enrolment coordination. ${OPERATOR.name} and ABC are separate independent companies.
-- Human programme contact: ${SITE.director}, ${SITE.principalTitle}; telephone/WhatsApp ${SITE.phone}; email ${SITE.email}.
+- Human programme contact: ${SITE.director}, Programme Coordinator; telephone/WhatsApp ${SITE.phone}; email ${SITE.email}.
 - Nature of programme: a professional development programme approved and endorsed by the Chartered Management Institute (CMI), UK, against CMI's Professional Standard. Successful participants are awarded the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic qualification, not a regulated qualification and not an academic MBA degree.
 - Certificate distinction: ${CERTIFICATE_POSITIONING.distinction}
 - Professional relevance: ${CERTIFICATE_POSITIONING.professionalRelevance}
