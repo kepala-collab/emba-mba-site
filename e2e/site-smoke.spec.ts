@@ -94,6 +94,26 @@ test("priority content pages reflow without horizontal overflow", async ({ page 
   }
 });
 
+test("fee calculation remains contained across desktop breakpoints", async ({ page }) => {
+  for (const width of [1024, 1223, 1280, 1440]) {
+    await page.setViewportSize({ width, height: 850 });
+    await goto(page, "/fees");
+    const card = page.locator(".fee-equation-card");
+    const total = card.locator(".fee-equation-total dd");
+    await expect(total).toBeVisible();
+
+    const cardBox = await card.boundingBox();
+    const totalBox = await total.boundingBox();
+    expect(cardBox, `${width}px fee card`).not.toBeNull();
+    expect(totalBox, `${width}px fee total`).not.toBeNull();
+    expect((totalBox?.x || 0) + (totalBox?.width || 0), `${width}px fee total right edge`)
+      .toBeLessThanOrEqual((cardBox?.x || 0) + (cardBox?.width || 0) - 1);
+
+    const contained = await total.evaluate((element) => element.scrollWidth <= element.clientWidth + 1);
+    expect(contained, `${width}px fee total text`).toBe(true);
+  }
+});
+
 test("advancement brief keeps chapter and fact-card alignment across breakpoints", async ({ page }) => {
   for (const width of [390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
