@@ -70,12 +70,7 @@ export default function ZhGoogleLP() {
 
             <div className="lpg-form" id="apply">
               <Reveal delay={120}>
-                <div className="card" style={{ padding: 26, background: "linear-gradient(180deg,var(--surface),var(--bg-2))", border: "1px solid var(--line-2)" }}>
-                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>免费 2026 课程资料 · 无需付款</p>
-                  <h2 style={{ fontSize: "1.28rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.3 }}>获取课程、时间表及奖学金资料</h2>
-                  <p className="fine" style={{ marginBottom: 18 }}>先收取简明资料，再选择电邮、WhatsApp 或简短课程匹配通话。咨询不等于报名。</p>
-                  <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" placement="hero" variant="campaign" />
-                </div>
+                <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" placement="hero" variant="campaign" defaultIntent="details_first" />
               </Reveal>
             </div>
           </div>
@@ -131,8 +126,8 @@ export default function ZhGoogleLP() {
           <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>获取 2026 课程及奖学金资料。</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>先收取资料，再选择是否通过 WhatsApp 或简短通话进一步了解。课程团队会说明已公布日期、马来西亚学员费用及雇主申请 HRD Corp 的流程。{HRD_CORP_CLAIM_ZH}</p></Reveal>
           <Reveal delay={80}>
-            <div className="card" style={{ padding: 26, maxWidth: 520, margin: "26px auto 0", textAlign: "left" }}>
-              <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" placement="footer-cta" variant="campaign" />
+            <div style={{ maxWidth: 560, margin: "26px auto 0", textAlign: "left" }}>
+              <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" placement="footer-cta" variant="campaign" defaultIntent="details_first" />
             </div>
           </Reveal>
           <Reveal><p className="fine" style={{ marginTop: 20 }}>{SITE.director} · 课程协调员 · {SITE.phone} · {SITE.email}</p></Reveal>

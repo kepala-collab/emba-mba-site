@@ -34,9 +34,8 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.12rem", maxWidth: "46ch", margin: "22px 0 26px" }}>
-                  Complete six training days, coaching and an applied business project during months 1–3, leading to a
-                  CMI-recognised programme certificate. Eligible participants then receive three months of support for
-                  CMI&rsquo;s separate <b style={{ color: "var(--ink)" }}>Chartered Manager (CMgr)</b> assessment.
+                  Bring one current business challenge. Through six facilitated training days, coaching and an applied
+                  project, build an action plan you can explain and put into practice while you continue working.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -60,12 +59,7 @@ export default function GoogleLandingPage() {
             {/* FORM CARD */}
             <div className="lpg-form" id="apply">
               <Reveal delay={120}>
-                <div className="card" style={{ padding: 26, background: "linear-gradient(180deg,var(--surface),var(--bg-2))", border: "1px solid var(--line-2)" }}>
-                  <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Free 2026 programme plan · No payment required</p>
-                  <h2 style={{ fontSize: "1.3rem", color: "var(--ink)", marginBottom: 8, lineHeight: 1.25 }}>Get the programme, schedule and scholarship eligibility guide</h2>
-                  <p className="fine" style={{ marginBottom: 18 }}>Receive the concise guide and choose whether you want details first, WhatsApp or a short fit call. No enrolment commitment.</p>
-                  <LeadForm programme="Executive MBA" source={SOURCE} placement="hero" variant="campaign" />
-                </div>
+                <LeadForm programme="Executive MBA" source={SOURCE} placement="hero" variant="campaign" defaultIntent="details_first" />
               </Reveal>
             </div>
           </div>

@@ -112,8 +112,8 @@ export default function ZhMetaLP() {
           <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>获取 2026 课程及奖学金资料。</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>先收取简明资料，再选择电邮、WhatsApp 或简短课程匹配通话。课程团队会说明已公布的开课日期、马来西亚学员费用及雇主申请 HRD Corp 的流程。</p></Reveal>
           <Reveal delay={80}>
-            <div className="card" style={{ padding: 26, maxWidth: 520, margin: "26px auto 0", textAlign: "left" }}>
-              <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" variant="campaign" />
+            <div style={{ maxWidth: 560, margin: "26px auto 0", textAlign: "left" }}>
+              <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" variant="campaign" defaultIntent="details_first" />
             </div>
           </Reveal>
           <Reveal><p className="fine" style={{ marginTop: 20 }}>{SITE.director} · 课程协调员 · {SITE.phone} · {SITE.email}</p></Reveal>

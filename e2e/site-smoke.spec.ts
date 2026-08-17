@@ -118,7 +118,7 @@ test("advancement brief keeps chapter and fact-card alignment across breakpoints
   for (const width of [390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
     await goto(page, "/resources/advancement-brief");
-    const investment = page.locator(".brief-chapter").filter({ hasText: "05 / Investment" });
+    const investment = page.locator(".brief-chapter").filter({ hasText: "06 / Investment" });
     const facts = investment.locator(".brief-facts");
     await expect(facts).toBeVisible();
 
@@ -176,14 +176,16 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   const heroGrid = page.locator(".working-hero-grid");
   const heroForm = heroGrid.locator("form[data-form-id]");
   await expect(heroForm).toBeVisible();
-  await expect(heroForm.getByLabel("What are you planning for?")).toBeVisible();
-  await expect(heroForm.getByLabel("Preferred 2026 cohort (optional)")).toBeHidden();
+  await expect(heroForm.getByRole("heading", { name: "Send me the 2026 programme guide." })).toBeVisible();
+  await expect(heroForm.getByRole("textbox", { name: "Email" })).toBeVisible();
+  await expect(heroForm.getByLabel("Phone / WhatsApp")).toHaveCount(0);
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
   await expect(page.locator(".home-video-section .programme-film")).toBeVisible();
   await expect(page.locator(".home-video-section form[data-form-id]")).toHaveCount(0);
-  await heroForm.getByRole("button", { name: /Continue to contact details/i }).click();
-  await expect(heroForm.getByLabel("Preferred 2026 cohort (optional)")).toBeVisible();
+  await heroForm.getByRole("radio", { name: /WhatsApp/i }).check();
+  await expect(heroForm.getByLabel("Phone / WhatsApp")).toBeVisible();
+  await expect(heroForm.getByRole("textbox", { name: "Email" })).toHaveCount(0);
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {
@@ -212,8 +214,9 @@ test("mobile programme fit check returns to its factual result", async ({ page }
     await page.locator(".diagnostic-option").first().click();
     await page.getByRole("button", { name: question === 3 ? /See a starting point/i : /Continue/i }).click();
   }
-  await expect(page.getByRole("heading", { name: "Use your answers to check programme fit." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Here is what to evaluate next." })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Your selected priorities" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Keep the result and review the full guide." })).toBeVisible();
   const result = await page.locator(".diagnostic-result").boundingBox();
   expect(result).not.toBeNull();
   expect(result?.y || 9999).toBeLessThan(180);
@@ -335,13 +338,16 @@ test("mobile campaign pages preserve the value proposition before the form", asy
   }
 });
 
-test("campaign lead capture removes nonessential questions and delivers the programme plan", async ({ page }) => {
+test("campaign lead capture asks for one contact method and delivers the programme guide", async ({ page }) => {
   await mockTurnstile(page);
   await page.route("**/api/lead", async (route) => {
     const request = route.request().postDataJSON() as Record<string, unknown>;
     expect(request.turnstile_token).toBe("lead-test-token");
     expect(request.company).toBeUndefined();
     expect(request.preferred_contact_window).toBe("flexible");
+    expect(request.contact_preference).toBe("details_first");
+    expect(request.email).toBe("campaign@example.com");
+    expect(request.phone).toBeUndefined();
     await route.fulfill({
       status: 200,
       contentType: "application/json",
@@ -350,19 +356,17 @@ test("campaign lead capture removes nonessential questions and delivers the prog
   });
   await goto(page, "/lp/google");
   const form = page.locator("#apply form[data-form-id]");
-  await expect(form.locator(".intent-option")).toHaveCount(3);
+  await expect(form.locator(".intent-option:visible")).toHaveCount(0);
   await expect(form.getByLabel(/Preferred 2026 cohort/i)).toHaveCount(0);
-  await form.getByRole("button", { name: /Continue for the programme plan/i }).click();
   await expect(form.getByLabel("Company (optional)")).toHaveCount(0);
   await expect(form.getByLabel("Preferred contact time")).toHaveCount(0);
-  await expect(form.getByLabel("How would you like to continue?").locator("option")).toHaveCount(3);
+  await expect(form.getByLabel("How would you like to continue?")).toHaveCount(0);
   await form.getByLabel("Full name").fill("Campaign Participant");
-  await form.getByLabel("Phone / WhatsApp").fill("+60123456789");
-  await form.getByLabel("Email").fill("campaign@example.com");
+  await form.getByRole("textbox", { name: "Email" }).fill("campaign@example.com");
   await form.getByRole("checkbox").check();
-  await form.getByRole("button", { name: /Send my programme plan/i }).click();
+  await form.getByRole("button", { name: /Send my guide/i }).click();
   await expect(page.getByText("CAMPAIGN-LEAD")).toBeVisible();
-  await expect(page.getByRole("link", { name: /Open the 2026 programme plan/i })).toHaveAttribute("href", "/resources/advancement-brief");
+  await expect(page.getByRole("link", { name: /Open the 2026 programme guide/i })).toHaveAttribute("href", "/resources/advancement-brief");
 });
 
 test("campaign routes have no automated accessibility violations", async ({ page }) => {

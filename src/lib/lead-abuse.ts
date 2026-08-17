@@ -120,13 +120,21 @@ function rulesFor(ip: string | null, email: string, phone: string): RateLimitRul
   const subnet = ip ? subnetFor(ip) : null;
 
   return [
-    { scope: "email-day", value: normalizedEmail, windowSeconds: 86_400, maximum: 5 },
-    { scope: "email-hour", value: normalizedEmail, windowSeconds: 3_600, maximum: 3 },
+    ...(normalizedEmail
+      ? [
+          { scope: "email-day", value: normalizedEmail, windowSeconds: 86_400, maximum: 5 },
+          { scope: "email-hour", value: normalizedEmail, windowSeconds: 3_600, maximum: 3 },
+        ]
+      : []),
     ...(ip
       ? [{ scope: "ip-ten-min", value: ip, windowSeconds: 600, maximum: 5 }]
       : []),
-    { scope: "phone-day", value: normalizedPhone, windowSeconds: 86_400, maximum: 5 },
-    { scope: "phone-hour", value: normalizedPhone, windowSeconds: 3_600, maximum: 3 },
+    ...(normalizedPhone
+      ? [
+          { scope: "phone-day", value: normalizedPhone, windowSeconds: 86_400, maximum: 5 },
+          { scope: "phone-hour", value: normalizedPhone, windowSeconds: 3_600, maximum: 3 },
+        ]
+      : []),
     ...(subnet
       ? [{ scope: "subnet-hour", value: subnet, windowSeconds: 3_600, maximum: 30 }]
       : []),

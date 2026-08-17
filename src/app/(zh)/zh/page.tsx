@@ -80,7 +80,7 @@ export default function ZhHome() {
               <p className="mono sec-k acc">课程咨询 · 无需付款</p>
               <h2>先取得资料，再决定是否继续。</h2>
               <p className="fine">课程团队会按你选择的方式回复，并说明课程适合度、日期、费用、奖学金资格及雇主申请 HRD Corp 的流程。</p>
-              <LeadForm programme="Executive MBA" source="zh-decision-led-home" lang="zh" placement="hero" />
+              <LeadForm programme="Executive MBA" source="zh-decision-led-home" lang="zh" placement="hero" variant="campaign" defaultIntent="details_first" />
             </div>
           </Reveal>
         </div>

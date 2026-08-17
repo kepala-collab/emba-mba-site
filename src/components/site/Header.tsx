@@ -124,7 +124,7 @@ export default function Header() {
               {zh ? "EN" : "中文"}
             </Link>
             <a href="#apply" className="navcta" data-track-event="cta_click" data-track-id="campaign_header_plan" data-track-location="campaign_header">
-              {zh ? "获取 2026 课程资料" : "Get the 2026 programme plan"}
+              {zh ? "获取 2026 课程指南" : "Get the 2026 guide"}
             </a>
           </nav>
         </div>

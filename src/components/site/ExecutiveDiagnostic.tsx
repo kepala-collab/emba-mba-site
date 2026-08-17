@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import LeadForm from "@/components/site/LeadForm";
 
 const QUESTIONS = [
   {
@@ -137,15 +138,18 @@ const RESULT_COPY_ZH = [
 
 const UI_COPY = {
   en: {
-    eyebrow: "Programme fit check / no data sent",
-    title: "Which programme details matter to you?",
-    intro: "Answer four questions to create a private review checklist. Your selections stay in this browser and are not transmitted or stored. This is not an admission test or a prediction of career outcomes.",
+    eyebrow: "Working manager progression check / no data sent",
+    title: "Where has your role outgrown your management toolkit?",
+    intro: "Answer four private questions to identify what you should evaluate next. Your selections stay in this browser and are not transmitted or stored. This is not an admission test or a prediction of career outcomes.",
     resultEyebrow: "Your private review checklist",
-    resultTitle: "Use your answers to check programme fit.",
-    resultBody: "These are the priorities you selected. Review them against the published programme information before deciding whether to speak with the team.",
+    resultTitle: "Here is what to evaluate next.",
+    resultBody: "These are the priorities you selected. Review them against the published programme information before deciding whether the format fits your work.",
     selected: "Your selected priorities",
     next: "Check these four programme facts",
     talk: "Ask the programme team",
+    guideKicker: "Your next step",
+    guideTitle: "Keep the result and review the full guide.",
+    guideBody: "The Working Manager’s 2026 Progression Guide brings the programme structure, dates, fee, scholarship criteria and CMI recognition into one place.",
     restart: "Start again",
     back: "Back",
     result: "See a starting point",
@@ -161,6 +165,9 @@ const UI_COPY = {
     selected: "您选择的重点",
     next: "核对四项课程事实",
     talk: "向课程团队提问",
+    guideKicker: "下一步",
+    guideTitle: "保留结果，并查看完整课程指南。",
+    guideBody: "《2026 在职经理进阶指南》把课程安排、日期、费用、奖学金条件及 CMI 认可集中在一份资料中。",
     restart: "重新开始",
     back: "返回",
     result: "查看建议起点",
@@ -234,8 +241,23 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
               </div>
             ))}
           </div>
+          <div className="diagnostic-lead-capture">
+            <div>
+              <p className="mono sec-k">{copy.guideKicker}</p>
+              <h3>{copy.guideTitle}</h3>
+              <p>{copy.guideBody}</p>
+            </div>
+            <LeadForm
+              programme="Executive MBA"
+              source="progression-diagnostic"
+              lang={lang}
+              placement="diagnostic-result"
+              variant="campaign"
+              defaultIntent="details_first"
+            />
+          </div>
           <div className="diagnostic-actions diagnostic-result-actions">
-            <Link className="btn btn-primary" href={lang === "zh" ? "/zh/apply" : "/apply"}>{copy.talk} <span aria-hidden="true">→</span></Link>
+            <Link className="text-action" href={lang === "zh" ? "/zh/apply" : "/apply"}>{copy.talk} <span aria-hidden="true">→</span></Link>
             <button className="btn btn-ghost" type="button" onClick={restart}>{copy.restart}</button>
           </div>
         </div>

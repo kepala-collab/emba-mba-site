@@ -58,7 +58,7 @@ VERIFIED PROGRAMME FACTS
 - Refund: ${REFUND_TERMS.description}
 - The applicable written proposal or enrolment terms state the delivery format, certificate wording, complete fees, any approved scholarship, intake dates and acceptance requirements for the participant.
 - Current published intakes:\n${intakeFacts()}
-- Private review resources: /diagnostic creates a no-data programme-fit checklist; /resources/advancement-brief is a printable factual programme guide; /resources contains the employer conversation guide and programme comparison checklist.
+- Private review resources: /diagnostic creates a no-data Working Manager Progression Check; after viewing the result, visitors may separately request the guide. /resources/advancement-brief is the printable Working Manager's 2026 Progression Guide; /resources also contains the employer conversation guide and programme comparison checklist.
 - Useful website paths: /executive-mba, /chartered-manager-malaysia, /curriculum, /fees, /intakes, /faculty, /faq, /resources, /diagnostic, /apply, /contact. Chinese equivalents begin with /zh/ where published.
 `;
 

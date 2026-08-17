@@ -81,12 +81,12 @@ export default function Home() {
             </Reveal>
             <Reveal delay={50}>
               <h1>
-                Your business will be run by whoever thinks they are <em>Future Ready.</em>
+                Make better business decisions <em>without stepping away from work.</em>
               </h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                Work on a live business challenge, sharpen how you diagnose problems and build an action plan you can explain and execute. The six-month programme is designed around a working manager&rsquo;s schedule.
+                Bring one current business challenge. Through six facilitated training days, coaching and an applied project, build an action plan you can explain and put into practice.
               </p>
             </Reveal>
             <Reveal delay={140}>
@@ -102,7 +102,7 @@ export default function Home() {
             <Reveal delay={180}>
               <div className="working-hero-proof" aria-label="Programme assurance">
                 <ProgrammeMarks />
-                <span>CMI approved and endorsed · employer approval applies to HRD Corp funding</span>
+                <span>CMI approved and endorsed against its Professional Standard</span>
                 <span>Scholarship assessment available for eligible Malaysian applicants</span>
               </div>
             </Reveal>
@@ -115,7 +115,7 @@ export default function Home() {
                 source="decision-led-home-hero"
                 placement="hero"
                 defaultIntent="details_first"
-                compact
+                variant="campaign"
               />
             </div>
           </Reveal>

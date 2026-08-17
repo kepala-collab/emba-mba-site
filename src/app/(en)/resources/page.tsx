@@ -9,8 +9,8 @@ export const metadata = withSeo("/resources", {
 });
 
 const DOSSIERS = [
-  ["01", "Programme Fit Check", "Answer four questions and create a private checklist for reviewing your goals, schedule, fees and recognition. No score, storage or submission.", "/diagnostic", "Start the check"],
-  ["02", "Executive MBA Programme Guide", "Read or print the programme structure, exact Malaysian fee, CMI recognition and questions to resolve.", "/resources/advancement-brief", "Open the guide"],
+  ["01", "Working Manager Progression Check", "Answer four private questions to identify which capability, schedule, fee and recognition details matter to your next step. No score or data submission is required for the result.", "/diagnostic", "Start the check"],
+  ["02", "Working Manager’s 2026 Progression Guide", "Read or print the programme fit, applied outcome, six-month structure, exact Malaysian fee and CMI recognition.", "/resources/advancement-brief", "Open the guide"],
   ["03", "How to Compare Leadership Programmes", "A short guide to comparing capability, application, schedule, recognition and fees.", "/insights/advancement-question", "Read the guide"],
   ["04", "Chartered Manager Malaysia", "Understand CMI's current routes, eligibility, assessment costs, fCMgr, CMgr MCMI and the Malaysia professional network.", "/chartered-manager-malaysia", "Understand the pathway"],
 ] as const;

@@ -34,8 +34,8 @@ export default function AdvancementQuestionPage() {
           <h2>Check whether the schedule fits</h2>
           <p>Compare the actual dates, attendance requirements, applied project and financial commitment with the work and family responsibilities you already hold. Prestige cannot repair a schedule that is structurally impossible.</p>
           <blockquote>Choose the learning by the quality of work it helps you examine—not by the ambiguity of the promise.</blockquote>
-          <p><Link className="text-action" href="/diagnostic">Create a private programme-fit checklist <span aria-hidden="true">↗</span></Link></p>
-          <p><Link className="text-action" href="/resources/advancement-brief">Open the Executive MBA Programme Guide <span aria-hidden="true">↗</span></Link></p>
+          <p><Link className="text-action" href="/diagnostic">Start the Working Manager Progression Check <span aria-hidden="true">↗</span></Link></p>
+          <p><Link className="text-action" href="/resources/advancement-brief">Open the Working Manager&rsquo;s 2026 Progression Guide <span aria-hidden="true">↗</span></Link></p>
         </div>
       </article>
     </>

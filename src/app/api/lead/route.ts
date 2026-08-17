@@ -222,8 +222,8 @@ function parseLead(value: unknown): LeadRow | null {
     ? randomUUID()
     : (isUuid(body.submission_id) ? body.submission_id : null);
   const name = text(body.name, 120, true);
-  const email = text(body.email, 254, true);
-  const phone = text(body.phone, 32, true);
+  const email = text(body.email, 254);
+  const phone = text(body.phone, 32);
   const company = text(body.company, 160);
   const programme = text(body.programme_interest, 160);
   const pagePath = text(body.page_path, 2048);
@@ -253,7 +253,9 @@ function parseLead(value: unknown): LeadRow | null {
     ? null
     : body.preferred_contact_window;
 
-  if (!submissionId || !name || !email || !phone || body.consent !== "yes") return null;
+  if (body.email !== undefined && email === undefined) return null;
+  if (body.phone !== undefined && phone === undefined) return null;
+  if (!submissionId || !name || (!email && !phone) || body.consent !== "yes") return null;
   if (
     company === undefined ||
     programme === undefined ||
@@ -275,8 +277,8 @@ function parseLead(value: unknown): LeadRow | null {
     cohortKey === undefined ||
     contactPreference === undefined
   ) return null;
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
-  if (!/^\+?[0-9().\-\s]{7,32}$/.test(phone) || phone.replace(/\D/g, "").length < 7) return null;
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
+  if (phone && (!/^\+?[0-9().\-\s]{7,32}$/.test(phone) || phone.replace(/\D/g, "").length < 7)) return null;
   if (participantType !== "malaysian" && participantType !== "international") return null;
   if (
     contactPreference !== null &&
@@ -313,8 +315,8 @@ function parseLead(value: unknown): LeadRow | null {
     lead_uuid: randomUUID(),
     submission_id: submissionId,
     name,
-    email,
-    phone,
+    email: email || "",
+    phone: phone || "",
     company,
     participant_type: participantType,
     contact_preference: contactPreference as LeadRow["contact_preference"],
@@ -537,17 +539,19 @@ export async function POST(req: Request) {
         });
       }
 
-      await connection.execute({
-        sql: `INSERT IGNORE INTO lead_email_outbox (
-          lead_id, template_key, language, recipient_hash, queued_date
-        ) VALUES (?, 'application_received', ?, ?, UTC_DATE())`,
-        values: [
-          leadId,
-          row.page_language === "zh" ? "zh" : "en",
-          leadEmailRecipientHash(row.email),
-        ],
-        timeout: 5_000,
-      });
+      if (row.email) {
+        await connection.execute({
+          sql: `INSERT IGNORE INTO lead_email_outbox (
+            lead_id, template_key, language, recipient_hash, queued_date
+          ) VALUES (?, 'application_received', ?, ?, UTC_DATE())`,
+          values: [
+            leadId,
+            row.page_language === "zh" ? "zh" : "en",
+            leadEmailRecipientHash(row.email),
+          ],
+          timeout: 5_000,
+        });
+      }
       await connection.commit();
     } catch (error) {
       await connection.rollback();
@@ -556,13 +560,15 @@ export async function POST(req: Request) {
       connection.release();
     }
 
-    try {
-      await processLeadEmailOutbox(pool, { limit: 1, leadId });
-    } catch (error) {
-      // The application is already safely stored; the cron processor will retry email.
-      console.error("Lead acknowledgement dispatch deferred", {
-        type: error instanceof Error ? error.name : "UnknownError",
-      });
+    if (row.email) {
+      try {
+        await processLeadEmailOutbox(pool, { limit: 1, leadId });
+      } catch (error) {
+        // The application is already safely stored; the cron processor will retry email.
+        console.error("Lead acknowledgement dispatch deferred", {
+          type: error instanceof Error ? error.name : "UnknownError",
+        });
+      }
     }
 
     if (isNewLead) {
