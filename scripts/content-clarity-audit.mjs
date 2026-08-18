@@ -52,7 +52,7 @@ for (const file of files) {
 
 const canonical = readFileSync("src/lib/content.ts", "utf8");
 const required = [
-  'durationLong: "6 months"',
+  'durationLong: "3 months"',
   'priceStd: FEES.standard.label',
   'scholarshipAmount: 5000',
   'participantAmount: 5000',
