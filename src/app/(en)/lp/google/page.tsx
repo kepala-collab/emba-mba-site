@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/lp/google", {
   title: "Executive MBA Malaysia — CMI-Recognised Programme",
   description:
-    "A six-month programme: three months to the CMI-recognised Executive MBA programme certificate, then three months of Chartered Manager assessment preparation support.",
+    "A three-month programme leading to the CMI-recognised Executive MBA programme certificate.",
   // Ad landing page — keep it out of organic index so it doesn't compete with SEO pages.
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
@@ -34,7 +34,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.12rem", maxWidth: "46ch", margin: "22px 0 26px" }}>
-                  Continue working while you complete six facilitated training days, coaching and an applied project. The following three months provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
+                  Continue working while you complete six facilitated training days, coaching and an applied project.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -45,7 +45,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["3 months", "CMI-recognised programme certificate stage"], ["Then 3 months", "CMgr assessment preparation for eligible participants"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([b, s]) => (
+                  {[["3 months", "CMI-recognised Executive MBA programme"], [FACTS.trainingDays, "Facilitated training days across three sessions"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>

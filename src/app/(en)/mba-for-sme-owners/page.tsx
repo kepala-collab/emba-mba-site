@@ -72,7 +72,7 @@ export default function MbaForSmeOwnersPage() {
             strategy and leadership frameworks to delegation, capability building, succession and growth.
           </p>
           <p className="mono sec-k mt-s">
-            Six months · three monthly programme weekends + supported CMgr assessment preparation · recognised by CMI (UK)
+            Three months · three monthly programme weekends · recognised by CMI (UK)
           </p>
           <p className="sec-sub mt-s">
             See the full{" "}

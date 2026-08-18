@@ -43,7 +43,7 @@ const T = {
     campaignContinue: "Continue for the programme guide →",
     campaignKicker: "Free working manager guide",
     campaignTitle: "Send me the 2026 programme guide.",
-    campaignIntro: "Includes the three-month CMI-recognised programme certificate stage, the following Chartered Manager preparation stage, published dates, programme fee and scholarship criteria.",
+    campaignIntro: "Includes the three-month CMI-recognised programme, published dates, programme fee and scholarship criteria.",
     stepTwoKicker: "Your contact details",
     stepTwoTitle: "Where should the programme team respond?",
     back: "← Back",

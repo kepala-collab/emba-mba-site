@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, HRD_CORP_CLAIM, INCLUSIONS, SITE } from "@/lib/content";
+import { COMPANY_ENROLMENT, FACTS, HRD_CORP_CLAIM, INCLUSIONS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -31,6 +31,10 @@ const STEPS = [
 ];
 
 const HRD_FAQS = [
+  {
+    q: "Can my company enrol a founder or senior team member?",
+    a: `${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}`,
+  },
   {
     q: "Can my employer apply for HRD Corp funding?",
     a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}`,
@@ -120,9 +124,8 @@ export default function HrdCorpClaimablePage() {
           <Reveal><h2 className="sec-h">Programme components covered by the approved grant amount.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              HRD Corp states the approved amount in its grant decision. The programme comprises a
-              six-month programme: three months to the programme certificate followed by
-              three months of supported Chartered Manager assessment preparation. The programme includes:
+              HRD Corp states the approved amount in its grant decision. The Executive MBA is a
+              three-month programme leading to the programme certificate. The programme includes:
             </p>
           </Reveal>
           <Reveal className="mt-s">

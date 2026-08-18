@@ -9,7 +9,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/", {
   title: "Executive MBA Malaysia for Working Managers",
   description:
-    "Complete the CMI-recognised Executive MBA programme certificate stage in three months while continuing to work. Eligible participants then receive Chartered Manager assessment preparation support.",
+    "A three-month CMI-recognised Executive MBA for working leaders: practical decision frameworks, an applied business project and no traditional exams or thesis.",
   alternates: {
     canonical: "/",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -20,7 +20,7 @@ const DECISION_PATHS = [
   {
     n: "01",
     title: "The programme",
-    body: "See who it is for, how the six months work and what successful participants complete.",
+    body: "See who it is for, how the three months work and what successful participants complete.",
     href: "/executive-mba",
     action: "Understand the programme",
   },
@@ -81,12 +81,12 @@ export default function Home() {
             </Reveal>
             <Reveal delay={50}>
               <h1>
-                Complete the CMI-recognised Executive MBA programme certificate stage <em>in 3 months.</em>
+                Lead with certainty when the business gets complicated.
               </h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                Continue working while you complete six facilitated training days, coaching and an applied project. The following three months provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
+                A three-month Executive MBA for working leaders who need to make better decisions, create momentum and deliver results in the real world.
               </p>
             </Reveal>
             <Reveal delay={140}>
@@ -163,7 +163,7 @@ export default function Home() {
             <div>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Why this programme exists</span></div>
               <h2 className="sec-h">The expensive decision is the one made too late—or never turned into action.</h2>
-              <p className="sec-sub">The programme is built to improve the quality of management decisions, not to add another folder of theory.</p>
+              <p className="sec-sub">Learn to cut through complexity, ask better questions and turn a live business issue into a practical action plan—not another folder of theory.</p>
               <Link href="/how-it-works" className="text-action working-inline-action">See how F.A.S.T. works <span aria-hidden="true">↗</span></Link>
             </div>
           </Reveal>
@@ -185,12 +185,12 @@ export default function Home() {
           <Reveal>
             <div className="home-video-copy">
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme introduction</span></div>
-              <h2 className="sec-h">See how the six-month programme works before you decide.</h2>
-              <p className="sec-sub">Use the programme introduction to understand the two stages, the applied project and the separate Chartered Manager preparation. A complete transcript is available, and no contact details are required.</p>
+              <h2 className="sec-h">See how the three-month programme works before you decide.</h2>
+              <p className="sec-sub">Use the programme introduction to understand the three-month format, the applied project and what you will take back into your work. A complete transcript is available, and no contact details are required.</p>
               <ul className="home-video-points">
                 <li>Six training days across three monthly sessions</li>
                 <li>An applied project based on a live business challenge</li>
-                <li>Separate Chartered Manager preparation for eligible participants</li>
+                <li>No traditional examinations or thesis</li>
               </ul>
               <Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="video_request_guide" data-track-location="programme_introduction">
                 Request the programme guide <span aria-hidden="true">↑</span>

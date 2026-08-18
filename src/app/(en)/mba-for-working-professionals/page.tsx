@@ -74,7 +74,7 @@ export default function MbaForWorkingProfessionalsPage() {
             participants who meet CMI&rsquo;s entry criteria.
           </p>
           <p className="mono sec-k mt-s">
-            Six months · three monthly programme weekends + supported CMgr assessment preparation · recognised by CMI (UK)
+            Three months · three monthly programme weekends · recognised by CMI (UK)
           </p>
           <p className="sec-sub mt-s">
             Explore the full{" "}

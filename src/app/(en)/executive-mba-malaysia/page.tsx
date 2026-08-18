@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/executive-mba-malaysia", {
   title: "Executive MBA in Malaysia (CMI UK, HRD Corp)",
   description:
-    "A six-month professional management programme in Malaysia with a CMI-recognised programme certificate, CMgr preparation, scholarship and employer-led HRD Corp funding.",
+    "A three-month professional management programme in Malaysia with a CMI-recognised programme certificate, scholarship and employer-led HRD Corp funding.",
 });
 
 const REASONS = [
@@ -22,7 +22,7 @@ const REASONS = [
     p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive the ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}.`,
   },
   {
-    h: "A six-month programme for working leaders",
+    h: "A three-month programme for working leaders",
     p: "The first three months use one scheduled weekend a month, 9am–6pm, to complete the programme-certificate phase. Months four to six provide supported Chartered Manager assessment preparation for eligible participants.",
   },
   {

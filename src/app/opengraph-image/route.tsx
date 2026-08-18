@@ -22,7 +22,7 @@ export function GET() {
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
         <div style={{ width: 54, height: 6, background: "#1d63d8" }} />
         <div style={{ fontSize: 23, letterSpacing: 5, textTransform: "uppercase", color: "#405674" }}>
-          Six-month Executive MBA · Malaysia
+          Three-month Executive MBA · Malaysia
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", maxWidth: 980 }}>

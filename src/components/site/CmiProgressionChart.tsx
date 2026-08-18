@@ -21,16 +21,16 @@ const LEVELS_ZH = [
 ] as const;
 
 const PROGRAMME_EN = [
-  ["01", "CMI Recognised programme", "Benchmarked against CMI's Professional Standard. This is not a CMI qualification or academic degree."],
+  ["01", "CMI (UK) Endorsed & Recognised", "A three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic."],
   ["02", "Certificate and fCMgr", "Successful completion leads to the CMI Certificate of Recognition and Foundation Chartered Manager status under CMI's published Recognised offer."],
-  ["03", "Months 4–6: CMgr preparation", "Eligible participants organise evidence and prepare for the separate CMI assessment."],
+  ["03", "Optional next step: Chartered Manager", "A separate CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee."],
   ["04", "Independent CMI decision", "CMgr MCMI is awarded only after CMI confirms eligibility and the applicant passes the applicable assessment."],
 ] as const;
 
 const PROGRAMME_ZH = [
-  ["01", "CMI Recognised programme", "课程已按照 CMI Professional Standard 进行基准评估；并非 CMI qualification 或学术学位。"],
+  ["01", "CMI（英国）认可", "具有 CMI（英国）Endorsed 及 Recognised status 的三个月专业发展课程；并非学术学位。"],
   ["02", "证书与 fCMgr", "成功完成课程者取得 CMI Certificate of Recognition；根据 CMI 公布的 Recognised 方案，同时取得 Foundation Chartered Manager 身份。"],
-  ["03", "第四至第六个月：CMgr 准备", "符合条件的学员整理专业证据，并准备另行进行的 CMI 评估。"],
+  ["03", "可选下一步：Chartered Manager", "这是一条独立的 CMI 路线，有其资格、评估及费用；不包括在已公布的高管 MBA 课程或学费内。"],
   ["04", "CMI 独立决定", "只有在 CMI 确认资格并通过适用评估后，申请人才获授 CMgr MCMI。"],
 ] as const;
 
@@ -85,8 +85,8 @@ export default function CmiProgressionChart({ lang = "en" }: Props) {
               ))}
             </ol>
             <div className="cmi-programme-boundary">
-              <strong>{zh ? "本课程没有 Level 7 声明。" : "No Level 7 claim is made for this programme."}</strong>
-              <p>{zh ? "除非当前课程专属 CMI 文件明确确认，否则不得把 CMI Recognised programme 描述为正式 CMI Level 7 qualification。" : "A CMI Recognised programme must not be described as a formal CMI Level 7 qualification unless current programme-specific CMI documentation expressly confirms it."}</p>
+              <strong>{zh ? "专业发展课程，不是学术学位。" : "Professional development; not an academic degree."}</strong>
+              <p>{zh ? "本课程为非学术专业课程，并非 MQA 认证学位或受监管资格。" : "The programme is non-academic. It is not an MQA-accredited academic degree or a regulated qualification."}</p>
             </div>
           </div>
 

@@ -5,7 +5,7 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/resources/advancement-brief", {
   title: "The Working Manager’s 2026 Progression Guide",
-  description: "A printable guide to programme fit, the applied business project, six-month structure, Malaysian fee, CMI recognition and next steps.",
+  description: "A printable guide to programme fit, the applied business project, three-month structure, Malaysian fee, CMI recognition and next steps.",
 });
 
 const PRESSURES = [
@@ -61,11 +61,10 @@ export default function AdvancementBriefPage() {
         </section>
 
         <section className="brief-chapter">
-          <span className="mono">04 / Six months</span>
+          <span className="mono">04 / Three months</span>
           <div>
-            <h2>Two stages, explained separately.</h2>
-            <p><strong>Months 1–3:</strong> six facilitated training days across three monthly sessions, coaching and an applied business project leading to the CMI-recognised programme certificate.</p>
-            <p><strong>Months 4–6:</strong> preparation support for eligible participants who choose to pursue CMI&rsquo;s separate Chartered Manager assessment.</p>
+            <h2>A focused three-month programme.</h2>
+            <p><strong>Three months:</strong> six facilitated training days across three monthly sessions, coaching and an applied business project leading to the CMI-recognised programme certificate.</p>
             <div className="brief-facts">
               <div><strong>{FACTS.trainingDays} days</strong><span>facilitated training</span></div>
               <div><strong>{FACTS.liveSessions} sessions</strong><span>scheduled monthly</span></div>

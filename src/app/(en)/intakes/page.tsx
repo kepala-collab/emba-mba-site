@@ -18,7 +18,7 @@ const courseJsonLd = {
   "@type": "Course",
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA",
-  description: "Executive MBA in Malaysia: first-three-month programme sessions followed by three months of supported Chartered Manager assessment preparation. English and Mandarin 2026 schedules are published.",
+  description: "Executive MBA in Malaysia: three monthly programme sessions. English and Mandarin 2026 schedules are published.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -53,7 +53,7 @@ export default function IntakesPage() {
           </h1>
         </Reveal>
         <p className="sec-sub">
-          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The listed weekends cover the first-three-month programme-certificate phase. Months four to six provide supported Chartered Manager assessment preparation for eligible participants.
+          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The listed weekends cover the three-month Executive MBA programme.
         </p>
         <p className="fine mt-s">
           Cohort capacity and availability are confirmed by the programme team when it responds to an enquiry.

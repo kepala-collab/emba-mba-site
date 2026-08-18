@@ -2,7 +2,7 @@ import Image from "next/image";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import Reveal from "@/components/site/Reveal";
-import { SITE } from "@/lib/content";
+import { ABC_PROFILE, OPERATOR, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/about", {
@@ -28,6 +28,19 @@ export default function AboutPage() {
               <p className="sec-sub">Programme Coordinator</p>
               <p className="fine" style={{ maxWidth: "58ch", marginTop: 20 }}>For Affandi, the purpose is simple: to help more Malaysians move forward in their careers, businesses and communities.</p>
               <p className="fine" style={{ maxWidth: "58ch", marginTop: 16 }}>With more than 30 years across banking and finance, corporate communication, sales and marketing, property development and corporate strategy, he understands that progress is rarely a straight line. It comes from learning to see the situation clearly, make the next sound decision and keep moving.</p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+      <section className="section">
+        <div className="wrap" style={{ maxWidth: 960 }}>
+          <Reveal>
+            <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">The programme team</span></div>
+              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>Built by a specialist training organisation. Supported locally by an Associate Partner.</h2>
+              <p className="sec-sub" style={{ maxWidth: "62ch" }}><strong>{ABC_PROFILE.name} (ABC)</strong> is a {ABC_PROFILE.hrdStatus}. {ABC_PROFILE.description}</p>
+              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>{ABC_PROFILE.programmePositioning}</p>
+              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}><strong>{OPERATOR.name}</strong> is ABC&rsquo;s Associate Partner for marketing, programme enquiries, pricing and enrolment coordination. ABC provides and delivers the programme.</p>
             </div>
           </Reveal>
         </div>

@@ -58,7 +58,7 @@ const RESULT_COPY = [
   },
   {
     title: "Schedule and time commitment",
-    body: "Compare the six-month structure with the published 2026 dates before deciding whether the schedule fits your responsibilities.",
+    body: "Compare the three-month structure with the published 2026 dates before deciding whether the schedule fits your responsibilities.",
     href: "/intakes",
     action: "See the intakes",
   },

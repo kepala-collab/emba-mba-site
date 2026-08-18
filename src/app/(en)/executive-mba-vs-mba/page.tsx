@@ -103,7 +103,7 @@ export default function ExecutiveMbaVsMbaPage() {
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   This route is designed for participants with strategic or business-wide responsibility who want
                   structured decision frameworks, an applied project and a CMI Certificate of Recognition. The
-                  six-month programme uses one scheduled weekend a month during the programme-certificate phase.
+                  three-month programme uses one scheduled weekend a month.
                 </p>
               </div>
             </Reveal>
@@ -121,7 +121,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Define the result you need before comparing price. Choose an MQA-accredited academic MBA
               when your next step requires an academic degree. Choose this programme when you need a
-              six-month programme, an applied business project, CMI recognition against its
+              three-month programme, an applied business project, CMI recognition against its
               Professional Standard and continued employment during study. The published 2026 Malaysian
               standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the{" "}
               <Link href="/fees" className="acc">{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</Link> after assessment and written approval.

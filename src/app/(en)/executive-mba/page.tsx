@@ -7,6 +7,7 @@ import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import {
   CERTIFICATE_POSITIONING,
+  COMPANY_ENROLMENT,
   COMPLIANCE,
   FACTS,
   HRD_CORP_CLAIM,
@@ -20,9 +21,9 @@ import {
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/executive-mba", {
-  title: "Six-Month Executive MBA Programme Malaysia",
+  title: "Three-Month Executive MBA Programme Malaysia",
   description:
-    "Complete the CMI-recognised Executive MBA programme certificate stage in three months, followed by three months of Chartered Manager assessment preparation support for eligible participants.",
+    "Complete the CMI-recognised Executive MBA programme in three months while continuing to work.",
 });
 
 const courseSchema = {
@@ -35,7 +36,7 @@ const courseSchema = {
   url: `${SITE.url}/executive-mba`,
   inLanguage: "en-MY",
   educationalCredentialAwarded: "Programme certificate recognised against CMI Professional Standards",
-  timeRequired: "P6M",
+  timeRequired: "P3M",
   syllabusSections: MODULES.map((module) => ({ "@type": "Syllabus", name: module.p })),
 };
 
@@ -59,17 +60,17 @@ export default function ExecutiveMbaPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready Executive MBA</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>Complete the CMI-recognised programme certificate stage in 3 months, while you continue working.</h1>
+              <h1>Lead with certainty in chaos. Build decisions that move the business forward.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="programme-overview-lede">
-                The full programme runs for six months. Months one to three cover the Executive MBA programme certificate stage; months four to six provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
+                A focused three-month programme for working leaders: six training days, coaching and an applied business project built around a live business issue.
               </p>
             </Reveal>
             <Reveal delay={120}>
               <div className="programme-overview-actions">
                 <Link href="/apply" className="btn btn-primary">Ask about programme fit <span aria-hidden="true">→</span></Link>
-                <Link href="#structure" className="btn btn-ghost">See the two-stage structure</Link>
+                <Link href="#structure" className="btn btn-ghost">See how the programme works</Link>
               </div>
             </Reveal>
             <Reveal delay={150}>
@@ -101,16 +102,16 @@ export default function ExecutiveMbaPage() {
         <div className="wrap">
           <Reveal>
             <div className="reading-section-head">
-              <p className="mono sec-k">How the six months work</p>
-              <h2 className="sec-h">Complete the programme first. Then prepare for a separate CMI assessment.</h2>
-              <p>These are connected stages, but they do not produce the same outcome.</p>
+              <p className="mono sec-k">How the three months work</p>
+              <h2 className="sec-h">Six intensive days. One real business challenge. A practical way forward.</h2>
+              <p>Complete the programme in three monthly sessions while continuing to work. There are no traditional examinations or thesis.</p>
             </div>
           </Reveal>
           <div className="programme-stage-grid">
             <Reveal>
               <article className="programme-stage-card">
                 <span className="programme-stage-number">01</span>
-                <p className="mono sec-k">Months 1–3</p>
+                <p className="mono sec-k">Three months</p>
                 <h3>Executive MBA programme and certificate</h3>
                 <p>Attend six training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
                 <Link href="/curriculum" className="text-action">Review the curriculum <span aria-hidden="true">↗</span></Link>
@@ -119,10 +120,10 @@ export default function ExecutiveMbaPage() {
             <Reveal delay={60}>
               <article className="programme-stage-card programme-stage-card-dark">
                 <span className="programme-stage-number">02</span>
-                <p className="mono">Months 4–6</p>
-                <h3>Chartered Manager assessment preparation</h3>
-                <p>Eligible participants receive support to organise evidence and prepare for CMI&rsquo;s written application and professional discussion. CMI decides eligibility and awards CMgr MCMI only after successful assessment.</p>
-                <Link href="/chartered-manager-malaysia" className="text-action">See the official CMI routes <span aria-hidden="true">↗</span></Link>
+                <p className="mono">Optional next step</p>
+                <h3>Chartered Manager route</h3>
+                <p>Chartered Manager is a separate CMI route. CMI decides eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.</p>
+                <Link href="/chartered-manager-malaysia" className="text-action">Understand the CMI routes <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>
           </div>
@@ -145,6 +146,25 @@ export default function ExecutiveMbaPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ background: "var(--bg-2)" }}>
+        <div className="wrap programme-learning-grid">
+          <Reveal>
+            <div className="reading-section-head">
+              <p className="mono sec-k">Built for the people carrying the decision</p>
+              <h2 className="sec-h">For executives, senior managers, directors, business owners and founders.</h2>
+              <p>{COMPANY_ENROLMENT.eligibility}</p>
+            </div>
+          </Reveal>
+          <Reveal delay={60}>
+            <div className="card" style={{ padding: "clamp(24px,4vw,40px)" }}>
+              <p className="mono sec-k">Company enrolment &amp; HRD Corp</p>
+              <p className="sec-sub">{COMPANY_ENROLMENT.hrdRoute}</p>
+              <Link href="/hrd-corp-claimable" className="text-action">Understand the employer-led route <span aria-hidden="true">↗</span></Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

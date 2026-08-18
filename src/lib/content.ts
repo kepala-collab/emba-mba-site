@@ -15,12 +15,21 @@ export const SITE = {
   providerLinkedIn: process.env.NEXT_PUBLIC_PROVIDER_LINKEDIN || "",
 };
 
-// The Global and Local Programme Partner that operates this site and handles
-// enquiries, pricing and enrolment coordination. Distinct from SITE.provider
-// (Asian Business Consulting), which provides and delivers the programme.
+export const ABC_PROFILE = {
+  name: "Asian Business Consulting",
+  shortName: "ABC",
+  hrdStatus: "Registered HRD Corp Training Provider",
+  description:
+    "ABC develops and structures signature training programmes for professionals and organisations. The Future Ready Executive MBA, CMI (UK) is one of its signature programmes.",
+  programmePositioning:
+    "The Future Ready Executive MBA is a three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic, not an MQA-accredited academic degree or a regulated qualification.",
+} as const;
+
+// The Associate Partner to Asian Business Consulting that operates this site
+// and handles marketing, enquiries, pricing and enrolment coordination.
 export const OPERATOR = {
   name: "Right Dots Resources",
-  role: "Global and Local Programme Partner",
+  role: "Associate Partner to Asian Business Consulting",
   reg: "202603145615 (003856919-U)",
   address:
     "No. 86, Jalan Desa Bakti, Taman Desa, Jalan Klang Lama, 58100 Kuala Lumpur, Wilayah Persekutuan, Malaysia",
@@ -42,10 +51,9 @@ export const FEES = {
 } as const;
 
 export const FACTS = {
-  durationLong: "6 months",
-  durationShort: "6 months",
-  certificationPhase: "First 3 months · 3 sessions",
-  charteredPhase: "Months 4–6 · CMgr assessment preparation",
+  durationLong: "3 months",
+  durationShort: "3 months",
+  certificationPhase: "3 months · 3 sessions",
   trainingDays: "6",
   liveSessions: "3",
   moduleCount: "12",
@@ -73,6 +81,13 @@ export const HRD_CORP_CLAIM = {
     "The employer submits the grant application before training. The programme team supplies the quotation, schedule, course content and trainer documents. After the approved training is completed, the training provider and employer submit their respective claim documents within HRD Corp's stated deadline.",
   responsibility:
     "The employer—not the participant—applies for the grant. HRD Corp—not the programme provider—decides approval and the approved amount.",
+} as const;
+
+export const COMPANY_ENROLMENT = {
+  eligibility:
+    "The programme is open to executives and above, including senior managers, directors, business owners and founders.",
+  hrdRoute:
+    "For employer-led HRD Corp funding, the company must be HRD Corp-registered, have available levy and submit the application before training. A founder or owner may be included where the company confirms the participant is on its payroll. HRD Corp decides eligibility and the approved amount.",
 } as const;
 
 export const REFUND_TERMS = {
@@ -128,12 +143,11 @@ export const PROGRAMME_PRICING = {
   },
 } as const;
 
-// The marketed programme runs for six months: the programme certificate phase
-// occupies the first three months, followed by supported preparation for the
-// separate, eligibility-based Chartered Manager assessment route.
+// The marketed Executive MBA runs for three months. Chartered Manager is a
+// separate optional CMI route, with its own eligibility, assessment and fees.
 export const STAGES = [
   {
-    t: "Months 1–3 · 3 sessions",
+    t: "3 months · 3 sessions",
     h: "Executive MBA programme certificate",
     d: "Complete six training days across three monthly sessions, the coaching requirements and the applied business project. Successful participants are awarded the CMI Certificate of Recognition for the Executive MBA programme.",
   },
@@ -143,9 +157,9 @@ export const STAGES = [
     d: "CMI's published terms for CMI Recognised programmes state that learners receive Foundation Chartered Manager status on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal.",
   },
   {
-    t: "Months 4–6 · assessment preparation",
+    t: "Optional next step · CMI route",
     h: "Chartered Manager — CMgr MCMI",
-    d: "Participants who meet CMI's entry criteria move into a supported Chartered Manager phase: organising evidence of applied leadership and results, preparing the written application and preparing for the professional discussion. CMgr MCMI is awarded only after successful CMI assessment; eligibility, timing, membership and fees remain under CMI's control.",
+    d: "Chartered Manager is a separate CMI route. CMI confirms eligibility, assesses each application and controls timing, membership and fees. It is not included in the published Executive MBA programme or fee.",
   },
   {
     t: "Senior recognition · experience applies",
@@ -181,10 +195,10 @@ export const SIGNATURE_QUOTE = {
 } as const;
 
 export const CERTIFICATE_POSITIONING = {
-  headline: "Programme approved & endorsed by CMI (UK) · certificate awarded by CMI",
+  headline: "CMI (UK) Endorsed & Recognised · professional development",
   credential: "CMI Certificate of Recognition",
   distinction:
-    "CMI has approved and endorsed the programme against CMI's Professional Standard. Successful participants are awarded a CMI Certificate of Recognition. The certificate records professional programme completion; it is not a regulated qualification or an academic degree.",
+    "The Future Ready Executive MBA is a professional development programme with CMI (UK) Endorsed and Recognised status. Successful participants are awarded a CMI Certificate of Recognition. It is non-academic, not an MQA-accredited academic degree or a regulated qualification.",
   professionalRelevance:
     "The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome.",
   specimenSignatory:
@@ -285,7 +299,7 @@ export const INCLUSIONS = [
 ];
 
 export const COMPARISON = [
-  { k: "Duration", them: "18–24 months", us: "Six months: three months to the programme certificate, followed by three months of supported CMgr assessment preparation" },
+  { k: "Duration", them: "18–24 months", us: "Three months: six training days across three monthly sessions" },
   { k: "Focus", them: "Academic theory, research and case analysis", us: "Business context, strategic judgment and reusable decision frameworks" },
   { k: "Assessment", them: "Assignments or examinations plus a dissertation or thesis", us: "An applied project on the participant's own business; no traditional examination or thesis" },
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
@@ -296,13 +310,14 @@ export const COMPARISON = [
 ];
 
 export const FAQS = [
-  { q: "How is the programme structured?", a: "The programme runs for six months. During months one to three, participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. During months four to six, participants who meet CMI entry criteria receive support to prepare for the separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment and is not automatic." },
+  { q: "How is the programme structured?", a: "The Executive MBA runs for three months. Participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee." },
   { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },
   { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
   { q: "Is it MQA-recognised?", a: "No. This is a professional development programme approved and endorsed by CMI against its Professional Standard. It is not an MQA-accredited academic degree or a regulated qualification." },
   { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   { q: "What are the refund terms?", a: REFUND_TERMS.description },
   { q: "Can my company use its HRD Corp levy?", a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}` },
+  { q: "Can a company enrol its founder or senior team?", a: `${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}` },
   { q: "Who is the programme for?", a: PROGRAMME_AUDIENCE },
 ];
 

@@ -1,5 +1,7 @@
 import {
+  ABC_PROFILE,
   CERTIFICATE_POSITIONING,
+  COMPANY_ENROLMENT,
   CMI_PATHWAY,
   DELIVERY_CONTROL,
   FACTS,
@@ -27,7 +29,8 @@ VERIFIED PROGRAMME FACTS
 - Website: ${SITE.url}
 - Programme: ${SITE.name}.
 - Programme provider and delivery organisation: ${SITE.provider} (ABC).
-- Website operator and authorised ${OPERATOR.role}: ${OPERATOR.name}. It handles marketing, programme enquiries, country-specific and localised pricing, and enrolment coordination. ${OPERATOR.name} and ABC are separate independent companies.
+- Website operator and ABC's ${OPERATOR.role}: ${OPERATOR.name}. It handles marketing, programme enquiries, country-specific and localised pricing, and enrolment coordination. ${OPERATOR.name} and ABC are separate independent companies.
+- About ABC: ${ABC_PROFILE.name} is a ${ABC_PROFILE.hrdStatus}. ${ABC_PROFILE.description}
 - Human programme contact: ${SITE.director}, Programme Coordinator; telephone/WhatsApp ${SITE.phone}; email ${SITE.email}.
 - Nature of programme: a professional development programme approved and endorsed by the Chartered Management Institute (CMI), UK, against CMI's Professional Standard. Successful participants are awarded the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic qualification, not a regulated qualification and not an academic MBA degree.
 - Certificate distinction: ${CERTIFICATE_POSITIONING.distinction}
@@ -36,14 +39,14 @@ VERIFIED PROGRAMME FACTS
 - About the specimen signatory: ${CERTIFICATE_POSITIONING.signatoryContext}
 - Official public references: CMI Recognised ${CERTIFICATE_POSITIONING.cmiRecognitionSource}; CMI executive team ${CERTIFICATE_POSITIONING.annFranckeSource}. Facts reviewed ${CERTIFICATE_POSITIONING.reviewedAt}.
 - Comparison rule: explain the difference between a CMI Certificate of Recognition and an attendance-only certificate factually. Do not make the unsupported claim that HRD Corp training providers issue valueless certificates, do not disparage another provider, and do not promise that the certificate will secure a promotion or job.
-- Structure: a six-month programme. Months 1–3 comprise six training days across the first three monthly sessions, coaching and an applied project leading to the CMI-recognised Executive MBA programme certificate. Months 4–6 provide preparation support for CMI's separate Chartered Manager assessment for participants who meet CMI entry criteria. No traditional exams or thesis in the programme-certificate phase.
+- Structure: the Executive MBA is a three-month programme: six training days across three monthly sessions, coaching and an applied project leading to the CMI-recognised Executive MBA programme certificate. No traditional exams or thesis. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee.
 - CMI professional recognition: graduates receive the programme certificate recognised against CMI Professional Standards. CMI's published CMI Recognised route lists Foundation Chartered Manager status (fCMgr) on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal. Do not describe MCMI as "M(CMI)" or promise MCMI automatically.
 - Chartered progression: the final three months support participants who meet CMI's entry criteria in preparing evidence, a written application and the professional discussion for CMI's separate Chartered Manager assessment. CMI awards CMgr MCMI only after successful assessment and controls experience, membership, application and fee requirements. It is not automatic. CMI's published post-nominal formats include fCMgr, MCMI, CMgr MCMI and CMgr FCMI.
 - Current Chartered Manager routes: CMI publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment requires either a management, business or leadership-focused degree plus three years in a management role, or at least five years of management experience without a management-specific qualification. CMI Fast Track requires one of CMI's specified qualifications completed within the last five years plus at least three years in a management role. The Future Ready Executive MBA is CMI Recognised, not a CMI qualification, so never promise Fast Track eligibility. CMI must confirm the route.
 - Current published CMI assessment prices checked ${CMI_PATHWAY.reviewedAt}: Full Assessment £750 + VAT; CMI Fast Track £162 + VAT; continuing membership fees may also apply. State the review date and tell visitors to verify CMI's current page before payment.
 - CMI Malaysia: CMI's official Malaysia regional network supports professional development, thought leadership and professional connections. CMI says non-members may attend its events and activities. CMI also says it has members in more than 170 countries. Do not imply that programme enrolment guarantees access to a particular event or benefit.
 - Chartered Manager sources: ${CMI_PATHWAY.charteredManager}; routes ${CMI_PATHWAY.routes}; Malaysia network ${CMI_PATHWAY.malaysia}; international network ${CMI_PATHWAY.international}.
-- Level statement: describe the learning as aimed at senior, strategic and postgraduate-level executive practice. Do not call the programme a formal CMI Level 7 qualification, a regulated postgraduate qualification, academically higher than a degree or degree-equivalent unless a current programme-specific CMI approval document confirms that exact claim. The specimen certificate says the programme is not a regulated qualification.
+- Recognition statement: the Future Ready Executive MBA is a three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic, not an MQA-accredited academic degree or a regulated qualification. Never claim a programme-level CMI qualification level or CMI Fast Track eligibility for Chartered Manager. Do not describe it as an academic MBA degree, a regulated qualification, or a guaranteed career outcome.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
 - Malaysian scholarship: eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
@@ -53,6 +56,7 @@ VERIFIED PROGRAMME FACTS
 - Localised on-site programme: ${PROGRAMME_PRICING.individuals[2].price}; a written proposal controls.
 - Company option: ${PROGRAMME_PRICING.companies.title}. ${PROGRAMME_PRICING.companies.description} ${PROGRAMME_PRICING.companies.price}
 - HRD Corp: ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.process} ${HRD_CORP_CLAIM.responsibility} Never describe approval or reimbursement as automatic.
+- Company enrolment: ${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}
 - Attendance: sessions run 9am-6pm. English Cohort 17 runs Saturday-Sunday; the other published English and Mandarin cohorts run Friday-Saturday. ${DELIVERY_CONTROL.schedule} For a missed session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort.
 - Low-pressure enquiry options: prospective participants can request a short programme-fit call, an online information meeting, an in-person meeting at an agreed location, or programme details first with no call. A request is not admission or a payment commitment. Do not disclose or infer a physical venue or address.
 - Refund: ${REFUND_TERMS.description}

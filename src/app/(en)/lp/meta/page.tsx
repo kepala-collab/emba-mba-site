@@ -41,7 +41,7 @@ export default function MetaLandingPage() {
             </Reveal>
             <Reveal delay={90}>
               <p className="cold-funnel-lede">
-                Continue working while you complete six facilitated training days, coaching and an applied project. The following three months provide preparation support for eligible participants pursuing CMI&rsquo;s separate Chartered Manager assessment.
+                Continue working while you complete six facilitated training days, coaching and an applied project.
               </p>
             </Reveal>
             <Reveal delay={130}>
@@ -109,16 +109,13 @@ export default function MetaLandingPage() {
           <Reveal>
             <div>
               <p className="mono sec-k">Recognition, explained plainly</p>
-              <h2 className="sec-h">The programme certificate and Chartered Manager are not the same award.</h2>
-              <p className="sec-sub">Keeping the two stages separate makes the decision easier to evaluate.</p>
+              <h2 className="sec-h">What successful participants receive on completing the programme.</h2>
+              <p className="sec-sub">Clear recognition information before you decide.</p>
             </div>
           </Reveal>
           <div className="cold-funnel-recognition-steps">
             <Reveal>
               <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>Successful participants complete a professional programme approved and endorsed against CMI&rsquo;s Professional Standard. It is not an MQA-accredited academic degree or regulated qualification.</p></article>
-            </Reveal>
-            <Reveal delay={50}>
-              <article><span className="mono">Optional next step</span><h3>Separate Chartered Manager assessment</h3><p>Eligible participants receive preparation support during months four to six. CMI confirms the applicable route and controls eligibility, assessment, membership and fees. CMgr is not automatic.</p></article>
             </Reveal>
           </div>
         </div>

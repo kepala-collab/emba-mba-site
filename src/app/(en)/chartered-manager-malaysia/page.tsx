@@ -199,11 +199,11 @@ export default function CharteredManagerMalaysiaPage() {
           <div className="wrap chartered-preparation-grid">
             <Reveal>
               <div className="reading-section-head">
-                <p className="mono sec-k">Months 4–6</p>
+                <p className="mono sec-k">Separate CMI route</p>
                 <h2 className="sec-h">Turn management experience into assessment-ready evidence.</h2>
                 <p>The preparation phase is designed to help eligible participants present real management practice clearly. It does not replace CMI&rsquo;s independent assessment.</p>
               </div>
-              <Link href="/executive-mba#structure" className="btn btn-ghost">See the complete six-month structure <span aria-hidden="true">→</span></Link>
+              <Link href="/executive-mba#structure" className="btn btn-ghost">See the three-month Executive MBA <span aria-hidden="true">→</span></Link>
             </Reveal>
             <ol className="chartered-preparation-list">
               <li><span>01</span><div><h3>Request route confirmation</h3><p>Review qualifications and management experience against CMI&rsquo;s current criteria, then ask CMI to confirm the applicable route.</p></div></li>
@@ -289,7 +289,7 @@ export default function CharteredManagerMalaysiaPage() {
       <CtaSection
         programme="Executive MBA"
         heading="Discuss programme fit and the Chartered Manager preparation phase."
-        sub="Request a short conversation about your role, experience and the six-month programme. The team can explain the published CMI routes but cannot pre-approve a CMI assessment outcome."
+        sub="Request a short conversation about your role and experience. The team can explain the published CMI routes but cannot pre-approve a CMI assessment outcome."
       />
     </>
   );
