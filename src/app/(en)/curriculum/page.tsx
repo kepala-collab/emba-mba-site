@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/curriculum", {
   title: "Curriculum — The 12 Modules",
   description:
-    "Explore 12 framework modules across Creating, Delivering and Capturing Value, delivered in three sessions with coaching and an applied business project.",
+    "Twelve applied modules across Creating, Delivering and Capturing Value — facilitated workshops, one-to-one coaching and a live business project. No exam, no thesis.",
 });
 
 const STAGES = [
@@ -53,7 +53,7 @@ export default function CurriculumPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Curriculum", path: "/curriculum" }]} />
       {/* INTRO */}
-      <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
+      <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The Curriculum · 12 Modules</span></div>
@@ -65,10 +65,9 @@ export default function CurriculumPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub" style={{ maxWidth: "56ch" }}>
-              Twelve framework modules, structured across three stages of value and delivered in{" "}
-              <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b>. The programme-certificate phase has no traditional
-              examination or thesis. Participants apply selected frameworks to their own organisational context and
-              submit a transformation plan for faculty review.
+              Twelve applied modules across three stages of value, delivered in{" "}
+              <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b> — no exam, no thesis. You apply them to a real
+              problem in your own business and leave with a transformation plan reviewed by faculty.
             </p>
           </Reveal>
           <Reveal className="mt-s">

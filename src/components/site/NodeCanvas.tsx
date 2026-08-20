@@ -38,7 +38,7 @@ export default function NodeCanvas() {
         for (let j = i + 1; j < P.length; j++) {
           const a = P[i], b = P[j], d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < max) {
-            x.globalAlpha = (1 - d / max) * 0.22;
+            x.globalAlpha = (1 - d / max) * 0.34;
             x.strokeStyle = (i + j) % 9 === 0 ? "#E63A48" : "#5C8DF0";
             x.lineWidth = 1;
             x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke();
@@ -48,8 +48,8 @@ export default function NodeCanvas() {
       for (let i = 0; i < P.length; i++) {
         const p = P[i];
         x.fillStyle = i % 8 === 0 ? "#E63A48" : "#5C8DF0";
-        x.globalAlpha = i % 8 === 0 ? 0.9 : 0.45;
-        x.beginPath(); x.arc(p.x, p.y, (i % 8 === 0 ? 2.3 : 1.5) * dpr, 0, 7); x.fill();
+        x.globalAlpha = i % 8 === 0 ? 0.95 : 0.6;
+        x.beginPath(); x.arc(p.x, p.y, (i % 8 === 0 ? 2.6 : 1.7) * dpr, 0, 7); x.fill();
       }
       x.globalAlpha = 1;
       if (!reduce && visible && !document.hidden) raf = requestAnimationFrame(frame);

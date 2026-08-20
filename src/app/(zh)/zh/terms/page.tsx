@@ -22,7 +22,7 @@ export default function Page() {
         <div className="prose mt-m" style={{ marginLeft: 0 }}>
           <p>使用本网站或提交咨询，即表示您同意以下网站条款。正式报名、付款及退款以课程提供者签发的书面报名条款为准。</p>
           <h2>网站与课程提供者</h2>
-          <p>本网站由 <strong>{OPERATOR.name}</strong>（注册号 {OPERATOR.reg}）运营，并作为本课程获授权的 Global 及本地课程合作伙伴，负责课程咨询、报价及报名协调。课程由 <strong>{SITE.provider}</strong> 提供及授课；两者为独立公司。</p>
+          <p>本网站由 <strong>{OPERATOR.name}</strong>（注册号 {OPERATOR.reg}）运营，并作为 <strong>{SITE.provider}</strong> 的市场推广机构，负责课程咨询、报价及报名协调。课程由 <strong>{SITE.provider}</strong> 提供及授课；两者为独立公司。</p>
           <h2>课程与资格说明</h2>
           <p>本网站公布 ABC 提供的课程资料。适用于每名学员的书面建议书及已签署报名条款列明价格、交付方式、完成要求及证书。如 ABC 更改已公布日期，已报名学员将收到书面替代日期。课程由 CMI 依据其专业标准批准及认可；并非 MQA 认证的学术学位或受监管资格。</p>
           <h2>特许经理人</h2>

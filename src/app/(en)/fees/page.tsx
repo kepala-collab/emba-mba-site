@@ -23,7 +23,7 @@ export default function FeesPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Fees", path: "/fees" }]} />
 
-      <section className="section fees-hero">
+      <section className="section fees-hero geo-section">
         <div className="wrap fees-hero-grid">
           <div>
             <Reveal>
@@ -32,7 +32,7 @@ export default function FeesPage() {
             <Reveal delay={40}><h1>Standard fee {FACTS.priceStd}. Eligible Malaysians may qualify for a {FACTS.scholarshipAmount} scholarship.</h1></Reveal>
             <Reveal delay={80}>
               <p className="fees-hero-lede">
-                The {FACTS.scholarshipProvider} scholarship is not automatic. Applicants are assessed for eligibility and availability, and an award must be confirmed in writing. An approved recipient pays {FACTS.priceAfterScholarship}.
+                Eligible Malaysians can bring the fee down to {FACTS.priceAfterScholarship} with the {FACTS.scholarshipProvider} scholarship — assessed for eligibility and availability, confirmed in writing, and never automatic.
               </p>
             </Reveal>
             <Reveal delay={110}>

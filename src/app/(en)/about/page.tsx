@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import Reveal from "@/components/site/Reveal";
@@ -6,8 +7,8 @@ import { ABC_PROFILE, OPERATOR, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/about", {
-  title: "About Rostam Affandi Ahmad | Rocket eMBA",
-  description: "Meet Rostam Affandi Ahmad, Programme Coordinator at Rocket eMBA, and learn why he wants more Malaysians to move forward through practical management development.",
+  title: "About Rostam Affandi Ahmad | Future Ready Executive MBA",
+  description: "Meet Rostam Affandi Ahmad, Programme Coordinator for the Future Ready Executive MBA, and learn why he wants Malaysians to move forward through practical management development.",
 });
 
 export default function AboutPage() {
@@ -23,7 +24,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={70}>
             <div>
-              <div className="eyebrow"><span className="l" /><span className="mono sec-k">About Rocket eMBA</span></div>
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">About Future Ready</span></div>
               <h1 className="sec-h" style={{ fontSize: "clamp(2.4rem,4.8vw,4rem)" }}>{SITE.director}.</h1>
               <p className="sec-sub">Programme Coordinator</p>
               <p className="fine" style={{ maxWidth: "58ch", marginTop: 20 }}>For Affandi, the purpose is simple: to help more Malaysians move forward in their careers, businesses and communities.</p>
@@ -37,10 +38,15 @@ export default function AboutPage() {
           <Reveal>
             <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">The programme team</span></div>
-              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>Built by a specialist training organisation. Supported locally by an Associate Partner.</h2>
+              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>Built by a specialist training organisation. Marketed locally by Right Dots Resources.</h2>
               <p className="sec-sub" style={{ maxWidth: "62ch" }}><strong>{ABC_PROFILE.name} (ABC)</strong> is a {ABC_PROFILE.hrdStatus}. {ABC_PROFILE.description}</p>
               <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>{ABC_PROFILE.programmePositioning}</p>
-              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}><strong>{OPERATOR.name}</strong> is ABC&rsquo;s Associate Partner for marketing, programme enquiries, pricing and enrolment coordination. ABC provides and delivers the programme.</p>
+              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}><strong>{OPERATOR.name}</strong> is the {OPERATOR.role}, handling marketing, programme enquiries, pricing and enrolment coordination. ABC develops and delivers the programme.</p>
+              <Link href="/asian-business-consulting" className="text-action" style={{ marginTop: 16 }}>More about Asian Business Consulting <span aria-hidden="true">↗</span></Link>
+              <figure className="partnership-seal">
+                <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
+                <figcaption className="mono sec-k">Asian Business Consulting × Right Dots Resources · in collaboration</figcaption>
+              </figure>
             </div>
           </Reveal>
         </div>

@@ -30,7 +30,7 @@ export default function AiExecutiveMbaPage() {
   return (
     <>
       {/* 1 · HERO INTRO */}
-      <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
+      <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">AI-enabled leadership · CMI-recognised programme</span></div></Reveal>
           <Reveal delay={60}>

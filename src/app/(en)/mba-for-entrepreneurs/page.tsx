@@ -52,7 +52,7 @@ export default function MbaForEntrepreneursPage() {
   return (
     <>
       {/* 1 · Intro */}
-      <section className="section">
+      <section className="section geo-section">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />

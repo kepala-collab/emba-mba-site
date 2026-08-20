@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// Rocket eMBA brand mark, shown in a clean rounded chip.
+// Future Ready Executive MBA brand mark, shown in a clean rounded chip.
 export default function RdrMark({ size = 36 }: { size?: number }) {
   return (
     <span
@@ -18,7 +18,7 @@ export default function RdrMark({ size = 36 }: { size?: number }) {
     >
       <Image
         src="/brand/rdr-emblem.png"
-        alt="Rocket eMBA"
+        alt="Future Ready Executive MBA"
         width={size}
         height={size}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}

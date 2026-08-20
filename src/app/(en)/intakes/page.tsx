@@ -43,7 +43,7 @@ export default function IntakesPage() {
       <JsonLd data={courseJsonLd} />
 
       {/* 1 — INTRO */}
-      <section className="section">
+      <section className="section geo-section">
         <span className="eyebrow">
           <span className="l" /> 2026 Intakes
         </span>

@@ -9,6 +9,7 @@ export const LOCALE_PAIRS: LocalePair[] = [
   { en: "/fees", zh: "/zh/fees" },
   { en: "/intakes", zh: "/zh/intakes" },
   { en: "/faculty", zh: "/zh/faculty" },
+  { en: "/asian-business-consulting", zh: "/zh/asian-business-consulting" },
   { en: "/faq", zh: "/zh/faq" },
   { en: "/apply", zh: "/zh/apply" },
   { en: "/contact", zh: "/zh/contact" },

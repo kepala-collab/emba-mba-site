@@ -27,9 +27,9 @@ const ZH_CORE = [
 ];
 const ZH_RESOURCES = [
   "/zh/resources", "/zh/resources/advancement-brief",
-  "/zh/diagnostic", "/zh/insights/advancement-question",
+  "/zh/diagnostic", "/zh/insights/advancement-question", "/zh/asian-business-consulting",
 ];
-const INFO = ["/about", "/contact", "/privacy", "/terms", "/resources", "/resources/advancement-brief", "/diagnostic"];
+const INFO = ["/about", "/asian-business-consulting", "/contact", "/privacy", "/terms", "/resources", "/resources/advancement-brief", "/diagnostic"];
 
 function alternatesFor(path: string) {
   const pair = LOCALE_PAIRS.find(({ en, zh }) => en === path || zh === path);

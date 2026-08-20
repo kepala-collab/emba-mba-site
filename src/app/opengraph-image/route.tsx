@@ -17,8 +17,14 @@ export function GET() {
         justifyContent: "space-between",
         padding: "72px 78px",
         fontFamily: "Arial, sans-serif",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      <div style={{ position: "absolute", right: -70, top: -70, width: 340, height: 340, transform: "rotate(45deg)", border: "2px solid rgba(29,99,216,0.16)", borderRadius: 30 }} />
+      <div style={{ position: "absolute", right: 150, top: 92, width: 150, height: 2, background: "rgba(29,99,216,0.30)", transform: "rotate(24deg)" }} />
+      <div style={{ position: "absolute", right: 128, top: 116, width: 14, height: 14, borderRadius: 14, background: "#1d63d8", opacity: 0.55 }} />
+      <div style={{ position: "absolute", right: 286, top: 60, width: 11, height: 11, borderRadius: 11, background: "#e63a48", opacity: 0.6 }} />
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
         <div style={{ width: 54, height: 6, background: "#1d63d8" }} />
         <div style={{ fontSize: 23, letterSpacing: 5, textTransform: "uppercase", color: "#405674" }}>

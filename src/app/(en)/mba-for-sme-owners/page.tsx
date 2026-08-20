@@ -55,7 +55,7 @@ export default function MbaForSmeOwnersPage() {
       <JsonLd data={jsonLd} />
 
       {/* 1 · Intro — name the real pain */}
-      <section className="section">
+      <section className="section geo-section">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />

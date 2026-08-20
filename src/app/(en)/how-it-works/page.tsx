@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/how-it-works", {
   title: "F.A.S.T. Executive Leadership Method",
   description:
-    "How the Future Ready Executive MBA develops judgment through systems, first-principles, design-integrative, framework, strategic and holistic thinking.",
+    "How the F.A.S.T. method turns a complex business issue into a clear, defensible decision — using seven reusable thinking disciplines, not case studies that go out of date.",
 });
 
 // Truthful, generic amplifications of each discipline — no fabricated claims.
@@ -38,7 +38,7 @@ export default function HowItWorks() {
   return (
     <>
       {/* INTRO — the philosophy */}
-      <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
+      <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The Method · F.A.S.T.</span></div></Reveal>
           <Reveal>
@@ -56,7 +56,7 @@ export default function HowItWorks() {
           <Reveal className="mt-s">
             <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
               F.A.S.T. develops <em style={{ fontStyle: "italic" }}>how you analyse</em>, not only what you know.
-              The seven frameworks are designed for reuse after individual case examples become outdated.
+              The seven disciplines are designed for reuse after individual case examples become outdated.
             </p>
           </Reveal>
         </div>

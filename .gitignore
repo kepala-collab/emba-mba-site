@@ -52,3 +52,7 @@ next-env.d.ts
 .env*
 # ...but keep the committed template (no secrets in it)
 !.env.production.example
+
+# Large self-hosted video is delivered separately and dropped in before deploy
+public/media/*.mp4
+!public/media/abc-graduation.mp4

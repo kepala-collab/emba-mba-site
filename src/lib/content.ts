@@ -29,7 +29,7 @@ export const ABC_PROFILE = {
 // and handles marketing, enquiries, pricing and enrolment coordination.
 export const OPERATOR = {
   name: "Right Dots Resources",
-  role: "Associate Partner to Asian Business Consulting",
+  role: "Associate Partner",
   reg: "202603145615 (003856919-U)",
   address:
     "No. 86, Jalan Desa Bakti, Taman Desa, Jalan Klang Lama, 58100 Kuala Lumpur, Wilayah Persekutuan, Malaysia",
@@ -67,7 +67,7 @@ export const FACTS = {
   scholarshipAmt: FEES.malaysia.scholarshipLabel,
   priceNet: FEES.malaysia.participantLabel,
   priceIntl: "USD 2,500",
-  cohorts: "13",
+  cohorts: "16",
 };
 
 export const PROGRAMME_AUDIENCE =
@@ -303,7 +303,7 @@ export const COMPARISON = [
   { k: "Focus", them: "Academic theory, research and case analysis", us: "Business context, strategic judgment and reusable decision frameworks" },
   { k: "Assessment", them: "Assignments or examinations plus a dissertation or thesis", us: "An applied project on the participant's own business; no traditional examination or thesis" },
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
-  { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "F.A.S.T. methodology plus 12 practical business frameworks" },
+  { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "The F.A.S.T. method and 12 applied management modules" },
   { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "One scheduled weekend session a month during the certificate phase while participants continue working" },
   { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard; eligible Malaysian applicants may receive a RM5,000.00 LIFE Innoversity scholarship after assessment and written approval" },
   { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
@@ -359,5 +359,5 @@ export const NAV: NavItem[] = [
   { href: "/chartered-manager-malaysia", label: "Recognition" },
   { href: "/fees", label: "Fees" },
   { href: "/intakes", label: "2026 Dates" },
-  { href: "/about", label: "About Rocket eMBA" },
+  { href: "/about", label: "About" },
 ];

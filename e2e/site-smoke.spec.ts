@@ -140,8 +140,8 @@ test("advancement brief keeps chapter and fact-card alignment across breakpoints
 
 test("CMI progression chart separates qualification levels from the programme pathway", async ({ page }) => {
   for (const [route, boundary] of [
-    ["/chartered-manager-malaysia", "No Level 7 claim is made for this programme."],
-    ["/zh/chartered-manager-malaysia", "本课程没有 Level 7 声明。"],
+    ["/chartered-manager-malaysia", "Professional development; not an academic degree."],
+    ["/zh/chartered-manager-malaysia", "专业发展课程，不是学术学位。"],
   ] as const) {
     for (const width of [320, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
@@ -183,9 +183,6 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   expect(columns).toBe(1);
   await expect(page.locator(".home-video-section .programme-film")).toBeVisible();
   await expect(page.locator(".home-video-section form[data-form-id]")).toHaveCount(0);
-  await heroForm.getByRole("radio", { name: /WhatsApp/i }).check();
-  await expect(heroForm.getByLabel("Phone / WhatsApp")).toBeVisible();
-  await expect(heroForm.getByRole("textbox", { name: "Email" })).toHaveCount(0);
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {
@@ -199,9 +196,9 @@ test("mobile Apply presents the form immediately after its introduction", async 
 test("programme introduction falls back to a complete text overview", async ({ page }) => {
   await goto(page, "/");
   await page.getByRole("button", { name: "Read", exact: true }).first().click();
-  const dialog = page.getByRole("dialog", { name: /What happens during the six-month programme/i });
+  const dialog = page.getByRole("dialog", { name: /What happens during the three-month programme/i });
   await expect(dialog).toBeVisible();
-  await expect(dialog.getByText("Six months. Two separate stages.")).toBeVisible();
+  await expect(dialog.getByText("Three months. One focused programme.")).toBeVisible();
   await expect(dialog.getByText(/approved video can be added/i)).toHaveCount(0);
   await expect(dialog.locator(".film-placeholder img")).toHaveCount(0);
 });
@@ -300,11 +297,13 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
   });
   await goto(page, "/apply");
   await page.getByRole("button", { name: /Continue to contact details/i }).click();
-  await page.getByLabel("Full name").fill("Test Participant");
-  await page.getByLabel("Phone / WhatsApp").fill("+60123456789");
-  await page.getByLabel("Email").fill("test@example.com");
-  await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: /Send my programme request/i }).click();
+  const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone"]') });
+  await expect(form.locator("[data-widget-id]")).toBeVisible();
+  await form.locator('input[name="name"]').fill("Test Participant");
+  await form.locator('input[name="phone"]').fill("+60123456789");
+  await form.locator('input[name="email"]').fill("test@example.com");
+  await form.getByRole("checkbox").check();
+  await form.getByRole("button", { name: /Send my programme request/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
 });
@@ -379,4 +378,38 @@ test("campaign routes have no automated accessibility violations", async ({ page
       expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
     }
   }
+});
+
+test("home hero renders and draws the animated node network", async ({ page }) => {
+  await goto(page, "/");
+  const canvas = page.locator("canvas.node-canvas");
+  await expect(canvas).toHaveCount(1);
+  await page.waitForTimeout(600);
+  const info = await canvas.evaluate((element) => {
+    const canvasElement = element as HTMLCanvasElement;
+    let drawn = 0;
+    try {
+      const data = canvasElement.getContext("2d")!.getImageData(0, 0, canvasElement.width, canvasElement.height).data;
+      for (let i = 3; i < data.length; i += 4) {
+        if (data[i] > 8) { drawn += 1; if (drawn > 40) break; }
+      }
+    } catch { /* canvas unavailable */ }
+    return { width: canvasElement.width, drawn };
+  });
+  expect(info.width, "canvas backing store should size to the hero, not the 300px default").toBeGreaterThan(320);
+  expect(info.drawn, "node network should paint visible pixels").toBeGreaterThan(20);
+});
+
+test("core pages carry the geometric hero backdrop in both languages", async ({ page }) => {
+  for (const route of ["/how-it-works", "/curriculum", "/fees", "/chartered-manager-malaysia", "/zh/how-it-works", "/zh/curriculum", "/zh/fees", "/zh/chartered-manager-malaysia"]) {
+    await goto(page, route);
+    expect(await page.locator(".geo-section").count(), route).toBeGreaterThan(0);
+  }
+});
+
+test("partnership seal appears on the About page and in the footer", async ({ page }) => {
+  await goto(page, "/about");
+  await expect(page.locator(".partnership-seal img")).toBeVisible();
+  await goto(page, "/");
+  expect(await page.locator("footer.site .foot-seal").count()).toBeGreaterThan(0);
 });

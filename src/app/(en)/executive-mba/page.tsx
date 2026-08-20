@@ -23,7 +23,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Three-Month Executive MBA Programme Malaysia",
   description:
-    "Complete the CMI-recognised Executive MBA programme in three months while continuing to work.",
+    "Complete a CMI (UK)-recognised Executive MBA in three months while you keep working: six training days, twelve applied modules and a live business project. HRD Corp claimable.",
 });
 
 const courseSchema = {
@@ -53,7 +53,7 @@ export default function ExecutiveMbaPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Executive MBA", path: "/executive-mba" }]} />
       <JsonLd data={courseSchema} />
 
-      <section className="section programme-overview-hero">
+      <section className="section programme-overview-hero geo-section">
         <div className="wrap programme-overview-grid">
           <div>
             <Reveal>

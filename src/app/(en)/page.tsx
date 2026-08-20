@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LeadForm from "@/components/site/LeadForm";
+import NodeCanvas from "@/components/site/NodeCanvas";
 import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
 import ProgrammeMarks from "@/components/site/ProgrammeMarks";
 import Reveal from "@/components/site/Reveal";
@@ -9,7 +10,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/", {
   title: "Executive MBA Malaysia for Working Managers",
   description:
-    "A three-month CMI-recognised Executive MBA for working leaders: practical decision frameworks, an applied business project and no traditional exams or thesis.",
+    "A three-month, CMI (UK)-recognised Executive MBA for working leaders in Malaysia. Twelve applied modules, one live business project, no exams or thesis. HRD Corp claimable.",
   alternates: {
     canonical: "/",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -34,7 +35,7 @@ const DECISION_PATHS = [
   {
     n: "03",
     title: "The curriculum",
-    body: "Review the 12 frameworks, applied project and learning sequence before you commit.",
+    body: "Review the 12 modules, applied project and learning sequence before you commit.",
     href: "/curriculum",
     action: "Review the curriculum",
   },
@@ -71,6 +72,7 @@ export default function Home() {
   return (
     <>
       <section className="working-hero hero">
+        <NodeCanvas />
         <div className="wrap working-hero-grid">
           <div className="working-hero-copy">
             <Reveal>
@@ -86,7 +88,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                A three-month Executive MBA for working leaders who need to make better decisions, create momentum and deliver results in the real world.
+                A three-month Executive MBA for working leaders: sharper decisions, real momentum and a plan you can act on — with no exams, no thesis and no time out of the business.
               </p>
             </Reveal>
             <Reveal delay={140}>
@@ -126,7 +128,7 @@ export default function Home() {
         <div className="wrap working-fact-grid">
           <div><strong>{FACTS.durationLong}</strong><span>professional development programme</span></div>
           <div><strong>{FACTS.trainingDays} days</strong><span>across three facilitated sessions</span></div>
-          <div><strong>{FACTS.moduleCount}</strong><span>practical management frameworks</span></div>
+          <div><strong>{FACTS.moduleCount}</strong><span>applied management modules</span></div>
           <div><strong>1 project</strong><span>built around a live business challenge</span></div>
         </div>
       </section>

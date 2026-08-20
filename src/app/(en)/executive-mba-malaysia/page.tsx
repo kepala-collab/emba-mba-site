@@ -68,7 +68,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       <JsonLd data={courseJsonLd} />
 
       {/* INTRO — Malaysia-specific */}
-      <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
+      <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA · Malaysia</span></div>

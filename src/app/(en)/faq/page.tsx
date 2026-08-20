@@ -27,7 +27,7 @@ export default function FaqPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }]} />
       <JsonLd data={faqJsonLd} />
 
-      <section className="section faq" style={{ paddingTop: "clamp(96px, 14vh, 160px)" }}>
+      <section className="section faq geo-section" style={{ paddingTop: "clamp(96px, 14vh, 160px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
             <div className="eyebrow">

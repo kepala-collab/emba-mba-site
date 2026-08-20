@@ -107,7 +107,7 @@ export default function CharteredManagerMalaysiaPage() {
       <JsonLd data={faqSchema} />
       <JsonLd data={{ "@context": "https://schema.org", ...editorialTeamSchema() }} />
 
-      <header className="resource-hero chartered-hero">
+      <header className="resource-hero chartered-hero geo-section">
         <div className="wrap maxw-820">
           <p className="mono sec-k">CMI professional recognition · Malaysia</p>
           <h1>Chartered Manager in Malaysia: what it is, who qualifies and how this programme helps.</h1>

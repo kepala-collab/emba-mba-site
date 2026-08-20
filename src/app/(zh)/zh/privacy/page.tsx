@@ -21,7 +21,7 @@ export default function Page() {
         <div className="prose mt-m" style={{ marginLeft: 0 }}>
           <p>本政策说明本网站如何依据马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理个人资料。</p>
           <h2>资料控制者与课程提供者</h2>
-          <p>本网站及申请表由 <strong>{OPERATOR.name}</strong>（注册号 {OPERATOR.reg}）运营，并由其作为获授权的 Global 及本地课程合作伙伴负责课程咨询、报价及报名协调。课程由 <strong>{SITE.provider}</strong> 提供；申请资料会与其课程团队共享，以处理咨询、资格评估、申请及报名。</p>
+          <p>本网站及申请表由 <strong>{OPERATOR.name}</strong>（注册号 {OPERATOR.reg}）运营，并由其作为 <strong>{SITE.provider}</strong> 的市场推广机构负责课程咨询、报价及报名协调。课程由 <strong>{SITE.provider}</strong> 提供；申请资料会与其课程团队共享，以处理咨询、资格评估、申请及报名。</p>
           <h2>我们收集的资料</h2>
           <p>包括姓名、电话、电子邮件、公司、职务、学员类型、留言、页面语言、来源页面、UTM 参数、广告点击识别码，以及托管服务所记录的 IP、浏览器与装置资料。</p>
           <h2>用途与共享</h2>

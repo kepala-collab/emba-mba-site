@@ -76,7 +76,7 @@ export default function CharteredManagerMalaysiaZhPage() {
       {schemas.map((schema) => <JsonLd key={schema["@type"]} data={schema} />)}
       <JsonLd data={{ "@context": "https://schema.org", ...editorialTeamSchema() }} />
 
-      <header className="resource-hero chartered-hero">
+      <header className="resource-hero chartered-hero geo-section">
         <div className="wrap maxw-820">
           <p className="mono sec-k">CMI 专业认可 · 马来西亚</p>
           <h1>马来西亚 Chartered Manager：专业身份、申请条件与课程准备。</h1>

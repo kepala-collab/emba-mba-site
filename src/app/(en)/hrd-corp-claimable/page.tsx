@@ -65,7 +65,7 @@ export default function HrdCorpClaimablePage() {
       <JsonLd data={faqJsonLd} />
 
       {/* INTRO */}
-      <section className="section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
+      <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Employer-led HRD Corp application · SBL-Khas · Malaysia</span></div>

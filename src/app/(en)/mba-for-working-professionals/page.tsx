@@ -56,7 +56,7 @@ export default function MbaForWorkingProfessionalsPage() {
       <JsonLd data={jsonLd} />
 
       {/* 1 · Intro */}
-      <section className="section">
+      <section className="section geo-section">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
