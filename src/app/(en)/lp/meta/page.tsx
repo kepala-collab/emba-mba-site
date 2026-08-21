@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/lp/meta", {
   title: "A Practical Management Programme for Working Leaders",
   description:
-    "Complete the CMI-recognised Executive MBA programme certificate stage in three months while continuing to work, then receive Chartered Manager assessment preparation support if eligible.",
+    "Complete the three-month CMI-recognised Executive MBA while continuing to work. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
 });
@@ -37,7 +37,7 @@ export default function MetaLandingPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">For experienced Malaysian managers</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>Complete the CMI-recognised Executive MBA programme certificate stage in 3 months.</h1>
+              <h1>Complete the CMI-recognised Executive MBA in 3 months.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="cold-funnel-lede">
@@ -46,8 +46,8 @@ export default function MetaLandingPage() {
             </Reveal>
             <Reveal delay={130}>
               <ul className="cold-funnel-proof-list" aria-label="Programme highlights">
-                <li>Three-month CMI-recognised programme certificate stage</li>
-                <li>Three further months of CMgr assessment preparation for eligible participants</li>
+                <li>Three-month CMI-recognised professional programme</li>
+                <li>Six training days across three monthly sessions</li>
                 <li>Designed around full-time work</li>
                 <li>No traditional examination or thesis</li>
               </ul>
@@ -70,7 +70,7 @@ export default function MetaLandingPage() {
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
           {[
-            ["CMI", "Approved and endorsed against CMI’s Professional Standard"],
+            ["CMI", "CMI (UK) Endorsed and Recognised"],
             [FACTS.trainingDays, "Facilitated training days across three monthly sessions"],
             ["1", "Applied project built around a live business issue"],
             [FACTS.scholarshipAmount, "Scholarship available to eligible Malaysian applicants"],
@@ -115,7 +115,7 @@ export default function MetaLandingPage() {
           </Reveal>
           <div className="cold-funnel-recognition-steps">
             <Reveal>
-              <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>Successful participants complete a professional programme approved and endorsed against CMI&rsquo;s Professional Standard. It is not an MQA-accredited academic degree or regulated qualification.</p></article>
+              <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>Successful participants complete a professional programme with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or regulated qualification.</p></article>
             </Reveal>
           </div>
         </div>

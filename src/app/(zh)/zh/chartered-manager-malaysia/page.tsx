@@ -5,14 +5,14 @@ import CtaSection from "@/components/site/CtaSection";
 import CmiProgressionChart from "@/components/site/CmiProgressionChart";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CMI_PATHWAY, SITE } from "@/lib/content";
+import { CMI_PATHWAY, CTA_LABELS, SITE } from "@/lib/content";
 import { EDITORIAL_TEAM_ID, editorialTeamSchema, withSeo } from "@/lib/seo";
 
 const PATH = "/zh/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "马来西亚 Chartered Manager：CMgr 路线",
-  description: "了解英国 CMI Chartered Manager、fCMgr 与 CMgr MCMI 的区别、申请条件、评估费用、课程准备阶段及 CMI Malaysia 专业网络。",
+  description: "了解英国 CMI Chartered Manager、fCMgr 与 CMgr MCMI 的区别、申请条件、独立评估费用及 CMI Malaysia 专业网络。",
   openGraph: { type: "article" },
 });
 
@@ -82,7 +82,7 @@ export default function CharteredManagerMalaysiaZhPage() {
           <h1>马来西亚 Chartered Manager：专业身份、申请条件与课程准备。</h1>
           <p>Chartered Manager（CMgr）仅由英国特许管理协会授予。Future Ready Executive MBA 为符合资格的学员提供三个月独立评估准备，但不会预先承诺评估结果。</p>
           <div className="chartered-hero-actions">
-            <Link href="/zh/apply" className="btn btn-primary">讨论课程及路线是否适合 <span aria-hidden="true">→</span></Link>
+            <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} <span aria-hidden="true">→</span></Link>
             <a href={CMI_PATHWAY.routes} className="btn btn-ghost" target="_blank" rel="noreferrer">查看 CMI 当前路线 <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function CharteredManagerMalaysiaZhPage() {
 
         <section className="section">
           <div className="wrap chartered-preparation-grid">
-            <Reveal><div className="reading-section-head"><p className="mono sec-k">第四至第六个月</p><h2 className="sec-h">把管理经验整理成可供评估的证据。</h2><p>准备阶段协助符合条件的学员清楚表达实际管理实践；它不会取代 CMI 独立评估。</p></div><Link href="/zh/executive-mba" className="btn btn-ghost">查看完整六个月课程 <span aria-hidden="true">→</span></Link></Reveal>
+            <Reveal><div className="reading-section-head"><p className="mono sec-k">独立专业路线</p><h2 className="sec-h">Chartered Manager 不包含在三个月课程内。</h2><p>符合条件的学员可另行向 CMI 了解适用路线。CMI 独立决定资格、评估、会员及费用。</p></div><Link href="/zh/executive-mba" className="btn btn-ghost">查看三个月课程 <span aria-hidden="true">→</span></Link></Reveal>
             <ol className="chartered-preparation-list">
               <li><span>01</span><div><h3>向 CMI 确认适用路线</h3><p>先对照学历、管理经验及 CMI 当前条件，再由 CMI 确认申请路线。</p></div></li>
               <li><span>02</span><div><h3>选择专业证据</h3><p>找出能说明领导决策、组织成果及持续专业发展的实际案例。</p></div></li>

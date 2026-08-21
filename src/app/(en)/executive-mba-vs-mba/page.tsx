@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
-import { COMPARISON_SCOPE, FACTS, FAQS, REFUND_TERMS } from "@/lib/content";
+import { COMPARISON_SCOPE, CTA_LABELS, FACTS, FAQS, REFUND_TERMS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -47,7 +47,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Compare the routes by credential, assessment, format, time and published price. The{" "}
               <Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link> is a
-              professional programme approved and endorsed by CMI; it is not an MQA-accredited academic
+              professional programme with CMI (UK) Endorsed and Recognised status; it is not an MQA-accredited academic
               degree or a regulated qualification. Choose an academic MBA when your objective requires
               an academic degree. Choose this programme when your objective is applied management
               development while continuing to work.
@@ -135,7 +135,7 @@ export default function ExecutiveMbaVsMbaPage() {
             </p>
           </Reveal>
           <Reveal className="center mt-m">
-            <Link href="/apply" className="btn btn-primary">Discuss which route fits your requirements →</Link>
+            <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
           </Reveal>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function ExecutiveMbaVsMbaPage() {
           </div>
           <p className="fine mt-s">
             Read every question in full on the <Link href="/faq" className="acc">FAQ</Link>, or
-            {" "}<Link href="/apply" className="acc">apply now</Link> and the programme team will be in touch.
+            {" "}<Link href="/apply" className="acc">{CTA_LABELS.guide}</Link> and the programme team will send the information.
           </p>
         </div>
       </section>

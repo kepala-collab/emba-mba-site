@@ -2,6 +2,7 @@ import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import Reveal from "@/components/site/Reveal";
+import { CTA_LABELS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const path = "/zh/intakes";
@@ -20,7 +21,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">2026 英语及华语班</span></div>
             <h1 className="sec-h">选择符合工作日程的班次。</h1>
-            <p className="sec-sub">五个已公布班次均包含三个周末课程。以下日期涵盖首三个月的课程证书阶段；第四至第六个月为符合条件的学员提供 Chartered Manager 评估准备支持。</p>
+            <p className="sec-sub">五个已公布班次均在三个月内完成三个周末课程。Chartered Manager 属于独立可选 CMI 路线，不包含在本课程或已公布费用内。</p>
             <p className="fine mt-s">课程团队会在回复咨询时确认班次名额。</p>
           </Reveal>
         </div>
@@ -40,7 +41,7 @@ export default function Page() {
           <Reveal>
             <h2 className="sec-h">决定之前，先确认日期与出席安排。</h2>
             <p className="sec-sub">告诉课程团队适合你的日期及语言。你可选择简短通话、线上说明会、在双方同意的地点面谈，或先收取资料。</p>
-            <div className="mt-m"><Link href="/zh/apply" className="btn btn-primary">选择沟通方式 →</Link></div>
+            <div className="mt-m"><Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.conversation} →</Link></div>
           </Reveal>
         </div>
       </section>

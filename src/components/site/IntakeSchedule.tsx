@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { INTAKES } from "@/lib/content";
+import { useEffect, useState } from "react";
+import { CTA_LABELS, INTAKES, PROGRAMME_YEAR } from "@/lib/content";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import { cohortKey } from "@/lib/conversion-contract";
+import { getIntakeStatus, intakeStatusLabel, malaysiaDateKey } from "@/lib/intakes";
 
 type Props = {
   lang?: "en" | "zh";
@@ -10,7 +14,10 @@ type Props = {
 
 export default function IntakeSchedule({ lang = "en", label }: Props) {
   const zh = lang === "zh";
-  const regionLabel = label || (zh ? "2026 年高管 MBA 开课日期" : "2026 Executive MBA intake schedule");
+  const [today, setToday] = useState("0000-00-00");
+  const regionLabel = label || (zh ? `${PROGRAMME_YEAR} 年高管 MBA 开课日期` : `${PROGRAMME_YEAR} Executive MBA intake schedule`);
+
+  useEffect(() => { setToday(malaysiaDateKey()); }, []);
 
   return (
     <div className="intake-schedule">
@@ -37,8 +44,10 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                 const key = cohortKey(cohort.language, cohort.co);
                 const intent = cohort.language === "Mandarin" ? "mandarin" : "individual_self_funded";
                 const href = `${zh ? "/zh/apply" : "/apply"}?cohort=${encodeURIComponent(key)}&intent=${intent}`;
+                const status = getIntakeStatus(cohort.startDate, cohort.endDate, today);
+                const canEnquire = status === "upcoming";
                 return (
-                <tr key={key}>
+                <tr key={key} data-status={status}>
                   <td className="co">{cohort.co}</td>
                   <td>{zh ? (cohort.language === "Mandarin" ? "华语" : "英语") : cohort.language}</td>
                   <td className="s mono">{cohort.s1}</td>
@@ -50,9 +59,9 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                     {cohort.time}
                   </td>
                   <td className="intake-action-cell">
-                    <Link className="intake-action-link" href={href} data-track-event="cohort_select" data-track-id={`cohort_${key}`} data-track-location="intake_schedule" data-track-cohort={key} data-track-intent={intent}>
-                      {zh ? "咨询此班次" : "Discuss this cohort"}
-                    </Link>
+                    {canEnquire ? <Link className="intake-action-link" href={href} data-track-event="cohort_select" data-track-id={`cohort_${key}`} data-track-location="intake_schedule" data-track-cohort={key} data-track-intent={intent}>
+                      {zh ? CTA_LABELS.zh.conversation : CTA_LABELS.conversation}
+                    </Link> : <span className="intake-status-label">{intakeStatusLabel(status, zh)}</span>}
                   </td>
                 </tr>
               );})}
@@ -73,6 +82,8 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
           const availability = zh
             ? (cohort.seats === "Open" ? "开放咨询" : "请确认名额")
             : (cohort.seats === "Open" ? "Open for enquiries" : "Confirm availability");
+          const status = getIntakeStatus(cohort.startDate, cohort.endDate, today);
+          const canEnquire = status === "upcoming";
 
           return (
             <li className="intake-card" key={`mobile-${key}`}>
@@ -81,7 +92,7 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                   <p className="mono">{language}</p>
                   <h3>{cohort.co}</h3>
                 </div>
-                <span className="intake-availability">{availability}</span>
+                <span className={`intake-availability is-${status}`}>{canEnquire ? availability : intakeStatusLabel(status, zh)}</span>
               </header>
               <dl>
                 <div><dt>{zh ? "第一次" : "Session 1"}</dt><dd>{cohort.s1}</dd></div>
@@ -89,9 +100,9 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                 <div><dt>{zh ? "第三次" : "Session 3"}</dt><dd>{cohort.s3}</dd></div>
               </dl>
               <footer><span>{days}</span><strong>{cohort.time}</strong></footer>
-              <Link className="intake-card-action" href={href} data-track-event="cohort_select" data-track-id={`mobile_cohort_${key}`} data-track-location="intake_schedule_mobile" data-track-cohort={key} data-track-intent={intent}>
-                {zh ? "咨询此班次 →" : "Discuss this cohort →"}
-              </Link>
+              {canEnquire ? <Link className="intake-card-action" href={href} data-track-event="cohort_select" data-track-id={`mobile_cohort_${key}`} data-track-location="intake_schedule_mobile" data-track-cohort={key} data-track-intent={intent}>
+                {zh ? `${CTA_LABELS.zh.conversation} →` : `${CTA_LABELS.conversation} →`}
+              </Link> : <Link className="intake-card-action" href={zh ? "/zh/intakes" : "/intakes"}>{zh ? "查看下一个开放班次 →" : "See the next available cohort →"}</Link>}
             </li>
           );
         })}

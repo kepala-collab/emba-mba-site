@@ -31,7 +31,7 @@ const courseJsonLd = {
     "@id": `${SITE.url}/intakes#${c.language.toLowerCase()}-${c.co.toLowerCase().replace(" ", "-")}`,
     name: `${SITE.name} — ${c.language} ${c.co}`,
     courseMode: "onsite",
-    courseWorkload: `Three ${c.days} sessions, 9am–6pm, during the three-month programme-certificate phase`,
+    courseWorkload: `Three ${c.days} sessions, 9am–6pm, during the three-month programme`,
     startDate: c.startDate,
   })),
 };
@@ -91,7 +91,7 @@ export default function IntakesPage() {
             <h3 style={{ margin: 0 }}>One weekend a month</h3>
             <p style={{ margin: "0.5rem 0 0", color: "var(--muted)" }}>
               Each session runs 9am–6pm. Cohort 17 uses Saturday–Sunday; the remaining published cohorts use Friday–Saturday. Three weekends
-              during the three-month programme-certificate phase. Participants continue in their professional roles between sessions.
+              during the three-month programme. Participants continue in their professional roles between sessions.
             </p>
           </div>
           <div className="card">

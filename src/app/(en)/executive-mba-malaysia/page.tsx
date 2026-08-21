@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
-import { CLIENTS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { CLIENTS, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -23,7 +23,7 @@ const REASONS = [
   },
   {
     h: "A three-month programme for working leaders",
-    p: "The first three months use one scheduled weekend a month, 9am–6pm, to complete the programme-certificate phase. Months four to six provide supported Chartered Manager assessment preparation for eligible participants.",
+    p: "The programme uses one scheduled weekend a month, 9am–6pm, across three months. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
   },
   {
     h: "ASEAN-relevant faculty & cases",
@@ -37,7 +37,7 @@ const courseJsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Future Ready Executive MBA recognised by CMI (UK), delivered in Malaysia and online. HRD Corp claimable for eligible Malaysian employers.",
+    "Future Ready Executive MBA recognised by CMI (UK), delivered in Malaysia and online. Employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -90,14 +90,14 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              You keep working while completing the first three months of weekend sessions, followed by three months of supported Chartered Manager assessment preparation if you meet CMI&rsquo;s criteria. Prefer to join from elsewhere?
+              You keep working while completing three monthly weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. Prefer to join from elsewhere?
               The same programme runs{" "}
               <Link href="/online-executive-mba">fully online</Link>.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary">Discuss a Malaysian cohort →</Link>
+              <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
               <Link href="/fees" className="btn">Fees &amp; scholarship</Link>
             </div>
           </Reveal>

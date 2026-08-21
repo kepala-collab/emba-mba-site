@@ -6,9 +6,9 @@ import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/lp/google", {
-  title: "马来西亚高管 MBA — 英国 CMI 认可，六个月课程",
+  title: "马来西亚高管 MBA — 英国 CMI 认可，三个月课程",
   description:
-    "六个月专业管理课程：首三个月完成获英国 CMI 认可的课程证书阶段，随后三个月为符合条件者准备 CMI 特许经理人评估。HRD Corp 注册雇主须在开课前提交申请。",
+    "三个月 Future Ready Executive MBA 专业发展课程：六个培训日、三个每月课程及企业应用项目。雇主资助须符合 HRD Corp 条件并获批准。",
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
 });
@@ -21,11 +21,11 @@ const INCLUDED = [
   ["高管教练与项目辅导", "一对一指导，应用于你真实的企业，而非案例研究。"],
   ["杠杆管理系统（LMS）", "完成课程后保留框架、参考及工作模板。"],
   ["企业应用项目", "提交一份供导师评审的企业行动方案；没有传统论文或考试。"],
-  ["CMI（英国）认可 + CMgr 申请准备", "课程获 CMI 认可；符合条件的毕业学员可另行申请特许经理人，身份并非自动授予。"],
+  ["CMI（英国）背书及认可", "Chartered Manager 是独立可选路线，具有独立资格、评估及费用。"],
 ];
 
 const CMP = [
-  ["时间", "六个月：三个月课程证书阶段 + 三个月 CMgr 评估准备", "18–24 个月"],
+  ["时间", "三个月：六个培训日，分三个每月课程完成", "18–24 个月"],
   ["投资", "标准费用 RM10,000.00；符合资格的马来西亚申请者经评估及书面批准后可获 RM5,000.00 奖学金", "授予院校公布的学费及附加费用"],
   ["形式", "证书阶段每月一个周末；学员继续工作", "按授予院校公布的学术课程时间表修读"],
   ["考核", "学员自身企业的应用项目；没有传统考试或论文", "作业或考试，加上论文"],
@@ -42,12 +42,12 @@ export default function ZhGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">为正在比较专业发展课程的马来西亚管理者而设</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  三个月完成获 CMI（英国）认可的 Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>课程证书阶段。</em>
+                  三个月完成具 CMI（英国）背书及认可状态的 Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>专业发展课程。</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.1rem", maxWidth: "44ch", margin: "22px 0 26px", lineHeight: 1.9 }}>
-                  在继续工作的同时完成三次课程、企业项目及获 CMI 认可的课程证书阶段。随后三个月为符合条件者准备 <b style={{ color: "var(--ink)" }}>特许经理人（CMgr MCMI）</b> 独立评估；CMgr 仅在通过 CMI 评估后授予。
+                  在继续工作的同时，三个月完成三次课程、企业项目及获 CMI 认可的专业发展课程。<b style={{ color: "var(--ink)" }}>Chartered Manager</b> 属于独立可选 CMI 路线，具有独立资格、评估及费用。
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -58,7 +58,7 @@ export default function ZhGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["3 个月", "获 CMI 认可的课程证书阶段"], ["随后 3 个月", "符合条件者的 CMgr 评估准备"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([b, s]) => (
+                  {[["3 个月", "完整专业发展课程"], [FACTS.trainingDays + " 天", "分三个每月课程完成"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>
@@ -79,7 +79,7 @@ export default function ZhGoogleLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
+          {[["CMI", "CMI（英国）背书及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, THINKING_EDGE } from "@/lib/content";
+import { CTA_LABELS, FACTS, THINKING_EDGE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/mba-for-entrepreneurs", {
@@ -44,7 +44,7 @@ export default function MbaForEntrepreneursPage() {
 
   const format = [
     { h: "A defined three-month schedule", p: "Three monthly sessions lead to the CMI-recognised programme certificate while you continue working." },
-    { h: "One weekend a month, or online", p: "The certificate phase uses one scheduled weekend a month; the global online route removes the need for physical attendance." },
+    { h: "One weekend a month, or online", p: "The programme uses one scheduled weekend a month; the global online route removes the need for physical attendance." },
     { h: "Applied during the programme", p: "There is no traditional thesis or examination. Participants apply the frameworks to the venture or organisation they lead." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   ];
@@ -146,8 +146,8 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Continue operating while completing the programme.</h2>
           </Reveal>
           <p className="sec-sub">
-            The certificate phase uses three monthly weekend sessions, followed by three months of
-            supported Chartered Manager assessment preparation for participants who meet CMI&rsquo;s criteria.
+            The programme uses three monthly weekend sessions, coaching and an applied project.
+            Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {format.map((x) => (
@@ -172,7 +172,7 @@ export default function MbaForEntrepreneursPage() {
             The programme runs for {FACTS.durationLong}. The standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship after assessment and written approval.
           </p>
           <p className="mt-s">
-            <Link href="/apply" className="btn btn-primary">Discuss your programme fit</Link>
+            <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide}</Link>
           </p>
         </div>
       </section>

@@ -5,7 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import CmiProgressionChart from "@/components/site/CmiProgressionChart";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CMI_PATHWAY, SITE } from "@/lib/content";
+import { CMI_PATHWAY, CTA_LABELS, SITE } from "@/lib/content";
 import { EDITORIAL_TEAM_ID, editorialTeamSchema, withSeo } from "@/lib/seo";
 
 const PATH = "/chartered-manager-malaysia";
@@ -70,6 +70,14 @@ const FAQS = [
   },
 ] as const;
 
+const DIRECT_ANSWERS = [
+  ["Is this an academic degree?", "No. It is a three-month professional development programme with CMI (UK) Endorsed and Recognised status, not an MQA-accredited academic degree or regulated qualification."],
+  ["What do successful participants receive?", "Successful participants receive the CMI Certificate of Recognition for the Future Ready Executive MBA programme. CMI controls the final certificate wording and issue."],
+  ["What does CMI recognition mean?", "CMI Recognition means the programme has been benchmarked against CMI's Professional Standard. It is not the same as a CMI qualification."],
+  ["Is Chartered Manager included or guaranteed?", "No. Chartered Manager is a separate optional CMI route with its own eligibility, assessment, membership and fees."],
+  ["Who should consider this rather than an academic MBA?", "Working managers, owners and directors seeking applied professional development around a live business challenge should compare this format with the academic depth and award of a university MBA."],
+] as const;
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -112,14 +120,32 @@ export default function CharteredManagerMalaysiaPage() {
           <p className="mono sec-k">CMI professional recognition · Malaysia</p>
           <h1>Chartered Manager in Malaysia: what it is, who qualifies and how this programme helps.</h1>
           <p>
-            Chartered Manager (CMgr) is awarded only by the Chartered Management Institute. The Future Ready Executive MBA gives eligible participants three months of structured preparation for CMI&rsquo;s separate assessment; it does not promise the award.
+            Chartered Manager (CMgr) is awarded only by the Chartered Management Institute. It is a separate optional route and is not included in the three-month Executive MBA programme or published fee.
           </p>
           <div className="chartered-hero-actions">
-            <Link href="/apply" className="btn btn-primary">Discuss programme and pathway fit <span aria-hidden="true">→</span></Link>
+            <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} <span aria-hidden="true">→</span></Link>
             <a href={CMI_PATHWAY.routes} className="btn btn-ghost" target="_blank" rel="noreferrer">Check CMI&rsquo;s current routes <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </header>
+
+      <section className="section chartered-direct-section">
+        <div className="wrap">
+          <div className="reading-section-head">
+            <p className="mono sec-k">Five answers first</p>
+            <h2 className="sec-h">Know exactly what the programme is—and what it is not.</h2>
+          </div>
+          <div className="chartered-direct-grid">
+            {DIRECT_ANSWERS.map(([question, answer], index) => (
+              <article key={question}>
+                <span className="mono">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{question}</h3>
+                <p>{answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <>
         <section className="section chartered-positioning">
@@ -201,7 +227,7 @@ export default function CharteredManagerMalaysiaPage() {
               <div className="reading-section-head">
                 <p className="mono sec-k">Separate CMI route</p>
                 <h2 className="sec-h">Turn management experience into assessment-ready evidence.</h2>
-                <p>The preparation phase is designed to help eligible participants present real management practice clearly. It does not replace CMI&rsquo;s independent assessment.</p>
+                <p>CMI&rsquo;s assessment routes require applicants to present real management practice clearly. The steps below explain that separate process; they are not part of the Executive MBA programme or fee.</p>
               </div>
               <Link href="/executive-mba#structure" className="btn btn-ghost">See the three-month Executive MBA <span aria-hidden="true">→</span></Link>
             </Reveal>
@@ -288,8 +314,8 @@ export default function CharteredManagerMalaysiaPage() {
 
       <CtaSection
         programme="Executive MBA"
-        heading="Discuss programme fit and the Chartered Manager preparation phase."
-        sub="Request a short conversation about your role and experience. The team can explain the published CMI routes but cannot pre-approve a CMI assessment outcome."
+        heading="Understand the programme and the separate Chartered Manager route."
+        sub="Get the 2026 programme guide first. If you choose a conversation, the team can explain the published CMI routes but cannot determine eligibility or pre-approve a CMI assessment outcome."
       />
     </>
   );

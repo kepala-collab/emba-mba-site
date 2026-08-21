@@ -15,6 +15,33 @@ export const SITE = {
   providerLinkedIn: process.env.NEXT_PUBLIC_PROVIDER_LINKEDIN || "",
 };
 
+export const PROGRAMME_YEAR = "2026";
+
+export const CTA_LABELS = {
+  guide: `Get the ${PROGRAMME_YEAR} programme guide`,
+  conversation: "Arrange a programme conversation",
+  company: "Enquire for your company",
+  whatsapp: "Chat with the programme team on WhatsApp",
+  zh: {
+    guide: `获取 ${PROGRAMME_YEAR} 课程指南`,
+    conversation: "预约课程沟通",
+    company: "企业课程咨询",
+    whatsapp: "通过 WhatsApp 联系课程团队",
+  },
+} as const;
+
+export const PROGRAMME_PROOF = {
+  graduates: 154,
+  cohorts: 17,
+  englishCohorts: 16,
+  mandarinCohorts: 1,
+  graduationAttendance: 86,
+  inauguralGraduation: "August 2026",
+} as const;
+
+export const ORGANISATIONAL_STATEMENT =
+  "The Future Ready Executive MBA is a three-month professional development programme designed and delivered by Asian Business Consulting, with CMI (UK) Endorsed and Recognised status. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount.";
+
 export const ABC_PROFILE = {
   name: "Asian Business Consulting",
   shortName: "ABC",
@@ -67,7 +94,7 @@ export const FACTS = {
   scholarshipAmt: FEES.malaysia.scholarshipLabel,
   priceNet: FEES.malaysia.participantLabel,
   priceIntl: "USD 2,500",
-  cohorts: "16",
+  cohorts: String(PROGRAMME_PROOF.cohorts),
 };
 
 export const PROGRAMME_AUDIENCE =
@@ -98,7 +125,7 @@ export const REFUND_TERMS = {
 
 export const DELIVERY_CONTROL = {
   schedule:
-    "The dates shown are the published 2026 schedule. If ABC changes a date, registered participants receive the replacement date in writing.",
+    `The dates shown are the published ${PROGRAMME_YEAR} schedule. If ABC changes a date, registered participants receive the replacement date in writing.`,
   faculty:
     "ABC confirms the faculty assigned to each cohort in the cohort briefing issued before Session 1.",
   modules:
@@ -244,7 +271,7 @@ export const FACULTY: Faculty[] = [
     img: "/brand/faculty/xavier-johnson.png",
   },
   {
-    n: "Ir. Dr. Jonas Anthony", r: "Chief Business Consultant",
+    n: "Ir. Dr. Jonas Anthony", r: "Faculty Director",
     focus: "Lean · Industry 4.0 · TQM",
     b: "Held executive leadership responsibility in a Japanese manufacturing conglomerate. Works in Lean, Industry 4.0 and Total Quality Management as a leadership mentor, industry advisor and academic contributor.",
     img: "/brand/faculty/jonas-anthony.png",
@@ -290,12 +317,12 @@ export const INTAKES = [
 ];
 
 export const INCLUSIONS = [
-  { b: "Six training days across three sessions", s: "Practitioner-led framework workshops scheduled once a month during the certificate phase." },
+  { b: "Six training days across three sessions", s: "Practitioner-led framework workshops scheduled once a month during the three-month programme." },
   { b: "Guided management self-assessment", s: "Review current decision habits and select specific areas to improve during the programme." },
   { b: "Executive coaching & project review", s: "One-to-one guidance applied to the participant's own organisational context." },
   { b: "The Leverage Management System (LMS)", s: "Participants retain the programme frameworks, references and working templates." },
   { b: "An applied business project", s: "Produce a written action plan for a current business issue and submit it for faculty review; there is no traditional thesis or examination." },
-  { b: "CMI certificate and Chartered Manager preparation", s: "Successful completion leads to the CMI Certificate of Recognition; months four to six prepare eligible participants for CMI's separate Chartered Manager assessment." },
+  { b: "CMI Certificate of Recognition", s: "Successful completion leads to the CMI Certificate of Recognition. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees." },
 ];
 
 export const COMPARISON = [
@@ -304,7 +331,7 @@ export const COMPARISON = [
   { k: "Assessment", them: "Assignments or examinations plus a dissertation or thesis", us: "An applied project on the participant's own business; no traditional examination or thesis" },
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
   { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "The F.A.S.T. method and 12 applied management modules" },
-  { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "One scheduled weekend session a month during the certificate phase while participants continue working" },
+  { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "One scheduled weekend session a month during the three-month programme while participants continue working" },
   { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard; eligible Malaysian applicants may receive a RM5,000.00 LIFE Innoversity scholarship after assessment and written approval" },
   { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
 ];
@@ -313,7 +340,7 @@ export const FAQS = [
   { q: "How is the programme structured?", a: "The Executive MBA runs for three months. Participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee." },
   { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },
   { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
-  { q: "Is it MQA-recognised?", a: "No. This is a professional development programme approved and endorsed by CMI against its Professional Standard. It is not an MQA-accredited academic degree or a regulated qualification." },
+  { q: "Is it MQA-recognised?", a: "No. This is a professional development programme with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification." },
   { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   { q: "What are the refund terms?", a: REFUND_TERMS.description },
   { q: "Can my company use its HRD Corp levy?", a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}` },
@@ -333,7 +360,7 @@ export const ASSOCIATES = [
   "University of Malaya", "Genos International", "IAC",
 ];
 
-// ABC's Future Ready Corporate Training Series (2026–2030) — HRD Corp claimable.
+// ABC's Future Ready Corporate Training Series (2026–2030).
 // Categories with their "potential programmes" (menu; fees/dates supplied by ABC per engagement).
 export const CORP_TRAINING = [
   { c: "AI Leadership & Enterprise AI Adoption", p: ["AI Leadership for Executives", "AI for Managers", "Agentic AI in the Workplace", "AI Productivity Masterclass", "Prompt Engineering for Business", "AI Workflow Automation", "Responsible AI & AI Governance"] },
@@ -349,15 +376,21 @@ export const CORP_TRAINING = [
 ];
 
 export const COMPLIANCE =
-  "CMI has approved and endorsed this professional development programme against its Professional Standard and awards the CMI Certificate of Recognition to successful participants. It is not an MQA-accredited academic degree or a regulated qualification. HRD Corp determines every grant approval and approved amount. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.";
+  "This professional development programme has CMI (UK) Endorsed and Recognised status, and successful participants are awarded the CMI Certificate of Recognition. It is not an MQA-accredited academic degree or a regulated qualification. HRD Corp determines every grant approval and approved amount. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.";
 
-export type NavItem = { href: string; label: string };
+export type NavItem = { href: string; label: string; children?: readonly NavItem[] };
 export const NAV: NavItem[] = [
-  { href: "/executive-mba", label: "Programme" },
-  { href: "/how-it-works", label: "Method" },
-  { href: "/curriculum", label: "Curriculum" },
+  {
+    href: "/executive-mba",
+    label: "Programme",
+    children: [
+      { href: "/executive-mba", label: "Overview" },
+      { href: "/how-it-works", label: "Method" },
+      { href: "/curriculum", label: "Curriculum" },
+    ],
+  },
   { href: "/chartered-manager-malaysia", label: "Recognition" },
-  { href: "/fees", label: "Fees" },
-  { href: "/intakes", label: "2026 Dates" },
-  { href: "/about", label: "About" },
+  { href: "/fees", label: "Fees & Funding" },
+  { href: "/intakes", label: `${PROGRAMME_YEAR} Dates` },
+  { href: "/about", label: "About & Team" },
 ];

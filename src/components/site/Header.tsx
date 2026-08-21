@@ -2,15 +2,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, type MouseEvent as ReactMouseEvent } from "react";
-import { NAV } from "@/lib/content";
+import { CTA_LABELS, NAV } from "@/lib/content";
 import { isCampaignRoute, pairedRoute } from "@/lib/locale-routes";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import RdrMark from "./RdrMark";
 
 const NAV_ZH = [
-  { href: "/zh/executive-mba", label: "课程详情" },
-  { href: "/zh/how-it-works", label: "课程方法" },
-  { href: "/zh/curriculum", label: "课程大纲" },
+  { href: "/zh/executive-mba", label: "课程", children: [
+    { href: "/zh/executive-mba", label: "课程详情" },
+    { href: "/zh/how-it-works", label: "课程方法" },
+    { href: "/zh/curriculum", label: "课程大纲" },
+  ] },
   { href: "/zh/chartered-manager-malaysia", label: "CMI 认可" },
   { href: "/zh/fees", label: "学费" },
   { href: "/zh/intakes", label: "开课日期" },
@@ -34,6 +36,7 @@ export default function Header() {
 
   useEffect(() => {
     setMenuOpen(false);
+    document.querySelectorAll<HTMLDetailsElement>(".nav-dropdown[open]").forEach((item) => { item.open = false; });
   }, [pathname]);
 
   useEffect(() => {
@@ -124,7 +127,7 @@ export default function Header() {
               {zh ? "EN" : "中文"}
             </Link>
             <a href="#apply" className="navcta" data-track-event="cta_click" data-track-id="campaign_header_plan" data-track-location="campaign_header">
-              {zh ? "获取 2026 课程指南" : "Get the 2026 guide"}
+              {zh ? CTA_LABELS.zh.guide : CTA_LABELS.guide}
             </a>
           </nav>
         </div>
@@ -143,16 +146,23 @@ export default function Header() {
             </span>
           </Link>
           <nav className="navlinks desktop-nav" aria-label={zh ? "主导航" : "Primary navigation"}>
-            {links.map((n) => (
+            {links.map((n) => n.children ? (
+              <details className="nav-dropdown" key={n.href}>
+                <summary className={isActive(n.href) ? "is-active" : undefined}>{n.label}<span aria-hidden="true">⌄</span></summary>
+                <div className="nav-dropdown-panel">
+                  {n.children.map((child) => <Link key={child.href} href={child.href} className={isActive(child.href) ? "is-active" : undefined} aria-current={pathname === child.href ? "page" : undefined}>{child.label}</Link>)}
+                </div>
+              </details>
+            ) : (
               <Link key={n.href} href={n.href} className={isActive(n.href) ? "is-active" : undefined} aria-current={isActive(n.href) ? "page" : undefined}>{n.label}</Link>
             ))}
             <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
               {zh ? "EN" : "中文"}
             </Link>
-            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? "索取课程资料" : "Get Programme Guide"}</Link>
+            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? CTA_LABELS.zh.guide : CTA_LABELS.guide}</Link>
           </nav>
           <div className="mobile-header-actions">
-            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "索取资料" : "Get Guide"}</Link>
+            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "获取指南" : "Get guide"}</Link>
             <button
               ref={toggleRef}
               className="mobile-menu-toggle"
@@ -193,11 +203,14 @@ export default function Header() {
             </div>
             <nav aria-label={zh ? "移动主导航" : "Mobile primary navigation"}>
               {links.map((n, index) => (
-                <Link key={n.href} href={n.href} onClick={closeMenu} aria-current={isActive(n.href) ? "page" : undefined}>
-                  <span className="mobile-nav-index">{String(index + 1).padStart(2, "0")}</span>
-                  <span>{n.label}</span>
-                  <span aria-hidden="true">↗</span>
-                </Link>
+                <div className="mobile-nav-group" key={n.href}>
+                  <Link href={n.href} onClick={closeMenu} aria-current={pathname === n.href ? "page" : undefined}>
+                    <span className="mobile-nav-index">{String(index + 1).padStart(2, "0")}</span>
+                    <span>{n.label}</span>
+                    <span aria-hidden="true">↗</span>
+                  </Link>
+                  {n.children?.map((child) => <Link className="mobile-nav-child" key={child.href} href={child.href} onClick={closeMenu} aria-current={pathname === child.href ? "page" : undefined}><span aria-hidden="true">—</span><span>{child.label}</span><span aria-hidden="true">↗</span></Link>)}
+                </div>
               ))}
             </nav>
             <div className="mobile-nav-footer">
@@ -215,7 +228,7 @@ export default function Header() {
                 {zh ? "询问课程助手 →" : "Ask the programme assistant →"}
               </button>
               <Link href={applyHref} className="btn btn-primary" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_menu_apply" data-track-location="mobile_navigation">
-                {zh ? "索取课程资料 →" : "Request the programme guide →"}
+                {zh ? `${CTA_LABELS.zh.guide} →` : `${CTA_LABELS.guide} →`}
               </Link>
             </div>
           </div>

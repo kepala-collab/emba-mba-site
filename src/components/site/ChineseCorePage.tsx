@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
+import { CTA_LABELS } from "@/lib/content";
 
 type Props = {
   path: string;
@@ -35,7 +36,7 @@ export default function ChineseCorePage({ path, eyebrow, title, intro, sections 
           </div>
           <Reveal className="mt-m">
             <div className="zh-core-actions">
-              <Link href="/zh/apply" className="btn btn-primary">向课程团队提问 →</Link>
+              <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} →</Link>
               <Link href="/zh/faq" className="btn btn-ghost">常见问题</Link>
             </div>
           </Reveal>

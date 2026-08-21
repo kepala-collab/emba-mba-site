@@ -17,8 +17,8 @@ export const metadata = withSeo("/zh/asian-business-consulting", {
 
 const MILESTONES = [
   { n: "2020", s: "ABC 于马来西亚注册" },
-  { n: "2024年7月", s: "获 CMI（UK）批准及认可" },
-  { n: "16", s: "个已开办班次，含首个中文班" },
+  { n: "2024年7月", s: "CMI（英国）背书及认可状态" },
+  { n: "17", s: "个已开办班次：16 个英语班与首个中文班" },
   { n: "154", s: "位课程毕业生" },
 ];
 
@@ -30,10 +30,10 @@ const LEADERS = [
     b: "F.A.S.T. 方法与课程十二个核心模块的设计者。马来亚大学校友，专注于组织商业架构、商业模式创新与设计思维，并透过关联机构 Waterhouse Consult Think 提供顾问服务。",
   },
   {
-    n: "Ir. Ts. Dr. Jonas Anthony",
-    role: "首席商业顾问",
+    n: "Ir. Dr. Jonas Anthony",
+    role: "ABC 首席营运官 · LIFE Innoversity 联合创办人",
     img: "/brand/faculty/jonas-anthony.png",
-    b: "退休前任 Panasonic AVC Networks 吉隆坡企业管理执行董事，曾任马来西亚 Panasonic 制造人力资源发展主席。逾 32 年精益、工业 4.0、品质与供应链经验；具 Ir.、Ts.、英国特许工程师及特许品质专业资格，并为泰莱大学工程学院客座教授。",
+    b: "退休前任 Panasonic AVC Networks 吉隆坡企业管理执行董事，曾任马来西亚 Panasonic 制造人力资源发展主席。逾 32 年精益、工业 4.0、品质与供应链经验；亦为英国特许工程师、特许品质专业人士及泰莱大学工程学院客座教授。",
   },
   {
     n: "Allan Gan",
@@ -134,16 +134,17 @@ export default function AbcPageZh() {
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届毕业典礼 · 2026年8月</span></div>
-            <h2 className="sec-h">同一舞台，十六个班次，154 位领袖。</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼——从第一届到当前班次的毕业生齐聚一堂。</p>
+            <h2 className="sec-h">17 个班次，154 位毕业生，共享一个重要里程碑。</h2>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群。</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
-              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> 首届毕业典礼 · 第 1&ndash;16 届 · 2026年8月</div>
+              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> 首届毕业典礼 · 86 位毕业生出席 · 2026年8月</div>
               <video controls preload="none" poster="/brand/abc-graduation-poster.jpg" playsInline>
+                <source src="/media/abc-graduation-mobile.mp4" type="video/mp4" media="(max-width: 720px)" />
                 <source src="/media/abc-graduation.mp4" type="video/mp4" />
               </video>
-              <div className="film-cap"><strong>典礼于一处庄重场地举行，</strong>汇聚毕业生、导师，以及来自马来西亚商界与公共领域的嘉宾。</div>
+              <div className="film-cap"><strong>86 位毕业生出席典礼，</strong>并与导师及来自马来西亚商界与公共领域的嘉宾共同见证这一里程碑。</div>
             </div>
           </Reveal>
         </div>
@@ -158,7 +159,7 @@ export default function AbcPageZh() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>英国特许管理协会（CMI）</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是外部品质机构。它于 2024 年 7 月依据其专业标准批准及认可本课程，ABC 亦列为其认可的国际中心。</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是外部品质机构。本课程自 2024 年 7 月起具 CMI（英国）背书及认可状态，ABC 亦列为其认可的国际中心。</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>在 CMI 名录中查证 <span aria-hidden="true">↗</span></a>
             </div>
             <div>

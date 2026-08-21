@@ -17,8 +17,8 @@ export const metadata = withSeo("/asian-business-consulting", {
 
 const MILESTONES = [
   { n: "2020", s: "ABC registered in Malaysia" },
-  { n: "Jul 2024", s: "Approved and endorsed by CMI (UK)" },
-  { n: "16", s: "cohorts delivered, including the first Mandarin cohort" },
+  { n: "Jul 2024", s: "CMI (UK) Endorsed and Recognised status" },
+  { n: "17", s: "cohorts delivered: 16 English and the first Mandarin cohort" },
   { n: "154", s: "graduates of the signature programme" },
 ];
 
@@ -30,10 +30,10 @@ const LEADERS = [
     b: "Architect of the F.A.S.T. methodology and the twelve modules at the core of the programme. A Universiti Malaya alumnus, he works in organisation business architecture, business model innovation and design thinking, and also advises through the related entity Waterhouse Consult Think.",
   },
   {
-    n: "Ir. Ts. Dr. Jonas Anthony",
-    role: "Chief Business Consultant",
+    n: "Ir. Dr. Jonas Anthony",
+    role: "Chief Operating Officer, ABC · Co-Founder, LIFE Innoversity",
     img: "/brand/faculty/jonas-anthony.png",
-    b: "Retired Executive Director of Corporate Management at Panasonic AVC Networks Kuala Lumpur and former Chairman of Panasonic Manufacturing HRD in Malaysia. Over 32 years in Lean, Industry 4.0, quality and supply chain. Ir., Ts., Chartered Engineer (UK) and Chartered Quality Professional; Adjunct Professor at Taylor's University School of Engineering.",
+    b: "Retired Executive Director of Corporate Management at Panasonic AVC Networks Kuala Lumpur and former Chairman of Panasonic Manufacturing HRD in Malaysia. Over 32 years in Lean, Industry 4.0, quality and supply chain; also a Chartered Engineer (UK), Chartered Quality Professional and Adjunct Professor at Taylor's University School of Engineering.",
   },
   {
     n: "Allan Gan",
@@ -136,16 +136,17 @@ export default function AsianBusinessConsultingPage() {
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>
-            <h2 className="sec-h">One stage. Sixteen cohorts. 154 leaders.</h2>
-            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its first graduation ceremony in August 2026 — bringing graduates from Cohort 1 through to the current intake onto one stage.</p>
+            <h2 className="sec-h">Seventeen cohorts. 154 graduates. One shared milestone.</h2>
+            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
-              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Inaugural graduation · Cohorts 1&ndash;16 · August 2026</div>
+              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Inaugural graduation · 86 attendees · August 2026</div>
               <video controls preload="none" poster="/brand/abc-graduation-poster.jpg" playsInline>
+                <source src="/media/abc-graduation-mobile.mp4" type="video/mp4" media="(max-width: 720px)" />
                 <source src="/media/abc-graduation.mp4" type="video/mp4" />
               </video>
-              <div className="film-cap"><strong>Held at a distinguished venue,</strong> the ceremony gathered graduates, faculty and guests of honour from across Malaysian business and public life.</div>
+              <div className="film-cap"><strong>Eighty-six graduates attended,</strong> joined by faculty and guests from Malaysian business and public life.</div>
             </div>
           </Reveal>
         </div>
@@ -160,7 +161,7 @@ export default function AsianBusinessConsultingPage() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Chartered Management Institute (UK)</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. It approved and endorsed the programme against its Professional Standard in July 2024, and ABC is listed as a Recognised international centre.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has held CMI (UK) Endorsed and Recognised status since July 2024, and ABC is listed as a Recognised international centre.</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>Verify on CMI&rsquo;s register <span aria-hidden="true">↗</span></a>
             </div>
             <div>

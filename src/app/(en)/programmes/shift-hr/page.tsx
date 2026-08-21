@@ -219,7 +219,7 @@ export default function ShiftHrPage() {
         </div>
       </section>
 
-      <CtaSection programme="SHIFT HR Workshop" heading="Discuss the workshop requirements for your HR team." />
+      <CtaSection programme="SHIFT HR Workshop" heading="Discuss the workshop requirements for your HR team." defaultIntent="employer_evaluating" intentOptions={["employer_evaluating", "employer_sponsored"]} />
     </>
   );
 }

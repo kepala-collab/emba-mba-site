@@ -1,6 +1,7 @@
 export const LEAD_STAGES = [
   "new",
   "contacted",
+  "qualified",
   "meeting_scheduled",
   "evaluating",
   "employer_process",
@@ -13,13 +14,14 @@ export type LeadStage = (typeof LEAD_STAGES)[number];
 
 const ALLOWED_TRANSITIONS: Record<LeadStage, readonly LeadStage[]> = {
   new: ["contacted", "meeting_scheduled", "evaluating", "employer_process", "applied", "not_proceeding"],
-  contacted: ["meeting_scheduled", "evaluating", "employer_process", "applied", "not_proceeding"],
-  meeting_scheduled: ["contacted", "evaluating", "employer_process", "applied", "not_proceeding"],
-  evaluating: ["contacted", "meeting_scheduled", "employer_process", "applied", "not_proceeding"],
-  employer_process: ["contacted", "meeting_scheduled", "evaluating", "applied", "not_proceeding"],
-  applied: ["contacted", "evaluating", "employer_process", "enrolled", "not_proceeding"],
+  contacted: ["qualified", "meeting_scheduled", "evaluating", "employer_process", "applied", "not_proceeding"],
+  qualified: ["contacted", "meeting_scheduled", "evaluating", "employer_process", "applied", "not_proceeding"],
+  meeting_scheduled: ["contacted", "qualified", "evaluating", "employer_process", "applied", "not_proceeding"],
+  evaluating: ["contacted", "qualified", "meeting_scheduled", "employer_process", "applied", "not_proceeding"],
+  employer_process: ["contacted", "qualified", "meeting_scheduled", "evaluating", "applied", "not_proceeding"],
+  applied: ["contacted", "qualified", "evaluating", "employer_process", "enrolled", "not_proceeding"],
   enrolled: [],
-  not_proceeding: ["contacted", "meeting_scheduled", "evaluating", "employer_process", "applied"],
+  not_proceeding: ["contacted", "qualified", "meeting_scheduled", "evaluating", "employer_process", "applied"],
 };
 
 export function isLeadStage(value: unknown): value is LeadStage {

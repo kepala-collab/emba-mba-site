@@ -1,6 +1,6 @@
+import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import LeadForm from "@/components/site/LeadForm";
-import { SITE } from "@/lib/content";
+import { CTA_LABELS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/contact", {
@@ -51,8 +51,10 @@ export default function ContactPage() {
           <Reveal delay={120}>
             <div className="card" style={{ padding: 28 }}>
               <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Choose the next step</p>
-              <h2 style={{ fontSize: "1.35rem", color: "var(--ink)", marginBottom: 20, lineHeight: 1.25 }}>Arrange a programme conversation</h2>
-              <LeadForm programme="Executive MBA" />
+              <h2 style={{ fontSize: "1.8rem", color: "var(--ink)", marginBottom: 12, lineHeight: 1.15 }}>One place for programme requests.</h2>
+              <p style={{ color: "var(--ink-2)", margin: "0 0 20px" }}>Use the enquiry page to request the guide, choose a contact method or arrange a programme conversation.</p>
+              <Link href="/apply" className="btn btn-primary" style={{ width: "100%" }}>{CTA_LABELS.conversation} →</Link>
+              <a href={`mailto:${SITE.email}`} className="btn btn-ghost" style={{ width: "100%", marginTop: 10 }}>Email {SITE.email}</a>
             </div>
           </Reveal>
         </div>

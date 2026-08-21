@@ -3,6 +3,7 @@ import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import Reveal from "@/components/site/Reveal";
 import {
+  CTA_LABELS,
   FACTS,
   HRD_CORP_CLAIM,
   INCLUSIONS,
@@ -37,7 +38,7 @@ export default function FeesPage() {
             </Reveal>
             <Reveal delay={110}>
               <div className="fees-hero-actions">
-                <Link href="/apply" className="btn btn-primary">Check scholarship eligibility <span aria-hidden="true">→</span></Link>
+                <Link href="/apply" className="btn btn-primary">{CTA_LABELS.conversation} <span aria-hidden="true">→</span></Link>
                 <Link href="#included" className="btn btn-ghost">See what the fee includes</Link>
               </div>
             </Reveal>
@@ -76,7 +77,7 @@ export default function FeesPage() {
               </Reveal>
             ))}
           </div>
-          <p className="fine fee-section-note">The programme certificate phase has no traditional examination or thesis. Travel and accommodation, where required, are not included.</p>
+          <p className="fine fee-section-note">The three-month programme has no traditional examination or thesis. Travel and accommodation, where required, are not included.</p>
         </div>
       </section>
 

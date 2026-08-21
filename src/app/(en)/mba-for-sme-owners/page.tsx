@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "A professional Executive MBA for SME owners and founders, recognised against CMI Professional Standards and delivered across the first three monthly sessions during the three-month programme-certificate phase.",
+    "A three-month professional Executive MBA for SME owners and founders, recognised against CMI Professional Standards and delivered across three monthly sessions.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -179,7 +179,7 @@ export default function MbaForSmeOwnersPage() {
             <h2 className="sec-h">A format that allows owners to remain in the business.</h2>
           </Reveal>
           <p className="sec-sub">
-            The certificate phase uses three monthly weekend sessions, and the applied project is based
+            The three-month programme uses monthly weekend sessions, and the applied project is based
             on the participant&rsquo;s own organisation. Funding and payment routes are explained separately.
           </p>
           <div className="mt-m grid-forces">
@@ -194,7 +194,7 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <p className="fine mt-s">
             This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
-            academic degree. <Link href="/apply" className="acc">Arrange a programme conversation</Link>{" "}
+            academic degree. <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>{" "}
             before choosing an intake.
           </p>
         </div>
@@ -211,7 +211,7 @@ export default function MbaForSmeOwnersPage() {
             project, schedule and participant profile fit your objectives.
           </p>
           <p className="mt-s">
-            <Link href="/apply" className="btn btn-primary">Arrange a programme conversation</Link>
+            <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide}</Link>
           </p>
         </div>
       </section>

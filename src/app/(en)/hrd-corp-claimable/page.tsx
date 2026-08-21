@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { COMPANY_ENROLMENT, FACTS, HRD_CORP_CLAIM, INCLUSIONS, SITE } from "@/lib/content";
+import { COMPANY_ENROLMENT, CTA_LABELS, FACTS, HRD_CORP_CLAIM, INCLUSIONS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -85,7 +85,7 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary">Enquire for your company →</Link>
+              <Link href="/apply?intent=employer_sponsored" className="btn btn-primary">{CTA_LABELS.company} →</Link>
               <Link href="/fees" className="btn">See fees &amp; scholarship</Link>
             </div>
           </Reveal>
@@ -191,7 +191,7 @@ export default function HrdCorpClaimablePage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Prepare your HRD Corp application before training." />
+      <CtaSection programme="Executive MBA" heading="Prepare your HRD Corp application before training." defaultIntent="employer_sponsored" intentOptions={["employer_sponsored", "employer_evaluating"]} />
     </>
   );
 }

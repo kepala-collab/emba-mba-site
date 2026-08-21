@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CERTIFICATE_POSITIONING, FACTS, THINKING_EDGE, MODULES, SITE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, THINKING_EDGE, MODULES, SITE } from "@/lib/content";
 import JsonLd from "@/components/site/JsonLd";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "A professional Executive MBA recognised against CMI Professional Standards and available as a fully online course instance over six live training days during the three-month programme-certificate phase.",
+    "A three-month professional Executive MBA recognised against CMI Professional Standards and available online across six live training days.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -61,8 +61,8 @@ export default function OnlineExecutiveMbaPage() {
           <p className="sec-sub">
             The International track follows the same three-month structure as the in-person{" "}
             <Link href="/executive-mba" className="acc">Executive MBA</Link> without requiring travel.
-            The first three months comprise live sessions, coaching and an applied business project;
-            the next three provide supported Chartered Manager assessment preparation for eligible participants.
+            The three-month programme comprises live sessions, coaching and an applied business project.
+            Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.
           </p>
           <p className="mono sec-k mt-s">
             Three-month programme · {FACTS.priceIntl} per person · Recognised against CMI Professional Standards
@@ -83,7 +83,7 @@ export default function OnlineExecutiveMbaPage() {
           <p className="sec-sub">
             This is a live, facilitator-led programme rather than a self-paced video course. It includes
             personal diagnostics, one-to-one project coaching and continued access to the programme LMS.
-            There is no traditional thesis or examination in the programme-certificate phase. Participants
+            There is no traditional thesis or examination in the three-month programme. Participants
             apply the frameworks to their own organisational context and submit a transformation plan for faculty review.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
@@ -195,7 +195,7 @@ export default function OnlineExecutiveMbaPage() {
             from the participants enrolled in that intake; no country mix is promised in advance.
           </p>
           <p className="mt-s">
-            <Link href="/apply" className="btn btn-primary">Apply for the online cohort</Link>
+            <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide}</Link>
           </p>
         </div>
       </section>

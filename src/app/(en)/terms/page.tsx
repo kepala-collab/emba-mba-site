@@ -40,8 +40,7 @@ export default function TermsPage() {
             This Site publishes the programme details supplied by ABC. The applicable written proposal and signed
             enrolment terms state the price, delivery format, completion requirements and certificate for each
             participant. If ABC changes a published intake date, registered participants receive the replacement date
-            in writing. The Executive MBA is a <strong>professional programme approved and endorsed by the Chartered
-            Management Institute (CMI), UK</strong>; it is <strong>not a regulated qualification, an MQA-accredited
+            in writing. The Executive MBA is a <strong>professional programme with CMI (UK) Endorsed and Recognised status</strong>; it is <strong>not a regulated qualification, an MQA-accredited
             academic degree or any other academic degree</strong>.
           </p>
 

@@ -9,6 +9,7 @@ import {
   CERTIFICATE_POSITIONING,
   COMPANY_ENROLMENT,
   COMPLIANCE,
+  CTA_LABELS,
   FACTS,
   HRD_CORP_CLAIM,
   INCLUSIONS,
@@ -23,7 +24,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Three-Month Executive MBA Programme Malaysia",
   description:
-    "Complete a CMI (UK)-recognised Executive MBA in three months while you keep working: six training days, twelve applied modules and a live business project. HRD Corp claimable.",
+    "A three-month CMI (UK)-recognised Executive MBA for working leaders. Employer funding may be available to eligible HRD Corp-registered employers.",
 });
 
 const courseSchema = {
@@ -69,13 +70,13 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={120}>
               <div className="programme-overview-actions">
-                <Link href="/apply" className="btn btn-primary">Ask about programme fit <span aria-hidden="true">→</span></Link>
+                <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} <span aria-hidden="true">→</span></Link>
                 <Link href="#structure" className="btn btn-ghost">See how the programme works</Link>
               </div>
             </Reveal>
             <Reveal delay={150}>
               <p className="programme-overview-note">
-                This is a CMI-approved and endorsed professional development programme. It is not an MQA-accredited academic degree or a regulated qualification.
+                This professional development programme has CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification.
               </p>
             </Reveal>
           </div>
@@ -84,7 +85,7 @@ export default function ExecutiveMbaPage() {
             <aside className="programme-summary-card" aria-label="Programme summary">
               <div className="programme-summary-brand">
                 <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute compact logo" width={96} height={66} />
-                <span>Programme approved and endorsed against CMI&rsquo;s Professional Standard</span>
+                <span>CMI (UK) Endorsed and Recognised</span>
               </div>
               <dl>
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
@@ -253,7 +254,7 @@ export default function ExecutiveMbaPage() {
             <div className="reading-section-head">
               <p className="mono sec-k">Published 2026 dates</p>
               <h2 className="sec-h">Choose an English or Mandarin cohort.</h2>
-              <p>The programme certificate phase uses one scheduled weekend session a month. Review every published date before choosing a cohort.</p>
+              <p>The three-month programme uses one scheduled weekend session a month. Review every published date before choosing a cohort.</p>
             </div>
           </Reveal>
           <Reveal className="mt-s"><IntakeSchedule label="2026 Executive MBA intake schedule" /></Reveal>
@@ -262,7 +263,7 @@ export default function ExecutiveMbaPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Ask about programme fit, dates or fees." />
+      <CtaSection programme="Executive MBA" heading="Get the programme facts before you decide." />
     </>
   );
 }

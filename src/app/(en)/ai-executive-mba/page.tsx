@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { FACTS, HRD_CORP_CLAIM, THINKING_EDGE } from "@/lib/content";
+import { CTA_LABELS, FACTS, HRD_CORP_CLAIM, THINKING_EDGE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ai-executive-mba", {
@@ -52,7 +52,7 @@ export default function AiExecutiveMbaPage() {
           </Reveal>
           <Reveal delay={200}>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary">Talk to the programme team →</Link>
+              <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
               <Link href="/how-it-works" className="btn btn-ghost">See how it works</Link>
             </div>
           </Reveal>
@@ -150,7 +150,7 @@ export default function AiExecutiveMbaPage() {
             The programme team will explain the curriculum, format and application requirements.
           </p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
-            <Link href="/apply" className="btn btn-primary">Discuss the AI leadership focus →</Link>
+            <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
             <Link href="/executive-mba" className="btn btn-ghost">Explore the full programme</Link>
           </div></Reveal>
         </div>

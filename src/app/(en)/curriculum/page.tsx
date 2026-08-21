@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { DELIVERY_CONTROL, MODULES, FACTS } from "@/lib/content";
+import { CTA_LABELS, DELIVERY_CONTROL, MODULES, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/curriculum", {
@@ -72,7 +72,7 @@ export default function CurriculumPage() {
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary">Discuss the programme →</Link>
+              <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
               <Link href="/how-it-works" className="btn btn-ghost">See the method</Link>
             </div>
           </Reveal>
@@ -131,7 +131,7 @@ export default function CurriculumPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              There is no traditional examination or thesis in the programme-certificate phase. Participants select
+              There is no traditional examination or thesis in the three-month programme. Participants select
               a business challenge within their responsibility, apply relevant frameworks and prepare a sequenced
               transformation plan for faculty review. The plan identifies decisions, actions, owners and measures.
             </p>

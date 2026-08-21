@@ -10,14 +10,14 @@ const COPY = {
   en: {
     group: "Programme recognition and funding marks",
     cmiAlt: "Chartered Management Institute compact logo",
-    cmi: "Approved and endorsed against CMI’s Professional Standard",
+    cmi: "CMI (UK) Endorsed and Recognised",
     hrdAlt: "Official HRD Corp Claimable logo",
     hrd: "HRD Corp Claimable · employer approval applies",
   },
   zh: {
     group: "课程认可与雇主资助标志",
     cmiAlt: "英国特许管理协会 CMI 官方标志",
-    cmi: "依据 CMI 专业标准批准及认可",
+    cmi: "CMI（英国）背书及认可",
     hrdAlt: "HRD Corp Claimable 官方标志",
     hrd: "HRD Corp 可申请资助 · 以雇主申请及审批为准",
   },

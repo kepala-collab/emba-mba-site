@@ -3,7 +3,7 @@ import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import Reveal from "@/components/site/Reveal";
-import { ABC_PROFILE, OPERATOR, SITE } from "@/lib/content";
+import { ABC_PROFILE, ORGANISATIONAL_STATEMENT, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/about", {
@@ -38,10 +38,9 @@ export default function AboutPage() {
           <Reveal>
             <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">The programme team</span></div>
-              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>Built by a specialist training organisation. Marketed locally by Right Dots Resources.</h2>
+              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>A clear line from programme design to the person answering your questions.</h2>
               <p className="sec-sub" style={{ maxWidth: "62ch" }}><strong>{ABC_PROFILE.name} (ABC)</strong> is a {ABC_PROFILE.hrdStatus}. {ABC_PROFILE.description}</p>
-              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>{ABC_PROFILE.programmePositioning}</p>
-              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}><strong>{OPERATOR.name}</strong> is the {OPERATOR.role}, handling marketing, programme enquiries, pricing and enrolment coordination. ABC develops and delivers the programme.</p>
+              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>{ORGANISATIONAL_STATEMENT}</p>
               <Link href="/asian-business-consulting" className="text-action" style={{ marginTop: 16 }}>More about Asian Business Consulting <span aria-hidden="true">↗</span></Link>
               <figure className="partnership-seal">
                 <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />

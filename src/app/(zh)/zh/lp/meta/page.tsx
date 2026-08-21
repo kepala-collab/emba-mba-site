@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/zh/lp/meta", {
   title: "面向在职领导者的高管 MBA | Future Ready",
   description:
-    "面向在职管理者的六个月专业管理课程：首三个月完成获英国 CMI 认可的课程证书阶段，随后三个月为符合条件者准备 CMI 特许经理人评估。",
+    "面向在职管理者的三个月 Future Ready Executive MBA：六个培训日、三个每月课程及企业应用项目。",
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
 });
@@ -41,12 +41,12 @@ export default function ZhMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">面向承担跨职能决策责任的在职领导者</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              三个月完成获 CMI（英国）认可的 Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>课程证书阶段。</em>
+              三个月完成具 CMI（英国）背书及认可状态的 Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>专业发展课程。</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              在继续工作的同时完成六个培训日、辅导及企业应用项目。随后三个月为符合条件的学员提供 CMI 独立 Chartered Manager 评估准备支持。
+              在继续工作的同时，三个月完成六个培训日、辅导及企业应用项目。Chartered Manager 属于独立可选 CMI 路线，具有独立资格、评估及费用。
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -83,7 +83,7 @@ export default function ZhMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "依据 CMI 专业标准批准及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
+          {[["CMI", "CMI（英国）背书及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

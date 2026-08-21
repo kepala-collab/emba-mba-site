@@ -87,7 +87,7 @@ export default function FacultyPage() {
                   <Image src="/brand/community/faculty-event.jpeg" alt="Faculty and programme community members at a professional event" width={2560} height={1440} sizes="(max-width: 900px) 100vw, 1120px" style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
                 <figcaption className="fine" style={{ marginTop: 10, maxWidth: "92ch" }}>
-                  From left: Allan Gan, Programme Director; Ms Goldie Polycarp, CMI (UK); Prof Nagarajah Lee Hun Leong; Dr Xavier Johnson, Chief Business Methodologist; Prof Emeritus Datuk Seri Dr Mohamed Mustafa Ishak, Regional Board Chairman of the Chartered Management Institute Malaysia; Ms Fara Adibah, CMI (UK); and Ir Dr Jonas Anthony, Faculty Director. Thank you to CMI (UK).
+                  From left: Allan Gan, Programme Director; Ms Goldie Polycarp, CMI (UK); Prof Nagarajah Lee Hun Leong; Dr Xavier Johnson, Chief Business Methodologist; Prof Emeritus Datuk Seri Dr Mohamed Mustafa Ishak, Regional Board Chairman of the Chartered Management Institute Malaysia; Ms Fara Adibah, CMI (UK); and Ir. Dr. Jonas Anthony, Faculty Director. Thank you to CMI (UK).
                 </figcaption>
               </figure>
             </section>

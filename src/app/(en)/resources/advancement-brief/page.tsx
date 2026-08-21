@@ -1,10 +1,10 @@
 import Link from "next/link";
 import PrintBriefButton from "@/components/site/PrintBriefButton";
-import { CERTIFICATE_POSITIONING, FACTS, HRD_CORP_CLAIM, PROGRAMME_AUDIENCE, SIGNATURE_QUOTE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, HRD_CORP_CLAIM, PROGRAMME_AUDIENCE, PROGRAMME_YEAR, SIGNATURE_QUOTE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/resources/advancement-brief", {
-  title: "The Working Manager’s 2026 Progression Guide",
+  title: `The Working Manager’s ${PROGRAMME_YEAR} Progression Guide`,
   description: "A printable guide to programme fit, the applied business project, three-month structure, Malaysian fee, CMI recognition and next steps.",
 });
 
@@ -24,10 +24,19 @@ export default function AdvancementBriefPage() {
 
       <article className="brief-document">
         <header>
-          <p className="mono sec-k">The Working Manager&rsquo;s 2026 Progression Guide</p>
+          <p className="mono sec-k">The Working Manager&rsquo;s {PROGRAMME_YEAR} Progression Guide</p>
           <h1>Is your role growing faster than your management toolkit?</h1>
           <p>Use this guide to decide whether a practical, work-based management programme fits the responsibilities you carry now.</p>
         </header>
+
+        <section className="brief-chapter">
+          <span className="mono">Foreword</span>
+          <div>
+            <h2>The decisions grew. Your toolkit should grow with them.</h2>
+            <p>This guide is for people carrying wider responsibility at work and asking what development would be useful now. The programme is designed to help participants examine a live business issue, ask better questions and build a practical action plan while continuing in their professional roles.</p>
+            <p>The purpose is not to prescribe one answer. It is to give experienced people a clearer structure for reaching and explaining their own.</p>
+          </div>
+        </section>
 
         <section className="brief-chapter">
           <span className="mono">01 / The moment</span>
@@ -109,7 +118,7 @@ export default function AdvancementBriefPage() {
             </ul>
             <p>&ldquo;{SIGNATURE_QUOTE.text}&rdquo;</p>
             <p><strong>{SIGNATURE_QUOTE.attribution}</strong> · {SIGNATURE_QUOTE.role}</p>
-            <Link className="btn btn-primary" href="/apply">Ask a question about programme fit</Link>
+            <Link className="btn btn-primary" href="/apply">{CTA_LABELS.guide}</Link>
           </div>
         </section>
       </article>

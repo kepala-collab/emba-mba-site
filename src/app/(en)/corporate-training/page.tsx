@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CORP_TRAINING, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { CORP_TRAINING, CTA_LABELS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -49,7 +49,7 @@ export default function CorporateTrainingPage() {
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary">Enquire for your team →</Link>
+              <Link href="/apply?intent=company" className="btn btn-primary">{CTA_LABELS.company} →</Link>
               <Link href="/executive-mba" className="btn btn-ghost">See the Executive MBA</Link>
             </div>
           </Reveal>
@@ -125,7 +125,7 @@ export default function CorporateTrainingPage() {
           <Reveal className="mt-s">
             <div className="card" style={{ display: "grid", gap: 12 }}>
               <p style={{ margin: 0, color: "var(--ink-2)" }}>The formal proposal states the participant count, delivery model, programme design, support requirements, complete fee, payment schedule and acceptance terms.</p>
-              <Link href="/contact" className="btn btn-primary" style={{ justifySelf: "start" }}>Request an MDP proposal →</Link>
+              <Link href="/apply?intent=employer_evaluating" className="btn btn-primary" style={{ justifySelf: "start" }}>{CTA_LABELS.company} →</Link>
             </div>
           </Reveal>
         </div>
@@ -133,6 +133,8 @@ export default function CorporateTrainingPage() {
 
       <CtaSection
         programme="Corporate Training"
+        defaultIntent="employer_evaluating"
+        intentOptions={["employer_evaluating", "employer_sponsored"]}
         heading="Request a corporate training proposal."
         sub="Send the organisation's required capabilities, participant count and delivery preference. The team will respond with the relevant syllabus, employer-led HRD Corp process and a written proposal. An enquiry does not accept the proposal."
       />

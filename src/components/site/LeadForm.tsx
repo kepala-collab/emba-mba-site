@@ -6,7 +6,7 @@ import { cohortKey, type LeadIntent } from "@/lib/conversion-contract";
 import { conversionContextFromLocation, updateConversionContext } from "@/lib/conversion-context";
 import { getExperimentAssignmentsJson } from "@/lib/experiments";
 import { getLeadAttribution, trackEvent } from "@/lib/analytics";
-import { INTAKES, SITE } from "@/lib/content";
+import { INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
 import "@/lib/turnstile";
 
 type Lang = "en" | "zh";
@@ -23,7 +23,7 @@ const T = {
     progress: (step: Step) => `Step ${step} of 2`,
     compactKicker: "Programme enquiry",
     compactTitle: "Get the programme guide.",
-    compactIntro: "Tell us what you need first. The programme team will send the relevant information and published 2026 dates.",
+    compactIntro: `Tell us what you need first. The programme team will send the relevant information and published ${PROGRAMME_YEAR} dates.`,
     compactIntent: "What are you planning for?",
     stepOneKicker: "Your route",
     stepOneTitle: "What are you planning for?",
@@ -36,13 +36,13 @@ const T = {
       ["mandarin", "Mandarin programme", "I want to discuss a Mandarin-language cohort."],
       ["details_first", "Programme information first", "Send the programme information before arranging a call."],
     ] as const,
-    cohort: "Preferred 2026 cohort (optional)",
+    cohort: `Preferred ${PROGRAMME_YEAR} cohort (optional)`,
     cohortOpen: "Open for enquiries",
     cohortUnknown: "I have not selected a cohort",
     continue: "Continue to contact details →",
     campaignContinue: "Continue for the programme guide →",
     campaignKicker: "Free working manager guide",
-    campaignTitle: "Send me the 2026 programme guide.",
+    campaignTitle: `Send me the ${PROGRAMME_YEAR} programme guide.`,
     campaignIntro: "Includes the three-month CMI-recognised programme, published dates, programme fee and scholarship criteria.",
     stepTwoKicker: "Your contact details",
     stepTwoTitle: "Where should the programme team respond?",
@@ -89,7 +89,7 @@ const T = {
     okP: "The programme team will respond about programme fit, your selected cohort, employer-led HRD Corp funding and scholarship eligibility. This request is not an admission, scholarship or payment commitment.",
     campaignOkP: "Your guide is ready below. Review it first; a programme conversation is optional and this request is not an admission, scholarship or payment commitment.",
     okRef: "Conversation reference",
-    okPlan: "Open the 2026 programme guide →",
+    okPlan: `Open the ${PROGRAMME_YEAR} programme guide →`,
     okWa: "Continue on WhatsApp →",
     waMsg: (name: string, cohort: string) => `Hi, I'm ${name || "interested"}. I requested a conversation about the Future Ready Executive MBA${cohort ? ` for ${cohort}` : ""}.`,
   },
@@ -97,7 +97,7 @@ const T = {
     progress: (step: Step) => `第 ${step} 步，共 2 步`,
     compactKicker: "课程咨询",
     compactTitle: "索取课程资料。",
-    compactIntro: "请先告诉我们您的需求。课程团队会发送相关资料及已公布的 2026 开课日期。",
+    compactIntro: `请先告诉我们您的需求。课程团队会发送相关资料及已公布的 ${PROGRAMME_YEAR} 开课日期。`,
     compactIntent: "您目前正在规划什么？",
     stepOneKicker: "您的需求",
     stepOneTitle: "您目前正在规划什么？",
@@ -110,14 +110,14 @@ const T = {
       ["mandarin", "华语课程", "我想了解华语授课班次。"],
       ["details_first", "先收取课程资料", "先发送课程资料，再决定是否安排通话。"],
     ] as const,
-    cohort: "首选 2026 班次（选填）",
+    cohort: `首选 ${PROGRAMME_YEAR} 班次（选填）`,
     cohortOpen: "开放咨询",
     cohortUnknown: "尚未选择班次",
     continue: "继续填写联系方式 →",
     campaignContinue: "继续获取课程指南 →",
     campaignKicker: "免费在职经理指南",
-    campaignTitle: "发送 2026 课程指南给我。",
-    campaignIntro: "内容包括三个月获 CMI 认可的课程证书阶段、随后 Chartered Manager 评估准备阶段、已公布日期、课程费用及奖学金条件。",
+    campaignTitle: `发送 ${PROGRAMME_YEAR} 课程指南给我。`,
+    campaignIntro: "内容包括三个月 Future Ready Executive MBA、已公布日期、课程费用及奖学金条件。Chartered Manager 属于独立可选路线。",
     stepTwoKicker: "沟通方式",
     stepTwoTitle: "课程团队应如何回复您？",
     back: "← 返回",
@@ -163,7 +163,7 @@ const T = {
     okP: "课程团队将回复课程适合度、所选班次、雇主申请 HRD Corp 及奖学金资格。这项请求不等于录取、奖学金批准或付款承诺。",
     campaignOkP: "您的课程指南已可在下方打开。您可先查看资料；是否进一步沟通由您决定。这项请求不等于录取、奖学金批准或付款承诺。",
     okRef: "沟通编号",
-    okPlan: "查看 2026 课程指南 →",
+    okPlan: `查看 ${PROGRAMME_YEAR} 课程指南 →`,
     okWa: "继续使用 WhatsApp →",
     waMsg: (name: string, cohort: string) => `您好，我是 ${name || "意向学员"}。我已提交 Future Ready 高管 MBA 沟通请求${cohort ? `，首选 ${cohort}` : ""}。`,
   },
@@ -181,7 +181,7 @@ function cohortLabel(key: string, lang: Lang) {
   const cohort = INTAKES.find((item) => cohortKey(item.language, item.co) === key);
   if (!cohort) return "";
   const language = lang === "zh" && cohort.language === "Mandarin" ? "华语" : cohort.language;
-  return `${cohort.co} · ${language} · ${cohort.s1} 2026`;
+  return `${cohort.co} · ${language} · ${cohort.s1} ${PROGRAMME_YEAR}`;
 }
 
 export default function LeadForm({

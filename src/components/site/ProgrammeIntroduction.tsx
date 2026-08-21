@@ -175,8 +175,8 @@ export default function ProgrammeIntroduction({ image = "hero", placement = "pro
             <div className="film-transcript">
               <h3>Transcript</h3>
               <p><strong>This programme is designed for experienced working managers.</strong> It uses your real business responsibilities as the context for learning.</p>
-              <p>During months one to three, you attend six training days across three monthly sessions, receive coaching and complete an applied business project. Successful completion leads to the CMI Certificate of Recognition for the programme.</p>
-              <p>During months four to six, eligible participants receive support to prepare for CMI&rsquo;s separate Chartered Manager assessment. CMI controls eligibility, assessment, membership and fees, and Chartered Manager status is not automatic.</p>
+              <p>Across three months, you attend six training days in three monthly sessions, receive coaching and complete an applied business project. Successful completion leads to the CMI Certificate of Recognition for the programme.</p>
+              <p>Chartered Manager is a separate optional CMI route. CMI controls eligibility, assessment, membership and fees, and Chartered Manager status is not included in the published programme or fee.</p>
             </div>
           </section>
         </div>,

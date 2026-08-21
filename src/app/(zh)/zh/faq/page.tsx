@@ -4,6 +4,7 @@ import Reveal from "@/components/site/Reveal";
 import { FAQS_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
+import { CTA_LABELS } from "@/lib/content";
 
 const path = "/zh/faq";
 
@@ -43,7 +44,7 @@ export default function Page() {
               </details>
             ))}
           </Reveal>
-          <Link href="/zh/apply" className="btn btn-primary mt-m">提交申请 →</Link>
+          <Link href="/zh/apply" className="btn btn-primary mt-m">{CTA_LABELS.zh.guide} →</Link>
         </div>
       </section>
     </>

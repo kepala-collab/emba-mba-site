@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import LeadForm from "@/components/site/LeadForm";
+import { CTA_LABELS, PROGRAMME_YEAR } from "@/lib/content";
 
 const QUESTIONS = [
   {
@@ -58,7 +59,7 @@ const RESULT_COPY = [
   },
   {
     title: "Schedule and time commitment",
-    body: "Compare the three-month structure with the published 2026 dates before deciding whether the schedule fits your responsibilities.",
+    body: `Compare the three-month structure with the published ${PROGRAMME_YEAR} dates before deciding whether the schedule fits your responsibilities.`,
     href: "/intakes",
     action: "See the intakes",
   },
@@ -124,7 +125,7 @@ const RESULT_COPY_ZH = [
   },
   {
     title: "可执行的时间投入",
-    body: "把六个月课程结构与已公布的 2026 年日期逐项比较，再判断是否符合你的工作责任。",
+    body: `把三个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合你的工作责任。`,
     href: "/zh/intakes",
     action: "查看开课日期",
   },
@@ -146,10 +147,10 @@ const UI_COPY = {
     resultBody: "These are the priorities you selected. Review them against the published programme information before deciding whether the format fits your work.",
     selected: "Your selected priorities",
     next: "Check these four programme facts",
-    talk: "Ask the programme team",
+    talk: CTA_LABELS.conversation,
     guideKicker: "Your next step",
     guideTitle: "Keep the result and review the full guide.",
-    guideBody: "The Working Manager’s 2026 Progression Guide brings the programme structure, dates, fee, scholarship criteria and CMI recognition into one place.",
+    guideBody: `The Working Manager’s ${PROGRAMME_YEAR} Progression Guide brings the programme structure, dates, fee, scholarship criteria and CMI recognition into one place.`,
     restart: "Start again",
     back: "Back",
     result: "See a starting point",
@@ -164,10 +165,10 @@ const UI_COPY = {
     resultBody: "以下是您选择的重点。请先与已公布的课程资料逐项核对，再决定是否联系课程团队。",
     selected: "您选择的重点",
     next: "核对四项课程事实",
-    talk: "向课程团队提问",
+    talk: CTA_LABELS.zh.conversation,
     guideKicker: "下一步",
     guideTitle: "保留结果，并查看完整课程指南。",
-    guideBody: "《2026 在职经理进阶指南》把课程安排、日期、费用、奖学金条件及 CMI 认可集中在一份资料中。",
+    guideBody: `《${PROGRAMME_YEAR} 在职经理进阶指南》把课程安排、日期、费用、奖学金条件及 CMI 认可集中在一份资料中。`,
     restart: "重新开始",
     back: "返回",
     result: "查看建议起点",

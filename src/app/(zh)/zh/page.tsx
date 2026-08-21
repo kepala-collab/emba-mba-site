@@ -6,28 +6,28 @@ import { FACTS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh", {
-  title: "六个月高管 MBA · 为在职管理者设计",
+  title: "三个月高管 MBA · 为在职管理者设计",
   description:
-    "三个月完成获 CMI（英国）认可的 Executive MBA 课程证书阶段，并可继续工作；符合条件者随后获得 Chartered Manager 独立评估准备支持。",
+    "三个月完成 Future Ready Executive MBA 专业发展课程，并可继续工作。Chartered Manager 属于独立可选 CMI 路线。",
   alternates: {
     canonical: "/zh",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
   },
   openGraph: {
     type: "website",
-    title: "六个月高管 MBA · 为在职管理者设计",
+    title: "三个月高管 MBA · 为在职管理者设计",
     description: "以真实企业课题训练管理判断、决策与执行能力，并在继续工作的同时完成课程。",
     locale: "zh_MY",
     url: `${SITE.url}/zh`,
   },
   twitter: {
-    title: "六个月高管 MBA · 为在职管理者设计",
+    title: "三个月高管 MBA · 为在职管理者设计",
     description: "以真实企业课题训练管理判断、决策与执行能力，并在继续工作的同时完成课程。",
   },
 });
 
 const DECISION_PATHS = [
-  ["01", "课程详情", "了解适合对象、六个月安排及完成要求。", "/zh/executive-mba", "了解完整课程"],
+  ["01", "课程详情", "了解适合对象、三个月安排及完成要求。", "/zh/executive-mba", "了解完整课程"],
   ["02", "课程方法", "了解如何把复杂企业问题整理成可执行的管理决定。", "/zh/how-it-works", "查看 F.A.S.T. 方法"],
   ["03", "课程大纲", "查看 12 个管理框架、企业项目及学习次序。", "/zh/curriculum", "查看课程大纲"],
   ["04", "CMI 专业认可", "分清课程证书、fCMgr 及独立 Chartered Manager 路线。", "/zh/chartered-manager-malaysia", "了解 CMI 路线"],
@@ -51,11 +51,11 @@ export default function ZhHome() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready 高管 MBA · 为在职管理者设计</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>三个月完成获 CMI（英国）认可的 Executive MBA <em>课程证书阶段。</em></h1>
+              <h1>三个月完成具 CMI（英国）背书及认可状态的 Executive MBA <em>专业发展课程。</em></h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">
-                在继续工作的同时，完成六个培训日、辅导及企业应用项目。随后三个月为符合条件的学员提供 CMI 独立 Chartered Manager 评估准备支持。
+                在继续工作的同时，三个月完成六个培训日、辅导及企业应用项目。Chartered Manager 属于独立可选 CMI 路线，具有独立资格、评估及费用。
               </p>
             </Reveal>
             <Reveal delay={140}>
@@ -69,7 +69,7 @@ export default function ZhHome() {
             <Reveal delay={180}>
               <div className="working-hero-proof" aria-label="课程保证">
                 <ProgrammeMarks lang="zh" />
-                <span>课程获 CMI 批准及认可 · HRD Corp 以雇主申请及审批为准</span>
+                <span>CMI（英国）背书及认可 · HRD Corp 以雇主申请及审批为准</span>
                 <span>符合资格的马来西亚申请者可接受奖学金评估</span>
               </div>
             </Reveal>
@@ -88,7 +88,7 @@ export default function ZhHome() {
 
       <section className="working-fact-band" aria-label="课程概览">
         <div className="wrap working-fact-grid">
-          <div><strong>6 个月</strong><span>专业发展课程</span></div>
+          <div><strong>3 个月</strong><span>专业发展课程</span></div>
           <div><strong>{FACTS.trainingDays} 天</strong><span>分三个集中课程完成</span></div>
           <div><strong>{FACTS.moduleCount}</strong><span>个实用管理框架</span></div>
           <div><strong>1 个项目</strong><span>围绕真实企业课题完成</span></div>

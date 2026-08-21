@@ -36,7 +36,7 @@ export function GET() {
           Build the management capability for your next leadership role.
         </div>
         <div style={{ marginTop: 26, fontSize: 32, lineHeight: 1.3, color: "#405674" }}>
-          Six training days, an applied business project and Chartered Manager assessment preparation.
+          Six training days, three monthly sessions and an applied business project.
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#667891" }}>

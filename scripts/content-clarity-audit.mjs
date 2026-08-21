@@ -34,6 +34,12 @@ const banned = [
   ["refund guarantee", /money[- ]back guarantee/i],
   ["stale content field", /\b(?:gradsApprox|cmiMembers)\b/],
   ["stale fee", /RM\s*(?:4|6),?000(?:\.00)?/i],
+  ["retired six-month programme", /\b(?:six[- ]month|6[- ]month|first three months|months four to six|three further months|next three months|certificate phase|programme-certificate phase)\b/i],
+  ["retired Chinese staged programme", /(?:六个月|6\s*个月|第四至第六|课程证书阶段|CMgr\s*申请准备|3\s*\+\s*3)/i],
+  ["unsupported programme Level 7 claim", /(?:Future Ready|Executive MBA|programme|课程|本课程).{0,80}\bLevel\s*7\b|\bLevel\s*7\b.{0,80}(?:Future Ready|Executive MBA|programme|课程|本课程)/i],
+  ["EMBA name expansion", /\bExecutive Master of Business Administration\b/i],
+  ["Future Ready EMBA Chinese name expansion", /Future Ready.{0,40}工商管理硕士|工商管理硕士.{0,40}Future Ready/i],
+  ["retired conversion CTA", /\b(?:Request the programme guide|Get Programme Guide|Request programme information|Discuss this cohort|Ask about programme fit|Request a 15-minute call)\b/i],
   ["ambiguous Chinese qualifier", /(?:可能|通常|多数|大约|最高\s*100%|全球认可|须视.+而定)/],
   ["Chinese pressure or prestige framing", /(?:立即报名|同等的公信力|看看你是否符合|准备好取得|无需承诺|无须承诺|颠覆性的答案)/],
 ];
@@ -41,11 +47,19 @@ const banned = [
 const failures = [];
 
 for (const file of files) {
-  if (excluded.has(file.replaceAll("\\", "/"))) continue;
+  const normalizedFile = file.replaceAll("\\", "/");
+  if (excluded.has(normalizedFile)) continue;
   const lines = readFileSync(file, "utf8").split(/\r?\n/);
   for (const [label, pattern] of banned) {
     lines.forEach((line, index) => {
       if (pattern.test(line)) failures.push(`${file}:${index + 1} [${label}] ${line.trim()}`);
+    });
+  }
+  if (!normalizedFile.includes("/programmes/shift-hr/")) {
+    lines.forEach((line, index) => {
+      if (/\bHRD Corp claimable(?:\s+programme|\s+training|\s+course|\.)/i.test(line)) {
+        failures.push(`${file}:${index + 1} [unqualified HRD Corp claim sentence] ${line.trim()}`);
+      }
     });
   }
 }

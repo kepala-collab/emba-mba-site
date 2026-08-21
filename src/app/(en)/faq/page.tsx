@@ -55,7 +55,7 @@ export default function FaqPage() {
           </Reveal>
 
           <p className="fine center mt-s">
-            Need to discuss your situation? Request a 15-minute call with the programme team.
+            Need to discuss your situation? Arrange a programme conversation with the team.
             A conversation request is not an admission or payment commitment.
           </p>
         </div>

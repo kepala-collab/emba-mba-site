@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { THINKING_EDGE, FLOW, FACTS } from "@/lib/content";
+import { CTA_LABELS, THINKING_EDGE, FLOW, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/how-it-works", {
@@ -40,23 +40,20 @@ export default function HowItWorks() {
       {/* INTRO — the philosophy */}
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The Method · F.A.S.T.</span></div></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">A decision under pressure</span></div></Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Content informs the decision. <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Context determines it.</em>
+              Revenue is slowing. Costs are rising. Which problem do you solve first?
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Access to information is not the same as knowing which question to ask, which evidence matters or
-              which trade-off to accept. <b style={{ color: "var(--ink)" }}>Framework Adaptive Systems Thinking (F.A.S.T.)</b>{" "}
-              brings seven thinking disciplines into one repeatable decision process.
+              The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
-              F.A.S.T. develops <em style={{ fontStyle: "italic" }}>how you analyse</em>, not only what you know.
-              The seven disciplines are designed for reuse after individual case examples become outdated.
+              The programme gives that work a repeatable structure. You use it on a live issue inside your own business, then make the reasoning visible enough for others to review and act on.
             </p>
           </Reveal>
         </div>
@@ -65,7 +62,7 @@ export default function HowItWorks() {
       {/* THE 7 DISCIPLINES */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The seven disciplines</span></div></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The method · F.A.S.T.</span></div></Reveal>
           <Reveal><h2 className="sec-h">Seven disciplines, used as one decision process.</h2></Reveal>
           <Reveal><p className="sec-sub">Each discipline is a distinct lens. Used together, the seven lenses provide a defined process for reading complexity and testing a decision.</p></Reveal>
           <Reveal className="mt-m">
@@ -148,7 +145,7 @@ export default function HowItWorks() {
             <div className="fine center" style={{ marginTop: 24 }}>
               A professional programme recognised by CMI (UK) — built for applied leadership development. Explore{" "}
               <Link href="/curriculum" className="acc" style={{ textDecoration: "underline" }}>the twelve modules</Link> or{" "}
-              <Link href="/apply" className="acc" style={{ textDecoration: "underline" }}>apply now</Link>.
+              <Link href="/apply" className="acc" style={{ textDecoration: "underline" }}>{CTA_LABELS.guide}</Link>.
             </div>
           </Reveal>
         </div>

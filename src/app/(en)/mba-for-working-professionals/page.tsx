@@ -3,14 +3,14 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
-import { COMPARISON, COMPARISON_SCOPE, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { COMPARISON, COMPARISON_SCOPE, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-working-professionals", {
   title: "Executive MBA for Working Professionals",
   description:
-    "An Executive MBA for working professionals: one weekend a month during the certificate phase or fully online, with no traditional thesis.",
+    "A three-month Executive MBA for working professionals: one weekend a month or fully online, with no traditional thesis.",
 });
 
 const jsonLd = {
@@ -19,7 +19,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "A part-time Executive MBA recognised against CMI Professional Standards, delivered one weekend a month during the three-month programme-certificate phase or fully online.",
+    "A three-month Executive MBA recognised against CMI Professional Standards, delivered one weekend a month or fully online.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -38,7 +38,7 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "One scheduled weekend a month", p: "The programme-certificate phase comprises three scheduled sessions, each running over one weekend." },
+    { h: "One scheduled weekend a month", p: "The programme comprises three scheduled sessions, each running over one weekend." },
     { h: "Or fully online", p: "The programme is also available through live online sessions, with the same coaching and frameworks as the in-person track." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
     { h: "Apply it to current work", p: "There is no traditional thesis or examination. Participants apply the frameworks to a business challenge they currently own." },
@@ -69,9 +69,9 @@ export default function MbaForWorkingProfessionalsPage() {
           </Reveal>
           <p className="sec-sub">
             The Future Ready Executive MBA is designed for participants who remain in their roles while studying.
-            The programme runs across {FACTS.durationLong}. The certificate phase uses one scheduled
-            weekend a month, followed by supported Chartered Manager assessment preparation for
-            participants who meet CMI&rsquo;s entry criteria.
+            The programme runs across {FACTS.durationLong}, using one scheduled weekend a month.
+            Chartered Manager is a separate optional CMI route with its own eligibility, assessment
+            and fees; it is not included in the published programme or fee.
           </p>
           <p className="mono sec-k mt-s">
             Three months · three monthly programme weekends · recognised by CMI (UK)
@@ -204,7 +204,7 @@ export default function MbaForWorkingProfessionalsPage() {
           </div>
           <p className="fine mt-s">
             {HRD_CORP_CLAIM.short} Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay {FACTS.priceAfterScholarship}.{" "}
-            <Link href="/apply" className="acc">Arrange a programme conversation</Link>.
+            <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>.
           </p>
         </div>
       </section>

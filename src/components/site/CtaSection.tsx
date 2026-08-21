@@ -10,6 +10,7 @@ export default function CtaSection({
   source = "emba-hub",
   formVariant = "standard",
   intentOptions,
+  defaultIntent,
   steps,
   sectionId = "apply",
 }: {
@@ -19,6 +20,7 @@ export default function CtaSection({
   source?: string;
   formVariant?: "standard" | "campaign";
   intentOptions?: readonly LeadIntent[];
+  defaultIntent?: LeadIntent;
   steps?: readonly string[];
   sectionId?: string;
 }) {
@@ -46,7 +48,7 @@ export default function CtaSection({
               {SITE.director} · Programme Coordinator · {SITE.phone} · {SITE.email}
             </p>
           </Reveal>
-          <Reveal delay={80}><LeadForm programme={programme} source={source} placement="footer-cta" variant={formVariant} intentOptions={intentOptions} /></Reveal>
+          <Reveal delay={80}><LeadForm programme={programme} source={source} placement="footer-cta" variant={formVariant} intentOptions={intentOptions} defaultIntent={defaultIntent} /></Reveal>
         </div>
       </div>
     </section>

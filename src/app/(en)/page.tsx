@@ -1,16 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/site/LeadForm";
 import NodeCanvas from "@/components/site/NodeCanvas";
 import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
 import ProgrammeMarks from "@/components/site/ProgrammeMarks";
 import Reveal from "@/components/site/Reveal";
-import { FACTS } from "@/lib/content";
+import { CTA_LABELS, FACTS, PROGRAMME_PROOF } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/", {
   title: "Executive MBA Malaysia for Working Managers",
   description:
-    "A three-month, CMI (UK)-recognised Executive MBA for working leaders in Malaysia. Twelve applied modules, one live business project, no exams or thesis. HRD Corp claimable.",
+    "A three-month, CMI (UK)-recognised Executive MBA for working leaders in Malaysia. Employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
   alternates: {
     canonical: "/",
     languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
@@ -94,7 +95,7 @@ export default function Home() {
             <Reveal delay={140}>
               <div className="working-hero-actions">
                 <Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="hero_request_guide" data-track-location="hero">
-                  Request the programme guide <span aria-hidden="true">→</span>
+                  {CTA_LABELS.guide} <span aria-hidden="true">→</span>
                 </Link>
                 <Link href="/executive-mba" className="text-action">
                   Explore the programme <span aria-hidden="true">↗</span>
@@ -104,8 +105,10 @@ export default function Home() {
             <Reveal delay={180}>
               <div className="working-hero-proof" aria-label="Programme assurance">
                 <ProgrammeMarks />
-                <span>CMI approved and endorsed against its Professional Standard</span>
-                <span>Scholarship assessment available for eligible Malaysian applicants</span>
+                <span>CMI (UK) Endorsed and Recognised</span>
+                <span>{PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts</span>
+                <span>Inaugural graduation · {PROGRAMME_PROOF.inauguralGraduation}</span>
+                <span>Employer funding may be available to eligible HRD Corp-registered employers</span>
               </div>
             </Reveal>
           </div>
@@ -133,29 +136,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section working-resources-section">
-        <div className="wrap">
+      <section className="section home-audience-section">
+        <div className="wrap home-audience-grid">
           <Reveal>
-            <div className="working-section-head">
-              <div>
-                <p className="mono sec-k">One decision at a time</p>
-                <h2 className="sec-h">Go straight to the answer you need.</h2>
-              </div>
-              <p>Each page answers one decision clearly. You do not need to work through the entire website before speaking with the programme team.</p>
+            <div>
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">Built for responsibility</span></div>
+              <h2 className="sec-h">For people whose decisions affect more than their own desk.</h2>
             </div>
           </Reveal>
-          <div className="working-resource-grid">
-            {DECISION_PATHS.map((path, index) => (
-              <Reveal key={path.href} delay={(index % 3) * 45}>
-                <article className="working-resource-card">
-                  <span className="mono">{path.n}</span>
-                  <h3>{path.title}</h3>
-                  <p>{path.body}</p>
-                  <Link href={path.href} className="text-action">{path.action} <span aria-hidden="true">↗</span></Link>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={60}>
+            <div className="home-audience-copy">
+              <p>Designed for business owners, directors, general managers and senior managers responsible for results, teams, cross-functional decisions or growth plans.</p>
+              <ul>
+                <li>You are solving a current business issue—not studying theory in isolation.</li>
+                <li>You need a rigorous structure that fits around work.</li>
+                <li>You want a practical plan you can explain, test and act on.</li>
+              </ul>
+              <Link href="/executive-mba" className="text-action">See who the programme is for <span aria-hidden="true">↗</span></Link>
+              <nav className="home-persona-links" aria-label="Programme routes by role">
+                <Link href="/mba-for-working-professionals">Working professionals</Link>
+                <Link href="/mba-for-sme-owners">SME owners</Link>
+                <Link href="/mba-for-entrepreneurs">Entrepreneurs</Link>
+              </nav>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="programme-introduction" className="section home-video-section">
+        <div className="wrap home-video-grid">
+          <Reveal>
+            <div className="home-video-copy">
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">How the three months work</span></div>
+              <h2 className="sec-h">One weekend a month. One live business challenge.</h2>
+              <p className="sec-sub">Six training days run across three monthly sessions. Between sessions, you apply the frameworks to a current business issue and build a plan that can be reviewed with faculty.</p>
+              <ul className="home-video-points">
+                <li>Six training days across three monthly sessions</li>
+                <li>An applied project based on a live business challenge</li>
+                <li>No traditional examinations or thesis</li>
+              </ul>
+              <Link href="/how-it-works" className="btn btn-primary">See how the programme works <span aria-hidden="true">→</span></Link>
+            </div>
+          </Reveal>
+          <Reveal delay={80}><div className="home-video-frame"><ProgrammeIntroduction image="conversation" placement="home-video-section" /></div></Reveal>
         </div>
       </section>
 
@@ -182,28 +205,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="programme-introduction" className="section home-video-section">
-        <div className="wrap home-video-grid">
+      <section className="section home-proof-section">
+        <div className="wrap">
           <Reveal>
-            <div className="home-video-copy">
-              <div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme introduction</span></div>
-              <h2 className="sec-h">See how the three-month programme works before you decide.</h2>
-              <p className="sec-sub">Use the programme introduction to understand the three-month format, the applied project and what you will take back into your work. A complete transcript is available, and no contact details are required.</p>
-              <ul className="home-video-points">
-                <li>Six training days across three monthly sessions</li>
-                <li>An applied project based on a live business challenge</li>
-                <li>No traditional examinations or thesis</li>
-              </ul>
-              <Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="video_request_guide" data-track-location="programme_introduction">
-                Request the programme guide <span aria-hidden="true">↑</span>
-              </Link>
+            <div className="working-section-head">
+              <div><p className="mono sec-k">Human proof</p><h2 className="sec-h">The work ends in a real room, with real people.</h2></div>
+              <p>{PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts. {PROGRAMME_PROOF.graduationAttendance} attended the inaugural graduation in {PROGRAMME_PROOF.inauguralGraduation}.</p>
             </div>
           </Reveal>
-          <Reveal delay={80}>
-            <div className="home-video-frame">
-              <ProgrammeIntroduction image="conversation" placement="home-video-section" />
+          <div className="home-proof-gallery">
+            <Reveal><figure className="home-proof-primary"><Image src="/brand/community/graduation-cohort.jpeg" alt="Future Ready Executive MBA graduates at the inaugural graduation" width={894} height={596} sizes="(max-width: 760px) 100vw, 66vw" /><figcaption><strong>{PROGRAMME_PROOF.graduationAttendance} graduates attended.</strong> Part of a community of {PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts.</figcaption></figure></Reveal>
+            <div className="home-proof-secondary">
+              <Reveal delay={50}><figure><Image src="/brand/community/faculty-event.jpeg" alt="Future Ready Executive MBA faculty and CMI representatives" width={2560} height={1440} sizes="(max-width: 760px) 100vw, 32vw" /><figcaption>Practitioner-led faculty and programme representatives.</figcaption></figure></Reveal>
+              <Reveal delay={90}><figure><Image src="/brand/community/graduation-graduates.jpeg" alt="Future Ready Executive MBA graduates with their certificates" width={1080} height={810} sizes="(max-width: 760px) 100vw, 32vw" /><figcaption>Completion recognised at the inaugural graduation.</figcaption></figure></Reveal>
             </div>
-          </Reveal>
+          </div>
+          <div className="home-proof-actions"><Link href="/asian-business-consulting#abc-film" className="text-action" data-track-event="proof_explore" data-track-id="home_graduation_proof" data-track-location="home_proof">Watch the graduation film <span aria-hidden="true">↗</span></Link><Link href="/faculty" className="text-action">Meet the faculty <span aria-hidden="true">↗</span></Link></div>
+        </div>
+      </section>
+
+      <section className="section home-decision-snapshot">
+        <div className="wrap home-snapshot-grid">
+          <Reveal><article><p className="mono sec-k">Fees and funding</p><h2>RM10,000 standard fee.</h2><p>Eligible Malaysian applicants may be considered for a RM5,000 LIFE Innoversity scholarship, subject to availability, assessment and written approval. It is not automatic.</p><Link href="/fees" className="text-action">See the complete fee and funding terms <span aria-hidden="true">↗</span></Link></article></Reveal>
+          <Reveal delay={60}><article><p className="mono sec-k">Published 2026 dates</p><h2>Choose a schedule that works around work.</h2><p>Compare the published English and Mandarin sessions. The programme team confirms availability before enrolment.</p><Link href="/intakes" className="text-action">Check available dates <span aria-hidden="true">↗</span></Link></article></Reveal>
+        </div>
+      </section>
+
+      <section className="section home-closing-cta">
+        <div className="wrap home-closing-cta-inner">
+          <Reveal><div><p className="mono">The next decision</p><h2>Get the facts. Then decide whether a conversation is worth your time.</h2></div></Reveal>
+          <Reveal delay={60}><div className="home-closing-actions"><Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="home_closing_guide" data-track-location="home_closing">{CTA_LABELS.guide} <span aria-hidden="true">↑</span></Link><Link href="/resources" className="text-action">Browse decision resources <span aria-hidden="true">↗</span></Link><Link href="/diagnostic" className="text-action">Check programme fit <span aria-hidden="true">↗</span></Link></div></Reveal>
+        </div>
+      </section>
+
+      <section className="section working-resources-section home-explore-strip">
+        <div className="wrap">
+          <Reveal><div className="working-section-head"><div><p className="mono sec-k">Explore</p><h2 className="sec-h">Go straight to the answer you need.</h2></div><p>Each page answers one decision clearly. You do not need to read the entire website before speaking with the programme team.</p></div></Reveal>
+          <div className="working-resource-grid">
+            {DECISION_PATHS.map((path, index) => <Reveal key={path.href} delay={(index % 3) * 45}><article className="working-resource-card"><span className="mono">{path.n}</span><h3>{path.title}</h3><p>{path.body}</p><Link href={path.href} className="text-action">{path.action} <span aria-hidden="true">↗</span></Link></article></Reveal>)}
+          </div>
         </div>
       </section>
     </>

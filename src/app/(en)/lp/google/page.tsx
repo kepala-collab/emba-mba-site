@@ -29,7 +29,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.6vw,3.4rem)", letterSpacing: "-.02em", lineHeight: 1.06, marginTop: 6 }}>
-                  Complete the CMI-recognised Executive MBA programme certificate stage <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>in 3 months.</em>
+                  Complete the CMI-recognised Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>in 3 months.</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
@@ -68,7 +68,7 @@ export default function GoogleLandingPage() {
       {/* FACTUAL PROOF — testimonial assets will be added only after permission and verification. */}
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Approved and endorsed against CMI’s Professional Standard"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
+          {[["CMI", "CMI (UK) Endorsed and Recognised"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
