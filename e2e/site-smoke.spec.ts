@@ -56,7 +56,7 @@ test("core routes render without console failures", async ({ page }) => {
 test("desktop hero exposes its primary action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/");
-  const box = await page.locator(".working-hero-actions").getByRole("link", { name: /Request the programme guide/i }).boundingBox();
+  const box = await page.locator(".working-hero-actions").getByRole("link", { name: /Get the 2026 programme guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
   const form = await page.locator(".working-hero-form form[data-form-id]").boundingBox();

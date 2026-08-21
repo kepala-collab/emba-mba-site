@@ -131,6 +131,7 @@ export default function Footer() {
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             <Link href="/apply">{CTA_LABELS.conversation}</Link>
             <Link href="/zh">中文网站 →</Link>
+            <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting and Right Dots Resources in collaboration" width={1000} height={1000} className="foot-seal" />
           </div>
         </div>
         <section className="legal-footer" aria-label="Legal and compliance information">
