@@ -14,7 +14,8 @@ for (const line of raw.split(/\r?\n/)) {
 const required = [
   "NEXT_PUBLIC_SITE_URL",
   "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
-  "TURNSTILE_VERIFY_URL",
+  "TURNSTILE_SECRET",
+  "TURNSTILE_HOSTNAMES",
   "DB_HOST",
   "DB_PORT",
   "DB_NAME",
@@ -88,6 +89,23 @@ if (experimentsEnabled && !["true", "false"].includes(experimentsEnabled)) {
 
 if (!schemaOnly && values.get("LEAD_HASH_SECRET") && values.get("LEAD_HASH_SECRET") === values.get("EMAIL_CRON_SECRET")) {
   failures.push("LEAD_HASH_SECRET and EMAIL_CRON_SECRET must be different");
+}
+
+if (!schemaOnly) {
+  const turnstileHostnames = (values.get("TURNSTILE_HOSTNAMES") || "")
+    .split(",")
+    .map((hostname) => hostname.trim().toLowerCase())
+    .filter(Boolean);
+  const requiredTurnstileHostnames = ["futurereadymba.com", "www.futurereadymba.com"];
+  if (new Set(turnstileHostnames).size !== turnstileHostnames.length) {
+    failures.push("TURNSTILE_HOSTNAMES: duplicate hostname");
+  }
+  if (turnstileHostnames.some((hostname) => !/^(?:[a-z0-9-]+\.)+[a-z]{2,}$/.test(hostname))) {
+    failures.push("TURNSTILE_HOSTNAMES: invalid production hostname");
+  }
+  if (requiredTurnstileHostnames.some((hostname) => !turnstileHostnames.includes(hostname))) {
+    failures.push("TURNSTILE_HOSTNAMES: must include futurereadymba.com and www.futurereadymba.com");
+  }
 }
 
 if (failures.length) {

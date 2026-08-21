@@ -23,6 +23,7 @@ import {
   type LeadIntent,
 } from "@/lib/lead-conversion";
 import { processLeadIntegrationOutbox } from "@/lib/lead-integration";
+import { verifyTurnstile } from "@/lib/turnstile-server";
 
 export const runtime = "nodejs";
 
@@ -30,9 +31,6 @@ const MAX_BODY_BYTES = 16 * 1024;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const TURNSTILE_ACTION = "lead-submit";
-const TURNSTILE_VERIFY_URL =
-  process.env.TURNSTILE_VERIFY_URL ||
-  "https://turnstile-siteverify-future-ready-mba.bisol-future-ready-mba.workers.dev/siteverify";
 
 const publicSiteUrl = (() => {
   try {
@@ -43,7 +41,6 @@ const publicSiteUrl = (() => {
 })();
 
 const baseHostname = publicSiteUrl.hostname.replace(/^www\./, "");
-const ALLOWED_HOSTNAMES = new Set([baseHostname, `www.${baseHostname}`]);
 const ALLOWED_ORIGINS = new Set([
   `${publicSiteUrl.protocol}//${baseHostname}`,
   `${publicSiteUrl.protocol}//www.${baseHostname}`,
@@ -89,14 +86,6 @@ type LeadRow = {
 };
 
 type LeadReferenceRow = RowDataPacket & { lead_uuid: string };
-
-type TurnstileResult = {
-  success?: boolean;
-  hostname?: string;
-  action?: string;
-  "error-codes"?: string[];
-  _worker?: { worker_version?: string };
-};
 
 class BodyTooLargeError extends Error {}
 
@@ -343,58 +332,6 @@ function parseLead(value: unknown): LeadRow | null {
   };
 }
 
-async function verifyTurnstile(
-  token: string,
-  ip: string,
-): Promise<"valid" | "invalid" | "unavailable"> {
-  try {
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        token,
-        remoteip: ip === "unknown" ? undefined : ip,
-        idempotency_key: crypto.randomUUID(),
-      }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(7_000),
-    });
-    if (!response.ok) {
-      console.warn("Lead Turnstile verification endpoint rejected the request", {
-        status: response.status,
-      });
-      return "unavailable";
-    }
-    const result = (await response.json()) as TurnstileResult;
-    const localHostname =
-      process.env.NODE_ENV !== "production" &&
-      (result.hostname === "localhost" || result.hostname === "127.0.0.1");
-    const validHostname =
-      (typeof result.hostname === "string" && ALLOWED_HOSTNAMES.has(result.hostname)) ||
-      localHostname;
-
-    const valid = result.success === true &&
-      result.action === TURNSTILE_ACTION &&
-      validHostname &&
-      typeof result._worker?.worker_version === "string";
-    if (!valid) {
-      console.warn("Lead Turnstile verification failed", {
-        success: result.success === true,
-        action: result.action || "missing",
-        hostname: result.hostname || "missing",
-        workerVersionPresent: typeof result._worker?.worker_version === "string",
-        errorCodes: result["error-codes"] || [],
-      });
-    }
-    return valid ? "valid" : "invalid";
-  } catch (error) {
-    console.warn("Lead Turnstile verification was unavailable", {
-      reason: error instanceof Error ? error.name : "unknown",
-    });
-    return "unavailable";
-  }
-}
-
 export async function POST(req: Request) {
   const ip = requestIp(req);
   const rateLimit = consumeRateLimit(ip);
@@ -424,11 +361,20 @@ export async function POST(req: Request) {
     const turnstileToken = text(input.turnstile_token, 2048, true);
     if (!row || !turnstileToken) return json({ error: "Invalid submission", code: "invalid_submission" }, 400);
 
-    const turnstile = await verifyTurnstile(turnstileToken, ip);
-    if (turnstile === "unavailable") {
+    const turnstile = await verifyTurnstile({
+      token: turnstileToken,
+      remoteIp: ip,
+      expectedAction: TURNSTILE_ACTION,
+    });
+    if (turnstile.status === "unavailable") {
+      console.warn("Lead Turnstile verification unavailable", { reason: turnstile.reason });
       return json({ error: "Security verification unavailable", code: "security_unavailable" }, 503);
     }
-    if (turnstile !== "valid") {
+    if (turnstile.status !== "valid") {
+      console.warn("Lead Turnstile verification rejected", {
+        reason: turnstile.reason,
+        errorCodes: turnstile.errorCodes || [],
+      });
       return json({ error: "Security verification failed", code: "security_failed" }, 400);
     }
 

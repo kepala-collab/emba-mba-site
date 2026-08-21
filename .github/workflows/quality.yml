@@ -15,7 +15,8 @@ jobs:
     env:
       NEXT_PUBLIC_SITE_URL: https://futurereadymba.com
       NEXT_PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
-      TURNSTILE_VERIFY_URL: https://example.com/siteverify
+      TURNSTILE_SECRET: ci-turnstile-secret-not-used-for-network-calls
+      TURNSTILE_HOSTNAMES: futurereadymba.com,www.futurereadymba.com
       LEAD_HASH_SECRET: ci-lead-hash-secret-0000000000000001
       GROQ_API_KEY: ci-server-only-key
       RELEASE_ID: ${{ github.sha }}

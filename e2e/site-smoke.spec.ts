@@ -29,6 +29,7 @@ async function mockTurnstile(page: Page) {
       contentType: "application/javascript",
       body: `(() => {
         const widgets = new Map(); let sequence = 0;
+        window.__turnstileResetCount = 0;
         window.turnstile = {
           render: (container, options) => {
             const id = 'widget-' + (++sequence); widgets.set(id, options); container.dataset.widgetId = id;
@@ -36,7 +37,7 @@ async function mockTurnstile(page: Page) {
             return id;
           },
           execute: (id) => { const options = widgets.get(id); setTimeout(() => options && options.callback('chat-test-token'), 0); },
-          reset: () => {}, remove: (id) => widgets.delete(id)
+          reset: () => { window.__turnstileResetCount += 1; }, remove: (id) => widgets.delete(id)
         };
       })();`,
     });
@@ -177,7 +178,8 @@ test("narrow layouts retain the product name and never overflow", async ({ page 
 });
 
 test("priority content pages reflow without horizontal overflow", async ({ page }) => {
-  const routes = ["/home", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/insights/executive-education-vs-executive-mba", "/zh", "/zh/executive-mba", "/zh/how-it-works", "/zh/chartered-manager-malaysia", "/zh/fees"];
+  test.setTimeout(60_000);
+  const routes = ["/home", "/executive-mba", "/how-it-works", "/curriculum", "/mba-for-working-professionals", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/insights/executive-education-vs-executive-mba", "/zh", "/zh/executive-mba", "/zh/how-it-works", "/zh/chartered-manager-malaysia", "/zh/fees"];
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     for (const route of routes) {
@@ -374,6 +376,9 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
   await expect(page.getByRole("link", { name: "Talk to Roy on WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/60129818533/);
   await page.getByRole("button", { name: /What does the programme cost/i }).click();
   await expect(page.getByText("The test answer is available.")).toBeVisible();
+  await expect.poll(() => page.evaluate(() =>
+    (window as typeof window & { __turnstileResetCount?: number }).__turnstileResetCount || 0,
+  )).toBe(1);
 });
 
 test("lead form keeps the existing submit flow behind a Turnstile token", async ({ page }) => {
@@ -398,6 +403,28 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
   await form.getByRole("button", { name: /Send my programme request/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
+});
+
+test("lead form resets a redeemed Turnstile token before a retry", async ({ page }) => {
+  await mockTurnstile(page);
+  await page.route("**/api/lead", async (route) => {
+    await route.fulfill({
+      status: 400,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "Security verification failed", code: "security_failed" }),
+    });
+  });
+  await goto(page, "/apply");
+  await page.getByRole("button", { name: /Continue to contact details/i }).click();
+  const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone"]') });
+  await form.locator('input[name="name"]').fill("Test Participant");
+  await form.locator('input[name="phone"]').fill("+60123456789");
+  await form.locator('input[name="email"]').fill("test@example.com");
+  await form.getByRole("checkbox").check();
+  await form.getByRole("button", { name: /Send my programme request/i }).click();
+  await expect.poll(() => page.evaluate(() =>
+    (window as typeof window & { __turnstileResetCount?: number }).__turnstileResetCount || 0,
+  )).toBe(1);
 });
 
 test("paid campaign routes use focused chrome with one primary action", async ({ page }) => {
@@ -478,7 +505,9 @@ test("home hero carousel presents video, photography and accessible controls", a
   await expect(slider).toBeVisible();
   await expect(slider.locator(".home-slide")).toHaveCount(3);
   await expect(slider.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
-  await expect(slider.getByRole("button", { name: "Pause slide rotation" })).toBeVisible();
+  const pauseButton = slider.getByRole("button", { name: "Pause slide rotation" });
+  await expect(pauseButton).toBeVisible();
+  await pauseButton.click();
   const actionTops: number[] = [];
   for (const slideNumber of [1, 2, 3]) {
     await slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) }).click();
@@ -488,6 +517,20 @@ test("home hero carousel presents video, photography and accessible controls", a
   expect(Math.max(...actionTops) - Math.min(...actionTops)).toBeLessThanOrEqual(1);
   await slider.getByRole("button", { name: /Show slide 2:/ }).click();
   await expect(slider.locator(".home-slide.is-active").getByRole("heading")).toContainText("Bring the decision");
+});
+
+test("home hero selects the crop designed for each screen size", async ({ page }) => {
+  for (const [width, expectedCrop] of [[390, "9x16"], [768, "4x5"], [1280, "16x9"]] as const) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
+    await goto(page, "/home");
+    const slider = page.locator(".home-slider");
+    await slider.getByRole("button", { name: /Show slide 2:/ }).click();
+    const image = slider.locator(".home-slide.is-active picture img");
+    await expect(image).toBeVisible();
+    const currentSrc = await image.evaluate((element: HTMLImageElement) => element.currentSrc);
+    expect(currentSrc, `${width}px crop`).toContain(expectedCrop);
+    expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
+  }
 });
 
 test("core pages carry the geometric hero backdrop in both languages", async ({ page }) => {

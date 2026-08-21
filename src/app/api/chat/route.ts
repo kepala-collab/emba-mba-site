@@ -5,6 +5,7 @@ import {
   consumeDurableChatRateLimit,
   normalizeClientIp,
 } from "@/lib/lead-abuse";
+import { verifyTurnstile } from "@/lib/turnstile-server";
 
 export const runtime = "nodejs";
 
@@ -15,9 +16,6 @@ const MAX_TOTAL_CHARACTERS = 3_600;
 const LOCAL_WINDOW_MS = 10 * 60 * 1000;
 const LOCAL_MAX_REQUESTS = 8;
 const TURNSTILE_ACTION = "programme-chat";
-const TURNSTILE_VERIFY_URL =
-  process.env.TURNSTILE_VERIFY_URL ||
-  "https://turnstile-siteverify-future-ready-mba.bisol-future-ready-mba.workers.dev/siteverify";
 
 const publicSiteUrl = (() => {
   try {
@@ -28,7 +26,6 @@ const publicSiteUrl = (() => {
 })();
 
 const baseHostname = publicSiteUrl.hostname.replace(/^www\./, "");
-const ALLOWED_HOSTNAMES = new Set([baseHostname, `www.${baseHostname}`]);
 const ALLOWED_ORIGINS = new Set([
   `${publicSiteUrl.protocol}//${baseHostname}`,
   `${publicSiteUrl.protocol}//www.${baseHostname}`,
@@ -36,12 +33,6 @@ const ALLOWED_ORIGINS = new Set([
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 type RateBucket = { count: number; resetAt: number };
-type TurnstileResult = {
-  success?: boolean;
-  hostname?: string;
-  action?: string;
-  "error-codes"?: string[];
-};
 type GroqResponse = {
   choices?: Array<{ message?: { content?: string } }>;
 };
@@ -182,47 +173,6 @@ function containsPersonalData(value: string): boolean {
   return hasEmail || hasIdentityNumber || hasPhone;
 }
 
-async function verifyTurnstile(token: string, ip: string | null): Promise<boolean> {
-  try {
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token, remoteip: ip || undefined }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(7_000),
-    });
-    if (!response.ok) {
-      console.warn("Chat Turnstile verification endpoint rejected the request", {
-        status: response.status,
-      });
-      return false;
-    }
-    const result = (await response.json()) as TurnstileResult;
-    const localHostname =
-      process.env.NODE_ENV !== "production" &&
-      (result.hostname === "localhost" || result.hostname === "127.0.0.1");
-    const valid = Boolean(
-      result.success &&
-      result.action === TURNSTILE_ACTION &&
-      ((typeof result.hostname === "string" && ALLOWED_HOSTNAMES.has(result.hostname)) || localHostname),
-    );
-    if (!valid) {
-      console.warn("Chat Turnstile verification failed", {
-        success: result.success === true,
-        action: result.action || "missing",
-        hostname: result.hostname || "missing",
-        errorCodes: result["error-codes"] || [],
-      });
-    }
-    return valid;
-  } catch (error) {
-    console.warn("Chat Turnstile verification was unavailable", {
-      reason: error instanceof Error ? error.name : "unknown",
-    });
-    return false;
-  }
-}
-
 export async function POST(req: Request) {
   try {
     if (!originAllowed(req)) return json({ error: "Request origin not allowed" }, 403);
@@ -255,7 +205,16 @@ export async function POST(req: Request) {
       return json({ error: "personal_data_not_allowed" }, 400);
     }
 
-    if (!(await verifyTurnstile(turnstileToken.trim().slice(0, 2048), ip))) {
+    const turnstile = await verifyTurnstile({
+      token: turnstileToken.trim().slice(0, 2048),
+      remoteIp: ip,
+      expectedAction: TURNSTILE_ACTION,
+    });
+    if (turnstile.status !== "valid") {
+      console.warn("Chat Turnstile verification rejected", {
+        reason: turnstile.reason,
+        errorCodes: turnstile.errorCodes || [],
+      });
       return json({ error: "Security verification failed" }, 400);
     }
 

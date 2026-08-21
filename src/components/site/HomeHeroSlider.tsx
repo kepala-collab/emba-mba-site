@@ -24,10 +24,12 @@ const SLIDES = [
     action: "See how the programme works",
     href: "/how-it-works",
     kind: "image" as const,
-    src: "/brand/working-scholar-method.webp",
-    alt: "Working leaders collaborating in an Executive MBA learning session",
-    position: "center 46%",
-    mobilePosition: "center 42%",
+    src: "/images/future-ready-emba/future-ready-emba-hero-live-business-decision-malaysia-16x9.webp",
+    tabletSrc: "/images/future-ready-emba/future-ready-emba-hero-live-business-decision-malaysia-4x5.webp",
+    mobileSrc: "/images/future-ready-emba/future-ready-emba-hero-live-business-decision-malaysia-9x16.webp",
+    alt: "Malaysian business leaders examining a live management decision together",
+    position: "center 48%",
+    mobilePosition: "center 46%",
   },
   {
     kicker: "Real people · recognised completion",
@@ -161,12 +163,25 @@ export default function HomeHeroSlider() {
                       <source src={slide.src} type="video/mp4" media="(min-width: 641px)" />
                     </video>
                   </>
+                ) : "mobileSrc" in slide ? (
+                  <picture>
+                    <source media="(max-width: 640px)" srcSet={slide.mobileSrc} />
+                    <source media="(max-width: 1023px)" srcSet={slide.tabletSrc} />
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      width={2560}
+                      height={1440}
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </picture>
                 ) : (
                   <Image
                     src={slide.src}
                     alt={slide.alt}
                     fill
-                    priority={index < 2}
+                    priority={false}
                     sizes="(max-width: 900px) 100vw, 68vw"
                   />
                 )}

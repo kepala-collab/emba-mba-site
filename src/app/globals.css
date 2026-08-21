@@ -1022,12 +1022,19 @@ html[lang="zh-Hans"] .technical-term{font-family:var(--font-archivo),ui-sans-ser
 .home-hero-stage{position:relative;padding:28px 0 54px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#edf6ff 0%,#f8fbff 100%)}
 .home-hero-stage-grid{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(360px,.72fr);gap:20px;align-items:start}
 .home-hero-stage .working-hero-form{max-width:none;height:100%}
+.editorial-intro-grid,.persona-hero-grid,.curriculum-capstone-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:clamp(38px,6vw,78px);align-items:center}
+.curriculum-capstone-grid{grid-template-columns:minmax(280px,.68fr) minmax(0,1.32fr);align-items:start}
+.editorial-visual{position:relative;margin:0;overflow:hidden;border:1px solid var(--line-2);border-radius:20px;background:#dbe8f6;box-shadow:var(--shadow-lg)}
+.editorial-visual img{display:block;width:100%;height:100%;object-fit:cover}
+.editorial-visual figcaption{padding:13px 16px;border-top:1px solid var(--line);background:#fff;color:var(--ink-2);font-size:.78rem;line-height:1.55}
+.editorial-visual-landscape img{aspect-ratio:4/3}.editorial-visual-portrait img{aspect-ratio:4/5}.persona-hero-visual{max-width:510px;justify-self:end}
+.programme-editorial-banner{margin:0 0 28px}.programme-editorial-banner img{aspect-ratio:16/7;object-position:center 45%}
 .home-slider{position:relative;min-width:0;height:680px;overflow:hidden;border:1px solid rgba(16,39,71,.16);border-radius:22px;background:#071c35;box-shadow:0 24px 70px rgba(23,68,121,.18)}
 .home-slider-track,.home-slide,.home-slide-media,.home-slide-shade{position:absolute;inset:0}
 .home-slide{visibility:hidden;opacity:0;pointer-events:none;transition:opacity var(--motion-media) var(--ease-media),visibility 0s linear var(--motion-media);will-change:opacity}
 .home-slide.is-active{visibility:visible;opacity:1;z-index:1;pointer-events:auto;transition-delay:0s}
 .home-slide-media{overflow:hidden;background:#0b2442}
-.home-slide-media img,.home-slide-media video{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--media-position,center);transform:translateZ(0);backface-visibility:hidden}
+.home-slide-media picture{display:block;width:100%;height:100%}.home-slide-media img,.home-slide-media video{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--media-position,center);transform:translateZ(0);backface-visibility:hidden}
 .home-slide-video-poster{opacity:0}
 .home-slide-shade{background:linear-gradient(90deg,rgba(5,20,39,.92) 0%,rgba(5,20,39,.77) 43%,rgba(5,20,39,.2) 78%,rgba(5,20,39,.12) 100%),linear-gradient(0deg,rgba(4,17,33,.75) 0%,transparent 45%)}
 .home-slide-copy{position:absolute;z-index:2;top:clamp(82px,14%,108px);right:clamp(28px,12vw,118px);bottom:104px;left:clamp(28px,5vw,62px);display:flex;max-width:670px;flex-direction:column;color:#fff}
@@ -1046,12 +1053,16 @@ html[lang="zh-Hans"] .technical-term{font-family:var(--font-archivo),ui-sans-ser
 .home-slider-dots button.is-active span{width:28px;background:#fff}
 .home-slider-pause{margin-left:auto;padding:0 14px;border-radius:10px;font:650 .7rem/1 var(--font-archivo),sans-serif;letter-spacing:.04em;text-transform:uppercase}
 @media(max-width:1023px){
+  .editorial-intro-grid,.persona-hero-grid,.curriculum-capstone-grid{grid-template-columns:1fr;gap:34px}
+  .persona-hero-visual{width:min(100%,620px);justify-self:start}.curriculum-capstone-grid .editorial-visual{width:min(100%,560px)}
+  .programme-editorial-banner img{aspect-ratio:16/9}
   .home-hero-stage{padding-top:20px}
   .home-hero-stage-grid{grid-template-columns:1fr;gap:24px}
   .home-slider{height:clamp(590px,78vw,720px)}
   .home-hero-stage .working-hero-form{max-width:760px}
 }
 @media(max-width:640px){
+  .editorial-visual{border-radius:16px}.editorial-visual-landscape img{aspect-ratio:5/4}.programme-editorial-banner{margin-bottom:20px}.programme-editorial-banner img{aspect-ratio:4/3}
   .home-hero-stage{padding:12px 0 40px}
   .home-hero-stage>.wrap{padding-inline:12px}
   .home-slider{height:590px;border-radius:17px}

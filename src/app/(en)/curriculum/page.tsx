@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
@@ -124,33 +125,47 @@ export default function CurriculumPage() {
 
       {/* THE CAPSTONE */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
-        <div className="wrap maxw-820">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The capstone</span></div></Reveal>
+        <div className="wrap curriculum-capstone-grid">
           <Reveal>
-            <h2 className="sec-h">An applied project based on the participant&rsquo;s own organisation.</h2>
+            <figure className="editorial-visual editorial-visual-portrait">
+              <Image
+                src="/images/future-ready-emba/future-ready-emba-applied-project-business-plan-detail-malaysia-4x5.webp"
+                alt="A working manager developing an applied business plan at a desk"
+                width={1664}
+                height={2080}
+                sizes="(max-width: 900px) 100vw, 36vw"
+              />
+              <figcaption>Your applied project begins with a current business issue.</figcaption>
+            </figure>
           </Reveal>
-          <Reveal>
-            <p className="sec-sub">
-              There is no traditional examination or thesis in the three-month programme. Participants select
-              a business challenge within their responsibility, apply relevant frameworks and prepare a sequenced
-              transformation plan for faculty review. The plan identifies decisions, actions, owners and measures.
-            </p>
-          </Reveal>
-          <Reveal className="mt-s">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--line)", border: "1px solid var(--line)", borderRadius: 14, overflow: "hidden" }} className="cap-grid">
-              {[
-                ["Your organisation", "The project addresses a business challenge within the participant's responsibility."],
-                ["Applied assessment", "Participants select the programme frameworks relevant to the defined problem."],
-                ["Faculty review", "Faculty review the problem definition, reasoning and proposed action."],
-                ["A sequenced plan", "The final plan states the decisions, actions, owners and measures."],
-              ].map(([b, s]) => (
-                <div key={b} style={{ background: "var(--surface)", padding: 22 }}>
-                  <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.15rem", color: "var(--ink)", display: "block", marginBottom: 8 }}>{b}</b>
-                  <span style={{ color: "var(--muted)", fontSize: ".92rem", lineHeight: 1.5 }}>{s}</span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <div>
+            <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The capstone</span></div></Reveal>
+            <Reveal>
+              <h2 className="sec-h">An applied project based on the participant&rsquo;s own organisation.</h2>
+            </Reveal>
+            <Reveal>
+              <p className="sec-sub">
+                There is no traditional examination or thesis in the three-month programme. Participants select
+                a business challenge within their responsibility, apply relevant frameworks and prepare a sequenced
+                transformation plan for faculty review. The plan identifies decisions, actions, owners and measures.
+              </p>
+            </Reveal>
+            <Reveal className="mt-s">
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--line)", border: "1px solid var(--line)", borderRadius: 14, overflow: "hidden" }} className="cap-grid">
+                {[
+                  ["Your organisation", "The project addresses a business challenge within the participant's responsibility."],
+                  ["Applied assessment", "Participants select the programme frameworks relevant to the defined problem."],
+                  ["Faculty review", "Faculty review the problem definition, reasoning and proposed action."],
+                  ["A sequenced plan", "The final plan states the decisions, actions, owners and measures."],
+                ].map(([b, s]) => (
+                  <div key={b} style={{ background: "var(--surface)", padding: 22 }}>
+                    <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.15rem", color: "var(--ink)", display: "block", marginBottom: 8 }}>{b}</b>
+                    <span style={{ color: "var(--muted)", fontSize: ".92rem", lineHeight: 1.5 }}>{s}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
         </div>
         <style>{`@media(max-width:640px){.cap-grid{grid-template-columns:1fr!important}}`}</style>
       </section>

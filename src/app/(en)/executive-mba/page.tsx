@@ -108,6 +108,18 @@ export default function ExecutiveMbaPage() {
               <p>Complete the programme in three monthly sessions while continuing to work. There are no traditional examinations or thesis.</p>
             </div>
           </Reveal>
+          <Reveal delay={40}>
+            <figure className="editorial-visual programme-editorial-banner">
+              <Image
+                src="/images/future-ready-emba/future-ready-emba-facilitated-executive-learning-malaysia-16x9.webp"
+                alt="A facilitated executive learning discussion with Malaysian managers"
+                width={2560}
+                height={1440}
+                sizes="(max-width: 900px) 100vw, 1120px"
+              />
+              <figcaption>Facilitated learning connects each framework to the decisions participants already carry.</figcaption>
+            </figure>
+          </Reveal>
           <div className="programme-stage-grid">
             <Reveal>
               <article className="programme-stage-card">

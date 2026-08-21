@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
@@ -39,22 +40,37 @@ export default function HowItWorks() {
     <>
       {/* INTRO — the philosophy */}
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
-        <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">A decision under pressure</span></div></Reveal>
-          <Reveal>
-            <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Revenue is slowing. Costs are rising. Which problem do you solve first?
-            </h1>
-          </Reveal>
-          <Reveal>
-            <p className="sec-sub">
-              The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money.
-            </p>
-          </Reveal>
-          <Reveal className="mt-s">
-            <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
-              The programme gives that work a repeatable structure. You use it on a live issue inside your own business, then make the reasoning visible enough for others to review and act on.
-            </p>
+        <div className="wrap editorial-intro-grid">
+          <div>
+            <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">A decision under pressure</span></div></Reveal>
+            <Reveal>
+              <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
+                Revenue is slowing. Costs are rising. Which problem do you solve first?
+              </h1>
+            </Reveal>
+            <Reveal>
+              <p className="sec-sub">
+                The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money.
+              </p>
+            </Reveal>
+            <Reveal className="mt-s">
+              <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
+                The programme gives that work a repeatable structure. You use it on a live issue inside your own business, then make the reasoning visible enough for others to review and act on.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={80}>
+            <figure className="editorial-visual editorial-visual-landscape">
+              <Image
+                src="/images/future-ready-emba/future-ready-emba-live-business-challenge-malaysia-16x9.webp"
+                alt="Malaysian business leaders reviewing evidence around a live management decision"
+                width={2560}
+                height={1440}
+                sizes="(max-width: 900px) 100vw, 44vw"
+                priority
+              />
+              <figcaption>Start with the live decision—not an abstract case study.</figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>

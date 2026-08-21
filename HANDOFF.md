@@ -42,7 +42,8 @@ secrets is at `web/.env.production.example`.
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin (metadata, sitemap, JSON-LD, hreflang) | `https://futurereadymba.com` |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Public Turnstile widget key | safe to expose in client builds |
-| `TURNSTILE_VERIFY_URL` | Managed Worker used for server-side token verification | public URL; no secret in Hostinger |
+| `TURNSTILE_SECRET` | Secret used by the Node.js backend for direct Cloudflare Siteverify | server-only — never commit or log |
+| `TURNSTILE_HOSTNAMES` | Exact frontend hostnames accepted from Siteverify | `futurereadymba.com,www.futurereadymba.com` |
 | `DB_HOST` | MySQL hostname | `srv2132.hstgr.io` for the isolated Hostinger Node.js runtime |
 | `DB_PORT` | MySQL port | `3306` |
 | `DB_NAME` | Hostinger database | `u606386577_emba` |
@@ -66,8 +67,8 @@ secrets is at `web/.env.production.example`.
 - **Columns include:** name, email, phone, company, participant_type, programme_interest,
   page_path, page_language, landing_page, referrer, first_referrer, utm_source/medium/campaign/term/content,
   click_id_type/value, attribution_session_id/json, **source**
-- **Flow:** `LeadForm` (client) → `POST /api/lead` → managed Turnstile verification
-  Worker → parameterised MySQL insert
+- **Flow:** `LeadForm` (client) → `POST /api/lead` → direct Cloudflare Siteverify
+  action/hostname validation → parameterised MySQL insert
 - **Target runtime DB permissions:** `SELECT`, `INSERT`, and `UPDATE` on
   `u606386577_emba.*`; no DDL or `DELETE`.
   Verify the Hostinger database user privileges in hPanel after provisioning.
@@ -81,6 +82,11 @@ secrets is at `web/.env.production.example`.
   every five minutes for retries. Delivery failures never roll back a valid application;
   messages stop after five attempts, contain no tracking pixel, and use a stable message ID
   to reduce duplicates after an uncertain SMTP result.
+- **Approved email resource assets:** the immediate acknowledgement attaches
+  `public/downloads/future-ready-decision-guide.pdf`. The approved follow-up library is
+  `working-managers-guide-2026.pdf`, `future-ready-employer-funding-brief.pdf`, and
+  `future-ready-scholarship-eligibility.pdf`. Keep these stable production filenames when
+  configuring any external sequence so replacements do not require URL changes.
 - **Lead source tags** (the `source` field — use to attribute each lead):
   - `emba-hub` — main English site
   - `zh-hub` — Chinese site (`/zh`)

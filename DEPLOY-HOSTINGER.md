@@ -22,7 +22,8 @@ commit the real password or a populated `.env.production` file.
 ```dotenv
 NEXT_PUBLIC_SITE_URL=https://futurereadymba.com
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=0x4AAAAAAEM-BhpyOxghbYJZ
-TURNSTILE_VERIFY_URL=https://turnstile-siteverify-future-ready-mba.bisol-future-ready-mba.workers.dev/siteverify
+TURNSTILE_SECRET=<server-only Cloudflare Turnstile secret>
+TURNSTILE_HOSTNAMES=futurereadymba.com,www.futurereadymba.com
 DB_HOST=srv2132.hstgr.io
 DB_PORT=3306
 DB_NAME=u606386577_emba
@@ -47,8 +48,9 @@ GROQ_MODEL=openai/gpt-oss-120b
 ```
 
 `GROQ_API_KEY` is used only by `POST /api/chat`; never give it a
-`NEXT_PUBLIC_` prefix. Configure the Turnstile widget and verification Worker to
-allow both `lead-submit` and `programme-chat` actions. The assistant rejects common
+`NEXT_PUBLIC_` prefix. Both protected routes call Cloudflare Siteverify directly,
+require the exact `lead-submit` or `programme-chat` action, and accept only the two
+production hostnames in `TURNSTILE_HOSTNAMES`. The assistant rejects common
 personal contact/identity patterns, limits each request and conversation, uses durable
 IP/subnet throttling and does not store chat transcripts in the application database.
 Keep inference retention disabled in GroqCloud Data Controls.
@@ -60,8 +62,9 @@ printing any secret values:
 npm run validate:env
 ```
 
-The validator fails closed for missing or placeholder runtime values and verifies
-that the two server secrets are at least 32 bytes and are not reused. Search,
+The validator fails closed for missing or placeholder runtime values, confirms the
+production Turnstile hostname allowlist, and verifies that the hashing and cron
+secrets are at least 32 bytes and are not reused. Search,
 analytics, IndexNow and entity-profile values are reported separately because they
 activate optional integrations rather than the lead pipeline.
 
@@ -86,10 +89,11 @@ deduplication. Generate it independently from the database password, never expos
 to the browser, and rotate it only as a planned security operation because rotation
 starts new rate-limit and deduplication identities.
 
-Cloudflare Turnstile is configured for `futurereadymba.com`, `localhost`, and
-`127.0.0.1`. The site key and verification Worker URL are public configuration;
-the Turnstile secret exists only as a Cloudflare Worker secret and must never be
-copied into this repository or Hostinger.
+Cloudflare Turnstile is configured for `futurereadymba.com`,
+`www.futurereadymba.com`, `localhost`, and `127.0.0.1`. The site key is public.
+The Node.js backend retrieves `TURNSTILE_SECRET` only from its server environment,
+calls Siteverify directly, and validates both the expected action and exact production
+hostname. Never expose the secret to the browser, logs, or repository.
 
 Application acknowledgements are sent through Hostinger SMTP over implicit TLS on
 port 465. They are queued only after a verified application is committed, use the
