@@ -7,7 +7,7 @@ const content = CORE_PAGES_ZH.fees;
 
 export const metadata = withSeo(path, {
   title: "学费、奖学金与 HRD Corp 索赔",
-  description: "个人及企业高管 MBA 费用：2026 马来西亚学员奖学金价、每人 USD 2,500 全球线上课程、Right Dots Resources 本地报价及企业内部 MDP。",
+  description: "Future Ready 高管 MBA 费用：标准费用 RM10,000；符合资格的马来西亚申请者可申请 RM5,000 LIFE Innoversity 奖学金。",
 });
 
 export default function Page() {

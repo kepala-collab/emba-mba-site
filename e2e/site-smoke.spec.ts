@@ -64,7 +64,11 @@ test("desktop header provides four exclusive navigation dropdowns", async ({ pag
   await goto(page, "/home");
   const dropdowns = page.locator(".desktop-nav .nav-dropdown");
   await expect(dropdowns).toHaveCount(4);
-  await expect(page.locator(".desktop-nav").getByRole("link", { name: "Home", exact: true })).toHaveAttribute("href", "/home");
+  const homeLink = page.locator(".desktop-nav").getByRole("link", { name: "Home", exact: true });
+  await expect(homeLink).toHaveAttribute("href", "/home");
+  const brandBox = await page.locator(".navbar .brand-title").boundingBox();
+  const homeBox = await homeLink.boundingBox();
+  expect((homeBox?.x || 0) - ((brandBox?.x || 0) + (brandBox?.width || 0))).toBeGreaterThanOrEqual(28);
 
   const programme = dropdowns.nth(0);
   const recognition = dropdowns.nth(1);
@@ -118,19 +122,18 @@ test("page navigation starts at the top while intentional anchors still work", a
   await expect(page.locator("#abc-film")).toBeInViewport();
 });
 
-test("professional post-nominals use legible technical typography", async ({ page }) => {
+test("CMI recognition pages keep technical terms legible and the offer unambiguous", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await goto(page, "/chartered-manager-malaysia");
-
-  const heading = page.getByRole("heading", { name: "Certificate and fCMgr" }).first();
-  const postNominal = heading.locator(".technical-term");
-  await expect(postNominal).toHaveText("fCMgr");
-  await expect(postNominal).toHaveCSS("font-family", /Archivo/);
-  await expect(postNominal).toHaveCSS("letter-spacing", "normal");
+  await expect(page.getByRole("heading", { name: "Professional recognition for work you can use." })).toBeVisible();
+  await page.locator("details").filter({ hasText: "Does the programme automatically award Chartered Manager status?" }).locator("summary").click();
+  await expect(page.getByText(/Chartered Manager is a separate optional CMI route/i).first()).toBeVisible();
+  await expect(page.getByText(/£|USD 2,500/)).toHaveCount(0);
 
   await goto(page, "/zh/chartered-manager-malaysia");
-  const chineseHeading = page.getByRole("heading", { name: "证书与 fCMgr" }).first();
-  await expect(chineseHeading.locator(".technical-term")).toHaveCSS("font-family", /Archivo/);
+  await expect(page.getByRole("heading", { name: "让实际管理成果获得专业认可。" })).toBeVisible();
+  await page.locator("details").filter({ hasText: "完成课程后会自动成为 Chartered Manager 吗？" }).locator("summary").click();
+  await expect(page.getByText(/Chartered Manager 为独立可选路线/).first()).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.fonts.status)).toBe("loaded");
 });
 
@@ -233,22 +236,15 @@ test("advancement brief keeps chapter and fact-card alignment across breakpoints
   }
 });
 
-test("CMI progression chart separates qualification levels from the programme pathway", async ({ page }) => {
-  for (const [route, boundary] of [
-    ["/chartered-manager-malaysia", "Professional development; not an academic degree."],
-    ["/zh/chartered-manager-malaysia", "专业发展课程，不是学术学位。"],
+test("retired programme offers permanently resolve to the Future Ready eMBA journey", async ({ page }) => {
+  for (const [route, target] of [
+    ["/online-executive-mba", "/executive-mba"],
+    ["/corporate-training", "/hrd-corp-claimable"],
+    ["/programmes/shift-hr", "/executive-mba"],
   ] as const) {
-    for (const width of [320, 768, 1280]) {
-      await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
-      await goto(page, route);
-      const chart = page.locator(".cmi-progression-chart");
-      await expect(chart).toBeVisible();
-      await expect(chart.locator(".cmi-level-list > li")).toHaveCount(6);
-      await expect(chart.locator(".cmi-programme-list > li")).toHaveCount(4);
-      await expect(chart.getByText(boundary, { exact: true })).toBeVisible();
-      const box = await chart.boundingBox();
-      expect((box?.width || width + 1), `${route} chart at ${width}px`).toBeLessThanOrEqual(width);
-    }
+    await page.goto(route);
+    await expect(page).toHaveURL(new RegExp(`${target.replaceAll("/", "\\/")}$`));
+    await expect(page.locator("main h1")).toHaveCount(1);
   }
 });
 
@@ -483,6 +479,13 @@ test("home hero carousel presents video, photography and accessible controls", a
   await expect(slider.locator(".home-slide")).toHaveCount(3);
   await expect(slider.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
   await expect(slider.getByRole("button", { name: "Pause slide rotation" })).toBeVisible();
+  const actionTops: number[] = [];
+  for (const slideNumber of [1, 2, 3]) {
+    await slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) }).click();
+    const actionBox = await slider.locator(".home-slide.is-active .home-slide-action").boundingBox();
+    actionTops.push(actionBox?.y || 0);
+  }
+  expect(Math.max(...actionTops) - Math.min(...actionTops)).toBeLessThanOrEqual(1);
   await slider.getByRole("button", { name: /Show slide 2:/ }).click();
   await expect(slider.locator(".home-slide.is-active").getByRole("heading")).toContainText("Bring the decision");
 });

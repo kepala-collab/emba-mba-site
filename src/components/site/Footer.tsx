@@ -109,9 +109,9 @@ export default function Footer() {
           </div>
           <div>
             <h2>For your company</h2>
-            <Link href="/corporate-training">Company programmes</Link>
+            <Link href="/executive-mba">Sponsor a participant</Link>
             <Link href="/hrd-corp-claimable">Employer-led HRD Corp funding</Link>
-            <Link href="/programmes/shift-hr">SHIFT! HR workshop</Link>
+            <Link href="/intakes">English and Mandarin intakes</Link>
             <Link href="/apply?intent=employer_evaluating">{CTA_LABELS.company}</Link>
           </div>
           <div>

@@ -7,8 +7,6 @@ import {
   FACTS,
   HRD_CORP_CLAIM,
   INCLUSIONS,
-  OPERATOR,
-  PROGRAMME_PRICING,
   REFUND_TERMS,
 } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
@@ -78,41 +76,6 @@ export default function FeesPage() {
             ))}
           </div>
           <p className="fine fee-section-note">The three-month programme has no traditional examination or thesis. Travel and accommodation, where required, are not included.</p>
-        </div>
-      </section>
-
-      <section className="section fee-options-section">
-        <div className="wrap">
-          <Reveal>
-            <div className="reading-section-head">
-              <p className="mono sec-k">Other programme arrangements</p>
-              <h2 className="sec-h">Online, localised and company delivery.</h2>
-              <p>The option and written proposal determine the applicable price.</p>
-            </div>
-          </Reveal>
-          <div className="fee-option-grid">
-            {PROGRAMME_PRICING.individuals.map((option, index) => (
-              <Reveal key={option.key} delay={index * 40}>
-                <article>
-                  <span className="mono sec-k">Option {String(index + 1).padStart(2, "0")}</span>
-                  <h3>{option.title}</h3>
-                  <p>{option.audience}</p>
-                  <strong>{option.price}</strong>
-                  <Link href={option.actionHref} className="text-action">{option.actionLabel} <span aria-hidden="true">↗</span></Link>
-                </article>
-              </Reveal>
-            ))}
-            <Reveal delay={120}>
-              <article>
-                <span className="mono sec-k">For companies</span>
-                <h3>{PROGRAMME_PRICING.companies.title}</h3>
-                <p>{PROGRAMME_PRICING.companies.description}</p>
-                <strong>{PROGRAMME_PRICING.companies.price}</strong>
-                <Link href="/contact" className="text-action">Request a company proposal <span aria-hidden="true">↗</span></Link>
-              </article>
-            </Reveal>
-          </div>
-          <p className="fine fee-section-note"><strong>{OPERATOR.name}</strong> is the authorised {OPERATOR.role} for programme enquiries, pricing and enrolment coordination. Every participant receives the applicable written fee schedule before payment.</p>
         </div>
       </section>
 

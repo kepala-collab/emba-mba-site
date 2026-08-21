@@ -137,7 +137,7 @@ export default function AsianBusinessConsultingPage() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>
             <h2 className="sec-h">Seventeen cohorts. 154 graduates. One shared milestone.</h2>
-            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts.</p>
+            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts: 16 English cohorts and the first Mandarin cohort.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>

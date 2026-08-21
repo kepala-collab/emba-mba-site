@@ -241,8 +241,8 @@ export default function ExecutiveMbaPage() {
                 <li><strong>{STAGES[1].h}:</strong> {STAGES[1].d}</li>
                 <li><strong>{STAGES[2].h}:</strong> {STAGES[2].d}</li>
               </ol>
-              <p className="fine">Fellow and Chartered Fellow are later CMI membership routes based on experience and CMI assessment. Programme completion alone does not confer those grades.</p>
-              <Link href="/chartered-manager-malaysia" className="btn btn-ghost">Chartered Manager routes in Malaysia <span aria-hidden="true">→</span></Link>
+              <p className="fine">Any Chartered Manager application is a separate optional CMI route. CMI alone controls eligibility, assessment, membership and fees.</p>
+              <Link href="/chartered-manager-malaysia" className="btn btn-ghost">Understand the CMI recognition <span aria-hidden="true">→</span></Link>
             </div>
           </Reveal>
         </div>

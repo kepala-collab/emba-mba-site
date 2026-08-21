@@ -163,7 +163,7 @@ export default function Header() {
     return (
       <header className="navbar campaign-navbar">
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Future Ready Executive MBA, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA home">
             <RdrMark size={38} />
             <span className="brand-title">
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
@@ -186,7 +186,7 @@ export default function Header() {
     <>
       <header className={`navbar${menuOpen ? " menu-open" : ""}`}>
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Future Ready Executive MBA, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA home">
             <RdrMark size={38} />
             <span className="brand-title">
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
@@ -209,7 +209,7 @@ export default function Header() {
             <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
               {zh ? "EN" : "中文"}
             </Link>
-            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? CTA_LABELS.zh.guide : CTA_LABELS.guide}</Link>
+            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? "获取指南" : "Get the guide"}</Link>
           </nav>
           <div className="mobile-header-actions">
             <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "获取指南" : "Get guide"}</Link>

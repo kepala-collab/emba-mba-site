@@ -93,7 +93,6 @@ export const FACTS = {
   // Backward-compatible aliases used only by archived release-verification copies.
   scholarshipAmt: FEES.malaysia.scholarshipLabel,
   priceNet: FEES.malaysia.participantLabel,
-  priceIntl: "USD 2,500",
   cohorts: String(PROGRAMME_PROOF.cohorts),
 };
 
@@ -134,41 +133,6 @@ export const DELIVERY_CONTROL = {
 
 export const COMPARISON_SCOPE =
   "This table defines its reference academic MBA as an 18–24 month programme built around academic modules, assignments or examinations, and a dissertation or thesis. It does not describe every MBA programme.";
-
-export const PROGRAMME_PRICING = {
-  individuals: [
-    {
-      key: "global-online",
-      title: "Global Online Executive MBA",
-      audience: "Open to participants worldwide, irrespective of country",
-      price: `${FACTS.priceIntl} per person`,
-      actionHref: "/online-executive-mba",
-      actionLabel: "Explore the global online programme",
-    },
-    {
-      key: "country-online",
-      title: "Country-Specific Online Programme",
-      audience: "Online delivery organised for a specific country or market",
-      price: `Contact ${OPERATOR.name} for country-specific pricing`,
-      actionHref: "/contact",
-      actionLabel: "Request country-specific pricing",
-    },
-    {
-      key: "local-onsite",
-      title: "Local In-Person Programme",
-      audience: "In-person delivery adapted to the local market",
-      price: `Contact ${OPERATOR.name} for localised on-site pricing`,
-      actionHref: "/contact",
-      actionLabel: "Request an on-site proposal",
-    },
-  ],
-  companies: {
-    title: "Custom company programme (MDP)",
-    description:
-      "ABC designs the in-house management development programme around the organisation's written requirements. The formal proposal specifies the modules, delivery format, completion requirements and certificate.",
-    price: "The formal proposal states the complete fee and payment terms before the company accepts the engagement.",
-  },
-} as const;
 
 // The marketed Executive MBA runs for three months. Chartered Manager is a
 // separate optional CMI route, with its own eligibility, assessment and fees.
@@ -391,12 +355,11 @@ export const NAV: NavItem[] = [
       { href: "/how-it-works", label: "How it works" },
       { href: "/curriculum", label: "Curriculum" },
       { href: "/executive-mba-malaysia", label: "Malaysia programme" },
-      { href: "/online-executive-mba", label: "Online programme" },
     ],
   },
   {
     href: "/chartered-manager-malaysia",
-    label: "Recognition & Team",
+    label: "Recognition",
     children: [
       { href: "/chartered-manager-malaysia", label: "CMI recognition" },
       { href: "/faculty", label: "Faculty & coaches" },
@@ -407,17 +370,16 @@ export const NAV: NavItem[] = [
   },
   {
     href: "/fees",
-    label: "Fees & Dates",
+    label: "Fees",
     children: [
       { href: "/fees", label: "Fees & scholarship" },
       { href: "/hrd-corp-claimable", label: "HRD Corp funding" },
       { href: "/intakes", label: `${PROGRAMME_YEAR} intakes` },
-      { href: "/corporate-training", label: "Corporate training" },
     ],
   },
   {
     href: "/resources",
-    label: "Guides & Help",
+    label: "Guides",
     children: [
       { href: "/resources", label: "Decision resources" },
       { href: "/insights", label: "Insights" },

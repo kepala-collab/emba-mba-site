@@ -90,9 +90,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              You keep working while completing three monthly weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. Prefer to join from elsewhere?
-              The same programme runs{" "}
-              <Link href="/online-executive-mba">fully online</Link>.
+              You keep working while completing three monthly weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across three monthly sessions while participants continue working.
             </p>
           </Reveal>
           <Reveal className="mt-s">

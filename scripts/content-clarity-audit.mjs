@@ -74,7 +74,6 @@ const required = [
   'priceStd: FEES.standard.label',
   'scholarshipAmount: 5000',
   'participantAmount: 5000',
-  'priceIntl: "USD 2,500"',
   'trainingDays: "6"',
   'liveSessions: "3"',
   'moduleCount: "12"',

@@ -2,14 +2,12 @@ import {
   ABC_PROFILE,
   CERTIFICATE_POSITIONING,
   COMPANY_ENROLMENT,
-  CMI_PATHWAY,
   DELIVERY_CONTROL,
   FACTS,
   HRD_CORP_CLAIM,
   INTAKES,
   OPERATOR,
   PROGRAMME_AUDIENCE,
-  PROGRAMME_PRICING,
   REFUND_TERMS,
   SITE,
 } from "@/lib/content";
@@ -42,19 +40,12 @@ VERIFIED PROGRAMME FACTS
 - Structure: the Executive MBA is a three-month programme: six training days across three monthly sessions, coaching and an applied project leading to the CMI-recognised Executive MBA programme certificate. No traditional exams or thesis. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee.
 - CMI professional recognition: graduates receive the programme certificate recognised against CMI Professional Standards. CMI's published CMI Recognised route lists Foundation Chartered Manager status (fCMgr) on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal. Do not describe MCMI as "M(CMI)" or promise MCMI automatically.
 - Chartered progression: Chartered Manager is a separate optional CMI route with its own eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee, and CMgr MCMI is not automatic. CMI controls the applicable route and award. CMI's published post-nominal formats include fCMgr, MCMI, CMgr MCMI and CMgr FCMI.
-- Current Chartered Manager routes: CMI publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment requires either a management, business or leadership-focused degree plus three years in a management role, or at least five years of management experience without a management-specific qualification. CMI Fast Track requires one of CMI's specified qualifications completed within the last five years plus at least three years in a management role. The Future Ready Executive MBA is CMI Recognised, not a CMI qualification, so never promise Fast Track eligibility. CMI must confirm the route.
-- Current published CMI assessment prices checked ${CMI_PATHWAY.reviewedAt}: Full Assessment £750 + VAT; CMI Fast Track £162 + VAT; continuing membership fees may also apply. State the review date and tell visitors to verify CMI's current page before payment.
-- CMI Malaysia: CMI's official Malaysia regional network supports professional development, thought leadership and professional connections. CMI says non-members may attend its events and activities. CMI also says it has members in more than 170 countries. Do not imply that programme enrolment guarantees access to a particular event or benefit.
-- Chartered Manager sources: ${CMI_PATHWAY.charteredManager}; routes ${CMI_PATHWAY.routes}; Malaysia network ${CMI_PATHWAY.malaysia}; international network ${CMI_PATHWAY.international}.
+- Chartered Manager is outside this website's offer. If asked, state only that it is a separate optional CMI route and that CMI controls eligibility, assessment, membership and fees. Do not quote third-party route prices or promote other CMI courses.
 - Recognition statement: the Future Ready Executive MBA is a three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic, not an MQA-accredited academic degree or a regulated qualification. Never claim a programme-level CMI qualification level or CMI Fast Track eligibility for Chartered Manager. Do not describe it as an academic MBA degree, a regulated qualification, or a guaranteed career outcome.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
 - Malaysian scholarship: eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
 - Fee after an approved scholarship: ${FACTS.priceAfterScholarship}. Never present this as the fee for every Malaysian participant or imply that nationality alone guarantees the award.
-- Global online public programme: ${FACTS.priceIntl} per person, open irrespective of country.
-- Country-specific online programme: ${PROGRAMME_PRICING.individuals[1].price}; a written proposal controls.
-- Localised on-site programme: ${PROGRAMME_PRICING.individuals[2].price}; a written proposal controls.
-- Company option: ${PROGRAMME_PRICING.companies.title}. ${PROGRAMME_PRICING.companies.description} ${PROGRAMME_PRICING.companies.price}
 - HRD Corp: ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.process} ${HRD_CORP_CLAIM.responsibility} Never describe approval or reimbursement as automatic.
 - Company enrolment: ${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}
 - Attendance: sessions run 9am-6pm. English Cohort 17 runs Saturday-Sunday; the other published English and Mandarin cohorts run Friday-Saturday. ${DELIVERY_CONTROL.schedule} For a missed session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort.

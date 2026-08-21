@@ -11,9 +11,9 @@ type Item = { name: string; path: string };
 const HOME: Item = { name: "Home", path: "/home" };
 const ZH_HOME: Item = { name: "首页", path: "/zh" };
 const PROGRAMME: Item = { name: "Programme", path: "/executive-mba" };
-const RESOURCES: Item = { name: "Guides & Help", path: "/resources" };
-const TEAM: Item = { name: "Recognition & Team", path: "/chartered-manager-malaysia" };
-const FEES: Item = { name: "Fees & Dates", path: "/fees" };
+const RESOURCES: Item = { name: "Guides", path: "/resources" };
+const TEAM: Item = { name: "Recognition", path: "/chartered-manager-malaysia" };
+const FEES: Item = { name: "Fees", path: "/fees" };
 const INSIGHTS: Item = { name: "Insights", path: "/insights" };
 const ZH_PROGRAMME: Item = { name: "课程", path: "/zh/executive-mba" };
 const ZH_RESOURCES: Item = { name: "指南与帮助", path: "/zh/resources" };
@@ -27,7 +27,6 @@ const ROUTES: Record<string, Item[]> = {
   "/asian-business-consulting": [HOME, TEAM, { name: "Asian Business Consulting", path: "/asian-business-consulting" }],
   "/chartered-manager-malaysia": [HOME, PROGRAMME, { name: "CMI recognition", path: "/chartered-manager-malaysia" }],
   "/contact": [HOME, TEAM, { name: "Contact Roy", path: "/contact" }],
-  "/corporate-training": [HOME, { name: "Corporate training", path: "/corporate-training" }],
   "/curriculum": [HOME, PROGRAMME, { name: "Curriculum", path: "/curriculum" }],
   "/diagnostic": [HOME, RESOURCES, { name: "Programme fit check", path: "/diagnostic" }],
   "/executive-mba": [HOME, PROGRAMME],
@@ -48,9 +47,7 @@ const ROUTES: Record<string, Item[]> = {
   "/mba-for-entrepreneurs": [HOME, PROGRAMME, { name: "For entrepreneurs", path: "/mba-for-entrepreneurs" }],
   "/mba-for-sme-owners": [HOME, PROGRAMME, { name: "For SME owners", path: "/mba-for-sme-owners" }],
   "/mba-for-working-professionals": [HOME, PROGRAMME, { name: "For working professionals", path: "/mba-for-working-professionals" }],
-  "/online-executive-mba": [HOME, PROGRAMME, { name: "Online programme", path: "/online-executive-mba" }],
   "/privacy": [HOME, { name: "Privacy policy", path: "/privacy" }],
-  "/programmes/shift-hr": [HOME, { name: "Corporate training", path: "/corporate-training" }, { name: "SHIFT! HR workshop", path: "/programmes/shift-hr" }],
   "/resources": [HOME, RESOURCES],
   "/resources/advancement-brief": [HOME, RESOURCES, { name: "Advancement brief", path: "/resources/advancement-brief" }],
   "/terms": [HOME, { name: "Terms & conditions", path: "/terms" }],

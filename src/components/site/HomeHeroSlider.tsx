@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
 const SLIDES = [
   {
@@ -14,6 +14,8 @@ const SLIDES = [
     kind: "video" as const,
     src: "/media/home-graduation-loop.mp4",
     poster: "/brand/abc-graduation-poster.jpg",
+    position: "center 45%",
+    mobilePosition: "center 48%",
   },
   {
     kicker: "One live business challenge",
@@ -25,17 +27,19 @@ const SLIDES = [
     src: "/brand/working-scholar-method.webp",
     alt: "Working leaders collaborating in an Executive MBA learning session",
     position: "center 46%",
+    mobilePosition: "center 42%",
   },
   {
     kicker: "Real people · recognised completion",
     title: "The work leads somewhere visible.",
-    body: "Join a practitioner-led programme completed by 154 graduates across 16 cohorts, with a CMI Certificate of Recognition on successful completion.",
+    body: "Join a practitioner-led programme completed by 154 graduates across 17 cohorts: 16 English cohorts and the first Mandarin cohort.",
     action: "Meet the programme community",
     href: "/asian-business-consulting#abc-film",
     kind: "image" as const,
     src: "/brand/community/graduation-cohort.jpeg",
     alt: "Future Ready Executive MBA graduates gathered at the inaugural graduation",
     position: "center 42%",
+    mobilePosition: "center 40%",
   },
 ] as const;
 
@@ -45,34 +49,65 @@ export default function HomeHeroSlider() {
   const [active, setActive] = useState(0);
   const [manualPaused, setManualPaused] = useState(false);
   const [interacting, setInteracting] = useState(false);
+  const [inViewport, setInViewport] = useState(true);
+  const [pageVisible, setPageVisible] = useState(true);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const sliderRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const paused = manualPaused || interacting;
+  const rotationPaused = manualPaused || interacting || !inViewport || !pageVisible || reduceMotion;
 
-  const selectSlide = useCallback((index: number) => {
+  const selectSlide = useCallback((index: number, pauseRotation = false) => {
     setActive((index + SLIDES.length) % SLIDES.length);
+    if (pauseRotation) setManualPaused(true);
   }, []);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (paused || reduceMotion.matches) return;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => setReduceMotion(mediaQuery.matches);
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
+  }, []);
+
+  useEffect(() => {
+    const updateVisibility = () => setPageVisible(document.visibilityState === "visible");
+    updateVisibility();
+    document.addEventListener("visibilitychange", updateVisibility);
+    return () => document.removeEventListener("visibilitychange", updateVisibility);
+  }, []);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInViewport(entry.isIntersecting),
+      { threshold: 0.2 },
+    );
+    observer.observe(slider);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (rotationPaused) return;
     const timer = window.setInterval(() => {
       setActive((current) => (current + 1) % SLIDES.length);
     }, ROTATION_MS);
     return () => window.clearInterval(timer);
-  }, [paused]);
+  }, [rotationPaused]);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (active === 0 && !paused) {
+    if (active === 0 && inViewport && pageVisible && !reduceMotion) {
       void video.play().catch(() => undefined);
     } else {
       video.pause();
     }
-  }, [active, paused]);
+  }, [active, inViewport, pageVisible, reduceMotion]);
 
   return (
     <section
+      ref={sliderRef}
       className="home-slider"
       aria-label="Future Ready Executive MBA highlights"
       aria-roledescription="carousel"
@@ -93,28 +128,46 @@ export default function HomeHeroSlider() {
               aria-hidden={!isActive}
               aria-label={`${index + 1} of ${SLIDES.length}`}
               aria-roledescription="slide"
+              inert={!isActive ? true : undefined}
             >
-              <div className="home-slide-media">
+              <div
+                className="home-slide-media"
+                style={{
+                  "--media-position": slide.position,
+                  "--media-position-mobile": slide.mobilePosition,
+                } as CSSProperties}
+              >
                 {slide.kind === "video" ? (
-                  <video
-                    ref={videoRef}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    poster={slide.poster}
-                    aria-label="Future Ready Executive MBA graduation highlights"
-                  >
-                    <source src={slide.src} type="video/mp4" />
-                  </video>
+                  <>
+                    <Image
+                      className="home-slide-video-poster"
+                      src={slide.poster}
+                      alt="Future Ready Executive MBA graduation highlights"
+                      fill
+                      priority
+                      fetchPriority="high"
+                      sizes="(max-width: 900px) 100vw, 68vw"
+                    />
+                    <video
+                      ref={videoRef}
+                      className="home-slide-video"
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster={slide.poster}
+                      aria-label="Future Ready Executive MBA graduation highlights"
+                    >
+                      <source src={slide.src} type="video/mp4" media="(min-width: 641px)" />
+                    </video>
+                  </>
                 ) : (
                   <Image
                     src={slide.src}
                     alt={slide.alt}
                     fill
-                    priority={index === 1}
+                    priority={index < 2}
                     sizes="(max-width: 900px) 100vw, 68vw"
-                    style={{ objectPosition: slide.position }}
                   />
                 )}
               </div>
@@ -133,20 +186,20 @@ export default function HomeHeroSlider() {
       </div>
 
       <div className="home-slider-controls">
-        <button type="button" className="home-slider-arrow" onClick={() => selectSlide(active - 1)} aria-label="Previous slide">←</button>
+        <button type="button" className="home-slider-arrow" onClick={() => selectSlide(active - 1, true)} aria-label="Previous slide">←</button>
         <div className="home-slider-dots" aria-label="Choose a slide">
           {SLIDES.map((slide, index) => (
             <button
               key={slide.title}
               type="button"
               className={active === index ? "is-active" : ""}
-              onClick={() => selectSlide(index)}
+              onClick={() => selectSlide(index, true)}
               aria-label={`Show slide ${index + 1}: ${slide.title}`}
               aria-current={active === index ? "true" : undefined}
             ><span /></button>
           ))}
         </div>
-        <button type="button" className="home-slider-arrow" onClick={() => selectSlide(active + 1)} aria-label="Next slide">→</button>
+        <button type="button" className="home-slider-arrow" onClick={() => selectSlide(active + 1, true)} aria-label="Next slide">→</button>
         <button type="button" className="home-slider-pause" onClick={() => setManualPaused((value) => !value)} aria-label={manualPaused ? "Resume slide rotation" : "Pause slide rotation"}>
           {manualPaused ? "Play" : "Pause"}
         </button>

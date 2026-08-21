@@ -90,10 +90,10 @@ export default function Home() {
 
       <section className="working-fact-band" aria-label="Programme at a glance">
         <div className="wrap working-fact-grid">
-          <div><strong>{FACTS.durationLong}</strong><span>professional development programme</span></div>
-          <div><strong>{FACTS.trainingDays} days</strong><span>across three facilitated sessions</span></div>
-          <div><strong>{FACTS.moduleCount}</strong><span>applied management modules</span></div>
-          <div><strong>1 project</strong><span>built around a live business challenge</span></div>
+          <div><strong><span>3</span><span className="working-fact-unit">months</span></strong><span>professional development programme</span></div>
+          <div><strong><span>{FACTS.trainingDays}</span><span className="working-fact-unit">days</span></strong><span>across three facilitated sessions</span></div>
+          <div><strong><span>{FACTS.moduleCount}</span></strong><span>applied management modules</span></div>
+          <div><strong><span>1</span><span className="working-fact-unit">project</span></strong><span>built around a live business challenge</span></div>
         </div>
       </section>
 
@@ -171,11 +171,11 @@ export default function Home() {
           <Reveal>
             <div className="working-section-head">
               <div><p className="mono sec-k">Human proof</p><h2 className="sec-h">The work ends in a real room, with real people.</h2></div>
-              <p>{PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts. {PROGRAMME_PROOF.graduationAttendance} attended the inaugural graduation in {PROGRAMME_PROOF.inauguralGraduation}.</p>
+              <p>{PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts: {PROGRAMME_PROOF.englishCohorts} English cohorts and the first Mandarin cohort. {PROGRAMME_PROOF.graduationAttendance} attended the inaugural graduation in {PROGRAMME_PROOF.inauguralGraduation}.</p>
             </div>
           </Reveal>
           <div className="home-proof-gallery">
-            <Reveal><figure className="home-proof-primary"><Image src="/brand/community/graduation-cohort.jpeg" alt="Future Ready Executive MBA graduates at the inaugural graduation" width={894} height={596} sizes="(max-width: 760px) 100vw, 66vw" /><figcaption><strong>{PROGRAMME_PROOF.graduationAttendance} graduates attended.</strong> Part of a community of {PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts.</figcaption></figure></Reveal>
+            <Reveal><figure className="home-proof-primary"><Image src="/brand/community/graduation-cohort.jpeg" alt="Future Ready Executive MBA graduates at the inaugural graduation" width={894} height={596} sizes="(max-width: 760px) 100vw, 66vw" /><figcaption><strong>{PROGRAMME_PROOF.graduationAttendance} graduates attended.</strong> Part of a community of {PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.englishCohorts} English cohorts and the first Mandarin cohort.</figcaption></figure></Reveal>
             <div className="home-proof-secondary">
               <Reveal delay={50}><figure><Image src="/brand/community/faculty-event.jpeg" alt="Future Ready Executive MBA faculty and CMI representatives" width={2560} height={1440} sizes="(max-width: 760px) 100vw, 32vw" /><figcaption>Practitioner-led faculty and programme representatives.</figcaption></figure></Reveal>
               <Reveal delay={90}><figure><Image src="/brand/community/graduation-graduates.jpeg" alt="Future Ready Executive MBA graduates with their certificates" width={1080} height={810} sizes="(max-width: 760px) 100vw, 32vw" /><figcaption>Completion recognised at the inaugural graduation.</figcaption></figure></Reveal>
@@ -195,7 +195,7 @@ export default function Home() {
       <section className="section home-closing-cta">
         <div className="wrap home-closing-cta-inner">
           <Reveal><div><p className="mono">The next decision</p><h2>Get the facts. Then decide whether a conversation is worth your time.</h2></div></Reveal>
-          <Reveal delay={60}><div className="home-closing-actions"><Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="home_closing_guide" data-track-location="home_closing">{CTA_LABELS.guide} <span aria-hidden="true">↑</span></Link><Link href="/resources" className="text-action">Browse decision resources <span aria-hidden="true">↗</span></Link><Link href="/diagnostic" className="text-action">Check programme fit <span aria-hidden="true">↗</span></Link></div></Reveal>
+          <Reveal delay={60}><div className="home-closing-actions"><Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="home_closing_guide" data-track-location="home_closing">{CTA_LABELS.guide} <span aria-hidden="true">↑</span></Link><Link href="/contact" className="text-action">Talk to Roy Affandi <span aria-hidden="true">↗</span></Link></div></Reveal>
         </div>
       </section>
 

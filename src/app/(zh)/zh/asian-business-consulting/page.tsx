@@ -18,7 +18,7 @@ export const metadata = withSeo("/zh/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC 于马来西亚注册" },
   { n: "2024年7月", s: "CMI（英国）背书及认可状态" },
-  { n: "17", s: "个已开办班次：16 个英语班与首个中文班" },
+  { n: "17", s: "个已开办班次：16 个英语班与首个华语班" },
   { n: "154", s: "位课程毕业生" },
 ];
 
@@ -135,7 +135,7 @@ export default function AbcPageZh() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届毕业典礼 · 2026年8月</span></div>
             <h2 className="sec-h">17 个班次，154 位毕业生，共享一个重要里程碑。</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群。</p>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群：16 个英语班与首个华语班。</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>

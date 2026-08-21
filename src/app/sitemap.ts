@@ -10,10 +10,10 @@ const REVIEW_DATES = {
 } as const;
 
 const PRIMARY = ["/home", "/executive-mba", "/apply", "/zh"];
-const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq", "/corporate-training"];
+const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq"];
 const CLUSTER = [
-  "/hrd-corp-claimable", "/online-executive-mba", "/executive-mba-vs-mba",
-  "/ai-executive-mba", "/mba-for-working-professionals", "/programmes/shift-hr",
+  "/hrd-corp-claimable", "/executive-mba-vs-mba",
+  "/ai-executive-mba", "/mba-for-working-professionals",
   "/executive-mba-malaysia", "/chartered-manager-malaysia", "/mba-for-sme-owners", "/mba-for-entrepreneurs",
 ];
 const INSIGHTS = [
