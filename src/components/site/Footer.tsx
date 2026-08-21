@@ -59,7 +59,7 @@ export default function Footer() {
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               <Link href="/zh/apply">预约课程沟通</Link>
-              <Link href="/">English site →</Link>
+              <Link href="/home">English site →</Link>
               <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting 与 Right Dots Resources 合作" width={1000} height={1000} className="foot-seal" />
             </div>
             <div>
@@ -119,6 +119,7 @@ export default function Footer() {
             <Link href="/resources">Decision resources</Link>
             <Link href="/diagnostic">Programme fit check</Link>
             <Link href="/insights">Insights</Link>
+            <Link href="/insights/executive-education-vs-executive-mba">Executive education vs Executive MBA</Link>
             <Link href="/faq">Frequently asked questions</Link>
           </div>
           <div>

@@ -7,9 +7,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/executive-mba-malaysia", {
-  title: "Executive MBA in Malaysia (CMI UK, HRD Corp)",
+  title: "Executive MBA Malaysia for Working Leaders",
   description:
-    "A three-month professional management programme in Malaysia with a CMI-recognised programme certificate, scholarship and employer-led HRD Corp funding.",
+    "Three-month executive education in Malaysia for working leaders, with applied management learning, CMI recognition and an employer-led HRD Corp funding route.",
 });
 
 const REASONS = [
@@ -80,9 +80,9 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              The Future Ready Executive MBA — recognised by the Chartered Management
-              Institute (CMI), UK — is delivered for Malaysian owners, directors and senior
-              managers through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
+              The Future Ready Executive MBA is a three-month executive education and professional
+              development programme for Malaysian owners, directors and senior managers. It has
+              CMI (UK) Endorsed and Recognised status and is delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
               The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
               <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</b> after assessment and written approval.
               Participants apply the programme frameworks to their own organisation, market and operating context.
@@ -130,7 +130,8 @@ export default function ExecutiveMbaMalaysiaPage() {
             {HRD_CORP_CLAIM.responsibility} See{" "}
             <Link href="/hrd-corp-claimable">employer-led HRD Corp funding</Link>. Full programme
             detail on the <Link href="/executive-mba">Executive MBA</Link> page, or review the{" "}
-            <Link href="/chartered-manager-malaysia">Chartered Manager route in Malaysia</Link>.
+            <Link href="/chartered-manager-malaysia">Chartered Manager route in Malaysia</Link>. If you are comparing programme categories, read{" "}
+            <Link href="/insights/executive-education-vs-executive-mba">executive education vs Executive MBA</Link>.
           </p>
         </div>
       </section>

@@ -167,8 +167,8 @@ for the environment, build, deployment, and verification checklist.
 
 ## 10. Key facts (as configured)
 
-- Coordinator: **Rostam Affandi Ahmad** · WhatsApp/phone **+60 12-981 8533** · **support@futurereadymba.com**
+- Coordinator: **Roy Affandi** · WhatsApp/phone **+60 12-981 8533** · **support@futurereadymba.com**
 - Global and Local Programme Partner / operator: Right Dots Resources · Reg. 202603145615 (003856919-U)
 - Pricing: standard fee **RM10,000.00**. Malaysian participants pay **RM5,000.00** after a **RM5,000.00 LIFE Innoversity scholarship**. HRD Corp determines employer funding eligibility and the approved amount; the employer submits its grant application before training.
-- Structure: six-month professional pathway. Months 1–3 comprise six training days across three monthly sessions and the applied project leading to the CMI-recognised Executive MBA programme certificate. Months 4–6 provide supported preparation for eligible participants pursuing CMI's separate Chartered Manager assessment. CMgr MCMI is awarded only after successful CMI assessment.
+- Structure: the published Future Ready Executive MBA is a three-month professional development programme comprising six training days across three monthly sessions and an applied project. Any later Chartered Manager route is separate, optional, controlled by CMI, and is not included in the published programme, fee or completion promise. CMgr MCMI is never automatic.
 - Compliance: not MQA-accredited; CMI (UK)-recognised professional programme; PDPA 2010

@@ -31,7 +31,7 @@ const jsonLd = {
     name: "Future Ready Executive MBA — fully online delivery",
     url: `${SITE.url}/online-executive-mba`,
     courseMode: "online",
-    timeRequired: "P6M",
+    timeRequired: "P3M",
     offers: {
       "@type": "Offer",
       price: "2500",

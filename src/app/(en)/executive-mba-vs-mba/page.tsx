@@ -53,6 +53,12 @@ export default function ExecutiveMbaVsMbaPage() {
               development while continuing to work.
             </p>
           </Reveal>
+          <Reveal className="mt-s">
+            <p className="fine">
+              Comparing shorter professional programmes as well? Read{" "}
+              <Link href="/insights/executive-education-vs-executive-mba" className="acc">executive education vs Executive MBA</Link>.
+            </p>
+          </Reveal>
         </div>
       </section>
 

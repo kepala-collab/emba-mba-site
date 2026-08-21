@@ -33,6 +33,10 @@ for (const [route, html] of pageMap) {
   const canonical = html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i)?.[1];
   if (!canonical) failures.push(`${route}: canonical missing`);
   if ((html.match(/<h1(?:\s|>)/g) || []).length !== 1) failures.push(`${route}: expected exactly one h1`);
+  if (route !== "/home" && route !== "/zh") {
+    if (!html.includes('class="site-breadcrumbs"')) failures.push(`${route}: visible breadcrumb navigation missing`);
+    if (!html.includes('"@type":"BreadcrumbList"')) failures.push(`${route}: BreadcrumbList structured data missing`);
+  }
 
   const description = html.match(/<meta[^>]+name="description"[^>]+content="([^"]*)"/i)?.[1] || "";
   if (!description) failures.push(`${route}: description missing`);

@@ -149,8 +149,8 @@ function decisionGuideAttachment() {
 
 function whatsAppUrl(language: Language): string {
   const message = language === "zh"
-    ? "您好，我已提交课程沟通请求，希望与课程团队进一步了解。"
-    : "Hello, I requested a programme conversation and would like to speak with the team.";
+    ? "Roy 您好，我已提交课程沟通请求，希望进一步了解课程。"
+    : "Hi Roy, I requested a programme conversation and would like to speak with you.";
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
@@ -211,7 +211,7 @@ export function buildApplicationReceivedEmail(input: {
         nextCopy: `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
         notice: "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
         siteLabel: "查看 2026 课程资料",
-        whatsAppLabel: "通过 WhatsApp 联系我们",
+        whatsAppLabel: "通过 WhatsApp 联系 Roy",
         siteUrl,
         waUrl,
       }),
@@ -247,7 +247,7 @@ export function buildApplicationReceivedEmail(input: {
       nextCopy: `Your preference: ${preferenceLabel}. The programme team will follow up accordingly.`,
       notice: "This email confirms your conversation request only. It is not an offer of admission or a payment commitment.",
       siteLabel: "Open the 2026 programme plan",
-      whatsAppLabel: "Contact us on WhatsApp",
+      whatsAppLabel: "Talk to Roy on WhatsApp",
       siteUrl,
       waUrl,
     }),

@@ -51,7 +51,7 @@ const BENEFIT: Record<string, string> = {
 export default function CurriculumPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Curriculum", path: "/curriculum" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Curriculum", path: "/curriculum" }]} />
       {/* INTRO */}
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">

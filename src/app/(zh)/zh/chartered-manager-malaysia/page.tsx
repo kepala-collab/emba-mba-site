@@ -5,6 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import CmiProgressionChart from "@/components/site/CmiProgressionChart";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
+import TechnicalText from "@/components/site/TechnicalText";
 import { CMI_PATHWAY, CTA_LABELS, SITE } from "@/lib/content";
 import { EDITORIAL_TEAM_ID, editorialTeamSchema, withSeo } from "@/lib/seo";
 
@@ -79,7 +80,7 @@ export default function CharteredManagerMalaysiaZhPage() {
       <header className="resource-hero chartered-hero geo-section">
         <div className="wrap maxw-820">
           <p className="mono sec-k">CMI 专业认可 · 马来西亚</p>
-          <h1>马来西亚 Chartered Manager：专业身份、申请条件与课程准备。</h1>
+          <h1><TechnicalText>马来西亚 Chartered Manager：专业身份、申请条件与课程准备。</TechnicalText></h1>
           <p>Chartered Manager（CMgr）仅由英国特许管理协会授予。Future Ready Executive MBA 为符合资格的学员提供三个月独立评估准备，但不会预先承诺评估结果。</p>
           <div className="chartered-hero-actions">
             <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} <span aria-hidden="true">→</span></Link>
@@ -93,9 +94,9 @@ export default function CharteredManagerMalaysiaZhPage() {
           <div className="wrap">
             <Reveal><div className="reading-section-head"><p className="mono sec-k">三个不同结果</p><h2 className="sec-h">先完成获 CMI 认可的课程，再按资格申请专业评估。</h2><p>清楚区分课程认可、Foundation 身份及完整 Chartered 身份，才能准确判断本课程的价值。</p></div></Reveal>
             <div className="chartered-outcome-grid">
-              <Reveal><article><span className="mono">01</span><h3>CMI Recognised programme</h3><p>CMI Recognition 表示课程已按照 CMI Professional Standard 进行基准评估；它并非 CMI qualification 或学术学位。</p><a href={CMI_PATHWAY.recognition} target="_blank" rel="noreferrer">核实 CMI Recognition <span aria-hidden="true">↗</span></a></article></Reveal>
-              <Reveal delay={50}><article><span className="mono">02</span><h3>证书与 fCMgr</h3><p>成功完成课程者取得 CMI Certificate of Recognition。CMI 公布的 Recognised 方案也说明，学员完成后取得 Foundation Chartered Manager（fCMgr）身份。</p><p className="fine">身份启用、会员续期及继续使用专业衔称均由 CMI 控制。</p></article></Reveal>
-              <Reveal delay={100}><article className="chartered-outcome-featured"><span className="mono">03</span><h3>Chartered Manager — CMgr MCMI</h3><p>CMI 确认申请资格并评估通过后，才会授予完整 Chartered 身份。完成本课程并不会自动取得 CMgr MCMI。</p><a href={CMI_PATHWAY.charteredManager} target="_blank" rel="noreferrer">阅读 CMI 官方定义 <span aria-hidden="true">↗</span></a></article></Reveal>
+              <Reveal><article><span className="mono">01</span><h3><TechnicalText>CMI Recognised programme</TechnicalText></h3><p>CMI Recognition 表示课程已按照 CMI Professional Standard 进行基准评估；它并非 CMI qualification 或学术学位。</p><a href={CMI_PATHWAY.recognition} target="_blank" rel="noreferrer">核实 CMI Recognition <span aria-hidden="true">↗</span></a></article></Reveal>
+              <Reveal delay={50}><article><span className="mono">02</span><h3><TechnicalText>证书与 fCMgr</TechnicalText></h3><p>成功完成课程者取得 CMI Certificate of Recognition。CMI 公布的 Recognised 方案也说明，学员完成后取得 Foundation Chartered Manager（fCMgr）身份。</p><p className="fine">身份启用、会员续期及继续使用专业衔称均由 CMI 控制。</p></article></Reveal>
+              <Reveal delay={100}><article className="chartered-outcome-featured"><span className="mono">03</span><h3><TechnicalText>Chartered Manager — CMgr MCMI</TechnicalText></h3><p>CMI 确认申请资格并评估通过后，才会授予完整 Chartered 身份。完成本课程并不会自动取得 CMgr MCMI。</p><a href={CMI_PATHWAY.charteredManager} target="_blank" rel="noreferrer">阅读 CMI 官方定义 <span aria-hidden="true">↗</span></a></article></Reveal>
             </div>
           </div>
         </section>
@@ -107,7 +108,7 @@ export default function CharteredManagerMalaysiaZhPage() {
             <Reveal><div className="reading-section-head"><p className="mono sec-k">CMI 公布的三条路线</p><h2 className="sec-h">适用路线取决于资格及管理经验。</h2><p>以下条件与费用已于 {CMI_PATHWAY.reviewedAt} 对照 CMI 网站。若要求或费用更改，以 CMI 当前页面为准。</p></div></Reveal>
             <div className="chartered-route-grid">
               {ROUTES.map((route, index) => (
-                <Reveal key={route.name} delay={index * 45}><article className="chartered-route-card"><div className="chartered-route-head"><span className="mono">路线 {index + 1}</span><strong>{route.price}</strong></div><h3>{route.name}</h3><p className="chartered-route-best">{route.audience}</p><dl><div><dt>公开申请条件</dt><dd>{route.eligibility}</dd></div><div><dt>CMI 评估内容</dt><dd>{route.assessment}</dd></div></dl></article></Reveal>
+                <Reveal key={route.name} delay={index * 45}><article className="chartered-route-card"><div className="chartered-route-head"><span className="mono">路线 {index + 1}</span><strong>{route.price}</strong></div><h3><TechnicalText>{route.name}</TechnicalText></h3><p className="chartered-route-best">{route.audience}</p><dl><div><dt>公开申请条件</dt><dd>{route.eligibility}</dd></div><div><dt>CMI 评估内容</dt><dd>{route.assessment}</dd></div></dl></article></Reveal>
               ))}
             </div>
             <Reveal><aside className="chartered-route-note"><strong>本课程不会自动产生 Fast Track 资格。</strong><p>CMI 以指定 CMI qualifications 定义 Fast Track。本课程属于 CMI Recognised professional development programme，并非 CMI qualification。课程团队可协助整理资料，但适用路线由 CMI 决定。</p></aside></Reveal>

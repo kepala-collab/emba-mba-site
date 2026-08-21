@@ -4,7 +4,7 @@
 
 - Asian Business Consulting owns and approves programme, credential, curriculum,
   faculty, dates, pricing, scholarship and HRD Corp statements.
-- Right Dots Resources is the authorised Global and Local Programme Partner. It operates
+- Right Dots Resources is an Associate Partner to Asian Business Consulting. It operates
   the website and handles marketing, enquiries, pricing and enrolment coordination.
 - The website must not imply that Right Dots Resources awards the credential.
 
@@ -70,7 +70,7 @@
 | --- | --- |
 | CMI Certificate of Recognition | CMI qualification, CMI degree or academic MBA award |
 | Professional programme recognised against CMI Professional Standards | MQA-accredited degree, regulated qualification or formal Level 7 qualification |
-| Supported Chartered Manager assessment preparation | Automatic Chartered Manager award or guaranteed CMgr pathway |
+| Separate optional Chartered Manager route controlled by CMI | Automatic Chartered Manager award or a fixed second programme stage |
 | Malaysian participant fee after the LIFE Innoversity scholarship | Discounted price, promotional price or approximate fee |
 | Employer-led HRD Corp grant application | Automatic claim, guaranteed reimbursement or 100% approval |
 | Applied business project or transformation plan | Thesis, guaranteed ROI project or board-approved plan |
@@ -86,7 +86,7 @@
 | Client and associate names | ABC company profile | Present as organisations listed by ABC, never as website endorsements. |
 | Faculty biographies | Current international brochure and ABC confirmation | Use affiliation rather than employment unless employment is verified. |
 | Session 1 refund | Current signed enrolment terms | The enrolment terms control the deadline, scope, exclusions and processing time. |
-| Malaysian participant fee and scholarship | Current LIFE Innoversity scholarship terms confirmed 15 August 2026 | Publish RM10,000.00 as the standard fee and RM5,000.00 payable by Malaysian participants after the RM5,000.00 LIFE Innoversity scholarship. |
+| Malaysian participant fee and scholarship | Current LIFE Innoversity scholarship terms confirmed 15 August 2026 | Publish RM10,000.00 as the standard fee. Eligible Malaysian applicants may receive a RM5,000.00 LIFE Innoversity scholarship subject to availability, assessment and written approval; it is not automatic. |
 | Individual and company delivery pricing | Programme pricing approval dated 13 August 2026 plus the applicable Right Dots Resources or company proposal | Publish the global online public programme at USD 2,500 per person irrespective of country. Country-specific online and localised on-site pricing must direct participants to Right Dots Resources as the Global and Local Programme Partner. In-house MDP pricing is proposal-based. Describe any CMI relationship as programme recognition against CMI Professional Standards; do not imply that CMI awards an academic MBA degree. |
 
 ## Publishing checklist

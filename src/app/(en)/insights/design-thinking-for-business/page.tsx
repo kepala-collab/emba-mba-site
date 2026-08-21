@@ -45,7 +45,7 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Insights", path: "/insights" }, { name: "Design Thinking", path: "/insights/design-thinking-for-business" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Insights", path: "/insights" }, { name: "Design Thinking", path: "/insights/design-thinking-for-business" }]} />
       <JsonLd data={jsonLd} />
 
       <section className="section">

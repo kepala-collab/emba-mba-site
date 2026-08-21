@@ -5,6 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import CmiProgressionChart from "@/components/site/CmiProgressionChart";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
+import TechnicalText from "@/components/site/TechnicalText";
 import { CMI_PATHWAY, CTA_LABELS, SITE } from "@/lib/content";
 import { EDITORIAL_TEAM_ID, editorialTeamSchema, withSeo } from "@/lib/seo";
 
@@ -110,7 +111,7 @@ const faqSchema = {
 export default function CharteredManagerMalaysiaPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Executive MBA", path: "/executive-mba" }, { name: "Chartered Manager Malaysia", path: PATH }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Executive MBA", path: "/executive-mba" }, { name: "Chartered Manager Malaysia", path: PATH }]} />
       <JsonLd data={articleSchema} />
       <JsonLd data={faqSchema} />
       <JsonLd data={{ "@context": "https://schema.org", ...editorialTeamSchema() }} />
@@ -118,7 +119,7 @@ export default function CharteredManagerMalaysiaPage() {
       <header className="resource-hero chartered-hero geo-section">
         <div className="wrap maxw-820">
           <p className="mono sec-k">CMI professional recognition · Malaysia</p>
-          <h1>Chartered Manager in Malaysia: what it is, who qualifies and how this programme helps.</h1>
+          <h1><TechnicalText>Chartered Manager in Malaysia: what it is, who qualifies and how this programme helps.</TechnicalText></h1>
           <p>
             Chartered Manager (CMgr) is awarded only by the Chartered Management Institute. It is a separate optional route and is not included in the three-month Executive MBA programme or published fee.
           </p>
@@ -139,7 +140,7 @@ export default function CharteredManagerMalaysiaPage() {
             {DIRECT_ANSWERS.map(([question, answer], index) => (
               <article key={question}>
                 <span className="mono">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{question}</h3>
+                <h3><TechnicalText>{question}</TechnicalText></h3>
                 <p>{answer}</p>
               </article>
             ))}
@@ -161,7 +162,7 @@ export default function CharteredManagerMalaysiaPage() {
               <Reveal>
                 <article>
                   <span className="mono">01</span>
-                  <h3>CMI Recognised programme</h3>
+                  <h3><TechnicalText>CMI Recognised programme</TechnicalText></h3>
                   <p>CMI Recognition means the programme has been benchmarked against CMI&rsquo;s Professional Standard. It is not the same as a CMI qualification or academic degree.</p>
                   <a href={CMI_PATHWAY.recognition} target="_blank" rel="noreferrer">Verify CMI Recognition <span aria-hidden="true">↗</span></a>
                 </article>
@@ -169,7 +170,7 @@ export default function CharteredManagerMalaysiaPage() {
               <Reveal delay={50}>
                 <article>
                   <span className="mono">02</span>
-                  <h3>Certificate and fCMgr</h3>
+                  <h3><TechnicalText>Certificate and fCMgr</TechnicalText></h3>
                   <p>Successful participants receive the CMI Certificate of Recognition. CMI&rsquo;s published Recognised offer also states that learners receive Foundation Chartered Manager (fCMgr) status on completion.</p>
                   <p className="fine">CMI controls activation, membership renewal and continued post-nominal use.</p>
                 </article>
@@ -177,7 +178,7 @@ export default function CharteredManagerMalaysiaPage() {
               <Reveal delay={100}>
                 <article className="chartered-outcome-featured">
                   <span className="mono">03</span>
-                  <h3>Chartered Manager — CMgr MCMI</h3>
+                  <h3><TechnicalText>Chartered Manager — CMgr MCMI</TechnicalText></h3>
                   <p>Full Chartered status is awarded only after CMI confirms eligibility and the applicant successfully completes the applicable assessment. It is not automatic after this programme.</p>
                   <a href={CMI_PATHWAY.charteredManager} target="_blank" rel="noreferrer">Read CMI&rsquo;s definition <span aria-hidden="true">↗</span></a>
                 </article>
@@ -202,7 +203,7 @@ export default function CharteredManagerMalaysiaPage() {
                 <Reveal key={route.name} delay={index * 45}>
                   <article className="chartered-route-card">
                     <div className="chartered-route-head"><span className="mono">Route {index + 1}</span><strong>{route.price}</strong></div>
-                    <h3>{route.name}</h3>
+                    <h3><TechnicalText>{route.name}</TechnicalText></h3>
                     <p className="chartered-route-best">{route.bestFor}</p>
                     <dl>
                       <div><dt>Published eligibility</dt><dd>{route.eligibility}</dd></div>

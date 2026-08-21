@@ -22,7 +22,7 @@ export const metadata = withSeo("/fees", {
 export default function FeesPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Fees", path: "/fees" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Fees", path: "/fees" }]} />
 
       <section className="section fees-hero geo-section">
         <div className="wrap fees-hero-grid">

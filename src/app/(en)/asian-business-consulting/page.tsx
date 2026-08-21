@@ -25,9 +25,9 @@ const MILESTONES = [
 const LEADERS = [
   {
     n: "Dr. Xavier Johnson",
-    role: "Chief Consultant & Business Methodologist",
+    role: "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University",
     img: "/brand/faculty/xavier-johnson.png",
-    b: "Architect of the F.A.S.T. methodology and the twelve modules at the core of the programme. A Universiti Malaya alumnus, he works in organisation business architecture, business model innovation and design thinking, and also advises through the related entity Waterhouse Consult Think.",
+    b: "Architect of the F.A.S.T. methodology and the twelve modules at the core of the programme. A Universiti Malaya alumnus, he works in organisation business architecture, business model innovation and design thinking, and founded LIFE University.",
   },
   {
     n: "Ir. Dr. Jonas Anthony",
@@ -36,13 +36,13 @@ const LEADERS = [
     b: "Retired Executive Director of Corporate Management at Panasonic AVC Networks Kuala Lumpur and former Chairman of Panasonic Manufacturing HRD in Malaysia. Over 32 years in Lean, Industry 4.0, quality and supply chain; also a Chartered Engineer (UK), Chartered Quality Professional and Adjunct Professor at Taylor's University School of Engineering.",
   },
   {
-    n: "Allan Gan",
-    role: "Business Development Director",
-    img: "",
+    n: "Mr Allan Gan",
+    role: "Chief Programme Director, Asian Business Consulting · Co-Founder, LIFE Innoversity",
+    img: "/brand/faculty/allan-gan.webp",
     b: "Leads delivery and day-to-day operations of the programme — scheduling, logistics and corporate client relations — and coordinates with CMI (UK) and HRD Corp so the programme stays compliant for corporate training grants.",
   },
   {
-    n: "Rostam Affandi Ahmad",
+    n: "Roy Affandi",
     role: "Programme Coordinator",
     img: "/brand/community/affandi-portrait.png",
     b: "Runs intake cycles, onboarding and corporate engagement, and helps SMEs and larger organisations work through the HRD Corp grant process. B.Econs (Hons, Analytical) from Universiti Malaya, postgraduate study at the University of Melbourne, Executive MBA (CMI UK) and a member of CMI (UK).",
@@ -67,7 +67,7 @@ const abcSchema = {
 export default function AsianBusinessConsultingPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Asian Business Consulting", path: "/asian-business-consulting" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Asian Business Consulting", path: "/asian-business-consulting" }]} />
       <JsonLd data={abcSchema} />
 
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>

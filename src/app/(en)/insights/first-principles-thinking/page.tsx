@@ -37,7 +37,7 @@ const jsonLd = {
 export default function FirstPrinciplesThinkingPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Insights", path: "/insights" }, { name: "First-Principles Thinking", path: "/insights/first-principles-thinking" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Insights", path: "/insights" }, { name: "First-Principles Thinking", path: "/insights/first-principles-thinking" }]} />
       <section className="section">
         <div className="wrap">
           <JsonLd data={jsonLd} />

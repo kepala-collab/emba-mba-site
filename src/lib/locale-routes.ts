@@ -1,7 +1,7 @@
 type LocalePair = { en: string; zh: string };
 
 export const LOCALE_PAIRS: LocalePair[] = [
-  { en: "/", zh: "/zh" },
+  { en: "/home", zh: "/zh" },
   { en: "/executive-mba", zh: "/zh/executive-mba" },
   { en: "/how-it-works", zh: "/zh/how-it-works" },
   { en: "/chartered-manager-malaysia", zh: "/zh/chartered-manager-malaysia" },

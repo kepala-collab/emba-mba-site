@@ -24,7 +24,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Three-Month Executive MBA Programme Malaysia",
   description:
-    "A three-month CMI (UK)-recognised Executive MBA for working leaders. Employer funding may be available to eligible HRD Corp-registered employers.",
+    "A three-month CMI (UK)-recognised professional development programme with applied leadership learning, coaching and a live business project.",
 });
 
 const courseSchema = {
@@ -51,7 +51,7 @@ const AUDIENCE = [
 export default function ExecutiveMbaPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Executive MBA", path: "/executive-mba" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Executive MBA", path: "/executive-mba" }]} />
       <JsonLd data={courseSchema} />
 
       <section className="section programme-overview-hero geo-section">
@@ -174,8 +174,8 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">What you learn to do</p>
-              <h2 className="sec-h">Use seven disciplines as one practical decision process.</h2>
-              <p>Each discipline gives you a different way to examine a business issue. Together they help you move from a vague problem to a reasoned action plan.</p>
+              <h2 className="sec-h">Build leadership capability through one practical decision process.</h2>
+              <p>This applied leadership development programme combines seven disciplines for strategic thinking, decision-making and workplace application. Together they help you move from a vague problem to a reasoned action plan.</p>
               <Link href="/how-it-works" className="btn btn-ghost">See how the F.A.S.T. method works</Link>
             </div>
           </Reveal>

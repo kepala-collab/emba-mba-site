@@ -12,7 +12,7 @@ export const metadata = withSeo("/insights/advancement-question", {
 export default function AdvancementQuestionPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Guides", path: "/resources" }, { name: "How to Compare Leadership Programmes", path: "/insights/advancement-question" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Guides", path: "/resources" }, { name: "How to Compare Leadership Programmes", path: "/insights/advancement-question" }]} />
       <header className="resource-hero">
         <div className="wrap maxw-820">
           <p className="mono sec-k">Programme comparison guide</p>

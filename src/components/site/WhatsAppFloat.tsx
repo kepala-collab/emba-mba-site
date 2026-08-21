@@ -10,12 +10,12 @@ export default function WhatsAppFloat() {
   const { persistentActionsVisible } = useFloatingUi();
   const pathname = usePathname() || "/";
   const zh = pathname === "/zh" || pathname.startsWith("/zh/");
-  const label = zh ? "WhatsApp 咨询课程" : "Chat with us on WhatsApp";
+  const label = zh ? "通过 WhatsApp 联系 Roy" : "Talk to Roy on WhatsApp";
   const [formState, setFormState] = useState({ pathname: "", visible: false });
   const formVisible = formState.pathname === pathname && formState.visible;
   const msg = encodeURIComponent(zh
-    ? "您好，我想进一步了解 Future Ready 高管 MBA（英国 CMI）。请提供课程和下一期开课详情。"
-    : "Hi, I'd like to explore the Future Ready Executive MBA (CMI UK). Please share the programme and next-intake details."
+    ? "Roy 您好，我想进一步了解 Future Ready 高管 MBA（英国 CMI）。请提供课程和下一期开课详情。"
+    : "Hi Roy, I'd like to explore the Future Ready Executive MBA (CMI UK). Please share the programme and next-intake details."
   );
 
   useEffect(() => {

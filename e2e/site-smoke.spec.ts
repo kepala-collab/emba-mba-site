@@ -45,7 +45,7 @@ async function mockTurnstile(page: Page) {
 
 test("core routes render without console failures", async ({ page }) => {
   const failures = await captureConsoleFailures(page);
-  for (const route of ["/", "/apply", "/fees", "/intakes", "/zh", "/zh/how-it-works", "/zh/apply"]) {
+  for (const route of ["/home", "/apply", "/fees", "/intakes", "/insights/executive-education-vs-executive-mba", "/zh", "/zh/how-it-works", "/zh/apply"]) {
     const response = await goto(page, route);
     expect(response?.status(), route).toBe(200);
     await expect(page.locator("h1")).toHaveCount(1);
@@ -53,10 +53,105 @@ test("core routes render without console failures", async ({ page }) => {
   expect(failures).toEqual([]);
 });
 
+test("the legacy root permanently resolves to the named Home route", async ({ page }) => {
+  await page.goto("/");
+  await expect(page).toHaveURL(/\/home$/);
+  await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
+});
+
+test("desktop header provides four exclusive navigation dropdowns", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await goto(page, "/home");
+  const dropdowns = page.locator(".desktop-nav .nav-dropdown");
+  await expect(dropdowns).toHaveCount(4);
+  await expect(page.locator(".desktop-nav").getByRole("link", { name: "Home", exact: true })).toHaveAttribute("href", "/home");
+
+  const programme = dropdowns.nth(0);
+  const recognition = dropdowns.nth(1);
+  await programme.locator("summary").click();
+  await expect(programme).toHaveAttribute("open", "");
+  await expect(programme.getByRole("link", { name: "Programme overview" })).toBeVisible();
+
+  await recognition.locator("summary").click();
+  await expect(recognition).toHaveAttribute("open", "");
+  await expect(programme).not.toHaveAttribute("open", "");
+  const openMenuAccessibility = await new AxeBuilder({ page }).exclude("iframe").analyze();
+  expect(openMenuAccessibility.violations, openMenuAccessibility.violations.map((item) => item.id).join(", ")).toEqual([]);
+  await page.keyboard.press("Escape");
+  await expect(recognition).not.toHaveAttribute("open", "");
+  await expect(recognition.locator("summary")).toBeFocused();
+});
+
+test("mobile navigation preserves the four-group information hierarchy", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await goto(page, "/home");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  const mobilePanel = page.locator("#mobile-navigation");
+  await expect(mobilePanel.locator(".mobile-nav-group")).toHaveCount(4);
+  await expect(mobilePanel.locator("a.mobile-nav-home")).toHaveAttribute("href", "/home");
+  await expect(mobilePanel.getByRole("link", { name: /Programme overview/i })).toBeVisible();
+  await expect(mobilePanel.getByRole("link", { name: /Contact Roy/i })).toBeVisible();
+  await expect(mobilePanel.getByRole("link", { name: /Executive MBA vs MBA/i })).toBeVisible();
+});
+
+test("page navigation starts at the top while intentional anchors still work", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await goto(page, "/faculty");
+  await page.locator("footer").waitFor();
+  await page.waitForTimeout(350);
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollHeight)).toBeGreaterThan(720);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(100);
+
+  const primaryHome = page.getByLabel("Primary navigation").getByRole("link", { name: "Home", exact: true });
+  await primaryHome.click();
+  await expect(page).toHaveURL(/\/home$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await primaryHome.click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+
+  await page.getByRole("link", { name: "Watch the graduation film" }).click();
+  await expect(page).toHaveURL(/\/asian-business-consulting#abc-film$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  await expect(page.locator("#abc-film")).toBeInViewport();
+});
+
+test("professional post-nominals use legible technical typography", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await goto(page, "/chartered-manager-malaysia");
+
+  const heading = page.getByRole("heading", { name: "Certificate and fCMgr" }).first();
+  const postNominal = heading.locator(".technical-term");
+  await expect(postNominal).toHaveText("fCMgr");
+  await expect(postNominal).toHaveCSS("font-family", /Archivo/);
+  await expect(postNominal).toHaveCSS("letter-spacing", "normal");
+
+  await goto(page, "/zh/chartered-manager-malaysia");
+  const chineseHeading = page.getByRole("heading", { name: "证书与 fCMgr" }).first();
+  await expect(chineseHeading.locator(".technical-term")).toHaveCSS("font-family", /Archivo/);
+  await expect.poll(() => page.evaluate(() => document.fonts.status)).toBe("loaded");
+});
+
+test("indexed content routes expose visible breadcrumb orientation", async ({ page }) => {
+  for (const [route, current] of [
+    ["/mba-for-sme-owners", "For SME owners"],
+    ["/resources/advancement-brief", "Advancement brief"],
+    ["/zh/faculty", "师资与导师"],
+  ] as const) {
+    await goto(page, route);
+    const breadcrumbs = page.locator(".site-breadcrumbs");
+    await expect(breadcrumbs).toBeVisible();
+    await expect(breadcrumbs.locator('[aria-current="page"]')).toHaveText(current);
+    await expect(breadcrumbs.getByRole("link").first()).toHaveAttribute("href", route.startsWith("/zh/") ? "/zh" : "/home");
+  }
+});
+
 test("desktop hero exposes its primary action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
-  await goto(page, "/");
-  const box = await page.locator(".working-hero-actions").getByRole("link", { name: /Get the 2026 programme guide/i }).boundingBox();
+  await goto(page, "/home");
+  const box = await page.locator(".home-slide.is-active").getByRole("link", { name: /Get the programme guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
   const form = await page.locator(".working-hero-form form[data-form-id]").boundingBox();
@@ -68,7 +163,7 @@ test("desktop hero exposes its primary action in the first viewport", async ({ p
 test("narrow layouts retain the product name and never overflow", async ({ page }) => {
   for (const width of [320, 375, 768]) {
     await page.setViewportSize({ width, height: 812 });
-    await goto(page, "/");
+    await goto(page, "/home");
     await expect(page.locator(".brand-product")).toBeVisible();
     const dimensions = await page.evaluate(() => ({
       client: document.documentElement.clientWidth,
@@ -79,7 +174,7 @@ test("narrow layouts retain the product name and never overflow", async ({ page 
 });
 
 test("priority content pages reflow without horizontal overflow", async ({ page }) => {
-  const routes = ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/zh", "/zh/executive-mba", "/zh/how-it-works", "/zh/chartered-manager-malaysia", "/zh/fees"];
+  const routes = ["/home", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/resources/advancement-brief", "/insights/executive-education-vs-executive-mba", "/zh", "/zh/executive-mba", "/zh/how-it-works", "/zh/chartered-manager-malaysia", "/zh/fees"];
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     for (const route of routes) {
@@ -172,8 +267,8 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
     expect(Math.abs((gridBox?.x || 0) - (formBox?.x || 0)), route).toBeLessThanOrEqual(24);
   }
 
-  await goto(page, "/");
-  const heroGrid = page.locator(".working-hero-grid");
+  await goto(page, "/home");
+  const heroGrid = page.locator(".home-hero-stage-grid");
   const heroForm = heroGrid.locator("form[data-form-id]");
   await expect(heroForm).toBeVisible();
   await expect(heroForm.getByRole("heading", { name: "Send me the 2026 programme guide." })).toBeVisible();
@@ -194,7 +289,7 @@ test("mobile Apply presents the form immediately after its introduction", async 
 });
 
 test("programme introduction falls back to a complete text overview", async ({ page }) => {
-  await goto(page, "/");
+  await goto(page, "/home");
   await page.getByRole("button", { name: "Read", exact: true }).first().click();
   const dialog = page.getByRole("dialog", { name: /What happens during the three-month programme/i });
   await expect(dialog).toBeVisible();
@@ -223,7 +318,7 @@ test("priority pages have no automated accessibility violations after hydration"
   test.setTimeout(90_000);
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
-    for (const route of ["/", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/apply", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees", "/zh/apply"]) {
+    for (const route of ["/home", "/executive-mba", "/chartered-manager-malaysia", "/fees", "/apply", "/insights/executive-education-vs-executive-mba", "/zh", "/zh/executive-mba", "/zh/chartered-manager-malaysia", "/zh/fees", "/zh/apply"]) {
       await goto(page, route);
       await page.waitForTimeout(700);
       const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
@@ -234,7 +329,7 @@ test("priority pages have no automated accessibility violations after hydration"
 
 test("consent choice stays compact and visibly identifies its privacy link", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await goto(page, "/");
+  await goto(page, "/home");
   await page.waitForTimeout(700);
   const banner = page.locator(".consent-banner");
   await expect(banner).toBeVisible();
@@ -280,6 +375,7 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
   await goto(page, "/intakes");
   await dismissConsent(page);
   await page.getByRole("button", { name: /Ask the programme assistant/i }).click();
+  await expect(page.getByRole("link", { name: "Talk to Roy on WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/60129818533/);
   await page.getByRole("button", { name: /What does the programme cost/i }).click();
   await expect(page.getByText("The test answer is available.")).toBeVisible();
 });
@@ -380,24 +476,15 @@ test("campaign routes have no automated accessibility violations", async ({ page
   }
 });
 
-test("home hero renders and draws the animated node network", async ({ page }) => {
-  await goto(page, "/");
-  const canvas = page.locator("canvas.node-canvas");
-  await expect(canvas).toHaveCount(1);
-  await page.waitForTimeout(600);
-  const info = await canvas.evaluate((element) => {
-    const canvasElement = element as HTMLCanvasElement;
-    let drawn = 0;
-    try {
-      const data = canvasElement.getContext("2d")!.getImageData(0, 0, canvasElement.width, canvasElement.height).data;
-      for (let i = 3; i < data.length; i += 4) {
-        if (data[i] > 8) { drawn += 1; if (drawn > 40) break; }
-      }
-    } catch { /* canvas unavailable */ }
-    return { width: canvasElement.width, drawn };
-  });
-  expect(info.width, "canvas backing store should size to the hero, not the 300px default").toBeGreaterThan(320);
-  expect(info.drawn, "node network should paint visible pixels").toBeGreaterThan(20);
+test("home hero carousel presents video, photography and accessible controls", async ({ page }) => {
+  await goto(page, "/home");
+  const slider = page.locator(".home-slider");
+  await expect(slider).toBeVisible();
+  await expect(slider.locator(".home-slide")).toHaveCount(3);
+  await expect(slider.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
+  await expect(slider.getByRole("button", { name: "Pause slide rotation" })).toBeVisible();
+  await slider.getByRole("button", { name: /Show slide 2:/ }).click();
+  await expect(slider.locator(".home-slide.is-active").getByRole("heading")).toContainText("Bring the decision");
 });
 
 test("core pages carry the geometric hero backdrop in both languages", async ({ page }) => {
@@ -410,6 +497,6 @@ test("core pages carry the geometric hero backdrop in both languages", async ({ 
 test("partnership seal appears on the About page and in the footer", async ({ page }) => {
   await goto(page, "/about");
   await expect(page.locator(".partnership-seal img")).toBeVisible();
-  await goto(page, "/");
+  await goto(page, "/home");
   expect(await page.locator("footer.site .foot-seal").count()).toBeGreaterThan(0);
 });

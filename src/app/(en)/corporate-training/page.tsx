@@ -6,9 +6,9 @@ import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/corporate-training", {
-  title: "HRD Corp Claimable Corporate Training",
+  title: "Management Development Programme Malaysia",
   description:
-    "Corporate training across AI leadership, digital transformation, analytics, change, ESG and human skills, delivered by an HRD Corp Approved Training Provider.",
+    "Custom management development and corporate training in Malaysia across leadership, strategy, AI, transformation and business improvement, with an employer-led HRD Corp route.",
 });
 
 export default function CorporateTrainingPage() {
@@ -36,12 +36,12 @@ export default function CorporateTrainingPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ fontSize: "clamp(2.1rem,4.4vw,3.2rem)", maxWidth: "20ch" }}>
-              Develop the capabilities your organisation has defined as priorities.
+              Build a management development programme around the capabilities your organisation needs.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Beyond the Executive MBA, {SITE.provider} runs a full corporate training series for teams and
+              Beyond the Executive MBA, {SITE.provider} designs leadership development, management development and corporate training for teams and
               organisations — <b style={{ color: "var(--ink)" }}>10 tracks, 61 listed programmes</b>, delivered in-house and
               supported by an <b style={{ color: "var(--ink)" }}> employer-led HRD Corp application route</b>.
               The programme team supplies the employer with the quotation, schedule, course content and trainer documents.
@@ -49,7 +49,7 @@ export default function CorporateTrainingPage() {
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/apply?intent=company" className="btn btn-primary">{CTA_LABELS.company} →</Link>
+              <Link href="/apply?intent=employer_evaluating" className="btn btn-primary">{CTA_LABELS.company} →</Link>
               <Link href="/executive-mba" className="btn btn-ghost">See the Executive MBA</Link>
             </div>
           </Reveal>
@@ -114,7 +114,7 @@ export default function CorporateTrainingPage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">In-house Managers Development Programme</span></div></Reveal>
-          <Reveal><h2 className="sec-h">A company-specific MDP defined in one written proposal.</h2></Reveal>
+          <Reveal><h2 className="sec-h">A company-specific management development programme defined in one written proposal.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               ABC designs the in-house Managers Development Programme against the organisation&rsquo;s written

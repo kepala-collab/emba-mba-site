@@ -3,12 +3,21 @@
 ## Site Map
 
 - Home `/` and Chinese home `/zh`
-  - Programme `/executive-mba` and `/zh/executive-mba`
-  - Method `/how-it-works` and `/zh/how-it-works`
-  - Curriculum `/curriculum` and `/zh/curriculum`
-  - Recognition `/chartered-manager-malaysia` and `/zh/chartered-manager-malaysia`
-  - Fees and scholarship `/fees` and `/zh/fees`
-  - 2026 dates `/intakes` and `/zh/intakes`
+  - Programme
+    - Overview `/executive-mba` and `/zh/executive-mba`
+    - Method `/how-it-works` and `/zh/how-it-works`
+    - Curriculum `/curriculum` and `/zh/curriculum`
+    - Malaysia and online delivery `/executive-mba-malaysia`, `/online-executive-mba`
+  - Recognition and team
+    - CMI recognition `/chartered-manager-malaysia` and `/zh/chartered-manager-malaysia`
+    - Faculty, provider, Roy Affandi and contact pages
+  - Fees and dates
+    - Fees and scholarship `/fees` and `/zh/fees`
+    - Employer-led HRD Corp funding `/hrd-corp-claimable`
+    - 2026 dates `/intakes` and `/zh/intakes`
+    - Corporate training `/corporate-training`
+  - Guides and help
+    - Resources, insights, comparisons, FAQ and programme fit check
 - Lead capture `/apply` and `/zh/apply`
 - Supporting proof: faculty, FAQ, resources, comparison and insight pages
 - Campaign funnels `/lp/google`, `/lp/meta` and their Chinese equivalents
@@ -16,10 +25,11 @@
 
 ## Navigation Model
 
-- **Primary navigation:** Programme, Method, Curriculum, Recognition, Fees and 2026 Dates.
+- **Primary navigation:** Home plus four dropdown groups: Programme, Recognition & Team, Fees & Dates, and Guides & Help. Each group exposes descriptive child destinations rather than relying on the footer.
 - **Primary conversion action:** Request/Get Programme Guide.
-- **Secondary navigation:** Faculty, FAQ, resources and supporting SEO pages remain available through contextual links and the footer.
-- **Mobile navigation:** The same six decision pages appear in a full-screen menu with a persistent guide CTA.
+- **Secondary navigation:** Contextual links and the footer retain the complete directory, including audience-specific SEO pages.
+- **Breadcrumbs:** Every indexed page except the two home pages has visible breadcrumbs and BreadcrumbList structured data. Campaign funnels remain breadcrumb-free because they are noindex, single-action pages.
+- **Mobile navigation:** The four groups expand into labelled parent and child links in a full-height drawer with a persistent guide CTA.
 
 ## Content Hierarchy
 
@@ -82,6 +92,7 @@
 | Discounted outcome | Fee after scholarship approval | RM5,000 only after written approval |
 | Employer funding | Employer-led HRD Corp funding | Separate from scholarship eligibility |
 | Professional status | Chartered Manager assessment | Separate CMI eligibility and assessment |
+| Root destination | Home | URL remains `/`; GA receives `page_name: home` to avoid a duplicate `/home` route |
 
 ## Component Reuse Map
 

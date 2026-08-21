@@ -13,6 +13,13 @@ export const metadata = withSeo("/insights", {
 
 const ARTICLES = [
   {
+    kicker: "Decision guide",
+    title: "Executive Education vs Executive MBA",
+    slug: "/insights/executive-education-vs-executive-mba",
+    blurb:
+      "How to compare credential, duration, assessment, workplace application and academic status before choosing a programme.",
+  },
+  {
     kicker: "Thinking",
     title: "First-Principles Thinking for Business Leaders",
     slug: "/insights/first-principles-thinking",
@@ -40,7 +47,7 @@ const jsonLd = {
   "@type": "CollectionPage",
   name: "Insights — Thinking Frameworks for Leaders",
   description:
-    "Practical introductions to first-principles, systems and design thinking for business decisions.",
+    "Programme decision guides and practical introductions to first-principles, systems and design thinking for business decisions.",
   hasPart: {
     "@type": "ItemList",
     itemListElement: ARTICLES.map((a, i) => ({
@@ -55,7 +62,7 @@ const jsonLd = {
 export default function InsightsPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Insights", path: "/insights" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Insights", path: "/insights" }]} />
       <JsonLd data={jsonLd} />
 
       <section className="section">
@@ -67,8 +74,7 @@ export default function InsightsPage() {
             </div>
             <h1 className="sec-h">Thinking frameworks for leaders</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              Practical introductions to three reasoning methods used in the programme:
-              first-principles, systems and design thinking.
+              Decision guides and practical introductions to the reasoning methods used in the programme.
             </p>
           </Reveal>
 

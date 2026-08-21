@@ -1,4 +1,5 @@
 import { CMI_PATHWAY } from "@/lib/content";
+import TechnicalText from "@/components/site/TechnicalText";
 
 type Props = { lang?: "en" | "zh" };
 
@@ -65,7 +66,7 @@ export default function CmiProgressionChart({ lang = "en" }: Props) {
               {levels.map(([level, role, description]) => (
                 <li key={level}>
                   <div className="cmi-level-badge"><span>Level</span><strong>{level}</strong></div>
-                  <div><h3>{role}</h3><p>{description}</p></div>
+                  <div><h3><TechnicalText>{role}</TechnicalText></h3><p>{description}</p></div>
                 </li>
               ))}
             </ol>
@@ -80,7 +81,7 @@ export default function CmiProgressionChart({ lang = "en" }: Props) {
               {programme.map(([number, title, description]) => (
                 <li key={number}>
                   <span className="mono">{number}</span>
-                  <div><h3>{title}</h3><p>{description}</p></div>
+                  <div><h3><TechnicalText>{title}</TechnicalText></h3><p>{description}</p></div>
                 </li>
               ))}
             </ol>

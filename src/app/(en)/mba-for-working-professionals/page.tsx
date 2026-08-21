@@ -8,9 +8,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-working-professionals", {
-  title: "Executive MBA for Working Professionals",
+  title: "Part-Time Executive MBA for Working Professionals",
   description:
-    "A three-month Executive MBA for working professionals: one weekend a month or fully online, with no traditional thesis.",
+    "Study while working full time: a three-month Executive MBA for working professionals, delivered one weekend a month or through live online sessions.",
 });
 
 const jsonLd = {
@@ -32,7 +32,7 @@ const jsonLd = {
     "@id": `${SITE.url}/mba-for-working-professionals#blended-course-instance`,
     url: `${SITE.url}/mba-for-working-professionals`,
     courseMode: "blended",
-    timeRequired: "P6M",
+    timeRequired: "P3M",
   },
 };
 
@@ -64,11 +64,11 @@ export default function MbaForWorkingProfessionalsPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              An Executive MBA schedule designed for participants who remain <span className="acc">in their professional roles</span>.
+              A part-time Executive MBA schedule for professionals who remain <span className="acc">in their roles</span>.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            The Future Ready Executive MBA is designed for participants who remain in their roles while studying.
+            The Future Ready Executive MBA is designed for participants who want to study while working full time.
             The programme runs across {FACTS.durationLong}, using one scheduled weekend a month.
             Chartered Manager is a separate optional CMI route with its own eligibility, assessment
             and fees; it is not included in the published programme or fee.

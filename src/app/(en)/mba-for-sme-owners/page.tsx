@@ -30,7 +30,7 @@ const jsonLd = {
     "@id": `${SITE.url}/mba-for-sme-owners#blended-course-instance`,
     url: `${SITE.url}/mba-for-sme-owners`,
     courseMode: "blended",
-    timeRequired: "P6M",
+    timeRequired: "P3M",
   },
 };
 

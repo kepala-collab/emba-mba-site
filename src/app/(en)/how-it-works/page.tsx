@@ -5,9 +5,9 @@ import { CTA_LABELS, THINKING_EDGE, FLOW, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/how-it-works", {
-  title: "F.A.S.T. Executive Leadership Method",
+  title: "Applied Leadership Development & F.A.S.T. Method",
   description:
-    "How the F.A.S.T. method turns a complex business issue into a clear, defensible decision — using seven reusable thinking disciplines, not case studies that go out of date.",
+    "How applied leadership development, coaching and the F.A.S.T. method build strategic decision-making through a live workplace business project.",
 });
 
 // Truthful, generic amplifications of each discipline — no fabricated claims.
@@ -108,7 +108,7 @@ export default function HowItWorks() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What this means for you</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Capabilities you can apply to live decisions.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Leadership capabilities you can apply at work.</h2></Reveal>
           <Reveal><p className="sec-sub">The method develops decision capabilities; business outcomes depend on the participant&rsquo;s evidence, choices and execution.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }} className="edge-grid">
@@ -129,7 +129,7 @@ export default function HowItWorks() {
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How it&rsquo;s delivered</span></div></Reveal>
           <Reveal><h2 className="sec-h">Learned by doing, in {FACTS.durationLong}.</h2></Reveal>
-          <Reveal><p className="sec-sub">The programme uses workshops, coaching and an applied business project instead of a traditional thesis or examination.</p></Reveal>
+          <Reveal><p className="sec-sub">The programme uses cohort-based workshops, coaching and an applied business project to connect professional learning with immediate workplace application. It does not use a traditional thesis or examination.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="edge-grid">
               {DELIVERY.map((d, i) => (

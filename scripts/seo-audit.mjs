@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const root = resolve(process.cwd(), ".next", "server", "app");
 const checks = [
-  { file: "index.html", path: "/", hreflang: true },
+  { file: "home.html", path: "/home", hreflang: true },
   { file: "executive-mba.html", path: "/executive-mba", hreflang: true },
   { file: "chartered-manager-malaysia.html", path: "/chartered-manager-malaysia", hreflang: true },
   { file: "curriculum.html", path: "/curriculum", hreflang: true },
@@ -19,6 +19,7 @@ const checks = [
   { file: "zh/intakes.html", path: "/zh/intakes", hreflang: true },
   { file: "zh/faculty.html", path: "/zh/faculty", hreflang: true },
   { file: "zh/faq.html", path: "/zh/faq", hreflang: true },
+  { file: "insights/executive-education-vs-executive-mba.html", path: "/insights/executive-education-vs-executive-mba", hreflang: false },
 ];
 
 const failures = [];

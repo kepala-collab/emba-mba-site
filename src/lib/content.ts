@@ -10,7 +10,7 @@ export const SITE = {
   whatsapp: "60129818533",
   phone: "+60 12-981 8533",
   email: "support@futurereadymba.com",
-  director: "Rostam Affandi Ahmad",
+  director: "Roy Affandi",
   providerUrl: process.env.NEXT_PUBLIC_PROVIDER_URL || "",
   providerLinkedIn: process.env.NEXT_PUBLIC_PROVIDER_LINKEDIN || "",
 };
@@ -21,12 +21,12 @@ export const CTA_LABELS = {
   guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
   company: "Enquire for your company",
-  whatsapp: "Chat with the programme team on WhatsApp",
+  whatsapp: "Talk to Roy on WhatsApp",
   zh: {
     guide: `获取 ${PROGRAMME_YEAR} 课程指南`,
     conversation: "预约课程沟通",
     company: "企业课程咨询",
-    whatsapp: "通过 WhatsApp 联系课程团队",
+    whatsapp: "通过 WhatsApp 联系 Roy",
   },
 } as const;
 
@@ -218,7 +218,7 @@ export const FLOW = ["Right Thinking", "Right Questions", "Right Ideas", "Right 
 export const SIGNATURE_QUOTE = {
   text: "With the Executive MBA, ‘We Connect The Dots’ for your future.",
   attribution: "Dr. Xavier Johnson",
-  role: "Chief Business Methodologist",
+  role: "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University",
 } as const;
 
 export const CERTIFICATE_POSITIONING = {
@@ -265,9 +265,9 @@ export const MODULES = [
 export type Faculty = { n: string; r: string; focus: string; b: string; img: string };
 export const FACULTY: Faculty[] = [
   {
-    n: "Dr. Xavier Johnson", r: "Chief Business Methodologist",
+    n: "Dr. Xavier Johnson", r: "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University",
     focus: "Strategic Thinking · F.A.S.T. · BOLT",
-    b: "Works in strategic business thinking and business organisation leadership (BOLT). Architect of the F.A.S.T. Transformation methodology. Author, speaker, musician and corporate transformation practitioner.",
+    b: "Works in strategic business thinking and business organisation leadership (BOLT). Architect of the F.A.S.T. Transformation methodology, Chief Business Methodologist of Asian Business Consulting and Founder of LIFE University.",
     img: "/brand/faculty/xavier-johnson.png",
   },
   {
@@ -338,6 +338,9 @@ export const COMPARISON = [
 
 export const FAQS = [
   { q: "How is the programme structured?", a: "The Executive MBA runs for three months. Participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee." },
+  { q: "Can I complete the programme while working full time?", a: "Yes. The Malaysian public programme runs across three monthly sessions, with six scheduled training days in total. Participants remain in their professional roles and complete an applied project based on a current business issue. Review every published session date before enrolling." },
+  { q: "Is this executive education or an academic MBA degree?", a: "It is a three-month professional development and executive education programme called the Future Ready Executive MBA. It has CMI (UK) Endorsed and Recognised status, but it is not an MQA-accredited academic degree or a regulated qualification." },
+  { q: "What do successful participants receive?", a: "Successful participants receive the CMI Certificate of Recognition for the Future Ready Executive MBA programme. CMI controls the final certificate format and wording. Chartered Manager is a separate CMI route and is not automatically awarded through programme completion." },
   { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },
   { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
   { q: "Is it MQA-recognised?", a: "No. This is a professional development programme with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification." },
@@ -384,13 +387,43 @@ export const NAV: NavItem[] = [
     href: "/executive-mba",
     label: "Programme",
     children: [
-      { href: "/executive-mba", label: "Overview" },
-      { href: "/how-it-works", label: "Method" },
+      { href: "/executive-mba", label: "Programme overview" },
+      { href: "/how-it-works", label: "How it works" },
       { href: "/curriculum", label: "Curriculum" },
+      { href: "/executive-mba-malaysia", label: "Malaysia programme" },
+      { href: "/online-executive-mba", label: "Online programme" },
     ],
   },
-  { href: "/chartered-manager-malaysia", label: "Recognition" },
-  { href: "/fees", label: "Fees & Funding" },
-  { href: "/intakes", label: `${PROGRAMME_YEAR} Dates` },
-  { href: "/about", label: "About & Team" },
+  {
+    href: "/chartered-manager-malaysia",
+    label: "Recognition & Team",
+    children: [
+      { href: "/chartered-manager-malaysia", label: "CMI recognition" },
+      { href: "/faculty", label: "Faculty & coaches" },
+      { href: "/asian-business-consulting", label: "Asian Business Consulting" },
+      { href: "/about", label: "About Roy Affandi" },
+      { href: "/contact", label: "Contact Roy" },
+    ],
+  },
+  {
+    href: "/fees",
+    label: "Fees & Dates",
+    children: [
+      { href: "/fees", label: "Fees & scholarship" },
+      { href: "/hrd-corp-claimable", label: "HRD Corp funding" },
+      { href: "/intakes", label: `${PROGRAMME_YEAR} intakes` },
+      { href: "/corporate-training", label: "Corporate training" },
+    ],
+  },
+  {
+    href: "/resources",
+    label: "Guides & Help",
+    children: [
+      { href: "/resources", label: "Decision resources" },
+      { href: "/insights", label: "Insights" },
+      { href: "/executive-mba-vs-mba", label: "Executive MBA vs MBA" },
+      { href: "/faq", label: "Frequently asked questions" },
+      { href: "/diagnostic", label: "Programme fit check" },
+    ],
+  },
 ];
