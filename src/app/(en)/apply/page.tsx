@@ -12,7 +12,7 @@ export const metadata = withSeo("/apply", {
 });
 
 const waText = encodeURIComponent(
-  "Hi Roy, I'd like to explore the Future Ready Executive MBA. Please share the programme and next-intake details.",
+  "Hello Future Ready EMBA team, I'd like to explore the programme. Please share the programme and next-intake details.",
 );
 
 const RECEIVE = [
@@ -74,7 +74,7 @@ export default function ApplyPage() {
                   data-contact-method="whatsapp"
                   data-contact-language="en"
                 >
-                  Talk to Roy on WhatsApp →
+                  Contact Future Ready EMBA on WhatsApp →
                 </a>
                 <p className="fine">
                   Prefer to speak directly? {SITE.director} ·{" "}

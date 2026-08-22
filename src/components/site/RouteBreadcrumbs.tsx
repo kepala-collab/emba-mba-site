@@ -21,12 +21,12 @@ const ZH_TEAM: Item = { name: "认可与团队", path: "/zh/chartered-manager-ma
 const ZH_FEES: Item = { name: "学费与日期", path: "/zh/fees" };
 
 const ROUTES: Record<string, Item[]> = {
-  "/about": [HOME, TEAM, { name: "Roy Affandi", path: "/about" }],
+  "/about": [HOME, TEAM, { name: "About Future Ready EMBA", path: "/about" }],
   "/ai-executive-mba": [HOME, PROGRAMME, { name: "AI-ready leadership", path: "/ai-executive-mba" }],
   "/apply": [HOME, { name: "Programme enquiry", path: "/apply" }],
   "/asian-business-consulting": [HOME, TEAM, { name: "Asian Business Consulting", path: "/asian-business-consulting" }],
   "/chartered-manager-malaysia": [HOME, PROGRAMME, { name: "CMI recognition", path: "/chartered-manager-malaysia" }],
-  "/contact": [HOME, TEAM, { name: "Contact Roy", path: "/contact" }],
+  "/contact": [HOME, TEAM, { name: "Contact Future Ready EMBA", path: "/contact" }],
   "/curriculum": [HOME, PROGRAMME, { name: "Curriculum", path: "/curriculum" }],
   "/diagnostic": [HOME, RESOURCES, { name: "Programme fit check", path: "/diagnostic" }],
   "/executive-mba": [HOME, PROGRAMME],
@@ -55,7 +55,7 @@ const ROUTES: Record<string, Item[]> = {
   "/zh/apply": [ZH_HOME, { name: "课程咨询", path: "/zh/apply" }],
   "/zh/asian-business-consulting": [ZH_HOME, ZH_TEAM, { name: "Asian Business Consulting", path: "/zh/asian-business-consulting" }],
   "/zh/chartered-manager-malaysia": [ZH_HOME, ZH_PROGRAMME, { name: "CMI 认可", path: "/zh/chartered-manager-malaysia" }],
-  "/zh/contact": [ZH_HOME, ZH_TEAM, { name: "联系 Roy", path: "/zh/contact" }],
+  "/zh/contact": [ZH_HOME, ZH_TEAM, { name: "联系 Future Ready 高管 MBA", path: "/zh/contact" }],
   "/zh/curriculum": [ZH_HOME, ZH_PROGRAMME, { name: "课程大纲", path: "/zh/curriculum" }],
   "/zh/diagnostic": [ZH_HOME, ZH_RESOURCES, { name: "课程适合度检查", path: "/zh/diagnostic" }],
   "/zh/executive-mba": [ZH_HOME, ZH_PROGRAMME],

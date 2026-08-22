@@ -21,12 +21,12 @@ export const CTA_LABELS = {
   guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
   company: "Enquire for your company",
-  whatsapp: "Talk to Roy on WhatsApp",
+  whatsapp: "Contact Future Ready EMBA on WhatsApp",
   zh: {
     guide: `获取 ${PROGRAMME_YEAR} 课程指南`,
     conversation: "预约课程沟通",
     company: "企业课程咨询",
-    whatsapp: "通过 WhatsApp 联系 Roy",
+    whatsapp: "通过 WhatsApp 联系 Future Ready 高管 MBA",
   },
 } as const;
 
@@ -364,8 +364,8 @@ export const NAV: NavItem[] = [
       { href: "/chartered-manager-malaysia", label: "CMI recognition" },
       { href: "/faculty", label: "Faculty & coaches" },
       { href: "/asian-business-consulting", label: "Asian Business Consulting" },
-      { href: "/about", label: "About Roy Affandi" },
-      { href: "/contact", label: "Contact Roy" },
+      { href: "/about", label: "About Future Ready EMBA" },
+      { href: "/contact", label: "Contact Future Ready EMBA" },
     ],
   },
   {

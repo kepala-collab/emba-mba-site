@@ -7,8 +7,8 @@ import { ABC_PROFILE, ORGANISATIONAL_STATEMENT, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/about", {
-  title: "About Roy Affandi | Future Ready Executive MBA",
-  description: "Meet Roy Affandi, Programme Coordinator for the Future Ready Executive MBA, and learn why he wants Malaysians to move forward through practical management development.",
+  title: "About Future Ready Executive MBA | Meet Roy Affandi",
+  description: "Learn about the Future Ready Executive MBA through Programme Coordinator Roy Affandi and the programme's purpose for Malaysian professionals and business leaders.",
 });
 
 export default function AboutPage() {

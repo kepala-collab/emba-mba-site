@@ -78,7 +78,7 @@ const required = [
   'liveSessions: "3"',
   'moduleCount: "12"',
   'director: "Roy Affandi"',
-  'whatsapp: "Talk to Roy on WhatsApp"',
+  'whatsapp: "Contact Future Ready EMBA on WhatsApp"',
 ];
 
 for (const statement of required) {

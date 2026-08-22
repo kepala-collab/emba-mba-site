@@ -17,7 +17,7 @@ const NAV_ZH: NavItem[] = [
     { href: "/zh/chartered-manager-malaysia", label: "CMI 认可" },
     { href: "/zh/faculty", label: "师资与导师" },
     { href: "/zh/asian-business-consulting", label: "Asian Business Consulting" },
-    { href: "/zh/contact", label: "联系 Roy" },
+    { href: "/zh/contact", label: "联系 Future Ready 高管 MBA" },
   ] },
   { href: "/zh/fees", label: "学费与日期", children: [
     { href: "/zh/fees", label: "学费与奖学金" },

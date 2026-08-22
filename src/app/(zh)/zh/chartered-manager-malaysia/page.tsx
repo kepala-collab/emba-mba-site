@@ -51,7 +51,7 @@ export default function CmiRecognitionZhPage() {
       </div></section>
 
       <section className="section faq chartered-faq"><div className="wrap maxw-820"><Reveal><p className="mono sec-k">直接回答</p><h2 className="sec-h">在选择前了解清楚。</h2></Reveal><Reveal className="mt-s">{FAQS.map(([q, a], index) => <details key={q} open={index === 0}><summary>{q}</summary><p>{a}</p></details>)}</Reveal></div></section>
-      <CtaSection programme="Executive MBA" heading="看看 Future Ready 高管 MBA 是否适合您目前面对的决定。" sub="先获取课程指南，或预约与 Roy Affandi 的无义务沟通。" />
+      <CtaSection programme="Executive MBA" heading="看看 Future Ready 高管 MBA 是否适合您目前面对的决定。" sub="先获取课程指南，或预约与课程团队进行无义务沟通。" />
     </>
   );
 }

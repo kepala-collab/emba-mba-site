@@ -59,7 +59,7 @@ export default function CmiRecognitionPage() {
       </section>
 
       <section className="section faq chartered-faq"><div className="wrap maxw-820"><Reveal><p className="mono sec-k">Direct answers</p><h2 className="sec-h">Know what you are choosing.</h2></Reveal><Reveal className="mt-s">{FAQS.map((item, index) => <details key={item.q} open={index === 0}><summary>{item.q}</summary><p>{item.a}</p></details>)}</Reveal></div></section>
-      <CtaSection programme="Executive MBA" heading="See whether the Future Ready Executive MBA fits the decision in front of you." sub="Get the programme guide, or ask for a no-obligation conversation with Roy Affandi." />
+      <CtaSection programme="Executive MBA" heading="See whether the Future Ready Executive MBA fits the decision in front of you." sub="Get the programme guide, or ask the programme team for a no-obligation conversation." />
     </>
   );
 }

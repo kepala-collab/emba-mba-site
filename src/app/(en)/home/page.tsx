@@ -195,7 +195,7 @@ export default function Home() {
       <section className="section home-closing-cta">
         <div className="wrap home-closing-cta-inner">
           <Reveal><div><p className="mono">The next decision</p><h2>Get the facts. Then decide whether a conversation is worth your time.</h2></div></Reveal>
-          <Reveal delay={60}><div className="home-closing-actions"><Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="home_closing_guide" data-track-location="home_closing">{CTA_LABELS.guide} <span aria-hidden="true">↑</span></Link><Link href="/contact" className="text-action">Talk to Roy Affandi <span aria-hidden="true">↗</span></Link></div></Reveal>
+          <Reveal delay={60}><div className="home-closing-actions"><Link href="#home-programme-guide" className="btn btn-primary" data-track-event="cta_click" data-track-id="home_closing_guide" data-track-location="home_closing">{CTA_LABELS.guide} <span aria-hidden="true">↑</span></Link><Link href="/contact" className="text-action">Contact Future Ready EMBA <span aria-hidden="true">↗</span></Link></div></Reveal>
         </div>
       </section>
 
