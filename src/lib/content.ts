@@ -17,6 +17,15 @@ export const SITE = {
 
 export const PROGRAMME_YEAR = "2026";
 
+export const PROGRAMME_POSITIONING =
+  "Executive MBA on Future Ready Business Leadership, awarded and endorsed by CMI.";
+
+export const PROGRAMME_POSITIONING_SENTENCE =
+  "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI.";
+
+export const PROGRAMME_POSITIONING_ZH =
+  "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。";
+
 export const CTA_LABELS = {
   guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
@@ -40,7 +49,7 @@ export const PROGRAMME_PROOF = {
 } as const;
 
 export const ORGANISATIONAL_STATEMENT =
-  "The Future Ready Executive MBA is a three-month professional development programme designed and delivered by Asian Business Consulting, with CMI (UK) Endorsed and Recognised status. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount.";
+  `${PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount.`;
 
 export const ABC_PROFILE = {
   name: "Asian Business Consulting",
@@ -49,7 +58,7 @@ export const ABC_PROFILE = {
   description:
     "ABC develops and structures signature training programmes for professionals and organisations. The Future Ready Executive MBA, CMI (UK) is one of its signature programmes.",
   programmePositioning:
-    "The Future Ready Executive MBA is a three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic, not an MQA-accredited academic degree or a regulated qualification.",
+    `${PROGRAMME_POSITIONING_SENTENCE} It is a three-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification.`,
 } as const;
 
 // The Associate Partner to Asian Business Consulting that operates this site
@@ -186,10 +195,10 @@ export const SIGNATURE_QUOTE = {
 } as const;
 
 export const CERTIFICATE_POSITIONING = {
-  headline: "CMI (UK) Endorsed & Recognised · professional development",
+  headline: "Awarded and endorsed by CMI · professional development",
   credential: "CMI Certificate of Recognition",
   distinction:
-    "The Future Ready Executive MBA is a professional development programme with CMI (UK) Endorsed and Recognised status. Successful participants are awarded a CMI Certificate of Recognition. It is non-academic, not an MQA-accredited academic degree or a regulated qualification.",
+    `${PROGRAMME_POSITIONING_SENTENCE} Successful participants are awarded a CMI Certificate of Recognition. It is non-academic, not an MQA-accredited academic degree or a regulated qualification.`,
   professionalRelevance:
     "The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome.",
   specimenSignatory:
@@ -303,11 +312,11 @@ export const COMPARISON = [
 export const FAQS = [
   { q: "How is the programme structured?", a: "The Executive MBA runs for three months. Participants complete six training days across three monthly sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee." },
   { q: "Can I complete the programme while working full time?", a: "Yes. The Malaysian public programme runs across three monthly sessions, with six scheduled training days in total. Participants remain in their professional roles and complete an applied project based on a current business issue. Review every published session date before enrolling." },
-  { q: "Is this executive education or an academic MBA degree?", a: "It is a three-month professional development and executive education programme called the Future Ready Executive MBA. It has CMI (UK) Endorsed and Recognised status, but it is not an MQA-accredited academic degree or a regulated qualification." },
+  { q: "Is this executive education or an academic MBA degree?", a: `${PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development and executive education programme, not an MQA-accredited academic degree or a regulated qualification.` },
   { q: "What do successful participants receive?", a: "Successful participants receive the CMI Certificate of Recognition for the Future Ready Executive MBA programme. CMI controls the final certificate format and wording. Chartered Manager is a separate CMI route and is not automatically awarded through programme completion." },
   { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },
   { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
-  { q: "Is it MQA-recognised?", a: "No. This is a professional development programme with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification." },
+  { q: "Is it MQA-recognised?", a: `${PROGRAMME_POSITIONING_SENTENCE} It is a professional development programme, not an MQA-accredited academic degree or a regulated qualification.` },
   { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   { q: "What are the refund terms?", a: REFUND_TERMS.description },
   { q: "Can my company use its HRD Corp levy?", a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}` },
@@ -343,7 +352,7 @@ export const CORP_TRAINING = [
 ];
 
 export const COMPLIANCE =
-  "This professional development programme has CMI (UK) Endorsed and Recognised status, and successful participants are awarded the CMI Certificate of Recognition. It is not an MQA-accredited academic degree or a regulated qualification. HRD Corp determines every grant approval and approved amount. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.";
+  `${PROGRAMME_POSITIONING_SENTENCE} Successful participants are awarded the CMI Certificate of Recognition. It is not an MQA-accredited academic degree or a regulated qualification. HRD Corp determines every grant approval and approved amount. Personal data is processed under Malaysia's Personal Data Protection Act 2010 [Act 709], as amended.`;
 
 export type NavItem = { href: string; label: string; children?: readonly NavItem[] };
 export const NAV: NavItem[] = [

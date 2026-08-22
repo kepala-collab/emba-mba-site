@@ -41,7 +41,7 @@ export default function ZhMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">面向承担跨职能决策责任的在职领导者</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              三个月完成具 CMI（英国）背书及认可状态的 Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>专业发展课程。</em>
+              三个月完成面向未来商业领导力、<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>

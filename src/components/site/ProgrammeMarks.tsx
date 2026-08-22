@@ -10,7 +10,7 @@ const COPY = {
   en: {
     group: "Programme recognition and funding marks",
     cmiAlt: "Chartered Management Institute compact logo",
-    cmi: "CMI (UK) Endorsed and Recognised",
+    cmi: "Awarded and endorsed by CMI",
     hrdAlt: "Official HRD Corp Claimable logo",
     hrd: "HRD Corp Claimable · employer approval applies",
   },

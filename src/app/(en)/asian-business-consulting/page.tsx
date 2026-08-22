@@ -17,7 +17,7 @@ export const metadata = withSeo("/asian-business-consulting", {
 
 const MILESTONES = [
   { n: "2020", s: "ABC registered in Malaysia" },
-  { n: "Jul 2024", s: "CMI (UK) Endorsed and Recognised status" },
+  { n: "Jul 2024", s: "Awarded and endorsed by CMI" },
   { n: "17", s: "cohorts delivered: 16 English and the first Mandarin cohort" },
   { n: "154", s: "graduates of the signature programme" },
 ];
@@ -58,7 +58,7 @@ const abcSchema = {
   foundingDate: "2020",
   areaServed: "MY",
   description:
-    "A Malaysian management consulting, corporate training and executive learning firm. ABC designed and delivers the Future Ready Executive MBA, a CMI (UK) Recognised programme.",
+    "A Malaysian management consulting, corporate training and executive learning firm. ABC designed and delivers the Executive MBA on Future Ready Business Leadership. The programme is awarded and endorsed by CMI.",
   founder: { "@type": "Person", name: "Dr. Xavier Johnson" },
   member: LEADERS.map((leader) => ({ "@type": "Person", name: leader.n, jobTitle: leader.role })),
   sameAs: [ABC_URL],
@@ -82,7 +82,7 @@ export default function AsianBusinessConsultingPage() {
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "64ch" }}>
-              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the three-month Future Ready Executive MBA over almost three years of development with CMI (UK), and delivers it today as a CMI (UK) Recognised centre.
+              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the three-month Executive MBA on Future Ready Business Leadership over almost three years of development with CMI and delivers it today as a CMI Recognised centre.
             </p>
           </Reveal>
           <Reveal delay={110}>
@@ -161,7 +161,7 @@ export default function AsianBusinessConsultingPage() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Chartered Management Institute (UK)</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has held CMI (UK) Endorsed and Recognised status since July 2024, and ABC is listed as a Recognised international centre.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre.</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>Verify on CMI&rsquo;s register <span aria-hidden="true">↗</span></a>
             </div>
             <div>

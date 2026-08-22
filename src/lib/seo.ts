@@ -17,7 +17,7 @@ const SOCIAL_IMAGE = {
   url: `${SITE.url}/opengraph-image`,
   width: 1200,
   height: 630,
-  alt: "Future Ready Executive MBA — professional leadership programme recognised by CMI UK",
+  alt: "Executive MBA on Future Ready Business Leadership — awarded and endorsed by CMI",
 };
 
 /**

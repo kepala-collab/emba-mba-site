@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/mba-for-sme-owners", {
   title: "Executive MBA for SME Owners & Founders",
   description:
-    "An Executive MBA for SME owners recognised by CMI (UK): strengthen systems, delegation and strategic leadership across the first three monthly sessions.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Built for SME owners across three monthly sessions.",
 });
 
 const jsonLd = {
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "A three-month professional Executive MBA for SME owners and founders, recognised against CMI Professional Standards and delivered across three monthly sessions.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across three monthly sessions.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -72,7 +72,7 @@ export default function MbaForSmeOwnersPage() {
             strategy and leadership frameworks to delegation, capability building, succession and growth.
           </p>
           <p className="mono sec-k mt-s">
-            Three months · three monthly programme weekends · recognised by CMI (UK)
+            Three months · three monthly programme weekends · awarded and endorsed by CMI
           </p>
           <p className="sec-sub mt-s">
             See the full{" "}
@@ -193,7 +193,7 @@ export default function MbaForSmeOwnersPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
+            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
             academic degree. <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>{" "}
             before choosing an intake.
           </p>

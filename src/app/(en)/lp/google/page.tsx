@@ -6,7 +6,7 @@ import { SITE, FACTS, INCLUSIONS, COMPARISON, COMPLIANCE, OPERATOR, HRD_CORP_CLA
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/lp/google", {
-  title: "Executive MBA Malaysia — CMI-Recognised Programme",
+  title: "Executive MBA Malaysia — Awarded and Endorsed by CMI",
   description:
     "A three-month programme leading to the CMI-recognised Executive MBA programme certificate.",
   // Ad landing page — keep it out of organic index so it doesn't compete with SEO pages.
@@ -68,7 +68,7 @@ export default function GoogleLandingPage() {
       {/* FACTUAL PROOF — testimonial assets will be added only after permission and verification. */}
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "CMI (UK) Endorsed and Recognised"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
+          {[["CMI", "Awarded and endorsed by CMI"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

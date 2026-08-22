@@ -45,6 +45,7 @@ async function mockTurnstile(page: Page) {
 }
 
 test("core routes render without console failures", async ({ page }) => {
+  await mockTurnstile(page);
   const failures = await captureConsoleFailures(page);
   for (const route of ["/home", "/apply", "/fees", "/intakes", "/insights/executive-education-vs-executive-mba", "/zh", "/zh/how-it-works", "/zh/apply"]) {
     const response = await goto(page, route);
@@ -323,6 +324,53 @@ test("priority pages have no automated accessibility violations after hydration"
       expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
     }
   }
+});
+
+test("web fonts load and technical terms avoid malformed display glyphs", async ({ page }) => {
+  await goto(page, "/home");
+  const englishFonts = await page.evaluate(async () => {
+    await document.fonts.ready;
+    const root = getComputedStyle(document.documentElement);
+    const primaryFamily = (variable: string) => root.getPropertyValue(variable).trim().split(",")[0];
+    const body = getComputedStyle(document.body).fontFamily;
+    const heading = getComputedStyle(document.querySelector("h1,h2,h3") as HTMLElement).fontFamily;
+    return {
+      status: document.fonts.status,
+      body,
+      heading,
+      sansLoaded: document.fonts.check(`16px ${primaryFamily("--font-archivo")}`),
+      serifLoaded: document.fonts.check(`32px ${primaryFamily("--font-fraunces")}`),
+      malformed: document.body.innerText.includes("\uFFFD"),
+    };
+  });
+  expect(englishFonts.status).toBe("loaded");
+  expect(englishFonts.body).toContain("Archivo");
+  expect(englishFonts.heading).toContain("Source Serif 4");
+  expect(englishFonts.sansLoaded).toBe(true);
+  expect(englishFonts.serifLoaded).toBe(true);
+  expect(englishFonts.malformed).toBe(false);
+
+  await goto(page, "/chartered-manager-malaysia");
+  const technicalTerm = page.locator(".technical-term").first();
+  await expect(technicalTerm).toBeVisible();
+  expect(await technicalTerm.evaluate((element) => getComputedStyle(element).fontFamily)).toContain("Archivo");
+
+  await goto(page, "/zh");
+  const chineseFonts = await page.evaluate(async () => {
+    await document.fonts.ready;
+    const root = getComputedStyle(document.documentElement);
+    const primaryFamily = root.getPropertyValue("--font-noto-sans-sc").trim().split(",")[0];
+    return {
+      status: document.fonts.status,
+      body: getComputedStyle(document.body).fontFamily,
+      loaded: document.fonts.check(`16px ${primaryFamily}`),
+      malformed: document.body.innerText.includes("\uFFFD"),
+    };
+  });
+  expect(chineseFonts.status).toBe("loaded");
+  expect(chineseFonts.body).toContain("Noto Sans SC");
+  expect(chineseFonts.loaded).toBe(true);
+  expect(chineseFonts.malformed).toBe(false);
 });
 
 test("consent choice stays compact and visibly identifies its privacy link", async ({ page }) => {

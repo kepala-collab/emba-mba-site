@@ -70,7 +70,7 @@ export default function MetaLandingPage() {
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
           {[
-            ["CMI", "CMI (UK) Endorsed and Recognised"],
+            ["CMI", "Awarded and endorsed by CMI"],
             [FACTS.trainingDays, "Facilitated training days across three monthly sessions"],
             ["1", "Applied project built around a live business issue"],
             [FACTS.scholarshipAmount, "Scholarship available to eligible Malaysian applicants"],
@@ -115,7 +115,7 @@ export default function MetaLandingPage() {
           </Reveal>
           <div className="cold-funnel-recognition-steps">
             <Reveal>
-              <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>Successful participants complete a professional programme with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or regulated qualification.</p></article>
+              <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>Successful participants complete the Executive MBA on Future Ready Business Leadership, which is awarded and endorsed by CMI. It is not an MQA-accredited academic degree or regulated qualification.</p></article>
             </Reveal>
           </div>
         </div>

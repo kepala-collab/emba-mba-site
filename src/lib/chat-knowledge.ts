@@ -8,6 +8,7 @@ import {
   INTAKES,
   OPERATOR,
   PROGRAMME_AUDIENCE,
+  PROGRAMME_POSITIONING_SENTENCE,
   REFUND_TERMS,
   SITE,
 } from "@/lib/content";
@@ -30,7 +31,7 @@ VERIFIED PROGRAMME FACTS
 - Website operator and ABC's ${OPERATOR.role}: ${OPERATOR.name}. It handles marketing, programme enquiries, country-specific and localised pricing, and enrolment coordination. ${OPERATOR.name} and ABC are separate independent companies.
 - About ABC: ${ABC_PROFILE.name} is a ${ABC_PROFILE.hrdStatus}. ${ABC_PROFILE.description}
 - Human programme contact: ${SITE.director}, Programme Coordinator; telephone/WhatsApp ${SITE.phone}; email ${SITE.email}.
-- Nature of programme: a three-month professional development programme with CMI (UK) Endorsed and Recognised status. Successful participants are awarded the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic qualification, not a regulated qualification and not an academic MBA degree.
+- Nature of programme: ${PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development programme. Successful participants are awarded the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic qualification, not a regulated qualification and not an academic MBA degree.
 - Certificate distinction: ${CERTIFICATE_POSITIONING.distinction}
 - Professional relevance: ${CERTIFICATE_POSITIONING.professionalRelevance}
 - Current specimen certificate: ${CERTIFICATE_POSITIONING.specimenSignatory}
@@ -41,7 +42,7 @@ VERIFIED PROGRAMME FACTS
 - CMI professional recognition: graduates receive the programme certificate recognised against CMI Professional Standards. CMI's published CMI Recognised route lists Foundation Chartered Manager status (fCMgr) on completion. CMI controls activation, continued use, membership renewal and the fCMgr post-nominal. Do not describe MCMI as "M(CMI)" or promise MCMI automatically.
 - Chartered progression: Chartered Manager is a separate optional CMI route with its own eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee, and CMgr MCMI is not automatic. CMI controls the applicable route and award. CMI's published post-nominal formats include fCMgr, MCMI, CMgr MCMI and CMgr FCMI.
 - Chartered Manager is outside this website's offer. If asked, state only that it is a separate optional CMI route and that CMI controls eligibility, assessment, membership and fees. Do not quote third-party route prices or promote other CMI courses.
-- Recognition statement: the Future Ready Executive MBA is a three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic, not an MQA-accredited academic degree or a regulated qualification. Never claim a programme-level CMI qualification level or CMI Fast Track eligibility for Chartered Manager. Do not describe it as an academic MBA degree, a regulated qualification, or a guaranteed career outcome.
+- Recognition statement: ${PROGRAMME_POSITIONING_SENTENCE} It is a three-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification. Never claim a programme-level CMI qualification level or CMI Fast Track eligibility for Chartered Manager. Do not describe it as an academic MBA degree, a regulated qualification, or a guaranteed career outcome.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
 - Malaysian scholarship: eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}

@@ -159,7 +159,7 @@ export default function AbcPageZh() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>英国特许管理协会（CMI）</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是外部品质机构。本课程自 2024 年 7 月起具 CMI（英国）背书及认可状态，ABC 亦列为其认可的国际中心。</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是外部品质机构。本课程自 2024 年 7 月起由 CMI 颁授并背书，ABC 亦列为其认可的国际中心。</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>在 CMI 名录中查证 <span aria-hidden="true">↗</span></a>
             </div>
             <div>

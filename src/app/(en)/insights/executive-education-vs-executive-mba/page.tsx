@@ -78,7 +78,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
               Choose an academic MBA or EMBA when your next step requires a recognised academic degree. Consider executive education when you need focused professional development that fits around work. Then verify exactly what the named programme awards, because credentials and academic status differ between providers.
             </p>
             <p>
-              The <Link href="/executive-mba">Future Ready Executive MBA</Link> is a three-month professional development programme with CMI (UK) Endorsed and Recognised status. Successful participants receive the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic degree or a regulated qualification.
+              The <Link href="/executive-mba">Executive MBA on Future Ready Business Leadership</Link> is awarded and endorsed by CMI. It is a three-month professional development programme. Successful participants receive the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic degree or a regulated qualification.
             </p>
 
             <h2>Compare the published facts</h2>

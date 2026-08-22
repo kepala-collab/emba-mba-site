@@ -78,7 +78,7 @@ export default function HrdCorpClaimablePage() {
           <Reveal>
             <p className="sec-sub">
               {SITE.provider} is an HRD Corp (HRDC) Approved Training Provider. The Future
-              Ready Executive MBA is recognised by the Chartered Management Institute (CMI), UK.
+              Ready Business Leadership is awarded and endorsed by the Chartered Management Institute (CMI).
               <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM.short}</b> The programme team supplies
               the supporting programme documents.
             </p>
@@ -143,7 +143,7 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <p className="fine mt-s">
             Full programme detail on the <Link href="/executive-mba">Executive MBA</Link> page.
-            This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
+            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
             academic degree.
           </p>
         </div>

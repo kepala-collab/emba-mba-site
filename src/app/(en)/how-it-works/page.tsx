@@ -159,7 +159,7 @@ export default function HowItWorks() {
           </Reveal>
           <Reveal className="mt-s">
             <div className="fine center" style={{ marginTop: 24 }}>
-              A professional programme recognised by CMI (UK) — built for applied leadership development. Explore{" "}
+              A professional programme awarded and endorsed by CMI — built for applied leadership development. Explore{" "}
               <Link href="/curriculum" className="acc" style={{ textDecoration: "underline" }}>the twelve modules</Link> or{" "}
               <Link href="/apply" className="acc" style={{ textDecoration: "underline" }}>{CTA_LABELS.guide}</Link>.
             </div>

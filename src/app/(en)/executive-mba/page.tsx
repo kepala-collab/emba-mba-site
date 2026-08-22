@@ -15,6 +15,7 @@ import {
   INCLUSIONS,
   MODULES,
   PROGRAMME_AUDIENCE,
+  PROGRAMME_POSITIONING_SENTENCE,
   SITE,
   STAGES,
   THINKING_EDGE,
@@ -24,7 +25,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Three-Month Executive MBA Programme Malaysia",
   description:
-    "A three-month CMI (UK)-recognised professional development programme with applied leadership learning, coaching and a live business project.",
+    `${PROGRAMME_POSITIONING_SENTENCE} Includes coaching and a live business project over three months.`,
 });
 
 const courseSchema = {
@@ -76,7 +77,7 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={150}>
               <p className="programme-overview-note">
-                This professional development programme has CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification.
+                {PROGRAMME_POSITIONING_SENTENCE} It is not an MQA-accredited academic degree or a regulated qualification.
               </p>
             </Reveal>
           </div>
@@ -85,7 +86,7 @@ export default function ExecutiveMbaPage() {
             <aside className="programme-summary-card" aria-label="Programme summary">
               <div className="programme-summary-brand">
                 <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute compact logo" width={96} height={66} />
-                <span>CMI (UK) Endorsed and Recognised</span>
+                <span>Awarded and endorsed by CMI</span>
               </div>
               <dl>
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>

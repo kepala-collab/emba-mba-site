@@ -16,7 +16,7 @@ export const metadata = withSeo(PATH, {
 
 const FAQS = [
   ["成功完成课程后会获得什么？", "成功完成课程者将获得 Future Ready 高管 MBA 课程的 CMI Certificate of Recognition。最终证书格式、措辞及签发由 CMI 决定。"],
-  ["这是学术 MBA 学位吗？", "不是。这是具 CMI（英国）背书及认可状态的三个月专业发展课程，并非 MQA 认证的学术学位或受监管资格。"],
+  ["这是学术 MBA 学位吗？", "不是。这是面向未来商业领导力、由 CMI 颁授并背书的三个月 Executive MBA 专业发展课程，并非 MQA 认证的学术学位或受监管资格。"],
   ["完成课程后会自动成为 Chartered Manager 吗？", "不会。Chartered Manager 属于独立可选的 CMI 路线。资格、评估、会员及费用均由 CMI 决定，并不包含在本课程或已公布费用内。"],
 ] as const;
 

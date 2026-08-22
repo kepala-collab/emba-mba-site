@@ -120,7 +120,7 @@ export default function AiExecutiveMbaPage() {
           <Reveal><h2 className="sec-h">The AI focus does not change the programme&rsquo;s formal status.</h2></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {[
-              ["Recognised by CMI (UK)", "The programme is recognised against CMI Professional Standards and is not an MQA-regulated academic degree."],
+              ["Awarded and endorsed by CMI", "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is not an MQA-regulated academic degree."],
               ["HRD Corp", HRD_CORP_CLAIM.short],
               ["Format", "Three-month programme: three monthly programme sessions with coaching and an applied business project."],
               ["Investment", FACTS.priceStd + " standard. Eligible Malaysian applicants may receive a " + FACTS.scholarshipAmount + " LIFE Innoversity scholarship after assessment and written approval."],
@@ -133,7 +133,7 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
           <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "72ch" }}>
-            This is a professional programme recognised by CMI (UK), not an MQA-accredited academic degree or a
+            This professional programme is awarded and endorsed by CMI, not an MQA-accredited academic degree or a
             regulated qualification. It does not guarantee income, promotion or a business result.
           </p></Reveal>
         </div>

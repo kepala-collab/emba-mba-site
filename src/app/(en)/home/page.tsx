@@ -4,13 +4,13 @@ import HomeHeroSlider from "@/components/site/HomeHeroSlider";
 import LeadForm from "@/components/site/LeadForm";
 import ProgrammeIntroduction from "@/components/site/ProgrammeIntroduction";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS, FACTS, PROGRAMME_PROOF } from "@/lib/content";
+import { CTA_LABELS, FACTS, PROGRAMME_POSITIONING_SENTENCE, PROGRAMME_PROOF } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/home", {
   title: "Executive MBA Malaysia for Working Managers",
   description:
-    "A three-month professional development and executive leadership programme for working managers in Malaysia, with CMI (UK) recognition and applied business learning.",
+    `${PROGRAMME_POSITIONING_SENTENCE} Built for Malaysian working managers over three months.`,
   alternates: {
     canonical: "/home",
     languages: { en: "/home", "zh-Hans": "/zh", "x-default": "/home" },
@@ -78,7 +78,7 @@ export default function Home() {
               <div className="home-hero-lockup">
                 <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready Executive MBA</span></div>
                 <h2 id="home-purpose-title" className="sec-h home-hero-title">AI can draft the report. <em>It cannot make the decision.</em></h2>
-                <p className="home-hero-sub">The three-month Executive&nbsp;MBA that trains working managers to find the real problem, make the case and act on it — using a live challenge from your own business, built around your working week. It begins with a conversation, not a commitment.</p>
+                <p className="home-hero-sub">{PROGRAMME_POSITIONING_SENTENCE} The three-month programme trains working managers to find the real problem, make the case and act on it — using a live challenge from their own business and built around the working week. It begins with a conversation, not a commitment.</p>
               </div>
             </Reveal>
             <HomeHeroSlider />

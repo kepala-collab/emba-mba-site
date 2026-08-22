@@ -48,7 +48,7 @@ const EN: Record<NurtureStepKey, StepCopy> = {
     ],
     facts: [
       { label: "Format", value: "3 months · one weekend a month · no time out of the business" },
-      { label: "Recognition", value: "CMI (UK) Endorsed & Recognised · professional programme, not an academic degree" },
+      { label: "Recognition", value: "Awarded and endorsed by CMI · professional programme, not an academic degree" },
       { label: "Fee", value: "RM10,000 published · scholarship assessed individually, confirmed in writing" },
     ],
     ctaLabel: "Arrange a programme conversation",
@@ -143,7 +143,7 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
 const FOOTER = {
   en: {
     statement:
-      "The Future Ready Executive MBA is a three-month professional development programme designed and delivered by Asian Business Consulting, with CMI (UK) Endorsed and Recognised status. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination.",
+      "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a three-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination.",
     reason:
       "You are receiving this because you requested the programme guide and agreed to receive programme updates and marketing communications.",
     unsubscribe: "Unsubscribe",
@@ -152,7 +152,7 @@ const FOOTER = {
   },
   zh: {
     statement:
-      "Future Ready Executive MBA 是为期三个月的专业发展课程，由 Asian Business Consulting 设计及授课，获 CMI（英国）认可。Right Dots Resources 为其课程咨询与报名协调的合作伙伴。",
+      "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的三个月专业发展课程。Right Dots Resources 为其课程咨询与报名协调的合作伙伴。",
     reason: "您收到本邮件，是因为您索取了课程指南并同意接收课程资讯及营销通讯。",
     unsubscribe: "退订",
     contact: "support@futurereadymba.com · +60 12-981 8533 · futurereadymba.com",

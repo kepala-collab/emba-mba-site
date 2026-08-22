@@ -37,7 +37,7 @@ const courseJsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Future Ready Executive MBA recognised by CMI (UK), delivered in Malaysia and online. Employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered in Malaysia and online; employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -81,8 +81,8 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal>
             <p className="sec-sub">
               The Future Ready Executive MBA is a three-month executive education and professional
-              development programme for Malaysian owners, directors and senior managers. It has
-              CMI (UK) Endorsed and Recognised status and is delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
+              development programme for Malaysian owners, directors and senior managers. It is
+              awarded and endorsed by CMI and delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
               The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
               <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</b> after assessment and written approval.
               Participants apply the programme frameworks to their own organisation, market and operating context.
@@ -191,7 +191,7 @@ export default function ExecutiveMbaMalaysiaPage() {
             <Link href="/intakes" className="btn btn-primary">See all 2026 intakes</Link>
           </p>
           <p className="fine center mt-s">
-            This is a professional programme recognised by CMI (UK); it is not an
+            This professional programme is awarded and endorsed by CMI; it is not an
             MQA-regulated academic degree. Eligible Malaysian employers may apply for HRD Corp
             funding before training; HRD Corp decides approval and the approved amount. You can <Link href="/apply">arrange a programme conversation</Link> before deciding.
           </p>

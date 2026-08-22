@@ -20,7 +20,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "A three-month Executive MBA recognised against CMI Professional Standards, delivered one weekend a month or fully online.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered across three months, one weekend per month, with an online delivery option.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -76,7 +76,7 @@ export default function MbaForWorkingProfessionalsPage() {
               and fees; it is not included in the published programme or fee.
             </p>
             <p className="mono sec-k mt-s">
-              Three months · three monthly programme weekends · recognised by CMI (UK)
+              Three months · three monthly programme weekends · awarded and endorsed by CMI
             </p>
             <p className="sec-sub mt-s">
               Explore the full{" "}
@@ -165,7 +165,7 @@ export default function MbaForWorkingProfessionalsPage() {
           </Reveal>
           <p className="fine mt-s">
             {COMPARISON_SCOPE}{" "}
-            This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
+            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
             academic degree. Choose according to the credential and learning format you require. See the full{" "}
             <Link href="/fees" className="acc">fees &amp; inclusions</Link>.
           </p>
