@@ -359,7 +359,7 @@ export const NAV: NavItem[] = [
   },
   {
     href: "/chartered-manager-malaysia",
-    label: "Recognition",
+    label: "Recognition & Team",
     children: [
       { href: "/chartered-manager-malaysia", label: "CMI recognition" },
       { href: "/faculty", label: "Faculty & coaches" },
@@ -370,7 +370,7 @@ export const NAV: NavItem[] = [
   },
   {
     href: "/fees",
-    label: "Fees",
+    label: "Fees & Dates",
     children: [
       { href: "/fees", label: "Fees & scholarship" },
       { href: "/hrd-corp-claimable", label: "HRD Corp funding" },
@@ -379,7 +379,7 @@ export const NAV: NavItem[] = [
   },
   {
     href: "/resources",
-    label: "Guides",
+    label: "Guides & Help",
     children: [
       { href: "/resources", label: "Decision resources" },
       { href: "/insights", label: "Insights" },

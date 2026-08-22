@@ -69,18 +69,6 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section">
-        <div className="wrap" style={{ maxWidth: 960 }}>
-          <Reveal>
-            <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>
-              <div className="eyebrow"><span className="l" /><span className="mono sec-k">Why this programme</span></div>
-              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "19ch" }}>A programme for people who want to decide and lead better.</h2>
-              <p className="sec-sub" style={{ maxWidth: "62ch" }}>The Future Ready Executive MBA is designed for working professionals who want practical leadership and decision-making frameworks they can use in the real conditions of business today.</p>
-              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>It is a conversation before it is a commitment. If this reflects where you are now, Roy Affandi and the programme team would be glad to discuss your goals, the programme and the next suitable step.</p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
       <CtaSection programme="Executive MBA" heading="Discuss the Future Ready Executive MBA." />
       <style>{`@media(max-width:760px){.about-affandi-grid,.about-story-grid{grid-template-columns:1fr!important}}`}</style>
     </>

@@ -71,6 +71,23 @@ const OUTCOMES = [
 export default function Home() {
   return (
     <>
+      <section className="home-purpose-section" aria-labelledby="home-purpose-title">
+        <div className="wrap home-purpose-grid">
+          <Reveal>
+            <div>
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">Why this programme</span></div>
+              <h2 id="home-purpose-title" className="sec-h">A programme for people who want to decide and lead better.</h2>
+            </div>
+          </Reveal>
+          <Reveal delay={60}>
+            <div className="home-purpose-copy">
+              <p>The Future Ready Executive MBA is a three-month professional development programme for working professionals who want practical leadership and decision-making frameworks they can use in the real conditions of business today.</p>
+              <p>It is a conversation before it is a commitment. The Future Ready EMBA programme team can help you understand the programme, discuss your goals and decide whether it is the right next step.</p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="home-hero-stage hero">
         <div className="wrap home-hero-stage-grid">
           <HomeHeroSlider />
