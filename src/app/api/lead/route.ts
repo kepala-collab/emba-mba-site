@@ -411,7 +411,13 @@ export async function POST(req: Request) {
           ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
           UTC_TIMESTAMP(6), ?, ?, ?, ?, UTC_DATE()
         )
-        ON DUPLICATE KEY UPDATE id = LAST_INSERT_ID(id)`,
+        ON DUPLICATE KEY UPDATE
+          id = LAST_INSERT_ID(id),
+          marketing_opt_out = 0,
+          marketing_opt_out_at = NULL,
+          consent_version = VALUES(consent_version),
+          consent_at = VALUES(consent_at),
+          form_version = VALUES(form_version)`,
         values: [
           row.lead_uuid,
           row.submission_id,

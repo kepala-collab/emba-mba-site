@@ -125,7 +125,7 @@ export default function MetaLandingPage() {
         programme="Executive MBA"
         source={SOURCE}
         heading="Get the Working Manager’s 2026 Progression Guide."
-        sub={`Review the programme structure, published dates, ${FACTS.priceStd} standard fee, scholarship criteria and CMI recognition before deciding whether to speak with the team. ${HRD_CORP_CLAIM.responsibility}`}
+        sub={`Review the programme structure, published dates, ${FACTS.priceStd} standard fee, the scholarship assessment process and CMI recognition before deciding whether to speak with the team. ${HRD_CORP_CLAIM.responsibility}`}
         formVariant="campaign"
         sectionId="request-guide-again"
         steps={["Receive the guide", "Review the facts privately", "Choose whether you want a conversation"]}

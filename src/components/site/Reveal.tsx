@@ -8,6 +8,7 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (!("IntersectionObserver" in window)) { el.classList.add("in"); return; }
     const io = new IntersectionObserver(
       (es) => es.forEach((e) => { if (e.isIntersecting) { el.classList.add("in"); io.unobserve(el); } }),
       { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }

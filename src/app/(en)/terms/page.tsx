@@ -79,6 +79,16 @@ export default function TermsPage() {
             enrolment terms and completes the payment step stated in those terms.
           </p>
 
+          <h2>Marketing communications</h2>
+          <p>
+            By subscribing, requesting the programme guide or submitting an enquiry, you consent to receive programme
+            updates and marketing communications about the Future Ready Executive MBA from the programme team, by email
+            and — where you provide a number — by WhatsApp or phone. You may withdraw this consent at any time via the
+            unsubscribe option in any marketing email or by contacting <a href="mailto:support@futurereadymba.com">support@futurereadymba.com</a>;
+            withdrawal does not affect responses to enquiries you have already made. Personal data is processed under
+            Malaysia&rsquo;s Personal Data Protection Act 2010 [Act 709], as amended.
+          </p>
+
           <h2>Intellectual property</h2>
           <p>
             Content on this Site is owned by the Site operator and/or ABC and may not be copied or reused without

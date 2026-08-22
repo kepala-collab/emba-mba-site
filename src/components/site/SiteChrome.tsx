@@ -90,6 +90,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
         <a className="skip-link" href="#main-content">Skip to main content</a>
         <Header />
         <RouteBreadcrumbs />
+        <noscript><style>{`.reveal{opacity:1;transform:none}`}</style></noscript>
         <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
         <ConsentBanner />

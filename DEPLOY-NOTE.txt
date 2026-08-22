@@ -1,0 +1,71 @@
+RELEASE ZIP v4 · 22 Aug 2026 · based on codex/hostinger-deployment @ b2c5032
+(local commits: guide attachment + wording, animation restore, marketing consent,
+ interaction refinement + unsubscribe + nurture lane)
+=========================================================================
+
+WHAT'S NEW IN v4 (this zip) — all verified: typecheck, oxlint, 17/17 tests, full build
+-------------------------------------------------------------------------
+A. Interaction refinement layer (both languages — shared CSS)
+   src/app/globals.css: buttons get precise hover/active states (press-down on click,
+   lift + shadow on hover), nav links get a sliding underline, resource/decision/module
+   cards lift on hover, slider controls and form fields get smooth focus/press
+   transitions. All wrapped in prefers-reduced-motion so motion-sensitive visitors
+   get a static site. Style budget still passing (30/32 !important).
+
+B. One-click unsubscribe (EN + ZH)
+   database/migrations/008_add_marketing_optout_and_nurture_log.sql
+   src/lib/unsubscribe.ts ................. HMAC-signed unsubscribe links
+   src/app/api/unsubscribe/route.ts ....... verifies token, sets marketing_opt_out,
+                                            redirects to confirmation page
+   src/app/(en)/unsubscribed/page.tsx ..... EN confirmation (noindex)
+   src/app/(zh)/zh/unsubscribed/page.tsx .. ZH confirmation (noindex)
+
+C. Email nurture lane (EN + ZH), day 3 / 7 / 14
+   src/lib/nurture-email.ts ............... branded, email-safe bilingual templates
+   src/app/api/internal/nurture/route.ts .. cron endpoint; stage-based (not open-based),
+                                            claim-first so double-sends are impossible,
+                                            one email per lead per run, latest step wins,
+                                            List-Unsubscribe one-click headers,
+                                            never emails leads older than 45 days,
+                                            skips anyone opted out or past 'new' stage.
+   src/lib/lead-email.ts .................. exports smtpConfiguration/smtpTransporter
+                                            for reuse (no behaviour change to guide email)
+
+D. Carried over from v2/v3 (already in this zip):
+   1. Lead email attaches working-managers-guide-2026.pdf
+   2. "scholarship criteria" -> assessment wording (6 files, EN + ZH)
+   3. Scroll-reveal animation restored + IntersectionObserver/noscript fallbacks
+   4. Terms pages (EN + ZH): Marketing communications / 营销通讯 sections;
+      LeadForm consent checkbox covers marketing with unsubscribe wording
+
+ONE-TIME SETUP REQUIRED AFTER DEPLOY
+-------------------------------------------------------------------------
+1. Run the migration ONCE against the Hostinger MySQL database:
+     database/migrations/008_add_marketing_optout_and_nurture_log.sql
+   (adds leads.marketing_opt_out + marketing_opt_out_at, creates lead_nurture_log)
+
+2. Add two new environment variables (each a random string, 32+ characters):
+     UNSUBSCRIBE_TOKEN_SECRET=<random 32+ chars>   # signs unsubscribe links
+     NURTURE_CRON_SECRET=<random 32+ chars>        # protects the cron endpoint
+   Generate with:  openssl rand -hex 32
+
+3. Add a daily cron job in Hostinger (any time of day, once per day):
+     curl -X POST "https://futurereadymba.com/api/internal/nurture" \
+          -H "Authorization: Bearer $NURTURE_CRON_SECRET"
+
+4. Test safely first — dry run sends nothing, just reports who WOULD get what:
+     curl "https://futurereadymba.com/api/internal/nurture?dryRun=1" \
+          -H "Authorization: Bearer $NURTURE_CRON_SECRET"
+
+Notes:
+  - .env.production.example untouched on purpose; add the two vars in your real env.
+  - If the secrets are missing the endpoints refuse politely (503) — nothing breaks.
+  - release-id.txt re-synced via `npm run release:sync`.
+
+NOT included to stay under transfer limits:
+  public/media/ (3 videos) — UNCHANGED from your repo. Keep your existing
+  public/media folder exactly as-is; do not delete it.
+
+To deploy: unzip over a clean checkout of codex/hostinger-deployment (keeping
+public/media), then follow DEPLOY-HOSTINGER.md as usual (npm ci && npm run build).
+The / -> /home redirect is confirmed intentional by the owner and left as-is.
