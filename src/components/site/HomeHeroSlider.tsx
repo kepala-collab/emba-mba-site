@@ -14,8 +14,9 @@ const SLIDES = [
     kind: "video" as const,
     src: "/media/home-graduation-loop.mp4",
     poster: "/brand/abc-graduation-poster.jpg",
-    position: "center 45%",
-    mobilePosition: "center 48%",
+    mobilePoster: "/brand/community/graduation-graduates-2.jpeg",
+    position: "left 45%",
+    mobilePosition: "center 44%",
   },
   {
     kicker: "One live business challenge",
@@ -35,7 +36,7 @@ const SLIDES = [
     kicker: "Real people · recognised completion",
     title: "The work leads somewhere visible.",
     body: "Join a practitioner-led programme completed by 154 graduates across 17 cohorts: 16 English cohorts and the first Mandarin cohort.",
-    action: "Meet the programme community",
+    action: "Meet the community",
     href: "/asian-business-consulting#abc-film",
     kind: "image" as const,
     src: "/brand/community/graduation-cohort.jpeg",
@@ -141,15 +142,18 @@ export default function HomeHeroSlider() {
               >
                 {slide.kind === "video" ? (
                   <>
-                    <Image
-                      className="home-slide-video-poster"
-                      src={slide.poster}
-                      alt="Future Ready Executive MBA graduation highlights"
-                      fill
-                      priority
-                      fetchPriority="high"
-                      sizes="(max-width: 900px) 100vw, 68vw"
-                    />
+                    <picture>
+                      <source media="(max-width: 640px)" srcSet={slide.mobilePoster} />
+                      <img
+                        className="home-slide-video-poster"
+                        src={slide.poster}
+                        alt="Future Ready Executive MBA graduation highlights"
+                        width={1600}
+                        height={900}
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </picture>
                     <video
                       ref={videoRef}
                       className="home-slide-video"
