@@ -123,7 +123,7 @@ export default function ExecutiveMbaPage() {
           <div className="programme-stage-grid">
             <Reveal>
               <article className="programme-stage-card">
-                <span className="programme-stage-number">01</span>
+                <span className="programme-stage-number" aria-hidden="true">01</span>
                 <p className="mono sec-k">Three months</p>
                 <h3>Executive MBA programme and certificate</h3>
                 <p>Attend six training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
@@ -132,7 +132,7 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={60}>
               <article className="programme-stage-card programme-stage-card-dark">
-                <span className="programme-stage-number">02</span>
+                <span className="programme-stage-number" aria-hidden="true">02</span>
                 <p className="mono">Optional next step</p>
                 <h3>Chartered Manager route</h3>
                 <p>Chartered Manager is a separate CMI route. CMI decides eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.</p>
