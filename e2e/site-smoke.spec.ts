@@ -95,7 +95,7 @@ test("mobile navigation preserves the four-group information hierarchy", async (
   await expect(mobilePanel.locator(".mobile-nav-group")).toHaveCount(4);
   await expect(mobilePanel.locator("a.mobile-nav-home")).toHaveAttribute("href", "/home");
   await expect(mobilePanel.getByRole("link", { name: /Programme overview/i })).toBeVisible();
-  await expect(mobilePanel.getByRole("link", { name: /Contact Roy/i })).toBeVisible();
+  await expect(mobilePanel.getByRole("link", { name: /Contact Future Ready EMBA/i })).toBeVisible();
   await expect(mobilePanel.getByRole("link", { name: /Executive MBA vs MBA/i })).toBeVisible();
 });
 
@@ -152,10 +152,10 @@ test("indexed content routes expose visible breadcrumb orientation", async ({ pa
   }
 });
 
-test("desktop hero exposes its primary action in the first viewport", async ({ page }) => {
+test("desktop hero exposes a primary conversion action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/home");
-  const box = await page.locator(".home-slide.is-active").getByRole("link", { name: /Get the programme guide/i }).boundingBox();
+  const box = await page.locator(".navbar").getByRole("link", { name: /Get the guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
   const form = await page.locator(".working-hero-form form[data-form-id]").boundingBox();
@@ -270,8 +270,8 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   const heroForm = heroGrid.locator("form[data-form-id]");
   await expect(heroForm).toBeVisible();
   await expect(heroForm.getByRole("heading", { name: "Send me the 2026 programme guide." })).toBeVisible();
-  await expect(heroForm.getByRole("textbox", { name: "Email" })).toBeVisible();
-  await expect(heroForm.getByLabel("Phone / WhatsApp")).toHaveCount(0);
+  await expect(heroForm.getByLabel("Email")).toBeVisible();
+  await expect(heroForm.getByLabel("Phone / WhatsApp")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
   await expect(page.locator(".home-video-section .programme-film")).toBeVisible();
@@ -373,7 +373,7 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
   await goto(page, "/intakes");
   await dismissConsent(page);
   await page.getByRole("button", { name: /Ask the programme assistant/i }).click();
-  await expect(page.getByRole("link", { name: "Talk to Roy on WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/60129818533/);
+  await expect(page.getByRole("link", { name: "Contact Future Ready EMBA on WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/60129818533/);
   await page.getByRole("button", { name: /What does the programme cost/i }).click();
   await expect(page.getByText("The test answer is available.")).toBeVisible();
   await expect.poll(() => page.evaluate(() =>
@@ -384,8 +384,9 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
 test("lead form keeps the existing submit flow behind a Turnstile token", async ({ page }) => {
   await mockTurnstile(page);
   await page.route("**/api/lead", async (route) => {
-    const request = route.request().postDataJSON() as { turnstile_token?: string };
+    const request = route.request().postDataJSON() as { turnstile_token?: string; marketing?: string };
     expect(request.turnstile_token).toBe("lead-test-token");
+    expect(request.marketing).toBe("no");
     await route.fulfill({
       status: 200,
       contentType: "application/json",
@@ -394,12 +395,12 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
   });
   await goto(page, "/apply");
   await page.getByRole("button", { name: /Continue to contact details/i }).click();
-  const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone"]') });
+  const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone_local"]') });
   await expect(form.locator("[data-widget-id]")).toBeVisible();
   await form.locator('input[name="name"]').fill("Test Participant");
-  await form.locator('input[name="phone"]').fill("+60123456789");
+  await form.getByLabel("Phone / WhatsApp").fill("12 345 6789");
   await form.locator('input[name="email"]').fill("test@example.com");
-  await form.getByRole("checkbox").check();
+  await form.getByRole("checkbox").first().check();
   await form.getByRole("button", { name: /Send my programme request/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
@@ -416,11 +417,11 @@ test("lead form resets a redeemed Turnstile token before a retry", async ({ page
   });
   await goto(page, "/apply");
   await page.getByRole("button", { name: /Continue to contact details/i }).click();
-  const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone"]') });
+  const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone_local"]') });
   await form.locator('input[name="name"]').fill("Test Participant");
-  await form.locator('input[name="phone"]').fill("+60123456789");
+  await form.getByLabel("Phone / WhatsApp").fill("12 345 6789");
   await form.locator('input[name="email"]').fill("test@example.com");
-  await form.getByRole("checkbox").check();
+  await form.getByRole("checkbox").first().check();
   await form.getByRole("button", { name: /Send my programme request/i }).click();
   await expect.poll(() => page.evaluate(() =>
     (window as typeof window & { __turnstileResetCount?: number }).__turnstileResetCount || 0,
@@ -456,7 +457,7 @@ test("mobile campaign pages preserve the value proposition before the form", asy
   }
 });
 
-test("campaign lead capture asks for one contact method and delivers the programme guide", async ({ page }) => {
+test("campaign lead capture collects guide delivery and contact details", async ({ page }) => {
   await mockTurnstile(page);
   await page.route("**/api/lead", async (route) => {
     const request = route.request().postDataJSON() as Record<string, unknown>;
@@ -465,7 +466,8 @@ test("campaign lead capture asks for one contact method and delivers the program
     expect(request.preferred_contact_window).toBe("flexible");
     expect(request.contact_preference).toBe("details_first");
     expect(request.email).toBe("campaign@example.com");
-    expect(request.phone).toBeUndefined();
+    expect(request.phone).toBe("+60123456789");
+    expect(request.marketing).toBe("no");
     await route.fulfill({
       status: 200,
       contentType: "application/json",
@@ -480,19 +482,21 @@ test("campaign lead capture asks for one contact method and delivers the program
   await expect(form.getByLabel("Preferred contact time")).toHaveCount(0);
   await expect(form.getByLabel("How would you like to continue?")).toHaveCount(0);
   await form.getByLabel("Full name").fill("Campaign Participant");
-  await form.getByRole("textbox", { name: "Email" }).fill("campaign@example.com");
-  await form.getByRole("checkbox").check();
+  await form.getByLabel("Phone / WhatsApp").fill("12 345 6789");
+  await form.getByLabel("Email").fill("campaign@example.com");
+  await form.getByRole("checkbox").first().check();
   await form.getByRole("button", { name: /Send my guide/i }).click();
   await expect(page.getByText("CAMPAIGN-LEAD")).toBeVisible();
   await expect(page.getByRole("link", { name: /Open the 2026 programme guide/i })).toHaveAttribute("href", "/resources/advancement-brief");
 });
 
 test("campaign routes have no automated accessibility violations", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
     for (const route of ["/lp/google", "/lp/meta", "/zh/lp/google", "/zh/lp/meta"]) {
       await goto(page, route);
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(300);
       const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
       expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
     }
@@ -510,13 +514,43 @@ test("home hero carousel presents video, photography and accessible controls", a
   await pauseButton.click();
   const actionTops: number[] = [];
   for (const slideNumber of [1, 2, 3]) {
-    await slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) }).click();
+    const selector = slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) });
+    await selector.click();
+    await expect(selector).toHaveAttribute("aria-current", "true");
+    await page.waitForTimeout(450);
     const actionBox = await slider.locator(".home-slide.is-active .home-slide-action").boundingBox();
     actionTops.push(actionBox?.y || 0);
   }
   expect(Math.max(...actionTops) - Math.min(...actionTops)).toBeLessThanOrEqual(1);
-  await slider.getByRole("button", { name: /Show slide 2:/ }).click();
+  const secondSlide = slider.getByRole("button", { name: /Show slide 2:/ });
+  await secondSlide.click();
+  await expect(secondSlide).toHaveAttribute("aria-current", "true");
   await expect(slider.locator(".home-slide.is-active").getByRole("heading")).toContainText("Bring the decision");
+});
+
+test("home hero aligns the slider, form and carousel actions on desktop", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const width of [1024, 1280, 1440, 1920]) {
+    await page.setViewportSize({ width, height: width >= 1440 ? 900 : 800 });
+    await goto(page, "/home");
+    const slider = page.locator(".home-slider");
+    const form = page.locator(".working-hero-form");
+    const sliderBox = await slider.boundingBox();
+    const formBox = await form.boundingBox();
+    expect(sliderBox, `${width}px slider`).not.toBeNull();
+    expect(formBox, `${width}px form`).not.toBeNull();
+    expect(Math.abs((sliderBox?.y || 0) + (sliderBox?.height || 0) - (formBox?.y || 0) - (formBox?.height || 0)), `${width}px bottom alignment`).toBeLessThanOrEqual(1);
+
+    await slider.getByRole("button", { name: "Pause slide rotation" }).click();
+    const controls = await slider.locator(".home-slider-controls").boundingBox();
+    for (const slideNumber of [1, 2, 3]) {
+      const selector = slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) });
+      await selector.click();
+      await expect(selector).toHaveAttribute("aria-current", "true");
+      const action = await slider.locator(".home-slide.is-active .home-slide-action").boundingBox();
+      expect((action?.y || 0) + (action?.height || 0), `${width}px slide ${slideNumber} action clearance`).toBeLessThanOrEqual((controls?.y || 0) - 2);
+    }
+  }
 });
 
 test("home hero selects the crop designed for each screen size", async ({ page }) => {

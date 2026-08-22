@@ -82,6 +82,7 @@ type LeadRow = {
   attribution_session_id: string | null;
   attribution_json: string | null;
   experiment_json: string | null;
+  marketing_opt_out: 0 | 1;
   source: string;
 };
 
@@ -237,6 +238,10 @@ function parseLead(value: unknown): LeadRow | null {
     ? null
     : body.lead_intent;
   const cohortKey = text(body.cohort_key, 64);
+  // Marketing consent is opt-in. Missing or legacy API values must never
+  // subscribe a lead implicitly.
+  const marketing = body.marketing === undefined ? "no" : body.marketing;
+  if (marketing !== "yes" && marketing !== "no") return null;
   const preferredContactWindow = body.preferred_contact_window === undefined ||
     body.preferred_contact_window === null || body.preferred_contact_window === ""
     ? null
@@ -328,6 +333,7 @@ function parseLead(value: unknown): LeadRow | null {
     attribution_session_id: attributionSessionId,
     attribution_json: attributionJson,
     experiment_json: experimentJson,
+    marketing_opt_out: marketing === "yes" ? 0 : 1,
     source,
   };
 }
@@ -406,15 +412,15 @@ export async function POST(req: Request) {
           page_path, page_language, landing_page, referrer, first_referrer, utm_source, utm_medium,
           utm_campaign, utm_term, utm_content, click_id_type, click_id,
           attribution_session_id, attribution_json, consent_version, consent_at,
-          form_version, experiment_json, source, dedupe_hash, dedupe_date
+          form_version, experiment_json, source, dedupe_hash, dedupe_date, marketing_opt_out, marketing_opt_out_at
         ) VALUES (
           ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-          UTC_TIMESTAMP(6), ?, ?, ?, ?, UTC_DATE()
+          UTC_TIMESTAMP(6), ?, ?, ?, ?, UTC_DATE(), ?, IF(? = 1, UTC_TIMESTAMP(6), NULL)
         )
         ON DUPLICATE KEY UPDATE
           id = LAST_INSERT_ID(id),
-          marketing_opt_out = 0,
-          marketing_opt_out_at = NULL,
+          marketing_opt_out = VALUES(marketing_opt_out),
+          marketing_opt_out_at = IF(VALUES(marketing_opt_out) = 1, COALESCE(marketing_opt_out_at, UTC_TIMESTAMP(6)), NULL),
           consent_version = VALUES(consent_version),
           consent_at = VALUES(consent_at),
           form_version = VALUES(form_version)`,
@@ -451,6 +457,8 @@ export async function POST(req: Request) {
           row.experiment_json,
           row.source,
           leadDedupeHash(row.email, row.phone),
+          row.marketing_opt_out,
+          row.marketing_opt_out,
         ],
         timeout: 5_000,
       });

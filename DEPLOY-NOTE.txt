@@ -1,9 +1,18 @@
-RELEASE ZIP v4 · 22 Aug 2026 · based on codex/hostinger-deployment @ b2c5032
-(local commits: guide attachment + wording, animation restore, marketing consent,
- interaction refinement + unsubscribe + nurture lane)
+RELEASE v5 · 22 Aug 2026 · based on codex/hostinger-deployment @ 9937524
 =========================================================================
 
-WHAT'S NEW IN v4 (this zip) — all verified: typecheck, oxlint, 17/17 tests, full build
+WHAT'S NEW IN v5: homepage hero and campaign-form refinement. The opening
+proposition now sits directly above the slider while its matching introduction
+sits above the lead form in one two-column section. The slider and form share a
+bottom edge on desktop; every slide action retains one stable position and clears
+the controls. The campaign form now captures an international phone/WhatsApp
+number, keeps programme contact consent separate from optional marketing
+consent, defaults marketing to opt-out, and normalises submitted phone numbers.
+English and Chinese helper copy explains why both email and phone are used.
+Automated tests cover desktop alignment, responsive flow, form submission,
+Turnstile handling and accessibility contrast.
+
+Everything below is ALREADY IN YOUR REPO (commit 9937524) — listed for reference — all verified: typecheck, oxlint, 17/17 tests, full build
 -------------------------------------------------------------------------
 A. Interaction refinement layer (both languages — shared CSS)
    src/app/globals.css: buttons get precise hover/active states (press-down on click,
