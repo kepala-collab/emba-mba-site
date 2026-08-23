@@ -257,12 +257,22 @@ function applyGoogleConsent(command: "default" | "update", consent: AnalyticsCon
 }
 
 function pageType(pathname: string) {
-  if (pathname === "/" || pathname === "/zh") return "home";
+  if (pathname === "/home" || pathname === "/zh") return "home";
   if (pathname.includes("/lp/")) return "landing_page";
   if (pathname === "/apply" || pathname === "/zh/apply") return "application";
   if (pathname.startsWith("/insights/") && pathname !== "/insights/") return "article";
   if (["/privacy", "/terms", "/zh/privacy", "/zh/terms"].includes(pathname)) return "legal";
   return "content";
+}
+
+export function analyticsPageName(pathname: string) {
+  if (pathname === "/home") return "home";
+  if (pathname === "/zh") return "home_zh";
+  return pathname
+    .replace(/^\//, "")
+    .replaceAll("/", "_")
+    .replaceAll("-", "_")
+    .toLowerCase();
 }
 
 function languageContext() {
@@ -334,6 +344,7 @@ export function trackEvent(event: string, properties: Record<string, unknown> = 
     schema_version: SCHEMA_VERSION,
     site_id: "future_ready_emba",
     page_path: window.location.pathname,
+    page_name: analyticsPageName(window.location.pathname),
     page_type: pageType(window.location.pathname),
     ...languageContext(),
     ...attributionContext(),

@@ -39,7 +39,7 @@ const courseJsonLd = {
 export default function IntakesPage() {
   return (
     <div className="wrap">
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Intakes", path: "/intakes" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Intakes", path: "/intakes" }]} />
       <JsonLd data={courseJsonLd} />
 
       {/* 1 — INTRO */}

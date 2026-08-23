@@ -17,7 +17,7 @@ export const metadata = withSeo("/asian-business-consulting", {
 
 const MILESTONES = [
   { n: "2020", s: "ABC registered in Malaysia" },
-  { n: "Jul 2024", s: "CMI (UK) Endorsed and Recognised status" },
+  { n: "Jul 2024", s: "Awarded and endorsed by CMI" },
   { n: "17", s: "cohorts delivered: 16 English and the first Mandarin cohort" },
   { n: "154", s: "graduates of the signature programme" },
 ];
@@ -25,9 +25,9 @@ const MILESTONES = [
 const LEADERS = [
   {
     n: "Dr. Xavier Johnson",
-    role: "Chief Consultant & Business Methodologist",
+    role: "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University",
     img: "/brand/faculty/xavier-johnson.png",
-    b: "Architect of the F.A.S.T. methodology and the twelve modules at the core of the programme. A Universiti Malaya alumnus, he works in organisation business architecture, business model innovation and design thinking, and also advises through the related entity Waterhouse Consult Think.",
+    b: "Architect of the F.A.S.T. methodology and the twelve modules at the core of the programme. A Universiti Malaya alumnus, he works in organisation business architecture, business model innovation and design thinking, and founded LIFE University.",
   },
   {
     n: "Ir. Dr. Jonas Anthony",
@@ -36,13 +36,13 @@ const LEADERS = [
     b: "Retired Executive Director of Corporate Management at Panasonic AVC Networks Kuala Lumpur and former Chairman of Panasonic Manufacturing HRD in Malaysia. Over 32 years in Lean, Industry 4.0, quality and supply chain; also a Chartered Engineer (UK), Chartered Quality Professional and Adjunct Professor at Taylor's University School of Engineering.",
   },
   {
-    n: "Allan Gan",
-    role: "Business Development Director",
-    img: "",
+    n: "Mr Allan Gan",
+    role: "Chief Programme Director, Asian Business Consulting · Co-Founder, LIFE Innoversity",
+    img: "/brand/faculty/allan-gan.webp",
     b: "Leads delivery and day-to-day operations of the programme — scheduling, logistics and corporate client relations — and coordinates with CMI (UK) and HRD Corp so the programme stays compliant for corporate training grants.",
   },
   {
-    n: "Rostam Affandi Ahmad",
+    n: "Roy Affandi",
     role: "Programme Coordinator",
     img: "/brand/community/affandi-portrait.png",
     b: "Runs intake cycles, onboarding and corporate engagement, and helps SMEs and larger organisations work through the HRD Corp grant process. B.Econs (Hons, Analytical) from Universiti Malaya, postgraduate study at the University of Melbourne, Executive MBA (CMI UK) and a member of CMI (UK).",
@@ -58,7 +58,7 @@ const abcSchema = {
   foundingDate: "2020",
   areaServed: "MY",
   description:
-    "A Malaysian management consulting, corporate training and executive learning firm. ABC designed and delivers the Future Ready Executive MBA, a CMI (UK) Recognised programme.",
+    "A Malaysian management consulting, corporate training and executive learning firm. ABC designed and delivers the Executive MBA on Future Ready Business Leadership. The programme is awarded and endorsed by CMI.",
   founder: { "@type": "Person", name: "Dr. Xavier Johnson" },
   member: LEADERS.map((leader) => ({ "@type": "Person", name: leader.n, jobTitle: leader.role })),
   sameAs: [ABC_URL],
@@ -67,7 +67,7 @@ const abcSchema = {
 export default function AsianBusinessConsultingPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Asian Business Consulting", path: "/asian-business-consulting" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Asian Business Consulting", path: "/asian-business-consulting" }]} />
       <JsonLd data={abcSchema} />
 
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
@@ -82,7 +82,7 @@ export default function AsianBusinessConsultingPage() {
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "64ch" }}>
-              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the three-month Future Ready Executive MBA over almost three years of development with CMI (UK), and delivers it today as a CMI (UK) Recognised centre.
+              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the three-month Executive MBA on Future Ready Business Leadership over almost three years of development with CMI and delivers it today as a CMI Recognised centre.
             </p>
           </Reveal>
           <Reveal delay={110}>
@@ -137,7 +137,7 @@ export default function AsianBusinessConsultingPage() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>
             <h2 className="sec-h">Seventeen cohorts. 154 graduates. One shared milestone.</h2>
-            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts.</p>
+            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts: 16 English cohorts and the first Mandarin cohort.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
@@ -161,7 +161,7 @@ export default function AsianBusinessConsultingPage() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Chartered Management Institute (UK)</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has held CMI (UK) Endorsed and Recognised status since July 2024, and ABC is listed as a Recognised international centre.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre.</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>Verify on CMI&rsquo;s register <span aria-hidden="true">↗</span></a>
             </div>
             <div>

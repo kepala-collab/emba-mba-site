@@ -40,7 +40,7 @@ export default function TermsPage() {
             This Site publishes the programme details supplied by ABC. The applicable written proposal and signed
             enrolment terms state the price, delivery format, completion requirements and certificate for each
             participant. If ABC changes a published intake date, registered participants receive the replacement date
-            in writing. The Executive MBA is a <strong>professional programme with CMI (UK) Endorsed and Recognised status</strong>; it is <strong>not a regulated qualification, an MQA-accredited
+            in writing. The Executive MBA on Future Ready Business Leadership is <strong>awarded and endorsed by CMI</strong>; it is a professional programme and <strong>not a regulated qualification, an MQA-accredited
             academic degree or any other academic degree</strong>.
           </p>
 
@@ -77,6 +77,16 @@ export default function TermsPage() {
             Submitting the enquiry form registers your interest and allows the programme team to contact you. It does
             not create a binding agreement. A binding enrolment begins only when the participant accepts ABC&rsquo;s written
             enrolment terms and completes the payment step stated in those terms.
+          </p>
+
+          <h2>Marketing communications</h2>
+          <p>
+            By subscribing, requesting the programme guide or submitting an enquiry, you consent to receive programme
+            updates and marketing communications about the Future Ready Executive MBA from the programme team, by email
+            and — where you provide a number — by WhatsApp or phone. You may withdraw this consent at any time via the
+            unsubscribe option in any marketing email or by contacting <a href="mailto:support@futurereadymba.com">support@futurereadymba.com</a>;
+            withdrawal does not affect responses to enquiries you have already made. Personal data is processed under
+            Malaysia&rsquo;s Personal Data Protection Act 2010 [Act 709], as amended.
           </p>
 
           <h2>Intellectual property</h2>

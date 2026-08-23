@@ -8,6 +8,8 @@ const files = [
   ...globSync("src/components/site/**/*.tsx"),
   "src/lib/content.ts",
   "src/lib/content-zh.ts",
+  "src/lib/lead-email.ts",
+  "src/lib/chat-knowledge.ts",
   "src/lib/root-metadata.ts",
   "src/lib/seo.ts",
 ];
@@ -40,6 +42,8 @@ const banned = [
   ["EMBA name expansion", /\bExecutive Master of Business Administration\b/i],
   ["Future Ready EMBA Chinese name expansion", /Future Ready.{0,40}工商管理硕士|工商管理硕士.{0,40}Future Ready/i],
   ["retired conversion CTA", /\b(?:Request the programme guide|Get Programme Guide|Request programme information|Discuss this cohort|Ask about programme fit|Request a 15-minute call)\b/i],
+  ["retired coordinator name", /\b(?:Rostam Affandi Ahmad|Rostam Affandi)\b/i],
+  ["retired generic WhatsApp CTA", /\b(?:Continue with a person on WhatsApp|Chat on WhatsApp|Chat with us on WhatsApp|Contact us on WhatsApp|Continue on WhatsApp)\b/i],
   ["ambiguous Chinese qualifier", /(?:可能|通常|多数|大约|最高\s*100%|全球认可|须视.+而定)/],
   ["Chinese pressure or prestige framing", /(?:立即报名|同等的公信力|看看你是否符合|准备好取得|无需承诺|无须承诺|颠覆性的答案)/],
 ];
@@ -70,14 +74,26 @@ const required = [
   'priceStd: FEES.standard.label',
   'scholarshipAmount: 5000',
   'participantAmount: 5000',
-  'priceIntl: "USD 2,500"',
   'trainingDays: "6"',
   'liveSessions: "3"',
   'moduleCount: "12"',
+  'director: "Roy Affandi"',
+  'whatsapp: "Contact Future Ready EMBA on WhatsApp"',
 ];
 
 for (const statement of required) {
   if (!canonical.includes(statement)) failures.push(`src/lib/content.ts [missing canonical fact] ${statement}`);
+}
+
+const identityChecks = [
+  ["src/app/(en)/asian-business-consulting/page.tsx", "Chief Programme Director, Asian Business Consulting · Co-Founder, LIFE Innoversity"],
+  ["src/app/(en)/asian-business-consulting/page.tsx", "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University"],
+  ["src/app/(zh)/zh/asian-business-consulting/page.tsx", "Asian Business Consulting 首席课程总监 · LIFE Innoversity 联合创办人"],
+  ["src/app/(zh)/zh/asian-business-consulting/page.tsx", "Asian Business Consulting 首席商业方法总监 · LIFE University 创办人"],
+];
+
+for (const [file, statement] of identityChecks) {
+  if (!readFileSync(file, "utf8").includes(statement)) failures.push(`${file} [missing approved identity wording] ${statement}`);
 }
 
 if (failures.length > 0) {

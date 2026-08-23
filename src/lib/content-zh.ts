@@ -68,10 +68,6 @@ export const CORE_PAGES_ZH = {
       ["课程费用包含什么", "无论支付标准费用或获得奖学金，课程均包括三个月内的三个现场课程、个人领导力诊断、导师辅导、学习工具及企业项目评审。Chartered Manager 是独立可选路线，具有独立资格、评估及费用，不包含在已公布课程费用内。"],
       ["HRD Corp", HRD_CORP_CLAIM_ZH],
       ["马来西亚申请者费用", "标准费用 RM10,000.00。符合资格的马来西亚申请者经评估及书面批准后，可获 RM5,000.00 LIFE Innoversity 奖学金，并实付 RM5,000.00。奖学金视名额及资格而定，并非自动获得。"],
-      ["个人学员：全球线上公开课程", "全球线上高管 MBA 公开课程不受参加者所在国家限制，费用为每人 USD 2,500。"],
-      ["个人学员：指定国家线上课程", "Right Dots Resources 是 Asian Business Consulting 的市场推广机构。特定国家或市场的线上课程费用与开课安排，请直接联系我们。"],
-      ["个人学员：本地现场课程", "Right Dots Resources 是 Asian Business Consulting 的市场推广机构。本地现场课程的费用、地点与开课安排，请直接联系我们。"],
-      ["企业客户：内部管理者发展课程（MDP）", "ABC 按企业的书面需求设计课程。正式建议书列明模块、交付方式、完成要求、证书、完整费用及付款条款。"],
       ["个人付款", "课程团队在付款前向个人学员提供书面分期表，列明每期金额及到期日。"],
       ["退款安排", REFUND_TERMS_ZH],
     ],
@@ -103,8 +99,11 @@ export const CORE_PAGES_ZH = {
 
 export const FAQS_ZH = [
   ["课程如何安排？", "课程为期三个月，包括六个培训日、三个周末课程、辅导与企业项目。达到课程要求后，学员取得获 CMI 认可的 Executive MBA 课程证书。Chartered Manager 是具有独立资格、评估及费用的可选 CMI 路线，不包含在本课程或已公布费用内。"],
+  ["全职工作期间可以完成课程吗？", "可以。马来西亚公开课程分三个月进行，共六个指定培训日。参与者在职期间完成课程，并以当前业务问题为基础完成应用项目。报名前请查看所有已公布的上课日期。"],
+  ["这是高管教育课程还是学术 MBA 学位？", "这是面向未来商业领导力、由 CMI 颁授并背书的 Executive MBA。课程为期三个月，属于专业发展及高管教育课程，并非 MQA 认证的学术学位或受监管资格。"],
+  ["成功完成课程后会获得什么？", "成功完成课程的参与者将获得 Future Ready Executive MBA 课程的 CMI 认可证书。最终证书格式及措辞由 CMI 决定。Chartered Manager 属于独立的 CMI 路线，不会因完成本课程而自动授予。"],
   ["完成课程后会自动成为 Chartered Manager 吗？", "不会。完成课程后可取得 CMI Certificate of Recognition；根据 CMI 公布的 CMI Recognised 方案，学员可取得 Foundation Chartered Manager 身份。完整 Chartered Manager（CMgr）属于独立专业评估；申请路线、资格、评估、会员与费用均由 CMI 决定。"],
-  ["我可以通过哪一条 Chartered Manager 路线申请？", "CMI 目前公布 Full Assessment、CMI Fast Track 及 Apprenticeship 三条路线。Full Assessment 的公开条件包括相关管理、商业或领导学位加三年管理经验，或没有相关资格但具至少五年管理经验。Fast Track 要求申请人在五年内完成 CMI 指定资格，并具至少三年管理经验。本课程属于 CMI Recognised programme，并非 CMI qualification；每位学员适用的路线必须由 CMI 确认。"],
+  ["Chartered Manager 是否包含在课程内？", "不包含。Chartered Manager 是独立可选的 CMI 路线；资格、评估、会员及费用均由 CMI 决定。课程团队不会判断申请资格或承诺结果。"],
   ["这是 MQA 认证的学位吗？", "不是。这是由英国 CMI 认可的专业发展课程，并非 MQA 认证的学术学位。"],
   ["公司可以使用 HRD Corp levy 吗？", HRD_CORP_CLAIM_ZH],
   ["如果无法出席某次课程怎么办？", "请在课程开始前联系课程团队。ABC 将以书面方式确认指定视频或指定后续班次的补课安排。"],

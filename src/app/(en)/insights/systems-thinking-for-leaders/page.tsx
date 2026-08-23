@@ -44,7 +44,7 @@ const jsonLd = {
 export default function SystemsThinkingForLeaders() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Insights", path: "/insights" }, { name: "Systems Thinking", path: "/insights/systems-thinking-for-leaders" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Insights", path: "/insights" }, { name: "Systems Thinking", path: "/insights/systems-thinking-for-leaders" }]} />
       <JsonLd data={jsonLd} />
 
       <section className="section">

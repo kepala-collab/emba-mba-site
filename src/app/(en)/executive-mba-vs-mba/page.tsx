@@ -47,10 +47,16 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Compare the routes by credential, assessment, format, time and published price. The{" "}
               <Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link> is a
-              professional programme with CMI (UK) Endorsed and Recognised status; it is not an MQA-accredited academic
+              professional programme awarded and endorsed by CMI; it is not an MQA-accredited academic
               degree or a regulated qualification. Choose an academic MBA when your objective requires
               an academic degree. Choose this programme when your objective is applied management
               development while continuing to work.
+            </p>
+          </Reveal>
+          <Reveal className="mt-s">
+            <p className="fine">
+              Comparing shorter professional programmes as well? Read{" "}
+              <Link href="/insights/executive-education-vs-executive-mba" className="acc">executive education vs Executive MBA</Link>.
             </p>
           </Reveal>
         </div>

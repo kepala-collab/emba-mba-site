@@ -23,6 +23,7 @@ import {
   type LeadIntent,
 } from "@/lib/lead-conversion";
 import { processLeadIntegrationOutbox } from "@/lib/lead-integration";
+import { verifyTurnstile } from "@/lib/turnstile-server";
 
 export const runtime = "nodejs";
 
@@ -30,9 +31,6 @@ const MAX_BODY_BYTES = 16 * 1024;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const TURNSTILE_ACTION = "lead-submit";
-const TURNSTILE_VERIFY_URL =
-  process.env.TURNSTILE_VERIFY_URL ||
-  "https://turnstile-siteverify-future-ready-mba.bisol-future-ready-mba.workers.dev/siteverify";
 
 const publicSiteUrl = (() => {
   try {
@@ -43,7 +41,6 @@ const publicSiteUrl = (() => {
 })();
 
 const baseHostname = publicSiteUrl.hostname.replace(/^www\./, "");
-const ALLOWED_HOSTNAMES = new Set([baseHostname, `www.${baseHostname}`]);
 const ALLOWED_ORIGINS = new Set([
   `${publicSiteUrl.protocol}//${baseHostname}`,
   `${publicSiteUrl.protocol}//www.${baseHostname}`,
@@ -85,18 +82,11 @@ type LeadRow = {
   attribution_session_id: string | null;
   attribution_json: string | null;
   experiment_json: string | null;
+  marketing_opt_out: 0 | 1;
   source: string;
 };
 
 type LeadReferenceRow = RowDataPacket & { lead_uuid: string };
-
-type TurnstileResult = {
-  success?: boolean;
-  hostname?: string;
-  action?: string;
-  "error-codes"?: string[];
-  _worker?: { worker_version?: string };
-};
 
 class BodyTooLargeError extends Error {}
 
@@ -248,6 +238,10 @@ function parseLead(value: unknown): LeadRow | null {
     ? null
     : body.lead_intent;
   const cohortKey = text(body.cohort_key, 64);
+  // Marketing consent is opt-in. Missing or legacy API values must never
+  // subscribe a lead implicitly.
+  const marketing = body.marketing === undefined ? "no" : body.marketing;
+  if (marketing !== "yes" && marketing !== "no") return null;
   const preferredContactWindow = body.preferred_contact_window === undefined ||
     body.preferred_contact_window === null || body.preferred_contact_window === ""
     ? null
@@ -339,60 +333,9 @@ function parseLead(value: unknown): LeadRow | null {
     attribution_session_id: attributionSessionId,
     attribution_json: attributionJson,
     experiment_json: experimentJson,
+    marketing_opt_out: marketing === "yes" ? 0 : 1,
     source,
   };
-}
-
-async function verifyTurnstile(
-  token: string,
-  ip: string,
-): Promise<"valid" | "invalid" | "unavailable"> {
-  try {
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        token,
-        remoteip: ip === "unknown" ? undefined : ip,
-        idempotency_key: crypto.randomUUID(),
-      }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(7_000),
-    });
-    if (!response.ok) {
-      console.warn("Lead Turnstile verification endpoint rejected the request", {
-        status: response.status,
-      });
-      return "unavailable";
-    }
-    const result = (await response.json()) as TurnstileResult;
-    const localHostname =
-      process.env.NODE_ENV !== "production" &&
-      (result.hostname === "localhost" || result.hostname === "127.0.0.1");
-    const validHostname =
-      (typeof result.hostname === "string" && ALLOWED_HOSTNAMES.has(result.hostname)) ||
-      localHostname;
-
-    const valid = result.success === true &&
-      result.action === TURNSTILE_ACTION &&
-      validHostname &&
-      typeof result._worker?.worker_version === "string";
-    if (!valid) {
-      console.warn("Lead Turnstile verification failed", {
-        success: result.success === true,
-        action: result.action || "missing",
-        hostname: result.hostname || "missing",
-        workerVersionPresent: typeof result._worker?.worker_version === "string",
-        errorCodes: result["error-codes"] || [],
-      });
-    }
-    return valid ? "valid" : "invalid";
-  } catch (error) {
-    console.warn("Lead Turnstile verification was unavailable", {
-      reason: error instanceof Error ? error.name : "unknown",
-    });
-    return "unavailable";
-  }
 }
 
 export async function POST(req: Request) {
@@ -424,11 +367,20 @@ export async function POST(req: Request) {
     const turnstileToken = text(input.turnstile_token, 2048, true);
     if (!row || !turnstileToken) return json({ error: "Invalid submission", code: "invalid_submission" }, 400);
 
-    const turnstile = await verifyTurnstile(turnstileToken, ip);
-    if (turnstile === "unavailable") {
+    const turnstile = await verifyTurnstile({
+      token: turnstileToken,
+      remoteIp: ip,
+      expectedAction: TURNSTILE_ACTION,
+    });
+    if (turnstile.status === "unavailable") {
+      console.warn("Lead Turnstile verification unavailable", { reason: turnstile.reason });
       return json({ error: "Security verification unavailable", code: "security_unavailable" }, 503);
     }
-    if (turnstile !== "valid") {
+    if (turnstile.status !== "valid") {
+      console.warn("Lead Turnstile verification rejected", {
+        reason: turnstile.reason,
+        errorCodes: turnstile.errorCodes || [],
+      });
       return json({ error: "Security verification failed", code: "security_failed" }, 400);
     }
 
@@ -460,12 +412,18 @@ export async function POST(req: Request) {
           page_path, page_language, landing_page, referrer, first_referrer, utm_source, utm_medium,
           utm_campaign, utm_term, utm_content, click_id_type, click_id,
           attribution_session_id, attribution_json, consent_version, consent_at,
-          form_version, experiment_json, source, dedupe_hash, dedupe_date
+          form_version, experiment_json, source, dedupe_hash, dedupe_date, marketing_opt_out, marketing_opt_out_at
         ) VALUES (
           ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-          UTC_TIMESTAMP(6), ?, ?, ?, ?, UTC_DATE()
+          UTC_TIMESTAMP(6), ?, ?, ?, ?, UTC_DATE(), ?, IF(? = 1, UTC_TIMESTAMP(6), NULL)
         )
-        ON DUPLICATE KEY UPDATE id = LAST_INSERT_ID(id)`,
+        ON DUPLICATE KEY UPDATE
+          id = LAST_INSERT_ID(id),
+          marketing_opt_out = VALUES(marketing_opt_out),
+          marketing_opt_out_at = IF(VALUES(marketing_opt_out) = 1, COALESCE(marketing_opt_out_at, UTC_TIMESTAMP(6)), NULL),
+          consent_version = VALUES(consent_version),
+          consent_at = VALUES(consent_at),
+          form_version = VALUES(form_version)`,
         values: [
           row.lead_uuid,
           row.submission_id,
@@ -499,6 +457,8 @@ export async function POST(req: Request) {
           row.experiment_json,
           row.source,
           leadDedupeHash(row.email, row.phone),
+          row.marketing_opt_out,
+          row.marketing_opt_out,
         ],
         timeout: 5_000,
       });

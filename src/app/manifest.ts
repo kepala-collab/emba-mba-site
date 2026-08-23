@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     id: "/",
     name: "Future Ready Executive MBA",
     short_name: "Future Ready EMBA",
-    description: "A three-month professional management programme for experienced working adults, with CMI (UK) Endorsed and Recognised status.",
+    description: "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. A three-month professional programme for experienced working adults.",
     start_url: "/",
     scope: "/",
     display: "standalone",

@@ -18,14 +18,14 @@ export const metadata = withSeo("/zh/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC 于马来西亚注册" },
   { n: "2024年7月", s: "CMI（英国）背书及认可状态" },
-  { n: "17", s: "个已开办班次：16 个英语班与首个中文班" },
+  { n: "17", s: "个已开办班次：16 个英语班与首个华语班" },
   { n: "154", s: "位课程毕业生" },
 ];
 
 const LEADERS = [
   {
     n: "Dr. Xavier Johnson",
-    role: "首席顾问及商业方法总监",
+    role: "Asian Business Consulting 首席商业方法总监 · LIFE University 创办人",
     img: "/brand/faculty/xavier-johnson.png",
     b: "F.A.S.T. 方法与课程十二个核心模块的设计者。马来亚大学校友，专注于组织商业架构、商业模式创新与设计思维，并透过关联机构 Waterhouse Consult Think 提供顾问服务。",
   },
@@ -36,13 +36,13 @@ const LEADERS = [
     b: "退休前任 Panasonic AVC Networks 吉隆坡企业管理执行董事，曾任马来西亚 Panasonic 制造人力资源发展主席。逾 32 年精益、工业 4.0、品质与供应链经验；亦为英国特许工程师、特许品质专业人士及泰莱大学工程学院客座教授。",
   },
   {
-    n: "Allan Gan",
-    role: "业务发展总监",
-    img: "",
+    n: "Mr Allan Gan",
+    role: "Asian Business Consulting 首席课程总监 · LIFE Innoversity 联合创办人",
+    img: "/brand/faculty/allan-gan.webp",
     b: "负责课程的交付与日常运营——排期、后勤与企业客户关系，并与 CMI（UK）及 HRD Corp 协调，确保课程符合企业培训津贴要求。",
   },
   {
-    n: "Rostam Affandi Ahmad",
+    n: "Roy Affandi",
     role: "课程运营经理及协调员",
     img: "/brand/community/affandi-portrait.png",
     b: "负责班次招生、入学安排与企业联系，并协助中小企业及大型机构处理 HRD Corp 津贴流程。马来亚大学分析经济学（荣誉）学士，墨尔本大学研究生，持高管 MBA（CMI UK），并为 CMI（UK）会员。",
@@ -135,7 +135,7 @@ export default function AbcPageZh() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届毕业典礼 · 2026年8月</span></div>
             <h2 className="sec-h">17 个班次，154 位毕业生，共享一个重要里程碑。</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群。</p>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群：16 个英语班与首个华语班。</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
@@ -159,7 +159,7 @@ export default function AbcPageZh() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>英国特许管理协会（CMI）</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是外部品质机构。本课程自 2024 年 7 月起具 CMI（英国）背书及认可状态，ABC 亦列为其认可的国际中心。</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是外部品质机构。本课程自 2024 年 7 月起由 CMI 颁授并背书，ABC 亦列为其认可的国际中心。</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>在 CMI 名录中查证 <span aria-hidden="true">↗</span></a>
             </div>
             <div>

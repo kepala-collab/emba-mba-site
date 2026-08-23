@@ -70,7 +70,7 @@ export default function MbaForEntrepreneursPage() {
             the participant is building.
           </p>
           <p className="mono sec-k mt-s">
-            Three months · three monthly programme weekends · recognised by CMI (UK)
+            Three months · three monthly programme weekends · awarded and endorsed by CMI
           </p>
           <p className="sec-sub mt-s">
             See the full{" "}

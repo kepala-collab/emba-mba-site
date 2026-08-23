@@ -1,6 +1,6 @@
 # Future Ready Executive MBA — Lead-Gen Site
 
-Marketing and lead-generation website for the **Future Ready Executive MBA**, a professional programme recognised by CMI (UK) against CMI Professional Standards.
+Marketing and lead-generation website for the **Executive MBA on Future Ready Business Leadership, awarded and endorsed by CMI**.
 
 Operated by **Right Dots Resources (RDR)** — an authorised marketing & enrolment partner — promoting the
 programme **delivered by Asian Business Consulting (ABC)**. Visitors apply through the site; leads are captured

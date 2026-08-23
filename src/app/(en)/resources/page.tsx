@@ -65,7 +65,7 @@ export default function ResourcesPage() {
                 <li>What is taught, applied and assessed—and by whom?</li>
                 <li>What exactly is awarded on programme completion?</li>
                 <li>Which later professional designation requires a separate assessment?</li>
-                <li>What scholarship criteria, availability and written approval apply to me?</li>
+                <li>How is scholarship eligibility assessed, and when is an award confirmed in writing?</li>
                 <li>Who decides employer-funding eligibility and the approved amount?</li>
                 <li>Can I see the dates, terms and material claims before paying?</li>
               </ul>

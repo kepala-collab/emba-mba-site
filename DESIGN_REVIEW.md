@@ -212,7 +212,7 @@ Small mono labels use these colours extensively. Keyboard focus is present but c
 **Evidence:**
 
 - Hero/proof copy says `Approved, Awarded & Endorsed by CMI, UK`, while legal and schema language says the programme is approved and endorsed and that successful participants are awarded a certificate.
-- The English Apply-page WhatsApp message begins `Hi Allan`, while the entire site names Rostam Affandi Ahmad as Programme Coordinator.
+- The English Apply-page WhatsApp message previously addressed another person; the current site consistently names Roy Affandi as Programme Coordinator.
 - The header logo alt text says `Right Dot Resources`; the legal business name is `Right Dots Resources`.
 
 **Impact:** These are small strings with outsized legal and trust consequences. The CMI wording can imply that the programme itself is “awarded,” and the incorrect contact name looks operationally careless.

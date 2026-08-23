@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
@@ -5,9 +6,9 @@ import { CTA_LABELS, THINKING_EDGE, FLOW, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/how-it-works", {
-  title: "F.A.S.T. Executive Leadership Method",
+  title: "Applied Leadership Development & F.A.S.T. Method",
   description:
-    "How the F.A.S.T. method turns a complex business issue into a clear, defensible decision — using seven reusable thinking disciplines, not case studies that go out of date.",
+    "How applied leadership development, coaching and the F.A.S.T. method build strategic decision-making through a live workplace business project.",
 });
 
 // Truthful, generic amplifications of each discipline — no fabricated claims.
@@ -39,22 +40,37 @@ export default function HowItWorks() {
     <>
       {/* INTRO — the philosophy */}
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
-        <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">A decision under pressure</span></div></Reveal>
-          <Reveal>
-            <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Revenue is slowing. Costs are rising. Which problem do you solve first?
-            </h1>
-          </Reveal>
-          <Reveal>
-            <p className="sec-sub">
-              The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money.
-            </p>
-          </Reveal>
-          <Reveal className="mt-s">
-            <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
-              The programme gives that work a repeatable structure. You use it on a live issue inside your own business, then make the reasoning visible enough for others to review and act on.
-            </p>
+        <div className="wrap editorial-intro-grid">
+          <div>
+            <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">A decision under pressure</span></div></Reveal>
+            <Reveal>
+              <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
+                Revenue is slowing. Costs are rising. Which problem do you solve first?
+              </h1>
+            </Reveal>
+            <Reveal>
+              <p className="sec-sub">
+                The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money.
+              </p>
+            </Reveal>
+            <Reveal className="mt-s">
+              <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
+                The programme gives that work a repeatable structure. You use it on a live issue inside your own business, then make the reasoning visible enough for others to review and act on.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={80}>
+            <figure className="editorial-visual editorial-visual-landscape">
+              <Image
+                src="/images/future-ready-emba/future-ready-emba-live-business-challenge-malaysia-16x9.webp"
+                alt="Malaysian business leaders reviewing evidence around a live management decision"
+                width={2560}
+                height={1440}
+                sizes="(max-width: 900px) 100vw, 44vw"
+                priority
+              />
+              <figcaption>Start with the live decision—not an abstract case study.</figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>
@@ -108,7 +124,7 @@ export default function HowItWorks() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What this means for you</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Capabilities you can apply to live decisions.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Leadership capabilities you can apply at work.</h2></Reveal>
           <Reveal><p className="sec-sub">The method develops decision capabilities; business outcomes depend on the participant&rsquo;s evidence, choices and execution.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }} className="edge-grid">
@@ -129,7 +145,7 @@ export default function HowItWorks() {
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How it&rsquo;s delivered</span></div></Reveal>
           <Reveal><h2 className="sec-h">Learned by doing, in {FACTS.durationLong}.</h2></Reveal>
-          <Reveal><p className="sec-sub">The programme uses workshops, coaching and an applied business project instead of a traditional thesis or examination.</p></Reveal>
+          <Reveal><p className="sec-sub">The programme uses cohort-based workshops, coaching and an applied business project to connect professional learning with immediate workplace application. It does not use a traditional thesis or examination.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="edge-grid">
               {DELIVERY.map((d, i) => (
@@ -143,7 +159,7 @@ export default function HowItWorks() {
           </Reveal>
           <Reveal className="mt-s">
             <div className="fine center" style={{ marginTop: 24 }}>
-              A professional programme recognised by CMI (UK) — built for applied leadership development. Explore{" "}
+              A professional programme awarded and endorsed by CMI — built for applied leadership development. Explore{" "}
               <Link href="/curriculum" className="acc" style={{ textDecoration: "underline" }}>the twelve modules</Link> or{" "}
               <Link href="/apply" className="acc" style={{ textDecoration: "underline" }}>{CTA_LABELS.guide}</Link>.
             </div>

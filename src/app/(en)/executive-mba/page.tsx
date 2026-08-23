@@ -15,6 +15,7 @@ import {
   INCLUSIONS,
   MODULES,
   PROGRAMME_AUDIENCE,
+  PROGRAMME_POSITIONING_SENTENCE,
   SITE,
   STAGES,
   THINKING_EDGE,
@@ -24,7 +25,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Three-Month Executive MBA Programme Malaysia",
   description:
-    "A three-month CMI (UK)-recognised Executive MBA for working leaders. Employer funding may be available to eligible HRD Corp-registered employers.",
+    `${PROGRAMME_POSITIONING_SENTENCE} Includes coaching and a live business project over three months.`,
 });
 
 const courseSchema = {
@@ -51,7 +52,7 @@ const AUDIENCE = [
 export default function ExecutiveMbaPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Executive MBA", path: "/executive-mba" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "Executive MBA", path: "/executive-mba" }]} />
       <JsonLd data={courseSchema} />
 
       <section className="section programme-overview-hero geo-section">
@@ -76,7 +77,7 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={150}>
               <p className="programme-overview-note">
-                This professional development programme has CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification.
+                {PROGRAMME_POSITIONING_SENTENCE} It is not an MQA-accredited academic degree or a regulated qualification.
               </p>
             </Reveal>
           </div>
@@ -85,7 +86,7 @@ export default function ExecutiveMbaPage() {
             <aside className="programme-summary-card" aria-label="Programme summary">
               <div className="programme-summary-brand">
                 <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute compact logo" width={96} height={66} />
-                <span>CMI (UK) Endorsed and Recognised</span>
+                <span>Awarded and endorsed by CMI</span>
               </div>
               <dl>
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
@@ -108,10 +109,22 @@ export default function ExecutiveMbaPage() {
               <p>Complete the programme in three monthly sessions while continuing to work. There are no traditional examinations or thesis.</p>
             </div>
           </Reveal>
+          <Reveal delay={40}>
+            <figure className="editorial-visual programme-editorial-banner">
+              <Image
+                src="/images/future-ready-emba/future-ready-emba-facilitated-executive-learning-malaysia-16x9.webp"
+                alt="A facilitated executive learning discussion with Malaysian managers"
+                width={2560}
+                height={1440}
+                sizes="(max-width: 900px) 100vw, 1120px"
+              />
+              <figcaption>Facilitated learning connects each framework to the decisions participants already carry.</figcaption>
+            </figure>
+          </Reveal>
           <div className="programme-stage-grid">
             <Reveal>
               <article className="programme-stage-card">
-                <span className="programme-stage-number">01</span>
+                <span className="programme-stage-number" aria-hidden="true">01</span>
                 <p className="mono sec-k">Three months</p>
                 <h3>Executive MBA programme and certificate</h3>
                 <p>Attend six training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
@@ -120,7 +133,7 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={60}>
               <article className="programme-stage-card programme-stage-card-dark">
-                <span className="programme-stage-number">02</span>
+                <span className="programme-stage-number" aria-hidden="true">02</span>
                 <p className="mono">Optional next step</p>
                 <h3>Chartered Manager route</h3>
                 <p>Chartered Manager is a separate CMI route. CMI decides eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.</p>
@@ -174,8 +187,8 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">What you learn to do</p>
-              <h2 className="sec-h">Use seven disciplines as one practical decision process.</h2>
-              <p>Each discipline gives you a different way to examine a business issue. Together they help you move from a vague problem to a reasoned action plan.</p>
+              <h2 className="sec-h">Build leadership capability through one practical decision process.</h2>
+              <p>This applied leadership development programme combines seven disciplines for strategic thinking, decision-making and workplace application. Together they help you move from a vague problem to a reasoned action plan.</p>
               <Link href="/how-it-works" className="btn btn-ghost">See how the F.A.S.T. method works</Link>
             </div>
           </Reveal>
@@ -241,8 +254,8 @@ export default function ExecutiveMbaPage() {
                 <li><strong>{STAGES[1].h}:</strong> {STAGES[1].d}</li>
                 <li><strong>{STAGES[2].h}:</strong> {STAGES[2].d}</li>
               </ol>
-              <p className="fine">Fellow and Chartered Fellow are later CMI membership routes based on experience and CMI assessment. Programme completion alone does not confer those grades.</p>
-              <Link href="/chartered-manager-malaysia" className="btn btn-ghost">Chartered Manager routes in Malaysia <span aria-hidden="true">→</span></Link>
+              <p className="fine">Any Chartered Manager application is a separate optional CMI route. CMI alone controls eligibility, assessment, membership and fees.</p>
+              <Link href="/chartered-manager-malaysia" className="btn btn-ghost">Understand the CMI recognition <span aria-hidden="true">→</span></Link>
             </div>
           </Reveal>
         </div>

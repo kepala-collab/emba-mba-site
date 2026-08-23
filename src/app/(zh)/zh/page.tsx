@@ -11,7 +11,7 @@ export const metadata = withSeo("/zh", {
     "三个月完成 Future Ready Executive MBA 专业发展课程，并可继续工作。Chartered Manager 属于独立可选 CMI 路线。",
   alternates: {
     canonical: "/zh",
-    languages: { en: "/", "zh-Hans": "/zh", "x-default": "/" },
+    languages: { en: "/home", "zh-Hans": "/zh", "x-default": "/home" },
   },
   openGraph: {
     type: "website",
@@ -51,7 +51,7 @@ export default function ZhHome() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready 高管 MBA · 为在职管理者设计</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>三个月完成具 CMI（英国）背书及认可状态的 Executive MBA <em>专业发展课程。</em></h1>
+              <h1>三个月完成面向未来商业领导力、<em>由 CMI 颁授并背书的 Executive MBA。</em></h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="working-hero-lede">

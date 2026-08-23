@@ -7,9 +7,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/executive-mba-malaysia", {
-  title: "Executive MBA in Malaysia (CMI UK, HRD Corp)",
+  title: "Executive MBA Malaysia for Working Leaders",
   description:
-    "A three-month professional management programme in Malaysia with a CMI-recognised programme certificate, scholarship and employer-led HRD Corp funding.",
+    "Three-month executive education in Malaysia for working leaders, with applied management learning, CMI recognition and an employer-led HRD Corp funding route.",
 });
 
 const REASONS = [
@@ -37,7 +37,7 @@ const courseJsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Future Ready Executive MBA recognised by CMI (UK), delivered in Malaysia and online. Employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered in Malaysia and online; employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -80,9 +80,9 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              The Future Ready Executive MBA — recognised by the Chartered Management
-              Institute (CMI), UK — is delivered for Malaysian owners, directors and senior
-              managers through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
+              The Future Ready Executive MBA is a three-month executive education and professional
+              development programme for Malaysian owners, directors and senior managers. It is
+              awarded and endorsed by CMI and delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
               The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
               <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</b> after assessment and written approval.
               Participants apply the programme frameworks to their own organisation, market and operating context.
@@ -90,9 +90,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              You keep working while completing three monthly weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. Prefer to join from elsewhere?
-              The same programme runs{" "}
-              <Link href="/online-executive-mba">fully online</Link>.
+              You keep working while completing three monthly weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across three monthly sessions while participants continue working.
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -130,7 +128,8 @@ export default function ExecutiveMbaMalaysiaPage() {
             {HRD_CORP_CLAIM.responsibility} See{" "}
             <Link href="/hrd-corp-claimable">employer-led HRD Corp funding</Link>. Full programme
             detail on the <Link href="/executive-mba">Executive MBA</Link> page, or review the{" "}
-            <Link href="/chartered-manager-malaysia">Chartered Manager route in Malaysia</Link>.
+            <Link href="/chartered-manager-malaysia">Chartered Manager route in Malaysia</Link>. If you are comparing programme categories, read{" "}
+            <Link href="/insights/executive-education-vs-executive-mba">executive education vs Executive MBA</Link>.
           </p>
         </div>
       </section>
@@ -192,7 +191,7 @@ export default function ExecutiveMbaMalaysiaPage() {
             <Link href="/intakes" className="btn btn-primary">See all 2026 intakes</Link>
           </p>
           <p className="fine center mt-s">
-            This is a professional programme recognised by CMI (UK); it is not an
+            This professional programme is awarded and endorsed by CMI; it is not an
             MQA-regulated academic degree. Eligible Malaysian employers may apply for HRD Corp
             funding before training; HRD Corp decides approval and the approved amount. You can <Link href="/apply">arrange a programme conversation</Link> before deciding.
           </p>

@@ -24,7 +24,7 @@ const faqJsonLd = {
 export default function FaqPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "FAQ", path: "/faq" }]} />
       <JsonLd data={faqJsonLd} />
 
       <section className="section faq geo-section" style={{ paddingTop: "clamp(96px, 14vh, 160px)" }}>

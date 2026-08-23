@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import { captureAttribution, trackEvent } from "@/lib/analytics";
+import { analyticsPageName, captureAttribution, trackEvent } from "@/lib/analytics";
 
 let lastPageKey = "";
 
@@ -44,7 +44,12 @@ export default function AnalyticsBridge() {
     if (lastPageKey === key) return;
     lastPageKey = key;
     trackEvent("page_view", {
-      page_title: document.title,
+      page_name: analyticsPageName(pathname),
+      page_title: pathname === "/home"
+        ? "Home | Future Ready Executive MBA"
+        : pathname === "/zh"
+          ? "Home | Future Ready Executive MBA 中文"
+          : document.title,
       page_location: `${window.location.origin}${pathname}`,
       page_query_has_campaign: [...searchParams.keys()].some((keyName) =>
         keyName.toLowerCase().startsWith("utm_") || keyName.toLowerCase().endsWith("clid"),

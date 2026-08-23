@@ -3,23 +3,23 @@ import { SITE } from "@/lib/content";
 import { LOCALE_PAIRS } from "@/lib/locale-routes";
 
 const REVIEW_DATES = {
-  programme: new Date("2026-08-15T00:00:00+08:00"),
-  commercial: new Date("2026-08-15T00:00:00+08:00"),
-  insights: new Date("2026-08-15T00:00:00+08:00"),
+  programme: new Date("2026-08-21T00:00:00+08:00"),
+  commercial: new Date("2026-08-21T00:00:00+08:00"),
+  insights: new Date("2026-08-21T00:00:00+08:00"),
   legal: new Date("2026-08-14T00:00:00+08:00"),
 } as const;
 
-const PRIMARY = ["", "/executive-mba", "/apply", "/zh"];
-const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq", "/corporate-training"];
+const PRIMARY = ["/home", "/executive-mba", "/apply", "/zh"];
+const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq"];
 const CLUSTER = [
-  "/hrd-corp-claimable", "/online-executive-mba", "/executive-mba-vs-mba",
-  "/ai-executive-mba", "/mba-for-working-professionals", "/programmes/shift-hr",
+  "/hrd-corp-claimable", "/executive-mba-vs-mba",
+  "/ai-executive-mba", "/mba-for-working-professionals",
   "/executive-mba-malaysia", "/chartered-manager-malaysia", "/mba-for-sme-owners", "/mba-for-entrepreneurs",
 ];
 const INSIGHTS = [
   "/insights", "/insights/first-principles-thinking",
   "/insights/systems-thinking-for-leaders", "/insights/design-thinking-for-business",
-  "/insights/advancement-question",
+  "/insights/advancement-question", "/insights/executive-education-vs-executive-mba",
 ];
 const ZH_CORE = [
   "/zh/executive-mba", "/zh/how-it-works", "/zh/curriculum", "/zh/fees", "/zh/intakes",

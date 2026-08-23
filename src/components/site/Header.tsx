@@ -1,31 +1,43 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, type MouseEvent as ReactMouseEvent } from "react";
-import { CTA_LABELS, NAV } from "@/lib/content";
+import { useEffect, useRef, type MouseEvent as ReactMouseEvent, type SyntheticEvent } from "react";
+import { CTA_LABELS, NAV, type NavItem } from "@/lib/content";
 import { isCampaignRoute, pairedRoute } from "@/lib/locale-routes";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import RdrMark from "./RdrMark";
 
-const NAV_ZH = [
+const NAV_ZH: NavItem[] = [
   { href: "/zh/executive-mba", label: "课程", children: [
     { href: "/zh/executive-mba", label: "课程详情" },
     { href: "/zh/how-it-works", label: "课程方法" },
     { href: "/zh/curriculum", label: "课程大纲" },
   ] },
-  { href: "/zh/chartered-manager-malaysia", label: "CMI 认可" },
-  { href: "/zh/fees", label: "学费" },
-  { href: "/zh/intakes", label: "开课日期" },
+  { href: "/zh/chartered-manager-malaysia", label: "认可与团队", children: [
+    { href: "/zh/chartered-manager-malaysia", label: "CMI 认可" },
+    { href: "/zh/faculty", label: "师资与导师" },
+    { href: "/zh/asian-business-consulting", label: "Asian Business Consulting" },
+    { href: "/zh/contact", label: "联系 Future Ready 高管 MBA" },
+  ] },
+  { href: "/zh/fees", label: "学费与日期", children: [
+    { href: "/zh/fees", label: "学费与奖学金" },
+    { href: "/zh/intakes", label: "2026 开课日期" },
+  ] },
+  { href: "/zh/resources", label: "指南与帮助", children: [
+    { href: "/zh/resources", label: "课程资料" },
+    { href: "/zh/faq", label: "常见问题" },
+    { href: "/zh/diagnostic", label: "课程适合度检查" },
+  ] },
 ];
 
 export default function Header() {
   const pathname = usePathname() || "/";
   const zh = pathname === "/zh" || pathname.startsWith("/zh/") || pathname.startsWith("/zh#");
-  const homeHref = zh ? "/zh" : "/";
+  const homeHref = zh ? "/zh" : "/home";
   const applyHref = zh ? "/zh/apply" : "/apply";
   const links = zh ? NAV_ZH : NAV;
   const pair = pairedRoute(pathname);
-  const languageHref = zh ? (pair?.en || "/") : (pair?.zh || "/zh");
+  const languageHref = zh ? (pair?.en || "/home") : (pair?.zh || "/zh");
   const {
     navigationOpen: menuOpen,
     setNavigationOpen: setMenuOpen,
@@ -33,11 +45,33 @@ export default function Header() {
   } = useFloatingUi();
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const desktopNavRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setMenuOpen(false);
     document.querySelectorAll<HTMLDetailsElement>(".nav-dropdown[open]").forEach((item) => { item.open = false; });
   }, [pathname]);
+
+  useEffect(() => {
+    const closeDropdowns = () => {
+      desktopNavRef.current?.querySelectorAll<HTMLDetailsElement>(".nav-dropdown[open]").forEach((item) => { item.open = false; });
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (!desktopNavRef.current?.contains(event.target as Node)) closeDropdowns();
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      const activeSummary = desktopNavRef.current?.querySelector<HTMLElement>(".nav-dropdown[open] summary");
+      closeDropdowns();
+      activeSummary?.focus();
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -53,7 +87,7 @@ export default function Header() {
     inertTargets.forEach((target) => { target.inert = true; });
     panelRef.current?.querySelector<HTMLElement>("button,a")?.focus();
 
-    const closeForDesktop = window.matchMedia("(min-width: 1024px)");
+    const closeForDesktop = window.matchMedia("(min-width: 1121px)");
     const onDesktop = (event: MediaQueryListEvent) => {
       if (event.matches) setMenuOpen(false);
     };
@@ -90,6 +124,19 @@ export default function Header() {
 
   const closeMenu = () => setMenuOpen(false);
   const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+  const isGroupActive = (item: NavItem) => {
+    const programmeAudienceRoute = item.href === "/executive-mba" && (
+      pathname.startsWith("/mba-for-") || pathname === "/ai-executive-mba"
+    );
+    return programmeAudienceRoute || isActive(item.href) || Boolean(item.children?.some((child) => isActive(child.href)));
+  };
+  const handleDropdownToggle = (event: SyntheticEvent<HTMLDetailsElement>) => {
+    const current = event.currentTarget;
+    if (!current.open) return;
+    desktopNavRef.current?.querySelectorAll<HTMLDetailsElement>(".nav-dropdown[open]").forEach((item) => {
+      if (item !== current) item.open = false;
+    });
+  };
   const handleApplyClick = (event: ReactMouseEvent<HTMLAnchorElement>) => {
     closeMenu();
 
@@ -116,7 +163,7 @@ export default function Header() {
     return (
       <header className="navbar campaign-navbar">
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Future Ready Executive MBA, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA home">
             <RdrMark size={38} />
             <span className="brand-title">
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
@@ -139,16 +186,19 @@ export default function Header() {
     <>
       <header className={`navbar${menuOpen ? " menu-open" : ""}`}>
         <div className="wrap in">
-          <Link className="brand-link" href={homeHref} aria-label="Future Ready Executive MBA, home">
+          <Link className="brand-link" href={homeHref} aria-label="Future Ready EMBA home">
             <RdrMark size={38} />
             <span className="brand-title">
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
             </span>
           </Link>
-          <nav className="navlinks desktop-nav" aria-label={zh ? "主导航" : "Primary navigation"}>
+          <nav ref={desktopNavRef} className="navlinks desktop-nav" aria-label={zh ? "主导航" : "Primary navigation"}>
+            <Link href={homeHref} className={pathname === homeHref ? "is-active" : undefined} aria-current={pathname === homeHref ? "page" : undefined}>
+              {zh ? "首页" : "Home"}
+            </Link>
             {links.map((n) => n.children ? (
-              <details className="nav-dropdown" key={n.href}>
-                <summary className={isActive(n.href) ? "is-active" : undefined}>{n.label}<span aria-hidden="true">⌄</span></summary>
+              <details className="nav-dropdown" key={n.href} onToggle={handleDropdownToggle}>
+                <summary className={isGroupActive(n) ? "is-active" : undefined}>{n.label}<span aria-hidden="true">⌄</span></summary>
                 <div className="nav-dropdown-panel">
                   {n.children.map((child) => <Link key={child.href} href={child.href} className={isActive(child.href) ? "is-active" : undefined} aria-current={pathname === child.href ? "page" : undefined}>{child.label}</Link>)}
                 </div>
@@ -159,7 +209,7 @@ export default function Header() {
             <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
               {zh ? "EN" : "中文"}
             </Link>
-            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? CTA_LABELS.zh.guide : CTA_LABELS.guide}</Link>
+            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? "获取指南" : "Get the guide"}</Link>
           </nav>
           <div className="mobile-header-actions">
             <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "获取指南" : "Get guide"}</Link>
@@ -202,6 +252,11 @@ export default function Header() {
               </button>
             </div>
             <nav aria-label={zh ? "移动主导航" : "Mobile primary navigation"}>
+              <Link className="mobile-nav-home" href={homeHref} onClick={closeMenu} aria-current={pathname === homeHref ? "page" : undefined}>
+                <span className="mobile-nav-index">00</span>
+                <span>{zh ? "首页" : "Home"}</span>
+                <span aria-hidden="true">↗</span>
+              </Link>
               {links.map((n, index) => (
                 <div className="mobile-nav-group" key={n.href}>
                   <Link href={n.href} onClick={closeMenu} aria-current={pathname === n.href ? "page" : undefined}>

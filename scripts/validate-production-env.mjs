@@ -14,7 +14,8 @@ for (const line of raw.split(/\r?\n/)) {
 const required = [
   "NEXT_PUBLIC_SITE_URL",
   "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
-  "TURNSTILE_VERIFY_URL",
+  "TURNSTILE_SECRET",
+  "TURNSTILE_HOSTNAMES",
   "DB_HOST",
   "DB_PORT",
   "DB_NAME",
@@ -28,6 +29,8 @@ const required = [
   "EMAIL_FROM_NAME",
   "EMAIL_REPLY_TO",
   "EMAIL_CRON_SECRET",
+  "UNSUBSCRIBE_TOKEN_SECRET",
+  "NURTURE_CRON_SECRET",
   "GROQ_API_KEY",
 ];
 
@@ -39,7 +42,14 @@ for (const key of required) {
   else if (!schemaOnly && placeholders.test(value)) failures.push(`${key}: placeholder value`);
 }
 
-for (const key of schemaOnly ? [] : ["LEAD_HASH_SECRET", "EMAIL_CRON_SECRET"]) {
+const coreSecretKeys = [
+  "LEAD_HASH_SECRET",
+  "EMAIL_CRON_SECRET",
+  "UNSUBSCRIBE_TOKEN_SECRET",
+  "NURTURE_CRON_SECRET",
+];
+
+for (const key of schemaOnly ? [] : coreSecretKeys) {
   const value = values.get(key) || "";
   if (Buffer.byteLength(value, "utf8") < 32) failures.push(`${key}: must contain at least 32 bytes`);
 }
@@ -70,8 +80,7 @@ if (conversionConfigured && !schemaOnly) {
     failures.push("CONVERSION_WEBHOOK_URL: invalid URL");
   }
   const secretValues = [
-    "LEAD_HASH_SECRET",
-    "EMAIL_CRON_SECRET",
+    ...coreSecretKeys,
     "CONVERSION_WEBHOOK_SECRET",
     "CONVERSION_CRON_SECRET",
     "LEAD_LIFECYCLE_SECRET",
@@ -86,8 +95,28 @@ if (experimentsEnabled && !["true", "false"].includes(experimentsEnabled)) {
   failures.push("NEXT_PUBLIC_EXPERIMENTS_ENABLED: must be true or false");
 }
 
-if (!schemaOnly && values.get("LEAD_HASH_SECRET") && values.get("LEAD_HASH_SECRET") === values.get("EMAIL_CRON_SECRET")) {
-  failures.push("LEAD_HASH_SECRET and EMAIL_CRON_SECRET must be different");
+if (!schemaOnly) {
+  const coreSecretValues = coreSecretKeys.map((key) => values.get(key)).filter(Boolean);
+  if (new Set(coreSecretValues).size !== coreSecretValues.length) {
+    failures.push("Every hashing, email, unsubscribe and nurture secret must be different");
+  }
+}
+
+if (!schemaOnly) {
+  const turnstileHostnames = (values.get("TURNSTILE_HOSTNAMES") || "")
+    .split(",")
+    .map((hostname) => hostname.trim().toLowerCase())
+    .filter(Boolean);
+  const requiredTurnstileHostnames = ["futurereadymba.com", "www.futurereadymba.com"];
+  if (new Set(turnstileHostnames).size !== turnstileHostnames.length) {
+    failures.push("TURNSTILE_HOSTNAMES: duplicate hostname");
+  }
+  if (turnstileHostnames.some((hostname) => !/^(?:[a-z0-9-]+\.)+[a-z]{2,}$/.test(hostname))) {
+    failures.push("TURNSTILE_HOSTNAMES: invalid production hostname");
+  }
+  if (requiredTurnstileHostnames.some((hostname) => !turnstileHostnames.includes(hostname))) {
+    failures.push("TURNSTILE_HOSTNAMES: must include futurereadymba.com and www.futurereadymba.com");
+  }
 }
 
 if (failures.length) {

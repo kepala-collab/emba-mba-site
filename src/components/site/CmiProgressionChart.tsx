@@ -1,4 +1,5 @@
 import { CMI_PATHWAY } from "@/lib/content";
+import TechnicalText from "@/components/site/TechnicalText";
 
 type Props = { lang?: "en" | "zh" };
 
@@ -21,7 +22,7 @@ const LEVELS_ZH = [
 ] as const;
 
 const PROGRAMME_EN = [
-  ["01", "CMI (UK) Endorsed & Recognised", "A three-month professional development programme with CMI (UK) Endorsed and Recognised status. It is non-academic."],
+  ["01", "Awarded and endorsed by CMI", "Executive MBA on Future Ready Business Leadership. A three-month, non-academic professional development programme."],
   ["02", "Certificate and fCMgr", "Successful completion leads to the CMI Certificate of Recognition and Foundation Chartered Manager status under CMI's published Recognised offer."],
   ["03", "Optional next step: Chartered Manager", "A separate CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee."],
   ["04", "Independent CMI decision", "CMgr MCMI is awarded only after CMI confirms eligibility and the applicant passes the applicable assessment."],
@@ -65,7 +66,7 @@ export default function CmiProgressionChart({ lang = "en" }: Props) {
               {levels.map(([level, role, description]) => (
                 <li key={level}>
                   <div className="cmi-level-badge"><span>Level</span><strong>{level}</strong></div>
-                  <div><h3>{role}</h3><p>{description}</p></div>
+                  <div><h3><TechnicalText>{role}</TechnicalText></h3><p>{description}</p></div>
                 </li>
               ))}
             </ol>
@@ -80,7 +81,7 @@ export default function CmiProgressionChart({ lang = "en" }: Props) {
               {programme.map(([number, title, description]) => (
                 <li key={number}>
                   <span className="mono">{number}</span>
-                  <div><h3>{title}</h3><p>{description}</p></div>
+                  <div><h3><TechnicalText>{title}</TechnicalText></h3><p>{description}</p></div>
                 </li>
               ))}
             </ol>

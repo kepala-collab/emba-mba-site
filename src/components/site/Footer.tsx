@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CTA_LABELS, FACTS, SITE, OPERATOR } from "@/lib/content";
+import { CTA_LABELS, FACTS, SITE, OPERATOR, PROGRAMME_POSITIONING_SENTENCE, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
 import PrivacyChoicesButton from "@/components/site/PrivacyChoicesButton";
 import { isCampaignRoute } from "@/lib/locale-routes";
 
@@ -36,8 +36,8 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}. {zh ? "商业注册号" : "Business Registration No."} {OPERATOR.reg}.</p>
               <p><strong>{zh ? "课程声明：" : "Programme notice:"}</strong> {zh
-                ? `Future Ready 高管 MBA 是由 ${SITE.provider} 提供、具 CMI（英国）背书及认可状态的三个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。CMI 决定会员等级、后缀称号、Chartered 评估、会员资格及费用。`
-                : `The Future Ready Executive MBA is a three-month professional development programme delivered by ${SITE.provider}, with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification. CMI controls membership grades, post-nominals, Chartered assessment, membership and fees.`}</p>
+                ? `${PROGRAMME_POSITIONING_ZH} 这是由 ${SITE.provider} 提供的三个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。CMI 决定会员等级、后缀称号、Chartered 评估、会员资格及费用。`
+                : `${PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development programme delivered by ${SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls membership grades, post-nominals, Chartered assessment, membership and fees.`}</p>
               <p><strong>{zh ? "资料保护：" : "Data protection:"}</strong> {zh
                 ? `个人资料由 ${OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。`
                 : `Personal data is processed by ${OPERATOR.name} in accordance with Malaysia’s Personal Data Protection Act 2010 [Act 709], as amended.`}</p>
@@ -59,7 +59,7 @@ export default function Footer() {
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               <Link href="/zh/apply">预约课程沟通</Link>
-              <Link href="/">English site →</Link>
+              <Link href="/home">English site →</Link>
               <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting 与 Right Dots Resources 合作" width={1000} height={1000} className="foot-seal" />
             </div>
             <div>
@@ -85,7 +85,7 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}。商业注册号：{OPERATOR.reg}。注册地址：{OPERATOR.address}。</p>
               <p><strong>合作伙伴声明：</strong>{OPERATOR.name} 是 {SITE.provider} 的市场推广机构，负责课程咨询、报价及报名协调。</p>
-              <p><strong>课程声明：</strong>Future Ready 高管 MBA 是由 {SITE.provider} 提供、具 CMI（英国）背书及认可状态的三个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。符合资格的马来西亚申请者可申请 {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金；奖学金视名额、评估及书面批准而定，并非自动获得。HRD Corp 决定雇主资助资格及批准金额。</p>
+              <p><strong>课程声明：</strong>{PROGRAMME_POSITIONING_ZH} 这是由 {SITE.provider} 提供的三个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。符合资格的马来西亚申请者可申请 {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金；奖学金视名额、评估及书面批准而定，并非自动获得。HRD Corp 决定雇主资助资格及批准金额。</p>
               <p><strong>资料保护：</strong>个人资料由 {OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。详情请参阅隐私政策。</p>
             </div>
           </section>
@@ -109,9 +109,9 @@ export default function Footer() {
           </div>
           <div>
             <h2>For your company</h2>
-            <Link href="/corporate-training">Company programmes</Link>
+            <Link href="/executive-mba">Sponsor a participant</Link>
             <Link href="/hrd-corp-claimable">Employer-led HRD Corp funding</Link>
-            <Link href="/programmes/shift-hr">SHIFT! HR workshop</Link>
+            <Link href="/intakes">English and Mandarin intakes</Link>
             <Link href="/apply?intent=employer_evaluating">{CTA_LABELS.company}</Link>
           </div>
           <div>
@@ -119,6 +119,7 @@ export default function Footer() {
             <Link href="/resources">Decision resources</Link>
             <Link href="/diagnostic">Programme fit check</Link>
             <Link href="/insights">Insights</Link>
+            <Link href="/insights/executive-education-vs-executive-mba">Executive education vs Executive MBA</Link>
             <Link href="/faq">Frequently asked questions</Link>
           </div>
           <div>
@@ -142,7 +143,7 @@ export default function Footer() {
           <div className="legal-copy">
             <p>© {year} {OPERATOR.name}. Business Registration No. {OPERATOR.reg}. Registered business address: {OPERATOR.address}.</p>
             <p><strong>Partner notice:</strong> {OPERATOR.name} is the {OPERATOR.role}, handling programme enquiries, pricing and enrolment coordination.</p>
-            <p><strong>Programme notice:</strong> The Future Ready Executive MBA is a three-month professional development programme delivered by {SITE.provider}, with CMI (UK) Endorsed and Recognised status. It is not an MQA-accredited academic degree or a regulated qualification. CMI controls Foundation Chartered Manager activation, membership grades, post-nominals, Chartered assessment, membership and fees. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval; it is not automatic. HRD Corp decides employer funding eligibility and the approved amount.</p>
+            <p><strong>Programme notice:</strong> {PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development programme delivered by {SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls Foundation Chartered Manager activation, membership grades, post-nominals, Chartered assessment, membership and fees. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval; it is not automatic. HRD Corp decides employer funding eligibility and the approved amount.</p>
             <p><strong>Data protection:</strong> Personal data is processed by {OPERATOR.name} in accordance with Malaysia&rsquo;s Personal Data Protection Act 2010 [Act 709], as amended. See the Privacy Policy for details.</p>
           </div>
         </section>

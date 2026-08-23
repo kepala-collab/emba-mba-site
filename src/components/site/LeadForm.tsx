@@ -15,6 +15,38 @@ type Status = "idle" | "sending" | "ok" | "error" | "verify";
 type ErrorType = "validation" | "rate_limit" | "service" | "network" | null;
 type LeadFormVariant = "standard" | "campaign";
 
+const PHONE_COUNTRY_CODES = [
+  { code: "+60", label: "🇲🇾 +60" },
+  { code: "+65", label: "🇸🇬 +65" },
+  { code: "+62", label: "🇮🇩 +62" },
+  { code: "+66", label: "🇹🇭 +66" },
+  { code: "+63", label: "🇵🇭 +63" },
+  { code: "+84", label: "🇻🇳 +84" },
+  { code: "+673", label: "🇧🇳 +673" },
+  { code: "+86", label: "🇨🇳 +86" },
+  { code: "+852", label: "🇭🇰 +852" },
+  { code: "+886", label: "🇹🇼 +886" },
+  { code: "+91", label: "🇮🇳 +91" },
+  { code: "+61", label: "🇦🇺 +61" },
+  { code: "+44", label: "🇬🇧 +44" },
+  { code: "+1", label: "🇺🇸 +1" },
+  { code: "+971", label: "🇦🇪 +971" },
+];
+
+const EMAIL_DOMAINS = ["gmail.com", "outlook.com", "yahoo.com", "hotmail.com", "icloud.com", "qq.com", "163.com"];
+
+function emailSuggestions(draft: string): string[] {
+  const value = draft.trim();
+  if (!value || value.length < 2) return [];
+  const atIndex = value.indexOf("@");
+  const local = atIndex === -1 ? value : value.slice(0, atIndex);
+  const typedDomain = atIndex === -1 ? "" : value.slice(atIndex + 1).toLowerCase();
+  if (!local) return [];
+  return EMAIL_DOMAINS.filter((domain) => domain.startsWith(typedDomain) && domain !== typedDomain).map(
+    (domain) => `${local}@${domain}`,
+  );
+}
+
 const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEM-BhpyOxghbYJZ";
 
@@ -43,7 +75,7 @@ const T = {
     campaignContinue: "Continue for the programme guide →",
     campaignKicker: "Free working manager guide",
     campaignTitle: `Send me the ${PROGRAMME_YEAR} programme guide.`,
-    campaignIntro: "Includes the three-month CMI-recognised programme, published dates, programme fee and scholarship criteria.",
+    campaignIntro: "Includes the three-month CMI-recognised programme, published dates, programme fee and how scholarship assessment works.",
     stepTwoKicker: "Your contact details",
     stepTwoTitle: "Where should the programme team respond?",
     back: "← Back",
@@ -54,7 +86,7 @@ const T = {
     conversation: "How would you like to continue?",
     conversationOptions: [
       ["programme_call", "A short call about programme fit"],
-      ["whatsapp", "A WhatsApp conversation"],
+      ["whatsapp", "A WhatsApp conversation with the programme team"],
       ["online_meeting", "An online information meeting"],
       ["in_person_meeting", "An in-person meeting at an agreed location"],
       ["details_first", "Send details first — no call yet"],
@@ -68,19 +100,20 @@ const T = {
       ["weekend", "Weekend"],
     ] as const,
     helper: "We use email to confirm the request and follow the contact method you select.",
-    campaignHelper: "Use one contact method. You can review the guide before deciding whether to speak with the programme team.",
-    consent: "I agree to be contacted about this programme and understand my data is handled under Malaysia’s PDPA 2010, as amended.",
+    campaignHelper: "Email delivers your guide. Phone or WhatsApp lets the programme team respond if you ask to continue.",
+    consent: "I agree to be contacted about this programme, and understand my data is handled under Malaysia’s PDPA 2010, as amended.",
+    consentMarketing: "Send me programme updates and marketing communications. I can unsubscribe at any time.",
     submit: "Send my programme request →", sending: "Sending securely…",
     campaignSubmit: "Send my guide →",
     errors: {
       validation: "Check the highlighted information and consent, then submit again. Your entries have been kept.",
       rate_limit: "This network has reached the submission limit. Wait ten minutes, then submit the same request again.",
-      service: "The request service is temporarily unavailable. Your entries have been kept; submit again or continue on WhatsApp.",
+      service: "The request service is temporarily unavailable. Your entries have been kept; submit again or contact Future Ready EMBA on WhatsApp.",
       network: "The connection was interrupted. Your entries have been kept; check your connection and submit again.",
     },
     verify: "Complete the security check before submitting. Your entries have been kept.",
-    verifyErr: "The security check could not load. Refresh the page or continue securely on WhatsApp.",
-    verifyFallback: "Continue on WhatsApp →",
+    verifyErr: "The security check could not load. Refresh the page or contact Future Ready EMBA on WhatsApp.",
+    verifyFallback: "Contact Future Ready EMBA on WhatsApp →",
     security: "Security verification",
     fine: "Programme enquiry · No payment required · Privacy notice applies",
     campaignFine: "Free guide · No payment · No enrolment commitment",
@@ -90,7 +123,7 @@ const T = {
     campaignOkP: "Your guide is ready below. Review it first; a programme conversation is optional and this request is not an admission, scholarship or payment commitment.",
     okRef: "Conversation reference",
     okPlan: `Open the ${PROGRAMME_YEAR} programme guide →`,
-    okWa: "Continue on WhatsApp →",
+    okWa: "Contact Future Ready EMBA on WhatsApp →",
     waMsg: (name: string, cohort: string) => `Hi, I'm ${name || "interested"}. I requested a conversation about the Future Ready Executive MBA${cohort ? ` for ${cohort}` : ""}.`,
   },
   zh: {
@@ -116,8 +149,8 @@ const T = {
     continue: "继续填写联系方式 →",
     campaignContinue: "继续获取课程指南 →",
     campaignKicker: "免费在职经理指南",
-    campaignTitle: `发送 ${PROGRAMME_YEAR} 课程指南给我。`,
-    campaignIntro: "内容包括三个月 Future Ready Executive MBA、已公布日期、课程费用及奖学金条件。Chartered Manager 属于独立可选路线。",
+    campaignTitle: `发送 ${PROGRAMME_YEAR} 课⁠程⁠指⁠南给我。`,
+    campaignIntro: "内容包括三个月 Future Ready Executive MBA、已公布日期、课程费用及奖学金评估方式。Chartered Manager 属于独立可选路线。",
     stepTwoKicker: "沟通方式",
     stepTwoTitle: "课程团队应如何回复您？",
     back: "← 返回",
@@ -128,7 +161,7 @@ const T = {
     conversation: "您希望如何进一步了解？",
     conversationOptions: [
       ["programme_call", "简短通话，了解课程是否适合"],
-      ["whatsapp", "通过 WhatsApp 沟通"],
+      ["whatsapp", "通过 WhatsApp 与课程团队沟通"],
       ["online_meeting", "线上课程说明会"],
       ["in_person_meeting", "在双方同意的地点面谈"],
       ["details_first", "先发送资料，暂不通话"],
@@ -142,19 +175,20 @@ const T = {
       ["weekend", "周末"],
     ] as const,
     helper: "我们会通过电邮确认请求，并按您选择的方式联系。",
-    campaignHelper: "只需提供一种联系方式。您可先查看指南，再决定是否与课程团队沟通。",
-    consent: "我同意就本课程接受联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）及其修订处理。",
+    campaignHelper: "电邮用于发送指南；如您希望继续沟通，课程团队可通过电话或 WhatsApp 回复。",
+    consent: "我同意课程团队就本课程与我联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）及其修订处理。",
+    consentMarketing: "我愿意接收课程资讯与营销通讯，可随时退订。",
     submit: "发送课程咨询 →", sending: "正在安全提交…",
     campaignSubmit: "发送课程指南给我 →",
     errors: {
       validation: "请检查资料及同意选项后再次提交。您填写的内容已保留。",
       rate_limit: "此网络已达到提交上限。请等待十分钟后再次提交同一请求。",
-      service: "请求服务暂时无法使用。您填写的内容已保留；请再次提交或通过 WhatsApp 联系。",
+      service: "请求服务暂时无法使用。您填写的内容已保留；请再次提交或通过 WhatsApp 联系 Future Ready 高管 MBA。",
       network: "网络连接中断。您填写的内容已保留；请检查网络后再次提交。",
     },
     verify: "提交前请完成安全验证。您填写的内容已保留。",
-    verifyErr: "安全验证无法加载。请刷新页面，或通过 WhatsApp 安全联系我们。",
-    verifyFallback: "通过 WhatsApp 联系我们 →",
+    verifyErr: "安全验证无法加载。请刷新页面，或通过 WhatsApp 联系 Future Ready 高管 MBA。",
+    verifyFallback: "通过 WhatsApp 联系 Future Ready 高管 MBA →",
     security: "安全验证",
     fine: "课程咨询 · 无需付款 · 适用隐私声明",
     campaignFine: "免费指南 · 无需付款 · 不代表报名承诺",
@@ -164,7 +198,7 @@ const T = {
     campaignOkP: "您的课程指南已可在下方打开。您可先查看资料；是否进一步沟通由您决定。这项请求不等于录取、奖学金批准或付款承诺。",
     okRef: "沟通编号",
     okPlan: `查看 ${PROGRAMME_YEAR} 课程指南 →`,
-    okWa: "继续使用 WhatsApp →",
+    okWa: "通过 WhatsApp 联系 Future Ready 高管 MBA →",
     waMsg: (name: string, cohort: string) => `您好，我是 ${name || "意向学员"}。我已提交 Future Ready 高管 MBA 沟通请求${cohort ? `，首选 ${cohort}` : ""}。`,
   },
 } as const;
@@ -220,6 +254,7 @@ export default function LeadForm({
   const [leadReference, setLeadReference] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileLoadError, setTurnstileLoadError] = useState(false);
+  const [emailDraft, setEmailDraft] = useState("");
   const [turnstileScriptReady, setTurnstileScriptReady] = useState(false);
   const turnstileContainer = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
@@ -386,6 +421,14 @@ export default function LeadForm({
     const formData = new FormData(form);
     formData.delete("cf-turnstile-response");
     const data = Object.fromEntries(formData.entries());
+    data.marketing = data.consent_marketing === "yes" ? "yes" : "no";
+    delete data.consent_marketing;
+    if (data.phone_local !== undefined) {
+      const localNumber = String(data.phone_local || "").replace(/\D/g, "").replace(/^0+/, "");
+      if (localNumber) data.phone = `${String(data.phone_cc || "+60")}${localNumber}`;
+      delete data.phone_local;
+      delete data.phone_cc;
+    }
     if (data.website) {
       setFirstName(String(data.name || "").split(" ")[0]);
       setStatus("ok");
@@ -603,22 +646,74 @@ export default function LeadForm({
           <input ref={firstContactField} id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" autoCapitalize="words" enterKeyHint="next" required />
         </div>
         {campaign ? (
-          <div className="fld">
-            <label htmlFor={id("email")}>{t.email}</label>
-            <input id={id("email")} name="email" type="email" inputMode="email" placeholder={t.emailPh} autoComplete="email" enterKeyHint="done" required />
-            <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : "Your private decision guide will be sent automatically to this email address after submission."}</p>
-          </div>
+          <>
+            <div className="fld">
+              <label htmlFor={id("phone-local")}>{t.phone}</label>
+              <div className="phone-split">
+                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : "Country code"}>
+                  {PHONE_COUNTRY_CODES.map((entry) => (
+                    <option key={entry.code} value={entry.code}>{entry.label}</option>
+                  ))}
+                </select>
+                <input id={id("phone-local")} name="phone_local" type="tel" inputMode="tel" placeholder="12 345 6789" autoComplete="tel-national" enterKeyHint="next" required />
+              </div>
+            </div>
+            <div className="fld">
+              <label htmlFor={id("email")}>{t.email}</label>
+              <input
+                id={id("email")}
+                name="email"
+                type="email"
+                inputMode="email"
+                placeholder={t.emailPh}
+                autoComplete="email"
+                enterKeyHint="done"
+                required
+                list={id("email-domains")}
+                value={emailDraft}
+                onChange={(event) => setEmailDraft(event.target.value)}
+              />
+              <datalist id={id("email-domains")}>
+                {emailSuggestions(emailDraft).map((suggestion) => (
+                  <option key={suggestion} value={suggestion} />
+                ))}
+              </datalist>
+              <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : "Your private decision guide will be sent automatically to this email address after submission."}</p>
+            </div>
+          </>
         ) : (
           <>
-            <div className="two">
-              <div className="fld">
-                <label htmlFor={id("phone")}>{t.phone}</label>
-                <input id={id("phone")} name="phone" type="tel" inputMode="tel" placeholder="+60" autoComplete="tel" enterKeyHint="next" required />
+            <div className="fld">
+              <label htmlFor={id("phone-local")}>{t.phone}</label>
+              <div className="phone-split">
+                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : "Country code"}>
+                  {PHONE_COUNTRY_CODES.map((entry) => (
+                    <option key={entry.code} value={entry.code}>{entry.label}</option>
+                  ))}
+                </select>
+                <input id={id("phone-local")} name="phone_local" type="tel" inputMode="tel" placeholder="12 345 6789" autoComplete="tel-national" enterKeyHint="next" required />
               </div>
-              <div className="fld">
-                <label htmlFor={id("email")}>{t.email}</label>
-                <input id={id("email")} name="email" type="email" inputMode="email" placeholder={t.emailPh} autoComplete="email" enterKeyHint="next" required />
-              </div>
+            </div>
+            <div className="fld">
+              <label htmlFor={id("email")}>{t.email}</label>
+              <input
+                id={id("email")}
+                name="email"
+                type="email"
+                inputMode="email"
+                placeholder={t.emailPh}
+                autoComplete="email"
+                enterKeyHint="next"
+                required
+                list={id("email-domains")}
+                value={emailDraft}
+                onChange={(event) => setEmailDraft(event.target.value)}
+              />
+              <datalist id={id("email-domains")}>
+                {emailSuggestions(emailDraft).map((suggestion) => (
+                  <option key={suggestion} value={suggestion} />
+                ))}
+              </datalist>
             </div>
             <div className="two">
               <div className="fld">
@@ -644,10 +739,16 @@ export default function LeadForm({
           </div>
         )}
         <p className="form-helper">{campaign ? t.campaignHelper : t.helper}</p>
-        <label className="check">
-          <input type="checkbox" name="consent" value="yes" required />
-          <span>{t.consent}</span>
-        </label>
+        <div className="consent-group" role="group" aria-label={lang === "zh" ? "同意条款" : "Consent"}>
+          <label className="check">
+            <input type="checkbox" name="consent" value="yes" required />
+            <span>{t.consent}</span>
+          </label>
+          <label className="check">
+            <input type="checkbox" name="consent_marketing" value="yes" />
+            <span>{t.consentMarketing}</span>
+          </label>
+        </div>
         <div className="turnstile-wrap" role="group" aria-label={t.security}><div ref={turnstileContainer} data-action="turnstile-spin-v1" /></div>
         {turnstileLoadError && (
           <div className="turnstile-fallback" role="alert">

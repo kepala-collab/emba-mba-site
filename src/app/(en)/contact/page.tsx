@@ -4,13 +4,13 @@ import { CTA_LABELS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/contact", {
-  title: "Contact",
+  title: "Contact Future Ready EMBA",
   description:
-    "Contact the Future Ready Executive MBA programme team by WhatsApp, phone or email, or arrange an online or in-person programme meeting.",
+    "Contact the Future Ready Executive MBA programme team by WhatsApp, phone or email, or arrange an online or in-person information meeting.",
 });
 
 const waText = encodeURIComponent(
-  "Hi, I'd like to speak with someone about the Future Ready Executive MBA (CMI UK)."
+  "Hello Future Ready EMBA team, I'd like to discuss the Future Ready Executive MBA (CMI UK)."
 );
 
 export default function ContactPage() {
@@ -22,7 +22,7 @@ export default function ContactPage() {
           <div>
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Contact</span></div>
-              <h1 className="sec-h" style={{ maxWidth: "16ch" }}>Talk to the programme team.</h1>
+              <h1 className="sec-h" style={{ maxWidth: "18ch" }}>Contact Future Ready EMBA.</h1>
               <p className="sec-sub">
                 Questions about fit, intakes, HRD Corp or the scholarship? Reach the {SITE.provider} team directly, or
                 arrange a call, an online information meeting or an in-person meeting at an agreed location. You can also ask for details first.
@@ -42,7 +42,7 @@ export default function ContactPage() {
                   <p style={{ margin: "2px 0" }}><a href={`mailto:${SITE.email}`} style={{ color: "var(--ink-2)" }}>{SITE.email}</a></p>
                 </div>
                 <a className="btn btn-wa" href={`https://wa.me/${SITE.whatsapp}?text=${waText}`} target="_blank" rel="noopener" style={{ alignSelf: "flex-start" }} data-track-event="contact_click" data-track-id="contact_page_whatsapp" data-track-location="contact_page" data-contact-method="whatsapp" data-contact-language="en">
-                  Chat on WhatsApp →
+                  Contact Future Ready EMBA on WhatsApp →
                 </a>
               </div>
             </Reveal>

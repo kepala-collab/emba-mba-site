@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
@@ -8,9 +9,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-working-professionals", {
-  title: "Executive MBA for Working Professionals",
+  title: "Part-Time Executive MBA for Working Professionals",
   description:
-    "A three-month Executive MBA for working professionals: one weekend a month or fully online, with no traditional thesis.",
+    "Study while working full time: a three-month Executive MBA for working professionals, delivered one weekend a month or through live online sessions.",
 });
 
 const jsonLd = {
@@ -19,7 +20,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "A three-month Executive MBA recognised against CMI Professional Standards, delivered one weekend a month or fully online.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered across three months, one weekend per month, with an online delivery option.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -32,7 +33,7 @@ const jsonLd = {
     "@id": `${SITE.url}/mba-for-working-professionals#blended-course-instance`,
     url: `${SITE.url}/mba-for-working-professionals`,
     courseMode: "blended",
-    timeRequired: "P6M",
+    timeRequired: "P3M",
   },
 };
 
@@ -57,30 +58,45 @@ export default function MbaForWorkingProfessionalsPage() {
 
       {/* 1 · Intro */}
       <section className="section geo-section">
-        <div className="wrap">
-          <div className="eyebrow">
-            <span className="l" />
-            <span className="mono sec-k">For working professionals · part-time &amp; online</span>
+        <div className="wrap persona-hero-grid">
+          <div>
+            <div className="eyebrow">
+              <span className="l" />
+              <span className="mono sec-k">For working professionals · part-time &amp; online</span>
+            </div>
+            <Reveal>
+              <h1 className="sec-h">
+                A part-time Executive MBA schedule for professionals who remain <span className="acc">in their roles</span>.
+              </h1>
+            </Reveal>
+            <p className="sec-sub">
+              The Future Ready Executive MBA is designed for participants who want to study while working full time.
+              The programme runs across {FACTS.durationLong}, using one scheduled weekend a month.
+              Chartered Manager is a separate optional CMI route with its own eligibility, assessment
+              and fees; it is not included in the published programme or fee.
+            </p>
+            <p className="mono sec-k mt-s">
+              Three months · three monthly programme weekends · awarded and endorsed by CMI
+            </p>
+            <p className="sec-sub mt-s">
+              Explore the full{" "}
+              <Link href="/executive-mba" className="acc">Executive MBA programme</Link>, or jump
+              straight to the <Link href="/intakes" className="acc">2026 intakes</Link>.
+            </p>
           </div>
-          <Reveal>
-            <h1 className="sec-h">
-              An Executive MBA schedule designed for participants who remain <span className="acc">in their professional roles</span>.
-            </h1>
+          <Reveal delay={80}>
+            <figure className="editorial-visual editorial-visual-portrait persona-hero-visual">
+              <Image
+                src="/images/future-ready-emba/future-ready-emba-working-leader-portrait-malaysia-4x5.webp"
+                alt="A Malaysian working leader reviewing business documents beside the Kuala Lumpur skyline"
+                width={1664}
+                height={2080}
+                sizes="(max-width: 900px) 100vw, 38vw"
+                priority
+              />
+              <figcaption>Built for managers who continue carrying the work while they learn.</figcaption>
+            </figure>
           </Reveal>
-          <p className="sec-sub">
-            The Future Ready Executive MBA is designed for participants who remain in their roles while studying.
-            The programme runs across {FACTS.durationLong}, using one scheduled weekend a month.
-            Chartered Manager is a separate optional CMI route with its own eligibility, assessment
-            and fees; it is not included in the published programme or fee.
-          </p>
-          <p className="mono sec-k mt-s">
-            Three months · three monthly programme weekends · recognised by CMI (UK)
-          </p>
-          <p className="sec-sub mt-s">
-            Explore the full{" "}
-            <Link href="/executive-mba" className="acc">Executive MBA programme</Link>, or jump
-            straight to the <Link href="/intakes" className="acc">2026 intakes</Link>.
-          </p>
         </div>
       </section>
 
@@ -149,7 +165,7 @@ export default function MbaForWorkingProfessionalsPage() {
           </Reveal>
           <p className="fine mt-s">
             {COMPARISON_SCOPE}{" "}
-            This is a professional programme recognised by CMI (UK); it is not an MQA-regulated
+            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
             academic degree. Choose according to the credential and learning format you require. See the full{" "}
             <Link href="/fees" className="acc">fees &amp; inclusions</Link>.
           </p>
