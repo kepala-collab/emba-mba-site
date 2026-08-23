@@ -307,8 +307,8 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,'Times New Roman',serif;fon
   .brand-title{font-size:.8rem}
 }
 @media(max-width:340px){
-  .brand-title{font-size:.74rem}
-  .brand-product{font-size:1rem}
+  .brand-title{font-size:.68rem}
+  .brand-product{font-size:.86rem}
   .mobile-navcta{width:58px;padding-inline:0;font-size:0}
   .mobile-navcta::after{content:"Guide";font-size:.72rem}
   html[lang="zh-Hans"] .mobile-navcta::after{content:"指南"}

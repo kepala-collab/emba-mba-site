@@ -612,6 +612,7 @@ test("home hero aligns the slider, form and carousel actions on desktop", async 
   for (const width of [1024, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: width >= 1440 ? 900 : 800 });
     await goto(page, "/home");
+    await page.evaluate(() => document.fonts.ready);
     const slider = page.locator(".home-slider");
     const form = page.locator(".working-hero-form");
     const sliderBox = await slider.boundingBox();
