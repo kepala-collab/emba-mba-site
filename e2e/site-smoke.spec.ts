@@ -170,11 +170,24 @@ test("narrow layouts retain the product name and never overflow", async ({ page 
     await page.setViewportSize({ width, height: 812 });
     await goto(page, "/home");
     await expect(page.locator(".brand-product")).toBeVisible();
+    const brandContained = await page.locator(".brand-link").evaluate((element) => element.scrollWidth <= element.clientWidth + 1);
+    expect(brandContained, `${width}px brand lockup`).toBe(true);
     const dimensions = await page.evaluate(() => ({
       client: document.documentElement.clientWidth,
       scroll: document.documentElement.scrollWidth,
     }));
     expect(dimensions.scroll, `${width}px viewport`).toBeLessThanOrEqual(dimensions.client);
+  }
+});
+
+test("long footer contact links wrap inside narrow bilingual columns", async ({ page }) => {
+  for (const width of [320, 375, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    await goto(page, "/zh");
+    const email = page.locator('footer a[href="mailto:support@futurereadymba.com"]');
+    await expect(email).toBeVisible();
+    const contained = await email.evaluate((element) => element.scrollWidth <= element.clientWidth + 1);
+    expect(contained, `${width}px Chinese footer email`).toBe(true);
   }
 });
 
@@ -574,6 +587,24 @@ test("home hero carousel presents video, photography and accessible controls", a
   await secondSlide.click();
   await expect(secondSlide).toHaveAttribute("aria-current", "true");
   await expect(slider.locator(".home-slide.is-active").getByRole("heading")).toContainText("Bring the decision");
+});
+
+test("home hero controls remain readable and touch-sized at 320px", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await goto(page, "/home");
+  const slider = page.locator(".home-slider");
+  const pauseButton = slider.getByRole("button", { name: "Pause slide rotation" });
+  await expect(pauseButton).toBeVisible();
+  const controls = await slider.locator(".home-slider-controls button").evaluateAll((buttons) => buttons.map((button) => ({
+    width: button.getBoundingClientRect().width,
+    height: button.getBoundingClientRect().height,
+    contained: button.scrollWidth <= button.clientWidth + 1,
+  })));
+  for (const control of controls) {
+    expect(control.width).toBeGreaterThanOrEqual(44);
+    expect(control.height).toBeGreaterThanOrEqual(44);
+    expect(control.contained).toBe(true);
+  }
 });
 
 test("home hero aligns the slider, form and carousel actions on desktop", async ({ page }) => {
