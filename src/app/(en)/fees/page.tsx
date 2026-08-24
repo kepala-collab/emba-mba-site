@@ -14,7 +14,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/fees", {
   title: "Executive MBA Fees, Scholarship & HRD Corp",
   description:
-    "The standard fee is RM10,000. Eligible Malaysian applicants may receive a RM5,000 LIFE Innoversity scholarship, subject to availability and written approval.",
+    "The standard fee is RM10,000. Eligible Malaysian applicants may receive a RM4,000 scholarship after assessment and written approval; approved recipients pay RM6,000.",
 });
 
 export default function FeesPage() {

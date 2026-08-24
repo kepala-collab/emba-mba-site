@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.fees;
 export const metadata = withSeo(path, {
   title: "Yuran, Biasiswa dan HRD Corp",
   description:
-    "Yuran standard RM10,000.00. Pemohon Malaysia yang layak boleh memohon biasiswa LIFE Innoversity RM5,000.00 selepas penilaian dan kelulusan bertulis.",
+    "Yuran standard RM10,000. Pemohon Malaysia yang layak boleh menerima biasiswa RM4,000 selepas penilaian dan kelulusan bertulis; penerima diluluskan membayar RM6,000.",
 });
 
 export default function Page() {

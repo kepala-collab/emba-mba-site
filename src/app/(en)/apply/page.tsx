@@ -19,7 +19,7 @@ const RECEIVE = [
   "Your choice of a call, online meeting, in-person meeting or details first",
   "Published 2026 intake dates and the Open status shown for each cohort",
   "The employer-led HRD Corp application process and required programme documents",
-  "The RM10,000.00 standard fee and eligibility review for the RM5,000.00 LIFE Innoversity scholarship",
+  "The RM10,000.00 standard fee and eligibility review for the RM4,000.00 LIFE Innoversity scholarship; approved recipients pay RM6,000.00",
 ];
 
 export default function ApplyPage() {

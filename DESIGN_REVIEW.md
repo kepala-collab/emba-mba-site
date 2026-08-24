@@ -74,7 +74,7 @@ was checked against current HRD Corp and CMI public guidance.
 | Format and time away from work | Duration, delivery mode and work absence appear near the top | Six months, six in-person days, three sessions and continued employment are above the fold |
 | Participant fit | Seniority and current responsibility are stated plainly | Business owners, directors, general managers and senior managers are named; the fit check creates a private checklist without claiming to predict suitability |
 | Programme structure | Stages and practical application are separated | Certificate work in months 1–3 and optional CMgr assessment preparation in months 4–6 are presented as separate stages |
-| Fees | Exact tuition, inclusions and financing are visible before enquiry | RM10,000.00 standard fee, RM5,000.00 scholarship, RM5,000.00 payable fee, inclusions and payment terms are explicit |
+| Fees | Exact tuition, inclusions and financing are visible before enquiry | RM10,000.00 standard fee, RM4,000.00 scholarship, RM6,000.00 payable fee, inclusions and payment terms are explicit |
 | Employer support | A distinct organisation-sponsored route is available | Employer-led HRD Corp steps, responsibility and approval limits are explained without guaranteeing funding |
 | Human proof | Named faculty and participant evidence replace generic prestige claims | Three named practitioners now appear on the homepage with a link to the full seven-person panel; no participant testimonial or outcome has been invented |
 | Low-pressure contact | Brochure, eligibility feedback and a call are offered separately | Programme guide, programme-fit checklist, email-first route, call, online meeting, in-person meeting and WhatsApp are available |

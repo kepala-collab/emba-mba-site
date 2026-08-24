@@ -26,7 +26,7 @@ const INCLUDED = [
 
 const CMP = [
   ["Masa", "Tiga bulan: enam hari latihan, diselesaikan dalam tiga sesi bulanan", "18–24 bulan"],
-  ["Pelaburan", "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh menerima biasiswa RM5,000.00 selepas penilaian dan kelulusan bertulis", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
+  ["Pelaburan", "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh menerima biasiswa RM4,000.00 selepas penilaian dan kelulusan bertulis, dan penerima yang diluluskan membayar RM6,000.00", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
   ["Format", "Satu hujung minggu sebulan; peserta terus bekerja", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
   ["Penilaian", "Projek aplikasi berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
   ["Sijil", "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik bertauliah MQA", "Ijazah MBA akademik daripada institusi penganugerah"],

@@ -197,7 +197,7 @@ export default function Home() {
 
       <section className="section home-decision-snapshot">
         <div className="wrap home-snapshot-grid">
-          <Reveal><article><p className="mono sec-k">Fees and funding</p><h2>RM10,000 standard fee.</h2><p>Eligible Malaysian applicants may be considered for a RM5,000 LIFE Innoversity scholarship, subject to availability, assessment and written approval. It is not automatic.</p><Link href="/fees" className="text-action">See the complete fee and funding terms <span aria-hidden="true">↗</span></Link></article></Reveal>
+          <Reveal><article><p className="mono sec-k">Fees and funding</p><h2>RM10,000 standard fee.</h2><p>Eligible Malaysian applicants may be considered for a RM4,000 LIFE Innoversity scholarship, subject to availability, assessment and written approval. An approved recipient pays RM6,000. The scholarship is not automatic.</p><Link href="/fees" className="text-action">See the complete fee and funding terms <span aria-hidden="true">↗</span></Link></article></Reveal>
           <Reveal delay={60}><article><p className="mono sec-k">Published 2026 dates</p><h2>Choose a schedule that works around work.</h2><p>Compare the published English and Mandarin sessions. The programme team confirms availability before enrolment.</p><Link href="/intakes" className="text-action">Check available dates <span aria-hidden="true">↗</span></Link></article></Reveal>
         </div>
       </section>
