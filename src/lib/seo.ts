@@ -29,8 +29,14 @@ export function withSeo<const T extends Metadata>(path: string, page: T): T & Me
   const description = page.description ?? DEFAULT_DESCRIPTION;
   const openGraph = page.openGraph ?? {};
   const twitter = page.twitter ?? {};
-  const locale = path === "/zh" || path.startsWith("/zh/") ? "zh_MY" : "en_MY";
+  const locale = path === "/zh" || path.startsWith("/zh/")
+    ? "zh_MY"
+    : path === "/ms" || path.startsWith("/ms/")
+      ? "ms_MY"
+      : "en_MY";
   const mappedLanguages = languageAlternates(path);
+
+  const alternateLocales = ["en_MY", "zh_MY", "ms_MY"].filter((candidate) => candidate !== locale);
 
   return {
     ...page,
@@ -46,6 +52,7 @@ export function withSeo<const T extends Metadata>(path: string, page: T): T & Me
       description,
       url: path,
       locale,
+      alternateLocale: alternateLocales,
       ...openGraph,
       images: openGraph.images ?? [SOCIAL_IMAGE],
     },

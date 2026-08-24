@@ -10,7 +10,7 @@ export const metadata = withSeo("/lp/meta", {
   description:
     "Complete the three-month CMI-recognised Executive MBA while continuing to work. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
   robots: { index: false, follow: false },
-  alternates: { canonical: "/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
+  alternates: { canonical: "/lp/meta" },
 });
 
 const SOURCE = "lp-meta";

@@ -5,17 +5,92 @@ import { useEffect, useState } from "react";
 import { CTA_LABELS, INTAKES, PROGRAMME_YEAR } from "@/lib/content";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import { cohortKey } from "@/lib/conversion-contract";
-import { getIntakeStatus, intakeStatusLabel, malaysiaDateKey } from "@/lib/intakes";
+import { getIntakeStatus, intakeStatusLabel, malaysiaDateKey, type IntakeStatus } from "@/lib/intakes";
 
 type Props = {
-  lang?: "en" | "zh";
+  lang?: "en" | "zh" | "ms";
   label?: string;
 };
 
+const STRINGS = {
+  en: {
+    region: `${PROGRAMME_YEAR} Executive MBA intake schedule`,
+    hint: "Swipe to see all dates →",
+    cohort: "Cohort",
+    language: "Language",
+    s1: "Session 1",
+    s2: "Session 2",
+    s3: "Session 3",
+    days: "Days / time",
+    enquire: "Enquire",
+    mandarin: "Mandarin",
+    english: "English",
+    satSun: "Sat–Sun",
+    friSat: "Fri–Sat",
+    open: "Open for enquiries",
+    confirm: "Confirm availability",
+    nextCohort: "See the next available cohort →",
+    intakesPath: "/intakes",
+    applyPath: "/apply",
+    cta: CTA_LABELS.conversation,
+  },
+  zh: {
+    region: `${PROGRAMME_YEAR} 年高管 MBA 开课日期`,
+    hint: "左右滑动查看所有日期 →",
+    cohort: "班次",
+    language: "语言",
+    s1: "第一次",
+    s2: "第二次",
+    s3: "第三次",
+    days: "上课日与时间",
+    enquire: "咨询",
+    mandarin: "华语",
+    english: "英语",
+    satSun: "星期六至星期日",
+    friSat: "星期五至星期六",
+    open: "开放咨询",
+    confirm: "请确认名额",
+    nextCohort: "查看下一个开放班次 →",
+    intakesPath: "/zh/intakes",
+    applyPath: "/zh/apply",
+    cta: CTA_LABELS.zh.conversation,
+  },
+  ms: {
+    region: `Jadual kemasukan Executive MBA ${PROGRAMME_YEAR}`,
+    hint: "Leret untuk melihat semua tarikh →",
+    cohort: "Kohort",
+    language: "Bahasa",
+    s1: "Sesi 1",
+    s2: "Sesi 2",
+    s3: "Sesi 3",
+    days: "Hari / masa",
+    enquire: "Pertanyaan",
+    mandarin: "Mandarin",
+    english: "Inggeris",
+    satSun: "Sabtu–Ahad",
+    friSat: "Jumaat–Sabtu",
+    open: "Dibuka untuk pertanyaan",
+    confirm: "Sahkan kekosongan tempat",
+    nextCohort: "Lihat kohort seterusnya yang dibuka →",
+    intakesPath: "/ms/intakes",
+    applyPath: "/ms/apply",
+    cta: CTA_LABELS.ms.conversation,
+  },
+} as const;
+
+function statusLabel(status: IntakeStatus, lang: "en" | "zh" | "ms") {
+  if (lang === "ms") {
+    if (status === "started") return "Kursus sedang berlangsung";
+    if (status === "completed") return "Telah tamat";
+    return "Akan datang";
+  }
+  return intakeStatusLabel(status, lang === "zh");
+}
+
 export default function IntakeSchedule({ lang = "en", label }: Props) {
-  const zh = lang === "zh";
+  const t = STRINGS[lang];
   const [today, setToday] = useState("0000-00-00");
-  const regionLabel = label || (zh ? `${PROGRAMME_YEAR} 年高管 MBA 开课日期` : `${PROGRAMME_YEAR} Executive MBA intake schedule`);
+  const regionLabel = label || t.region;
 
   useEffect(() => { setToday(malaysiaDateKey()); }, []);
 
@@ -25,43 +100,43 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
         <ScrollableTableRegion
           kind="intake"
           label={regionLabel}
-          hint={zh ? "左右滑动查看所有日期 →" : "Swipe to see all dates →"}
+          hint={t.hint}
         >
           <table className="intake">
             <thead>
               <tr>
-                <th>{zh ? "班次" : "Cohort"}</th>
-                <th>{zh ? "语言" : "Language"}</th>
-                <th>{zh ? "第一次" : "Session 1"}</th>
-                <th>{zh ? "第二次" : "Session 2"}</th>
-                <th>{zh ? "第三次" : "Session 3"}</th>
-                <th>{zh ? "上课日与时间" : "Days / time"}</th>
-                <th><span className="sr-only">{zh ? "咨询" : "Enquire"}</span></th>
+                <th>{t.cohort}</th>
+                <th>{t.language}</th>
+                <th>{t.s1}</th>
+                <th>{t.s2}</th>
+                <th>{t.s3}</th>
+                <th>{t.days}</th>
+                <th><span className="sr-only">{t.enquire}</span></th>
               </tr>
             </thead>
             <tbody>
               {INTAKES.map((cohort) => {
                 const key = cohortKey(cohort.language, cohort.co);
                 const intent = cohort.language === "Mandarin" ? "mandarin" : "individual_self_funded";
-                const href = `${zh ? "/zh/apply" : "/apply"}?cohort=${encodeURIComponent(key)}&intent=${intent}`;
+                const href = `${t.applyPath}?cohort=${encodeURIComponent(key)}&intent=${intent}`;
                 const status = getIntakeStatus(cohort.startDate, cohort.endDate, today);
                 const canEnquire = status === "upcoming";
                 return (
                 <tr key={key} data-status={status}>
                   <td className="co">{cohort.co}</td>
-                  <td>{zh ? (cohort.language === "Mandarin" ? "华语" : "英语") : cohort.language}</td>
+                  <td>{cohort.language === "Mandarin" ? t.mandarin : t.english}</td>
                   <td className="s mono">{cohort.s1}</td>
                   <td className="s mono">{cohort.s2}</td>
                   <td className="s mono">{cohort.s3}</td>
                   <td className="seats">
-                    {zh ? (cohort.days === "Sat–Sun" ? "星期六至星期日" : "星期五至星期六") : cohort.days}
+                    {cohort.days === "Sat–Sun" ? t.satSun : t.friSat}
                     <br />
                     {cohort.time}
                   </td>
                   <td className="intake-action-cell">
                     {canEnquire ? <Link className="intake-action-link" href={href} data-track-event="cohort_select" data-track-id={`cohort_${key}`} data-track-location="intake_schedule" data-track-cohort={key} data-track-intent={intent}>
-                      {zh ? CTA_LABELS.zh.conversation : CTA_LABELS.conversation}
-                    </Link> : <span className="intake-status-label">{intakeStatusLabel(status, zh)}</span>}
+                      {t.cta}
+                    </Link> : <span className="intake-status-label">{statusLabel(status, lang)}</span>}
                   </td>
                 </tr>
               );})}
@@ -74,14 +149,10 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
         {INTAKES.map((cohort) => {
           const key = cohortKey(cohort.language, cohort.co);
           const intent = cohort.language === "Mandarin" ? "mandarin" : "individual_self_funded";
-          const href = `${zh ? "/zh/apply" : "/apply"}?cohort=${encodeURIComponent(key)}&intent=${intent}`;
-          const language = zh ? (cohort.language === "Mandarin" ? "华语" : "英语") : cohort.language;
-          const days = zh
-            ? (cohort.days === "Sat–Sun" ? "星期六至星期日" : "星期五至星期六")
-            : cohort.days;
-          const availability = zh
-            ? (cohort.seats === "Open" ? "开放咨询" : "请确认名额")
-            : (cohort.seats === "Open" ? "Open for enquiries" : "Confirm availability");
+          const href = `${t.applyPath}?cohort=${encodeURIComponent(key)}&intent=${intent}`;
+          const language = cohort.language === "Mandarin" ? t.mandarin : t.english;
+          const days = cohort.days === "Sat–Sun" ? t.satSun : t.friSat;
+          const availability = cohort.seats === "Open" ? t.open : t.confirm;
           const status = getIntakeStatus(cohort.startDate, cohort.endDate, today);
           const canEnquire = status === "upcoming";
 
@@ -92,17 +163,17 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                   <p className="mono">{language}</p>
                   <h3>{cohort.co}</h3>
                 </div>
-                <span className={`intake-availability is-${status}`}>{canEnquire ? availability : intakeStatusLabel(status, zh)}</span>
+                <span className={`intake-availability is-${status}`}>{canEnquire ? availability : statusLabel(status, lang)}</span>
               </header>
               <dl>
-                <div><dt>{zh ? "第一次" : "Session 1"}</dt><dd>{cohort.s1}</dd></div>
-                <div><dt>{zh ? "第二次" : "Session 2"}</dt><dd>{cohort.s2}</dd></div>
-                <div><dt>{zh ? "第三次" : "Session 3"}</dt><dd>{cohort.s3}</dd></div>
+                <div><dt>{t.s1}</dt><dd>{cohort.s1}</dd></div>
+                <div><dt>{t.s2}</dt><dd>{cohort.s2}</dd></div>
+                <div><dt>{t.s3}</dt><dd>{cohort.s3}</dd></div>
               </dl>
               <footer><span>{days}</span><strong>{cohort.time}</strong></footer>
               {canEnquire ? <Link className="intake-card-action" href={href} data-track-event="cohort_select" data-track-id={`mobile_cohort_${key}`} data-track-location="intake_schedule_mobile" data-track-cohort={key} data-track-intent={intent}>
-                {zh ? `${CTA_LABELS.zh.conversation} →` : `${CTA_LABELS.conversation} →`}
-              </Link> : <Link className="intake-card-action" href={zh ? "/zh/intakes" : "/intakes"}>{zh ? "查看下一个开放班次 →" : "See the next available cohort →"}</Link>}
+                {`${t.cta} →`}
+              </Link> : <Link className="intake-card-action" href={t.intakesPath}>{t.nextCohort}</Link>}
             </li>
           );
         })}

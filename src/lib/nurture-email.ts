@@ -1,7 +1,7 @@
 // Bilingual nurture email sequence — stage-gated follow-ups for guide requesters.
 // Self-contained: no imports from app content so it can be rendered anywhere.
 
-export type NurtureLanguage = "en" | "zh";
+export type NurtureLanguage = "en" | "zh" | "ms";
 export type NurtureStepKey = "day3" | "day7" | "day14";
 
 export const NURTURE_STEPS: { key: NurtureStepKey; afterDays: number }[] = [
@@ -140,6 +140,58 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
   },
 };
 
+const MS: Record<NurtureStepKey, StepCopy> = {
+  day3: {
+    subject: "Adakah panduan program menjawab persoalan anda?",
+    preheader: "Tiga bahagian yang wajar dibaca semula — dan satu batasan jujur yang perlu anda ketahui.",
+    greeting: (name) => `${name}, salam sejahtera,`,
+    headline: "Adakah panduan program menjawab persoalan anda?",
+    paragraphs: [
+      "Beberapa hari lalu anda memohon Panduan Pengurus Bekerja untuk Future Ready Executive MBA. Kebanyakan pembaca memberitahu kami tiga bahagian yang paling membantu keputusan mereka: bagaimana tempoh tiga bulan itu berjalan sebenarnya, apa maksud pengiktirafan CMI (UK) — dan apa yang secara sengaja tidak dimaksudkannya — serta yuran yang telah diterbitkan.",
+      "Jika mana-mana bahagian dalam panduan itu kurang jelas, itulah sebabnya perbualan program wujud. Tiada pembayaran, tiada komitmen pendaftaran — hanya jawapan.",
+    ],
+    facts: [
+      { label: "Format", value: "Tempoh tiga bulan · satu hujung minggu setiap bulan · tanpa perlu keluar dari kerja" },
+      { label: "Pengiktirafan", value: "Dianugerah dan disokong oleh CMI · program profesional, bukan ijazah akademik" },
+      { label: "Yuran", value: "RM10,000 diterbitkan · biasiswa dinilai secara individu, disahkan secara bertulis" },
+    ],
+    ctaLabel: "Atur perbualan program",
+    ctaPath: "/ms/apply",
+    secondaryLabel: "Atau balas e-mel ini dengan satu soalan anda — pasukan program membaca setiap balasan.",
+  },
+  day7: {
+    subject: "Kohort 2026 yang masih tinggal, dalam satu paparan",
+    preheader: "Tiga hujung minggu bagi setiap kohort. Kalendar lebih menentukan berbanding risalah.",
+    greeting: (name) => `${name}, salam sejahtera,`,
+    headline: "Kalendar lebih menentukan berbanding risalah.",
+    paragraphs: [
+      "Setiap kohort merangkumi keseluruhan program tiga bulan sepanjang tiga sesi hujung minggu berjadual, 9 pagi–6 petang, sebulan sekali — projek aplikasi anda dijalankan dalam perniagaan anda sendiri di antara sesi.",
+      "Kalendar langsung bagi kohort 2026 yang masih tinggal, dalam Bahasa Inggeris dan Mandarin, terdapat di laman web. Jika satu-satu tarikh hampir sesuai, maklumkan kepada pasukan sebelum anda menolaknya — perbualan mengenai kalendar biasanya yang paling ringkas.",
+    ],
+    facts: [
+      { label: "Komitmen", value: "6 hari latihan sepanjang 3 sesi hujung minggu" },
+      { label: "Antara sesi", value: "Bimbingan bersama projek aplikasi ke atas perniagaan anda sendiri" },
+      { label: "Majikan", value: "Pembiayaan mungkin tersedia untuk majikan berdaftar HRD Corp yang layak, tertakluk kepada kelulusan HRD Corp" },
+    ],
+    ctaLabel: "Lihat kalendar langsung 2026",
+    ctaPath: "/ms/intakes",
+    secondaryLabel: "Ditaja majikan? Minta ringkasan pembiayaan majikan — ia memetakan langkah e-TRiS HRD Corp.",
+  },
+  day14: {
+    subject: "Satu perbualan. Tiada komitmen.",
+    preheader: "Mulakan dengan satu perbualan. Buat keputusan mengikut masa anda sendiri.",
+    greeting: (name) => `${name}, salam sejahtera,`,
+    headline: "Mulakan dengan satu perbualan. Buat keputusan mengikut masa anda sendiri.",
+    paragraphs: [
+      "Dua minggu lalu anda memohon panduan program. Jika masa ini kurang sesuai, itu satu keputusan yang sah — panduan itu akan tetap jujur pada kohort akan datang.",
+      "Tetapi jika satu-satunya perkara yang menghalang anda daripada membuat keputusan ialah satu soalan yang belum terjawab — kesesuaian, tarikh, yuran, penilaian biasiswa, atau apa yang dimaksudkan (dan tidak dimaksudkan) oleh pengiktirafan itu — satu perbualan ringkas dapat menyelesaikannya. Tiada pembayaran, tiada komitmen pendaftaran, tiada tekanan susulan.",
+    ],
+    ctaLabel: "Atur perbualan program",
+    ctaPath: "/ms/apply",
+    secondaryLabel: "Lebih selesa berbual? Hubungi pasukan program melalui WhatsApp — soalan ringkas dialu-alukan.",
+  },
+};
+
 const FOOTER = {
   en: {
     statement:
@@ -158,6 +210,15 @@ const FOOTER = {
     contact: "support@futurereadymba.com · +60 12-981 8533 · futurereadymba.com",
     whatsapp: "通过 WhatsApp 联系课程团队",
   },
+  ms: {
+    statement:
+      "Executive MBA dalam Future Ready Business Leadership dianugerah dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama tiga bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources adalah Rakan Bersekutu bagi pertanyaan program dan penyelarasan pendaftaran.",
+    reason:
+      "Anda menerima e-mel ini kerana anda memohon panduan program dan bersetuju menerima kemas kini program serta komunikasi pemasaran.",
+    unsubscribe: "Berhenti langgan",
+    contact: "support@futurereadymba.com · +60 12-981 8533 · futurereadymba.com",
+    whatsapp: "Berbual dengan pasukan program melalui WhatsApp",
+  },
 };
 
 function escapeHtml(value: string): string {
@@ -173,9 +234,9 @@ export function renderNurtureEmail(input: {
 }): { subject: string; html: string; text: string } {
   const { step, language } = input;
   const base = (input.baseUrl || "https://futurereadymba.com").replace(/\/$/, "");
-  const copy = (language === "zh" ? ZH : EN)[step];
+  const copy = (language === "zh" ? ZH : language === "ms" ? MS : EN)[step];
   const footer = FOOTER[language];
-  const name = escapeHtml(input.recipientName || (language === "zh" ? "您" : "there"));
+  const name = escapeHtml(input.recipientName || (language === "zh" ? "您" : language === "ms" ? "anda" : "there"));
   const ctaUrl = `${base}${copy.ctaPath}?utm_source=nurture&utm_medium=email&utm_campaign=${step}&utm_content=${language}`;
   const unsub = escapeHtml(input.unsubscribeUrl);
 
@@ -195,7 +256,7 @@ export function renderNurtureEmail(input: {
     : "";
 
   const html = `<!DOCTYPE html>
-<html lang="${language === "zh" ? "zh-Hans" : "en"}">
+<html lang="${language === "zh" ? "zh-Hans" : language === "ms" ? "ms" : "en"}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -247,7 +308,7 @@ export function renderNurtureEmail(input: {
 </html>`;
 
   const text = [
-    copy.greeting(input.recipientName || (language === "zh" ? "您" : "there")),
+    copy.greeting(input.recipientName || (language === "zh" ? "您" : language === "ms" ? "anda" : "there")),
     "",
     ...copy.paragraphs,
     "",

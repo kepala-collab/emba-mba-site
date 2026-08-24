@@ -7,9 +7,9 @@ import { SITE } from "@/lib/content";
 import { trackEvent } from "@/lib/analytics";
 import { getTurnstileApi as turnstileApi } from "@/lib/turnstile";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
-import { isCampaignRoute } from "@/lib/locale-routes";
+import { isCampaignRoute, localeOfPath } from "@/lib/locale-routes";
 
-type Lang = "en" | "zh";
+type Lang = "en" | "zh" | "ms";
 type Message = { role: "user" | "assistant"; content: string };
 
 const TURNSTILE_SITE_KEY =
@@ -54,6 +54,25 @@ const COPY = {
     prompts: ["课程费用是多少？", "课程获得什么认可？", "这与一般 HRD Corp 培训有何不同？", "下一期何时开课？"],
     waMessage: "您好，我想咨询 Future Ready 高管 MBA。",
   },
+  ms: {
+    open: "Tanya pembantu program",
+    title: "Pembantu program",
+    eyebrow: "Fakta program yang disahkan",
+    intro: "Tanya tentang format, yuran, tarikh kemasukan, pengiktirafan atau syarat kelayakan. Tiada butiran peribadi diperlukan.",
+    placeholder: "Taip soalan tentang program…",
+    send: "Hantar",
+    sending: "Sedang menyusun jawapan…",
+    close: "Tutup pembantu",
+    clear: "Padam perbualan",
+    disclosure: "Jawapan AI bersifat makluman, bukan pengesahan rasmi. Terma bertulis program dan pendaftaran adalah muktamad.",
+    privacy: "Jangan masukkan maklumat peribadi, identiti, pembayaran atau sulit.",
+    personalData: "Untuk privasi anda, sila buang butiran hubungan atau identiti peribadi dan tanya semula soalan itu.",
+    unavailable: "Pembantu tidak dapat digunakan buat masa ini. Sila hubungi Future Ready EMBA di WhatsApp.",
+    security: "Pengesahan keselamatan tidak dapat diselesaikan. Sila cuba lagi atau hubungi Future Ready EMBA di WhatsApp.",
+    human: "Hubungi Future Ready EMBA di WhatsApp",
+    prompts: ["Berapakah yuran program?", "Apakah pengiktirafan yang diterima?", "Apa beza sijil ini dengan sijil kehadiran?", "Bilakah kemasukan seterusnya?"],
+    waMessage: "Salam sejahtera, saya ada soalan tentang program Future Ready EMBA.",
+  },
 } as const;
 
 function likelyContainsPersonalData(value: string) {
@@ -68,7 +87,7 @@ function likelyContainsPersonalData(value: string) {
 
 export default function ProgrammeAssistant() {
   const pathname = usePathname() || "/";
-  const lang: Lang = pathname === "/zh" || pathname.startsWith("/zh/") ? "zh" : "en";
+  const lang: Lang = localeOfPath(pathname);
   const t = COPY[lang];
   const {
     assistantOpen: open,
@@ -391,7 +410,7 @@ export default function ProgrammeAssistant() {
               )}
               {messages.map((message, index) => (
                 <div key={`${message.role}-${index}`} className={`programme-assistant-message ${message.role}`}>
-                  <span className="mono">{message.role === "user" ? (lang === "zh" ? "您" : "You") : (lang === "zh" ? "助手" : "Assistant")}</span>
+                  <span className="mono">{message.role === "user" ? (lang === "zh" ? "您" : lang === "ms" ? "Anda" : "You") : (lang === "zh" ? "助手" : lang === "ms" ? "Pembantu" : "Assistant")}</span>
                   <p>{message.content}</p>
                 </div>
               ))}

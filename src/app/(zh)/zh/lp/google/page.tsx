@@ -10,7 +10,7 @@ export const metadata = withSeo("/zh/lp/google", {
   description:
     "三个月 Future Ready Executive MBA 专业发展课程：六个培训日、三个每月课程及企业应用项目。雇主资助须符合 HRD Corp 条件并获批准。",
   robots: { index: false, follow: false },
-  alternates: { canonical: "/zh/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
+  alternates: { canonical: "/zh/lp/google" },
 });
 
 const SOURCE = "lp-google-zh";

@@ -9,7 +9,7 @@ import { getLeadAttribution, trackEvent } from "@/lib/analytics";
 import { INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
 import "@/lib/turnstile";
 
-type Lang = "en" | "zh";
+type Lang = "en" | "zh" | "ms";
 type Step = 1 | 2;
 type Status = "idle" | "sending" | "ok" | "error" | "verify";
 type ErrorType = "validation" | "rate_limit" | "service" | "network" | null;
@@ -200,6 +200,81 @@ const T = {
     okPlan: `查看 ${PROGRAMME_YEAR} 课程指南 →`,
     okWa: "通过 WhatsApp 联系 Future Ready 高管 MBA →",
     waMsg: (name: string, cohort: string) => `您好，我是 ${name || "意向学员"}。我已提交 Future Ready 高管 MBA 沟通请求${cohort ? `，首选 ${cohort}` : ""}。`,
+  },
+  ms: {
+    progress: (step: Step) => `Langkah ${step} daripada 2`,
+    compactKicker: "Pertanyaan program",
+    compactTitle: "Dapatkan panduan program.",
+    compactIntro: `Beritahu kami keperluan anda terlebih dahulu. Pasukan program akan menghantar maklumat yang berkaitan serta tarikh ${PROGRAMME_YEAR} yang telah diumumkan.`,
+    compactIntent: "Apakah yang sedang anda rancang?",
+    stepOneKicker: "Laluan anda",
+    stepOneTitle: "Apakah yang sedang anda rancang?",
+    stepOneIntro: "Pilih laluan yang paling menepati keputusan anda. Pasukan program akan membalas dengan maklumat yang berkaitan.",
+    intents: [
+      ["individual_self_funded", "Kemajuan kerjaya", "Saya sedang mempertimbangkan program ini untuk diri sendiri."],
+      ["employer_sponsored", "Tajaan majikan", "Saya ingin menggunakan tajaan majikan atau dana HRD Corp yang layak."],
+      ["employer_evaluating", "Pembangunan pengurus", "Saya sedang menilai program ini untuk pengurus di syarikat saya."],
+      ["international", "Peserta antarabangsa", "Saya memohon dari luar Malaysia."],
+      ["mandarin", "Program Mandarin", "Saya ingin berbincang mengenai kohort berbahasa Mandarin."],
+      ["details_first", "Maklumat program dahulu", "Hantarkan maklumat program sebelum mengatur panggilan."],
+    ] as const,
+    cohort: `Kohort ${PROGRAMME_YEAR} pilihan (tidak wajib)`,
+    cohortOpen: "Dibuka untuk pertanyaan",
+    cohortUnknown: "Saya belum memilih kohort",
+    continue: "Teruskan ke maklumat hubungan →",
+    campaignContinue: "Teruskan untuk panduan program →",
+    campaignKicker: "Panduan percuma untuk pengurus bekerja",
+    campaignTitle: `Hantarkan panduan program ${PROGRAMME_YEAR} kepada saya.`,
+    campaignIntro: "Merangkumi program tiga bulan diiktiraf CMI, tarikh yang telah diumumkan, yuran program dan cara penilaian biasiswa dijalankan.",
+    stepTwoKicker: "Maklumat hubungan anda",
+    stepTwoTitle: "Ke mana pasukan program patut membalas?",
+    back: "← Kembali",
+    selectedRoute: "Laluan dipilih",
+    name: "Nama penuh", namePh: "Nama anda",
+    phone: "Telefon / WhatsApp", email: "E-mel", emailPh: "anda@syarikat.com",
+    company: "Syarikat (tidak wajib)", companyPh: "Organisasi",
+    conversation: "Bagaimanakah anda mahu meneruskan?",
+    conversationOptions: [
+      ["programme_call", "Panggilan ringkas mengenai kesesuaian program"],
+      ["whatsapp", "Perbualan WhatsApp bersama pasukan program"],
+      ["online_meeting", "Sesi maklumat dalam talian"],
+      ["in_person_meeting", "Pertemuan bersemuka di lokasi yang dipersetujui"],
+      ["details_first", "Hantar maklumat dahulu — belum perlu panggilan"],
+    ] as const,
+    contactWindow: "Waktu hubungan pilihan",
+    contactWindows: [
+      ["flexible", "Fleksibel"],
+      ["weekday_morning", "Hari bekerja, pagi"],
+      ["weekday_afternoon", "Hari bekerja, tengah hari"],
+      ["weekday_evening", "Hari bekerja, malam"],
+      ["weekend", "Hujung minggu"],
+    ] as const,
+    helper: "Kami menggunakan e-mel untuk mengesahkan permohonan ini dan menghubungi anda mengikut kaedah yang anda pilih.",
+    campaignHelper: "Panduan anda dihantar melalui e-mel. Telefon atau WhatsApp membolehkan pasukan program membalas jika anda mahu meneruskan perbincangan.",
+    consent: "Saya bersetuju dihubungi mengenai program ini, dan memahami data saya diproses menurut Akta Perlindungan Data Peribadi 2010 Malaysia, seperti yang dipinda.",
+    consentMarketing: "Hantarkan saya perkembangan program dan komunikasi pemasaran. Saya boleh berhenti melanggan pada bila-bila masa.",
+    submit: "Hantar permohonan program saya →", sending: "Sedang dihantar dengan selamat…",
+    campaignSubmit: "Hantar panduan saya →",
+    errors: {
+      validation: "Semak maklumat yang ditanda serta kotak persetujuan, kemudian hantar semula. Maklumat yang anda isi telah disimpan.",
+      rate_limit: "Rangkaian ini telah mencapai had penghantaran. Tunggu sepuluh minit, kemudian hantar semula permohonan yang sama.",
+      service: "Perkhidmatan permohonan tidak tersedia buat sementara waktu. Maklumat anda telah disimpan; hantar semula atau hubungi Future Ready EMBA melalui WhatsApp.",
+      network: "Sambungan terputus. Maklumat anda telah disimpan; semak sambungan internet anda dan hantar semula.",
+    },
+    verify: "Lengkapkan semakan keselamatan sebelum menghantar. Maklumat yang anda isi telah disimpan.",
+    verifyErr: "Semakan keselamatan tidak dapat dimuatkan. Muat semula halaman atau hubungi Future Ready EMBA melalui WhatsApp.",
+    verifyFallback: "Hubungi Future Ready EMBA melalui WhatsApp →",
+    security: "Pengesahan keselamatan",
+    fine: "Pertanyaan program · Tiada bayaran diperlukan · Notis privasi terpakai",
+    campaignFine: "Panduan percuma · Tiada bayaran · Tiada komitmen pendaftaran",
+    okK: "Permohonan diterima",
+    okH: (name: string) => `Terima kasih${name ? `, ${name}` : ""}. Kami akan menghubungi anda mengikut pilihan anda.`,
+    okP: "Pasukan program akan membalas mengenai kesesuaian program, kohort pilihan anda, permohonan HRD Corp oleh majikan serta kelayakan biasiswa. Permohonan ini bukan pengesahan kemasukan, kelulusan biasiswa atau komitmen bayaran.",
+    campaignOkP: "Panduan anda sedia untuk dibuka di bawah. Semak dahulu kandungannya; perbincangan program adalah pilihan anda, dan permohonan ini bukan pengesahan kemasukan, kelulusan biasiswa atau komitmen bayaran.",
+    okRef: "Rujukan perbualan",
+    okPlan: `Buka panduan program ${PROGRAMME_YEAR} →`,
+    okWa: "Hubungi Future Ready EMBA melalui WhatsApp →",
+    waMsg: (name: string, cohort: string) => `Hai, saya ${name || "berminat"}. Saya telah memohon perbincangan mengenai Future Ready Executive MBA${cohort ? ` untuk ${cohort}` : ""}.`,
   },
 } as const;
 
@@ -515,7 +590,7 @@ export default function LeadForm({
         <p className="fine">{campaign ? t.campaignOkP : t.okP}</p>
         {leadReference && <p className="lead-reference"><span>{t.okRef}</span><code>{leadReference}</code></p>}
         {campaign && (
-          <a className="btn btn-primary" href={lang === "zh" ? "/zh/resources/advancement-brief" : "/resources/advancement-brief"} data-track-event="cta_click" data-track-id="lead_success_programme_plan" data-track-location="lead_success">
+          <a className="btn btn-primary" href={lang === "zh" ? "/zh/resources/advancement-brief" : lang === "ms" ? "/ms/resources/advancement-brief" : "/resources/advancement-brief"} data-track-event="cta_click" data-track-id="lead_success_programme_plan" data-track-location="lead_success">
             {t.okPlan}
           </a>
         )}
@@ -650,7 +725,7 @@ export default function LeadForm({
             <div className="fld">
               <label htmlFor={id("phone-local")}>{t.phone}</label>
               <div className="phone-split">
-                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : "Country code"}>
+                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : lang === "ms" ? "Kod negara" : "Country code"}>
                   {PHONE_COUNTRY_CODES.map((entry) => (
                     <option key={entry.code} value={entry.code}>{entry.label}</option>
                   ))}
@@ -678,7 +753,7 @@ export default function LeadForm({
                   <option key={suggestion} value={suggestion} />
                 ))}
               </datalist>
-              <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : "Your private decision guide will be sent automatically to this email address after submission."}</p>
+              <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : lang === "ms" ? "Panduan keputusan peribadi anda akan dihantar secara automatik ke alamat e-mel ini selepas penghantaran." : "Your private decision guide will be sent automatically to this email address after submission."}</p>
             </div>
           </>
         ) : (
@@ -686,7 +761,7 @@ export default function LeadForm({
             <div className="fld">
               <label htmlFor={id("phone-local")}>{t.phone}</label>
               <div className="phone-split">
-                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : "Country code"}>
+                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : lang === "ms" ? "Kod negara" : "Country code"}>
                   {PHONE_COUNTRY_CODES.map((entry) => (
                     <option key={entry.code} value={entry.code}>{entry.label}</option>
                   ))}
@@ -739,7 +814,7 @@ export default function LeadForm({
           </div>
         )}
         <p className="form-helper">{campaign ? t.campaignHelper : t.helper}</p>
-        <div className="consent-group" role="group" aria-label={lang === "zh" ? "同意条款" : "Consent"}>
+        <div className="consent-group" role="group" aria-label={lang === "zh" ? "同意条款" : lang === "ms" ? "Persetujuan" : "Consent"}>
           <label className="check">
             <input type="checkbox" name="consent" value="yes" required />
             <span>{t.consent}</span>

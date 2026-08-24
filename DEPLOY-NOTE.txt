@@ -1,80 +1,48 @@
-RELEASE v5 · 22 Aug 2026 · based on codex/hostinger-deployment @ 9937524
+RELEASE v7 · 24 Aug 2026 · based on codex/hostinger-deployment @ a5b671a
 =========================================================================
 
-WHAT'S NEW IN v5: homepage hero and campaign-form refinement. The opening
-proposition now sits directly above the slider while its matching introduction
-sits above the lead form in one two-column section. The slider and form share a
-bottom edge on desktop; every slide action retains one stable position and clears
-the controls. The campaign form now captures an international phone/WhatsApp
-number, keeps programme contact consent separate from optional marketing
-consent, defaults marketing to opt-out, and normalises submitted phone numbers.
-English and Chinese helper copy explains why both email and phone are used.
-Automated tests cover desktop alignment, responsive flow, form submission,
-Turnstile handling and accessibility contrast.
-
-Everything below is ALREADY IN YOUR REPO (commit 9937524) — listed for reference — all verified: typecheck, oxlint, 17/17 tests, full build
+WHAT'S NEW IN v7 — YOUTUBE FILM + (everything from v6 below)
 -------------------------------------------------------------------------
-A. Interaction refinement layer (both languages — shared CSS)
-   src/app/globals.css: buttons get precise hover/active states (press-down on click,
-   lift + shadow on hover), nav links get a sliding underline, resource/decision/module
-   cards lift on hover, slider controls and form fields get smooth focus/press
-   transitions. All wrapped in prefers-reduced-motion so motion-sensitive visitors
-   get a static site. Style budget still passing (30/32 !important).
+0. Graduation film now streams from YouTube (https://youtu.be/6uEbqYOZxkg)
+   via a click-to-load facade (local poster, zero YouTube requests until
+   the visitor presses play; youtube-nocookie.com; CSP updated; VideoObject
+   schema added in EN/中文/BM). The three physical videos in public/media/
+   are REMOVED from the repo, along with the prebuild media-download step —
+   you can DELETE the public/media folder on the server. Hero slider's
+   first slide now uses the graduation poster image (faster page load).
 
-B. One-click unsubscribe (EN + ZH)
-   database/migrations/008_add_marketing_optout_and_nurture_log.sql
-   src/lib/unsubscribe.ts ................. HMAC-signed unsubscribe links
-   src/app/api/unsubscribe/route.ts ....... verifies token, sets marketing_opt_out,
-                                            redirects to confirmation page
-   src/app/(en)/unsubscribed/page.tsx ..... EN confirmation (noindex)
-   src/app/(zh)/zh/unsubscribed/page.tsx .. ZH confirmation (noindex)
-
-C. Email nurture lane (EN + ZH), day 3 / 7 / 14
-   src/lib/nurture-email.ts ............... branded, email-safe bilingual templates
-   src/app/api/internal/nurture/route.ts .. cron endpoint; stage-based (not open-based),
-                                            claim-first so double-sends are impossible,
-                                            one email per lead per run, latest step wins,
-                                            List-Unsubscribe one-click headers,
-                                            never emails leads older than 45 days,
-                                            skips anyone opted out or past 'new' stage.
-   src/lib/lead-email.ts .................. exports smtpConfiguration/smtpTransporter
-                                            for reuse (no behaviour change to guide email)
-
-D. Carried over from v2/v3 (already in this zip):
-   1. Lead email attaches working-managers-guide-2026.pdf
-   2. "scholarship criteria" -> assessment wording (6 files, EN + ZH)
-   3. Scroll-reveal animation restored + IntersectionObserver/noscript fallbacks
-   4. Terms pages (EN + ZH): Marketing communications / 营销通讯 sections;
-      LeadForm consent checkbox covers marketing with unsubscribe wording
-
-ONE-TIME SETUP REQUIRED AFTER DEPLOY
+WHAT WAS NEW IN v6 — FULL TRILINGUAL SITE + LOCALIZED PDFs
 -------------------------------------------------------------------------
-1. Run the migration ONCE against the Hostinger MySQL database:
-     database/migrations/008_add_marketing_optout_and_nurture_log.sql
-   (adds leads.marketing_opt_out + marketing_opt_out_at, creates lead_nurture_log)
+1. Bahasa Melayu site at /ms — all 37 pages, transcreated (not literal)
+   into 2026 Malaysian news-portal register. 中文 tree completed to a full
+   English mirror (16 pages added). Every page carries en / zh-Hans / ms
+   hreflang alternates; header has a 3-way language switcher; sitemap,
+   footer, breadcrumbs, forms, diagnostic, CTAs all trilingual.
+2. All four PDFs now exist in BM and 中文 (public/downloads/):
+     panduan-pengurus-bekerja-2026.pdf          (BM guide)
+     zaizhi-jingli-zhinan-2026.pdf              (中文 guide)
+     future-ready-employer-funding-brief-ms/zh.pdf
+     future-ready-scholarship-eligibility-ms/zh.pdf
+     future-ready-decision-guide-ms/zh.pdf
+   The guide email now attaches the guide in the lead's own language.
+   NOTE: the English guide PDF was REGENERATED — the letter signature
+   carried the retired name "Rostam Affandi Ahmad"; now "Roy Affandi".
+3. BM everywhere in the lead lane: BM guide email, BM nurture emails
+   (day 3/7/14), /ms/unsubscribed confirmation, BM consent copy.
 
-2. Add two new environment variables (each a random string, 32+ characters):
-     UNSUBSCRIBE_TOKEN_SECRET=<random 32+ chars>   # signs unsubscribe links
-     NURTURE_CRON_SECRET=<random 32+ chars>        # protects the cron endpoint
-   Generate with:  openssl rand -hex 32
+ONE-TIME SETUP AFTER THIS DEPLOY
+-------------------------------------------------------------------------
+Run migration 009 ONCE against the MySQL database:
+    database/migrations/009_add_malay_language.sql
+(widens page_language / outbox / nurture language enums to include 'ms' —
+ WITHOUT it, /ms lead submissions will fail to store their language)
 
-3. Add a daily cron job in Hostinger (any time of day, once per day):
-     curl -X POST "https://futurereadymba.com/api/internal/nurture" \
-          -H "Authorization: Bearer $NURTURE_CRON_SECRET"
+Still applicable from v5 if not yet done: migration 008 +
+UNSUBSCRIBE_TOKEN_SECRET + NURTURE_CRON_SECRET + daily nurture cron.
 
-4. Test safely first — dry run sends nothing, just reports who WOULD get what:
-     curl "https://futurereadymba.com/api/internal/nurture?dryRun=1" \
-          -H "Authorization: Bearer $NURTURE_CRON_SECRET"
+Verified: typecheck · oxlint · 26/26 tests · content-clarity audit
+(164 files incl. every BM/中文 page) · SEO checks · style budget
+(re-based for 3 page trees) · full production build (134 routes).
 
-Notes:
-  - .env.production.example untouched on purpose; add the two vars in your real env.
-  - If the secrets are missing the endpoints refuse politely (503) — nothing breaks.
-  - release-id.txt re-synced via `npm run release:sync`.
-
-NOT included to stay under transfer limits:
-  public/media/ (3 videos) — UNCHANGED from your repo. Keep your existing
-  public/media folder exactly as-is; do not delete it.
-
-To deploy: unzip over a clean checkout of codex/hostinger-deployment (keeping
-public/media), then follow DEPLOY-HOSTINGER.md as usual (npm ci && npm run build).
-The / -> /home redirect is confirmed intentional by the owner and left as-is.
+public/media/ is intentionally GONE in v7 — delete it on the server.
+Deploy: unzip over a clean checkout, npm ci && npm run build.

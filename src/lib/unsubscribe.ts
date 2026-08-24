@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
-export type UnsubscribeLanguage = "en" | "zh";
+export type UnsubscribeLanguage = "en" | "zh" | "ms";
 
 const TOKEN_BYTES = 16; // 32 hex characters — enough to make guessing infeasible.
 

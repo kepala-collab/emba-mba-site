@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import JsonLd from "@/components/site/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo";
-import { isCampaignRoute } from "@/lib/locale-routes";
+import { isCampaignRoute, localeOfPath } from "@/lib/locale-routes";
 
 type Item = { name: string; path: string };
 
@@ -19,6 +19,11 @@ const ZH_PROGRAMME: Item = { name: "课程", path: "/zh/executive-mba" };
 const ZH_RESOURCES: Item = { name: "指南与帮助", path: "/zh/resources" };
 const ZH_TEAM: Item = { name: "认可与团队", path: "/zh/chartered-manager-malaysia" };
 const ZH_FEES: Item = { name: "学费与日期", path: "/zh/fees" };
+const MS_HOME: Item = { name: "Laman Utama", path: "/ms" };
+const MS_PROGRAMME: Item = { name: "Program", path: "/ms/executive-mba" };
+const MS_RESOURCES: Item = { name: "Panduan", path: "/ms/resources" };
+const MS_TEAM: Item = { name: "Pengiktirafan & Pasukan", path: "/ms/chartered-manager-malaysia" };
+const MS_FEES: Item = { name: "Yuran & Tarikh", path: "/ms/fees" };
 
 const ROUTES: Record<string, Item[]> = {
   "/about": [HOME, TEAM, { name: "About Future Ready EMBA", path: "/about" }],
@@ -69,13 +74,31 @@ const ROUTES: Record<string, Item[]> = {
   "/zh/resources": [ZH_HOME, ZH_RESOURCES],
   "/zh/resources/advancement-brief": [ZH_HOME, ZH_RESOURCES, { name: "管理晋升决策简报", path: "/zh/resources/advancement-brief" }],
   "/zh/terms": [ZH_HOME, { name: "条款与条件", path: "/zh/terms" }],
+
+  "/ms/apply": [MS_HOME, { name: "Pertanyaan program", path: "/ms/apply" }],
+  "/ms/asian-business-consulting": [MS_HOME, MS_TEAM, { name: "Asian Business Consulting", path: "/ms/asian-business-consulting" }],
+  "/ms/chartered-manager-malaysia": [MS_HOME, MS_PROGRAMME, { name: "Pengiktirafan CMI", path: "/ms/chartered-manager-malaysia" }],
+  "/ms/contact": [MS_HOME, MS_TEAM, { name: "Hubungi Future Ready EMBA", path: "/ms/contact" }],
+  "/ms/curriculum": [MS_HOME, MS_PROGRAMME, { name: "Kurikulum", path: "/ms/curriculum" }],
+  "/ms/diagnostic": [MS_HOME, MS_RESOURCES, { name: "Semakan kesesuaian program", path: "/ms/diagnostic" }],
+  "/ms/executive-mba": [MS_HOME, MS_PROGRAMME],
+  "/ms/faculty": [MS_HOME, MS_TEAM, { name: "Fasilitator & jurulatih", path: "/ms/faculty" }],
+  "/ms/faq": [MS_HOME, MS_RESOURCES, { name: "Soalan lazim", path: "/ms/faq" }],
+  "/ms/fees": [MS_HOME, MS_FEES],
+  "/ms/how-it-works": [MS_HOME, MS_PROGRAMME, { name: "Cara program berjalan", path: "/ms/how-it-works" }],
+  "/ms/insights/advancement-question": [MS_HOME, MS_RESOURCES, { name: "Cara membandingkan program pengurusan", path: "/ms/insights/advancement-question" }],
+  "/ms/intakes": [MS_HOME, MS_FEES, { name: "Kemasukan 2026", path: "/ms/intakes" }],
+  "/ms/privacy": [MS_HOME, { name: "Dasar privasi", path: "/ms/privacy" }],
+  "/ms/resources": [MS_HOME, MS_RESOURCES],
+  "/ms/resources/advancement-brief": [MS_HOME, MS_RESOURCES, { name: "Ringkasan keputusan kemajuan kerjaya", path: "/ms/resources/advancement-brief" }],
+  "/ms/terms": [MS_HOME, { name: "Terma & syarat", path: "/ms/terms" }],
 };
 
 function fallbackItems(pathname: string): Item[] {
-  const zh = pathname.startsWith("/zh/");
-  const home = zh ? ZH_HOME : HOME;
-  const segments = pathname.split("/").filter(Boolean).filter((segment) => segment !== "zh");
-  let path = zh ? "/zh" : "";
+  const locale = localeOfPath(pathname);
+  const home = locale === "zh" ? ZH_HOME : locale === "ms" ? MS_HOME : HOME;
+  const segments = pathname.split("/").filter(Boolean).filter((segment) => segment !== "zh" && segment !== "ms");
+  let path = locale === "zh" ? "/zh" : locale === "ms" ? "/ms" : "";
   return [home, ...segments.map((segment) => {
     path += `/${segment}`;
     return {
@@ -87,16 +110,16 @@ function fallbackItems(pathname: string): Item[] {
 
 export default function RouteBreadcrumbs() {
   const pathname = usePathname() || "/";
-  if (pathname === "/home" || pathname === "/zh" || isCampaignRoute(pathname)) return null;
+  if (pathname === "/home" || pathname === "/zh" || pathname === "/ms" || isCampaignRoute(pathname)) return null;
 
   const items = ROUTES[pathname] || fallbackItems(pathname);
-  const zh = pathname.startsWith("/zh/");
+  const locale = localeOfPath(pathname);
 
   return (
     <div className="site-breadcrumbs">
       <JsonLd data={breadcrumbSchema(items)} />
       <div className="wrap">
-        <nav aria-label={zh ? "面包屑导航" : "Breadcrumb"}>
+        <nav aria-label={locale === "zh" ? "面包屑导航" : locale === "ms" ? "Jejak navigasi" : "Breadcrumb"}>
           <ol>
             {items.map((item, index) => {
               const current = index === items.length - 1;

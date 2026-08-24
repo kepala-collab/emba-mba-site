@@ -137,6 +137,72 @@ const RESULT_COPY_ZH = [
   },
 ] as const;
 
+const QUESTIONS_MS = [
+  {
+    question: "Situasi mana yang paling menggambarkan sebab anda mencari program sekarang?",
+    options: [
+      "Peranan saya sudah melangkaui kelengkapan pengurusan yang saya ada.",
+      "Saya berdepan keputusan perniagaan atau perubahan operasi yang penting.",
+      "Saya mahu pembangunan profesional berstruktur sambil terus bekerja.",
+      "Saya perlukan bukti yang lebih jelas sebelum memilih mana-mana program.",
+    ],
+  },
+  {
+    question: "Dalam hal apa pendekatan yang lebih berstruktur dapat membantu anda?",
+    options: [
+      "Melihat keseluruhan sistem sebelum bertindak.",
+      "Mengasingkan kekangan yang telah disahkan daripada andaian.",
+      "Menterjemahkan strategi kepada pelan perniagaan yang praktikal.",
+      "Memimpin pekerja dan pihak berkepentingan melalui perubahan.",
+    ],
+  },
+  {
+    question: "Susunan pembelajaran mana yang sesuai dengan tanggungjawab anda?",
+    options: [
+      "Jadual yang diterbitkan dan sesuai dengan kerja sepenuh masa.",
+      "Menerapkan pembelajaran kepada konteks perniagaan saya sendiri.",
+      "Bimbingan pengamal industri, bukan laluan tesis tradisional.",
+      "Maklumat jelas tentang yuran, pengiktirafan dan pembiayaan majikan.",
+    ],
+  },
+  {
+    question: "Bukti apa yang anda perlukan sebelum mengambil langkah seterusnya?",
+    options: [
+      "Kaedah pembelajaran, modul dan keperluan projek aplikasi.",
+      "Komitmen masa yang tepat serta tarikh kemasukan yang diterbitkan.",
+      "Maksud pengiktirafan CMI dan cara penilaian Chartered Manager dijalankan.",
+      "Yuran di Malaysia, biasiswa dan proses HRD Corp.",
+    ],
+  },
+] as const;
+
+const RESULT_COPY_MS = [
+  {
+    title: "Keupayaan pengurusan",
+    body: "Mulakan dengan tujuh disiplin F.A.S.T. dan bagaimana ia menyokong proses membuat keputusan perniagaan yang boleh diulang.",
+    href: "/ms/how-it-works",
+    action: "Teliti kaedahnya",
+  },
+  {
+    title: "Projek perniagaan aplikasi",
+    body: "Semak kurikulum dan projek perniagaan aplikasi. Ujian yang berguna: adakah tugasan itu dapat menjawab persoalan sebenar organisasi anda.",
+    href: "/ms/curriculum",
+    action: "Semak kurikulum",
+  },
+  {
+    title: "Jadual dan komitmen masa",
+    body: `Bandingkan struktur tiga bulan dengan tarikh ${PROGRAMME_YEAR} yang diterbitkan sebelum memutuskan sama ada jadualnya sesuai dengan tanggungjawab anda.`,
+    href: "/ms/intakes",
+    action: "Lihat tarikh kemasukan",
+  },
+  {
+    title: "Yuran dan pengiktirafan",
+    body: "Baca yuran yang tepat, biasiswa, pengiktirafan CMI dan proses pembiayaan majikan sebelum meminta perbualan.",
+    href: "/ms/resources/advancement-brief",
+    action: "Buka panduan program",
+  },
+] as const;
+
 const UI_COPY = {
   en: {
     eyebrow: "Working manager progression check / no data sent",
@@ -174,11 +240,29 @@ const UI_COPY = {
     result: "查看建议起点",
     continue: "继续",
   },
+  ms: {
+    eyebrow: "Semakan kemajuan pengurus bekerja / tiada data dihantar",
+    title: "Di mana peranan anda sudah melangkaui kelengkapan pengurusan anda?",
+    intro: "Jawab empat soalan peribadi untuk mengenal pasti perkara yang wajar anda nilai seterusnya. Pilihan anda kekal dalam pelayar ini dan tidak dihantar atau disimpan. Ini bukan ujian kemasukan dan bukan ramalan hasil kerjaya.",
+    resultEyebrow: "Senarai semakan peribadi anda",
+    resultTitle: "Inilah perkara yang wajar dinilai seterusnya.",
+    resultBody: "Ini keutamaan yang anda pilih. Semak setiap satu terhadap maklumat program yang diterbitkan sebelum memutuskan sama ada formatnya sesuai dengan kerja anda.",
+    selected: "Keutamaan pilihan anda",
+    next: "Semak empat fakta program ini",
+    talk: CTA_LABELS.ms.conversation,
+    guideKicker: "Langkah anda seterusnya",
+    guideTitle: "Simpan keputusan ini dan semak panduan penuh.",
+    guideBody: `Panduan Kemajuan Pengurus Bekerja ${PROGRAMME_YEAR} menghimpunkan struktur program, tarikh, yuran, proses penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen.`,
+    restart: "Mula semula",
+    back: "Kembali",
+    result: "Lihat titik permulaan",
+    continue: "Teruskan",
+  },
 } as const;
 
-export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh" }) {
-  const questions = lang === "zh" ? QUESTIONS_ZH : QUESTIONS;
-  const results = lang === "zh" ? RESULT_COPY_ZH : RESULT_COPY;
+export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh" | "ms" }) {
+  const questions = lang === "zh" ? QUESTIONS_ZH : lang === "ms" ? QUESTIONS_MS : QUESTIONS;
+  const results = lang === "zh" ? RESULT_COPY_ZH : lang === "ms" ? RESULT_COPY_MS : RESULT_COPY;
   const copy = UI_COPY[lang];
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
@@ -258,7 +342,7 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
             />
           </div>
           <div className="diagnostic-actions diagnostic-result-actions">
-            <Link className="text-action" href={lang === "zh" ? "/zh/apply" : "/apply"}>{copy.talk} <span aria-hidden="true">→</span></Link>
+            <Link className="text-action" href={lang === "zh" ? "/zh/apply" : lang === "ms" ? "/ms/apply" : "/apply"}>{copy.talk} <span aria-hidden="true">→</span></Link>
             <button className="btn btn-ghost" type="button" onClick={restart}>{copy.restart}</button>
           </div>
         </div>

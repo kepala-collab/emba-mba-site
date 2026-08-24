@@ -10,7 +10,7 @@ export const metadata = withSeo("/zh/lp/meta", {
   description:
     "面向在职管理者的三个月 Future Ready Executive MBA：六个培训日、三个每月课程及企业应用项目。",
   robots: { index: false, follow: false },
-  alternates: { canonical: "/zh/lp/meta", languages: { en: "/lp/meta", "zh-Hans": "/zh/lp/meta" } },
+  alternates: { canonical: "/zh/lp/meta" },
 });
 
 const SOURCE = "lp-meta-zh";

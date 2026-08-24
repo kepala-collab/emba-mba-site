@@ -14,9 +14,18 @@ const DEFAULT_SMTP_HOST = "smtp.hostinger.com";
 const DEFAULT_SMTP_PORT = 465;
 const DEFAULT_FROM_NAME = "Future Ready Programme Team";
 const DEFAULT_REPLY_TO = "support@futurereadymba.com";
-const PROGRAMME_GUIDE_FILENAME = "working-managers-guide-2026.pdf";
+const PROGRAMME_GUIDE_FILENAME: Record<Language, string> = {
+  en: "working-managers-guide-2026.pdf",
+  zh: "zaizhi-jingli-zhinan-2026.pdf",
+  ms: "panduan-pengurus-bekerja-2026.pdf",
+};
+const PROGRAMME_GUIDE_DELIVERED_NAME: Record<Language, string> = {
+  en: "Future-Ready-Executive-MBA-Programme-Guide-2026.pdf",
+  zh: "Future-Ready-Executive-MBA-课程指南-2026.pdf",
+  ms: "Panduan-Program-Future-Ready-Executive-MBA-2026.pdf",
+};
 
-type Language = "en" | "zh";
+type Language = "en" | "zh" | "ms";
 
 export type SmtpConfiguration = {
   host: string;
@@ -110,7 +119,7 @@ export function smtpTransporter(config: SmtpConfiguration): Transporter {
 function safePersonName(name: string, language: Language): string {
   // oxlint-disable-next-line no-control-regex -- Stored legacy names are defensively normalised.
   const normalized = name.replace(/[\r\n\u0000-\u001F\u007F]/g, " ").replace(/\s+/g, " ").trim();
-  if (!normalized) return language === "zh" ? "您好" : "there";
+  if (!normalized) return language === "zh" ? "您好" : language === "ms" ? "Encik/Puan" : "there";
   return (language === "zh" ? normalized : normalized.split(" ")[0]).slice(0, 60);
 }
 
@@ -123,12 +132,18 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#039;");
 }
 
+function programmePath(language: Language): string {
+  if (language === "zh") return "/zh/resources/advancement-brief";
+  if (language === "ms") return "/ms/resources/advancement-brief";
+  return "/resources/advancement-brief";
+}
+
 function programmeUrl(language: Language): string {
   let url: URL;
   try {
-    url = new URL(language === "zh" ? "/zh/resources/advancement-brief" : "/resources/advancement-brief", SITE.url);
+    url = new URL(programmePath(language), SITE.url);
   } catch {
-    url = new URL(language === "zh" ? "/zh/resources/advancement-brief" : "/resources/advancement-brief", "https://futurereadymba.com");
+    url = new URL(programmePath(language), "https://futurereadymba.com");
   }
   url.searchParams.set("utm_source", "transactional_email");
   url.searchParams.set("utm_medium", "email");
@@ -137,11 +152,11 @@ function programmeUrl(language: Language): string {
   return url.toString();
 }
 
-function programmeGuideAttachment() {
-  const path = join(process.cwd(), "public", "downloads", PROGRAMME_GUIDE_FILENAME);
+function programmeGuideAttachment(language: Language) {
+  const path = join(process.cwd(), "public", "downloads", PROGRAMME_GUIDE_FILENAME[language]);
   if (!existsSync(path)) return [];
   return [{
-    filename: "Future-Ready-Executive-MBA-Programme-Guide-2026.pdf",
+    filename: PROGRAMME_GUIDE_DELIVERED_NAME[language],
     path,
     contentType: "application/pdf",
   }];
@@ -150,7 +165,9 @@ function programmeGuideAttachment() {
 function whatsAppUrl(language: Language): string {
   const message = language === "zh"
     ? "您好，我已提交 Future Ready 高管 MBA 课程沟通请求，希望进一步了解课程。"
-    : "Hello Future Ready EMBA team, I requested a programme conversation and would like to learn more.";
+    : language === "ms"
+      ? "Salam Pasukan Future Ready EMBA, saya telah memohon perbualan program dan ingin mengetahui lebih lanjut."
+      : "Hello Future Ready EMBA team, I requested a programme conversation and would like to learn more.";
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
@@ -173,13 +190,21 @@ export function buildApplicationReceivedEmail(input: {
         details_first: "先发送资料，暂不通话",
         whatsapp: "通过 WhatsApp 沟通",
       }[preference]
-    : {
-        programme_call: "a short programme-fit call",
-        in_person_meeting: "an in-person meeting at an agreed location",
-        online_meeting: "an online information meeting",
-        details_first: "programme details first, with no call yet",
-        whatsapp: "a WhatsApp conversation",
-      }[preference];
+    : language === "ms"
+      ? {
+          programme_call: "panggilan ringkas untuk menilai kesesuaian program",
+          in_person_meeting: "pertemuan bersemuka di lokasi yang dipersetujui",
+          online_meeting: "sesi taklimat program dalam talian",
+          details_first: "maklumat program dahulu, tanpa panggilan buat masa ini",
+          whatsapp: "perbualan melalui WhatsApp",
+        }[preference]
+      : {
+          programme_call: "a short programme-fit call",
+          in_person_meeting: "an in-person meeting at an agreed location",
+          online_meeting: "an online information meeting",
+          details_first: "programme details first, with no call yet",
+          whatsapp: "a WhatsApp conversation",
+        }[preference];
 
   if (language === "zh") {
     const subject = "我们已收到您的课程沟通请求";
@@ -212,6 +237,43 @@ export function buildApplicationReceivedEmail(input: {
         notice: "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
         siteLabel: "查看 2026 课程资料",
         whatsAppLabel: "通过 WhatsApp 联系 Future Ready 高管 MBA",
+        siteUrl,
+        waUrl,
+      }),
+    };
+  }
+
+  if (language === "ms") {
+    const subject = "Permintaan perbualan program anda telah kami terima";
+    const text = [
+      `${personName}, salam sejahtera,`,
+      "",
+      "Terima kasih kerana menghubungi kami. Permintaan anda telah kami terima; Panduan Program 2026 disertakan bersama e-mel ini, dan rangka kerja program turut tersedia melalui pautan di bawah.",
+      "",
+      `Pilihan anda: ${preferenceLabel}. Pasukan program akan menghubungi anda mengikut pilihan ini.`,
+      "",
+      "E-mel ini hanya mengesahkan permintaan perbualan anda. Ia bukan tawaran kemasukan atau komitmen pembayaran.",
+      "",
+      `Rangka kerja program 2026: ${siteUrl}`,
+      `WhatsApp: ${waUrl}`,
+      "",
+      "Future Ready Programme Team",
+      DEFAULT_REPLY_TO,
+    ].join("\n");
+
+    return {
+      subject,
+      text,
+      html: emailHtml({
+        language,
+        preheader: "Permintaan perbualan program anda telah selamat diterima.",
+        greeting: `${escapedName}, salam sejahtera,`,
+        introduction: "Terima kasih kerana menghubungi kami. Permintaan anda telah kami terima; Panduan Program 2026 disertakan bersama e-mel ini, dan rangka kerja program turut tersedia melalui pautan di bawah.",
+        nextHeading: "Langkah seterusnya",
+        nextCopy: `Pilihan anda: ${preferenceLabel}. Pasukan program akan menghubungi anda mengikut pilihan ini.`,
+        notice: "E-mel ini hanya mengesahkan permintaan perbualan anda. Ia bukan tawaran kemasukan atau komitmen pembayaran.",
+        siteLabel: "Buka rangka kerja program 2026",
+        whatsAppLabel: "Hubungi Future Ready EMBA di WhatsApp",
         siteUrl,
         waUrl,
       }),
@@ -269,7 +331,7 @@ function emailHtml(input: {
 }): string {
   const dir = "ltr";
   return `<!doctype html>
-<html lang="${input.language === "zh" ? "zh-Hans" : "en"}" dir="${dir}">
+<html lang="${input.language === "zh" ? "zh-Hans" : input.language === "ms" ? "ms" : "en"}" dir="${dir}">
   <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
   <body style="margin:0;background:#f3f4f6;color:#111827;font-family:Arial,'Helvetica Neue',sans-serif;">
     <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${escapeHtml(input.preheader)}</div>
@@ -437,7 +499,7 @@ async function sendOutboxRow(
 ): Promise<void> {
   const email = buildApplicationReceivedEmail({
     name: row.name,
-    language: row.language === "zh" ? "zh" : "en",
+    language: row.language === "zh" ? "zh" : row.language === "ms" ? "ms" : "en",
     contactPreference: row.contact_preference,
   });
   const result = await transporter.sendMail({
@@ -447,7 +509,7 @@ async function sendOutboxRow(
     subject: email.subject,
     text: email.text,
     html: email.html,
-    attachments: programmeGuideAttachment(),
+    attachments: programmeGuideAttachment(row.language),
     messageId: row.message_id,
     headers: {
       "Auto-Submitted": "auto-replied",

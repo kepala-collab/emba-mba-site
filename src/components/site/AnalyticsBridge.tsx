@@ -49,7 +49,9 @@ export default function AnalyticsBridge() {
         ? "Home | Future Ready Executive MBA"
         : pathname === "/zh"
           ? "Home | Future Ready Executive MBA 中文"
-          : document.title,
+          : pathname === "/ms"
+            ? "Home | Future Ready Executive MBA BM"
+            : document.title,
       page_location: `${window.location.origin}${pathname}`,
       page_query_has_campaign: [...searchParams.keys()].some((keyName) =>
         keyName.toLowerCase().startsWith("utm_") || keyName.toLowerCase().endsWith("clid"),
@@ -71,8 +73,9 @@ export default function AnalyticsBridge() {
       const hrefValue = element instanceof HTMLAnchorElement ? element.getAttribute("href") || "" : "";
       const contactMethod = element.dataset.contactMethod ||
         (href.includes("wa.me/") ? "whatsapp" : hrefValue.startsWith("tel:") ? "phone" : hrefValue.startsWith("mailto:") ? "email" : undefined);
+      const documentLang = document.documentElement.lang.toLowerCase();
       const contactLanguage = element.dataset.contactLanguage ||
-        (document.documentElement.lang.toLowerCase().startsWith("zh") ? "zh" : "en");
+        (documentLang.startsWith("zh") ? "zh" : documentLang.startsWith("ms") ? "ms" : "en");
       const actionProperties = {
         action_id: trackingId(element, label),
         action_label: label,

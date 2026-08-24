@@ -12,6 +12,7 @@ import { OPERATOR_ID, PROVIDER_ID, WEBSITE_ID } from "@/lib/seo";
 import { FloatingUiProvider } from "@/components/site/FloatingUiContext";
 import RouteBreadcrumbs from "@/components/site/RouteBreadcrumbs";
 import RouteScrollManager from "@/components/site/RouteScrollManager";
+import SkipLink from "@/components/site/SkipLink";
 
 export default function SiteChrome({ children }: Readonly<{ children: React.ReactNode }>) {
   const providerSameAs = [SITE.providerUrl, SITE.providerLinkedIn].filter(Boolean);
@@ -75,7 +76,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
         name: SITE.name,
         publisher: { "@id": OPERATOR_ID },
         about: { "@id": PROVIDER_ID },
-        inLanguage: ["en-MY", "zh-Hans-MY"],
+        inLanguage: ["en-MY", "zh-Hans-MY", "ms-MY"],
       },
     ],
   };
@@ -87,7 +88,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
       <Suspense fallback={null}><AnalyticsBridge /></Suspense>
       <RouteScrollManager />
       <FloatingUiProvider>
-        <a className="skip-link" href="#main-content">Skip to main content</a>
+        <SkipLink />
         <Header />
         <RouteBreadcrumbs />
         <noscript><style>{`.reveal{opacity:1;transform:none}`}</style></noscript>

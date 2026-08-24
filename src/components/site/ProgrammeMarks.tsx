@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 type ProgrammeMarksProps = {
-  lang?: "en" | "zh";
+  lang?: "en" | "zh" | "ms";
   centered?: boolean;
   labelled?: boolean;
 };
@@ -20,6 +20,13 @@ const COPY = {
     cmi: "CMI（英国）背书及认可",
     hrdAlt: "HRD Corp Claimable 官方标志",
     hrd: "HRD Corp 可申请资助 · 以雇主申请及审批为准",
+  },
+  ms: {
+    group: "Tanda pengiktirafan program dan pembiayaan majikan",
+    cmiAlt: "Logo padat Chartered Management Institute",
+    cmi: "Dianugerahkan dan disokong oleh CMI",
+    hrdAlt: "Logo rasmi HRD Corp Claimable",
+    hrd: "HRD Corp Claimable · tertakluk pada permohonan dan kelulusan majikan",
   },
 } as const;
 

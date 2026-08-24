@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, type MouseEvent as ReactMouseEvent, type SyntheticEvent } from "react";
 import { CTA_LABELS, NAV, type NavItem } from "@/lib/content";
-import { isCampaignRoute, pairedRoute } from "@/lib/locale-routes";
+import { isCampaignRoute, localeOfPath, pairedRoute, type SiteLocale } from "@/lib/locale-routes";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import RdrMark from "./RdrMark";
 
@@ -30,14 +30,62 @@ const NAV_ZH: NavItem[] = [
   ] },
 ];
 
+const NAV_MS: NavItem[] = [
+  { href: "/ms/executive-mba", label: "Program", children: [
+    { href: "/ms/executive-mba", label: "Butiran program" },
+    { href: "/ms/how-it-works", label: "Kaedah program" },
+    { href: "/ms/curriculum", label: "Kurikulum" },
+  ] },
+  { href: "/ms/chartered-manager-malaysia", label: "Pengiktirafan & Pasukan", children: [
+    { href: "/ms/chartered-manager-malaysia", label: "Pengiktirafan CMI" },
+    { href: "/ms/faculty", label: "Fasilitator" },
+    { href: "/ms/asian-business-consulting", label: "Asian Business Consulting" },
+    { href: "/ms/contact", label: "Hubungi Future Ready EMBA" },
+  ] },
+  { href: "/ms/fees", label: "Yuran & Tarikh", children: [
+    { href: "/ms/fees", label: "Yuran & biasiswa" },
+    { href: "/ms/intakes", label: "Tarikh 2026" },
+  ] },
+  { href: "/ms/resources", label: "Panduan & Bantuan", children: [
+    { href: "/ms/resources", label: "Bahan program" },
+    { href: "/ms/faq", label: "Soalan lazim" },
+    { href: "/ms/diagnostic", label: "Semakan kesesuaian" },
+  ] },
+];
+
+const HEADER_UI = {
+  en: { home: "Home", getGuide: "Get the guide", getGuideShort: "Get guide", menu: "Menu", close: "Close",
+    openMenu: "Open menu", closeMenu: "Close menu", explore: "Explore the programme",
+    assistant: "Ask the programme assistant →", primaryNav: "Primary navigation", mobileNav: "Mobile navigation",
+    mobilePrimaryNav: "Mobile primary navigation", campaignNav: "Programme plan actions" },
+  zh: { home: "首页", getGuide: "获取指南", getGuideShort: "获取指南", menu: "菜单", close: "关闭",
+    openMenu: "打开菜单", closeMenu: "关闭菜单", explore: "浏览课程",
+    assistant: "询问课程助手 →", primaryNav: "主导航", mobileNav: "移动导航",
+    mobilePrimaryNav: "移动主导航", campaignNav: "课程资料操作" },
+  ms: { home: "Utama", getGuide: "Dapatkan panduan", getGuideShort: "Panduan", menu: "Menu", close: "Tutup",
+    openMenu: "Buka menu", closeMenu: "Tutup menu", explore: "Terokai program",
+    assistant: "Tanya pembantu program →", primaryNav: "Navigasi utama", mobileNav: "Navigasi mudah alih",
+    mobilePrimaryNav: "Navigasi utama mudah alih", campaignNav: "Tindakan pelan program" },
+} as const;
+
+const LOCALE_LABELS: Record<SiteLocale, string> = { en: "EN", zh: "中文", ms: "BM" };
+
 export default function Header() {
   const pathname = usePathname() || "/";
-  const zh = pathname === "/zh" || pathname.startsWith("/zh/") || pathname.startsWith("/zh#");
-  const homeHref = zh ? "/zh" : "/home";
-  const applyHref = zh ? "/zh/apply" : "/apply";
-  const links = zh ? NAV_ZH : NAV;
+  const locale = localeOfPath(pathname);
+  const t = HEADER_UI[locale];
+  const homeHref = locale === "zh" ? "/zh" : locale === "ms" ? "/ms" : "/home";
+  const applyHref = locale === "en" ? "/apply" : `/${locale}/apply`;
+  const links = locale === "zh" ? NAV_ZH : locale === "ms" ? NAV_MS : NAV;
   const pair = pairedRoute(pathname);
-  const languageHref = zh ? (pair?.en || "/home") : (pair?.zh || "/zh");
+  const otherLocales = (["en", "zh", "ms"] as SiteLocale[])
+    .filter((candidate) => candidate !== locale)
+    .map((candidate) => ({
+      code: candidate,
+      label: LOCALE_LABELS[candidate],
+      href: pair?.[candidate] || (candidate === "en" ? "/home" : `/${candidate}`),
+    }));
+  const cta = locale === "zh" ? CTA_LABELS.zh : locale === "ms" ? CTA_LABELS.ms : CTA_LABELS;
   const {
     navigationOpen: menuOpen,
     setNavigationOpen: setMenuOpen,
@@ -169,12 +217,14 @@ export default function Header() {
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
             </span>
           </Link>
-          <nav className="campaign-nav-actions" aria-label={zh ? "课程资料操作" : "Programme plan actions"}>
-            <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
-              {zh ? "EN" : "中文"}
-            </Link>
+          <nav className="campaign-nav-actions" aria-label={t.campaignNav}>
+            {otherLocales.map((other) => (
+              <Link key={other.code} href={other.href} className="langswitch" lang={other.code === "zh" ? "zh-Hans" : other.code} aria-label={`${LOCALE_LABELS[locale]} → ${other.label}`}>
+                {other.label}
+              </Link>
+            ))}
             <a href="#apply" className="navcta" data-track-event="cta_click" data-track-id="campaign_header_plan" data-track-location="campaign_header">
-              {zh ? CTA_LABELS.zh.guide : CTA_LABELS.guide}
+              {cta.guide}
             </a>
           </nav>
         </div>
@@ -192,9 +242,9 @@ export default function Header() {
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
             </span>
           </Link>
-          <nav ref={desktopNavRef} className="navlinks desktop-nav" aria-label={zh ? "主导航" : "Primary navigation"}>
+          <nav ref={desktopNavRef} className="navlinks desktop-nav" aria-label={t.primaryNav}>
             <Link href={homeHref} className={pathname === homeHref ? "is-active" : undefined} aria-current={pathname === homeHref ? "page" : undefined}>
-              {zh ? "首页" : "Home"}
+              {t.home}
             </Link>
             {links.map((n) => n.children ? (
               <details className="nav-dropdown" key={n.href} onToggle={handleDropdownToggle}>
@@ -206,24 +256,26 @@ export default function Header() {
             ) : (
               <Link key={n.href} href={n.href} className={isActive(n.href) ? "is-active" : undefined} aria-current={isActive(n.href) ? "page" : undefined}>{n.label}</Link>
             ))}
-            <Link href={languageHref} className="langswitch" aria-label={zh ? "Switch to English" : "切换到中文"}>
-              {zh ? "EN" : "中文"}
-            </Link>
-            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{zh ? "获取指南" : "Get the guide"}</Link>
+            {otherLocales.map((other) => (
+              <Link key={other.code} href={other.href} className="langswitch" lang={other.code === "zh" ? "zh-Hans" : other.code} aria-label={`${LOCALE_LABELS[locale]} → ${other.label}`}>
+                {other.label}
+              </Link>
+            ))}
+            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{t.getGuide}</Link>
           </nav>
           <div className="mobile-header-actions">
-            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{zh ? "获取指南" : "Get guide"}</Link>
+            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{t.getGuideShort}</Link>
             <button
               ref={toggleRef}
               className="mobile-menu-toggle"
               type="button"
-              aria-label={menuOpen ? (zh ? "关闭菜单" : "Close menu") : (zh ? "打开菜单" : "Open menu")}
+              aria-label={menuOpen ? t.closeMenu : t.openMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               <span className="menu-icon" aria-hidden="true"><i /><i /></span>
-              <span>{menuOpen ? (zh ? "关闭" : "Close") : (zh ? "菜单" : "Menu")}</span>
+              <span>{menuOpen ? t.close : t.menu}</span>
             </button>
           </div>
         </div>
@@ -234,7 +286,7 @@ export default function Header() {
           <button
             className="mobile-nav-backdrop"
             type="button"
-            aria-label={zh ? "关闭菜单" : "Close menu"}
+            aria-label={t.closeMenu}
             onClick={() => { closeMenu(); toggleRef.current?.focus(); }}
           />
           <div
@@ -243,18 +295,18 @@ export default function Header() {
             className="mobile-nav-panel"
             role="dialog"
             aria-modal="true"
-            aria-label={zh ? "移动导航" : "Mobile navigation"}
+            aria-label={t.mobileNav}
           >
             <div className="mobile-nav-head">
-              <p className="mono mobile-nav-label">{zh ? "浏览课程" : "Explore the programme"}</p>
+              <p className="mono mobile-nav-label">{t.explore}</p>
               <button className="mobile-panel-close" type="button" onClick={() => { closeMenu(); toggleRef.current?.focus(); }}>
-                <span>{zh ? "关闭" : "Close"}</span><span aria-hidden="true">×</span>
+                <span>{t.close}</span><span aria-hidden="true">×</span>
               </button>
             </div>
-            <nav aria-label={zh ? "移动主导航" : "Mobile primary navigation"}>
+            <nav aria-label={t.mobilePrimaryNav}>
               <Link className="mobile-nav-home" href={homeHref} onClick={closeMenu} aria-current={pathname === homeHref ? "page" : undefined}>
                 <span className="mobile-nav-index">00</span>
-                <span>{zh ? "首页" : "Home"}</span>
+                <span>{t.home}</span>
                 <span aria-hidden="true">↗</span>
               </Link>
               {links.map((n, index) => (
@@ -269,9 +321,11 @@ export default function Header() {
               ))}
             </nav>
             <div className="mobile-nav-footer">
-              <Link href={languageHref} className="mobile-language" onClick={closeMenu}>
-                <span>{zh ? "English site" : "中文网站"}</span><span aria-hidden="true">→</span>
-              </Link>
+              {otherLocales.map((other) => (
+                <Link key={other.code} href={other.href} className="mobile-language" lang={other.code === "zh" ? "zh-Hans" : other.code} onClick={closeMenu}>
+                  <span>{other.code === "en" ? "English site" : other.code === "zh" ? "中文网站" : "Laman Bahasa Melayu"}</span><span aria-hidden="true">→</span>
+                </Link>
+              ))}
               <button
                 type="button"
                 className="btn btn-ghost mobile-assistant-action"
@@ -280,10 +334,10 @@ export default function Header() {
                 data-track-id="mobile_menu_assistant"
                 data-track-location="mobile_navigation"
               >
-                {zh ? "询问课程助手 →" : "Ask the programme assistant →"}
+                {t.assistant}
               </button>
               <Link href={applyHref} className="btn btn-primary" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_menu_apply" data-track-location="mobile_navigation">
-                {zh ? `${CTA_LABELS.zh.guide} →` : `${CTA_LABELS.guide} →`}
+                {`${cta.guide} →`}
               </Link>
             </div>
           </div>

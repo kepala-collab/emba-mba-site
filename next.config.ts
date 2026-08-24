@@ -93,6 +93,10 @@ const nextConfig: NextConfig = {
         source: "/zh/:path*",
         headers: [{ key: "Content-Language", value: "zh-Hans" }],
       },
+      {
+        source: "/ms/:path*",
+        headers: [{ key: "Content-Language", value: "ms" }],
+      },
     ];
   },
   images: {

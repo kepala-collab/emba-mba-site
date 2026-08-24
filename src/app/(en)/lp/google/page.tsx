@@ -11,7 +11,7 @@ export const metadata = withSeo("/lp/google", {
     "A three-month programme leading to the CMI-recognised Executive MBA programme certificate.",
   // Ad landing page — keep it out of organic index so it doesn't compete with SEO pages.
   robots: { index: false, follow: false },
-  alternates: { canonical: "/lp/google", languages: { en: "/lp/google", "zh-Hans": "/zh/lp/google" } },
+  alternates: { canonical: "/lp/google" },
 });
 
 const SOURCE = "lp-google";

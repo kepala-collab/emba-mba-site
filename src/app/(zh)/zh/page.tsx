@@ -11,7 +11,6 @@ export const metadata = withSeo("/zh", {
     "三个月完成 Future Ready Executive MBA 专业发展课程，并可继续工作。Chartered Manager 属于独立可选 CMI 路线。",
   alternates: {
     canonical: "/zh",
-    languages: { en: "/home", "zh-Hans": "/zh", "x-default": "/home" },
   },
   openGraph: {
     type: "website",

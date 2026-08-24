@@ -19,6 +19,14 @@ const checks = [
   { file: "zh/intakes.html", path: "/zh/intakes", hreflang: true },
   { file: "zh/faculty.html", path: "/zh/faculty", hreflang: true },
   { file: "zh/faq.html", path: "/zh/faq", hreflang: true },
+  { file: "ms.html", path: "/ms", hreflang: true },
+  { file: "ms/executive-mba.html", path: "/ms/executive-mba", hreflang: true },
+  { file: "ms/chartered-manager-malaysia.html", path: "/ms/chartered-manager-malaysia", hreflang: true },
+  { file: "ms/curriculum.html", path: "/ms/curriculum", hreflang: true },
+  { file: "ms/fees.html", path: "/ms/fees", hreflang: true },
+  { file: "ms/intakes.html", path: "/ms/intakes", hreflang: true },
+  { file: "ms/faculty.html", path: "/ms/faculty", hreflang: true },
+  { file: "ms/faq.html", path: "/ms/faq", hreflang: true },
   { file: "insights/executive-education-vs-executive-mba.html", path: "/insights/executive-education-vs-executive-mba", hreflang: false },
 ];
 
@@ -32,7 +40,7 @@ for (const check of checks) {
   if ((html.match(/<h1(?:\s|>)/g) || []).length !== 1) {
     failures.push(`${check.path}: expected exactly one h1`);
   }
-  if (check.hreflang && (!html.includes('hrefLang="en"') || !html.includes('hrefLang="zh-Hans"'))) {
+  if (check.hreflang && (!html.includes('hrefLang="en"') || !html.includes('hrefLang="zh-Hans"') || !html.includes('hrefLang="ms"'))) {
     failures.push(`${check.path}: language alternates missing`);
   }
 }

@@ -15,7 +15,7 @@ type CandidateRow = RowDataPacket & {
   id: number;
   name: string;
   email: string;
-  language: "en" | "zh" | null;
+  language: "en" | "zh" | "ms" | null;
 };
 
 function json(body: object, status = 200) {
@@ -87,7 +87,7 @@ async function handle(request: Request) {
         continue;
       }
       handledLeads.add(row.id);
-      const language: NurtureLanguage = row.language === "zh" ? "zh" : "en";
+      const language: NurtureLanguage = row.language === "zh" ? "zh" : row.language === "ms" ? "ms" : "en";
 
       if (dryRun) {
         sent += 1;

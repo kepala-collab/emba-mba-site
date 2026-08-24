@@ -13,7 +13,6 @@ export const metadata = withSeo("/home", {
     `${PROGRAMME_POSITIONING_SENTENCE} Built for Malaysian working managers over three months.`,
   alternates: {
     canonical: "/home",
-    languages: { en: "/home", "zh-Hans": "/zh", "x-default": "/home" },
   },
 });
 

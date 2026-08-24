@@ -5,20 +5,21 @@ import { decodeEmailParameter, unsubscribeConfigured, verifyUnsubscribeToken } f
 export const runtime = "nodejs";
 
 function redirectTo(request: Request, language: string, status: "done" | "invalid" | "error") {
-  const path = language === "zh" ? "/zh/unsubscribed" : "/unsubscribed";
+  const path = language === "zh" ? "/zh/unsubscribed" : language === "ms" ? "/ms/unsubscribed" : "/unsubscribed";
   const url = new URL(path, request.url);
   url.searchParams.set("status", status);
   return NextResponse.redirect(url, { status: 303, headers: { "Cache-Control": "no-store, max-age=0" } });
 }
 
 type UnsubscribeResult = {
-  language: "en" | "zh";
+  language: "en" | "zh" | "ms";
   status: "done" | "invalid" | "error";
 };
 
 async function processUnsubscribe(request: Request): Promise<UnsubscribeResult> {
   const { searchParams } = new URL(request.url);
-  const language = searchParams.get("l") === "zh" ? "zh" : "en";
+  const rawLanguage = searchParams.get("l");
+  const language = rawLanguage === "zh" ? "zh" : rawLanguage === "ms" ? "ms" : "en";
 
   if (!unsubscribeConfigured()) return { language, status: "error" };
 

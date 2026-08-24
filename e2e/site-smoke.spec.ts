@@ -61,6 +61,40 @@ test("the legacy root permanently resolves to the named Home route", async ({ pa
   await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
 });
 
+test("Malay locale preserves responsive structure, metadata and accessibility", async ({ page }) => {
+  await mockTurnstile(page);
+  const routes = [
+    "/ms",
+    "/ms/executive-mba",
+    "/ms/how-it-works",
+    "/ms/fees",
+    "/ms/apply",
+    "/ms/asian-business-consulting",
+    "/ms/resources/advancement-brief",
+  ];
+  for (const width of [320, 390, 768, 1280]) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
+    for (const route of routes) {
+      const response = await goto(page, route);
+      expect(response?.status(), `${route} at ${width}px`).toBe(200);
+      await expect(page.locator("html")).toHaveAttribute("lang", "ms-MY");
+      await expect(page.locator("main h1")).toHaveCount(1);
+      const dimensions = await page.evaluate(() => ({
+        client: document.documentElement.clientWidth,
+        scroll: document.documentElement.scrollWidth,
+      }));
+      expect(dimensions.scroll, `${route} at ${width}px`).toBeLessThanOrEqual(dimensions.client);
+    }
+  }
+
+  await goto(page, "/ms");
+  for (const hreflang of ["en", "zh-Hans", "ms", "x-default"]) {
+    await expect(page.locator(`link[rel="alternate"][hreflang="${hreflang}"]`)).toHaveCount(1);
+  }
+  const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
+  expect(results.violations.map((item) => item.id), "Malay homepage accessibility").toEqual([]);
+});
+
 test("desktop header provides four exclusive navigation dropdowns", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/home");

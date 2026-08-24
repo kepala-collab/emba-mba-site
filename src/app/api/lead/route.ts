@@ -68,7 +68,7 @@ type LeadRow = {
   preferred_contact_window: ContactWindow | null;
   programme_interest: string | null;
   page_path: string | null;
-  page_language: "en" | "zh" | null;
+  page_language: "en" | "zh" | "ms" | null;
   landing_page: string | null;
   referrer: string | null;
   first_referrer: string | null;
@@ -281,7 +281,7 @@ function parseLead(value: unknown): LeadRow | null {
   if (leadIntent !== null && !isLeadIntent(leadIntent)) return null;
   if (preferredContactWindow !== null && !isContactWindow(preferredContactWindow)) return null;
   if (cohortKey && !/^[a-z0-9][a-z0-9_-]{0,63}$/.test(cohortKey)) return null;
-  if (pageLanguage !== null && pageLanguage !== "en" && pageLanguage !== "zh") return null;
+  if (pageLanguage !== null && pageLanguage !== "en" && pageLanguage !== "zh" && pageLanguage !== "ms") return null;
   if (pagePath && !pagePath.startsWith("/")) return null;
   if (landingPage && !landingPage.startsWith("/")) return null;
   for (const urlValue of [referrer, firstReferrer]) {
@@ -506,7 +506,7 @@ export async function POST(req: Request) {
           ) VALUES (?, 'application_received', ?, ?, UTC_DATE())`,
           values: [
             leadId,
-            row.page_language === "zh" ? "zh" : "en",
+            row.page_language === "zh" ? "zh" : row.page_language === "ms" ? "ms" : "en",
             leadEmailRecipientHash(row.email),
           ],
           timeout: 5_000,

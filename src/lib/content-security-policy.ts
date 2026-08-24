@@ -11,7 +11,7 @@ const directives = [
   `img-src 'self' data: blob: https://challenges.cloudflare.com${analyticsImageSources}`,
   "font-src 'self' data:",
   `connect-src 'self' https://challenges.cloudflare.com${analyticsConnectSources}`,
-  "frame-src https://challenges.cloudflare.com",
+  "frame-src https://challenges.cloudflare.com https://www.youtube-nocookie.com",
   "worker-src 'self' blob:",
   "media-src 'self'",
   "manifest-src 'self'",

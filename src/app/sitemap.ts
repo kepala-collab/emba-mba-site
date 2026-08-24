@@ -9,7 +9,7 @@ const REVIEW_DATES = {
   legal: new Date("2026-08-14T00:00:00+08:00"),
 } as const;
 
-const PRIMARY = ["/home", "/executive-mba", "/apply", "/zh"];
+const PRIMARY = ["/home", "/executive-mba", "/apply", "/zh", "/ms"];
 const CORE = ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq"];
 const CLUSTER = [
   "/hrd-corp-claimable", "/executive-mba-vs-mba",
@@ -29,15 +29,37 @@ const ZH_RESOURCES = [
   "/zh/resources", "/zh/resources/advancement-brief",
   "/zh/diagnostic", "/zh/insights/advancement-question", "/zh/asian-business-consulting",
 ];
+const ZH_FULL_MIRROR = [
+  "/zh/about", "/zh/ai-executive-mba", "/zh/corporate-training", "/zh/executive-mba-malaysia",
+  "/zh/executive-mba-vs-mba", "/zh/hrd-corp-claimable", "/zh/insights",
+  "/zh/insights/design-thinking-for-business", "/zh/insights/executive-education-vs-executive-mba",
+  "/zh/insights/first-principles-thinking", "/zh/insights/systems-thinking-for-leaders",
+  "/zh/mba-for-entrepreneurs", "/zh/mba-for-sme-owners", "/zh/mba-for-working-professionals",
+  "/zh/online-executive-mba", "/zh/programmes/shift-hr",
+];
+const MS_CORE = [
+  "/ms/executive-mba", "/ms/how-it-works", "/ms/curriculum", "/ms/fees", "/ms/intakes",
+  "/ms/faculty", "/ms/faq", "/ms/chartered-manager-malaysia", "/ms/apply", "/ms/contact", "/ms/privacy", "/ms/terms",
+];
+const MS_MIRROR = [
+  "/ms/resources", "/ms/resources/advancement-brief", "/ms/diagnostic", "/ms/asian-business-consulting",
+  "/ms/about", "/ms/ai-executive-mba", "/ms/corporate-training", "/ms/executive-mba-malaysia",
+  "/ms/executive-mba-vs-mba", "/ms/hrd-corp-claimable", "/ms/insights",
+  "/ms/insights/advancement-question", "/ms/insights/design-thinking-for-business",
+  "/ms/insights/executive-education-vs-executive-mba", "/ms/insights/first-principles-thinking",
+  "/ms/insights/systems-thinking-for-leaders", "/ms/mba-for-entrepreneurs", "/ms/mba-for-sme-owners",
+  "/ms/mba-for-working-professionals", "/ms/online-executive-mba", "/ms/programmes/shift-hr",
+];
 const INFO = ["/about", "/asian-business-consulting", "/contact", "/privacy", "/terms", "/resources", "/resources/advancement-brief", "/diagnostic"];
 
 function alternatesFor(path: string) {
-  const pair = LOCALE_PAIRS.find(({ en, zh }) => en === path || zh === path);
+  const pair = LOCALE_PAIRS.find(({ en, zh, ms }) => en === path || zh === path || ms === path);
   if (!pair) return undefined;
   return {
     languages: {
       en: `${SITE.url}${pair.en}`,
       "zh-Hans": `${SITE.url}${pair.zh}`,
+      ms: `${SITE.url}${pair.ms}`,
       "x-default": `${SITE.url}${pair.en}`,
     },
   };
@@ -65,6 +87,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...build(INSIGHTS, 0.7, "monthly", REVIEW_DATES.insights),
     ...build(ZH_CORE, 0.8, "weekly", REVIEW_DATES.programme),
     ...build(ZH_RESOURCES, 0.7, "monthly", REVIEW_DATES.insights),
+    ...build(ZH_FULL_MIRROR, 0.65, "monthly", REVIEW_DATES.commercial),
+    ...build(MS_CORE, 0.8, "weekly", REVIEW_DATES.programme),
+    ...build(MS_MIRROR, 0.65, "monthly", REVIEW_DATES.commercial),
     ...build(INFO, 0.4, "monthly", REVIEW_DATES.legal),
   ];
 }

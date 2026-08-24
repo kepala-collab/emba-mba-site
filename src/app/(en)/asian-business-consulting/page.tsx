@@ -4,7 +4,8 @@ import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { OPERATOR } from "@/lib/content";
+import YouTubeFilm from "@/components/site/YouTubeFilm";
+import { OPERATOR, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
@@ -142,10 +143,8 @@ export default function AsianBusinessConsultingPage() {
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
               <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Inaugural graduation · 86 attendees · August 2026</div>
-              <video controls preload="none" poster="/brand/abc-graduation-poster.jpg" playsInline>
-                <source src="/media/abc-graduation-mobile.mp4" type="video/mp4" media="(max-width: 720px)" />
-                <source src="/media/abc-graduation.mp4" type="video/mp4" />
-              </video>
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Inaugural Graduation Film", description: "Highlights from the inaugural Future Ready Executive MBA graduation in August 2026, attended by 86 graduates.", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.jpg`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "en-MY" }} />
+              <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.jpg" lang="en" />
               <div className="film-cap"><strong>Eighty-six graduates attended,</strong> joined by faculty and guests from Malaysian business and public life.</div>
             </div>
           </Reveal>

@@ -4,7 +4,8 @@ import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { OPERATOR } from "@/lib/content";
+import YouTubeFilm from "@/components/site/YouTubeFilm";
+import { OPERATOR, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
@@ -140,10 +141,8 @@ export default function AbcPageZh() {
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
               <div className="film-ribbon"><span className="dot" aria-hidden="true" /> 首届毕业典礼 · 86 位毕业生出席 · 2026年8月</div>
-              <video controls preload="none" poster="/brand/abc-graduation-poster.jpg" playsInline>
-                <source src="/media/abc-graduation-mobile.mp4" type="video/mp4" media="(max-width: 720px)" />
-                <source src="/media/abc-graduation.mp4" type="video/mp4" />
-              </video>
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — 首届毕业典礼影片", description: "2026 年 8 月首届 Future Ready Executive MBA 毕业典礼精华，86 位毕业生出席。", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.jpg`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "zh-Hans-MY" }} />
+              <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.jpg" lang="zh" />
               <div className="film-cap"><strong>86 位毕业生出席典礼，</strong>并与导师及来自马来西亚商界与公共领域的嘉宾共同见证这一里程碑。</div>
             </div>
           </Reveal>
@@ -180,7 +179,7 @@ export default function AbcPageZh() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="与课程团队沟通。" sub="咨询 Future Ready 高管 MBA，或访问 asianbusinessconsulting.biz 进一步了解 Asian Business Consulting。" />
+      <CtaSection lang="zh" programme="Executive MBA" heading="与课程团队沟通。" sub="咨询 Future Ready 高管 MBA，或访问 asianbusinessconsulting.biz 进一步了解 Asian Business Consulting。" />
     </>
   );
 }

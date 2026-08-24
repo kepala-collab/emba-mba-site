@@ -55,8 +55,8 @@ export default function HomeHeroSlider() {
   const [inViewport, setInViewport] = useState(true);
   const [pageVisible, setPageVisible] = useState(true);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const sliderRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sliderRef = useRef<HTMLElement>(null);
   const rotationPaused = manualPaused || interacting || !inViewport || !pageVisible || reduceMotion;
 
   const selectSlide = useCallback((index: number, pauseRotation = false) => {
@@ -160,7 +160,7 @@ export default function HomeHeroSlider() {
                       muted
                       loop
                       playsInline
-                      preload="auto"
+                      preload="metadata"
                       poster={slide.poster}
                       aria-label="Future Ready Executive MBA graduation highlights"
                     >

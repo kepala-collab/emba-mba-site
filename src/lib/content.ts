@@ -26,6 +26,9 @@ export const PROGRAMME_POSITIONING_SENTENCE =
 export const PROGRAMME_POSITIONING_ZH =
   "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。";
 
+export const PROGRAMME_POSITIONING_MS =
+  "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.";
+
 export const CTA_LABELS = {
   guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
@@ -36,6 +39,12 @@ export const CTA_LABELS = {
     conversation: "预约课程沟通",
     company: "企业课程咨询",
     whatsapp: "通过 WhatsApp 联系 Future Ready 高管 MBA",
+  },
+  ms: {
+    guide: `Dapatkan panduan program ${PROGRAMME_YEAR}`,
+    conversation: "Aturkan perbualan program",
+    company: "Pertanyaan untuk syarikat anda",
+    whatsapp: "Hubungi Future Ready EMBA di WhatsApp",
   },
 } as const;
 
