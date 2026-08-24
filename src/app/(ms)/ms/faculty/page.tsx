@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: content.title, path }]} />
-      <section className="section zh-core-page geo-section">
+      <section className="section zh-core-page geo-section" data-page={path}>
         <div className="wrap">
           <Reveal>
             <div className="zh-core-intro">

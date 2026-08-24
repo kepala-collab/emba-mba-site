@@ -15,7 +15,7 @@ export default function ChineseCorePage({ path, eyebrow, title, intro, sections 
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "首页", path: "/zh" }, { name: title, path }]} />
-      <section className="section zh-core-page geo-section">
+      <section className="section zh-core-page geo-section" data-page={path}>
         <div className="wrap">
           <Reveal>
             <div className="zh-core-intro">

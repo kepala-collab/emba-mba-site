@@ -122,6 +122,118 @@ test("desktop header provides four exclusive navigation dropdowns", async ({ pag
   await expect(recognition.locator("summary")).toBeFocused();
 });
 
+test("English, Malay and Chinese share one navigation and page type scale", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const samples: Array<{
+    route: string;
+    body: string;
+    heading: string;
+    headingLineHeight: string;
+    home: string;
+    dropdown: string;
+    cta: string;
+  }> = [];
+
+  for (const route of ["/home", "/ms", "/zh"] as const) {
+    await goto(page, route);
+    await page.evaluate(() => document.fonts.ready);
+    samples.push(await page.evaluate(() => {
+      const style = (selector: string) => getComputedStyle(document.querySelector(selector) as HTMLElement);
+      return {
+        route: window.location.pathname,
+        body: style("body").fontSize,
+        heading: style("main h1").fontSize,
+        headingLineHeight: style("main h1").lineHeight,
+        home: style(".desktop-nav > a:not(.langswitch):not(.navcta)").fontSize,
+        dropdown: style(".desktop-nav .nav-dropdown summary").fontSize,
+        cta: style(".desktop-nav .navcta").fontSize,
+      };
+    }));
+    const dimensions = await page.evaluate(() => ({
+      client: document.documentElement.clientWidth,
+      scroll: document.documentElement.scrollWidth,
+    }));
+    expect(dimensions.scroll, `${route} navigation overflow`).toBeLessThanOrEqual(dimensions.client);
+  }
+
+  for (const sample of samples) {
+    expect(sample.body, `${sample.route} body size`).toBe(samples[0].body);
+    expect(sample.heading, `${sample.route} home heading size`).toBe(samples[0].heading);
+    expect(sample.headingLineHeight, `${sample.route} home heading line height`).toBe(samples[0].headingLineHeight);
+    expect(sample.home, `${sample.route} home navigation size`).toBe(samples[0].home);
+    expect(sample.dropdown, `${sample.route} dropdown navigation size`).toBe(samples[0].dropdown);
+    expect(sample.cta, `${sample.route} CTA navigation size`).toBe(samples[0].cta);
+    expect(sample.home, `${sample.route} internal navigation consistency`).toBe(sample.dropdown);
+    expect(sample.dropdown, `${sample.route} CTA consistency`).toBe(sample.cta);
+  }
+});
+
+test("localized page equivalents retain the same primary type dimensions", async ({ page }) => {
+  test.setTimeout(90_000);
+  const slugs = [
+    "about",
+    "ai-executive-mba",
+    "apply",
+    "asian-business-consulting",
+    "chartered-manager-malaysia",
+    "contact",
+    "corporate-training",
+    "curriculum",
+    "diagnostic",
+    "executive-mba",
+    "executive-mba-malaysia",
+    "executive-mba-vs-mba",
+    "faculty",
+    "faq",
+    "fees",
+    "how-it-works",
+    "hrd-corp-claimable",
+    "insights",
+    "insights/advancement-question",
+    "insights/design-thinking-for-business",
+    "insights/executive-education-vs-executive-mba",
+    "insights/first-principles-thinking",
+    "insights/systems-thinking-for-leaders",
+    "intakes",
+    "mba-for-entrepreneurs",
+    "mba-for-sme-owners",
+    "mba-for-working-professionals",
+    "online-executive-mba",
+    "privacy",
+    "programmes/shift-hr",
+    "resources",
+    "resources/advancement-brief",
+    "terms",
+  ];
+
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 960 }]) {
+    await page.setViewportSize(viewport);
+    for (const slug of slugs) {
+      const dimensions: Array<{ route: string; body: string; heading: string; lineHeight: string }> = [];
+      for (const prefix of ["", "/ms", "/zh"] as const) {
+        const route = `${prefix}/${slug}`;
+        const response = await goto(page, route);
+        expect(response?.status(), `${route} at ${viewport.width}px`).toBe(200);
+        dimensions.push(await page.evaluate(() => {
+          const heading = getComputedStyle(document.querySelector("main h1") as HTMLElement);
+          return {
+            route: window.location.pathname,
+            body: getComputedStyle(document.body).fontSize,
+            heading: heading.fontSize,
+            lineHeight: heading.lineHeight,
+          };
+        }));
+      }
+
+      for (const sample of dimensions.slice(1)) {
+        expect.soft(sample.body, `${sample.route} body size at ${viewport.width}px`).toBe(dimensions[0].body);
+        expect.soft(sample.heading, `${sample.route} heading size at ${viewport.width}px`).toBe(dimensions[0].heading);
+        expect.soft(sample.lineHeight, `${sample.route} heading line height at ${viewport.width}px`).toBe(dimensions[0].lineHeight);
+      }
+    }
+  }
+});
+
 test("mobile navigation preserves the four-group information hierarchy", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await goto(page, "/home");
