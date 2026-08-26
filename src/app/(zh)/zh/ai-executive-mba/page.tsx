@@ -49,7 +49,7 @@ export default function AiExecutiveMbaPage() {
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
               本页说明获 CMI 认可的 <Link href="/zh/executive-mba" className="acc">Future Ready 高管 MBA</Link>{" "}
               如何把决策框架应用于 AI 战略、数据、自动化、治理与执行。
-              它是同一个<b style={{ color: "var(--ink)" }}>三个月</b>课程，不是另设的软件或技术认证。
+              它是同一个<b style={{ color: "var(--ink)" }}>六个月</b>课程，不是另设的软件或技术认证。
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -127,7 +127,7 @@ export default function AiExecutiveMbaPage() {
             {[
               ["由 CMI 颁授并背书", "面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书，并非 MQA 监管的学术学位。"],
               ["HRD Corp", HRD_CORP_CLAIM_ZH],
-              ["修读形式", "三个月课程：三个每月课程，加上辅导及企业应用项目。"],
+              ["修读形式", "六个月课程：三个指定课程，加上辅导及企业应用项目。"],
               ["课程费用", "标准费用 " + FACTS.priceStd + "。符合资格的马来西亚申请者经评估及书面批准后，可获 " + FACTS.scholarshipAmount + " LIFE Innoversity 奖学金。"],
               ["应用项目", "学员为自己的企业完成一份转型方案；没有传统考试或论文。"],
             ].map(([h, p]) => (

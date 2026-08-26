@@ -81,7 +81,7 @@ export default function AbcPageMs() {
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "60ch" }}>
-              Asian Business Consulting (ABC) ialah organisasi perundingan pengurusan, latihan korporat dan pembelajaran eksekutif yang didaftarkan di Malaysia pada 2020. Selepas hampir tiga tahun pembangunan bersama CMI (UK), ABC mereka bentuk Future Ready Executive MBA selama tiga bulan dan menyampaikannya sebagai pusat yang diiktiraf CMI (UK).
+              Asian Business Consulting (ABC) ialah organisasi perundingan pengurusan, latihan korporat dan pembelajaran eksekutif yang didaftarkan di Malaysia pada 2020. Selepas hampir tiga tahun pembangunan bersama CMI (UK), ABC mereka bentuk Future Ready Executive MBA selama enam bulan dan menyampaikannya sebagai pusat yang diiktiraf CMI (UK).
             </p>
           </Reveal>
           <Reveal delay={110}>

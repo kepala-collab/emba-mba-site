@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/zh/lp/meta", {
   title: "面向在职领导者的高管 MBA | Future Ready",
   description:
-    "面向在职管理者的三个月 Future Ready Executive MBA：六个培训日、三个每月课程及企业应用项目。",
+    "面向在职管理者的六个月 Future Ready Executive MBA：六个培训日、三个指定课程及企业应用项目。",
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/meta" },
 });
@@ -41,12 +41,12 @@ export default function ZhMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">面向承担跨职能决策责任的在职领导者</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              三个月完成面向未来商业领导力、<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
+              六个月完成面向未来商业领导力、<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              在继续工作的同时，三个月完成六个培训日、辅导及企业应用项目。Chartered Manager 属于独立可选 CMI 路线，具有独立资格、评估及费用。
+              在继续工作的同时，六个月完成六个培训日、辅导及企业应用项目。Chartered Manager 属于独立可选 CMI 路线，具有独立资格、评估及费用。
             </p>
           </Reveal>
           <Reveal delay={160}>

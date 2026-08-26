@@ -43,11 +43,11 @@ const EN: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `Dear ${name},`,
     headline: "Did the guide answer your questions?",
     paragraphs: [
-      "A few days ago you requested the Working Manager’s Guide to the Future Ready Executive MBA. Most readers tell us three sections decide it for them: how the three months actually run, what the CMI (UK) recognition means — and what it deliberately does not — and the published fee.",
+      "A few days ago you requested the Working Manager’s Guide to the Future Ready Executive MBA. Most readers tell us three sections decide it for them: how the six months actually run, what the CMI (UK) recognition means — and what it deliberately does not — and the published fee.",
       "If anything in those pages is unclear, that is exactly what a programme conversation is for. No payment, no enrolment commitment — just answers.",
     ],
     facts: [
-      { label: "Format", value: "3 months · one weekend a month · no time out of the business" },
+      { label: "Format", value: "6 months · three scheduled weekends across the programme · no time out of the business" },
       { label: "Recognition", value: "Awarded and endorsed by CMI · professional programme, not an academic degree" },
       { label: "Fee", value: "RM10,000 published · scholarship assessed individually, confirmed in writing" },
     ],
@@ -61,7 +61,7 @@ const EN: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `Dear ${name},`,
     headline: "The calendar decides more than the brochure does.",
     paragraphs: [
-      "Every cohort covers the full three-month programme across three scheduled weekends, 9am–6pm, one month apart — so the applied work happens inside your business between sessions.",
+      "Every cohort covers the full six-month programme across three scheduled weekends, 9am–6pm, on the published dates — so the applied work happens inside your business between sessions.",
       "The live calendar of remaining 2026 cohorts, in English and Mandarin, is on the website. If a date almost works, tell the team before you rule it out — the calendar conversation is usually the shortest one.",
     ],
     facts: [
@@ -95,11 +95,11 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `${name}，您好：`,
     headline: "课程指南解答了您的疑问吗？",
     paragraphs: [
-      "几天前您索取了 Future Ready Executive MBA 课程指南。多数读者告诉我们，三个部分最能帮助他们做决定：三个月如何安排、CMI（英国）认可的含义与边界，以及已公布的课程费用。",
+      "几天前您索取了 Future Ready Executive MBA 课程指南。多数读者告诉我们，三个部分最能帮助他们做决定：六个月如何安排、CMI（英国）认可的含义与边界，以及已公布的课程费用。",
       "如果其中任何内容不够清楚，这正是课程沟通的意义——无需付款，不构成报名承诺，只为解答。",
     ],
     facts: [
-      { label: "课程安排", value: "为期三个月 · 每月一个周末 · 无需离岗" },
+      { label: "课程安排", value: "为期六个月 · 三个指定周末课程 · 无需离岗" },
       { label: "认可", value: "CMI（英国）认可的专业发展课程，非学术学位" },
       { label: "费用", value: "公布费用 RM10,000 · 奖学金逐一评估，以书面确认为准" },
     ],
@@ -113,7 +113,7 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `${name}，您好：`,
     headline: "日历比宣传册更能决定选择。",
     paragraphs: [
-      "每个班次均覆盖完整的三个月课程：三个排定的周末，9am–6pm，每月一次——应用项目就在两次课程之间、在您自己的业务中完成。",
+      "每个班次均覆盖完整的六个月课程：三个排定的周末，9am–6pm，并按公布日期进行——应用项目就在两次课程之间、在您自己的业务中完成。",
       "网站上有 2026 年剩余英语及华语班次的实时日历。如果某个日期只差一点就合适，请先告诉团队再做决定——关于日历的沟通通常是最短的一次。",
     ],
     facts: [
@@ -147,11 +147,11 @@ const MS: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `${name}, salam sejahtera,`,
     headline: "Adakah panduan program menjawab persoalan anda?",
     paragraphs: [
-      "Beberapa hari lalu anda memohon Panduan Pengurus Bekerja untuk Future Ready Executive MBA. Kebanyakan pembaca memberitahu kami tiga bahagian yang paling membantu keputusan mereka: bagaimana tempoh tiga bulan itu berjalan sebenarnya, apa maksud pengiktirafan CMI (UK) — dan apa yang secara sengaja tidak dimaksudkannya — serta yuran yang telah diterbitkan.",
+      "Beberapa hari lalu anda memohon Panduan Pengurus Bekerja untuk Future Ready Executive MBA. Kebanyakan pembaca memberitahu kami tiga bahagian yang paling membantu keputusan mereka: bagaimana tempoh enam bulan itu berjalan sebenarnya, apa maksud pengiktirafan CMI (UK) — dan apa yang secara sengaja tidak dimaksudkannya — serta yuran yang telah diterbitkan.",
       "Jika mana-mana bahagian dalam panduan itu kurang jelas, itulah sebabnya perbualan program wujud. Tiada pembayaran, tiada komitmen pendaftaran — hanya jawapan.",
     ],
     facts: [
-      { label: "Format", value: "Tempoh tiga bulan · satu hujung minggu setiap bulan · tanpa perlu keluar dari kerja" },
+      { label: "Format", value: "Tempoh enam bulan · tiga hujung minggu berjadual sepanjang program · tanpa perlu keluar dari kerja" },
       { label: "Pengiktirafan", value: "Dianugerah dan disokong oleh CMI · program profesional, bukan ijazah akademik" },
       { label: "Yuran", value: "RM10,000 diterbitkan · biasiswa dinilai secara individu, disahkan secara bertulis" },
     ],
@@ -165,7 +165,7 @@ const MS: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `${name}, salam sejahtera,`,
     headline: "Kalendar lebih menentukan berbanding risalah.",
     paragraphs: [
-      "Setiap kohort merangkumi keseluruhan program tiga bulan sepanjang tiga sesi hujung minggu berjadual, 9 pagi–6 petang, sebulan sekali — projek aplikasi anda dijalankan dalam perniagaan anda sendiri di antara sesi.",
+      "Setiap kohort merangkumi keseluruhan program enam bulan sepanjang tiga sesi hujung minggu berjadual, 9 pagi–6 petang, mengikut tarikh yang diterbitkan — projek aplikasi anda dijalankan dalam perniagaan anda sendiri di antara sesi.",
       "Kalendar langsung bagi kohort 2026 yang masih tinggal, dalam Bahasa Inggeris dan Mandarin, terdapat di laman web. Jika satu-satu tarikh hampir sesuai, maklumkan kepada pasukan sebelum anda menolaknya — perbualan mengenai kalendar biasanya yang paling ringkas.",
     ],
     facts: [
@@ -195,7 +195,7 @@ const MS: Record<NurtureStepKey, StepCopy> = {
 const FOOTER = {
   en: {
     statement:
-      "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a three-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination.",
+      "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination.",
     reason:
       "You are receiving this because you requested the programme guide and agreed to receive programme updates and marketing communications.",
     unsubscribe: "Unsubscribe",
@@ -204,7 +204,7 @@ const FOOTER = {
   },
   zh: {
     statement:
-      "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的三个月专业发展课程。Right Dots Resources 为其课程咨询与报名协调的合作伙伴。",
+      "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的六个月专业发展课程。Right Dots Resources 为其课程咨询与报名协调的合作伙伴。",
     reason: "您收到本邮件，是因为您索取了课程指南并同意接收课程资讯及营销通讯。",
     unsubscribe: "退订",
     contact: "support@futurereadymba.com · +60 12-981 8533 · futurereadymba.com",
@@ -212,7 +212,7 @@ const FOOTER = {
   },
   ms: {
     statement:
-      "Executive MBA dalam Future Ready Business Leadership dianugerah dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama tiga bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources adalah Rakan Bersekutu bagi pertanyaan program dan penyelarasan pendaftaran.",
+      "Executive MBA dalam Future Ready Business Leadership dianugerah dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama enam bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources adalah Rakan Bersekutu bagi pertanyaan program dan penyelarasan pendaftaran.",
     reason:
       "Anda menerima e-mel ini kerana anda memohon panduan program dan bersetuju menerima kemas kini program serta komunikasi pemasaran.",
     unsubscribe: "Berhenti langgan",

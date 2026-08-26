@@ -25,9 +25,9 @@ ${OPERATOR.name} is ABC's ${OPERATOR.role} for marketing, programme enquiries, p
 - ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}
 - The standard programme fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}; the scholarship is not automatic.
 - Programme completion provides the CMI-recognised programme certificate. CMI's published CMI Recognised route lists Foundation Chartered Manager (fCMgr) status on completion; CMI controls activation, continued use and membership renewal.
-- The Executive MBA runs for three months and leads to the CMI-recognised programme certificate. Chartered Manager is a separate optional CMI route; CMI controls eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.
+- The Executive MBA runs for six months and leads to the CMI-recognised programme certificate. Chartered Manager is a separate optional CMI route; CMI controls eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.
 - ${HRD_CORP_CLAIM.process}
-- ${PROGRAMME_POSITIONING_SENTENCE} It is a three-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification.
+- ${PROGRAMME_POSITIONING_SENTENCE} It is a six-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification.
 - The linked official pages state the published dates and prices. The applicable written proposal and signed enrolment terms control each enrolment.
 - Prospective participants can request a call, online information meeting, in-person meeting at an agreed location, or details first without applying or paying.
 

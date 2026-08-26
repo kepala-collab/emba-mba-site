@@ -122,7 +122,7 @@ export default function AiExecutiveMbaPage() {
             {[
               ["Awarded and endorsed by CMI", "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is not an MQA-regulated academic degree."],
               ["HRD Corp", HRD_CORP_CLAIM.short],
-              ["Format", "Three-month programme: three monthly programme sessions with coaching and an applied business project."],
+              ["Format", "Six-month programme: three scheduled programme sessions with coaching and an applied business project."],
               ["Investment", FACTS.priceStd + " standard. Eligible Malaysian applicants may receive a " + FACTS.scholarshipAmount + " LIFE Innoversity scholarship after assessment and written approval."],
               ["Applied project", "Participants complete a transformation plan for their own business; there is no traditional examination or thesis."],
             ].map(([h, p]) => (

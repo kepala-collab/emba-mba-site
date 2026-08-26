@@ -43,7 +43,7 @@ export default function AiExecutiveMbaPage() {
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
               Halaman ini menerangkan bagaimana <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> yang diiktiraf CMI{" "}
               menggunakan rangka kerja keputusannya terhadap strategi AI, data, automasi, tadbir urus dan pelaksanaan.
-              Ia program <b style={{ color: "var(--ink)" }}>3 bulan</b> yang sama, bukan pensijilan perisian atau teknikal yang berasingan.
+              Ia program <b style={{ color: "var(--ink)" }}>6 bulan</b> yang sama, bukan pensijilan perisian atau teknikal yang berasingan.
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -127,7 +127,7 @@ export default function AiExecutiveMbaPage() {
             {[
               ["Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia bukan ijazah akademik yang dikawal selia MQA."],
               ["HRD Corp", HRD_CORP_CLAIM_MS],
-              ["Format", "Program tiga bulan: tiga sesi bulanan berserta bimbingan dan projek aplikasi perniagaan."],
+              ["Format", "Program enam bulan: tiga sesi berjadual berserta bimbingan dan projek aplikasi perniagaan."],
               ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Pemohon Malaysia yang layak boleh menerima biasiswa LIFE Innoversity " + FACTS.scholarshipAmount + " selepas penilaian dan kelulusan bertulis."],
               ["Projek aplikasi", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
             ].map(([h, p]) => (

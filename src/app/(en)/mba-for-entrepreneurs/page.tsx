@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/mba-for-entrepreneurs", {
   title: "Executive MBA for Entrepreneurs & Founders",
   description:
-    "A three-month professional management programme for founders, with a CMI-recognised programme certificate.",
+    "A six-month professional management programme for founders, with a CMI-recognised programme certificate.",
 });
 
 export default function MbaForEntrepreneursPage() {
@@ -43,8 +43,8 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "A defined three-month schedule", p: "Three monthly sessions lead to the CMI-recognised programme certificate while you continue working." },
-    { h: "One weekend a month, or online", p: "The programme uses one scheduled weekend a month; the global online route removes the need for physical attendance." },
+    { h: "A defined six-month schedule", p: "Three scheduled sessions lead to the CMI-recognised programme certificate while you continue working." },
+    { h: "Three scheduled weekends across the programme, or online", p: "The programme uses three scheduled weekends across the programme; the global online route removes the need for physical attendance." },
     { h: "Applied during the programme", p: "There is no traditional thesis or examination. Participants apply the frameworks to the venture or organisation they lead." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   ];
@@ -70,7 +70,7 @@ export default function MbaForEntrepreneursPage() {
             the participant is building.
           </p>
           <p className="mono sec-k mt-s">
-            Three months · three monthly programme weekends · awarded and endorsed by CMI
+            Six months · three scheduled programme weekends · awarded and endorsed by CMI
           </p>
           <p className="sec-sub mt-s">
             See the full{" "}
@@ -146,7 +146,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Continue operating while completing the programme.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme uses three monthly weekend sessions, coaching and an applied project.
+            The programme uses three scheduled weekend sessions, coaching and an applied project.
             Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>

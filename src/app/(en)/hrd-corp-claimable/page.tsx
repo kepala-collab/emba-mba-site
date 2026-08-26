@@ -125,7 +125,7 @@ export default function HrdCorpClaimablePage() {
           <Reveal>
             <p className="sec-sub">
               HRD Corp states the approved amount in its grant decision. The Executive MBA is a
-              three-month programme leading to the programme certificate. The programme includes:
+              six-month programme leading to the programme certificate. The programme includes:
             </p>
           </Reveal>
           <Reveal className="mt-s">

@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-sme-owners", {
   title: "Executive MBA untuk Pemilik & Pengasas PKS",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS merentasi tiga sesi bulanan.",
+    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS merentasi tiga sesi berjadual.",
 });
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi tiga sesi bulanan.",
+    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi tiga sesi berjadual.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -31,7 +31,7 @@ const jsonLd = {
     "@id": `${SITE.url}/ms/mba-for-sme-owners#blended-course-instance`,
     url: `${SITE.url}/ms/mba-for-sme-owners`,
     courseMode: "blended",
-    timeRequired: "P3M",
+    timeRequired: "P6M",
   },
 };
 
@@ -45,7 +45,7 @@ export default function MbaForSmeOwnersPage() {
   ];
 
   const fit = [
-    { h: "Satu hujung minggu berjadual sebulan", p: "Tiga sesi fasa sijil berjalan sekali sebulan. Jadual intake yang diterbitkan menyatakan jadual Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
+    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil berjalan sekali sebulan. Jadual intake yang diterbitkan menyatakan jadual Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
     { h: "Perniagaan anda ialah projek aplikasi", p: "Tiada tesis atau peperiksaan tradisional. Peserta menggunakan rangka kerja untuk membina pelan transformasi bagi organisasi mereka sendiri." },
     { h: "Pembiayaan HRD Corp dipohon majikan", p: HRD_CORP_CLAIM_MS },
     { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Pemohon Malaysia yang layak boleh menerima biasiswa ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis. Penerima yang diluluskan membayar ${FACTS.priceAfterScholarship}; pilihan ansuran disenaraikan di halaman Yuran.` },
@@ -74,7 +74,7 @@ export default function MbaForSmeOwnersPage() {
             penggantian dan pertumbuhan.
           </p>
           <p className="mono sec-k mt-s">
-            Tiga bulan · tiga hujung minggu program bulanan · dianugerahkan dan disokong oleh CMI
+            Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
           </p>
           <p className="sec-sub mt-s">
             Lihat keseluruhan{" "}
@@ -182,7 +182,7 @@ export default function MbaForSmeOwnersPage() {
             <h2 className="sec-h">Format yang membolehkan pemilik terus berada dalam perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program tiga bulan ini menggunakan sesi hujung minggu bulanan, dan projek aplikasi
+            Program enam bulan ini menggunakan sesi hujung minggu berjadual, dan projek aplikasi
             berasaskan organisasi peserta sendiri. Laluan pembiayaan dan bayaran dijelaskan secara berasingan.
           </p>
           <div className="mt-m grid-forces">

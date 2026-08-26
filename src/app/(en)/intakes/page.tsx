@@ -18,7 +18,7 @@ const courseJsonLd = {
   "@type": "Course",
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA",
-  description: "Executive MBA in Malaysia: three monthly programme sessions. English and Mandarin 2026 schedules are published.",
+  description: "Executive MBA in Malaysia: three scheduled programme sessions. English and Mandarin 2026 schedules are published.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -31,7 +31,7 @@ const courseJsonLd = {
     "@id": `${SITE.url}/intakes#${c.language.toLowerCase()}-${c.co.toLowerCase().replace(" ", "-")}`,
     name: `${SITE.name} — ${c.language} ${c.co}`,
     courseMode: "onsite",
-    courseWorkload: `Three ${c.days} sessions, 9am–6pm, during the three-month programme`,
+    courseWorkload: `Three ${c.days} sessions, 9am–6pm, during the six-month programme`,
     startDate: c.startDate,
   })),
 };
@@ -53,7 +53,7 @@ export default function IntakesPage() {
           </h1>
         </Reveal>
         <p className="sec-sub">
-          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The listed weekends cover the three-month Executive MBA programme.
+          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The listed weekends cover the six-month Executive MBA programme.
         </p>
         <p className="fine mt-s">
           Cohort capacity and availability are confirmed by the programme team when it responds to an enquiry.
@@ -88,10 +88,10 @@ export default function IntakesPage() {
           style={{ display: "grid", gap: "var(--space-4, 1rem)" }}
         >
           <div className="card">
-            <h3 style={{ margin: 0 }}>One weekend a month</h3>
+            <h3 style={{ margin: 0 }}>Three scheduled weekends across the programme</h3>
             <p style={{ margin: "0.5rem 0 0", color: "var(--muted)" }}>
               Each session runs 9am–6pm. Cohort 17 uses Saturday–Sunday; the remaining published cohorts use Friday–Saturday. Three weekends
-              during the three-month programme. Participants continue in their professional roles between sessions.
+              during the six-month programme. Participants continue in their professional roles between sessions.
             </p>
           </div>
           <div className="card">

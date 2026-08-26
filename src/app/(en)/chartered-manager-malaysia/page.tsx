@@ -11,12 +11,12 @@ const PATH = "/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "CMI Recognition for the Future Ready Executive MBA",
-  description: "Understand what CMI (UK) recognition means for the three-month Future Ready Executive MBA, its certificate and any separate optional Chartered Manager route.",
+  description: "Understand what CMI (UK) recognition means for the six-month Future Ready Executive MBA, its certificate and any separate optional Chartered Manager route.",
 });
 
 const FAQS = [
   { q: "What do successful participants receive?", a: "Successful participants receive the CMI Certificate of Recognition for the Future Ready Executive MBA programme. CMI controls the final certificate format, wording and issue." },
-  { q: "Is this an academic MBA degree?", a: "No. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a three-month professional development programme, not an MQA-accredited academic degree or a regulated qualification." },
+  { q: "Is this an academic MBA degree?", a: "No. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme, not an MQA-accredited academic degree or a regulated qualification." },
   { q: "Does the programme automatically award Chartered Manager status?", a: "No. Chartered Manager is a separate optional CMI route. CMI alone confirms eligibility, assessment requirements, membership and fees. It is not included in the published programme or fee." },
 ] as const;
 
@@ -31,7 +31,7 @@ export default function CmiRecognitionPage() {
           <p className="mono sec-k">Awarded and endorsed by CMI</p>
           <h1><TechnicalText>Professional recognition for work you can use.</TechnicalText></h1>
           <p>The Future Ready Executive MBA helps experienced managers turn a live business issue into a defensible action plan. Successful completion is recognised with a <TechnicalText>CMI Certificate of Recognition</TechnicalText>.</p>
-          <div className="chartered-hero-actions"><Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} <span aria-hidden="true">→</span></Link><Link href="/executive-mba" className="btn btn-ghost">See the three-month programme</Link></div>
+          <div className="chartered-hero-actions"><Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} <span aria-hidden="true">→</span></Link><Link href="/executive-mba" className="btn btn-ghost">See the six-month programme</Link></div>
         </div>
       </header>
 

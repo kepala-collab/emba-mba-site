@@ -17,6 +17,9 @@
 /playwright-report/
 /test-results/
 /.crm-build/templates/
+/.design/
+/artifacts/
+/deploy/
 
 # next.js
 /.next/

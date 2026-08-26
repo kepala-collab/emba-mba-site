@@ -12,7 +12,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/zh/mba-for-working-professionals", {
   title: "面向在职专业人士的兼读高管 MBA",
   description:
-    "在全职工作的同时进修：一门为期三个月的高管 MBA，专为在职专业人士设计，每月一次周末课程，或以线上课程形式进行。",
+    "在全职工作的同时进修：一门为期六个月的高管 MBA，专为在职专业人士设计，三个指定周末课程，或以线上课程形式进行。",
 });
 
 const jsonLd = {
@@ -21,7 +21,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书，三个月内每月一次课程进行，另设线上课程选项。",
+    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书，六个月内三个指定课程进行，另设线上课程选项。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -34,12 +34,12 @@ const jsonLd = {
     "@id": `${SITE.url}/zh/mba-for-working-professionals#blended-course-instance`,
     url: `${SITE.url}/zh/mba-for-working-professionals`,
     courseMode: "blended",
-    timeRequired: "P3M",
+    timeRequired: "P6M",
   },
 };
 
 const FIT = [
-  { h: "每月一次既定周末课程", p: "课程分三个既定课程，每个课程为期一个周末。" },
+  { h: "三个指定周末课程", p: "课程分三个既定课程，每个课程为期一个周末。" },
   { h: "或完全线上进行", p: "课程也提供线上直播形式，辅导与框架与现场班次相同。" },
   { h: "书面补课安排", p: "如学员错过某次课程，ABC 会以书面方式记录经批准的补课方式：指定视频，或指定后续班次的出席。" },
   { h: "应用于当前工作", p: "没有传统的论文或考试。学员把框架应用于自己目前负责的企业课题。" },
@@ -72,12 +72,12 @@ export default function MbaForWorkingProfessionalsZhPage() {
             </Reveal>
             <p className="sec-sub">
               Future Ready 高管 MBA 专为希望在全职工作期间进修的学员设计。
-              课程为期 {FACTS.durationLong}，采用每月一次既定周末课程。
+              课程为期 {FACTS.durationLong}，采用三个指定周末课程。
               Chartered Manager 是独立可选的 CMI 路线，具有独立资格、评估及费用；
               不包含在已公布课程或费用内。
             </p>
             <p className="mono sec-k mt-s">
-              三个月 · 每月一次课程周末 · 由 CMI 颁授并背书
+              六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
             </p>
             <p className="sec-sub mt-s">
               探索完整的{" "}
@@ -178,7 +178,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">2026 开课日期 · 每月一次周末课程</span>
+            <span className="mono sec-k">2026 开课日期 · 三个指定周末课程</span>
           </div>
           <Reveal>
             <h2 className="sec-h">2026 英语及华语开课时间表。</h2>

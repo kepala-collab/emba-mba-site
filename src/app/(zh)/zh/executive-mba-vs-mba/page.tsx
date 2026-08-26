@@ -108,7 +108,7 @@ export default function ExecutiveMbaVsMbaPage() {
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   这条路线为承担战略或全局业务责任的学员而设：结构化的决策框架、一个应用项目，以及 CMI
-                  课程认可证书。三个月课程每月只使用一个已排定的周末。
+                  课程认可证书。六个月课程每月只使用一个已排定的周末。
                 </p>
               </div>
             </Reveal>
@@ -125,7 +125,7 @@ export default function ExecutiveMbaVsMbaPage() {
           <Reveal>
             <p className="sec-sub">
               比较价格之前，先界定您需要的结果。当下一步需要学术学位时，选择 MQA 认证的学术 MBA；
-              当您需要的是三个月课程、企业应用项目、对照 CMI Professional Standard 的专业认可，
+              当您需要的是六个月课程、企业应用项目、对照 CMI Professional Standard 的专业认可，
               以及修读期间继续工作，选择本课程。已公布的 2026 马来西亚标准费用为 {FACTS.priceStd}。
               符合资格的马来西亚申请者经评估及书面批准后，可获{" "}
               <Link href="/zh/fees" className="acc">{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金</Link>。

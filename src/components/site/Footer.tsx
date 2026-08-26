@@ -25,6 +25,22 @@ const LEGAL_LINKS_MS = [
   ["/ms/contact", "Hubungan undang-undang & privasi"],
 ] as const;
 
+function FooterBrandMarks({ locale }: { locale: "en" | "ms" | "zh" }) {
+  const label = locale === "zh"
+    ? "课程机构与认可标志"
+    : locale === "ms"
+      ? "Penyedia program dan tanda pengiktirafan"
+      : "Programme provider and recognition marks";
+
+  return (
+    <div className="footer-brand-marks" aria-label={label}>
+      <Image src="/brand/abc-mark.png" alt="Asian Business Consulting" width={360} height={120} />
+      <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute" width={300} height={120} />
+      <Image src="/brand/hrdcorp-claimable-official.png" alt="HRD Corp claimable" width={300} height={120} />
+    </div>
+  );
+}
+
 export default function Footer() {
   const pathname = usePathname() || "/";
   const locale = localeOfPath(pathname);
@@ -45,10 +61,10 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}. {zh ? "商业注册号" : ms ? "No. Pendaftaran Perniagaan" : "Business Registration No."} {OPERATOR.reg}.</p>
               <p><strong>{zh ? "课程声明：" : ms ? "Notis program:" : "Programme notice:"}</strong> {zh
-                ? `${PROGRAMME_POSITIONING_ZH} 这是由 ${SITE.provider} 提供的三个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。CMI 决定会员等级、后缀称号、Chartered 评估、会员资格及费用。`
+                ? `${PROGRAMME_POSITIONING_ZH} 这是由 ${SITE.provider} 提供的六个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。CMI 决定会员等级、后缀称号、Chartered 评估、会员资格及费用。`
                 : ms
-                  ? `${PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional tiga bulan yang dikendalikan oleh ${SITE.provider}, bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. CMI menentukan gred keahlian, gelaran pasca-nama, penilaian Chartered, keahlian dan yuran.`
-                  : `${PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development programme delivered by ${SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls membership grades, post-nominals, Chartered assessment, membership and fees.`}</p>
+                  ? `${PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh ${SITE.provider}, bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. CMI menentukan gred keahlian, gelaran pasca-nama, penilaian Chartered, keahlian dan yuran.`
+                  : `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme delivered by ${SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls membership grades, post-nominals, Chartered assessment, membership and fees.`}</p>
               <p><strong>{zh ? "资料保护：" : ms ? "Perlindungan data:" : "Data protection:"}</strong> {zh
                 ? `个人资料由 ${OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。`
                 : ms
@@ -74,7 +90,7 @@ export default function Footer() {
               <Link href="/ms/apply">Aturkan perbualan program</Link>
               <Link href="/home">English site →</Link>
               <Link href="/zh">中文网站 →</Link>
-              <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting dan Right Dots Resources dalam kerjasama" width={1000} height={1000} className="foot-seal" />
+              <FooterBrandMarks locale="ms" />
             </div>
             <div>
               <h2>Program</h2>
@@ -99,7 +115,7 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}. No. Pendaftaran Perniagaan {OPERATOR.reg}. Alamat perniagaan berdaftar: {OPERATOR.address}.</p>
               <p><strong>Notis rakan kongsi:</strong> {OPERATOR.name} ialah rakan kongsi bersekutu {SITE.provider}, menguruskan pertanyaan program, harga dan penyelarasan pendaftaran.</p>
-              <p><strong>Notis program:</strong> {PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional tiga bulan yang dikendalikan oleh {SITE.provider}; bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. Pemohon Malaysia yang layak boleh memohon biasiswa {FACTS.scholarshipAmount} {FACTS.scholarshipProvider}; biasiswa tertakluk pada kekosongan, penilaian dan kelulusan bertulis, dan tidak automatik. HRD Corp menentukan kelayakan pembiayaan majikan dan jumlah yang diluluskan.</p>
+              <p><strong>Notis program:</strong> {PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh {SITE.provider}; bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. Pemohon Malaysia yang layak boleh memohon biasiswa {FACTS.scholarshipAmount} {FACTS.scholarshipProvider}; biasiswa tertakluk pada kekosongan, penilaian dan kelulusan bertulis, dan tidak automatik. HRD Corp menentukan kelayakan pembiayaan majikan dan jumlah yang diluluskan.</p>
               <p><strong>Perlindungan data:</strong> Data peribadi diproses oleh {OPERATOR.name} menurut Akta Perlindungan Data Peribadi 2010 [Akta 709] Malaysia, seperti yang dipinda. Lihat Dasar Privasi untuk butiran.</p>
             </div>
           </section>
@@ -121,7 +137,7 @@ export default function Footer() {
               <Link href="/zh/apply">预约课程沟通</Link>
               <Link href="/home">English site →</Link>
               <Link href="/ms">Laman Bahasa Melayu →</Link>
-              <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting 与 Right Dots Resources 合作" width={1000} height={1000} className="foot-seal" />
+              <FooterBrandMarks locale="zh" />
             </div>
             <div>
               <h2>课程</h2>
@@ -146,7 +162,7 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}。商业注册号：{OPERATOR.reg}。注册地址：{OPERATOR.address}。</p>
               <p><strong>合作伙伴声明：</strong>{OPERATOR.name} 是 {SITE.provider} 的市场推广机构，负责课程咨询、报价及报名协调。</p>
-              <p><strong>课程声明：</strong>{PROGRAMME_POSITIONING_ZH} 这是由 {SITE.provider} 提供的三个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。符合资格的马来西亚申请者可申请 {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金；奖学金视名额、评估及书面批准而定，并非自动获得。HRD Corp 决定雇主资助资格及批准金额。</p>
+              <p><strong>课程声明：</strong>{PROGRAMME_POSITIONING_ZH} 这是由 {SITE.provider} 提供的六个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。符合资格的马来西亚申请者可申请 {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金；奖学金视名额、评估及书面批准而定，并非自动获得。HRD Corp 决定雇主资助资格及批准金额。</p>
               <p><strong>资料保护：</strong>个人资料由 {OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。详情请参阅隐私政策。</p>
             </div>
           </section>
@@ -194,7 +210,7 @@ export default function Footer() {
             <Link href="/apply">{CTA_LABELS.conversation}</Link>
             <Link href="/zh">中文网站 →</Link>
             <Link href="/ms">Laman Bahasa Melayu →</Link>
-            <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting and Right Dots Resources in collaboration" width={1000} height={1000} className="foot-seal" />
+            <FooterBrandMarks locale="en" />
           </div>
         </div>
         <section className="legal-footer" aria-label="Legal and compliance information">
@@ -205,7 +221,7 @@ export default function Footer() {
           <div className="legal-copy">
             <p>© {year} {OPERATOR.name}. Business Registration No. {OPERATOR.reg}. Registered business address: {OPERATOR.address}.</p>
             <p><strong>Partner notice:</strong> {OPERATOR.name} is the {OPERATOR.role}, handling programme enquiries, pricing and enrolment coordination.</p>
-            <p><strong>Programme notice:</strong> {PROGRAMME_POSITIONING_SENTENCE} It is a three-month professional development programme delivered by {SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls Foundation Chartered Manager activation, membership grades, post-nominals, Chartered assessment, membership and fees. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval; it is not automatic. HRD Corp decides employer funding eligibility and the approved amount.</p>
+            <p><strong>Programme notice:</strong> {PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme delivered by {SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls Foundation Chartered Manager activation, membership grades, post-nominals, Chartered assessment, membership and fees. Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval; it is not automatic. HRD Corp decides employer funding eligibility and the approved amount.</p>
             <p><strong>Data protection:</strong> Personal data is processed by {OPERATOR.name} in accordance with Malaysia&rsquo;s Personal Data Protection Act 2010 [Act 709], as amended. See the Privacy Policy for details.</p>
           </div>
         </section>

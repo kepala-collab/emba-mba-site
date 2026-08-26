@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/mba-for-entrepreneurs", {
   title: "Executive MBA untuk Usahawan & Pengasas",
   description:
-    "Program pengurusan profesional tiga bulan untuk pengasas, dengan sijil program diiktiraf CMI.",
+    "Program pengurusan profesional enam bulan untuk pengasas, dengan sijil program diiktiraf CMI.",
 });
 
 export default function MbaForEntrepreneursPage() {
@@ -43,8 +43,8 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "Jadual tiga bulan yang jelas", p: "Tiga sesi bulanan membawa kepada sijil program yang diiktiraf CMI sambil anda terus bekerja." },
-    { h: "Satu hujung minggu sebulan, atau dalam talian", p: "Program menggunakan satu hujung minggu berjadual sebulan; laluan dalam talian global menghapuskan keperluan kehadiran fizikal." },
+    { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berjadual membawa kepada sijil program yang diiktiraf CMI sambil anda terus bekerja." },
+    { h: "Tiga hujung minggu berjadual sepanjang program, atau dalam talian", p: "Program menggunakan tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global menghapuskan keperluan kehadiran fizikal." },
     { h: "Diaplikasikan sepanjang program", p: "Tiada tesis atau peperiksaan tradisional. Peserta mengaplikasikan rangka kerja kepada usaha atau organisasi yang mereka terajui." },
     { h: "Laluan gantian bertulis", p: "Jika anda terlepas satu sesi, ABC merekodkan kaedah gantian yang diluluskan secara bertulis: akses video atau kehadiran dalam kohort susulan yang dinamakan." },
   ];
@@ -66,11 +66,11 @@ export default function MbaForEntrepreneursPage() {
           <p className="sec-sub">
             Pengasas membuat keputusan berkait tentang pelanggan, produk, harga, modal, keupayaan dan masa.
             Future Ready Executive MBA mengaplikasikan rangka kerja prinsip pertama, sistem dan Job-To-Be-Done
-            kepada keputusan itu sepanjang tiga bulan. Projek aplikasi menggunakan usaha atau organisasi
+            kepada keputusan itu sepanjang enam bulan. Projek aplikasi menggunakan usaha atau organisasi
             yang sedang dibina peserta.
           </p>
           <p className="mono sec-k mt-s">
-            Tiga bulan · tiga hujung minggu program bulanan · dianugerahkan dan disokong oleh CMI
+            Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
           </p>
           <p className="sec-sub mt-s">
             Lihat keseluruhan{" "}
@@ -146,7 +146,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Teruskan beroperasi sambil menyelesaikan program.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program menggunakan tiga sesi hujung minggu bulanan, bimbingan dan projek aplikasi.
+            Program menggunakan tiga sesi hujung minggu berjadual, bimbingan dan projek aplikasi.
             Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan, penilaian
             dan yuran tersendiri.
           </p>
@@ -170,7 +170,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Semak program terhadap keputusan semasa usaha anda.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini berjalan selama tiga bulan. Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima biasiswa {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis.
+            Program ini berjalan selama enam bulan. Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima biasiswa {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis.
           </p>
           <p className="mt-s">
             <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide}</Link>

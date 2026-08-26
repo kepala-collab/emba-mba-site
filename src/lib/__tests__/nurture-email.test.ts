@@ -20,7 +20,7 @@ describe("nurture email templates", () => {
         expect(message.html).toContain("utm_source=nurture");
         expect(message.html).toContain("api/unsubscribe?e=abc&amp;t=def&amp;l=en");
         expect(message.text).toContain(unsubscribeUrl);
-        expect(message.text.toLowerCase()).not.toContain("six-month");
+        expect(message.text.toLowerCase()).not.toContain("three-month");
       });
     }
   }

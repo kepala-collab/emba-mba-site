@@ -6,9 +6,9 @@ import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms/lp/google", {
-  title: "Executive MBA Malaysia — Diiktiraf CMI (UK), Program Tiga Bulan",
+  title: "Executive MBA Malaysia — Diiktiraf CMI (UK), Program Enam Bulan",
   description:
-    "Program pembangunan profesional Future Ready Executive MBA tiga bulan: enam hari latihan, tiga sesi bulanan dan projek aplikasi perniagaan. Pembiayaan majikan tertakluk pada syarat dan kelulusan HRD Corp.",
+    "Program pembangunan profesional Future Ready Executive MBA enam bulan: enam hari latihan, tiga sesi berjadual dan projek aplikasi perniagaan. Pembiayaan majikan tertakluk pada syarat dan kelulusan HRD Corp.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/ms/lp/google" },
 });
@@ -25,9 +25,9 @@ const INCLUDED = [
 ];
 
 const CMP = [
-  ["Masa", "Tiga bulan: enam hari latihan, diselesaikan dalam tiga sesi bulanan", "18–24 bulan"],
+  ["Masa", "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berjadual", "18–24 bulan"],
   ["Pelaburan", "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh menerima biasiswa RM4,000.00 selepas penilaian dan kelulusan bertulis, dan penerima yang diluluskan membayar RM6,000.00", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
-  ["Format", "Satu hujung minggu sebulan; peserta terus bekerja", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
+  ["Format", "Tiga hujung minggu berjadual sepanjang program; peserta terus bekerja", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
   ["Penilaian", "Projek aplikasi berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
   ["Sijil", "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik bertauliah MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
 ];
@@ -42,12 +42,12 @@ export default function MsGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Untuk pengurus Malaysia yang sedang membandingkan program pembangunan profesional</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  Tamatkan dalam tiga bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
+                  Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.1rem", maxWidth: "44ch", margin: "22px 0 26px", lineHeight: 1.9 }}>
-                  Selesaikan tiga sesi, projek perniagaan dan program pembangunan profesional yang diiktiraf CMI dalam tiga bulan, sambil terus bekerja. <b style={{ color: "var(--ink)" }}>Chartered Manager</b> ialah laluan CMI berasingan yang bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
+                  Selesaikan tiga sesi, projek perniagaan dan program pembangunan profesional yang diiktiraf CMI dalam enam bulan, sambil terus bekerja. <b style={{ color: "var(--ink)" }}>Chartered Manager</b> ialah laluan CMI berasingan yang bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -58,7 +58,7 @@ export default function MsGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["3 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Diselesaikan dalam tiga sesi bulanan"], [FACTS.scholarshipAmount, "Biasiswa untuk pemohon Malaysia yang layak"]].map(([b, s]) => (
+                  {[["6 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Diselesaikan dalam tiga sesi berjadual"], [FACTS.scholarshipAmount, "Biasiswa untuk pemohon Malaysia yang layak"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>

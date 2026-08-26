@@ -11,12 +11,12 @@ const PATH = "/zh/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "Future Ready 高管 MBA 的 CMI 认可",
-  description: "了解三个月 Future Ready 高管 MBA 的 CMI（英国）认可、课程证书，以及独立可选的 Chartered Manager 路线。",
+  description: "了解六个月 Future Ready 高管 MBA 的 CMI（英国）认可、课程证书，以及独立可选的 Chartered Manager 路线。",
 });
 
 const FAQS = [
   ["成功完成课程后会获得什么？", "成功完成课程者将获得 Future Ready 高管 MBA 课程的 CMI Certificate of Recognition。最终证书格式、措辞及签发由 CMI 决定。"],
-  ["这是学术 MBA 学位吗？", "不是。这是面向未来商业领导力、由 CMI 颁授并背书的三个月 Executive MBA 专业发展课程，并非 MQA 认证的学术学位或受监管资格。"],
+  ["这是学术 MBA 学位吗？", "不是。这是面向未来商业领导力、由 CMI 颁授并背书的六个月 Executive MBA 专业发展课程，并非 MQA 认证的学术学位或受监管资格。"],
   ["完成课程后会自动成为 Chartered Manager 吗？", "不会。Chartered Manager 属于独立可选的 CMI 路线。资格、评估、会员及费用均由 CMI 决定，并不包含在本课程或已公布费用内。"],
 ] as const;
 
@@ -31,7 +31,7 @@ export default function CmiRecognitionZhPage() {
           <p className="mono sec-k">CMI（英国）背书及认可</p>
           <h1><TechnicalText>让实际管理成果获得专业认可。</TechnicalText></h1>
           <p>Future Ready 高管 MBA 帮助资深管理者把一个真实企业课题转化为可执行的行动方案。成功完成课程者将获得 CMI 课程认可证书。</p>
-          <div className="chartered-hero-actions"><Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} <span aria-hidden="true">→</span></Link><Link href="/zh/executive-mba" className="btn btn-ghost">查看三个月课程</Link></div>
+          <div className="chartered-hero-actions"><Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} <span aria-hidden="true">→</span></Link><Link href="/zh/executive-mba" className="btn btn-ghost">查看六个月课程</Link></div>
         </div>
       </header>
 

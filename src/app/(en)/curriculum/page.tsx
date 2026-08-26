@@ -145,7 +145,7 @@ export default function CurriculumPage() {
             </Reveal>
             <Reveal>
               <p className="sec-sub">
-                There is no traditional examination or thesis in the three-month programme. Participants select
+                There is no traditional examination or thesis in the six-month programme. Participants select
                 a business challenge within their responsibility, apply relevant frameworks and prepare a sequenced
                 transformation plan for faculty review. The plan identifies decisions, actions, owners and measures.
               </p>

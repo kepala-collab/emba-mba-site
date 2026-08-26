@@ -12,7 +12,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-working-professionals", {
   title: "Executive MBA Separuh Masa untuk Profesional Bekerja",
   description:
-    "Belajar sambil terus bekerja sepenuh masa: Executive MBA tiga bulan untuk profesional yang bekerja, disampaikan satu hujung minggu sebulan atau melalui sesi dalam talian langsung.",
+    "Executive MBA enam bulan untuk profesional bekerja, disampaikan pada tiga hujung minggu berjadual atau melalui sesi dalam talian langsung.",
 });
 
 const jsonLd = {
@@ -21,7 +21,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan merentasi tiga bulan, satu hujung minggu sebulan, dengan pilihan penyampaian dalam talian.",
+    "Executive MBA enam bulan untuk profesional bekerja, dianugerahkan dan disokong oleh CMI, dengan pilihan penyampaian dalam talian.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -34,13 +34,13 @@ const jsonLd = {
     "@id": `${SITE.url}/ms/mba-for-working-professionals#blended-course-instance`,
     url: `${SITE.url}/ms/mba-for-working-professionals`,
     courseMode: "blended",
-    timeRequired: "P3M",
+    timeRequired: "P6M",
   },
 };
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "Satu hujung minggu berjadual sebulan", p: "Program merangkumi tiga sesi berjadual, setiap satu berjalan sepanjang satu hujung minggu." },
+    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berjadual, setiap satu berjalan sepanjang satu hujung minggu." },
     { h: "Atau sepenuhnya dalam talian", p: "Program ini juga tersedia melalui sesi dalam talian langsung, dengan bimbingan dan rangka kerja yang sama seperti laluan bersemuka." },
     { h: "Laluan gantian bertulis", p: "Jika anda terlepas satu sesi, ABC merekodkan kaedah gantian yang diluluskan secara bertulis: akses video atau kehadiran dalam kohort susulan yang dinamakan." },
     { h: "Aplikasikan kepada kerja semasa", p: "Tiada tesis atau peperiksaan tradisional. Peserta mengaplikasikan rangka kerja kepada cabaran perniagaan yang mereka pegang sekarang." },
@@ -72,12 +72,11 @@ export default function MbaForWorkingProfessionalsPage() {
             </Reveal>
             <p className="sec-sub">
               Future Ready Executive MBA direka untuk peserta yang mahu belajar sambil terus bekerja
-              sepenuh masa. Program berjalan selama tiga bulan, menggunakan satu hujung minggu berjadual
-              sebulan. Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan,
+              sepenuh masa. Program berjalan selama enam bulan, menggunakan tiga hujung minggu berjadual sepanjang program. Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan,
               penilaian dan yuran tersendiri; ia tidak termasuk dalam program atau yuran yang diterbitkan.
             </p>
             <p className="mono sec-k mt-s">
-              Tiga bulan · tiga hujung minggu program bulanan · dianugerahkan dan disokong oleh CMI
+              Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
             </p>
             <p className="sec-sub mt-s">
               Terokai keseluruhan{" "}
@@ -182,7 +181,7 @@ export default function MbaForWorkingProfessionalsPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Intake 2026 · satu hujung minggu sebulan</span>
+            <span className="mono sec-k">Intake 2026 · tiga hujung minggu berjadual sepanjang program</span>
           </div>
           <Reveal>
             <h2 className="sec-h">Jadual Bahasa Inggeris dan Mandarin untuk 2026.</h2>

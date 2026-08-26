@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/executive-mba-malaysia", {
   title: "Executive MBA Malaysia for Working Leaders",
   description:
-    "Three-month executive education in Malaysia for working leaders, with applied management learning, CMI recognition and an employer-led HRD Corp funding route.",
+    "Six-month executive education in Malaysia for working leaders, with applied management learning, CMI recognition and an employer-led HRD Corp funding route.",
 });
 
 const REASONS = [
@@ -22,8 +22,8 @@ const REASONS = [
     p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive the ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}.`,
   },
   {
-    h: "A three-month programme for working leaders",
-    p: "The programme uses one scheduled weekend a month, 9am–6pm, across three months. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
+    h: "A six-month programme for working leaders",
+    p: "The programme uses three scheduled weekends across the programme, 9am–6pm, across six months. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
   },
   {
     h: "ASEAN-relevant faculty & cases",
@@ -80,7 +80,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              The Future Ready Executive MBA is a three-month executive education and professional
+              The Future Ready Executive MBA is a six-month executive education and professional
               development programme for Malaysian owners, directors and senior managers. It is
               awarded and endorsed by CMI and delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
               The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
@@ -90,7 +90,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              You keep working while completing three monthly weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across three monthly sessions while participants continue working.
+              You keep working while completing three scheduled weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across three scheduled sessions while participants continue working.
             </p>
           </Reveal>
           <Reveal className="mt-s">

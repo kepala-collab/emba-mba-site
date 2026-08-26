@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/lp/meta", {
   title: "Executive MBA untuk Pemimpin yang Sedang Bekerja | Future Ready",
   description:
-    "Future Ready Executive MBA tiga bulan untuk pengurus yang sedang bekerja: enam hari latihan, tiga sesi bulanan dan projek aplikasi perniagaan.",
+    "Future Ready Executive MBA enam bulan untuk pengurus yang sedang bekerja: enam hari latihan, tiga sesi berjadual dan projek aplikasi perniagaan.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/ms/lp/meta" },
 });
@@ -41,12 +41,12 @@ export default function MsMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">Untuk pemimpin yang memikul tanggungjawab keputusan merentas fungsi</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              Tamatkan dalam tiga bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
+              Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              Selesaikan enam hari latihan, bimbingan dan projek aplikasi perniagaan dalam tiga bulan, sambil terus bekerja. Chartered Manager ialah laluan CMI berasingan yang bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
+              Selesaikan enam hari latihan, bimbingan dan projek aplikasi perniagaan dalam enam bulan, sambil terus bekerja. Chartered Manager ialah laluan CMI berasingan yang bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
             </p>
           </Reveal>
           <Reveal delay={160}>

@@ -50,6 +50,12 @@ function emailSuggestions(draft: string): string[] {
 const TURNSTILE_SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEM-BhpyOxghbYJZ";
 
+const GUIDE_PDF = {
+  en: "/downloads/working-managers-guide-2026.pdf",
+  zh: "/downloads/zaizhi-jingli-zhinan-2026.pdf",
+  ms: "/downloads/panduan-pengurus-bekerja-2026.pdf",
+} as const;
+
 const T = {
   en: {
     progress: (step: Step) => `Step ${step} of 2`,
@@ -73,15 +79,20 @@ const T = {
     cohortUnknown: "I have not selected a cohort",
     continue: "Continue to contact details →",
     campaignContinue: "Continue for the programme guide →",
-    campaignKicker: "Free working manager guide",
-    campaignTitle: `Send me the ${PROGRAMME_YEAR} programme guide.`,
-    campaignIntro: "Includes the three-month CMI-recognised programme, published dates, programme fee and how scholarship assessment works.",
+    campaignKicker: "Free PDF programme guide",
+    campaignTitle: `Get the ${PROGRAMME_YEAR} Future Ready EMBA guide.`,
+    campaignIntro: "Review the programme before deciding whether to speak with us.",
+    campaignBenefits: [
+      "See how the six months and six training days work",
+      "Understand the CMI recognition and programme boundaries",
+      "Compare dates, the published fee and scholarship criteria",
+    ],
     stepTwoKicker: "Your contact details",
     stepTwoTitle: "Where should the programme team respond?",
     back: "← Back",
     selectedRoute: "Selected route",
     name: "Full name", namePh: "Your name",
-    phone: "Phone / WhatsApp", email: "Email", emailPh: "you@company.com",
+    phone: "Phone / WhatsApp", campaignPhone: "Phone / WhatsApp (optional)", email: "Email", emailPh: "you@company.com",
     company: "Company (optional)", companyPh: "Organisation",
     conversation: "How would you like to continue?",
     conversationOptions: [
@@ -100,11 +111,12 @@ const T = {
       ["weekend", "Weekend"],
     ] as const,
     helper: "We use email to confirm the request and follow the contact method you select.",
-    campaignHelper: "Email delivers your guide. Phone or WhatsApp lets the programme team respond if you ask to continue.",
+    campaignHelper: "We will email the PDF immediately. Add a phone number only if you would also like a WhatsApp or call follow-up.",
     consent: "I agree to be contacted about this programme, and understand my data is handled under Malaysia’s PDPA 2010, as amended.",
+    campaignConsent: "Send me the programme guide and reply to this request. My information will be handled under Malaysia’s PDPA 2010, as amended.",
     consentMarketing: "Send me programme updates and marketing communications. I can unsubscribe at any time.",
     submit: "Send my programme request →", sending: "Sending securely…",
-    campaignSubmit: "Send my guide →",
+    campaignSubmit: "Email me the guide →",
     errors: {
       validation: "Check the highlighted information and consent, then submit again. Your entries have been kept.",
       rate_limit: "This network has reached the submission limit. Wait ten minutes, then submit the same request again.",
@@ -116,13 +128,13 @@ const T = {
     verifyFallback: "Contact Future Ready EMBA on WhatsApp →",
     security: "Security verification",
     fine: "Programme enquiry · No payment required · Privacy notice applies",
-    campaignFine: "Free guide · No payment · No enrolment commitment",
+    campaignFine: "Free PDF · No payment · No application · Unsubscribe anytime",
     okK: "Request received",
     okH: (name: string) => `Thank you${name ? `, ${name}` : ""}. We’ll follow your preference.`,
     okP: "The programme team will respond about programme fit, your selected cohort, employer-led HRD Corp funding and scholarship eligibility. This request is not an admission, scholarship or payment commitment.",
-    campaignOkP: "Your guide is ready below. Review it first; a programme conversation is optional and this request is not an admission, scholarship or payment commitment.",
+    campaignOkP: "Your PDF guide is ready below and has also been emailed to you. Review it first; a programme conversation is optional.",
     okRef: "Conversation reference",
-    okPlan: `Open the ${PROGRAMME_YEAR} programme guide →`,
+    okPlan: "Download the PDF guide →",
     okWa: "Contact Future Ready EMBA on WhatsApp →",
     waMsg: (name: string, cohort: string) => `Hi, I'm ${name || "interested"}. I requested a conversation about the Future Ready Executive MBA${cohort ? ` for ${cohort}` : ""}.`,
   },
@@ -148,15 +160,20 @@ const T = {
     cohortUnknown: "尚未选择班次",
     continue: "继续填写联系方式 →",
     campaignContinue: "继续获取课程指南 →",
-    campaignKicker: "免费在职经理指南",
-    campaignTitle: `发送 ${PROGRAMME_YEAR} 课⁠程⁠指⁠南给我。`,
-    campaignIntro: "内容包括三个月 Future Ready Executive MBA、已公布日期、课程费用及奖学金评估方式。Chartered Manager 属于独立可选路线。",
+    campaignKicker: "免费 PDF 课程指南",
+    campaignTitle: `获取 ${PROGRAMME_YEAR} Future Ready 高管 MBA 课⁠程⁠指⁠南。`,
+    campaignIntro: "先了解课程内容，再决定是否与课程团队沟通。",
+    campaignBenefits: [
+      "了解六个月课程及六个培训日的安排",
+      "了解 CMI 专业认可及课程属性边界",
+      "比较开课日期、标准费用及奖学金评估条件",
+    ],
     stepTwoKicker: "沟通方式",
     stepTwoTitle: "课程团队应如何回复您？",
     back: "← 返回",
     selectedRoute: "已选需求",
     name: "姓名", namePh: "您的姓名",
-    phone: "电话 / WhatsApp", email: "电邮", emailPh: "you@company.com",
+    phone: "电话 / WhatsApp", campaignPhone: "电话 / WhatsApp（选填）", email: "电邮", emailPh: "you@company.com",
     company: "公司（选填）", companyPh: "所属机构",
     conversation: "您希望如何进一步了解？",
     conversationOptions: [
@@ -175,11 +192,12 @@ const T = {
       ["weekend", "周末"],
     ] as const,
     helper: "我们会通过电邮确认请求，并按您选择的方式联系。",
-    campaignHelper: "电邮用于发送指南；如您希望继续沟通，课程团队可通过电话或 WhatsApp 回复。",
+    campaignHelper: "PDF 将立即发送至您的电邮。只有在您也希望通过 WhatsApp 或电话跟进时，才需要填写电话号码。",
     consent: "我同意课程团队就本课程与我联系，并了解我的个人资料将依据马来西亚 2010 年个人资料保护法（PDPA）及其修订处理。",
+    campaignConsent: "请发送课程指南并回复此请求。我的资料将依据马来西亚 2010 年个人资料保护法（PDPA）及其修订处理。",
     consentMarketing: "我愿意接收课程资讯与营销通讯，可随时退订。",
     submit: "发送课程咨询 →", sending: "正在安全提交…",
-    campaignSubmit: "发送课程指南给我 →",
+    campaignSubmit: "将指南发送至我的电邮 →",
     errors: {
       validation: "请检查资料及同意选项后再次提交。您填写的内容已保留。",
       rate_limit: "此网络已达到提交上限。请等待十分钟后再次提交同一请求。",
@@ -191,13 +209,13 @@ const T = {
     verifyFallback: "通过 WhatsApp 联系 Future Ready 高管 MBA →",
     security: "安全验证",
     fine: "课程咨询 · 无需付款 · 适用隐私声明",
-    campaignFine: "免费指南 · 无需付款 · 不代表报名承诺",
+    campaignFine: "免费 PDF · 无需付款 · 不代表申请 · 可随时退订",
     okK: "沟通请求已收到",
     okH: (name: string) => `谢谢您${name ? `，${name}` : ""}。我们会按您的选择联系。`,
     okP: "课程团队将回复课程适合度、所选班次、雇主申请 HRD Corp 及奖学金资格。这项请求不等于录取、奖学金批准或付款承诺。",
-    campaignOkP: "您的课程指南已可在下方打开。您可先查看资料；是否进一步沟通由您决定。这项请求不等于录取、奖学金批准或付款承诺。",
+    campaignOkP: "您的 PDF 指南已可在下方下载，并已发送至您的电邮。您可先查看资料；是否进一步沟通由您决定。",
     okRef: "沟通编号",
-    okPlan: `查看 ${PROGRAMME_YEAR} 课程指南 →`,
+    okPlan: "下载 PDF 课程指南 →",
     okWa: "通过 WhatsApp 联系 Future Ready 高管 MBA →",
     waMsg: (name: string, cohort: string) => `您好，我是 ${name || "意向学员"}。我已提交 Future Ready 高管 MBA 沟通请求${cohort ? `，首选 ${cohort}` : ""}。`,
   },
@@ -223,15 +241,20 @@ const T = {
     cohortUnknown: "Saya belum memilih kohort",
     continue: "Teruskan ke maklumat hubungan →",
     campaignContinue: "Teruskan untuk panduan program →",
-    campaignKicker: "Panduan percuma untuk pengurus bekerja",
-    campaignTitle: `Hantarkan panduan program ${PROGRAMME_YEAR} kepada saya.`,
-    campaignIntro: "Merangkumi program tiga bulan diiktiraf CMI, tarikh yang telah diumumkan, yuran program dan cara penilaian biasiswa dijalankan.",
+    campaignKicker: "Panduan program PDF percuma",
+    campaignTitle: `Dapatkan panduan Future Ready EMBA ${PROGRAMME_YEAR}.`,
+    campaignIntro: "Semak program terlebih dahulu sebelum memutuskan sama ada mahu berbincang dengan kami.",
+    campaignBenefits: [
+      "Lihat susunan enam bulan dan enam hari latihan",
+      "Fahami pengiktirafan CMI dan batas status program",
+      "Bandingkan tarikh, yuran yang diterbitkan dan kriteria biasiswa",
+    ],
     stepTwoKicker: "Maklumat hubungan anda",
     stepTwoTitle: "Ke mana pasukan program patut membalas?",
     back: "← Kembali",
     selectedRoute: "Laluan dipilih",
     name: "Nama penuh", namePh: "Nama anda",
-    phone: "Telefon / WhatsApp", email: "E-mel", emailPh: "anda@syarikat.com",
+    phone: "Telefon / WhatsApp", campaignPhone: "Telefon / WhatsApp (pilihan)", email: "E-mel", emailPh: "anda@syarikat.com",
     company: "Syarikat (tidak wajib)", companyPh: "Organisasi",
     conversation: "Bagaimanakah anda mahu meneruskan?",
     conversationOptions: [
@@ -250,11 +273,12 @@ const T = {
       ["weekend", "Hujung minggu"],
     ] as const,
     helper: "Kami menggunakan e-mel untuk mengesahkan permohonan ini dan menghubungi anda mengikut kaedah yang anda pilih.",
-    campaignHelper: "Panduan anda dihantar melalui e-mel. Telefon atau WhatsApp membolehkan pasukan program membalas jika anda mahu meneruskan perbincangan.",
+    campaignHelper: "PDF akan dihantar melalui e-mel dengan segera. Tambah nombor telefon hanya jika anda juga mahu susulan melalui WhatsApp atau panggilan.",
     consent: "Saya bersetuju dihubungi mengenai program ini, dan memahami data saya diproses menurut Akta Perlindungan Data Peribadi 2010 Malaysia, seperti yang dipinda.",
+    campaignConsent: "Hantarkan panduan program dan balas permintaan ini. Maklumat saya akan dikendalikan di bawah PDPA Malaysia 2010, seperti yang dipinda.",
     consentMarketing: "Hantarkan saya perkembangan program dan komunikasi pemasaran. Saya boleh berhenti melanggan pada bila-bila masa.",
     submit: "Hantar permohonan program saya →", sending: "Sedang dihantar dengan selamat…",
-    campaignSubmit: "Hantar panduan saya →",
+    campaignSubmit: "E-melkan panduan kepada saya →",
     errors: {
       validation: "Semak maklumat yang ditanda serta kotak persetujuan, kemudian hantar semula. Maklumat yang anda isi telah disimpan.",
       rate_limit: "Rangkaian ini telah mencapai had penghantaran. Tunggu sepuluh minit, kemudian hantar semula permohonan yang sama.",
@@ -266,13 +290,13 @@ const T = {
     verifyFallback: "Hubungi Future Ready EMBA melalui WhatsApp →",
     security: "Pengesahan keselamatan",
     fine: "Pertanyaan program · Tiada bayaran diperlukan · Notis privasi terpakai",
-    campaignFine: "Panduan percuma · Tiada bayaran · Tiada komitmen pendaftaran",
+    campaignFine: "PDF percuma · Tiada bayaran · Bukan permohonan · Boleh berhenti melanggan bila-bila masa",
     okK: "Permohonan diterima",
     okH: (name: string) => `Terima kasih${name ? `, ${name}` : ""}. Kami akan menghubungi anda mengikut pilihan anda.`,
     okP: "Pasukan program akan membalas mengenai kesesuaian program, kohort pilihan anda, permohonan HRD Corp oleh majikan serta kelayakan biasiswa. Permohonan ini bukan pengesahan kemasukan, kelulusan biasiswa atau komitmen bayaran.",
-    campaignOkP: "Panduan anda sedia untuk dibuka di bawah. Semak dahulu kandungannya; perbincangan program adalah pilihan anda, dan permohonan ini bukan pengesahan kemasukan, kelulusan biasiswa atau komitmen bayaran.",
+    campaignOkP: "Panduan PDF anda sedia dimuat turun di bawah dan telah dihantar melalui e-mel. Semak dahulu; perbualan program adalah pilihan.",
     okRef: "Rujukan perbualan",
-    okPlan: `Buka panduan program ${PROGRAMME_YEAR} →`,
+    okPlan: "Muat turun panduan PDF →",
     okWa: "Hubungi Future Ready EMBA melalui WhatsApp →",
     waMsg: (name: string, cohort: string) => `Hai, saya ${name || "berminat"}. Saya telah memohon perbincangan mengenai Future Ready Executive MBA${cohort ? ` untuk ${cohort}` : ""}.`,
   },
@@ -553,7 +577,7 @@ export default function LeadForm({
       if (typeof result.lead_reference === "string") setLeadReference(result.lead_reference);
       trackEvent("generate_lead", {
         ...formContext,
-        lead_type: "programme_conversation_request",
+        lead_type: campaign ? "programme_guide_request" : "programme_conversation_request",
         participant_type: intent === "international" ? "international" : "malaysian",
         contact_preference: contactPreference,
         lead_intent: intent,
@@ -590,7 +614,7 @@ export default function LeadForm({
         <p className="fine">{campaign ? t.campaignOkP : t.okP}</p>
         {leadReference && <p className="lead-reference"><span>{t.okRef}</span><code>{leadReference}</code></p>}
         {campaign && (
-          <a className="btn btn-primary" href={lang === "zh" ? "/zh/resources/advancement-brief" : lang === "ms" ? "/ms/resources/advancement-brief" : "/resources/advancement-brief"} data-track-event="cta_click" data-track-id="lead_success_programme_plan" data-track-location="lead_success">
+          <a className="btn btn-primary" href={GUIDE_PDF[lang]} download data-track-event="cta_click" data-track-id="lead_success_programme_plan" data-track-location="lead_success">
             {t.okPlan}
           </a>
         )}
@@ -699,7 +723,14 @@ export default function LeadForm({
           <div>
             <p className="mono sec-k acc">{campaign ? t.campaignKicker : t.stepTwoKicker}</p>
             <h2>{campaign ? t.campaignTitle : t.stepTwoTitle}</h2>
-            {campaign && <p className="form-helper lead-form-intro">{t.campaignIntro}</p>}
+            {campaign && (
+              <>
+                <p className="form-helper lead-form-intro">{t.campaignIntro}</p>
+                <ul className="lead-magnet-benefits">
+                  {t.campaignBenefits.map((benefit) => <li key={benefit}>{benefit}</li>)}
+                </ul>
+              </>
+            )}
           </div>
           {!campaign && <button className="lead-form-back" type="button" onClick={returnToRoute}>{t.back}</button>}
         </div>
@@ -723,17 +754,6 @@ export default function LeadForm({
         {campaign ? (
           <>
             <div className="fld">
-              <label htmlFor={id("phone-local")}>{t.phone}</label>
-              <div className="phone-split">
-                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : lang === "ms" ? "Kod negara" : "Country code"}>
-                  {PHONE_COUNTRY_CODES.map((entry) => (
-                    <option key={entry.code} value={entry.code}>{entry.label}</option>
-                  ))}
-                </select>
-                <input id={id("phone-local")} name="phone_local" type="tel" inputMode="tel" placeholder="12 345 6789" autoComplete="tel-national" enterKeyHint="next" required />
-              </div>
-            </div>
-            <div className="fld">
               <label htmlFor={id("email")}>{t.email}</label>
               <input
                 id={id("email")}
@@ -742,7 +762,7 @@ export default function LeadForm({
                 inputMode="email"
                 placeholder={t.emailPh}
                 autoComplete="email"
-                enterKeyHint="done"
+                enterKeyHint="next"
                 required
                 list={id("email-domains")}
                 value={emailDraft}
@@ -754,6 +774,17 @@ export default function LeadForm({
                 ))}
               </datalist>
               <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : lang === "ms" ? "Panduan keputusan peribadi anda akan dihantar secara automatik ke alamat e-mel ini selepas penghantaran." : "Your private decision guide will be sent automatically to this email address after submission."}</p>
+            </div>
+            <div className="fld">
+              <label htmlFor={id("phone-local")}>{t.campaignPhone}</label>
+              <div className="phone-split">
+                <select id={id("phone-cc")} name="phone_cc" defaultValue="+60" autoComplete="tel-country-code" aria-label={lang === "zh" ? "国家区号" : lang === "ms" ? "Kod negara" : "Country code"}>
+                  {PHONE_COUNTRY_CODES.map((entry) => (
+                    <option key={entry.code} value={entry.code}>{entry.label}</option>
+                  ))}
+                </select>
+                <input id={id("phone-local")} name="phone_local" type="tel" inputMode="tel" placeholder="12 345 6789" autoComplete="tel-national" enterKeyHint="done" />
+              </div>
             </div>
           </>
         ) : (
@@ -817,7 +848,7 @@ export default function LeadForm({
         <div className="consent-group" role="group" aria-label={lang === "zh" ? "同意条款" : lang === "ms" ? "Persetujuan" : "Consent"}>
           <label className="check">
             <input type="checkbox" name="consent" value="yes" required />
-            <span>{t.consent}</span>
+            <span>{campaign ? t.campaignConsent : t.consent}</span>
           </label>
           <label className="check">
             <input type="checkbox" name="consent_marketing" value="yes" />

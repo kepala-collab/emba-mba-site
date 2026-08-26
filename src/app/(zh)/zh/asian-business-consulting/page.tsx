@@ -81,7 +81,7 @@ export default function AbcPageZh() {
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "60ch" }}>
-              Asian Business Consulting（ABC）是一家于 2020 年在马来西亚注册的管理咨询、企业培训与高管学习机构。历经近三年与 CMI（UK）共同开发，设计出为期三个月的 Future Ready 高管 MBA，并以 CMI（UK）认可中心的身份提供课程。
+              Asian Business Consulting（ABC）是一家于 2020 年在马来西亚注册的管理咨询、企业培训与高管学习机构。历经近三年与 CMI（UK）共同开发，设计出为期六个月的 Future Ready 高管 MBA，并以 CMI（UK）认可中心的身份提供课程。
             </p>
           </Reveal>
           <Reveal delay={110}>

@@ -32,7 +32,7 @@ const STEPS = [
 ];
 
 const INCLUSIONS_MS = [
-  { b: "Enam hari latihan merentasi tiga sesi", s: "Bengkel rangka kerja yang diterajui pengamal, dijadualkan sebulan sekali sepanjang program tiga bulan." },
+  { b: "Enam hari latihan merentasi tiga sesi", s: "Bengkel rangka kerja yang diterajui pengamal, dijadualkan mengikut tarikh yang diterbitkan sepanjang program enam bulan." },
   { b: "Penilaian kendiri pengurusan berpandu", s: "Semak tabiat membuat keputusan semasa dan pilih bidang khusus untuk diperbaiki sepanjang program." },
   { b: "Bimbingan eksekutif & semakan projek", s: "Bimbingan satu-dengan-satu yang digunakan terhadap konteks organisasi peserta sendiri." },
   { b: "The Leverage Management System (LMS)", s: "Peserta menyimpan rangka kerja program, rujukan dan templat kerja." },
@@ -133,7 +133,7 @@ export default function HrdCorpClaimablePage() {
           <Reveal>
             <p className="sec-sub">
               HRD Corp menyatakan jumlah yang diluluskan dalam keputusan gerannya. Executive MBA ialah
-              program tiga bulan yang membawa kepada sijil program. Program ini merangkumi:
+              program enam bulan yang membawa kepada sijil program. Program ini merangkumi:
             </p>
           </Reveal>
           <Reveal className="mt-s">

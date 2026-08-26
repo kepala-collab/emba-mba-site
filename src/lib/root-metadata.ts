@@ -19,12 +19,12 @@ export const ROOT_METADATA: Metadata = {
     template: "%s | Future Ready",
   },
   description:
-    "A three-month professional management programme with an applied business project and CMI-recognised programme certificate.",
+    "A six-month professional management programme with an applied business project and CMI-recognised programme certificate.",
   openGraph: {
     type: "website",
     siteName: "Future Ready Executive MBA",
     title: "Future Ready Executive MBA Malaysia",
-    description: "A three-month management programme for experienced working leaders, with an applied business project and a CMI-recognised programme certificate.",
+    description: "A six-month management programme for experienced working leaders, with an applied business project and a CMI-recognised programme certificate.",
     url: "/",
     locale: "en_MY",
     images: [{ url: `${SITE.url}/opengraph-image`, width: 1200, height: 630, alt: "Future Ready Executive MBA" }],
@@ -32,7 +32,7 @@ export const ROOT_METADATA: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Future Ready Executive MBA Malaysia",
-    description: "A three-month management programme for experienced working leaders, with clear fees, schedule and CMI recognition information.",
+    description: "A six-month management programme for experienced working leaders, with clear fees, schedule and CMI recognition information.",
     images: [`${SITE.url}/opengraph-image`],
   },
   icons: {

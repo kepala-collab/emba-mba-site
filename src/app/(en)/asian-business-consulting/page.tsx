@@ -83,7 +83,7 @@ export default function AsianBusinessConsultingPage() {
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "64ch" }}>
-              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the three-month Executive MBA on Future Ready Business Leadership over almost three years of development with CMI and delivers it today as a CMI Recognised centre.
+              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the six-month Executive MBA on Future Ready Business Leadership over almost three years of development with CMI and delivers it today as a CMI Recognised centre.
             </p>
           </Reveal>
           <Reveal delay={110}>

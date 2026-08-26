@@ -21,7 +21,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">2026 英语及华语班</span></div>
             <h1 className="sec-h">选择符合工作日程的班次。</h1>
-            <p className="sec-sub">五个已公布班次均在三个月内完成三个周末课程。Chartered Manager 属于独立可选 CMI 路线，不包含在本课程或已公布费用内。</p>
+            <p className="sec-sub">五个已公布班次均在六个月内完成三个周末课程。Chartered Manager 属于独立可选 CMI 路线，不包含在本课程或已公布费用内。</p>
             <p className="fine mt-s">课程团队会在回复咨询时确认班次名额。</p>
           </Reveal>
         </div>

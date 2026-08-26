@@ -31,21 +31,21 @@ const LEVELS_MS = [
 ] as const;
 
 const PROGRAMME_EN = [
-  ["01", "Awarded and endorsed by CMI", "Executive MBA on Future Ready Business Leadership. A three-month, non-academic professional development programme."],
+  ["01", "Awarded and endorsed by CMI", "Executive MBA on Future Ready Business Leadership. A six-month, non-academic professional development programme."],
   ["02", "Certificate and fCMgr", "Successful completion leads to the CMI Certificate of Recognition and Foundation Chartered Manager status under CMI's published Recognised offer."],
   ["03", "Optional next step: Chartered Manager", "A separate CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee."],
   ["04", "Independent CMI decision", "CMgr MCMI is awarded only after CMI confirms eligibility and the applicant passes the applicable assessment."],
 ] as const;
 
 const PROGRAMME_ZH = [
-  ["01", "CMI（英国）认可", "具有 CMI（英国）Endorsed 及 Recognised status 的三个月专业发展课程；并非学术学位。"],
+  ["01", "CMI（英国）认可", "具有 CMI（英国）Endorsed 及 Recognised status 的六个月专业发展课程；并非学术学位。"],
   ["02", "证书与 fCMgr", "成功完成课程者取得 CMI Certificate of Recognition；根据 CMI 公布的 Recognised 方案，同时取得 Foundation Chartered Manager 身份。"],
   ["03", "可选下一步：Chartered Manager", "这是一条独立的 CMI 路线，有其资格、评估及费用；不包括在已公布的高管 MBA 课程或学费内。"],
   ["04", "CMI 独立决定", "只有在 CMI 确认资格并通过适用评估后，申请人才获授 CMgr MCMI。"],
 ] as const;
 
 const PROGRAMME_MS = [
-  ["01", "Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Future Ready Business Leadership. Program pembangunan profesional bukan akademik selama tiga bulan."],
+  ["01", "Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Future Ready Business Leadership. Program pembangunan profesional bukan akademik selama enam bulan."],
   ["02", "Sijil dan fCMgr", "Peserta yang berjaya menamatkan program menerima CMI Certificate of Recognition serta status Foundation Chartered Manager di bawah tawaran Recognised yang diterbitkan CMI."],
   ["03", "Langkah seterusnya (pilihan): Chartered Manager", "Laluan CMI yang berasingan dengan kelayakan, penilaian dan yuran tersendiri; tidak termasuk dalam program Executive MBA atau yuran yang diterbitkan."],
   ["04", "Keputusan bebas CMI", "CMgr MCMI dianugerahkan hanya selepas CMI mengesahkan kelayakan dan pemohon lulus penilaian yang berkenaan."],

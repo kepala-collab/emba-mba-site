@@ -38,7 +38,7 @@ const articleSchema = {
 
 const COMPARISON = [
   ["Primary purpose", "Focused development of leadership, management or specialist capabilities.", "Varies by provider. Academic EMBAs normally lead to a degree; professionally positioned programmes must state their own credential clearly."],
-  ["Duration", "May be delivered in shorter or modular formats; each provider must publish its schedule.", `This programme runs for ${FACTS.durationLong}, with six training days across three monthly sessions.`],
+  ["Duration", "May be delivered in shorter or modular formats; each provider must publish its schedule.", `This programme runs for ${FACTS.durationLong}, with six training days across three scheduled sessions.`],
   ["Assessment", "May use workshops, projects, cases or a certificate of completion.", "This programme uses coaching and an applied business project, with no traditional examination or thesis."],
   ["Academic status", "May be non-degree professional development; verify the status stated by the provider.", "This Future Ready Executive MBA is not an MQA-accredited academic degree or a regulated qualification."],
   ["Workplace application", "Designed to develop capabilities that can be used in a current role.", "Participants apply the frameworks to a live business issue in their own organisational context."],
@@ -78,7 +78,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
               Choose an academic MBA or EMBA when your next step requires a recognised academic degree. Consider executive education when you need focused professional development that fits around work. Then verify exactly what the named programme awards, because credentials and academic status differ between providers.
             </p>
             <p>
-              The <Link href="/executive-mba">Executive MBA on Future Ready Business Leadership</Link> is awarded and endorsed by CMI. It is a three-month professional development programme. Successful participants receive the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic degree or a regulated qualification.
+              The <Link href="/executive-mba">Executive MBA on Future Ready Business Leadership</Link> is awarded and endorsed by CMI. It is a six-month professional development programme. Successful participants receive the CMI Certificate of Recognition for the programme. It is not an MQA-accredited academic degree or a regulated qualification.
             </p>
 
             <h2>Compare the published facts</h2>
@@ -104,7 +104,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
 
             <h2>Where this programme fits</h2>
             <p>
-              This programme is designed for owners, directors, general managers and senior managers who want structured leadership development around a current business issue. It combines cohort-based workshops, coaching, strategic decision frameworks and an applied project across three months. Participants remain in their roles while completing the work.
+              This programme is designed for owners, directors, general managers and senior managers who want structured leadership development around a current business issue. It combines cohort-based workshops, coaching, strategic decision frameworks and an applied project across six months. Participants remain in their roles while completing the work.
             </p>
             <p>
               Chartered Manager is a separate optional CMI route. CMI determines eligibility, assessment, membership and fees; it is not included in the published programme or fee. Review the <Link href="/chartered-manager-malaysia">CMI routes</Link>, the <Link href="/fees">complete fee and scholarship terms</Link>, and the <Link href="/intakes">published session dates</Link> before deciding.

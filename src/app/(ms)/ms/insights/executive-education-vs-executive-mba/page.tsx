@@ -38,7 +38,7 @@ const articleSchema = {
 
 const COMPARISON = [
   ["Tujuan utama", "Pembangunan tertumpu keupayaan kepimpinan, pengurusan atau kepakaran khusus.", "Berbeza mengikut penyedia. EMBA akademik lazimnya membawa kepada ijazah; program yang diposisikan secara profesional mesti menyatakan kredensialnya sendiri dengan jelas."],
-  ["Tempoh", "Boleh disampaikan dalam format lebih pendek atau modular; setiap penyedia mesti menerbitkan jadualnya.", `Program ini berjalan selama tiga bulan, dengan enam hari latihan merentasi tiga sesi bulanan.`],
+  ["Tempoh", "Boleh disampaikan dalam format lebih pendek atau modular; setiap penyedia mesti menerbitkan jadualnya.", `Program ini berjalan selama enam bulan, dengan enam hari latihan merentasi tiga sesi berjadual.`],
   ["Penilaian", "Boleh menggunakan bengkel, projek, kes atau sijil penyelesaian.", "Program ini menggunakan bimbingan dan projek perniagaan aplikasi, tanpa peperiksaan atau tesis tradisional."],
   ["Status akademik", "Boleh jadi pembangunan profesional bukan ijazah; sahkan status yang dinyatakan oleh penyedia.", "Future Ready Executive MBA ini bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia."],
   ["Aplikasi di tempat kerja", "Direka untuk membina keupayaan yang boleh digunakan dalam peranan semasa.", "Peserta mengaplikasikan rangka kerja terhadap isu perniagaan sebenar dalam konteks organisasi mereka sendiri."],
@@ -78,7 +78,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
               Pilih MBA atau EMBA akademik apabila langkah seterusnya anda memerlukan ijazah akademik yang diiktiraf. Pertimbangkan pendidikan eksekutif apabila anda memerlukan pembangunan profesional tertumpu yang sesuai dengan waktu kerja. Kemudian sahkan dengan tepat apa yang dianugerahkan oleh program yang dinamakan itu, kerana kredensial dan status akademik berbeza antara penyedia.
             </p>
             <p>
-              <Link href="/ms/executive-mba">Executive MBA dalam Future Ready Business Leadership</Link> dianugerahkan dan disokong oleh CMI. Ia adalah program pembangunan profesional tiga bulan. Peserta yang berjaya menerima CMI Certificate of Recognition bagi program ini. Ia bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia.
+              <Link href="/ms/executive-mba">Executive MBA dalam Future Ready Business Leadership</Link> dianugerahkan dan disokong oleh CMI. Ia adalah program pembangunan profesional enam bulan. Peserta yang berjaya menerima CMI Certificate of Recognition bagi program ini. Ia bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia.
             </p>
 
             <h2>Bandingkan fakta yang diterbitkan</h2>
@@ -104,7 +104,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
 
             <h2>Di mana program ini sesuai</h2>
             <p>
-              Program ini direka untuk pemilik, pengarah, pengurus besar dan pengurus kanan yang mahukan pembangunan kepimpinan berstruktur terhadap isu perniagaan semasa. Ia menggabungkan bengkel berasaskan kohort, bimbingan, rangka kerja keputusan strategik dan projek aplikasi merentasi tiga bulan. Peserta terus berada dalam peranan mereka sambil menyelesaikan kerja tersebut.
+              Program ini direka untuk pemilik, pengarah, pengurus besar dan pengurus kanan yang mahukan pembangunan kepimpinan berstruktur terhadap isu perniagaan semasa. Ia menggabungkan bengkel berasaskan kohort, bimbingan, rangka kerja keputusan strategik dan projek aplikasi merentasi enam bulan. Peserta terus berada dalam peranan mereka sambil menyelesaikan kerja tersebut.
             </p>
             <p>
               Chartered Manager ialah laluan pilihan CMI yang berasingan. CMI menentukan kelayakan, penilaian, keahlian dan yuran; ia tidak termasuk dalam program atau yuran yang diterbitkan. Semak <Link href="/ms/chartered-manager-malaysia">laluan CMI</Link>, <Link href="/ms/fees">yuran penuh dan terma biasiswa</Link>, dan <Link href="/ms/intakes">tarikh sesi yang diterbitkan</Link> sebelum membuat keputusan.

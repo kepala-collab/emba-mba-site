@@ -3,7 +3,7 @@ import { SITE } from "@/lib/content";
 import { languageAlternates } from "@/lib/locale-routes";
 
 const DEFAULT_DESCRIPTION =
-  "A three-month professional management programme with a CMI-recognised programme certificate, applied business project and employer-led HRD Corp funding route. HRD Corp decides eligibility and the approved amount.";
+  "A six-month professional management programme with a CMI-recognised programme certificate, applied business project and employer-led HRD Corp funding route. HRD Corp decides eligibility and the approved amount.";
 
 export const PROVIDER_ID = `${SITE.url}/#programme-provider`;
 export const OPERATOR_ID = `${SITE.url}/#website-operator`;

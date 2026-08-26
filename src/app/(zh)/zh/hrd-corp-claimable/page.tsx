@@ -32,7 +32,7 @@ const STEPS = [
 ];
 
 const INCLUSIONS_ZH = [
-  { b: "三个课程共六个培训日", s: "三个月课程期间，每月安排一次由实践导师带领的框架工作坊。" },
+  { b: "三个课程共六个培训日", s: "六个月课程期间，每月安排一次由实践导师带领的框架工作坊。" },
   { b: "引导式管理自我评估", s: "检视当前决策习惯，并选定课程期间要改进的具体方向。" },
   { b: "高管辅导及项目评审", s: "针对学员自身企业情境提供一对一指导。" },
   { b: "Leverage Management System（LMS）", s: "学员保留课程框架、参考资料及工作模板。" },
@@ -129,7 +129,7 @@ export default function HrdCorpClaimablePage() {
           <Reveal><h2 className="sec-h">批准资助金额所对应的课程组成部分。</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              批准金额以 HRD Corp 的 grant 决定为准。高管 MBA 是通向课程证书的三个月课程，课程包括：
+              批准金额以 HRD Corp 的 grant 决定为准。高管 MBA 是通向课程证书的六个月课程，课程包括：
             </p>
           </Reveal>
           <Reveal className="mt-s">

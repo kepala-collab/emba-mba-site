@@ -7,7 +7,7 @@ import { ABC_PROFILE, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ORGANISATIONAL_STATEMENT_MS =
-  "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia merupakan program pembangunan profesional tiga bulan yang direka dan dikendalikan oleh Asian Business Consulting. Right Dots Resources ialah Rakan Bersekutu bagi pertanyaan program dan penyelarasan pendaftaran. Pembiayaan majikan boleh dipertimbangkan bagi majikan berdaftar HRD Corp yang layak, tertakluk pada kelulusan HRD Corp dan jumlah yang diluluskan.";
+  "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia merupakan program pembangunan profesional enam bulan yang direka dan dikendalikan oleh Asian Business Consulting. Right Dots Resources ialah Rakan Bersekutu bagi pertanyaan program dan penyelarasan pendaftaran. Pembiayaan majikan boleh dipertimbangkan bagi majikan berdaftar HRD Corp yang layak, tertakluk pada kelulusan HRD Corp dan jumlah yang diluluskan.";
 
 export const metadata = withSeo("/ms/about", {
   title: "Tentang Future Ready Executive MBA | Kenali Roy Affandi",

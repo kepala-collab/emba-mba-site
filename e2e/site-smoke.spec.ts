@@ -95,11 +95,12 @@ test("Malay locale preserves responsive structure, metadata and accessibility", 
   expect(results.violations.map((item) => item.id), "Malay homepage accessibility").toEqual([]);
 });
 
-test("desktop header provides four exclusive navigation dropdowns", async ({ page }) => {
+test("desktop header provides four content dropdowns and one language dropdown", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/home");
-  const dropdowns = page.locator(".desktop-nav .nav-dropdown");
+  const dropdowns = page.locator(".desktop-nav .nav-dropdown:not(.locale-dropdown)");
   await expect(dropdowns).toHaveCount(4);
+  await expect(page.locator(".desktop-nav .locale-dropdown")).toHaveCount(1);
   const homeLink = page.locator(".desktop-nav").getByRole("link", { name: "Home", exact: true });
   await expect(homeLink).toHaveAttribute("href", "/home");
   const brandBox = await page.locator(".navbar .brand-title").boundingBox();
@@ -120,6 +121,11 @@ test("desktop header provides four exclusive navigation dropdowns", async ({ pag
   await page.keyboard.press("Escape");
   await expect(recognition).not.toHaveAttribute("open", "");
   await expect(recognition.locator("summary")).toBeFocused();
+
+  const localeDropdown = page.locator(".desktop-nav .locale-dropdown");
+  await localeDropdown.locator("summary").click();
+  await expect(localeDropdown.getByRole("link", { name: "中文" })).toBeVisible();
+  await expect(localeDropdown.getByRole("link", { name: "BM" })).toBeVisible();
 });
 
 test("English, Malay and Chinese share one navigation and page type scale", async ({ page }) => {
@@ -264,10 +270,10 @@ test("page navigation starts at the top while intentional anchors still work", a
   await primaryHome.click();
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
 
-  await page.getByRole("link", { name: "Watch the graduation film" }).click();
-  await expect(page).toHaveURL(/\/asian-business-consulting#abc-film$/);
+  await page.locator('a[href="#programme-guide"]').first().click();
+  await expect(page).toHaveURL(/\/home#programme-guide$/);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
-  await expect(page.locator("#abc-film")).toBeInViewport();
+  await expect(page.locator("#programme-guide")).toBeInViewport();
 });
 
 test("CMI recognition pages keep technical terms legible and the offer unambiguous", async ({ page }) => {
@@ -305,9 +311,9 @@ test("desktop hero exposes a primary conversion action in the first viewport", a
   const box = await page.locator(".navbar").getByRole("link", { name: /Get the guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
-  const form = await page.locator(".working-hero-form form[data-form-id]").boundingBox();
-  expect(form).not.toBeNull();
-  expect(form?.y || 9999).toBeLessThan(800);
+  const primaryAction = await page.locator('.commerce-actions a[href="#programme-guide"]').boundingBox();
+  expect(primaryAction).not.toBeNull();
+  expect((primaryAction?.y || 9999) + (primaryAction?.height || 0)).toBeLessThan(800);
   await expect(page.getByRole("button", { name: /Ask the programme assistant/i })).toBeHidden();
 });
 
@@ -426,16 +432,15 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   }
 
   await goto(page, "/home");
-  const heroGrid = page.locator(".home-hero-stage-grid");
+  const heroGrid = page.locator(".commerce-decision-layout");
   const heroForm = heroGrid.locator("form[data-form-id]");
   await expect(heroForm).toBeVisible();
-  await expect(heroForm.getByRole("heading", { name: "Send me the 2026 programme guide." })).toBeVisible();
+  await expect(heroForm.getByRole("heading", { name: "Get the 2026 Future Ready EMBA guide." })).toBeVisible();
   await expect(heroForm.getByLabel("Email")).toBeVisible();
-  await expect(heroForm.getByLabel("Phone / WhatsApp")).toBeVisible();
+  await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
-  await expect(page.locator(".home-video-section .programme-film")).toBeVisible();
-  await expect(page.locator(".home-video-section form[data-form-id]")).toHaveCount(0);
+  await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {
@@ -446,14 +451,12 @@ test("mobile Apply presents the form immediately after its introduction", async 
   expect(box?.y || 9999).toBeLessThan(900);
 });
 
-test("programme introduction falls back to a complete text overview", async ({ page }) => {
+test("programme introduction keeps a visible text alternative beside the graduation film", async ({ page }) => {
   await goto(page, "/home");
-  await page.getByRole("button", { name: "Read", exact: true }).first().click();
-  const dialog = page.getByRole("dialog", { name: /What happens during the three-month programme/i });
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByText("Three months. One focused programme.")).toBeVisible();
-  await expect(dialog.getByText(/approved video can be added/i)).toHaveCount(0);
-  await expect(dialog.locator(".film-placeholder img")).toHaveCount(0);
+  const media = page.locator(".commerce-hero-media");
+  await expect(media).toBeVisible();
+  await expect(media.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
+  await expect(media.locator("figcaption")).toContainText("Lead with certainty");
 });
 
 test("mobile programme fit check returns to its factual result", async ({ page }) => {
@@ -664,7 +667,7 @@ test("mobile campaign pages preserve the value proposition before the form", asy
   }
 });
 
-test("campaign lead capture collects guide delivery and contact details", async ({ page }) => {
+test("campaign lead capture delivers the guide without requiring a phone number", async ({ page }) => {
   await mockTurnstile(page);
   await page.route("**/api/lead", async (route) => {
     const request = route.request().postDataJSON() as Record<string, unknown>;
@@ -673,7 +676,7 @@ test("campaign lead capture collects guide delivery and contact details", async 
     expect(request.preferred_contact_window).toBe("flexible");
     expect(request.contact_preference).toBe("details_first");
     expect(request.email).toBe("campaign@example.com");
-    expect(request.phone).toBe("+60123456789");
+    expect(request.phone).toBeUndefined();
     expect(request.marketing).toBe("no");
     await route.fulfill({
       status: 200,
@@ -689,12 +692,12 @@ test("campaign lead capture collects guide delivery and contact details", async 
   await expect(form.getByLabel("Preferred contact time")).toHaveCount(0);
   await expect(form.getByLabel("How would you like to continue?")).toHaveCount(0);
   await form.getByLabel("Full name").fill("Campaign Participant");
-  await form.getByLabel("Phone / WhatsApp").fill("12 345 6789");
+  await expect(form.getByLabel("Phone / WhatsApp (optional)")).not.toHaveAttribute("required");
   await form.getByLabel("Email").fill("campaign@example.com");
   await form.getByRole("checkbox").first().check();
-  await form.getByRole("button", { name: /Send my guide/i }).click();
+  await form.getByRole("button", { name: /Email me the guide/i }).click();
   await expect(page.getByText("CAMPAIGN-LEAD")).toBeVisible();
-  await expect(page.getByRole("link", { name: /Open the 2026 programme guide/i })).toHaveAttribute("href", "/resources/advancement-brief");
+  await expect(page.getByRole("link", { name: /Download the PDF guide/i })).toHaveAttribute("href", "/downloads/working-managers-guide-2026.pdf");
 });
 
 test("campaign routes have no automated accessibility violations", async ({ page }) => {
@@ -710,38 +713,19 @@ test("campaign routes have no automated accessibility violations", async ({ page
   }
 });
 
-test("home hero carousel presents video, photography and accessible controls", async ({ page }) => {
+test("home hero presents the graduation film inside an accessible editorial frame", async ({ page }) => {
   await goto(page, "/home");
-  const slider = page.locator(".home-slider");
-  await expect(slider).toBeVisible();
-  await expect(slider.locator(".home-slide")).toHaveCount(3);
-  await expect(slider.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
-  const pauseButton = slider.getByRole("button", { name: "Pause slide rotation" });
-  await expect(pauseButton).toBeVisible();
-  await pauseButton.click();
-  const actionTops: number[] = [];
-  for (const slideNumber of [1, 2, 3]) {
-    const selector = slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) });
-    await selector.click();
-    await expect(selector).toHaveAttribute("aria-current", "true");
-    await page.waitForTimeout(450);
-    const actionBox = await slider.locator(".home-slide.is-active .home-slide-action").boundingBox();
-    actionTops.push(actionBox?.y || 0);
-  }
-  expect(Math.max(...actionTops) - Math.min(...actionTops)).toBeLessThanOrEqual(1);
-  const secondSlide = slider.getByRole("button", { name: /Show slide 2:/ });
-  await secondSlide.click();
-  await expect(secondSlide).toHaveAttribute("aria-current", "true");
-  await expect(slider.locator(".home-slide.is-active").getByRole("heading")).toContainText("Bring the decision");
+  const media = page.locator(".commerce-hero-media");
+  await expect(media).toBeVisible();
+  await expect(media.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
+  await expect(media.locator('img[alt="Future Ready Executive MBA graduation"]')).toBeVisible();
+  await expect(media.locator("figcaption")).toBeVisible();
 });
 
-test("home hero controls remain readable and touch-sized at 320px", async ({ page }) => {
+test("home hero actions remain readable and touch-sized at 320px", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 844 });
   await goto(page, "/home");
-  const slider = page.locator(".home-slider");
-  const pauseButton = slider.getByRole("button", { name: "Pause slide rotation" });
-  await expect(pauseButton).toBeVisible();
-  const controls = await slider.locator(".home-slider-controls button").evaluateAll((buttons) => buttons.map((button) => ({
+  const controls = await page.locator(".commerce-actions a").evaluateAll((buttons) => buttons.map((button) => ({
     width: button.getBoundingClientRect().width,
     height: button.getBoundingClientRect().height,
     contained: button.scrollWidth <= button.clientWidth + 1,
@@ -753,43 +737,46 @@ test("home hero controls remain readable and touch-sized at 320px", async ({ pag
   }
 });
 
-test("home hero aligns the slider, form and carousel actions on desktop", async ({ page }) => {
+test("mobile home connects its first action directly to the PDF guide form", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await goto(page, "/home");
+  const action = page.locator('.commerce-actions a[href="#programme-guide"]');
+  await expect(action).toBeVisible();
+  await action.click();
+  const form = await page.locator("#programme-guide form[data-form-id]").boundingBox();
+  expect(form).not.toBeNull();
+  await expect(page).toHaveURL(/#programme-guide$/);
+  await expect(page.locator("#programme-guide")).toBeInViewport();
+});
+
+test("home hero keeps its copy and media aligned across desktop widths", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   for (const width of [1024, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: width >= 1440 ? 900 : 800 });
     await goto(page, "/home");
     await page.evaluate(() => document.fonts.ready);
-    const slider = page.locator(".home-slider");
-    const form = page.locator(".working-hero-form");
-    const sliderBox = await slider.boundingBox();
-    const formBox = await form.boundingBox();
-    expect(sliderBox, `${width}px slider`).not.toBeNull();
-    expect(formBox, `${width}px form`).not.toBeNull();
-    expect(Math.abs((sliderBox?.y || 0) + (sliderBox?.height || 0) - (formBox?.y || 0) - (formBox?.height || 0)), `${width}px bottom alignment`).toBeLessThanOrEqual(1);
-
-    await slider.getByRole("button", { name: "Pause slide rotation" }).click();
-    const controls = await slider.locator(".home-slider-controls").boundingBox();
-    for (const slideNumber of [1, 2, 3]) {
-      const selector = slider.getByRole("button", { name: new RegExp(`Show slide ${slideNumber}:`) });
-      await selector.click();
-      await expect(selector).toHaveAttribute("aria-current", "true");
-      const action = await slider.locator(".home-slide.is-active .home-slide-action").boundingBox();
-      expect((action?.y || 0) + (action?.height || 0), `${width}px slide ${slideNumber} action clearance`).toBeLessThanOrEqual((controls?.y || 0) - 2);
+    const copy = await page.locator(".commerce-hero-copy").boundingBox();
+    const media = await page.locator(".commerce-hero-media").boundingBox();
+    expect(copy, `${width}px copy`).not.toBeNull();
+    expect(media, `${width}px media`).not.toBeNull();
+    if (width <= 1080) {
+      expect(media?.y || 0, `${width}px stacked media position`).toBeGreaterThan((copy?.y || 0) + (copy?.height || 0));
+    } else {
+      expect(Math.abs((copy?.y || 0) - (media?.y || 0)), `${width}px top alignment`).toBeLessThanOrEqual(150);
     }
+    expect(media?.height || 0, `${width}px media height`).toBeGreaterThanOrEqual(520);
   }
 });
 
-test("home hero selects the crop designed for each screen size", async ({ page }) => {
-  for (const [width, expectedCrop] of [[390, "9x16"], [768, "4x5"], [1280, "16x9"]] as const) {
+test("home hero preserves its poster and removes motion on compact screens", async ({ page }) => {
+  for (const width of [390, 768, 1280] as const) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     await goto(page, "/home");
-    const slider = page.locator(".home-slider");
-    await slider.getByRole("button", { name: /Show slide 2:/ }).click();
-    const image = slider.locator(".home-slide.is-active picture img");
-    await expect(image).toBeVisible();
-    const currentSrc = await image.evaluate((element: HTMLImageElement) => element.currentSrc);
-    expect(currentSrc, `${width}px crop`).toContain(expectedCrop);
+    const media = page.locator(".commerce-hero-media");
+    const image = media.locator('img[alt="Future Ready Executive MBA graduation"]');
     expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
+    const videoDisplay = await media.locator("video").evaluate((element) => getComputedStyle(element).display);
+    expect(videoDisplay).toBe(width <= 640 ? "none" : "block");
   }
 });
 
@@ -800,9 +787,9 @@ test("core pages carry the geometric hero backdrop in both languages", async ({ 
   }
 });
 
-test("partnership seal appears on the About page and in the footer", async ({ page }) => {
+test("verified partnership marks appear on the About page and in the footer", async ({ page }) => {
   await goto(page, "/about");
   await expect(page.locator(".partnership-seal img")).toBeVisible();
   await goto(page, "/home");
-  expect(await page.locator("footer.site .foot-seal").count()).toBeGreaterThan(0);
+  await expect(page.locator("footer.site .footer-brand-marks img")).toHaveCount(3);
 });

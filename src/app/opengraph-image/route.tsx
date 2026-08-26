@@ -28,7 +28,7 @@ export function GET() {
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
         <div style={{ width: 54, height: 6, background: "#1d63d8" }} />
         <div style={{ fontSize: 23, letterSpacing: 5, textTransform: "uppercase", color: "#405674" }}>
-          Three-month Executive MBA · Malaysia
+          Six-month Executive MBA · Malaysia
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", maxWidth: 980 }}>
@@ -36,7 +36,7 @@ export function GET() {
           Build the management capability for your next leadership role.
         </div>
         <div style={{ marginTop: 26, fontSize: 32, lineHeight: 1.3, color: "#405674" }}>
-          Six training days, three monthly sessions and an applied business project.
+          Six training days, three scheduled sessions and an applied business project.
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#667891" }}>

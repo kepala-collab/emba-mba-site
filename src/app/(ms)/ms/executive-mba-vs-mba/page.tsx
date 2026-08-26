@@ -113,8 +113,8 @@ export default function ExecutiveMbaVsMbaPage() {
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   Laluan ini direka untuk peserta yang memikul tanggungjawab strategik atau menyeluruh dalam
                   perniagaan, yang mahukan rangka kerja keputusan berstruktur, projek aplikasi dan CMI
-                  Certificate of Recognition. Program tiga bulan ini menggunakan satu hujung minggu berjadual
-                  setiap bulan.
+                  Certificate of Recognition. Program enam bulan ini menggunakan tiga hujung minggu berjadual,
+                  bimbingan dan projek aplikasi sepanjang program.
                 </p>
               </div>
             </Reveal>
@@ -132,7 +132,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Takrifkan hasil yang anda perlukan sebelum membandingkan harga. Pilih MBA akademik bertauliah MQA
               apabila langkah seterusnya anda memerlukan ijazah akademik. Pilih program ini apabila anda memerlukan
-              program tiga bulan, projek aplikasi perniagaan, pengiktirafan CMI terhadap Professional Standard-nya
+              program enam bulan, projek aplikasi perniagaan, pengiktirafan CMI terhadap Professional Standard-nya
               dan pekerjaan yang berterusan sepanjang pengajian. Yuran standard Malaysia 2026 yang diterbitkan
               ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima{" "}
               <Link href="/ms/fees" className="acc">biasiswa {FACTS.scholarshipProvider} {FACTS.scholarshipAmount}</Link> selepas penilaian dan kelulusan bertulis.

@@ -6,9 +6,9 @@ import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/lp/google", {
-  title: "马来西亚高管 MBA — 英国 CMI 认可，三个月课程",
+  title: "马来西亚高管 MBA — 英国 CMI 认可，六个月课程",
   description:
-    "三个月 Future Ready Executive MBA 专业发展课程：六个培训日、三个每月课程及企业应用项目。雇主资助须符合 HRD Corp 条件并获批准。",
+    "六个月 Future Ready Executive MBA 专业发展课程：六个培训日、三个指定课程及企业应用项目。雇主资助须符合 HRD Corp 条件并获批准。",
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/google" },
 });
@@ -25,9 +25,9 @@ const INCLUDED = [
 ];
 
 const CMP = [
-  ["时间", "三个月：六个培训日，分三个每月课程完成", "18–24 个月"],
+  ["时间", "六个月：六个培训日，分三个指定课程完成", "18–24 个月"],
   ["投资", "标准费用 RM10,000.00；符合资格的马来西亚申请者经评估及书面批准后可获 RM4,000.00 奖学金，获批者实付 RM6,000.00", "授予院校公布的学费及附加费用"],
-  ["形式", "证书阶段每月一个周末；学员继续工作", "按授予院校公布的学术课程时间表修读"],
+  ["形式", "证书阶段三个指定周末课程；学员继续工作", "按授予院校公布的学术课程时间表修读"],
   ["考核", "学员自身企业的应用项目；没有传统考试或论文", "作业或考试，加上论文"],
   ["证书", "CMI 专业课程认可证书；并非 MQA 认证的学术学位", "由授予院校颁发的学术 MBA 学位"],
 ];
@@ -42,12 +42,12 @@ export default function ZhGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">为正在比较专业发展课程的马来西亚管理者而设</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  三个月完成面向未来商业领导力、<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
+                  六个月完成面向未来商业领导力、<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.1rem", maxWidth: "44ch", margin: "22px 0 26px", lineHeight: 1.9 }}>
-                  在继续工作的同时，三个月完成三次课程、企业项目及获 CMI 认可的专业发展课程。<b style={{ color: "var(--ink)" }}>Chartered Manager</b> 属于独立可选 CMI 路线，具有独立资格、评估及费用。
+                  在继续工作的同时，六个月完成三次课程、企业项目及获 CMI 认可的专业发展课程。<b style={{ color: "var(--ink)" }}>Chartered Manager</b> 属于独立可选 CMI 路线，具有独立资格、评估及费用。
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -58,7 +58,7 @@ export default function ZhGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["3 个月", "完整专业发展课程"], [FACTS.trainingDays + " 天", "分三个每月课程完成"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([b, s]) => (
+                  {[["6 个月", "完整专业发展课程"], [FACTS.trainingDays + " 天", "分三个指定课程完成"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>

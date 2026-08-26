@@ -75,7 +75,7 @@ export default function FeesPage() {
               </Reveal>
             ))}
           </div>
-          <p className="fine fee-section-note">The three-month programme has no traditional examination or thesis. Travel and accommodation, where required, are not included.</p>
+          <p className="fine fee-section-note">The six-month programme has no traditional examination or thesis. Travel and accommodation, where required, are not included.</p>
         </div>
       </section>
 

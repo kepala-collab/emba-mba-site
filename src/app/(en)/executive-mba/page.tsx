@@ -23,9 +23,9 @@ import {
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/executive-mba", {
-  title: "Three-Month Executive MBA Programme Malaysia",
+  title: "Six-Month Executive MBA Programme Malaysia",
   description:
-    `${PROGRAMME_POSITIONING_SENTENCE} Includes coaching and a live business project over three months.`,
+    `${PROGRAMME_POSITIONING_SENTENCE} Includes coaching and a live business project over six months.`,
 });
 
 const courseSchema = {
@@ -38,7 +38,7 @@ const courseSchema = {
   url: `${SITE.url}/executive-mba`,
   inLanguage: "en-MY",
   educationalCredentialAwarded: "Programme certificate recognised against CMI Professional Standards",
-  timeRequired: "P3M",
+  timeRequired: "P6M",
   syllabusSections: MODULES.map((module) => ({ "@type": "Syllabus", name: module.p })),
 };
 
@@ -66,7 +66,7 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={90}>
               <p className="programme-overview-lede">
-                A focused three-month programme for working leaders: six training days, coaching and an applied business project built around a live business issue.
+                A focused six-month programme for working leaders: six training days, coaching and an applied business project built around a live business issue.
               </p>
             </Reveal>
             <Reveal delay={120}>
@@ -90,7 +90,7 @@ export default function ExecutiveMbaPage() {
               </div>
               <dl>
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
-                <div><dt>Schedule</dt><dd>Six training days across three monthly sessions</dd></div>
+                <div><dt>Schedule</dt><dd>Six training days across three scheduled sessions</dd></div>
                 <div><dt>Assessment</dt><dd>Applied business project; no traditional examination or thesis</dd></div>
                 <div><dt>Scholarship</dt><dd>{FACTS.scholarshipAmount} for eligible Malaysian applicants</dd></div>
               </dl>
@@ -104,9 +104,9 @@ export default function ExecutiveMbaPage() {
         <div className="wrap">
           <Reveal>
             <div className="reading-section-head">
-              <p className="mono sec-k">How the three months work</p>
+              <p className="mono sec-k">How the six months work</p>
               <h2 className="sec-h">Six intensive days. One real business challenge. A practical way forward.</h2>
-              <p>Complete the programme in three monthly sessions while continuing to work. There are no traditional examinations or thesis.</p>
+              <p>Complete the programme in three scheduled sessions while continuing to work. There are no traditional examinations or thesis.</p>
             </div>
           </Reveal>
           <Reveal delay={40}>
@@ -125,7 +125,7 @@ export default function ExecutiveMbaPage() {
             <Reveal>
               <article className="programme-stage-card">
                 <span className="programme-stage-number" aria-hidden="true">01</span>
-                <p className="mono sec-k">Three months</p>
+                <p className="mono sec-k">Six months</p>
                 <h3>Executive MBA programme and certificate</h3>
                 <p>Attend six training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
                 <Link href="/curriculum" className="text-action">Review the curriculum <span aria-hidden="true">↗</span></Link>
@@ -267,7 +267,7 @@ export default function ExecutiveMbaPage() {
             <div className="reading-section-head">
               <p className="mono sec-k">Published 2026 dates</p>
               <h2 className="sec-h">Choose an English or Mandarin cohort.</h2>
-              <p>The three-month programme uses one scheduled weekend session a month. Review every published date before choosing a cohort.</p>
+              <p>The six-month programme uses three scheduled weekend sessions across the programme. Review every published date before choosing a cohort.</p>
             </div>
           </Reveal>
           <Reveal className="mt-s"><IntakeSchedule label="2026 Executive MBA intake schedule" /></Reveal>

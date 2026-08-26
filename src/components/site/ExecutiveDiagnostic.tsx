@@ -59,7 +59,7 @@ const RESULT_COPY = [
   },
   {
     title: "Schedule and time commitment",
-    body: `Compare the three-month structure with the published ${PROGRAMME_YEAR} dates before deciding whether the schedule fits your responsibilities.`,
+    body: `Compare the six-month structure with the published ${PROGRAMME_YEAR} dates before deciding whether the schedule fits your responsibilities.`,
     href: "/intakes",
     action: "See the intakes",
   },
@@ -125,7 +125,7 @@ const RESULT_COPY_ZH = [
   },
   {
     title: "可执行的时间投入",
-    body: `把三个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合你的工作责任。`,
+    body: `把六个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合你的工作责任。`,
     href: "/zh/intakes",
     action: "查看开课日期",
   },
@@ -191,7 +191,7 @@ const RESULT_COPY_MS = [
   },
   {
     title: "Jadual dan komitmen masa",
-    body: `Bandingkan struktur tiga bulan dengan tarikh ${PROGRAMME_YEAR} yang diterbitkan sebelum memutuskan sama ada jadualnya sesuai dengan tanggungjawab anda.`,
+    body: `Bandingkan struktur enam bulan dengan tarikh ${PROGRAMME_YEAR} yang diterbitkan sebelum memutuskan sama ada jadualnya sesuai dengan tanggungjawab anda.`,
     href: "/ms/intakes",
     action: "Lihat tarikh kemasukan",
   },

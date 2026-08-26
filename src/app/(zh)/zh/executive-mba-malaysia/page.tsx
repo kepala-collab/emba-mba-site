@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/zh/executive-mba-malaysia", {
   title: "面向在职领导者的马来西亚高管 MBA",
   description:
-    "为马来西亚在职领导者设计的三个月高管教育课程：应用式管理学习、CMI 认可，以及由雇主主导的 HRD Corp 资助途径。",
+    "为马来西亚在职领导者设计的六个月高管教育课程：应用式管理学习、CMI 认可，以及由雇主主导的 HRD Corp 资助途径。",
 });
 
 const REASONS = [
@@ -23,8 +23,8 @@ const REASONS = [
     p: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者经评估及书面批准后，可获 ${FACTS.scholarshipProvider} 奖学金；获批者实付 ${FACTS.priceAfterScholarship}。`,
   },
   {
-    h: "为在职领导者设计的三个月课程",
-    p: "课程在三个月内每月安排一个周末，上午 9 时至下午 6 时。Chartered Manager 是 CMI 的独立可选路线，具有独立资格、评估及费用。",
+    h: "为在职领导者设计的六个月课程",
+    p: "课程在六个月内每月安排一个周末，上午 9 时至下午 6 时。Chartered Manager 是 CMI 的独立可选路线，具有独立资格、评估及费用。",
   },
   {
     h: "熟悉 ASEAN 情境的导师与案例",
@@ -81,7 +81,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Future Ready 高管 MBA 是为马来西亚企业主、董事及资深管理者设计的三个月高管教育及专业发展课程，
+              Future Ready 高管 MBA 是为马来西亚企业主、董事及资深管理者设计的六个月高管教育及专业发展课程，
               由 CMI 颁授并背书，通过集中现场课程交付。<b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_ZH}</b>{" "}
               课程以令吉计价，标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者经评估及书面批准后，可获{" "}
               <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金</b>。
@@ -90,7 +90,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              您在继续工作的同时，完成三个每月周末课程、辅导及应用项目。Chartered Manager 是 CMI 的独立可选路线，不包含在已公布课程或费用内。课程分三个每月课程进行，学员无须离开工作岗位。
+              您在继续工作的同时，完成三个指定周末课程、辅导及应用项目。Chartered Manager 是 CMI 的独立可选路线，不包含在已公布课程或费用内。课程分三个指定课程进行，学员无须离开工作岗位。
             </p>
           </Reveal>
           <Reveal className="mt-s">

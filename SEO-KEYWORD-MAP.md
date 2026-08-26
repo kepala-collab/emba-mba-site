@@ -15,9 +15,9 @@ Reviewed 21 August 2026. This map adapts the supplied professional-learning seed
 | Canonical URL | Primary intent | Supported semantic terms | Funnel role |
 | --- | --- | --- | --- |
 | `/` | Executive MBA Malaysia for working managers | professional development, executive leadership, applied business learning | Broad commercial discovery |
-| `/executive-mba` | three-month Executive MBA programme Malaysia | professional management programme, applied leadership development, business project | Programme evaluation |
+| `/executive-mba` | six-month Executive MBA programme Malaysia | professional management programme, applied leadership development, business project | Programme evaluation |
 | `/executive-mba-malaysia` | Executive MBA Malaysia | executive education Malaysia, professional development programme Malaysia, Malaysian business leaders | Local commercial intent |
-| `/mba-for-working-professionals` | part-time Executive MBA for working professionals | study while working full time, one weekend a month, live online learning | Format and schedule fit |
+| `/mba-for-working-professionals` | part-time Executive MBA for working professionals | study while working full time, three scheduled weekends across the programme, live online learning | Format and schedule fit |
 | `/online-executive-mba` | online Executive MBA | live online executive learning, remote working professionals | Online delivery fit |
 | `/how-it-works` | applied leadership development programme | strategic decision-making, workplace application, coaching, cohort-based learning | Method and capability proof |
 | `/curriculum` | Executive MBA curriculum | management modules, strategic thinking, business transformation | Curriculum evaluation |

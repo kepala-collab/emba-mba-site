@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/mba-for-sme-owners", {
   title: "Executive MBA for SME Owners & Founders",
   description:
-    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Built for SME owners across three monthly sessions.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Built for SME owners across three scheduled sessions.",
 });
 
 const jsonLd = {
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across three monthly sessions.",
+    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across three scheduled sessions.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -30,7 +30,7 @@ const jsonLd = {
     "@id": `${SITE.url}/mba-for-sme-owners#blended-course-instance`,
     url: `${SITE.url}/mba-for-sme-owners`,
     courseMode: "blended",
-    timeRequired: "P3M",
+    timeRequired: "P6M",
   },
 };
 
@@ -44,7 +44,7 @@ export default function MbaForSmeOwnersPage() {
   ];
 
   const fit = [
-    { h: "One scheduled weekend a month", p: "The three certificate-phase sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort." },
+    { h: "Three scheduled weekends across the programme", p: "The three scheduled sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort." },
     { h: "Your business is the applied project", p: "There is no traditional thesis or examination. Participants use the frameworks to develop a transformation plan for their own organisation." },
     { h: "Employer-applied HRD Corp funding", p: HRD_CORP_CLAIM.short },
     { h: "Scholarship eligibility for Malaysians", p: `Eligible Malaysian applicants may receive the ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}; instalment options are listed on the Fees page.` },
@@ -72,7 +72,7 @@ export default function MbaForSmeOwnersPage() {
             strategy and leadership frameworks to delegation, capability building, succession and growth.
           </p>
           <p className="mono sec-k mt-s">
-            Three months · three monthly programme weekends · awarded and endorsed by CMI
+            Six months · three scheduled programme weekends · awarded and endorsed by CMI
           </p>
           <p className="sec-sub mt-s">
             See the full{" "}
@@ -179,7 +179,7 @@ export default function MbaForSmeOwnersPage() {
             <h2 className="sec-h">A format that allows owners to remain in the business.</h2>
           </Reveal>
           <p className="sec-sub">
-            The three-month programme uses monthly weekend sessions, and the applied project is based
+            The six-month programme uses scheduled weekend sessions, and the applied project is based
             on the participant&rsquo;s own organisation. Funding and payment routes are explained separately.
           </p>
           <div className="mt-m grid-forces">

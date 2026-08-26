@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/zh/mba-for-sme-owners", {
   title: "面向中小企业主及创办人的高管 MBA",
   description:
-    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书。课程在三个月内分三个课程完成，专为中小企业主设计。",
+    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书。课程在六个月内分三个课程完成，专为中小企业主设计。",
 });
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书，在三个月内分三个课程为中小企业主及创办人开办。",
+    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书，在六个月内分三个课程为中小企业主及创办人开办。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -31,7 +31,7 @@ const jsonLd = {
     "@id": `${SITE.url}/zh/mba-for-sme-owners#blended-course-instance`,
     url: `${SITE.url}/zh/mba-for-sme-owners`,
     courseMode: "blended",
-    timeRequired: "P3M",
+    timeRequired: "P6M",
   },
 };
 
@@ -44,7 +44,7 @@ const CHALLENGES = [
 ];
 
 const FIT = [
-  { h: "每月一次既定周末课程", p: "三个课程按月进行；已公布的开课时间表列明每个班次是星期五至星期六，还是星期六至星期日。" },
+  { h: "三个指定周末课程", p: "三个课程按月进行；已公布的开课时间表列明每个班次是星期五至星期六，还是星期六至星期日。" },
   { h: "您的企业就是应用项目", p: "没有传统的论文或考试。学员用课程框架，为自己的组织制定转型方案。" },
   { h: "雇主主导的 HRD Corp 资助", p: HRD_CORP_CLAIM_ZH },
   { h: "马来西亚申请者的奖学金资格", p: `符合资格的马来西亚申请者经评估及书面批准后，可获 ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} 奖学金；获批学员实付 ${FACTS.priceAfterScholarship}，分期方案列于学费页面。` },
@@ -73,7 +73,7 @@ export default function MbaForSmeOwnersZhPage() {
             应用到授权、能力建设、接班及增长等课题上。
           </p>
           <p className="mono sec-k mt-s">
-            三个月 · 每月一次课程周末 · 由 CMI 颁授并背书
+            六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
           </p>
           <p className="sec-sub mt-s">
             查看完整的{" "}
@@ -183,7 +183,7 @@ export default function MbaForSmeOwnersZhPage() {
             <h2 className="sec-h">一种让企业主能够留在企业中的课程安排。</h2>
           </Reveal>
           <p className="sec-sub">
-            三个月课程采用每月周末课程，企业应用项目以学员自己的组织为对象。
+            六个月课程采用指定周末课程，企业应用项目以学员自己的组织为对象。
             资助与付款方式另行说明。
           </p>
           <div className="mt-m grid-forces">

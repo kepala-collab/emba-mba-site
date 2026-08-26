@@ -217,12 +217,17 @@ export default function Header() {
               <span className="brand-prefix">Future&nbsp;Ready</span>{" "}<span className="acc brand-product">EMBA</span>
             </span>
           </Link>
-          <nav className="campaign-nav-actions" aria-label={t.campaignNav}>
-            {otherLocales.map((other) => (
-              <Link key={other.code} href={other.href} className="langswitch" lang={other.code === "zh" ? "zh-Hans" : other.code} aria-label={`${LOCALE_LABELS[locale]} → ${other.label}`}>
-                {other.label}
-              </Link>
-            ))}
+          <nav ref={desktopNavRef} className="campaign-nav-actions" aria-label={t.campaignNav}>
+            <details className="nav-dropdown locale-dropdown" onToggle={handleDropdownToggle}>
+              <summary aria-label={`Language: ${LOCALE_LABELS[locale]}`}>{LOCALE_LABELS[locale]}<span aria-hidden="true">⌄</span></summary>
+              <div className="nav-dropdown-panel locale-dropdown-panel">
+                {otherLocales.map((other) => (
+                  <Link key={other.code} href={other.href} lang={other.code === "zh" ? "zh-Hans" : other.code} aria-label={`${LOCALE_LABELS[locale]} → ${other.label}`}>
+                    {other.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
             <a href="#apply" className="navcta" data-track-event="cta_click" data-track-id="campaign_header_plan" data-track-location="campaign_header">
               {cta.guide}
             </a>
@@ -256,11 +261,16 @@ export default function Header() {
             ) : (
               <Link key={n.href} href={n.href} className={isActive(n.href) ? "is-active" : undefined} aria-current={isActive(n.href) ? "page" : undefined}>{n.label}</Link>
             ))}
-            {otherLocales.map((other) => (
-              <Link key={other.code} href={other.href} className="langswitch" lang={other.code === "zh" ? "zh-Hans" : other.code} aria-label={`${LOCALE_LABELS[locale]} → ${other.label}`}>
-                {other.label}
-              </Link>
-            ))}
+            <details className="nav-dropdown locale-dropdown" onToggle={handleDropdownToggle}>
+              <summary aria-label={`Language: ${LOCALE_LABELS[locale]}`}>{LOCALE_LABELS[locale]}<span aria-hidden="true">⌄</span></summary>
+              <div className="nav-dropdown-panel locale-dropdown-panel">
+                {otherLocales.map((other) => (
+                  <Link key={other.code} href={other.href} lang={other.code === "zh" ? "zh-Hans" : other.code} aria-label={`${LOCALE_LABELS[locale]} → ${other.label}`}>
+                    {other.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
             <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{t.getGuide}</Link>
           </nav>
           <div className="mobile-header-actions">

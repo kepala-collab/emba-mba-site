@@ -106,13 +106,13 @@ export default function ProgrammeIntroduction({ image = "hero", placement = "pro
           />
           <div className="programme-film-caption">
             <span className="mono">PROGRAMME INTRODUCTION</span>
-            <strong>{hasVideo ? "Watch how the three-month programme works." : "Read how the three-month programme works."}</strong>
+            <strong>{hasVideo ? "Watch how the six-month programme works." : "Read how the six-month programme works."}</strong>
           </div>
         </div>
         <div className="programme-film-control">
           <div>
             <p className="mono">Programme introduction</p>
-            <strong>{hasVideo ? "A three-minute programme overview" : "The complete three-month structure"}</strong>
+            <strong>{hasVideo ? "A three-minute programme overview" : "The complete six-month structure"}</strong>
           </div>
           <button
             ref={triggerRef}
@@ -139,7 +139,7 @@ export default function ProgrammeIntroduction({ image = "hero", placement = "pro
             <header>
               <div>
                 <p className="mono sec-k">Programme introduction</p>
-                <h2 id="film-dialog-title">What happens during the three-month programme.</h2>
+                <h2 id="film-dialog-title">What happens during the six-month programme.</h2>
               </div>
               <button ref={closeRef} type="button" aria-label="Close programme introduction" onClick={() => { setOpen(false); triggerRef.current?.focus(); }}>×</button>
             </header>
@@ -167,15 +167,15 @@ export default function ProgrammeIntroduction({ image = "hero", placement = "pro
             ) : (
               <div className="film-placeholder" aria-label="Programme overview">
                 <div>
-                  <strong>Three months. One focused programme.</strong>
-                  <p>Three monthly sessions cover the programme workshops, coaching and applied business project. Chartered Manager is a separate CMI route and is not included in the published Executive MBA programme or fee.</p>
+                  <strong>Six months. One focused programme.</strong>
+                  <p>Three scheduled sessions cover the programme workshops, coaching and applied business project. Chartered Manager is a separate CMI route and is not included in the published Executive MBA programme or fee.</p>
                 </div>
               </div>
             )}
             <div className="film-transcript">
               <h3>Transcript</h3>
               <p><strong>This programme is designed for experienced working managers.</strong> It uses your real business responsibilities as the context for learning.</p>
-              <p>Across three months, you attend six training days in three monthly sessions, receive coaching and complete an applied business project. Successful completion leads to the CMI Certificate of Recognition for the programme.</p>
+              <p>Across six months, you attend six training days in three scheduled sessions, receive coaching and complete an applied business project. Successful completion leads to the CMI Certificate of Recognition for the programme.</p>
               <p>Chartered Manager is a separate optional CMI route. CMI controls eligibility, assessment, membership and fees, and Chartered Manager status is not included in the published programme or fee.</p>
             </div>
           </section>

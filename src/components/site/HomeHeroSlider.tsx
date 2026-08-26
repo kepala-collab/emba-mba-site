@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState, type CSSProperties } from "re
 
 const SLIDES = [
   {
-    kicker: "Three months · built around work",
+    kicker: "Six months · built around work",
     title: "Lead with certainty when the business gets complicated.",
     body: "A practical Executive MBA for working leaders who need sharper decisions, real momentum and a plan they can act on.",
     action: "Get the programme guide",

@@ -11,12 +11,12 @@ const PATH = "/ms/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "Pengiktirafan CMI bagi Future Ready Executive MBA",
-  description: "Fahami pengiktirafan CMI (UK) bagi Future Ready Executive MBA tiga bulan, sijil program, serta laluan Chartered Manager yang berasingan dan bersifat pilihan.",
+  description: "Fahami pengiktirafan CMI (UK) bagi Future Ready Executive MBA enam bulan, sijil program, serta laluan Chartered Manager yang berasingan dan bersifat pilihan.",
 });
 
 const FAQS = [
   ["Apakah yang saya terima selepas berjaya menamatkan program?", "Peserta yang berjaya menamatkan program menerima CMI Certificate of Recognition bagi Future Ready Executive MBA. Format akhir, perkataan dan pengeluaran sijil ditentukan oleh CMI."],
-  ["Adakah ini ijazah MBA akademik?", "Bukan. Ini ialah program pembangunan profesional Executive MBA tiga bulan dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI — bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia."],
+  ["Adakah ini ijazah MBA akademik?", "Bukan. Ini ialah program pembangunan profesional Executive MBA enam bulan dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI — bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia."],
   ["Adakah saya menjadi Chartered Manager secara automatik selepas tamat program?", "Tidak. Chartered Manager ialah laluan CMI yang berasingan dan bersifat pilihan. Kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI, dan tidak termasuk dalam program ini atau yuran yang diterbitkan."],
 ] as const;
 
@@ -31,7 +31,7 @@ export default function CmiRecognitionMsPage() {
           <p className="mono sec-k">Dianugerahkan dan disokong oleh CMI (UK)</p>
           <h1><TechnicalText>Jadikan hasil pengurusan sebenar sebagai pengiktirafan profesional.</TechnicalText></h1>
           <p>Future Ready Executive MBA membantu pengurus berpengalaman menterjemahkan satu isu perniagaan sebenar kepada pelan tindakan yang boleh dilaksanakan. Peserta yang berjaya menamatkan program menerima sijil pengiktirafan program daripada CMI.</p>
-          <div className="chartered-hero-actions"><Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide} <span aria-hidden="true">→</span></Link><Link href="/ms/executive-mba" className="btn btn-ghost">Lihat program tiga bulan</Link></div>
+          <div className="chartered-hero-actions"><Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide} <span aria-hidden="true">→</span></Link><Link href="/ms/executive-mba" className="btn btn-ghost">Lihat program enam bulan</Link></div>
         </div>
       </header>
 
