@@ -45,7 +45,7 @@ export default function CommerceHeroMedia({
   return (
     <figure className="commerce-hero-media">
       <Image
-        src="/media/future-commerce/hero-leader-poster.jpg"
+        src="/media/future-commerce/hero-leader-poster.webp"
         alt={alt}
         fill
         priority
@@ -58,7 +58,7 @@ export default function CommerceHeroMedia({
         loop
         playsInline
         preload="metadata"
-        poster="/media/future-commerce/hero-leader-poster.jpg"
+        poster="/media/future-commerce/hero-leader-poster.webp"
         aria-hidden="true"
         tabIndex={-1}
         onPause={() => setIsPlaying(false)}
@@ -69,7 +69,7 @@ export default function CommerceHeroMedia({
       <div className="commerce-hero-shade" />
 
       <div className="commerce-hero-stamp" aria-hidden="true">
-        <Image src="/brand/rdr-emblem.png" alt="" width={40} height={40} />
+        <Image src="/brand/rdr-emblem.webp" alt="" width={40} height={40} />
         <span>FUTURE READY<br />EXECUTIVE MBA</span>
       </div>
 

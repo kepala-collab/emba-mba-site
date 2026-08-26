@@ -22,9 +22,9 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "any",
       },
       {
-        src: "/brand/rdr-emblem.png",
+        src: "/brand/rdr-emblem.webp",
         sizes: "256x256",
-        type: "image/png",
+        type: "image/webp",
         purpose: "any",
       },
     ],

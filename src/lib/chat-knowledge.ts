@@ -45,8 +45,8 @@ VERIFIED PROGRAMME FACTS
 - Recognition statement: ${PROGRAMME_POSITIONING_SENTENCE} It is a six-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification. Never claim a programme-level CMI qualification level or CMI Fast Track eligibility for Chartered Manager. Do not describe it as an academic MBA degree, a regulated qualification, or a guaranteed career outcome.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
-- Malaysian scholarship: eligible Malaysian applicants may receive a ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
-- Fee after an approved scholarship: ${FACTS.priceAfterScholarship}. Never present this as the fee for every Malaysian participant or imply that nationality alone guarantees the award.
+- Malaysian scholarship: eligible Malaysian applicants may be considered for a ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
+- Scholarship outcome: any award and resulting participant fee are confirmed individually in writing. Never imply that nationality alone guarantees an award or quote an amount not contained in the applicable written proposal.
 - HRD Corp: ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.process} ${HRD_CORP_CLAIM.responsibility} Never describe approval or reimbursement as automatic.
 - Company enrolment: ${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}
 - Attendance: sessions run 9am-6pm. English Cohort 17 runs Saturday-Sunday; the other published English and Mandarin cohorts run Friday-Saturday. ${DELIVERY_CONTROL.schedule} For a missed session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort.

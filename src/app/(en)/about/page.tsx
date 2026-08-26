@@ -19,7 +19,7 @@ export default function AboutPage() {
         <div className="wrap about-affandi-grid" style={{ display: "grid", gridTemplateColumns: ".85fr 1.15fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <Reveal>
             <figure style={{ margin: 0, overflow: "hidden", borderRadius: 20, border: "1px solid var(--line)", background: "var(--bg-2)" }}>
-              <Image src="/brand/community/affandi-portrait.png" alt="Roy Affandi" width={1122} height={1403} sizes="(max-width: 760px) 100vw, 42vw" style={{ width: "100%", height: "auto", display: "block" }} priority />
+              <Image src="/brand/community/affandi-portrait.webp" alt="Roy Affandi" width={1122} height={1403} sizes="(max-width: 760px) 100vw, 42vw" style={{ width: "100%", height: "auto", display: "block" }} priority />
             </figure>
           </Reveal>
           <Reveal delay={70}>
@@ -43,7 +43,7 @@ export default function AboutPage() {
               <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>{ORGANISATIONAL_STATEMENT}</p>
               <Link href="/asian-business-consulting" className="text-action" style={{ marginTop: 16 }}>More about Asian Business Consulting <span aria-hidden="true">↗</span></Link>
               <figure className="partnership-seal">
-                <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
+                <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
                 <figcaption className="mono sec-k">Asian Business Consulting × Right Dots Resources · in collaboration</figcaption>
               </figure>
             </div>
@@ -63,7 +63,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={70}>
             <figure style={{ margin: 0, overflow: "hidden", borderRadius: 20, border: "1px solid var(--line)", background: "var(--bg)" }}>
-              <Image src="/brand/community/about-affandi.jpeg" alt="A personal moment from Roy Affandi's life" width={1440} height={2560} sizes="(max-width: 760px) 100vw, 46vw" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src="/brand/community/about-affandi.webp" alt="A personal moment from Roy Affandi's life" width={1440} height={2560} sizes="(max-width: 760px) 100vw, 46vw" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption className="fine" style={{ padding: "12px 16px 14px" }}>The work is professional. The purpose is personal: helping people build a stronger future.</figcaption>
             </figure>
           </Reveal>

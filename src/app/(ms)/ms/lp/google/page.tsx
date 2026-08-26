@@ -26,7 +26,7 @@ const INCLUDED = [
 
 const CMP = [
   ["Masa", "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berjadual", "18–24 bulan"],
-  ["Pelaburan", "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh menerima biasiswa RM4,000.00 selepas penilaian dan kelulusan bertulis, dan penerima yang diluluskan membayar RM6,000.00", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
+  ["Pelaburan", "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
   ["Format", "Tiga hujung minggu berjadual sepanjang program; peserta terus bekerja", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
   ["Penilaian", "Projek aplikasi berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
   ["Sijil", "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik bertauliah MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
@@ -58,7 +58,7 @@ export default function MsGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Diselesaikan dalam tiga sesi berjadual"], [FACTS.scholarshipAmount, "Biasiswa untuk pemohon Malaysia yang layak"]].map(([b, s]) => (
+                  {[["6 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Diselesaikan dalam tiga sesi berjadual"], ["Kelayakan", "Penilaian biasiswa untuk pemohon Malaysia"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>
@@ -79,7 +79,7 @@ export default function MsGoogleLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Dianugerahkan dan disokong oleh CMI (UK)"], [FACTS.trainingDays, "hari latihan langsung merentasi tiga peringkat"], ["1", "projek aplikasi berasaskan isu perniagaan sebenar"], [FACTS.scholarshipAmount, "biasiswa untuk pemohon Malaysia yang layak"]].map(([value, label]) => (
+          {[["CMI", "Dianugerahkan dan disokong oleh CMI (UK)"], [FACTS.trainingDays, "hari latihan langsung merentasi tiga peringkat"], ["1", "projek aplikasi berasaskan isu perniagaan sebenar"], ["Kelayakan", "penilaian biasiswa untuk pemohon Malaysia"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

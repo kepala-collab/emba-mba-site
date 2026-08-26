@@ -86,12 +86,8 @@ export const FEES = {
   standard: { amount: 10000, label: "RM10,000.00" },
   malaysia: {
     scholarshipProvider: "LIFE Innoversity",
-    scholarshipAmount: 4000,
-    scholarshipLabel: "RM4,000.00",
-    participantAmount: 6000,
-    participantLabel: "RM6,000.00",
     eligibility:
-      "Available to eligible Malaysian applicants only, subject to scholarship availability, assessment and written approval by the programme team.",
+      "Eligible Malaysian applicants may be considered for a scholarship, subject to availability, assessment and written approval. Any award and resulting participant fee are confirmed individually in writing.",
   },
 } as const;
 
@@ -105,12 +101,7 @@ export const FACTS = {
   publishedIntakes: "5",
   priceStd: FEES.standard.label,
   scholarshipProvider: FEES.malaysia.scholarshipProvider,
-  scholarshipAmount: FEES.malaysia.scholarshipLabel,
   scholarshipEligibility: FEES.malaysia.eligibility,
-  priceAfterScholarship: FEES.malaysia.participantLabel,
-  // Backward-compatible aliases used only by archived release-verification copies.
-  scholarshipAmt: FEES.malaysia.scholarshipLabel,
-  priceNet: FEES.malaysia.participantLabel,
   cohorts: String(PROGRAMME_PROOF.cohorts),
 };
 
@@ -250,43 +241,43 @@ export const FACULTY: Faculty[] = [
     n: "Dr. Xavier Johnson", r: "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University",
     focus: "Strategic Thinking · F.A.S.T. · BOLT",
     b: "Works in strategic business thinking and business organisation leadership (BOLT). Architect of the F.A.S.T. Transformation methodology, Chief Business Methodologist of Asian Business Consulting and Founder of LIFE University.",
-    img: "/brand/faculty/xavier-johnson.png",
+    img: "/brand/faculty/xavier-johnson.webp",
   },
   {
     n: "Ir. Dr. Jonas Anthony", r: "Faculty Director",
     focus: "Lean · Industry 4.0 · TQM",
     b: "Held executive leadership responsibility in a Japanese manufacturing conglomerate. Works in Lean, Industry 4.0 and Total Quality Management as a leadership mentor, industry advisor and academic contributor.",
-    img: "/brand/faculty/jonas-anthony.png",
+    img: "/brand/faculty/jonas-anthony.webp",
   },
   {
     n: "Dr. Eugene D'Cruz", r: "Faculty & Coach",
     focus: "Transformational HR · Talent Development",
     b: "Works in transformational HR, business leadership, strategic leadership and talent development across multiple industries.",
-    img: "/brand/faculty/eugene-dcruz.png",
+    img: "/brand/faculty/eugene-dcruz.webp",
   },
   {
     n: "Dr. Simona Carman Costea", r: "Faculty & Coach",
     focus: "Change Leadership · OD · Cross-Cultural",
     b: "Leads change initiatives across Asia and works in organisational development and cross-cultural leadership. Certified change coach with academic and consulting experience.",
-    img: "/brand/faculty/simona-costea.png",
+    img: "/brand/faculty/simona-costea.webp",
   },
   {
     n: "Dr. Aaron Koo", r: "Faculty & Coach",
     focus: "Finance · Risk · Governance",
     b: "Began his career with a Big 4 accounting firm and went on to hold senior executive roles including GM, COO and CFO in public-listed companies across industries. Provides financial and risk consultancy to major corporations such as Bank Negara Malaysia and industry advisory panels.",
-    img: "/brand/faculty/aaron-koo.png",
+    img: "/brand/faculty/aaron-koo.webp",
   },
   {
     n: "Dr. Chin Nyuk Sang", r: "Faculty & Coach",
     focus: "Financial Policy · Sustainability",
     b: "Worked in financial-sector policy and talent development at Bank Negara Malaysia. Focuses on business sustainability, viability and financial literacy.",
-    img: "/brand/faculty/chin-nyuk-sang.png",
+    img: "/brand/faculty/chin-nyuk-sang.webp",
   },
   {
     n: "Lee Mean Yeit", r: "Faculty & Coach",
     focus: "Business Excellence · Coaching",
     b: "Leadership experience across government, conglomerates and large corporations, integrating business excellence with coaching, purpose, wealth, wisdom and mindfulness.",
-    img: "/brand/faculty/lee-mean-yeit.png",
+    img: "/brand/faculty/lee-mean-yeit.webp",
   },
 ];
 
@@ -314,7 +305,7 @@ export const COMPARISON = [
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
   { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "The F.A.S.T. method and 12 applied management modules" },
   { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "Three scheduled weekend sessions, coaching and applied project work across six months while participants continue working" },
-  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard; eligible Malaysian applicants may receive a RM4,000.00 LIFE Innoversity scholarship after assessment and written approval, reducing the approved recipient fee to RM6,000.00" },
+  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard fee; eligible Malaysian applicants may be considered for a LIFE Innoversity scholarship, with any award and resulting participant fee confirmed individually in writing" },
   { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
 ];
 
@@ -376,10 +367,10 @@ export const NAV: NavItem[] = [
     ],
   },
   {
-    href: "/chartered-manager-malaysia",
+    href: "/about",
     label: "Recognition & Team",
     children: [
-      { href: "/chartered-manager-malaysia", label: "CMI recognition" },
+      { href: "/executive-mba#recognition", label: "CMI recognition" },
       { href: "/faculty", label: "Faculty & coaches" },
       { href: "/asian-business-consulting", label: "Asian Business Consulting" },
       { href: "/about", label: "About Future Ready EMBA" },

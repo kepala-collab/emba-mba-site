@@ -83,7 +83,7 @@ export default function MsMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Dianugerahkan dan disokong oleh CMI (UK)"], [FACTS.trainingDays, "hari latihan langsung merentasi tiga peringkat"], ["1", "projek aplikasi berasaskan isu perniagaan sebenar"], [FACTS.scholarshipAmount, "biasiswa untuk pemohon Malaysia yang layak"]].map(([value, label]) => (
+          {[["CMI", "Dianugerahkan dan disokong oleh CMI (UK)"], [FACTS.trainingDays, "hari latihan langsung merentasi tiga peringkat"], ["1", "projek aplikasi berasaskan isu perniagaan sebenar"], ["Kelayakan", "penilaian biasiswa untuk pemohon Malaysia"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
@@ -103,7 +103,7 @@ export default function MsMetaLP() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis, boleh menerima biasiswa {FACTS.scholarshipAmount} LIFE Innoversity; pemohon yang diluluskan membayar <b style={{ color: "var(--ink)" }}>{FACTS.priceAfterScholarship}</b>. Biasiswa tidak diberikan secara automatik. {HRD_CORP_CLAIM_MS} Pelan ansuran disenaraikan di halaman yuran.</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Biasiswa tidak diberikan secara automatik. {HRD_CORP_CLAIM_MS} Pelan ansuran disenaraikan di halaman yuran.</p></Reveal>
         </div>
       </section>
 

@@ -13,8 +13,8 @@ const NAV_ZH: NavItem[] = [
     { href: "/zh/how-it-works", label: "课程方法" },
     { href: "/zh/curriculum", label: "课程大纲" },
   ] },
-  { href: "/zh/chartered-manager-malaysia", label: "认可与团队", children: [
-    { href: "/zh/chartered-manager-malaysia", label: "CMI 认可" },
+  { href: "/zh/about", label: "认可与团队", children: [
+    { href: "/zh/executive-mba#recognition", label: "CMI 认可" },
     { href: "/zh/faculty", label: "师资与导师" },
     { href: "/zh/asian-business-consulting", label: "Asian Business Consulting" },
     { href: "/zh/contact", label: "联系 Future Ready 高管 MBA" },
@@ -36,8 +36,8 @@ const NAV_MS: NavItem[] = [
     { href: "/ms/how-it-works", label: "Kaedah program" },
     { href: "/ms/curriculum", label: "Kurikulum" },
   ] },
-  { href: "/ms/chartered-manager-malaysia", label: "Pengiktirafan & Pasukan", children: [
-    { href: "/ms/chartered-manager-malaysia", label: "Pengiktirafan CMI" },
+  { href: "/ms/about", label: "Pengiktirafan & Pasukan", children: [
+    { href: "/ms/executive-mba#recognition", label: "Pengiktirafan CMI" },
     { href: "/ms/faculty", label: "Fasilitator" },
     { href: "/ms/asian-business-consulting", label: "Asian Business Consulting" },
     { href: "/ms/contact", label: "Hubungi Future Ready EMBA" },
@@ -128,7 +128,7 @@ export default function Header() {
     document.body.style.overflow = "hidden";
     const inertTargets = [
       ...document.querySelectorAll<HTMLElement>(
-        "main,footer,.wa-float,.programme-assistant-launcher,.consent-banner,.navbar .brand-link,.navbar .mobile-navcta"
+        "main,footer,.wa-float,.programme-assistant-launcher,.consent-banner,.consent-compact,.navbar .brand-link,.navbar .mobile-navcta"
       ),
     ];
     const previousInert = inertTargets.map((target) => target.inert);
@@ -171,7 +171,12 @@ export default function Header() {
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
-  const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+  const pathOnly = (href: string) => href.split("#")[0].split("?")[0];
+  const isExactActive = (href: string) => pathname === pathOnly(href);
+  const isActive = (href: string) => {
+    const target = pathOnly(href);
+    return pathname === target || (target !== "/" && pathname.startsWith(`${target}/`));
+  };
   const isGroupActive = (item: NavItem) => {
     const programmeAudienceRoute = item.href === "/executive-mba" && (
       pathname.startsWith("/mba-for-") || pathname === "/ai-executive-mba"
@@ -255,7 +260,7 @@ export default function Header() {
               <details className="nav-dropdown" key={n.href} onToggle={handleDropdownToggle}>
                 <summary className={isGroupActive(n) ? "is-active" : undefined}>{n.label}<span aria-hidden="true">⌄</span></summary>
                 <div className="nav-dropdown-panel">
-                  {n.children.map((child) => <Link key={child.href} href={child.href} className={isActive(child.href) ? "is-active" : undefined} aria-current={pathname === child.href ? "page" : undefined}>{child.label}</Link>)}
+                  {n.children.map((child) => <Link key={child.href} href={child.href} className={isActive(child.href) ? "is-active" : undefined} aria-current={isExactActive(child.href) ? "page" : undefined}>{child.label}</Link>)}
                 </div>
               </details>
             ) : (
@@ -321,12 +326,12 @@ export default function Header() {
               </Link>
               {links.map((n, index) => (
                 <div className="mobile-nav-group" key={n.href}>
-                  <Link href={n.href} onClick={closeMenu} aria-current={pathname === n.href ? "page" : undefined}>
+                  <Link href={n.href} onClick={closeMenu} aria-current={isExactActive(n.href) ? "page" : undefined}>
                     <span className="mobile-nav-index">{String(index + 1).padStart(2, "0")}</span>
                     <span>{n.label}</span>
                     <span aria-hidden="true">↗</span>
                   </Link>
-                  {n.children?.map((child) => <Link className="mobile-nav-child" key={child.href} href={child.href} onClick={closeMenu} aria-current={pathname === child.href ? "page" : undefined}><span aria-hidden="true">—</span><span>{child.label}</span><span aria-hidden="true">↗</span></Link>)}
+                  {n.children?.map((child) => <Link className="mobile-nav-child" key={child.href} href={child.href} onClick={closeMenu} aria-current={isExactActive(child.href) ? "page" : undefined}><span aria-hidden="true">—</span><span>{child.label}</span><span aria-hidden="true">↗</span></Link>)}
                 </div>
               ))}
             </nav>

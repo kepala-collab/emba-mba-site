@@ -19,8 +19,8 @@ const REASONS = [
     p: `${HRD_CORP_CLAIM_MS} Pasukan program membekalkan sebut harga, jadual, kandungan kursus dan dokumen jurulatih.`,
   },
   {
-    h: `Biasiswa Malaysia — ${FACTS.scholarshipAmount}`,
-    p: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima biasiswa ${FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis. Penerima yang diluluskan membayar ${FACTS.priceAfterScholarship}.`,
+    h: "Kelayakan biasiswa Malaysia",
+    p: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.`,
   },
   {
     h: "Program enam bulan untuk pemimpin yang bekerja",
@@ -85,7 +85,7 @@ export default function ExecutiveMbaMalaysiaPage() {
               enam bulan untuk pemilik perniagaan, pengarah dan pengurus kanan di Malaysia. Ia dianugerahkan
               dan disokong oleh CMI serta dikendalikan melalui sesi langsung yang berfokus. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_MS}</b>{" "}
               Yuran program ditetapkan dalam ringgit pada {FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima{" "}
-              <b style={{ color: "var(--ink)" }}>biasiswa {FACTS.scholarshipProvider} {FACTS.scholarshipAmount}</b> selepas penilaian dan kelulusan bertulis.
+              <b style={{ color: "var(--ink)" }}>penilaian biasiswa {FACTS.scholarshipProvider}</b>, tertakluk pada kekosongan dan kelulusan bertulis.
               Peserta menggunakan rangka kerja program terhadap organisasi, pasaran dan konteks operasi mereka sendiri.
             </p>
           </Reveal>
@@ -141,7 +141,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal><div className="stats">
             <div><b>{FACTS.trainingDays}</b><span>Hari latihan dalam program</span></div>
             <div><b>{FACTS.cohorts}</b><span>Kohort dalam rekod program ABC</span></div>
-            <div><b>{FACTS.scholarshipAmount}</b><span>biasiswa untuk pemohon Malaysia yang layak</span></div>
+            <div><b>Kelayakan</b><span>penilaian biasiswa untuk pemohon Malaysia</span></div>
             <div><b>Sebelum latihan</b><span>Majikan mengemukakan permohonan geran HRD Corp</span></div>
           </div></Reveal>
         </div>

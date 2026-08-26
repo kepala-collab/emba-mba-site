@@ -73,7 +73,7 @@ export default function MetaLandingPage() {
             ["CMI", "Awarded and endorsed by CMI"],
             [FACTS.trainingDays, "Facilitated training days across three scheduled sessions"],
             ["1", "Applied project built around a live business issue"],
-            [FACTS.scholarshipAmount, "Scholarship available to eligible Malaysian applicants"],
+            ["Eligibility", "Scholarship assessment for Malaysian applicants"],
           ].map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
         </div>
       </div>

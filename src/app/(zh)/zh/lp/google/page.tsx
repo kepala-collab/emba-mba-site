@@ -26,7 +26,7 @@ const INCLUDED = [
 
 const CMP = [
   ["时间", "六个月：六个培训日，分三个指定课程完成", "18–24 个月"],
-  ["投资", "标准费用 RM10,000.00；符合资格的马来西亚申请者经评估及书面批准后可获 RM4,000.00 奖学金，获批者实付 RM6,000.00", "授予院校公布的学费及附加费用"],
+  ["投资", "标准费用 RM10,000.00；符合资格的马来西亚申请者可接受奖学金评估，任何奖学金金额及应付费用均会个别以书面确认", "授予院校公布的学费及附加费用"],
   ["形式", "证书阶段三个指定周末课程；学员继续工作", "按授予院校公布的学术课程时间表修读"],
   ["考核", "学员自身企业的应用项目；没有传统考试或论文", "作业或考试，加上论文"],
   ["证书", "CMI 专业课程认可证书；并非 MQA 认证的学术学位", "由授予院校颁发的学术 MBA 学位"],
@@ -58,7 +58,7 @@ export default function ZhGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 个月", "完整专业发展课程"], [FACTS.trainingDays + " 天", "分三个指定课程完成"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([b, s]) => (
+                  {[["6 个月", "完整专业发展课程"], [FACTS.trainingDays + " 天", "分三个指定课程完成"], ["资格评估", "马来西亚申请者奖学金评估"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>
@@ -79,7 +79,7 @@ export default function ZhGoogleLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "CMI（英国）背书及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
+          {[["CMI", "CMI（英国）背书及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], ["资格评估", "马来西亚申请者奖学金评估"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

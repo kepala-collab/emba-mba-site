@@ -10,7 +10,6 @@ import {
   COMPANY_ENROLMENT,
   COMPLIANCE,
   CTA_LABELS,
-  FACTS,
   HRD_CORP_CLAIM,
   INCLUSIONS,
   MODULES,
@@ -92,7 +91,7 @@ export default function ExecutiveMbaPage() {
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
                 <div><dt>Schedule</dt><dd>Six training days across three scheduled sessions</dd></div>
                 <div><dt>Assessment</dt><dd>Applied business project; no traditional examination or thesis</dd></div>
-                <div><dt>Scholarship</dt><dd>{FACTS.scholarshipAmount} for eligible Malaysian applicants</dd></div>
+                <div><dt>Scholarship</dt><dd>Eligibility-based assessment for Malaysian applicants</dd></div>
               </dl>
               <Link href="/fees" className="text-action">See the complete fee <span aria-hidden="true">↗</span></Link>
             </aside>
@@ -236,11 +235,11 @@ export default function ExecutiveMbaPage() {
         </div>
       </section>
 
-      <section id="credential" className="section">
+      <section id="recognition" className="section">
         <div className="wrap credential-explainer-grid">
           <Reveal>
             <figure className="credential-specimen">
-              <Image src="/brand/cmi-certificate.png" alt="Specimen CMI Certificate of Recognition for the Executive MBA programme" width={680} height={590} sizes="(max-width: 820px) 100vw, 46vw" />
+              <Image src="/brand/cmi-certificate.webp" alt="Specimen CMI Certificate of Recognition for the Executive MBA programme" width={680} height={590} sizes="(max-width: 820px) 100vw, 46vw" />
               <figcaption>Provider-supplied specimen. CMI controls the final certificate format, wording and signatory.</figcaption>
             </figure>
           </Reveal>

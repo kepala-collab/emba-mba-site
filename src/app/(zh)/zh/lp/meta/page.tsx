@@ -83,7 +83,7 @@ export default function ZhMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "CMI（英国）背书及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], [FACTS.scholarshipAmount, "符合资格的马来西亚申请者奖学金"]].map(([value, label]) => (
+          {[["CMI", "CMI（英国）背书及认可"], [FACTS.trainingDays, "三个阶段的现场培训日"], ["1", "围绕真实商业议题完成的应用项目"], ["资格评估", "马来西亚申请者奖学金评估"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
@@ -103,7 +103,7 @@ export default function ZhMetaLP() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者经评估及书面批准后，可获 {FACTS.scholarshipAmount} LIFE Innoversity 奖学金；获批者实付 <b style={{ color: "var(--ink)" }}>{FACTS.priceAfterScholarship}</b>。奖学金并非自动获得。{HRD_CORP_CLAIM_ZH} 分期付款方案列于费用页面。</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金评估。任何奖学金金额及应付费用均会个别以书面确认。奖学金并非自动获得。{HRD_CORP_CLAIM_ZH} 分期付款方案列于费用页面。</p></Reveal>
         </div>
       </section>
 

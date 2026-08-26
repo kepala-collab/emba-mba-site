@@ -48,7 +48,7 @@ export default function MbaForSmeOwnersPage() {
     { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil berjalan sekali sebulan. Jadual intake yang diterbitkan menyatakan jadual Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
     { h: "Perniagaan anda ialah projek aplikasi", p: "Tiada tesis atau peperiksaan tradisional. Peserta menggunakan rangka kerja untuk membina pelan transformasi bagi organisasi mereka sendiri." },
     { h: "Pembiayaan HRD Corp dipohon majikan", p: HRD_CORP_CLAIM_MS },
-    { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Pemohon Malaysia yang layak boleh menerima biasiswa ${FACTS.scholarshipAmount} ${FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis. Penerima yang diluluskan membayar ${FACTS.priceAfterScholarship}; pilihan ansuran disenaraikan di halaman Yuran.` },
+    { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran disenaraikan di halaman Yuran.` },
   ];
 
   return (

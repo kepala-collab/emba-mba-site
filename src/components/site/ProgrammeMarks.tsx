@@ -39,7 +39,7 @@ export default function ProgrammeMarks({ lang = "en", centered = false, labelled
         {labelled && <span>{copy.cmi}</span>}
       </div>
       <div className="programme-mark programme-mark-hrd">
-        <Image src="/brand/hrdcorp-claimable-official.png" alt={copy.hrdAlt} width={82} height={82} sizes="82px" />
+        <Image src="/brand/hrdcorp-claimable-official.webp" alt={copy.hrdAlt} width={82} height={82} sizes="82px" />
         {labelled && <span>{copy.hrd}</span>}
       </div>
     </div>

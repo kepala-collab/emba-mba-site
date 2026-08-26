@@ -219,7 +219,7 @@ export default function MbaForWorkingProfessionalsPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            {HRD_CORP_CLAIM.short} Eligible Malaysian applicants may receive the {FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay {FACTS.priceAfterScholarship}.{" "}
+            {HRD_CORP_CLAIM.short} Eligible Malaysian applicants may be considered for the {FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing.{" "}
             <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>.
           </p>
         </div>

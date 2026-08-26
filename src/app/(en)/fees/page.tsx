@@ -14,7 +14,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/fees", {
   title: "Executive MBA Fees, Scholarship & HRD Corp",
   description:
-    "The standard fee is RM10,000. Eligible Malaysian applicants may receive a RM4,000 scholarship after assessment and written approval; approved recipients pay RM6,000.",
+    "The standard fee is RM10,000. Eligible Malaysian applicants may be considered for a scholarship; any award and resulting participant fee are confirmed individually in writing.",
 });
 
 export default function FeesPage() {
@@ -28,10 +28,10 @@ export default function FeesPage() {
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Fees for Malaysian participants</span></div>
             </Reveal>
-            <Reveal delay={40}><h1>Standard fee {FACTS.priceStd}. Eligible Malaysians may qualify for a {FACTS.scholarshipAmount} scholarship.</h1></Reveal>
+            <Reveal delay={40}><h1>{FACTS.priceStd} standard fee. Scholarships assessed individually.</h1></Reveal>
             <Reveal delay={80}>
               <p className="fees-hero-lede">
-                Eligible Malaysians can bring the fee down to {FACTS.priceAfterScholarship} with the {FACTS.scholarshipProvider} scholarship — assessed for eligibility and availability, confirmed in writing, and never automatic.
+                Eligible Malaysian applicants may be considered for the {FACTS.scholarshipProvider} scholarship. Availability and eligibility are assessed, and any award and resulting participant fee are confirmed individually in writing. The scholarship is never automatic.
               </p>
             </Reveal>
             <Reveal delay={110}>
@@ -46,12 +46,12 @@ export default function FeesPage() {
           </div>
 
           <Reveal delay={70}>
-            <aside className="fee-equation-card" aria-label="Fee calculation for an approved Malaysian scholarship recipient">
-              <p className="mono sec-k">If the scholarship is approved</p>
+            <aside className="fee-equation-card" aria-label="Scholarship assessment information for Malaysian applicants">
+              <p className="mono sec-k">Scholarship assessment</p>
               <dl>
                 <div><dt>Standard programme fee</dt><dd>{FACTS.priceStd}</dd></div>
-                <div><dt>{FACTS.scholarshipProvider} scholarship</dt><dd>− {FACTS.scholarshipAmount}</dd></div>
-                <div className="fee-equation-total"><dt>Approved recipient pays</dt><dd>{FACTS.priceAfterScholarship}</dd></div>
+                <div><dt>Eligibility review</dt><dd>Individual</dd></div>
+                <div className="fee-equation-total"><dt>Award and participant fee</dt><dd>Confirmed in writing</dd></div>
               </dl>
               <p>{FACTS.scholarshipEligibility} There is no fee to request information or ask for an eligibility review.</p>
             </aside>
@@ -123,7 +123,7 @@ export default function FeesPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Confirm your fee before you decide." sub={`Ask about the ${FACTS.priceStd} standard fee, ${FACTS.scholarshipAmount} scholarship eligibility, payment options or the employer-led HRD Corp process. Scholarship awards are subject to availability, assessment and written approval. An enquiry does not commit you to enrol or pay.`} />
+      <CtaSection programme="Executive MBA" heading="Confirm your fee before you decide." sub={`Ask about the ${FACTS.priceStd} standard fee, scholarship eligibility, payment options or the employer-led HRD Corp process. Any scholarship award and resulting participant fee are confirmed individually in writing. An enquiry does not commit you to enrol or pay.`} />
     </>
   );
 }

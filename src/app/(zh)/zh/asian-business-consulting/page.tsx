@@ -19,7 +19,7 @@ export const metadata = withSeo("/zh/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC 于马来西亚注册" },
   { n: "2024年7月", s: "CMI（英国）背书及认可状态" },
-  { n: "17", s: "个已开办班次：16 个英语班与首个华语班" },
+  { n: "17", s: "个已开办班次：16 个英语班与华语班" },
   { n: "154", s: "位课程毕业生" },
 ];
 
@@ -27,13 +27,13 @@ const LEADERS = [
   {
     n: "Dr. Xavier Johnson",
     role: "Asian Business Consulting 首席商业方法总监 · LIFE University 创办人",
-    img: "/brand/faculty/xavier-johnson.png",
+    img: "/brand/faculty/xavier-johnson.webp",
     b: "F.A.S.T. 方法与课程十二个核心模块的设计者。马来亚大学校友，专注于组织商业架构、商业模式创新与设计思维，并透过关联机构 Waterhouse Consult Think 提供顾问服务。",
   },
   {
     n: "Ir. Dr. Jonas Anthony",
     role: "ABC 首席营运官 · LIFE Innoversity 联合创办人",
-    img: "/brand/faculty/jonas-anthony.png",
+    img: "/brand/faculty/jonas-anthony.webp",
     b: "退休前任 Panasonic AVC Networks 吉隆坡企业管理执行董事，曾任马来西亚 Panasonic 制造人力资源发展主席。逾 32 年精益、工业 4.0、品质与供应链经验；亦为英国特许工程师、特许品质专业人士及泰莱大学工程学院客座教授。",
   },
   {
@@ -45,7 +45,7 @@ const LEADERS = [
   {
     n: "Roy Affandi",
     role: "课程运营经理及协调员",
-    img: "/brand/community/affandi-portrait.png",
+    img: "/brand/community/affandi-portrait.webp",
     b: "负责班次招生、入学安排与企业联系，并协助中小企业及大型机构处理 HRD Corp 津贴流程。马来亚大学分析经济学（荣誉）学士，墨尔本大学研究生，持高管 MBA（CMI UK），并为 CMI（UK）会员。",
   },
 ];
@@ -136,13 +136,13 @@ export default function AbcPageZh() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届毕业典礼 · 2026年8月</span></div>
             <h2 className="sec-h">17 个班次，154 位毕业生，共享一个重要里程碑。</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群：16 个英语班与首个华语班。</p>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready 高管 MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生出席，代表横跨 17 个班次、共 154 位毕业生的社群：16 个英语班与华语班。</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
               <div className="film-ribbon"><span className="dot" aria-hidden="true" /> 首届毕业典礼 · 86 位毕业生出席 · 2026年8月</div>
-              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — 首届毕业典礼影片", description: "2026 年 8 月首届 Future Ready Executive MBA 毕业典礼精华，86 位毕业生出席。", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.jpg`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "zh-Hans-MY" }} />
-              <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.jpg" lang="zh" />
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — 首届毕业典礼影片", description: "2026 年 8 月首届 Future Ready Executive MBA 毕业典礼精华，86 位毕业生出席。", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "zh-Hans-MY" }} />
+              <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.webp" lang="zh" />
               <div className="film-cap"><strong>86 位毕业生出席典礼，</strong>并与导师及来自马来西亚商界与公共领域的嘉宾共同见证这一里程碑。</div>
             </div>
           </Reveal>
@@ -173,7 +173,7 @@ export default function AbcPageZh() {
             </div>
           </div>
           <figure className="partnership-seal">
-            <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting 与 Right Dots Resources 合作" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
+            <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting 与 Right Dots Resources 合作" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
             <figcaption className="mono sec-k">Asian Business Consulting × {OPERATOR.name} · 合作</figcaption>
           </figure>
         </div>

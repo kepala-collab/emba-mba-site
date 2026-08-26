@@ -51,7 +51,7 @@ export default function ResourcesPage() {
                 <li>Define the business decision, capability gap or transformation question.</li>
                 <li>Identify how the applied project can address that context.</li>
                 <li>Review the six training days and three-session certificate-phase schedule.</li>
-                <li>State the {FACTS.priceStd} standard fee and explain that the {FACTS.scholarshipAmount} scholarship is limited to eligible Malaysian applicants after assessment and written approval.</li>
+                <li>State the {FACTS.priceStd} standard fee and explain that scholarships are limited to eligible Malaysian applicants after assessment and written approval; any award and resulting participant fee are confirmed individually.</li>
                 <li>Ask the employer to determine whether it will pursue HRD Corp funding. The employer submits before training; HRD Corp decides eligibility and the approved amount.</li>
               </ol>
             </article>

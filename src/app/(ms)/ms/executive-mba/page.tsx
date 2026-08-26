@@ -30,7 +30,7 @@ export default function Page() {
           <div className="zh-core-section-grid">
             {content.sections.map(([heading, body], index) => (
               <Reveal key={heading} delay={(index % 2) * 60}>
-                <section className="card">
+                <section id={heading.includes("CMI") ? "recognition" : undefined} className="card">
                   <h2>{heading}</h2>
                   <p>{body}</p>
                 </section>

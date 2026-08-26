@@ -27,7 +27,7 @@ export default function ChineseCorePage({ path, eyebrow, title, intro, sections 
           <div className="zh-core-section-grid">
             {sections.map(([heading, body], index) => (
               <Reveal key={heading} delay={(index % 2) * 60}>
-                <section className="card">
+                <section id={heading.includes("CMI") ? "recognition" : undefined} className="card">
                   <h2>{heading}</h2>
                   <p>{body}</p>
                 </section>

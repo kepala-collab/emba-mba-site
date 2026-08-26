@@ -19,7 +19,7 @@ export const metadata = withSeo("/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC registered in Malaysia" },
   { n: "Jul 2024", s: "Awarded and endorsed by CMI" },
-  { n: "17", s: "cohorts delivered: 16 English and the first Mandarin cohort" },
+  { n: "17", s: "cohorts delivered: 16 English and a Mandarin cohort" },
   { n: "154", s: "graduates of the signature programme" },
 ];
 
@@ -27,13 +27,13 @@ const LEADERS = [
   {
     n: "Dr. Xavier Johnson",
     role: "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University",
-    img: "/brand/faculty/xavier-johnson.png",
+    img: "/brand/faculty/xavier-johnson.webp",
     b: "Architect of the F.A.S.T. methodology and the twelve modules at the core of the programme. A Universiti Malaya alumnus, he works in organisation business architecture, business model innovation and design thinking, and founded LIFE University.",
   },
   {
     n: "Ir. Dr. Jonas Anthony",
     role: "Chief Operating Officer, ABC · Co-Founder, LIFE Innoversity",
-    img: "/brand/faculty/jonas-anthony.png",
+    img: "/brand/faculty/jonas-anthony.webp",
     b: "Retired Executive Director of Corporate Management at Panasonic AVC Networks Kuala Lumpur and former Chairman of Panasonic Manufacturing HRD in Malaysia. Over 32 years in Lean, Industry 4.0, quality and supply chain; also a Chartered Engineer (UK), Chartered Quality Professional and Adjunct Professor at Taylor's University School of Engineering.",
   },
   {
@@ -45,7 +45,7 @@ const LEADERS = [
   {
     n: "Roy Affandi",
     role: "Programme Coordinator",
-    img: "/brand/community/affandi-portrait.png",
+    img: "/brand/community/affandi-portrait.webp",
     b: "Runs intake cycles, onboarding and corporate engagement, and helps SMEs and larger organisations work through the HRD Corp grant process. B.Econs (Hons, Analytical) from Universiti Malaya, postgraduate study at the University of Melbourne, Executive MBA (CMI UK) and a member of CMI (UK).",
   },
 ];
@@ -138,13 +138,13 @@ export default function AsianBusinessConsultingPage() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>
             <h2 className="sec-h">Seventeen cohorts. 154 graduates. One shared milestone.</h2>
-            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts: 16 English cohorts and the first Mandarin cohort.</p>
+            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts: 16 English cohorts and a Mandarin cohort.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
               <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Inaugural graduation · 86 attendees · August 2026</div>
-              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Inaugural Graduation Film", description: "Highlights from the inaugural Future Ready Executive MBA graduation in August 2026, attended by 86 graduates.", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.jpg`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "en-MY" }} />
-              <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.jpg" lang="en" />
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Inaugural Graduation Film", description: "Highlights from the inaugural Future Ready Executive MBA graduation in August 2026, attended by 86 graduates.", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "en-MY" }} />
+              <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.webp" lang="en" />
               <div className="film-cap"><strong>Eighty-six graduates attended,</strong> joined by faculty and guests from Malaysian business and public life.</div>
             </div>
           </Reveal>
@@ -175,7 +175,7 @@ export default function AsianBusinessConsultingPage() {
             </div>
           </div>
           <figure className="partnership-seal">
-            <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
+            <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
             <figcaption className="mono sec-k">Asian Business Consulting × {OPERATOR.name} · in collaboration</figcaption>
           </figure>
         </div>

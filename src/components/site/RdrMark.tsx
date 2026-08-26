@@ -17,7 +17,7 @@ export default function RdrMark({ size = 36 }: { size?: number }) {
       }}
     >
       <Image
-        src="/brand/rdr-emblem.png"
+        src="/brand/rdr-emblem.webp"
         alt="Future Ready Executive MBA"
         width={size}
         height={size}

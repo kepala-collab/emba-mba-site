@@ -19,8 +19,8 @@ const REASONS = [
     p: `${HRD_CORP_CLAIM_ZH}课程团队提供报价、时间表、课程内容及导师文件。`,
   },
   {
-    h: `马来西亚奖学金 — ${FACTS.scholarshipAmount}`,
-    p: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者经评估及书面批准后，可获 ${FACTS.scholarshipProvider} 奖学金；获批者实付 ${FACTS.priceAfterScholarship}。`,
+    h: "马来西亚奖学金资格",
+    p: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金评估；任何奖学金金额及应付费用均会个别以书面确认。`,
   },
   {
     h: "为在职领导者设计的六个月课程",
@@ -84,7 +84,7 @@ export default function ExecutiveMbaMalaysiaPage() {
               Future Ready 高管 MBA 是为马来西亚企业主、董事及资深管理者设计的六个月高管教育及专业发展课程，
               由 CMI 颁授并背书，通过集中现场课程交付。<b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_ZH}</b>{" "}
               课程以令吉计价，标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者经评估及书面批准后，可获{" "}
-              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} 奖学金</b>。
+              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} 奖学金资格评估</b>；奖学金名额、评估结果及最终费用均会个别以书面确认。
               学员把课程框架应用于自己的企业、市场及运营情境。
             </p>
           </Reveal>
@@ -139,7 +139,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal><div className="stats">
             <div><b>{FACTS.trainingDays}</b><span>培训日</span></div>
             <div><b>{FACTS.cohorts}</b><span>ABC 课程记录中的班次</span></div>
-            <div><b>{FACTS.scholarshipAmount}</b><span>供符合资格的马来西亚申请者申请的奖学金</span></div>
+            <div><b>资格评估</b><span>马来西亚申请者奖学金评估</span></div>
             <div><b>开课前</b><span>雇主提交 HRD Corp grant 申请</span></div>
           </div></Reveal>
         </div>

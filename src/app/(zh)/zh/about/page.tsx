@@ -19,7 +19,7 @@ export default function AboutPage() {
         <div className="wrap about-affandi-grid" style={{ display: "grid", gridTemplateColumns: ".85fr 1.15fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <Reveal>
             <figure style={{ margin: 0, overflow: "hidden", borderRadius: 20, border: "1px solid var(--line)", background: "var(--bg-2)" }}>
-              <Image src="/brand/community/affandi-portrait.png" alt="Roy Affandi" width={1122} height={1403} sizes="(max-width: 760px) 100vw, 42vw" style={{ width: "100%", height: "auto", display: "block" }} priority />
+              <Image src="/brand/community/affandi-portrait.webp" alt="Roy Affandi" width={1122} height={1403} sizes="(max-width: 760px) 100vw, 42vw" style={{ width: "100%", height: "auto", display: "block" }} priority />
             </figure>
           </Reveal>
           <Reveal delay={70}>
@@ -43,7 +43,7 @@ export default function AboutPage() {
               <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书，是由 Asian Business Consulting 设计及交付的六个月专业发展课程。Right Dots Resources 是其 Associate Partner，负责课程咨询及报名协调。HRD Corp 注册马来西亚雇主须在开课前通过 e-TRiS 提交 grant 申请；资格及批准金额由 HRD Corp 决定。</p>
               <Link href="/zh/asian-business-consulting" className="text-action" style={{ marginTop: 16 }}>进一步了解 Asian Business Consulting <span aria-hidden="true">↗</span></Link>
               <figure className="partnership-seal">
-                <Image src="/brand/partnership-seal.png" alt="Asian Business Consulting 与 Right Dots Resources 战略合作" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
+                <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting 与 Right Dots Resources 战略合作" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
                 <figcaption className="mono sec-k">Asian Business Consulting × Right Dots Resources · in collaboration</figcaption>
               </figure>
             </div>
@@ -63,7 +63,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={70}>
             <figure style={{ margin: 0, overflow: "hidden", borderRadius: 20, border: "1px solid var(--line)", background: "var(--bg)" }}>
-              <Image src="/brand/community/about-affandi.jpeg" alt="Roy Affandi 的生活片段" width={1440} height={2560} sizes="(max-width: 760px) 100vw, 46vw" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src="/brand/community/about-affandi.webp" alt="Roy Affandi 的生活片段" width={1440} height={2560} sizes="(max-width: 760px) 100vw, 46vw" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption className="fine" style={{ padding: "12px 16px 14px" }}>工作是专业的，初衷是个人的：帮助人们建立更稳固的未来。</figcaption>
             </figure>
           </Reveal>

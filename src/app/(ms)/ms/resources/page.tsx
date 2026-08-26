@@ -50,7 +50,7 @@ export default function ResourcesPage() {
                 <li>Nyatakan keputusan perniagaan, jurang keupayaan atau agenda transformasi yang perlu ditangani.</li>
                 <li>Sahkan bagaimana projek aplikasi perniagaan menjawab situasi tersebut.</li>
                 <li>Semak sama ada enam hari latihan dan tiga hujung minggu program dapat dilaksanakan.</li>
-                <li>Nyatakan yuran standard {FACTS.priceStd}, dan jelaskan bahawa biasiswa {FACTS.scholarshipAmount} hanya untuk pemohon Malaysia yang layak, melepasi penilaian dan menerima kelulusan bertulis.</li>
+                <li>Nyatakan yuran standard {FACTS.priceStd}, dan jelaskan bahawa biasiswa hanya untuk pemohon Malaysia yang layak selepas penilaian serta kelulusan bertulis; sebarang anugerah dan yuran peserta disahkan secara individu.</li>
                 <li>Majikan yang memutuskan sama ada untuk memohon pembiayaan HRD Corp. Majikan perlu mengemukakan permohonan sebelum kursus bermula; HRD Corp menentukan kelayakan dan jumlah yang diluluskan.</li>
               </ol>
             </article>

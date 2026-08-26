@@ -45,7 +45,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 months", "CMI-recognised Executive MBA programme"], [FACTS.trainingDays, "Facilitated training days across three sessions"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([b, s]) => (
+                  {[["6 months", "CMI-recognised Executive MBA programme"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["Eligibility", "Scholarship assessment for Malaysian applicants"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>
@@ -68,7 +68,7 @@ export default function GoogleLandingPage() {
       {/* FACTUAL PROOF — testimonial assets will be added only after permission and verification. */}
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Awarded and endorsed by CMI"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], [FACTS.scholarshipAmount, "Scholarship for eligible Malaysian applicants"]].map(([value, label]) => (
+          {[["CMI", "Awarded and endorsed by CMI"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], ["Eligibility", "Scholarship assessment for Malaysian applicants"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

@@ -98,8 +98,8 @@ export default function AdvancementBriefPage() {
             <h2>See the standard fee before checking support.</h2>
             <div className="brief-facts">
               <div><strong>{FACTS.priceStd}</strong><span>standard programme fee</span></div>
-              <div><strong>{FACTS.scholarshipAmount}</strong><span>scholarship available to eligible Malaysian applicants</span></div>
-              <div><strong>{FACTS.priceAfterScholarship}</strong><span>payable only after written scholarship approval</span></div>
+              <div><strong>Eligibility</strong><span>scholarship assessment for Malaysian applicants</span></div>
+              <div><strong>In writing</strong><span>award and resulting participant fee</span></div>
             </div>
             <p>{FACTS.scholarshipEligibility} The scholarship is not automatic. {HRD_CORP_CLAIM.short} {HRD_CORP_CLAIM.responsibility}</p>
           </div>

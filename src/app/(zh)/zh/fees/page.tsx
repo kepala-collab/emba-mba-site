@@ -7,7 +7,7 @@ const content = CORE_PAGES_ZH.fees;
 
 export const metadata = withSeo(path, {
   title: "学费、奖学金与 HRD Corp 索赔",
-  description: "Future Ready 高管 MBA 费用：标准费用 RM10,000；符合资格的马来西亚申请者可申请 RM4,000 LIFE Innoversity 奖学金，获批者实付 RM6,000。",
+  description: "Future Ready 高管 MBA 标准费用为 RM10,000；符合资格的马来西亚申请者可接受奖学金评估，任何奖学金金额及应付费用均会个别以书面确认。",
 });
 
 export default function Page() {

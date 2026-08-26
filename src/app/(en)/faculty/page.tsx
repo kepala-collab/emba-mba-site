@@ -84,7 +84,7 @@ export default function FacultyPage() {
               </div>
               <figure style={{ margin: "24px 0 0" }}>
                 <div style={{ overflow: "hidden", borderRadius: 18, border: "1px solid var(--line)", background: "var(--bg-2)" }}>
-                  <Image src="/brand/community/faculty-event.jpeg" alt="Faculty and programme community members at a professional event" width={2560} height={1440} sizes="(max-width: 900px) 100vw, 1120px" style={{ width: "100%", height: "auto", display: "block" }} />
+                  <Image src="/brand/community/faculty-event.webp" alt="Faculty and programme community members at a professional event" width={2560} height={1440} sizes="(max-width: 900px) 100vw, 1120px" style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
                 <figcaption className="fine" style={{ marginTop: 10, maxWidth: "92ch" }}>
                   From left: Mr Allan Gan, Chief Programme Director of Asian Business Consulting and Co-Founder of LIFE Innoversity; Ms Goldie Polycarp, CMI (UK); Prof Nagarajah Lee Hun Leong; Dr. Xavier Johnson, Chief Business Methodologist of Asian Business Consulting and Founder of LIFE University; Prof Emeritus Datuk Seri Dr Mohamed Mustafa Ishak, Regional Board Chairman of the Chartered Management Institute Malaysia; Ms Fara Adibah, CMI (UK); and Ir. Dr. Jonas Anthony, Faculty Director. Thank you to CMI (UK).

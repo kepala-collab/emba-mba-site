@@ -15,7 +15,10 @@ async function goto(page: Page, route: string) {
 }
 
 async function dismissConsent(page: Page) {
-  const button = page.getByRole("button", { name: /Essential only|仅必要功能/i });
+  const privacy = page.locator(".consent-compact");
+  await privacy.waitFor({ state: "visible", timeout: 2_500 }).catch(() => undefined);
+  if (await privacy.isVisible()) await privacy.click();
+  const button = page.getByRole("button", { name: /Essential only|Penting sahaja|仅必要功能/i });
   await button.waitFor({ state: "visible", timeout: 2_500 }).catch(() => undefined);
   if (await button.isVisible()) {
     await button.click();
@@ -337,6 +340,8 @@ test("long footer contact links wrap inside narrow bilingual columns", async ({ 
     await page.setViewportSize({ width, height: 844 });
     await goto(page, "/zh");
     const email = page.locator('footer a[href="mailto:support@futurereadymba.com"]');
+    const contactGroup = email.locator("xpath=ancestor::details");
+    if (!(await contactGroup.getAttribute("open"))) await contactGroup.locator("summary").click();
     await expect(email).toBeVisible();
     const contained = await email.evaluate((element) => element.scrollWidth <= element.clientWidth + 1);
     expect(contained, `${width}px Chinese footer email`).toBe(true);
@@ -539,10 +544,15 @@ test("consent choice stays compact and visibly identifies its privacy link", asy
   await page.setViewportSize({ width: 390, height: 844 });
   await goto(page, "/home");
   await page.waitForTimeout(700);
+  const compact = page.locator(".consent-compact");
+  await expect(compact).toBeVisible();
+  const compactBox = await compact.boundingBox();
+  expect(compactBox?.height || 9999).toBeLessThanOrEqual(44);
+  await compact.click();
   const banner = page.locator(".consent-banner");
   await expect(banner).toBeVisible();
   const box = await banner.boundingBox();
-  expect(box?.height || 9999).toBeLessThanOrEqual(160);
+  expect(box?.height || 9999).toBeLessThanOrEqual(220);
   const decoration = await banner.getByRole("link", { name: "Privacy policy" }).evaluate((link) => getComputedStyle(link).textDecorationLine);
   expect(decoration).toContain("underline");
 });
@@ -552,7 +562,7 @@ test("lead contact steps have no automated accessibility violations", async ({ p
   for (const route of ["/apply", "/zh/apply"]) {
     await goto(page, route);
     await dismissConsent(page);
-    await page.getByRole("button", { name: route.startsWith("/zh") ? /继续填写联系方式/i : /Continue to contact details/i }).click();
+    await expect(page.locator("form[data-form-id]").getByLabel(route.startsWith("/zh") ? "电邮" : "Email")).toBeVisible();
     await page.waitForTimeout(300);
     const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
     expect(results.violations, `${route}: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
@@ -604,14 +614,13 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
     });
   });
   await goto(page, "/apply");
-  await page.getByRole("button", { name: /Continue to contact details/i }).click();
   const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone_local"]') });
   await expect(form.locator("[data-widget-id]")).toBeVisible();
   await form.locator('input[name="name"]').fill("Test Participant");
-  await form.getByLabel("Phone / WhatsApp").fill("12 345 6789");
+  await form.getByLabel("Phone / WhatsApp (optional)").fill("12 345 6789");
   await form.locator('input[name="email"]').fill("test@example.com");
   await form.getByRole("checkbox").first().check();
-  await form.getByRole("button", { name: /Send my programme request/i }).click();
+  await form.getByRole("button", { name: /Email me the guide/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
 });
@@ -626,13 +635,12 @@ test("lead form resets a redeemed Turnstile token before a retry", async ({ page
     });
   });
   await goto(page, "/apply");
-  await page.getByRole("button", { name: /Continue to contact details/i }).click();
   const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone_local"]') });
   await form.locator('input[name="name"]').fill("Test Participant");
-  await form.getByLabel("Phone / WhatsApp").fill("12 345 6789");
+  await form.getByLabel("Phone / WhatsApp (optional)").fill("12 345 6789");
   await form.locator('input[name="email"]').fill("test@example.com");
   await form.getByRole("checkbox").first().check();
-  await form.getByRole("button", { name: /Send my programme request/i }).click();
+  await form.getByRole("button", { name: /Email me the guide/i }).click();
   await expect.poll(() => page.evaluate(() =>
     (window as typeof window & { __turnstileResetCount?: number }).__turnstileResetCount || 0,
   )).toBe(1);
@@ -647,7 +655,7 @@ test("paid campaign routes use focused chrome with one primary action", async ({
     await expect(page.locator(".campaign-nav-actions .navcta")).toHaveCount(1);
     await expect(page.locator(".wa-float")).toHaveAttribute("aria-hidden", "true");
     await expect(page.locator('img[src*="cmi-logo-official.svg"]').first()).toBeVisible();
-    await expect(page.locator('img[src*="hrdcorp-claimable-official.png"]').first()).toBeVisible();
+    await expect(page.locator('img[src*="hrdcorp-claimable-official.webp"]').first()).toBeVisible();
     const markWidths = await page.locator(".programme-marks").first().locator("img").evaluateAll((images) => images.map((image) => image.getBoundingClientRect().width));
     expect(markWidths.every((width) => width >= 72), `${route} official mark size`).toBe(true);
   }
@@ -775,7 +783,10 @@ test("home hero preserves its poster and removes motion on compact screens", asy
     await goto(page, "/home");
     const media = page.locator(".commerce-hero-media");
     const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
-    expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
+    await expect.poll(
+      () => image.evaluate((element: HTMLImageElement) => element.naturalWidth),
+      { message: `${width}px hero poster should finish loading` },
+    ).toBeGreaterThan(0);
     const videoDisplay = await media.locator("video").evaluate((element) => getComputedStyle(element).display);
     expect(videoDisplay).toBe(width <= 640 ? "none" : "block");
   }

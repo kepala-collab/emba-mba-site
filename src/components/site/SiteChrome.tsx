@@ -27,7 +27,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
         alternateName: "ABC",
         logo: {
           "@type": "ImageObject",
-          url: `${SITE.url}/brand/abc-mark.png`,
+          url: `${SITE.url}/brand/abc-mark.webp`,
           width: 650,
           height: 180,
         },

@@ -18,8 +18,8 @@ const REASONS = [
     p: `${HRD_CORP_CLAIM.short} The programme team supplies the quotation, schedule, course content and trainer documents.`,
   },
   {
-    h: `Malaysian scholarship — ${FACTS.scholarshipAmount}`,
-    p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may receive the ${FACTS.scholarshipProvider} scholarship after assessment and written approval. Approved recipients pay ${FACTS.priceAfterScholarship}.`,
+    h: "Malaysian scholarship eligibility",
+    p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing.`,
   },
   {
     h: "A six-month programme for working leaders",
@@ -84,7 +84,7 @@ export default function ExecutiveMbaMalaysiaPage() {
               development programme for Malaysian owners, directors and senior managers. It is
               awarded and endorsed by CMI and delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
               The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
-              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipAmount} {FACTS.scholarshipProvider} scholarship</b> after assessment and written approval.
+              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} scholarship assessment</b>, subject to availability and written approval.
               Participants apply the programme frameworks to their own organisation, market and operating context.
             </p>
           </Reveal>
@@ -140,7 +140,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal><div className="stats">
             <div><b>{FACTS.trainingDays}</b><span>Certificate-phase training days</span></div>
             <div><b>{FACTS.cohorts}</b><span>Cohorts in ABC programme records</span></div>
-            <div><b>{FACTS.scholarshipAmount}</b><span>scholarship for eligible Malaysian applicants</span></div>
+            <div><b>Eligibility</b><span>scholarship assessment for Malaysian applicants</span></div>
             <div><b>Before training</b><span>Employer submits HRD Corp grant application</span></div>
           </div></Reveal>
         </div>
