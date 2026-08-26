@@ -440,7 +440,7 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
-  await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
+  await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute("src", "/media/future-commerce/hero-leader.mp4");
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {
@@ -451,12 +451,12 @@ test("mobile Apply presents the form immediately after its introduction", async 
   expect(box?.y || 9999).toBeLessThan(900);
 });
 
-test("programme introduction keeps a visible text alternative beside the graduation film", async ({ page }) => {
+test("programme introduction keeps a visible text alternative beside the leadership film", async ({ page }) => {
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
-  await expect(media.locator("figcaption")).toContainText("Lead with certainty");
+  await expect(media.locator("video source")).toHaveAttribute("src", "/media/future-commerce/hero-leader.mp4");
+  await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
 });
 
 test("mobile programme fit check returns to its factual result", async ({ page }) => {
@@ -713,13 +713,14 @@ test("campaign routes have no automated accessibility violations", async ({ page
   }
 });
 
-test("home hero presents the graduation film inside an accessible editorial frame", async ({ page }) => {
+test("home hero presents the leadership film inside an accessible editorial frame", async ({ page }) => {
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source")).toHaveAttribute("src", "/media/home-graduation-loop.mp4");
-  await expect(media.locator('img[alt="Future Ready Executive MBA graduation"]')).toBeVisible();
+  await expect(media.locator("video source")).toHaveAttribute("src", "/media/future-commerce/hero-leader.mp4");
+  await expect(media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]')).toBeVisible();
   await expect(media.locator("figcaption")).toBeVisible();
+  await expect(media.getByRole("button", { name: "Pause video" })).toBeVisible();
 });
 
 test("home hero actions remain readable and touch-sized at 320px", async ({ page }) => {
@@ -773,7 +774,7 @@ test("home hero preserves its poster and removes motion on compact screens", asy
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     await goto(page, "/home");
     const media = page.locator(".commerce-hero-media");
-    const image = media.locator('img[alt="Future Ready Executive MBA graduation"]');
+    const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
     expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
     const videoDisplay = await media.locator("video").evaluate((element) => getComputedStyle(element).display);
     expect(videoDisplay).toBe(width <= 640 ? "none" : "block");

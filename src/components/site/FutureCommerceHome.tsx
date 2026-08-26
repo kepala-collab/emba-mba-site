@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import CommerceHeroMedia from "@/components/site/CommerceHeroMedia";
 import LeadForm from "@/components/site/LeadForm";
 import Reveal from "@/components/site/Reveal";
-import { FACTS, PROGRAMME_PROOF } from "@/lib/content";
+import { FACTS, INTAKES, PROGRAMME_PROOF } from "@/lib/content";
 
 type HomeLocale = "en" | "ms" | "zh";
 
@@ -12,12 +13,20 @@ const COPY = {
     prefix: "",
     eyebrow: "Malaysia · Executive development",
     product: "Future Ready Executive MBA",
-    title: "Your next leadership chapter starts with the decision in front of you.",
-    lede: "A six-month professional development programme for working managers, business owners and senior leaders who need sharper judgement, stronger execution and a plan they can act on.",
+    title: "Your next leadership chapter starts here.",
+    lede: "A six-month professional development programme for ambitious Malaysian managers, business owners and senior leaders ready to sharpen judgement, widen perspective and lead what comes next.",
     guide: "Get the free 2026 guide",
     explore: "Explore the programme",
     mediaKicker: "Six months · built around work",
-    mediaTitle: "Lead with certainty when business gets complicated.",
+    mediaTitle: "Programme and cohort clarity.",
+    mediaAlt: "Malaysian executive leader overlooking Kuala Lumpur",
+    pauseVideo: "Pause video",
+    playVideo: "Play video",
+    intakesKicker: "2026 intakes",
+    intakesTitle: "Choose the working rhythm that fits.",
+    intakeOpen: "Open for enquiries",
+    factRecognition: "awarded and endorsed",
+    factCommunity: "16 English · first Mandarin cohort",
     factDuration: "professional development programme",
     factDays: "across three facilitated sessions",
     factModules: "applied management modules",
@@ -25,6 +34,10 @@ const COPY = {
     pathwaysKicker: "Explore the programme",
     pathwaysTitle: "Go straight to the answer you need.",
     pathwaysIntro: "Each route answers one decision clearly—from programme fit and curriculum to recognition, fees and dates.",
+    experienceKicker: "The programme experience",
+    experienceTitle: "A working room built around real decisions.",
+    experienceIntro: "Structured workshops, applied project work and a peer community turn leadership development into something you can use back at work.",
+    experienceLabels: ["Strategy workshop", "Applied project work", "Executive community"],
     outcomesKicker: "What changes when you complete it",
     outcomesTitle: "More than new knowledge. A sharper way to operate.",
     outcomesIntro: "Future-ready leadership means seeing the whole system, making a defensible decision and moving people into action.",
@@ -49,12 +62,20 @@ const COPY = {
     prefix: "/ms",
     eyebrow: "Malaysia · Pembangunan eksekutif",
     product: "Future Ready Executive MBA",
-    title: "Bab kepimpinan anda yang seterusnya bermula dengan keputusan di hadapan anda.",
-    lede: "Program pembangunan profesional enam bulan untuk pengurus bekerja, pemilik perniagaan dan pemimpin kanan yang memerlukan pertimbangan lebih tajam, pelaksanaan lebih kukuh dan pelan yang boleh dilaksanakan.",
+    title: "Bab kepimpinan anda yang seterusnya bermula di sini.",
+    lede: "Program pembangunan profesional enam bulan untuk pengurus, pemilik perniagaan dan pemimpin kanan Malaysia yang mahu mempertajam pertimbangan, meluaskan perspektif dan memimpin langkah seterusnya.",
     guide: "Dapatkan panduan 2026 percuma",
     explore: "Terokai program",
     mediaKicker: "Enam bulan · Dibina sekitar kerja",
-    mediaTitle: "Pimpin dengan yakin apabila perniagaan menjadi rumit.",
+    mediaTitle: "Kejelasan program dan kohort.",
+    mediaAlt: "Pemimpin eksekutif Malaysia menghadap pemandangan Kuala Lumpur",
+    pauseVideo: "Jeda video",
+    playVideo: "Mainkan video",
+    intakesKicker: "Kohort 2026",
+    intakesTitle: "Pilih rentak pembelajaran yang sesuai.",
+    intakeOpen: "Dibuka untuk pertanyaan",
+    factRecognition: "dianugerahkan dan disokong",
+    factCommunity: "16 Bahasa Inggeris · kohort Mandarin pertama",
     factDuration: "program pembangunan profesional",
     factDays: "dalam tiga sesi dipermudah cara",
     factModules: "modul pengurusan gunaan",
@@ -62,6 +83,10 @@ const COPY = {
     pathwaysKicker: "Terokai program",
     pathwaysTitle: "Terus kepada jawapan yang anda perlukan.",
     pathwaysIntro: "Setiap laluan menjawab satu keputusan dengan jelas—daripada kesesuaian dan kurikulum hingga pengiktirafan, yuran dan tarikh.",
+    experienceKicker: "Pengalaman program",
+    experienceTitle: "Ruang pembelajaran yang dibina sekitar keputusan sebenar.",
+    experienceIntro: "Bengkel berstruktur, kerja projek gunaan dan komuniti rakan eksekutif menjadikan pembangunan kepimpinan sesuatu yang boleh terus digunakan di tempat kerja.",
+    experienceLabels: ["Bengkel strategi", "Kerja projek gunaan", "Komuniti eksekutif"],
     outcomesKicker: "Perubahan selepas tamat",
     outcomesTitle: "Lebih daripada pengetahuan baharu. Cara beroperasi yang lebih tajam.",
     outcomesIntro: "Kepimpinan masa hadapan bermaksud melihat keseluruhan sistem, membuat keputusan yang boleh dipertahankan dan menggerakkan tindakan.",
@@ -86,12 +111,20 @@ const COPY = {
     prefix: "/zh",
     eyebrow: "马来西亚 · 高管发展",
     product: "Future Ready 高管 MBA",
-    title: "您的下一阶段领导力，从眼前这项决定开始。",
-    lede: "为在职管理者、企业主及高级领导者设计的六个月专业发展课程，帮助您提升判断力、执行力，并形成可落实的行动方案。",
+    title: "您的下一阶段领导力，从这里开始。",
+    lede: "为马来西亚管理者、企业主及高级领导者设计的六个月专业发展课程，帮助您提升判断力、拓宽视野，并带领企业迈向下一步。",
     guide: "获取免费 2026 课程指南",
     explore: "了解课程",
     mediaKicker: "六个月 · 配合工作安排",
-    mediaTitle: "当企业变得复杂，依然能够明确领导。",
+    mediaTitle: "清楚了解课程与开课安排。",
+    mediaAlt: "一位马来西亚企业领导者俯瞰吉隆坡",
+    pauseVideo: "暂停视频",
+    playVideo: "播放视频",
+    intakesKicker: "2026 开课",
+    intakesTitle: "选择适合工作节奏的班次。",
+    intakeOpen: "开放咨询",
+    factRecognition: "由 CMI 颁授并背书",
+    factCommunity: "16 个英语班 · 首个华语班",
     factDuration: "专业发展课程",
     factDays: "分三个导师引导阶段完成",
     factModules: "个应用管理模块",
@@ -99,6 +132,10 @@ const COPY = {
     pathwaysKicker: "了解课程",
     pathwaysTitle: "直接查看您需要的答案。",
     pathwaysIntro: "每个入口清楚回答一项决定——从课程匹配和大纲，到认可、费用及日期。",
+    experienceKicker: "课程体验",
+    experienceTitle: "围绕真实企业决定而设的学习空间。",
+    experienceIntro: "结构化工作坊、应用项目与高管同侪交流，让领导力发展能够直接运用在实际工作中。",
+    experienceLabels: ["策略工作坊", "应用项目实践", "高管学习社群"],
     outcomesKicker: "完成课程后的改变",
     outcomesTitle: "不只是增加知识，而是以更清晰的方法开展工作。",
     outcomesIntro: "面向未来的领导力，是看清整个系统、作出有依据的决定，并带动团队执行。",
@@ -158,6 +195,15 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
   const formLang = locale;
   const programmeHref = `${copy.prefix}/executive-mba`;
   const durationValue = locale === "zh" ? "6 个月" : locale === "ms" ? "6 bulan" : FACTS.durationShort;
+  const currentIsoDate = new Date().toISOString().slice(0, 10);
+  const futureIntakes = [...INTAKES]
+    .filter((intake) => intake.startDate >= currentIsoDate)
+    .sort((a, b) => a.startDate.localeCompare(b.startDate));
+  const featuredIntakes = (futureIntakes.length ? futureIntakes : [...INTAKES].reverse()).slice(0, 3);
+  const languageName = (language: string) => {
+    if (language === "Mandarin") return locale === "zh" ? "华语" : "Mandarin";
+    return locale === "zh" ? "英语" : locale === "ms" ? "Bahasa Inggeris" : "English";
+  };
 
   return (
     <div className="commerce-home" lang={copy.lang}>
@@ -178,24 +224,39 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
             <Reveal delay={80}>
               <div className="commerce-hero-facts" aria-label={locale === "zh" ? "课程概览" : locale === "ms" ? "Ringkasan program" : "Programme at a glance"}>
                 <div><strong>{durationValue}</strong><span>{copy.factDuration}</span></div>
-                <div><strong>{FACTS.trainingDays}</strong><span>{copy.factDays}</span></div>
-                <div><strong>CMI</strong><span>{locale === "zh" ? "颁授并背书" : locale === "ms" ? "dianugerahkan dan disokong" : "awarded and endorsed"}</span></div>
+                <div><strong className="commerce-cmi-wordmark"><Image src="/brand/cmi-logo-official-white.png" alt="CMI" width={78} height={31} /></strong><span>{copy.factRecognition}</span></div>
+                <div><strong>{PROGRAMME_PROOF.cohorts} {copy.cohorts}</strong><span>{copy.factCommunity}</span></div>
               </div>
             </Reveal>
           </div>
 
           <Reveal delay={100}>
-            <figure className="commerce-hero-media">
-              <Image src="/brand/abc-graduation-poster.jpg" alt="Future Ready Executive MBA graduation" fill priority sizes="(max-width: 900px) 100vw, 46vw" />
-              <video autoPlay muted loop playsInline preload="metadata" poster="/brand/abc-graduation-poster.jpg" aria-hidden="true" tabIndex={-1}>
-                <source src="/media/home-graduation-loop.mp4" type="video/mp4" />
-              </video>
-              <div className="commerce-hero-shade" />
-              <figcaption><span className="mono">{copy.mediaKicker}</span><strong>{copy.mediaTitle}</strong></figcaption>
-              <div className="commerce-hero-stamp"><Image src="/brand/rdr-emblem.png" alt="" width={40} height={40} /><span>FUTURE READY<br />EXECUTIVE MBA</span></div>
-            </figure>
+            <CommerceHeroMedia
+              alt={copy.mediaAlt}
+              guideHref="#programme-guide"
+              guideLabel={copy.guide}
+              kicker={copy.mediaKicker}
+              pauseLabel={copy.pauseVideo}
+              playLabel={copy.playVideo}
+              title={copy.mediaTitle}
+            />
           </Reveal>
         </div>
+
+        <div className="wrap commerce-intake-rail" aria-label={copy.intakesKicker}>
+          <div className="commerce-intake-heading"><span className="mono">{copy.intakesKicker}</span><strong>{copy.intakesTitle}</strong></div>
+          {featuredIntakes.map((intake) => (
+            <Link key={`${intake.language}-${intake.co}`} href={`${copy.prefix}/intakes`} className="commerce-intake-card">
+              <span className="mono">{languageName(intake.language)} · {intake.co}</span>
+              <strong>{intake.s1}</strong>
+              <small>{copy.intakeOpen} <span aria-hidden="true">↗</span></small>
+            </Link>
+          ))}
+        </div>
+        <svg className="commerce-hero-arc" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 139 C330 136 498 119 666 83 C841 45 1066 29 1440 6" />
+          <path d="M0 139 C332 139 523 130 702 101 C904 68 1148 53 1440 37" />
+        </svg>
       </section>
 
       <section className="commerce-fact-band" aria-label={locale === "zh" ? "课程数字" : locale === "ms" ? "Fakta program" : "Programme facts"}>
@@ -218,6 +279,17 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
                 </Link>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="commerce-section commerce-experience" aria-labelledby="commerce-experience-title">
+        <div className="wrap">
+          <Reveal><header className="commerce-section-head"><div><p className="mono">{copy.experienceKicker}</p><h2 id="commerce-experience-title">{copy.experienceTitle}</h2></div><p>{copy.experienceIntro}</p></header></Reveal>
+          <div className="commerce-experience-grid">
+            <Reveal><figure className="commerce-experience-main"><Image src="/media/future-commerce/workshop-system.jpg" alt={copy.experienceLabels[0]} width={1920} height={1440} sizes="(max-width: 820px) 100vw, 62vw" /><figcaption><span className="mono">01</span><strong>{copy.experienceLabels[0]}</strong></figcaption></figure></Reveal>
+            <Reveal delay={55}><figure><Image src="/media/future-commerce/founder-atelier.jpg" alt={copy.experienceLabels[1]} width={1920} height={1080} sizes="(max-width: 820px) 100vw, 34vw" /><figcaption><span className="mono">02</span><strong>{copy.experienceLabels[1]}</strong></figcaption></figure></Reveal>
+            <Reveal delay={90}><figure><Image src="/media/future-commerce/community-commencement.jpg" alt={copy.experienceLabels[2]} width={1920} height={1440} sizes="(max-width: 820px) 100vw, 34vw" /><figcaption><span className="mono">03</span><strong>{copy.experienceLabels[2]}</strong></figcaption></figure></Reveal>
           </div>
         </div>
       </section>
@@ -255,7 +327,7 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
 
       <section className="commerce-audience">
         <div className="wrap commerce-audience-layout">
-          <Reveal><figure><Image src="/images/future-ready-emba/future-ready-emba-working-leader-portrait-malaysia-4x5.webp" alt="Malaysian working leader" fill sizes="(max-width: 760px) 100vw, 42vw" /></figure></Reveal>
+          <Reveal><figure><Image src="/media/future-commerce/operators-workshop.jpg" alt={locale === "zh" ? "马来西亚企业领导者参与策略讨论" : locale === "ms" ? "Pemimpin perniagaan Malaysia dalam perbincangan strategi" : "Malaysian business leaders in a strategy discussion"} fill sizes="(max-width: 820px) 100vw, 46vw" /></figure></Reveal>
           <Reveal delay={70}><div><p className="mono">{copy.audienceKicker}</p><h2>{copy.audienceTitle}</h2><p>{copy.audienceBody}</p><ul>{copy.audiencePoints.map((point) => <li key={point}>{point}</li>)}</ul><Link href={programmeHref} className="commerce-text-link">{copy.explore} <span aria-hidden="true">→</span></Link></div></Reveal>
         </div>
       </section>
