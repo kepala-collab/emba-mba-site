@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type CommerceHeroMediaProps = {
   alt: string;
@@ -27,6 +27,40 @@ export default function CommerceHeroMedia({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const syncReadyState = () => {
+      setIsVideoReady(video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA);
+      setIsPlaying(!video.paused && !video.ended);
+    };
+    const markUnavailable = () => {
+      setIsVideoReady(false);
+      setIsPlaying(false);
+    };
+
+    // Autoplay can begin before React hydrates and attaches JSX media-event
+    // handlers. Read the element's current state immediately so a playing
+    // video never remains hidden behind its poster.
+    syncReadyState();
+    video.addEventListener("loadeddata", syncReadyState);
+    video.addEventListener("canplay", syncReadyState);
+    video.addEventListener("playing", syncReadyState);
+    video.addEventListener("pause", syncReadyState);
+    video.addEventListener("ended", syncReadyState);
+    video.addEventListener("error", markUnavailable);
+
+    return () => {
+      video.removeEventListener("loadeddata", syncReadyState);
+      video.removeEventListener("canplay", syncReadyState);
+      video.removeEventListener("playing", syncReadyState);
+      video.removeEventListener("pause", syncReadyState);
+      video.removeEventListener("ended", syncReadyState);
+      video.removeEventListener("error", markUnavailable);
+    };
+  }, []);
+
   const togglePlayback = async () => {
     const video = videoRef.current;
     if (!video) return;
@@ -50,6 +84,7 @@ export default function CommerceHeroMedia({
         alt={alt}
         fill
         priority
+        unoptimized
         sizes="(max-width: 1080px) 100vw, 46vw"
       />
       <video
@@ -62,10 +97,11 @@ export default function CommerceHeroMedia({
         preload="auto"
         aria-hidden="true"
         tabIndex={-1}
+        onLoadedData={() => setIsVideoReady(true)}
         onCanPlay={() => setIsVideoReady(true)}
         onError={() => setIsVideoReady(false)}
         onPause={() => setIsPlaying(false)}
-        onPlay={() => setIsPlaying(true)}
+        onPlaying={() => setIsPlaying(true)}
       >
         <source
           src="/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4"

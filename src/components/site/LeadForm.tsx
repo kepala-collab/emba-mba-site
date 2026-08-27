@@ -14,6 +14,7 @@ type Step = 1 | 2;
 type Status = "idle" | "sending" | "ok" | "error" | "verify";
 type ErrorType = "validation" | "rate_limit" | "service" | "network" | null;
 type LeadFormVariant = "standard" | "campaign";
+type TurnstileSize = "flexible" | "compact";
 
 const PHONE_COUNTRY_CODES = [
   { code: "+60", label: "🇲🇾 +60" },
@@ -355,6 +356,7 @@ export default function LeadForm({
   const [turnstileLoadError, setTurnstileLoadError] = useState(false);
   const [emailDraft, setEmailDraft] = useState("");
   const [turnstileScriptReady, setTurnstileScriptReady] = useState(false);
+  const [turnstileSize, setTurnstileSize] = useState<TurnstileSize>("flexible");
   const turnstileContainer = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
   const formElement = useRef<HTMLFormElement>(null);
@@ -402,6 +404,19 @@ export default function LeadForm({
   });
 
   useEffect(() => {
+    const container = turnstileContainer.current;
+    if (!container || step !== 2) return;
+    const updateSize = (width: number) => setTurnstileSize(width < 300 ? "compact" : "flexible");
+    updateSize(container.clientWidth);
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width;
+      if (width) updateSize(width);
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [step]);
+
+  useEffect(() => {
     if (step !== 2) return;
     let cancelled = false;
     let retryTimer: number | undefined;
@@ -424,7 +439,7 @@ export default function LeadForm({
           sitekey: TURNSTILE_SITE_KEY,
           action: "lead-submit",
           theme: "light",
-          size: "flexible",
+          size: turnstileSize,
           callback: (token) => {
             setTurnstileToken(token);
             setTurnstileLoadError(false);
@@ -466,7 +481,7 @@ export default function LeadForm({
       }
       turnstileWidgetId.current = null;
     };
-  }, [step, turnstileScriptReady]);
+  }, [step, turnstileScriptReady, turnstileSize]);
 
   function markStarted() {
     if (formStarted.current) return;
@@ -608,7 +623,7 @@ export default function LeadForm({
     const selectedLabel = cohortLabel(selectedCohort, lang);
     const message = encodeURIComponent(t.waMsg(firstName, selectedLabel));
     return (
-      <div className="form lead-form-success" style={{ alignItems: "flex-start", gap: 16 }} role="status">
+      <div className="form lead-form-success" role="status">
         <p className="mono sec-k">{t.okK}</p>
         <h3>{t.okH(firstName)}</h3>
         <p className="fine">{campaign ? t.campaignOkP : t.okP}</p>
@@ -657,11 +672,11 @@ export default function LeadForm({
       {!campaign && (
         <div className="lead-form-progress" aria-label={t.progress(step)}>
           <span>{t.progress(step)}</span>
-          <span className="lead-form-progress-track" aria-hidden="true"><i style={{ width: step === 1 ? "50%" : "100%" }} /></span>
+          <span className="lead-form-progress-track" aria-hidden="true"><i className={step === 2 ? "is-complete" : undefined} /></span>
         </div>
       )}
 
-      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+      <div className="lead-form-honeypot" aria-hidden="true">
         <label htmlFor={id("website")}>Leave this field empty</label>
         <input id={id("website")} name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
@@ -714,7 +729,7 @@ export default function LeadForm({
             </select>
           </div>
         )}
-        <button className="btn btn-primary" type="submit" style={{ width: "100%" }}>{campaign ? t.campaignContinue : t.continue}</button>
+        <button className="btn btn-primary lead-form-primary-action" type="submit">{campaign ? t.campaignContinue : t.continue}</button>
       </fieldset>}
 
       <fieldset className="lead-form-step" disabled={step !== 2 || status === "sending"} hidden={step !== 2}>
@@ -855,21 +870,21 @@ export default function LeadForm({
             <span>{t.consentMarketing}</span>
           </label>
         </div>
-        <div className="turnstile-wrap" role="group" aria-label={t.security}><div ref={turnstileContainer} data-action="turnstile-spin-v1" /></div>
+        <div className="turnstile-wrap" data-size={turnstileSize} role="group" aria-label={t.security}><div ref={turnstileContainer} data-action="turnstile-spin-v1" /></div>
         {turnstileLoadError && (
           <div className="turnstile-fallback" role="alert">
             <p>{t.verifyErr}</p>
             <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(t.waMsg("", cohortLabel(selectedCohort, lang)))}`} target="_blank" rel="noopener" data-track-event="contact_click" data-track-id="turnstile_fallback_whatsapp" data-track-location="lead_form_security_fallback" data-contact-method="whatsapp" data-contact-language={lang}>{t.verifyFallback}</a>
           </div>
         )}
-        <button className="btn btn-primary" type="submit" disabled={status === "sending"} style={{ width: "100%" }}>
+        <button className="btn btn-primary lead-form-primary-action" type="submit" disabled={status === "sending"}>
           {status === "sending" ? t.sending : campaign ? t.campaignSubmit : t.submit}
         </button>
         <div aria-live="polite" aria-atomic="true">
           {status === "error" && errorType && <p className="status err" role="alert">{t.errors[errorType]}</p>}
           {status === "verify" && <p className="status err" role="alert">{t.verify}</p>}
         </div>
-        <p className="fine center" style={{ margin: 0 }}>{campaign ? t.campaignFine : t.fine}</p>
+        <p className="fine center lead-form-fine-print">{campaign ? t.campaignFine : t.fine}</p>
       </fieldset>
     </form>
   );

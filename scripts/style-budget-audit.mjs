@@ -22,7 +22,7 @@ const counts = {
 // Budgets re-based 22 Aug 2026 for the trilingual mirror (EN + zh + ms page trees
 // carry the same inline-style patterns three times). Tighten only by refactoring
 // shared patterns into globals.css, not by deleting locale pages.
-const budgets = { inlineStyles: 740, styleBlocks: 17, importantDeclarations: 37 };
+const budgets = { inlineStyles: 723, styleBlocks: 17, importantDeclarations: 37 };
 const failures = Object.entries(counts).filter(([key, value]) => value > budgets[key]);
 
 console.log(`Style budget: ${JSON.stringify(counts)}`);

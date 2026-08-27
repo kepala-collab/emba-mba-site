@@ -11,7 +11,29 @@ async function captureConsoleFailures(page: Page) {
 }
 
 async function goto(page: Page, route: string) {
-  return page.goto(route, { waitUntil: "domcontentloaded" });
+  const expectedPath = new URL(route, "https://futurereadymba.test").pathname;
+  const successfulNavigation = page.waitForResponse(
+    (response) => {
+      if (!response.request().isNavigationRequest()) return false;
+      const path = new URL(response.url()).pathname;
+      return path === expectedPath && response.status() >= 200 && response.status() < 400;
+    },
+    { timeout: 20_000 },
+  ).catch(() => null);
+  const initialResponse = await page.goto(route, { waitUntil: "domcontentloaded" });
+  const response = initialResponse && initialResponse.status() < 400
+    ? initialResponse
+    : await successfulNavigation || initialResponse;
+  await page.waitForFunction(
+    () => Boolean(document.querySelector("main h1")) && !document.title.toLowerCase().includes("checking your browser"),
+    undefined,
+    { timeout: 20_000 },
+  );
+  await page.evaluate(async () => {
+    if (document.fonts?.ready) await document.fonts.ready;
+    await new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+  });
+  return response;
 }
 
 async function dismissConsent(page: Page) {
@@ -33,9 +55,11 @@ async function mockTurnstile(page: Page) {
       body: `(() => {
         const widgets = new Map(); let sequence = 0;
         window.__turnstileResetCount = 0;
+        window.__turnstileRenderOptions = [];
         window.turnstile = {
           render: (container, options) => {
             const id = 'widget-' + (++sequence); widgets.set(id, options); container.dataset.widgetId = id;
+            window.__turnstileRenderOptions.push({ size: options.size, action: options.action });
             if (options.execution !== 'execute') setTimeout(() => options.callback('lead-test-token'), 0);
             return id;
           },
@@ -59,7 +83,7 @@ test("core routes render without console failures", async ({ page }) => {
 });
 
 test("the legacy root permanently resolves to the named Home route", async ({ page }) => {
-  await page.goto("/");
+  await goto(page, "/");
   await expect(page).toHaveURL(/\/home$/);
   await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
 });
@@ -179,7 +203,7 @@ test("English, Malay and Chinese share one navigation and page type scale", asyn
 });
 
 test("localized page equivalents retain the same primary type dimensions", async ({ page }) => {
-  test.setTimeout(90_000);
+  test.setTimeout(180_000);
   const slugs = [
     "about",
     "ai-executive-mba",
@@ -416,7 +440,7 @@ test("retired programme offers permanently resolve to the Future Ready eMBA jour
     ["/corporate-training", "/hrd-corp-claimable"],
     ["/programmes/shift-hr", "/executive-mba"],
   ] as const) {
-    await page.goto(route);
+    await goto(page, route);
     await expect(page).toHaveURL(new RegExp(`${target.replaceAll("/", "\\/")}$`));
     await expect(page.locator("main h1")).toHaveCount(1);
   }
@@ -738,7 +762,22 @@ test("home hero presents the leadership film inside an accessible editorial fram
   );
   await expect(media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]')).toBeVisible();
   await expect(media.locator("figcaption")).toBeVisible();
-  await expect(media.getByRole("button", { name: "Pause video" })).toBeVisible();
+  await expect(media.getByRole("button", { name: /(?:Pause|Play) video/ })).toBeVisible();
+});
+
+test("home hero film becomes visible and advances after hydration", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await goto(page, "/home");
+  const video = page.locator(".commerce-hero-media video");
+  await expect(video).toHaveClass(/is-ready/);
+  await expect(video).toHaveCSS("opacity", "1");
+  const initialTime = await video.evaluate((element) => (element as HTMLVideoElement).currentTime);
+  await expect.poll(
+    () => video.evaluate((element) => (element as HTMLVideoElement).currentTime),
+    { timeout: 5_000 },
+  ).toBeGreaterThan(initialTime + 0.2);
+  await expect(page.locator(".commerce-media-control")).toHaveAttribute("aria-label", "Pause video");
 });
 
 test("home hero actions remain readable and touch-sized at 320px", async ({ page }) => {
@@ -766,6 +805,37 @@ test("mobile home connects its first action directly to the PDF guide form", asy
   expect(form).not.toBeNull();
   await expect(page).toHaveURL(/#programme-guide$/);
   await expect(page.locator("#programme-guide")).toBeInViewport();
+});
+
+test("home keeps its decision journey to five focused sections", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await goto(page, "/home");
+  const sections = page.locator(".commerce-home > section");
+  await expect(sections).toHaveCount(5);
+  await expect(sections.nth(0)).toHaveClass(/commerce-hero/);
+  await expect(sections.nth(1)).toHaveClass(/commerce-snapshot/);
+  await expect(sections.nth(2)).toHaveClass(/commerce-experience/);
+  await expect(sections.nth(3)).toHaveClass(/commerce-recognition/);
+  await expect(sections.nth(4)).toHaveAttribute("id", "programme-guide");
+  await expect(page.locator(".commerce-pathway")).toHaveCount(0);
+  await expect(page.locator(".commerce-proof-gallery")).toHaveCount(0);
+});
+
+test("Turnstile switches to its compact layout instead of clipping on a 320px form", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await mockTurnstile(page);
+  await goto(page, "/home");
+  const form = page.locator("#programme-guide form[data-form-id]");
+  await form.scrollIntoViewIfNeeded();
+  await expect.poll(() => page.evaluate(() => {
+    const options = (window as typeof window & { __turnstileRenderOptions?: Array<{ size?: string }> }).__turnstileRenderOptions || [];
+    return options.at(-1)?.size;
+  })).toBe("compact");
+  const dimensions = await page.locator("#programme-guide .turnstile-wrap").evaluate((element) => ({
+    client: element.clientWidth,
+    scroll: element.scrollWidth,
+  }));
+  expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client);
 });
 
 test("home hero keeps its copy and media aligned across desktop widths", async ({ page }) => {
