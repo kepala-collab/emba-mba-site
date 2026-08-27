@@ -1263,7 +1263,9 @@ body::before{opacity:.7;background:radial-gradient(860px 500px at 88% -10%,rgba(
 .commerce-cmi-wordmark img{display:block;width:78px;height:auto;object-fit:contain}
 .commerce-hero-media{position:relative;min-height:650px;margin:0;overflow:hidden;border:1px solid rgba(112,190,255,.42);background:#06142b;clip-path:polygon(9% 0,100% 0,100% 91%,91% 100%,0 100%,0 10%);box-shadow:0 36px 86px rgba(0,0,0,.42),0 0 46px rgba(40,123,255,.14)}
 .commerce-hero-media>img,.commerce-hero-media>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.commerce-hero-media>video{z-index:1}
+.commerce-hero-media>img{z-index:0}
+.commerce-hero-media>video{z-index:1;opacity:0;transform:translateZ(0);backface-visibility:hidden;transition:opacity .45s var(--ease-out)}
+.commerce-hero-media>video.is-ready{opacity:1}
 .commerce-hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(6,20,43,.02) 25%,rgba(5,17,37,.92) 100%)}
 .commerce-hero-media figcaption{position:absolute;right:34px;bottom:36px;left:34px;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:10px 24px;align-items:end}
 .commerce-hero-media figcaption>.mono{grid-column:1/-1;color:#84c9ff}

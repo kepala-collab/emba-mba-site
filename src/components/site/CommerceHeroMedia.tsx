@@ -24,7 +24,8 @@ export default function CommerceHeroMedia({
   title,
 }: CommerceHeroMediaProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   const togglePlayback = async () => {
     const video = videoRef.current;
@@ -53,18 +54,24 @@ export default function CommerceHeroMedia({
       />
       <video
         ref={videoRef}
+        className={isVideoReady ? "is-ready" : undefined}
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
-        poster="/media/future-commerce/hero-leader-poster.webp"
+        preload="auto"
         aria-hidden="true"
         tabIndex={-1}
+        onCanPlay={() => setIsVideoReady(true)}
+        onError={() => setIsVideoReady(false)}
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
       >
-        <source src="/media/future-commerce/hero-leader.mp4" type="video/mp4" />
+        <source
+          src="/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4"
+          type="video/mp4"
+          media="(min-width: 641px) and (prefers-reduced-motion: no-preference)"
+        />
       </video>
       <div className="commerce-hero-shade" />
 

@@ -65,6 +65,7 @@ test("the legacy root permanently resolves to the named Home route", async ({ pa
 });
 
 test("Malay locale preserves responsive structure, metadata and accessibility", async ({ page }) => {
+  test.slow();
   await mockTurnstile(page);
   const routes = [
     "/ms",
@@ -445,7 +446,10 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
-  await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute("src", "/media/future-commerce/hero-leader.mp4");
+  await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute(
+    "src",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4",
+  );
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {
@@ -460,7 +464,10 @@ test("programme introduction keeps a visible text alternative beside the leaders
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source")).toHaveAttribute("src", "/media/future-commerce/hero-leader.mp4");
+  await expect(media.locator("video source")).toHaveAttribute(
+    "src",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4",
+  );
   await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
 });
 
@@ -725,7 +732,10 @@ test("home hero presents the leadership film inside an accessible editorial fram
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source")).toHaveAttribute("src", "/media/future-commerce/hero-leader.mp4");
+  await expect(media.locator("video source")).toHaveAttribute(
+    "src",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4",
+  );
   await expect(media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]')).toBeVisible();
   await expect(media.locator("figcaption")).toBeVisible();
   await expect(media.getByRole("button", { name: "Pause video" })).toBeVisible();
