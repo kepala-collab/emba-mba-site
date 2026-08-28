@@ -99,7 +99,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
+        source: "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
           { key: "CDN-Cache-Control", value: "public, s-maxage=31536000, immutable" },
@@ -116,6 +116,8 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    qualities: [75, 82, 88],
+    deviceSizes: [320, 384, 480, 640, 750, 828, 900, 1080, 1200, 1440, 1920],
     // Allow our own trusted SVG brand mark to be served via next/image.
     // The sandbox CSP prevents any script execution inside SVGs.
     dangerouslyAllowSVG: true,

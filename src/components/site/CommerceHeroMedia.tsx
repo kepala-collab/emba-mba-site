@@ -83,8 +83,9 @@ export default function CommerceHeroMedia({
         src="/media/future-commerce/hero-leader-poster.webp"
         alt={alt}
         fill
-        priority
-        unoptimized
+        preload
+        fetchPriority="high"
+        quality={88}
         sizes="(max-width: 1080px) 100vw, 46vw"
       />
       <video
@@ -104,7 +105,7 @@ export default function CommerceHeroMedia({
         onPlaying={() => setIsPlaying(true)}
       >
         <source
-          src="/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4"
+          src="/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4"
           type="video/mp4"
           media="(min-width: 641px) and (prefers-reduced-motion: no-preference)"
         />
@@ -112,7 +113,7 @@ export default function CommerceHeroMedia({
       <div className="commerce-hero-shade" />
 
       <div className="commerce-hero-stamp" aria-hidden="true">
-        <Image src="/brand/rdr-emblem.webp" alt="" width={40} height={40} />
+        <Image src="/brand/rdr-emblem.webp" alt="" width={40} height={40} style={{ width: 40, height: 40 }} />
         <span>FUTURE READY<br />EXECUTIVE MBA</span>
       </div>
 

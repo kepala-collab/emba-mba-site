@@ -472,7 +472,7 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   expect(columns).toBe(1);
   await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
   );
 });
 
@@ -490,7 +490,7 @@ test("programme introduction keeps a visible text alternative beside the leaders
   await expect(media).toBeVisible();
   await expect(media.locator("video source")).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
   );
   await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
 });
@@ -777,9 +777,11 @@ test("home hero presents the leadership film inside an accessible editorial fram
   await expect(media).toBeVisible();
   await expect(media.locator("video source")).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
   );
-  await expect(media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]')).toBeVisible();
+  const poster = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  await expect(poster).toBeVisible();
+  await expect(poster).toHaveAttribute("fetchpriority", "high");
   await expect(media.locator("figcaption")).toBeVisible();
   await expect(media.getByRole("button", { name: /(?:Pause|Play) video/ })).toBeVisible();
 });

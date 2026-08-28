@@ -13,7 +13,7 @@ const displaySerif = Source_Serif_4({
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
 const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], display: "optional", adjustFontFallback: true });
-const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "optional", adjustFontFallback: true });
+const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["500", "600"], display: "optional", adjustFontFallback: true });
 
 export const metadata = ROOT_METADATA;
 export const viewport: Viewport = { themeColor: "#F7FBFF", colorScheme: "light", viewportFit: "cover" };
