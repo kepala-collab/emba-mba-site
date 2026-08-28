@@ -29,10 +29,18 @@ const heroVideoPath = resolve(
   "public",
   "media",
   "future-commerce",
-  "future-ready-emba-leadership-hero-v4.mp4",
+  "future-ready-emba-leadership-hero-v6.mp4",
+);
+const heroWebmPath = resolve(
+  process.cwd(),
+  "public",
+  "media",
+  "future-commerce",
+  "future-ready-emba-leadership-hero-v6.webm",
 );
 const heroVideo = readFileSync(heroVideoPath);
 const heroVideoBytes = statSync(heroVideoPath).size;
+const heroWebmBytes = statSync(heroWebmPath).size;
 const heroAtoms = [];
 let heroAtomOffset = 0;
 
@@ -47,6 +55,7 @@ while (heroAtomOffset + 8 <= heroVideo.length) {
 const moovIndex = heroAtoms.indexOf("moov");
 const mdatIndex = heroAtoms.indexOf("mdat");
 if (heroVideoBytes > 1_000_000) failures.push(`Hero video exceeds the 1 MB performance budget: ${heroVideoBytes} bytes`);
+if (heroWebmBytes > 900_000) failures.push(`Hero WebM exceeds the 900 KB performance budget: ${heroWebmBytes} bytes`);
 if (moovIndex < 0 || mdatIndex < 0 || moovIndex > mdatIndex) {
   failures.push("Hero video is not fast-start enabled (the moov atom must precede mdat)");
 }

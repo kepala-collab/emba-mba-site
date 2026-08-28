@@ -470,9 +470,14 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
-  await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute(
+  const heroSources = page.locator(".commerce-hero-media video source");
+  await expect(heroSources.first()).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v6.webm",
+  );
+  await expect(heroSources.nth(1)).toHaveAttribute(
+    "src",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4",
   );
 });
 
@@ -487,11 +492,19 @@ test("mobile Apply presents the form immediately after its introduction", async 
 test("programme introduction keeps a visible text alternative beside the leadership film", async ({ page }) => {
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
+  const video = media.locator("video");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source")).toHaveAttribute(
+  await expect(video.locator("source").first()).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v6.webm",
   );
+  await expect(video.locator("source").nth(1)).toHaveAttribute(
+    "src",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4",
+  );
+  await expect.poll(() => video.evaluate((element) => (element as HTMLVideoElement).readyState)).toBeGreaterThanOrEqual(3);
+  await expect.poll(() => video.evaluate((element) => (element as HTMLVideoElement).currentTime)).toBeGreaterThan(0);
+  expect(await video.evaluate((element) => (element as HTMLVideoElement).playbackRate)).toBe(1);
   await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
 });
 
@@ -775,9 +788,13 @@ test("home hero presents the leadership film inside an accessible editorial fram
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source")).toHaveAttribute(
+  await expect(media.locator("video source").first()).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v6.webm",
+  );
+  await expect(media.locator("video source").nth(1)).toHaveAttribute(
+    "src",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4",
   );
   const poster = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
   await expect(poster).toBeVisible();
