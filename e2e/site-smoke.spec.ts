@@ -632,6 +632,25 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
   )).toBe(1);
 });
 
+test("content pages defer assistant Turnstile until the assistant is opened", async ({ page }) => {
+  await goto(page, "/curriculum");
+  await dismissConsent(page);
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(0);
+  await page.getByRole("button", { name: /Ask the programme assistant/i }).click();
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(1);
+});
+
+test("home defers lead-form Turnstile until the decision form approaches the viewport", async ({ page }) => {
+  await mockTurnstile(page);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await goto(page, "/home");
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(0);
+  const form = page.locator('form[data-form-location="home-decision"]');
+  await form.scrollIntoViewIfNeeded();
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(1);
+  await expect(form.locator("[data-widget-id]")).toBeVisible();
+});
+
 test("lead form keeps the existing submit flow behind a Turnstile token", async ({ page }) => {
   await mockTurnstile(page);
   await page.route("**/api/lead", async (route) => {
@@ -840,7 +859,7 @@ test("Turnstile switches to its compact layout instead of clipping on a 320px fo
 
 test("home hero keeps its copy and media aligned across desktop widths", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
-  for (const width of [1024, 1280, 1440, 1920]) {
+  for (const width of [900, 1024, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: width >= 1440 ? 900 : 800 });
     await goto(page, "/home");
     await page.evaluate(() => document.fonts.ready);
@@ -848,7 +867,7 @@ test("home hero keeps its copy and media aligned across desktop widths", async (
     const media = await page.locator(".commerce-hero-media").boundingBox();
     expect(copy, `${width}px copy`).not.toBeNull();
     expect(media, `${width}px media`).not.toBeNull();
-    if (width <= 1080) {
+    if (width < 960) {
       expect(media?.y || 0, `${width}px stacked media position`).toBeGreaterThan((copy?.y || 0) + (copy?.height || 0));
     } else {
       expect(Math.abs((copy?.y || 0) - (media?.y || 0)), `${width}px top alignment`).toBeLessThanOrEqual(150);

@@ -354,20 +354,22 @@ export default function ProgrammeAssistant() {
 
   return (
     <>
-      <Script
-        id="cloudflare-turnstile"
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-        strategy="afterInteractive"
-        data-action="turnstile-spin-v1"
-        onReady={() => {
-          setTurnstileScriptReady(true);
-          trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_ready" });
-        }}
-        onError={() => {
-          setTurnstileScriptReady(false);
-          trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_error" });
-        }}
-      />
+      {open && (
+        <Script
+          id="cloudflare-turnstile"
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="lazyOnload"
+          data-action="turnstile-spin-v1"
+          onReady={() => {
+            setTurnstileScriptReady(true);
+            trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_ready" });
+          }}
+          onError={() => {
+            setTurnstileScriptReady(false);
+            trackEvent("turnstile_widget", { verification_surface: "programme_assistant", verification_state: "script_error" });
+          }}
+        />
+      )}
       <button
         ref={launcherRef}
         className={`programme-assistant-launcher${obstructionVisible || !persistentActionsVisible ? " is-suppressed" : ""}`}

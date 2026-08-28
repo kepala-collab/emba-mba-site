@@ -33,22 +33,6 @@ const STAGES = [
   },
 ];
 
-// Truthful, plain-English one-line benefits, indexed to MODULES order (M01–M12).
-const BENEFIT: Record<string, string> = {
-  M01: "Analyse an organisation as a value-creation system.",
-  M02: "Define the customer need, alternatives and evidence of value.",
-  M03: "Examine external signals, plausible change and strategic implications.",
-  M04: "Identify the business issues that require strategic attention and define why they matter.",
-  M05: "Develop strategy across the four dimensions defined by the 4D method.",
-  M06: "Turn strategy into a sequenced, accountable action plan.",
-  M07: "Select a leadership response according to the situation and team needs.",
-  M08: "Plan team interventions with a defined purpose, process and review point.",
-  M09: "Map relationships between functions, decisions and business results.",
-  M10: "Plan the people, process and review stages of organisational change.",
-  M11: "Plan influence according to the stakeholder, decision and evidence required.",
-  M12: "Engage the full ecosystem of stakeholders around a shared outcome.",
-};
-
 export default function CurriculumPage() {
   return (
     <>
@@ -61,14 +45,13 @@ export default function CurriculumPage() {
           </Reveal>
           <Reveal>
             <h1 style={{ fontSize: "clamp(2.3rem,5vw,3.8rem)", letterSpacing: "-.02em", lineHeight: 1.06, maxWidth: "18ch" }}>
-              Twelve modules for <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>business-wide decision-making</em>.
+              Twelve modules. One integrated <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>leadership journey</em>.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub" style={{ maxWidth: "56ch" }}>
-              Twelve applied modules across three stages of value, delivered in{" "}
-              <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b> — no exam, no thesis. You apply them to a real
-              problem in your own business and leave with a transformation plan reviewed by faculty.
+              A <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b> executive programme combining the F.A.S.T.
+              methodology with practical learning, coaching and a business-driven capstone — no exam, no thesis.
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -106,15 +89,15 @@ export default function CurriculumPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The framework library · M01–M12</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Twelve modules organised around value and execution.</h2></Reveal>
-          <Reveal><p className="sec-sub">The modules progress from defining value to planning delivery, leadership and stakeholder engagement.</p></Reveal>
+          <Reveal><h2 className="sec-h">Twelve modules. One integrated leadership journey.</h2></Reveal>
+          <Reveal><p className="sec-sub">From sensing the business landscape to building trust and influence across the stakeholder ecosystem.</p></Reveal>
           <Reveal className="mt-m">
             <div className="mods">
               {MODULES.map((m) => (
                 <div key={m.c} className="m">
                   <div className="c">{m.c}</div>
-                  <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.02rem", color: "var(--ink)" }}>{m.p}</p>
-                  <p style={{ color: "var(--muted)", fontSize: ".82rem" }}>{BENEFIT[m.c]}</p>
+                  <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.02rem", color: "var(--ink)" }}>{m.title}</p>
+                  <p style={{ color: "var(--muted)", fontSize: ".82rem" }}>{m.outcome}</p>
                 </div>
               ))}
             </div>

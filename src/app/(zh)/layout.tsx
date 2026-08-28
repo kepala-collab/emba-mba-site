@@ -8,12 +8,13 @@ import { ROOT_METADATA } from "@/lib/root-metadata";
 const displaySerif = Source_Serif_4({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
+  adjustFontFallback: true,
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
-const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], display: "swap" });
-const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap" });
-const notoSansSc = Noto_Sans_SC({ variable: "--font-noto-sans-sc", weight: "variable", display: "swap", preload: false, fallback: ["Microsoft YaHei", "PingFang SC", "sans-serif"] });
+const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], display: "optional", adjustFontFallback: true });
+const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "optional", adjustFontFallback: true });
+const notoSansSc = Noto_Sans_SC({ variable: "--font-noto-sans-sc", weight: "variable", display: "optional", preload: false, adjustFontFallback: true, fallback: ["Microsoft YaHei", "PingFang SC", "sans-serif"] });
 
 export const metadata = ROOT_METADATA;
 export const viewport: Viewport = { themeColor: "#F7FBFF", colorScheme: "light", viewportFit: "cover" };

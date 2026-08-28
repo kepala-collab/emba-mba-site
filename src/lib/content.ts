@@ -221,19 +221,19 @@ export const CMI_PATHWAY = {
 } as const;
 
 export const MODULES = [
-  { c: "M01", p: "F.A.S.T. structured decision method" },
-  { c: "M02", p: "Identify the value customers need" },
-  { c: "M03", p: "Anticipate market and industry change" },
-  { c: "M04", p: "Define the critical business issue" },
-  { c: "M05", p: "Shape strategic direction with 4D" },
-  { c: "M06", p: "Turn strategy into an action plan" },
-  { c: "M07", p: "Lead people through change" },
-  { c: "M08", p: "Facilitate team problem-solving" },
-  { c: "M09", p: "Understand the business as a system" },
-  { c: "M10", p: "Build a BOLT implementation plan" },
-  { c: "M11", p: "Communicate and influence decisions" },
-  { c: "M12", p: "Align the stakeholder ecosystem" },
-];
+  { c: "M01", title: "Future Foresight", outcome: "Sense the business landscape" },
+  { c: "M02", title: "JTBD", outcome: "Customer-centred innovation and growth" },
+  { c: "M03", title: "F.A.S.T. Methodology", outcome: "Adaptive systems-based thinking" },
+  { c: "M04", title: "Critical Issues", outcome: "Problems and opportunities" },
+  { c: "M05", title: "Strategic DNA", outcome: "4D Strategic Crafting" },
+  { c: "M06", title: "SBAP", outcome: "Strategic Business Action Planning" },
+  { c: "M07", title: "Transformational Leadership", outcome: "Principled and situational" },
+  { c: "M08", title: "Team Intervention", outcome: "Coaching for acceleration" },
+  { c: "M09", title: "Integrated Systems", outcome: "Systems perspective and review" },
+  { c: "M10", title: "Organisation Transformation", outcome: "BOLT leadership" },
+  { c: "M11", title: "Influence by Design", outcome: "Strategic presence and precision" },
+  { c: "M12", title: "Stakeholder Ecosystem", outcome: "Trust and influence networks" },
+] as const;
 
 export type Faculty = { n: string; r: string; focus: string; b: string; img: string };
 export const FACULTY: Faculty[] = [

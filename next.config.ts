@@ -90,6 +90,15 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Next.js fingerprints these generated assets in their filenames, so
+        // browsers and the CDN can safely retain them across repeat visits.
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "CDN-Cache-Control", value: "public, s-maxage=31536000, immutable" },
+        ],
+      },
+      {
         source: "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },

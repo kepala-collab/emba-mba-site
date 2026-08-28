@@ -38,7 +38,11 @@ const courseSchema = {
   inLanguage: "en-MY",
   educationalCredentialAwarded: "Programme certificate recognised against CMI Professional Standards",
   timeRequired: "P6M",
-  syllabusSections: MODULES.map((module) => ({ "@type": "Syllabus", name: module.p })),
+  syllabusSections: MODULES.map((module) => ({
+    "@type": "Syllabus",
+    name: module.title,
+    description: module.outcome,
+  })),
 };
 
 const AUDIENCE = [
@@ -206,12 +210,18 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">Curriculum</p>
-              <h2 className="sec-h">Twelve modules applied to one business project.</h2>
-              <p>The modules cover problem definition, strategic planning, leadership, systems, transformation and stakeholder alignment.</p>
+              <h2 className="sec-h">Twelve modules. One integrated leadership journey.</h2>
+              <p>Move from future foresight and customer-centred innovation to transformation, influence and stakeholder trust.</p>
             </div>
           </Reveal>
           <Reveal className="mt-m"><div className="mods programme-module-grid">
-            {MODULES.map((module) => <div key={module.c} className="m"><div className="c">{module.c}</div><p>{module.p}</p></div>)}
+            {MODULES.map((module) => (
+              <div key={module.c} className="m">
+                <div className="c">{module.c}</div>
+                <p><strong>{module.title}</strong></p>
+                <p className="module-outcome">{module.outcome}</p>
+              </div>
+            ))}
           </div></Reveal>
           <Reveal className="mt-s"><Link href="/curriculum" className="btn btn-ghost">See module details and learning outcomes <span aria-hidden="true">→</span></Link></Reveal>
         </div>

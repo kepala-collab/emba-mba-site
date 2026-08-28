@@ -356,6 +356,7 @@ export default function LeadForm({
   const [turnstileLoadError, setTurnstileLoadError] = useState(false);
   const [emailDraft, setEmailDraft] = useState("");
   const [turnstileScriptReady, setTurnstileScriptReady] = useState(false);
+  const [turnstileRequested, setTurnstileRequested] = useState(false);
   const [turnstileSize, setTurnstileSize] = useState<TurnstileSize>("flexible");
   const turnstileContainer = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
@@ -404,6 +405,18 @@ export default function LeadForm({
   });
 
   useEffect(() => {
+    const form = formElement.current;
+    if (!form || step !== 2 || turnstileRequested) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      setTurnstileRequested(true);
+      observer.disconnect();
+    }, { threshold: 0.01, rootMargin: "240px 0px" });
+    observer.observe(form);
+    return () => observer.disconnect();
+  }, [step, turnstileRequested]);
+
+  useEffect(() => {
     const container = turnstileContainer.current;
     if (!container || step !== 2) return;
     const updateSize = (width: number) => setTurnstileSize(width < 300 ? "compact" : "flexible");
@@ -417,7 +430,7 @@ export default function LeadForm({
   }, [step]);
 
   useEffect(() => {
-    if (step !== 2) return;
+    if (step !== 2 || !turnstileRequested) return;
     let cancelled = false;
     let retryTimer: number | undefined;
     let attempts = 0;
@@ -481,7 +494,7 @@ export default function LeadForm({
       }
       turnstileWidgetId.current = null;
     };
-  }, [step, turnstileScriptReady, turnstileSize]);
+  }, [step, turnstileRequested, turnstileScriptReady, turnstileSize]);
 
   function markStarted() {
     if (formStarted.current) return;
@@ -645,18 +658,24 @@ export default function LeadForm({
       ref={formElement}
       className={`form lead-form-progressive${campaign ? " lead-form-campaign" : ""}${compactMode ? " lead-form-compact" : ""}`}
       onSubmit={onSubmit}
-      onFocusCapture={markStarted}
+      onFocusCapture={() => {
+        markStarted();
+        if (step === 2) setTurnstileRequested(true);
+      }}
+      onPointerDownCapture={() => {
+        if (step === 2) setTurnstileRequested(true);
+      }}
       aria-busy={status === "sending"}
       data-form-id={formId}
       data-form-source={source}
       data-form-location={placement}
       data-programme={programme}
     >
-      {step === 2 && (
+      {step === 2 && turnstileRequested && (
         <Script
           id="cloudflare-turnstile"
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           data-action="turnstile-spin-v1"
           onReady={() => {
             setTurnstileScriptReady(true);

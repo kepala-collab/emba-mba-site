@@ -1,4 +1,19 @@
-import { FACULTY, INTAKES, MODULES } from "@/lib/content";
+import { FACULTY, INTAKES } from "@/lib/content";
+
+const MODULES_MS = [
+  { c: "M01", title: "Tinjauan Masa Hadapan", outcome: "Membaca landskap perniagaan" },
+  { c: "M02", title: "JTBD", outcome: "Inovasi dan pertumbuhan berpusatkan pelanggan" },
+  { c: "M03", title: "Metodologi F.A.S.T.", outcome: "Pemikiran adaptif berasaskan sistem" },
+  { c: "M04", title: "Isu Kritikal", outcome: "Masalah dan peluang" },
+  { c: "M05", title: "DNA Strategik", outcome: "Pembentukan Strategi 4D" },
+  { c: "M06", title: "SBAP", outcome: "Perancangan Tindakan Perniagaan Strategik" },
+  { c: "M07", title: "Kepimpinan Transformasional", outcome: "Berprinsip dan mengikut situasi" },
+  { c: "M08", title: "Intervensi Pasukan", outcome: "Bimbingan untuk pecutan" },
+  { c: "M09", title: "Sistem Bersepadu", outcome: "Perspektif sistem dan semakan" },
+  { c: "M10", title: "Transformasi Organisasi", outcome: "Kepimpinan BOLT" },
+  { c: "M11", title: "Pengaruh melalui Reka Bentuk", outcome: "Kehadiran dan ketepatan strategik" },
+  { c: "M12", title: "Ekosistem Pihak Berkepentingan", outcome: "Rangkaian kepercayaan dan pengaruh" },
+] as const;
 
 export const HRD_CORP_CLAIM_MS =
   "Majikan Malaysia yang berdaftar dengan HRD Corp perlu mengemukakan permohonan geran melalui e-TRiS sebelum kursus bermula. HRD Corp menentukan kelayakan dan jumlah yang diluluskan berdasarkan Allowable Cost Matrix; jumlah pembiayaan tidak melebihi baki levi majikan. Pihak yang memohon ialah majikan, bukan peserta.";
@@ -50,13 +65,13 @@ export const CORE_PAGES_MS = {
   },
   curriculum: {
     eyebrow: "Kurikulum · 12 modul",
-    title: "Daripada mencipta nilai, kepada menyampaikan dan memperoleh nilai",
-    intro: "Dua belas modul aplikasi merentasi tiga peringkat — bengkel, bimbingan peribadi dan projek perniagaan — tanpa peperiksaan dan tanpa tesis. Anda menggunakannya terhadap isu sebenar perniagaan anda, dan menamatkan kursus dengan pelan transformasi yang dinilai fasilitator.",
+    title: "Dua belas modul. Satu perjalanan kepimpinan bersepadu",
+    intro: "Program eksekutif enam bulan yang menggabungkan metodologi F.A.S.T. dengan pembelajaran praktikal, bimbingan dan projek kemuncak berasaskan perniagaan — tanpa peperiksaan dan tanpa tesis.",
     sections: [
       ["Peringkat 1: Mencipta nilai", "Melalui F.A.S.T., Jobs-To-Be-Done, tinjauan masa hadapan, DNA strategi dan perancangan tindakan, takrifkan semula nilai pelanggan dan hala tuju perniagaan."],
       ["Peringkat 2: Menyampaikan nilai", "Melalui kepimpinan situasi, intervensi pasukan, pemikiran sistem dan pengurusan transformasi, terjemahkan strategi kepada tingkah laku pasukan dan mekanisme pelaksanaan."],
       ["Peringkat 3: Membentuk pelan tindakan", "Gunakan reka bentuk pengaruh, hubungan pihak berkepentingan dan analisis sistem perniagaan untuk menyiapkan pelan tindakan perniagaan yang dinilai fasilitator."],
-      ["Dua belas modul", MODULES.map((module) => `${module.c} ${module.p}`).join("; ")],
+      ["Dua belas modul", MODULES_MS.map((module) => `${module.c} ${module.title} — ${module.outcome}`).join("; ")],
       ["Kaedah penilaian", "Tiada peperiksaan atau tesis tradisional. Penilaian berasaskan penyertaan dalam sesi, proses bimbingan dan satu projek yang berkait terus dengan perniagaan peserta."],
     ],
   },

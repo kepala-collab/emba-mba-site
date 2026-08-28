@@ -1,4 +1,19 @@
-import { FACULTY, INTAKES, MODULES } from "@/lib/content";
+import { FACULTY, INTAKES } from "@/lib/content";
+
+const MODULES_ZH = [
+  { c: "M01", title: "未来前瞻", outcome: "洞察商业格局" },
+  { c: "M02", title: "JTBD 待办任务理论", outcome: "以客户为中心的创新与增长" },
+  { c: "M03", title: "F.A.S.T. 方法论", outcome: "自适应系统思维" },
+  { c: "M04", title: "关键议题", outcome: "问题与机会" },
+  { c: "M05", title: "战略 DNA", outcome: "4D 战略构建" },
+  { c: "M06", title: "SBAP", outcome: "战略商业行动规划" },
+  { c: "M07", title: "转型领导力", outcome: "原则性与情境性" },
+  { c: "M08", title: "团队介入", outcome: "以辅导加速发展" },
+  { c: "M09", title: "整合系统", outcome: "系统视角与检视" },
+  { c: "M10", title: "组织转型", outcome: "BOLT 领导力" },
+  { c: "M11", title: "影响力设计", outcome: "战略存在感与精准度" },
+  { c: "M12", title: "利益相关者生态系统", outcome: "信任与影响力网络" },
+] as const;
 
 export const HRD_CORP_CLAIM_ZH =
   "HRD Corp 注册马来西亚雇主须在开课前通过 e-TRiS 提交 grant 申请。HRD Corp 依据 Allowable Cost Matrix 决定资格及批准金额；资助金额不会超过雇主可用 levy 余额。申请方是雇主，不是学员。";
@@ -50,13 +65,13 @@ export const CORE_PAGES_ZH = {
   },
   curriculum: {
     eyebrow: "课程大纲 · 12 个模块",
-    title: "从创造价值，到交付与获取价值",
-    intro: "十二个应用模块，分为工作坊学习、个人辅导及企业项目三个阶段——没有考试，没有论文。你把它们用在自己企业的真实课题上，最终提交一份经导师评审的转型方案。",
+    title: "十二个模块，一段完整连贯的领导力旅程",
+    intro: "六个月高管课程，结合 F.A.S.T. 方法论、实践学习、辅导及企业驱动的结业项目——没有考试，没有论文。",
     sections: [
       ["阶段一：创造价值", "通过 F.A.S.T.、Jobs-To-Be-Done、未来洞察、战略 DNA 与行动规划，重新定义客户价值和企业方向。"],
       ["阶段二：交付价值", "通过情境领导、团队介入、系统思维及转型管理，把战略转化为团队行为与执行机制。"],
       ["阶段三：形成行动方案", "运用影响力设计、利益相关者关系及企业系统分析，完成供导师评审的企业行动方案。"],
-      ["十二个模块", MODULES.map((module) => `${module.c} ${module.p}`).join("；")],
+      ["十二个模块", MODULES_ZH.map((module) => `${module.c} ${module.title}——${module.outcome}`).join("；")],
       ["评估方式", "没有传统考试或论文。评估以课堂参与、辅导过程和一个与学员企业直接相关的项目为基础。"],
     ],
   },
