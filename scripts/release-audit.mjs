@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { extname, relative, resolve } from "node:path";
 
 const root = resolve(process.cwd(), ".next", "server", "app");
@@ -23,6 +23,33 @@ const failures = [];
 let jsonLdCount = 0;
 let indexedCount = 0;
 const longDescriptions = [];
+
+const heroVideoPath = resolve(
+  process.cwd(),
+  "public",
+  "media",
+  "future-commerce",
+  "future-ready-emba-leadership-hero-v3.mp4",
+);
+const heroVideo = readFileSync(heroVideoPath);
+const heroVideoBytes = statSync(heroVideoPath).size;
+const heroAtoms = [];
+let heroAtomOffset = 0;
+
+while (heroAtomOffset + 8 <= heroVideo.length) {
+  const atomSize = heroVideo.readUInt32BE(heroAtomOffset);
+  const atomType = heroVideo.toString("ascii", heroAtomOffset + 4, heroAtomOffset + 8);
+  heroAtoms.push(atomType);
+  if (atomSize < 8) break;
+  heroAtomOffset += atomSize;
+}
+
+const moovIndex = heroAtoms.indexOf("moov");
+const mdatIndex = heroAtoms.indexOf("mdat");
+if (heroVideoBytes > 1_000_000) failures.push(`Hero video exceeds the 1 MB performance budget: ${heroVideoBytes} bytes`);
+if (moovIndex < 0 || mdatIndex < 0 || moovIndex > mdatIndex) {
+  failures.push("Hero video is not fast-start enabled (the moov atom must precede mdat)");
+}
 
 for (const [route, html] of pageMap) {
   if (route === "/_not-found" || route === "/_global-error") continue;

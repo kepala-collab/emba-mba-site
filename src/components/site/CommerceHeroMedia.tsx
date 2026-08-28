@@ -104,7 +104,7 @@ export default function CommerceHeroMedia({
         onPlaying={() => setIsPlaying(true)}
       >
         <source
-          src="/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4"
+          src="/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4"
           type="video/mp4"
           media="(min-width: 641px) and (prefers-reduced-motion: no-preference)"
         />

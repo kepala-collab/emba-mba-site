@@ -472,7 +472,7 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   expect(columns).toBe(1);
   await expect(page.locator(".commerce-hero-media video source")).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
   );
 });
 
@@ -490,7 +490,7 @@ test("programme introduction keeps a visible text alternative beside the leaders
   await expect(media).toBeVisible();
   await expect(media.locator("video source")).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
   );
   await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
 });
@@ -758,7 +758,7 @@ test("home hero presents the leadership film inside an accessible editorial fram
   await expect(media).toBeVisible();
   await expect(media.locator("video source")).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v2.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v3.mp4",
   );
   await expect(media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]')).toBeVisible();
   await expect(media.locator("figcaption")).toBeVisible();
