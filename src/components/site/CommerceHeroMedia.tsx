@@ -83,7 +83,8 @@ export default function CommerceHeroMedia({
         src="/media/future-commerce/hero-leader-poster.webp"
         alt={alt}
         fill
-        priority
+        loading="eager"
+        fetchPriority="high"
         quality={88}
         sizes="(max-width: 1080px) 100vw, 46vw"
       />

@@ -60,7 +60,7 @@ export default function Page() {
             </h1>
             <ArticleAttribution lang="zh" />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              产品做得再精致，也可能对准了错误的问题。设计思维正是为化解这个风险而生——
+              产品再精致，若对准了错误的问题，也无济于事。设计思维正是为化解这个风险而生——
               它以人为本、小步快跑，从客户的真实需求出发，而非从内部的想当然出发；
               把每一个想法都当作有待验证的假设，而不是急于捍卫的结论。
             </p>

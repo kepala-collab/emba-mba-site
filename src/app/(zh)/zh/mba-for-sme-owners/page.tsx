@@ -92,7 +92,7 @@ export default function MbaForSmeOwnersZhPage() {
             <span className="mono sec-k">运作指标</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">企业主依赖，通常藏在这些环节里。</h2>
+            <h2 className="sec-h">企业主依赖，藏在这些环节里。</h2>
           </Reveal>
           <p className="sec-sub">
             对照这些迹象，判断您的应用项目该先攻克哪一处运作瓶颈。

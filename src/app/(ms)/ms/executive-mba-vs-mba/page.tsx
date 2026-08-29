@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/executive-mba-vs-mba", {
   title: "Executive MBA vs MBA Akademik",
   description:
-    "Bandingkan Executive MBA profesional Future Ready dengan MBA akademik — dari segi format, penilaian, kelayakan dan komitmen masa — untuk pilih laluan yang benar-benar sesuai dengan matlamat anda.",
+    "Bandingkan Executive MBA profesional Future Ready dengan MBA akademik dari segi format, penilaian, kelayakan dan komitmen masa sebelum memilih laluan.",
 });
 
 const COMPARISON_SCOPE_MS =

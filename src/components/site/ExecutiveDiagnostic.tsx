@@ -307,7 +307,7 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
       {complete ? (
         <div ref={resultRef} className="diagnostic-result">
           <p className="mono sec-k">{copy.resultEyebrow}</p>
-          <h2 tabIndex={-1} style={{ outline: "none" }}>{copy.resultTitle}</h2>
+          <h2 tabIndex={-1}>{copy.resultTitle}</h2>
           <p>{copy.resultBody}</p>
           <h3 className="diagnostic-result-label">{copy.selected}</h3>
           <ol className="diagnostic-answer-list">

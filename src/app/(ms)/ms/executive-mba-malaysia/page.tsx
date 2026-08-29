@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/executive-mba-malaysia", {
   title: "Executive MBA Malaysia untuk Pemimpin yang Bekerja",
   description:
-    "Program eksekutif enam bulan di Malaysia untuk pemimpin yang terus bekerja — pembelajaran yang diterapkan pada kerja sebenar, pengiktirafan CMI dan laluan pembiayaan HRD Corp yang diterajui majikan.",
+    "Program enam bulan di Malaysia untuk pemimpin yang terus bekerja, dengan aplikasi pada kerja sebenar, pengiktirafan CMI dan pembiayaan HRD Corp yang diterajui majikan.",
 });
 
 const REASONS = [

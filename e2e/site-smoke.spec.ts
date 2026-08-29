@@ -313,9 +313,9 @@ test("CMI recognition pages keep technical terms legible and the offer unambiguo
   await expect(page.getByText(/£|USD 2,500/)).toHaveCount(0);
 
   await goto(page, "/zh/chartered-manager-malaysia");
-  await expect(page.getByRole("heading", { name: "让实际管理成果获得专业认可。" })).toBeVisible();
-  await page.locator("details").filter({ hasText: "完成课程后会自动成为 Chartered Manager 吗？" }).locator("summary").click();
-  await expect(page.getByText(/Chartered Manager 为独立可选路线/).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "让真实的管理成果，获得专业认可。" })).toBeVisible();
+  await page.locator("details").filter({ hasText: "结业后会自动成为 Chartered Manager 吗？" }).locator("summary").click();
+  await expect(page.getByText(/Chartered Manager 是一条独立可选的 CMI 路线/).first()).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.fonts.status)).toBe("loaded");
 });
 
@@ -541,16 +541,15 @@ test("web fonts load and technical terms avoid malformed display glyphs", async 
   await goto(page, "/home");
   const englishFonts = await page.evaluate(async () => {
     await document.fonts.ready;
-    const root = getComputedStyle(document.documentElement);
-    const primaryFamily = (variable: string) => root.getPropertyValue(variable).trim().split(",")[0];
     const body = getComputedStyle(document.body).fontFamily;
     const heading = getComputedStyle(document.querySelector("h1,h2,h3") as HTMLElement).fontFamily;
+    const primaryFamily = (family: string) => family.split(",")[0].trim();
     return {
       status: document.fonts.status,
       body,
       heading,
-      sansLoaded: document.fonts.check(`16px ${primaryFamily("--font-archivo")}`),
-      serifLoaded: document.fonts.check(`32px ${primaryFamily("--font-fraunces")}`),
+      sansLoaded: document.fonts.check(`16px ${primaryFamily(body)}`),
+      serifLoaded: document.fonts.check(`32px ${primaryFamily(heading)}`),
       malformed: document.body.innerText.includes("\uFFFD"),
     };
   });
@@ -569,11 +568,11 @@ test("web fonts load and technical terms avoid malformed display glyphs", async 
   await goto(page, "/zh");
   const chineseFonts = await page.evaluate(async () => {
     await document.fonts.ready;
-    const root = getComputedStyle(document.documentElement);
-    const primaryFamily = root.getPropertyValue("--font-noto-sans-sc").trim().split(",")[0];
+    const body = getComputedStyle(document.body).fontFamily;
+    const primaryFamily = body.split(",")[0].trim();
     return {
       status: document.fonts.status,
-      body: getComputedStyle(document.body).fontFamily,
+      body,
       loaded: document.fonts.check(`16px ${primaryFamily}`),
       malformed: document.body.innerText.includes("\uFFFD"),
     };
