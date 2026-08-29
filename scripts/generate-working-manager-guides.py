@@ -307,5 +307,8 @@ SUPPLEMENTAL_GUIDES = [
     ),
 ]
 
-for locale, copy in SUPPLEMENTAL_GUIDES:
-    build(locale, copy)
+# NOTE: The decision, employer and scholarship guides (all languages) are now
+# produced by generate-lead-magnet-pdfs.py with distinct, deeper content
+# (comparison table, FAQ, per-document sections). This generator builds only the
+# working-managers guide above, so the two do not overwrite each other.
+# SUPPLEMENTAL_GUIDES is retained for reference and intentionally not built.
