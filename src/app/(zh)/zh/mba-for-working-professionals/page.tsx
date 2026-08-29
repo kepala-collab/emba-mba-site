@@ -10,9 +10,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-working-professionals", {
-  title: "面向在职专业人士的兼读Executive MBA",
+  title: "面向在职专业人士的兼读 Executive MBA",
   description:
-    "一边全职工作，一边进修：为期六个月的Executive MBA，专为在职专业人士打造，三个指定周末授课，也可全程线上。",
+    "一边全职工作，一边进修：为期六个月的 Executive MBA，专为在职专业人士打造，三个指定周末授课，也可全程线上。",
 });
 
 const jsonLd = {
@@ -21,7 +21,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "由 CMI 颁授并背书的Executive MBA，六个月内分三个指定课程进行，另设线上选项。",
+    "由 CMI 颁授并背书的 Executive MBA，六个月内分三个指定课程进行，另设线上选项。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -67,7 +67,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
             </div>
             <Reveal>
               <h1 className="sec-h">
-                为<span className="acc">不离开现有岗位</span>的专业人士量身安排的兼读Executive MBA 时间表。
+                为<span className="acc">不离开现有岗位</span>的专业人士量身安排的兼读 Executive MBA 时间表。
               </h1>
             </Reveal>
             <p className="sec-sub">
@@ -148,7 +148,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
                 <thead>
                   <tr>
                     <th></th>
-                    <th className="us">本Executive MBA</th>
+                    <th className="us">本 Executive MBA</th>
                     <th>参考型学术 MBA</th>
                   </tr>
                 </thead>

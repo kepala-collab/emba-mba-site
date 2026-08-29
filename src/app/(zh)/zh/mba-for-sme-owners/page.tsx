@@ -7,9 +7,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-sme-owners", {
-  title: "面向中小企业主及创办人的Executive MBA",
+  title: "面向中小企业主及创办人的 Executive MBA",
   description:
-    "由 CMI 颁授并背书的Executive MBA，六个月分三个课程完成，专为中小企业主打造。",
+    "由 CMI 颁授并背书的 Executive MBA，六个月分三个课程完成，专为中小企业主打造。",
 });
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "由 CMI 颁授并背书的Executive MBA，六个月分三个课程，为中小企业主与创办人开办。",
+    "由 CMI 颁授并背书的 Executive MBA，六个月分三个课程，为中小企业主与创办人开办。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,

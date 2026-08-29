@@ -8,7 +8,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/executive-mba-malaysia", {
-  title: "马来西亚Executive MBA · 为在职领导者而设",
+  title: "马来西亚 Executive MBA · 为在职领导者而设",
   description:
     "六个月高管教育课程，专为马来西亚在职领导者而设：把管理所学落地到日常工作，获 CMI 认可，并有由雇主主导的 HRD Corp 资助途径。",
 });
@@ -76,7 +76,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "24ch" }}>
-              为马来西亚领导者量身打造的Executive MBA。
+              为马来西亚领导者量身打造的 Executive MBA。
             </h1>
           </Reveal>
           <Reveal>
@@ -128,7 +128,7 @@ export default function ExecutiveMbaMalaysiaPage() {
             <Link href="/zh/hrd-corp-claimable">雇主主导的 HRD Corp 资助</Link>。课程完整介绍见{" "}
             <Link href="/zh/executive-mba">Executive MBA</Link> 页面，也可了解{" "}
             <Link href="/zh/chartered-manager-malaysia">马来西亚的 Chartered Manager 路线</Link>。若您正在权衡不同的课程类别，可延伸阅读{" "}
-            <Link href="/zh/insights/executive-education-vs-executive-mba">高管教育与Executive MBA 的比较</Link>。
+            <Link href="/zh/insights/executive-education-vs-executive-mba">高管教育与 Executive MBA 的比较</Link>。
           </p>
         </div>
       </section>

@@ -35,7 +35,7 @@ const STRINGS = {
     cta: CTA_LABELS.conversation,
   },
   zh: {
-    region: `${PROGRAMME_YEAR} 年Executive MBA 开课日期`,
+    region: `${PROGRAMME_YEAR} 年 Executive MBA 开课日期`,
     hint: "左右滑动查看所有日期 →",
     cohort: "班次",
     language: "语言",

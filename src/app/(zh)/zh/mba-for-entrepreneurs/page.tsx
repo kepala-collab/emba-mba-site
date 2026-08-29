@@ -5,7 +5,7 @@ import { CTA_LABELS, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/mba-for-entrepreneurs", {
-  title: "面向创业者及创办人的Executive MBA",
+  title: "面向创业者及创办人的 Executive MBA",
   description:
     "专为创办人打造的六个月专业管理课程，结业即获 CMI 认可的课程证书。",
 });

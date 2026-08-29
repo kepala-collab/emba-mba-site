@@ -40,7 +40,7 @@ const PROGRAMME_EN = [
 const PROGRAMME_ZH = [
   ["01", "CMI（英国）认可", "具有 CMI（英国）Endorsed 及 Recognised status 的六个月专业发展课程；并非学术学位。"],
   ["02", "证书与 fCMgr", "成功完成课程者取得 CMI Certificate of Recognition；根据 CMI 公布的 Recognised 方案，同时取得 Foundation Chartered Manager 身份。"],
-  ["03", "可选下一步：Chartered Manager", "这是一条独立的 CMI 路线，有其资格、评估及费用；不包括在已公布的Executive MBA 课程或学费内。"],
+  ["03", "可选下一步：Chartered Manager", "这是一条独立的 CMI 路线，有其资格、评估及费用；不包括在已公布的 Executive MBA 课程或学费内。"],
   ["04", "CMI 独立决定", "只有在 CMI 确认资格并通过适用评估后，申请人才获授 CMgr MCMI。"],
 ] as const;
 

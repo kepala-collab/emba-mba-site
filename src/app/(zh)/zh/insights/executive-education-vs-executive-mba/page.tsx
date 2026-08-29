@@ -12,7 +12,7 @@ const PUBLISHED = "2026-08-21";
 export const metadata = withSeo("/zh/insights/executive-education-vs-executive-mba", {
   title: "高管教育 vs Executive MBA｜马来西亚",
   description:
-    "从学术地位、资格性质、修读时间、评估方式、课程安排到工作应用，逐项对比高管教育课程与Executive MBA 课程。",
+    "从学术地位、资格性质、修读时间、评估方式、课程安排到工作应用，逐项对比高管教育课程与 Executive MBA 课程。",
   openGraph: {
     type: "article",
     publishedTime: `${PUBLISHED}T16:00:00+08:00`,
@@ -83,14 +83,14 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
               选定之后，务必核实它到底授予什么——不同提供方的资格与学术地位，差别很大。
             </p>
             <p>
-              <Link href="/zh/executive-mba">面向未来商业领导力的Executive MBA</Link>{" "}
+              <Link href="/zh/executive-mba">面向未来商业领导力的 Executive MBA</Link>{" "}
               由 CMI 颁授并背书，是一门为期六个月的专业发展课程。
               顺利结业的学员，将获得本课程的 CMI Certificate of Recognition。
               它并非 MQA 认证的学术学位，也非受监管资格。
             </p>
 
             <h2>公开事实逐项对比</h2>
-            <ScrollableTableRegion kind="comparison" label="高管教育与Executive MBA 对比">
+            <ScrollableTableRegion kind="comparison" label="高管教育与 Executive MBA 对比">
               <table className="cmp">
                 <thead><tr><th>比较项目</th><th>高管教育</th><th>本 Future Ready Executive MBA</th></tr></thead>
                 <tbody>

@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/zh/executive-mba-vs-mba", {
   title: "Executive MBA 与学术 MBA，差别在哪？",
   description:
-    "从修读形式、评估方式、资格性质到时间投入，逐项比较 Future Ready 专业Executive MBA 与学术 MBA。",
+    "从修读形式、评估方式、资格性质到时间投入，逐项比较 Future Ready 专业 Executive MBA 与学术 MBA。",
 });
 
 const COMPARISON_SCOPE_ZH =
@@ -58,7 +58,7 @@ export default function ExecutiveMbaVsMbaPage() {
           <Reveal className="mt-s">
             <p className="fine">
               也在考虑更短的专业课程？可延伸阅读{" "}
-              <Link href="/zh/insights/executive-education-vs-executive-mba" className="acc">高管教育与Executive MBA 的比较</Link>。
+              <Link href="/zh/insights/executive-education-vs-executive-mba" className="acc">高管教育与 Executive MBA 的比较</Link>。
             </p>
           </Reveal>
         </div>
@@ -102,7 +102,7 @@ export default function ExecutiveMbaVsMbaPage() {
             </Reveal>
             <Reveal delay={80}>
               <div className="card" style={{ height: "100%", border: "1px solid var(--line-2)", background: "linear-gradient(180deg,var(--surface-2),var(--surface))" }}>
-                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>这些情况，请选这门Executive MBA</div>
+                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>这些情况，请选这门 Executive MBA</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "var(--ink)" }}>
                   您要的是带企业应用项目、又能兼顾工作的专业课程。
                 </h3>

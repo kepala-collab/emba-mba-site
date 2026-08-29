@@ -6,7 +6,7 @@ import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/ai-executive-mba", {
-  title: "AI 时代的Executive MBA · 领导力课程",
+  title: "AI 时代的 Executive MBA · 领导力课程",
   description:
     "看 Future Ready Executive MBA 如何把决策框架用在 AI 落地、数据研判、流程重构与负责任的执行上。",
 });
