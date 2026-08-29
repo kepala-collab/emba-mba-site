@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.faculty;
 export const metadata = withSeo(path, {
   title: "Fasilitator dan Jurulatih Perniagaan",
   description:
-    "Kenali fasilitator Future Ready Executive MBA: pengamal industri, perunding dan jurulatih dalam strategi, operasi, kewangan, bakat dan perubahan.",
+    "Kenali barisan fasilitator Future Ready Executive MBA: pengamal industri, perunding dan jurulatih dalam strategi, operasi, kewangan, bakat dan pengurusan perubahan.",
 });
 
 export default function Page() {

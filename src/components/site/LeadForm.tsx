@@ -238,7 +238,7 @@ const T = {
       ["details_first", "Maklumat program dahulu", "Hantarkan maklumat program sebelum mengatur panggilan."],
     ] as const,
     cohort: `Kohort ${PROGRAMME_YEAR} pilihan (tidak wajib)`,
-    cohortOpen: "Dibuka untuk pertanyaan",
+    cohortOpen: "Pertanyaan dibuka",
     cohortUnknown: "Saya belum memilih kohort",
     continue: "Teruskan ke maklumat hubungan →",
     campaignContinue: "Teruskan untuk panduan program →",
@@ -248,7 +248,7 @@ const T = {
     campaignBenefits: [
       "Lihat susunan enam bulan dan enam hari latihan",
       "Fahami pengiktirafan CMI dan batas status program",
-      "Bandingkan tarikh, yuran yang diterbitkan dan kriteria biasiswa",
+      "Bandingkan tarikh, yuran yang diterbitkan dan penilaian biasiswa",
     ],
     stepTwoKicker: "Maklumat hubungan anda",
     stepTwoTitle: "Ke mana pasukan program patut membalas?",

@@ -22,7 +22,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Kohort Bahasa Inggeris dan Mandarin 2026</span></div>
             <h1 className="sec-h">Pilih kohort yang sesuai dengan jadual kerja anda.</h1>
-            <p className="sec-sub">Kelima-lima kohort yang diterbitkan diselesaikan melalui tiga sesi hujung minggu dalam tempoh enam bulan. Chartered Manager ialah laluan pilihan CMI yang berasingan dan tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
+            <p className="sec-sub">Kelima-lima kohort yang diterbitkan lengkap dalam tempoh enam bulan menerusi tiga sesi hujung minggu. Chartered Manager ialah laluan pilihan CMI yang berasingan dan tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
             <p className="fine mt-s">Pasukan program mengesahkan kekosongan kohort semasa membalas pertanyaan anda.</p>
           </Reveal>
         </div>

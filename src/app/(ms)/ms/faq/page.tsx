@@ -35,7 +35,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Soalan lazim</span></div>
             <h1 className="sec-h">Jawapan yang anda perlu tahu sebelum mendaftar</h1>
-            <p className="sec-sub">Kelayakan, yuran dan tarikh program adalah berdasarkan maklumat bertulis terkini yang diberikan oleh pasukan program semasa pendaftaran.</p>
+            <p className="sec-sub">Kelayakan, yuran dan tarikh program berpandukan maklumat bertulis terkini daripada pasukan program semasa anda mendaftar.</p>
           </Reveal>
           <Reveal className="mt-s">
             {FAQS_MS.map(([question, answer], index) => (

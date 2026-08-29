@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.method;
 export const metadata = withSeo(path, {
   title: "Kaedah Keputusan Pengurusan F.A.S.T.",
   description:
-    "Lihat bagaimana F.A.S.T. membantu pengurus mentakrifkan masalah perniagaan, menguji andaian, membandingkan pilihan dan membina pelan tindakan yang boleh dilaksanakan.",
+    "Lihat cara F.A.S.T. membantu pengurus mentakrifkan masalah perniagaan, menguji andaian, menimbang pilihan dan membina pelan tindakan yang boleh dilaksanakan.",
 });
 
 export default function Page() {

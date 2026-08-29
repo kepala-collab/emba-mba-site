@@ -37,18 +37,18 @@ const jsonLd = {
 
 export default function MbaForSmeOwnersPage() {
   const challenges = [
-    { h: "Pergantungan operasi", p: "Harga, kelulusan, keputusan pelanggan dan penyelesaian masalah masih bergantung pada pemilik." },
-    { h: "Kapasiti keputusan terhad", p: "Pertumbuhan perniagaan meningkatkan bilangan keputusan lebih pantas daripada yang boleh diproses seorang individu." },
-    { h: "Strategi tanpa masa terlindung", p: "Kerja operasi segera berulang kali mengatasi keutamaan keputusan pasaran, keupayaan dan pelaburan." },
-    { h: "Penggantian yang tidak jelas", p: "Peranan, hak membuat keputusan dan pengetahuan operasi tidak didokumentasikan cukup baik untuk pemindahan kepimpinan." },
-    { h: "Pengurusan reaktif", p: "Pasukan menangani gejala segera tanpa mengubah proses atau insentif yang menghasilkannya." },
+    { h: "Segalanya berbalik kepada pemilik", p: "Soal harga, kelulusan, keputusan pelanggan dan penyelesaian masalah — semuanya masih berbalik kepada pemilik." },
+    { h: "Kapasiti membuat keputusan sudah tepu", p: "Semakin perniagaan berkembang, semakin banyak keputusan terkumpul — lebih pantas daripada yang mampu ditangani seorang individu." },
+    { h: "Tiada ruang waktu untuk strategi", p: "Urusan operasi harian sentiasa mendahului, sehingga keputusan penting tentang pasaran, keupayaan dan pelaburan terus tertangguh." },
+    { h: "Penggantian yang tidak jelas", p: "Peranan, kuasa membuat keputusan dan pengetahuan operasi tidak didokumentasikan dengan cukup rapi untuk diserahkan kepada barisan kepimpinan seterusnya." },
+    { h: "Pengurusan yang sekadar bertindak balas", p: "Pasukan sibuk memadam api, sedangkan proses atau insentif yang mencetuskannya tidak pernah diubah." },
   ];
 
   const fit = [
-    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil berjalan sekali sebulan. Jadual intake yang diterbitkan menyatakan jadual Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
-    { h: "Perniagaan anda ialah projek aplikasi", p: "Tiada tesis atau peperiksaan tradisional. Peserta menggunakan rangka kerja untuk membina pelan transformasi bagi organisasi mereka sendiri." },
-    { h: "Pembiayaan HRD Corp dipohon majikan", p: HRD_CORP_CLAIM_MS },
-    { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran disenaraikan di halaman Yuran.` },
+    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil diadakan sekali sebulan. Jadual intake yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
+    { h: "Perniagaan anda sendiri ialah projek aplikasi", p: "Tiada tesis mahupun peperiksaan tradisional. Peserta menggunakan rangka kerja program untuk merangka pelan transformasi bagi organisasi mereka sendiri." },
+    { h: "Pembiayaan HRD Corp dipohon oleh majikan", p: HRD_CORP_CLAIM_MS },
+    { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran pula disenaraikan di halaman Yuran.` },
   ];
 
   return (
@@ -64,14 +64,14 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Bina sistem yang mengurangkan <span className="acc">pergantungan pemilik</span>.
+              Bina sistem yang mengurangkan <span className="acc">pergantungan pada pemilik</span>.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Future Ready Executive MBA membantu pemilik PKS meneliti di mana keputusan, pengetahuan
-            pelanggan dan kawalan operasi masih tertumpu pada satu individu. Program mengaplikasikan
-            rangka kerja sistem, strategi dan kepimpinan kepada pengagihan tugas, pembinaan keupayaan,
-            penggantian dan pertumbuhan.
+            Future Ready Executive MBA membantu pemilik PKS mengenal pasti di mana keputusan,
+            pengetahuan pelanggan dan kawalan operasi masih tertumpu pada satu orang sahaja. Program
+            ini menerapkan rangka kerja sistem, strategi dan kepimpinan pada usaha mengagihkan tugas,
+            membina keupayaan pasukan, merancang penggantian dan memacu pertumbuhan.
           </p>
           <p className="mono sec-k mt-s">
             Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
@@ -89,13 +89,13 @@ export default function MbaForSmeOwnersPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Petunjuk operasi</span>
+            <span className="mono sec-k">Tanda-tanda dalam operasi</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Di mana pergantungan pemilik muncul dalam perniagaan.</h2>
+            <h2 className="sec-h">Di mana pergantungan pada pemilik menampakkan diri dalam perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
-            Gunakan petunjuk ini untuk mengenal pasti kekangan operasi mana yang perlu ditangani projek aplikasi.
+            Gunakan tanda-tanda ini untuk mengenal pasti kekangan operasi mana yang wajar ditangani projek aplikasi anda.
           </p>
           <div className="mt-m grid-forces">
             {challenges.map((x) => (
@@ -118,20 +118,21 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Apa yang berubah</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Pindahkan keputusan berulang kepada sistem operasi yang tersusun.</h2>
+            <h2 className="sec-h">Alihkan keputusan berulang kepada sistem operasi yang tersusun.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program tertumpu pada sistem operasi di sekeliling pemilik: hak membuat keputusan, proses,
-            aliran maklumat, keupayaan kepimpinan dan ukuran. Ia membina keupayaan pengurusan;
-            pertumbuhan dan pulangan bergantung pada keputusan dan pelaksanaan yang mengikutinya.
+            Program ini menumpukan pada sistem operasi di sekeliling pemilik: kuasa membuat keputusan,
+            proses, aliran maklumat, keupayaan kepimpinan dan ukuran. Ia membina keupayaan pengurusan;
+            manakala pertumbuhan dan pulangan bergantung pada keputusan serta pelaksanaan yang menyusul.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Lihat keseluruhan papan</h3>
+                <h3 className="mono sec-k">Lihat keseluruhan gambaran</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Pemikiran sistem dan prinsip pertama menjejaki bagaimana satu keputusan menjejaskan
-                  pelanggan, orang, wang tunai, kapasiti dan pelaksanaan sebelum sumber dilaburkan.
+                  Pemikiran sistem dan prinsip asas menjejaki bagaimana satu keputusan memberi kesan
+                  kepada pelanggan, pasukan, aliran tunai, kapasiti dan pelaksanaan — sebelum sebarang
+                  sumber dilaburkan.
                 </p>
               </div>
             </Reveal>
@@ -139,8 +140,8 @@ export default function MbaForSmeOwnersPage() {
               <div className="card">
                 <h3 className="mono sec-k">Bina sistem, bukan pergantungan</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Tukar pengetahuan yang dipegang pemilik kepada proses berdokumen, kriteria keputusan
-                  dan peraturan eskalasi yang boleh digunakan pemimpin lain.
+                  Ubah pengetahuan yang selama ini dipegang pemilik menjadi proses berdokumen, kriteria
+                  keputusan dan garis panduan eskalasi yang boleh digunakan pemimpin lain.
                 </p>
               </div>
             </Reveal>
@@ -148,8 +149,9 @@ export default function MbaForSmeOwnersPage() {
               <div className="card">
                 <h3 className="mono sec-k">Agihkan tugas dengan rangka kerja</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Gunakan kepimpinan situasi dan rangka kerja fasilitasi untuk menetapkan hasil,
-                  autoriti keputusan, sokongan dan titik semakan—bukan sekadar tugasan.
+                  Gunakan kepimpinan situasi dan rangka kerja fasilitasi untuk menetapkan hasil yang
+                  diharap, kuasa membuat keputusan, sokongan dan titik semakan — bukan sekadar
+                  menyerahkan tugasan.
                 </p>
               </div>
             </Reveal>
@@ -157,16 +159,16 @@ export default function MbaForSmeOwnersPage() {
               <div className="card">
                 <h3 className="mono sec-k">Rancang untuk berkembang atau keluar</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Strategi yang tersusun memberikan anda pandangan yang boleh dipertahankan tentang
-                  hala tuju perniagaan seterusnya — asas kepada pelan skala, penggantian atau keluar
-                  yang jelas.
+                  Strategi yang tersusun memberi anda pandangan yang kukuh tentang hala tuju perniagaan
+                  seterusnya — asas kepada pelan untuk berkembang, menyerahkan tampuk atau keluar dengan
+                  jelas.
                 </p>
               </div>
             </Reveal>
           </div>
           <p className="fine mt-s">
-            Ini ialah program keupayaan, bukan jaminan pertumbuhan atau pulangan. Lihat bagaimana kaedah
-            ini berfungsi dalam <Link href="/ms/curriculum" className="acc">kurikulum</Link>.
+            Ini program pembinaan keupayaan, bukan jaminan pertumbuhan atau pulangan. Lihat bagaimana
+            kaedah ini berjalan dalam <Link href="/ms/curriculum" className="acc">kurikulum</Link>.
           </p>
         </div>
       </section>
@@ -179,11 +181,11 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Mengapa ia sesuai untuk pemilik</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Format yang membolehkan pemilik terus berada dalam perniagaan.</h2>
+            <h2 className="sec-h">Format yang membolehkan pemilik terus menerajui perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program enam bulan ini menggunakan sesi hujung minggu berjadual, dan projek aplikasi
-            berasaskan organisasi peserta sendiri. Laluan pembiayaan dan bayaran dijelaskan secara berasingan.
+            Program enam bulan ini menggunakan sesi hujung minggu berjadual, dengan projek aplikasi
+            yang berteraskan organisasi peserta sendiri. Laluan pembiayaan dan bayaran diterangkan secara berasingan.
           </p>
           <div className="mt-m grid-forces">
             {fit.map((x) => (
@@ -197,8 +199,8 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <p className="fine mt-s">
             Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik
-            dikawal selia MQA. <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>{" "}
-            sebelum memilih satu intake.
+            yang dikawal selia MQA. <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>{" "}
+            sebelum memilih intake anda.
           </p>
         </div>
       </section>
@@ -207,11 +209,11 @@ export default function MbaForSmeOwnersPage() {
       <section className="section center">
         <div className="wrap">
           <Reveal>
-            <h2 className="sec-h">Tentukan pergantungan pemilik mana yang perlu ditangani program.</h2>
+            <h2 className="sec-h">Kenal pasti pergantungan pada pemilik yang mana perlu ditangani program ini.</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
-            Bincangkan cabaran operasi anda dengan pasukan program dan sahkan sama ada projek aplikasi,
-            jadual dan profil peserta sesuai dengan matlamat anda.
+            Bincangkan cabaran operasi anda dengan pasukan program, dan pastikan sama ada projek
+            aplikasi, jadual serta profil peserta benar-benar sepadan dengan matlamat anda.
           </p>
           <p className="mt-s">
             <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide}</Link>
@@ -219,7 +221,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan sistem yang diperlukan perniagaan anda di luar pemilik." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan sistem yang perlu dibina supaya perniagaan tidak lagi bergantung pada pemilik." />
     </>
   );
 }

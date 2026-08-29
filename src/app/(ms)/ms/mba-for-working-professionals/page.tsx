@@ -40,17 +40,17 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berjadual, setiap satu berjalan sepanjang satu hujung minggu." },
-    { h: "Atau sepenuhnya dalam talian", p: "Program ini juga tersedia melalui sesi dalam talian langsung, dengan bimbingan dan rangka kerja yang sama seperti laluan bersemuka." },
-    { h: "Laluan gantian bertulis", p: "Jika anda terlepas satu sesi, ABC merekodkan kaedah gantian yang diluluskan secara bertulis: akses video atau kehadiran dalam kohort susulan yang dinamakan." },
-    { h: "Aplikasikan kepada kerja semasa", p: "Tiada tesis atau peperiksaan tradisional. Peserta mengaplikasikan rangka kerja kepada cabaran perniagaan yang mereka pegang sekarang." },
+    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berjadual, setiap satu berlangsung sepanjang satu hujung minggu." },
+    { h: "Atau sepenuhnya dalam talian", p: "Program ini turut ditawarkan menerusi sesi dalam talian secara langsung, dengan bimbingan dan rangka kerja yang serupa seperti laluan bersemuka." },
+    { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC menyediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
+    { h: "Terapkan pada kerja anda sekarang", p: "Tiada tesis mahupun peperiksaan tradisional. Peserta menerapkan rangka kerja terus kepada cabaran perniagaan yang sedang mereka pikul ketika ini." },
   ];
 
   const audience = [
-    { h: "Pemilik & usahawan", p: "Pengasas yang berkembang melangkaui apa yang boleh dibawa oleh naluri sahaja." },
-    { h: "Pengarah & pengurus besar", p: "Pemimpin yang bertanggungjawab terhadap strategi, prestasi dan penyampaian unit perniagaan." },
-    { h: "Pengurus kanan", p: "Pengurus yang beralih daripada penyampaian fungsi kepada tanggungjawab keputusan merentasi fungsi." },
-    { h: "Profesional berpengalaman", p: "Profesional yang bertanggungjawab terhadap strategi, transformasi, inovasi atau pertumbuhan." },
+    { h: "Pemilik & usahawan", p: "Pengasas yang sudah berkembang melangkaui apa yang mampu dibawa oleh naluri semata-mata." },
+    { h: "Pengarah & pengurus besar", p: "Pemimpin yang bertanggungjawab ke atas strategi, prestasi dan penyampaian sesebuah unit perniagaan." },
+    { h: "Pengurus kanan", p: "Pengurus yang sedang beralih daripada menyampaikan satu fungsi kepada memikul keputusan rentas fungsi." },
+    { h: "Profesional berpengalaman", p: "Profesional yang bertanggungjawab ke atas strategi, transformasi, inovasi atau pertumbuhan." },
   ];
 
   return (
@@ -67,13 +67,15 @@ export default function MbaForWorkingProfessionalsPage() {
             </div>
             <Reveal>
               <h1 className="sec-h">
-                Jadual Executive MBA separuh masa untuk profesional yang kekal <span className="acc">dalam peranan mereka</span>.
+                Jadual Executive MBA separuh masa untuk profesional yang terus bekerja <span className="acc">dalam peranan mereka</span>.
               </h1>
             </Reveal>
             <p className="sec-sub">
-              Future Ready Executive MBA direka untuk peserta yang mahu belajar sambil terus bekerja
-              sepenuh masa. Program berjalan selama enam bulan, menggunakan tiga hujung minggu berjadual sepanjang program. Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan,
-              penilaian dan yuran tersendiri; ia tidak termasuk dalam program atau yuran yang diterbitkan.
+              Future Ready Executive MBA direka untuk mereka yang mahu belajar tanpa perlu meninggalkan
+              kerja sepenuh masa. Program ini berjalan selama enam bulan, menerusi tiga hujung minggu
+              berjadual sepanjang tempoh tersebut. Chartered Manager pula ialah laluan pilihan CMI yang
+              berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri; ia tidak termasuk
+              dalam program atau yuran yang diterbitkan.
             </p>
             <p className="mono sec-k mt-s">
               Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
@@ -94,7 +96,7 @@ export default function MbaForWorkingProfessionalsPage() {
                 sizes="(max-width: 900px) 100vw, 38vw"
                 priority
               />
-              <figcaption>Dibina untuk pengurus yang terus membawa kerja sambil mereka belajar.</figcaption>
+              <figcaption>Dibina untuk pengurus yang terus memikul tanggungjawab kerja sambil belajar.</figcaption>
             </figure>
           </Reveal>
         </div>
@@ -105,14 +107,14 @@ export default function MbaForWorkingProfessionalsPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Bagaimana ia sesuai dengan minggu anda</span>
+            <span className="mono sec-k">Bagaimana ia serasi dengan minggu anda</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Jadual yang diterbitkan untuk peserta yang kekal bekerja.</h2>
+            <h2 className="sec-h">Jadual yang diterbitkan awal untuk peserta yang terus bekerja.</h2>
           </Reveal>
           <p className="sec-sub">
-            Semak tiga tarikh sesi sebelum mendaftar. Projek aplikasi menghubungkan program kepada
-            cabaran perniagaan dalam peranan semasa peserta.
+            Semak ketiga-tiga tarikh sesi sebelum mendaftar. Projek aplikasi menghubungkan program
+            terus dengan cabaran perniagaan dalam peranan semasa peserta.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {fit.map((x) => (
@@ -135,12 +137,12 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Berbanding MBA akademik rujukan</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Bandingkan dua laluan dengan format dan kredensial yang berbeza.</h2>
+            <h2 className="sec-h">Bandingkan dua laluan yang berbeza format dan kredensialnya.</h2>
           </Reveal>
           <p className="sec-sub">
-            MBA akademik rujukan dalam perbandingan ini berjalan selama 18–24 bulan dan menggunakan
-            penilaian akademik ditambah disertasi atau tesis. Berikut ialah cara kedua-dua format
-            tersusun ini dibandingkan.
+            MBA akademik rujukan dalam perbandingan ini berjalan selama 18–24 bulan, dengan penilaian
+            akademik serta disertasi atau tesis. Berikut perbandingan antara kedua-dua format yang
+            tersusun ini.
           </p>
           <Reveal className="mt-s">
             <ScrollableTableRegion kind="comparison" label="Perbandingan format Executive MBA dan MBA akademik rujukan">
@@ -166,10 +168,10 @@ export default function MbaForWorkingProfessionalsPage() {
           </Reveal>
           <p className="fine mt-s">
             Jadual ini mentakrifkan MBA akademik rujukannya sebagai program 18–24 bulan yang dibina
-            di sekeliling modul akademik, tugasan atau peperiksaan, dan disertasi atau tesis. Ia tidak
-            menggambarkan setiap program MBA.{" "}
+            di sekeliling modul akademik, tugasan atau peperiksaan, serta disertasi atau tesis. Ia
+            tidak mewakili setiap program MBA.{" "}
             Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik
-            dikawal selia MQA. Pilih mengikut kredensial dan format pembelajaran yang anda perlukan.
+            yang dikawal selia MQA. Pilih mengikut kredensial dan format pembelajaran yang anda perlukan.
             Lihat keseluruhan{" "}
             <Link href="/ms/fees" className="acc">yuran &amp; kemasukan</Link>.
           </p>
@@ -184,11 +186,11 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Intake 2026 · tiga hujung minggu berjadual sepanjang program</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Jadual Bahasa Inggeris dan Mandarin untuk 2026.</h2>
+            <h2 className="sec-h">Jadual kohort Bahasa Inggeris dan Mandarin untuk 2026.</h2>
           </Reveal>
           <p className="sec-sub">
-            Kohort awam Malaysia semasa berjalan 9 pagi–6 petang; Kohort 17 menggunakan Sabtu–Ahad dan
-            kohort lain yang diterbitkan menggunakan Jumaat–Sabtu. Pilihan dalam talian sepenuhnya juga tersedia.
+            Kohort awam Malaysia semasa berlangsung 9 pagi–6 petang; Kohort 17 menggunakan Sabtu–Ahad
+            manakala kohort lain yang diterbitkan menggunakan Jumaat–Sabtu. Pilihan dalam talian sepenuhnya turut tersedia.
           </p>
           <Reveal className="mt-s">
             <IntakeSchedule lang="ms" label="Jadual intake profesional bekerja 2026" />
@@ -207,11 +209,11 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Untuk siapa</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Untuk profesional dengan tanggungjawab strategik atau merentasi perniagaan.</h2>
+            <h2 className="sec-h">Untuk profesional yang memikul tanggungjawab strategik atau rentas perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini direka untuk pemilik, pengarah, pengurus besar dan pengurus kanan yang
-            bertanggungjawab terhadap strategi, transformasi, inovasi atau pertumbuhan.
+            Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan
+            yang bertanggungjawab ke atas strategi, transformasi, inovasi atau pertumbuhan.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {audience.map((x) => (
@@ -224,13 +226,13 @@ export default function MbaForWorkingProfessionalsPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            {HRD_CORP_CLAIM_MS} Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.{" "}
+            {HRD_CORP_CLAIM_MS} Biasiswa {FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.{" "}
             <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>.
           </p>
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Semak jadual terhadap peranan semasa anda." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Uji jadual ini dengan peranan yang anda pegang sekarang." />
     </>
   );
 }

@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.fees;
 export const metadata = withSeo(path, {
   title: "Yuran, Biasiswa dan HRD Corp",
   description:
-    "Yuran standard RM10,000. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.",
+    "Yuran standard RM10,000. Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.",
 });
 
 export default function Page() {

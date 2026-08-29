@@ -32,10 +32,10 @@ const STEPS = [
 ];
 
 const INCLUSIONS_MS = [
-  { b: "Enam hari latihan merentasi tiga sesi", s: "Bengkel rangka kerja yang diterajui pengamal, dijadualkan mengikut tarikh yang diterbitkan sepanjang program enam bulan." },
-  { b: "Penilaian kendiri pengurusan berpandu", s: "Semak tabiat membuat keputusan semasa dan pilih bidang khusus untuk diperbaiki sepanjang program." },
-  { b: "Bimbingan eksekutif & semakan projek", s: "Bimbingan satu-dengan-satu yang digunakan terhadap konteks organisasi peserta sendiri." },
-  { b: "The Leverage Management System (LMS)", s: "Peserta menyimpan rangka kerja program, rujukan dan templat kerja." },
+  { b: "6 hari latihan merentasi tiga sesi berpandu", s: "Bengkel rangka kerja yang dikendalikan pengamal, mengikut tarikh yang telah diterbitkan sepanjang program enam bulan." },
+  { b: "Penilaian kendiri pengurusan berpandu", s: "Nilai semula cara anda membuat keputusan hari ini, dan pilih bidang khusus untuk diperkukuh sepanjang program." },
+  { b: "Bimbingan eksekutif & semakan projek", s: "Bimbingan bersemuka satu-dengan-satu, disesuaikan dengan konteks organisasi peserta sendiri." },
+  { b: "The Leverage Management System (LMS)", s: "Peserta menyimpan rangka kerja program, bahan rujukan dan templat kerja untuk digunakan semula." },
 ];
 
 const HRD_FAQS = [
@@ -53,7 +53,7 @@ const HRD_FAQS = [
   },
   {
     q: "Bagaimana jika kami tidak berdaftar dengan HRDC?",
-    a: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
+    a: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
   },
 ];
 
@@ -104,10 +104,10 @@ export default function HrdCorpClaimablePage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Bagaimana tuntutan berjalan</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Empat tanggungjawab yang ditakrifkan, dari permohonan hingga tuntutan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Empat tanggungjawab yang jelas, dari permohonan hingga tuntutan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              Majikan, HRD Corp dan penyedia latihan masing-masing menguruskan bahagian tertentu dalam proses ini.
+              Majikan, HRD Corp dan penyedia latihan masing-masing memegang bahagian tersendiri dalam proses ini.
               Kelulusan hanya muktamad apabila HRD Corp mengeluarkannya.
             </p>
           </Reveal>
@@ -129,11 +129,11 @@ export default function HrdCorpClaimablePage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang dirangkumi</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Komponen program yang dirangkumi jumlah geran yang diluluskan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Komponen program yang termasuk dalam jumlah geran yang diluluskan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               HRD Corp menyatakan jumlah yang diluluskan dalam keputusan gerannya. Executive MBA ialah
-              program enam bulan yang membawa kepada sijil program. Program ini merangkumi:
+              program enam bulan yang berakhir dengan sijil program. Program ini merangkumi:
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -167,9 +167,9 @@ export default function HrdCorpClaimablePage() {
               Tuntutan HRD Corp ialah laluan <b style={{ color: "var(--ink)" }}>B2B yang dibayar syarikat</b>:
               majikan Malaysia yang berdaftar dengan HRD Corp mengemukakan permohonan sebelum latihan.
               HRD Corp memutuskan kelayakan dan jumlah yang diluluskan, yang tidak boleh melebihi baki levi
-              majikan yang tersedia. Tidak berdaftar levi, atau menyertai sebagai
-              individu? Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis,
-              atau memilih pelan ansuran.
+              majikan yang ada. Belum berdaftar levi, atau menyertai secara
+              individu? Biasiswa {FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis —
+              atau anda boleh memilih pelan ansuran.
             </p>
           </Reveal>
           <p className="fine mt-s">

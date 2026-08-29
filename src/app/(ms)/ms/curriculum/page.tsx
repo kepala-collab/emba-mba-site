@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.curriculum;
 export const metadata = withSeo(path, {
   title: "Kurikulum dan 12 Modul Kepimpinan",
   description:
-    "Semak 12 modul Executive MBA, tiga peringkat pembelajaran, projek aplikasi perniagaan serta kaedah penilaian tanpa tesis dan tanpa peperiksaan tradisional.",
+    "Terokai 12 modul Executive MBA, tiga peringkat pembelajaran, projek berteraskan cabaran perniagaan sebenar serta penilaian tanpa tesis dan tanpa peperiksaan tradisional.",
 });
 
 export default function Page() {

@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/lp/meta", {
   title: "Executive MBA untuk Pemimpin yang Sedang Bekerja | Future Ready",
   description:
-    "Future Ready Executive MBA enam bulan untuk pengurus yang sedang bekerja: enam hari latihan, tiga sesi berjadual dan projek aplikasi perniagaan.",
+    "Future Ready Executive MBA selama enam bulan untuk pengurus yang sedang bekerja di Malaysia: enam hari latihan, tiga sesi berpandu dan projek berteraskan cabaran perniagaan sebenar.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/ms/lp/meta" },
 });
@@ -19,18 +19,18 @@ const EDGE = [
   ["Memahami keseluruhan sistem", "Analisis punca, kebergantungan dan kesan susulan sebelum membuat keputusan."],
   ["Menguji andaian asas", "Bezakan fakta, kekangan dan andaian, kemudian bentuk pilihan berdasarkan bukti."],
   ["Menggabungkan analisis dan inovasi", "Seimbangkan logik strategik, keperluan pengguna dan kekangan praktikal."],
-  ["Menyusun maklumat yang rumit", "Terjemahkan maklumat kompleks kepada keputusan yang boleh dijelaskan dan dilaksanakan."],
-  ["Menilai dari lima sudut", "Nilai setiap keputusan daripada lima perspektif perniagaan yang jelas."],
+  ["Menyusun maklumat yang rumit", "Terjemahkan maklumat rumit menjadi keputusan yang boleh dijelaskan dan dilaksanakan."],
+  ["Menilai dari lima sudut", "Nilai setiap keputusan menerusi lima perspektif perniagaan yang jelas."],
   ["Menghubungkan bakat dan perniagaan", "Pertimbangkan keupayaan insan, inovasi dan keperluan komersial secara bersepadu."],
 ];
 
 const WALK = [
-  "Enam hari latihan dengan fasilitasi langsung, dikendalikan fasilitator yang disahkan pasukan program",
-  "Diagnostik kepimpinan peribadi untuk mengenal pasti corak keputusan dan keutamaan pembangunan",
-  "Bimbingan eksekutif peribadi yang diaplikasikan terhadap situasi perniagaan peserta sendiri",
-  "Rangka kerja dan pustaka alat (LMS) yang dikekalkan selepas tamat program",
-  "Satu projek transformasi perniagaan untuk penilaian fasilitator",
-  "Program diiktiraf CMI (UK); CMgr perlu dipohon secara berasingan",
+  "Enam hari latihan berpandu secara langsung, dikendalikan fasilitator yang disahkan pasukan program",
+  "Diagnostik kepimpinan peribadi untuk mengenal pasti corak anda membuat keputusan dan keutamaan pembangunan diri",
+  "Bimbingan eksekutif peribadi yang diterapkan pada situasi perniagaan anda sendiri",
+  "Rangka kerja dan pustaka alat (LMS) yang kekal milik anda selepas program tamat",
+  "Satu projek transformasi perniagaan untuk dinilai fasilitator",
+  "Program dianugerahkan dan disokong oleh CMI (UK); Chartered Manager perlu dipohon secara berasingan",
 ];
 
 export default function MsMetaLP() {
@@ -38,7 +38,7 @@ export default function MsMetaLP() {
     <div lang="ms">
       <section className="section" style={{ paddingTop: "clamp(44px,6vw,80px)", borderBottom: "none" }}>
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
-          <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">Untuk pemimpin yang memikul tanggungjawab keputusan merentas fungsi</span></div></Reveal>
+          <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">Untuk pemimpin yang memikul tanggungjawab keputusan rentas fungsi</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
               Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
@@ -46,7 +46,7 @@ export default function MsMetaLP() {
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              Selesaikan enam hari latihan, bimbingan dan projek aplikasi perniagaan dalam enam bulan, sambil terus bekerja. Chartered Manager ialah laluan CMI berasingan yang bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
+              Lengkapkan enam hari latihan, bimbingan dan projek berteraskan cabaran perniagaan sebenar dalam enam bulan, sambil anda terus bekerja. Chartered Manager ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -83,7 +83,7 @@ export default function MsMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Dianugerahkan dan disokong oleh CMI (UK)"], [FACTS.trainingDays, "hari latihan langsung merentasi tiga peringkat"], ["1", "projek aplikasi berasaskan isu perniagaan sebenar"], ["Kelayakan", "penilaian biasiswa untuk pemohon Malaysia"]].map(([value, label]) => (
+          {[["CMI", "Dianugerahkan dan disokong oleh CMI (UK)"], [FACTS.trainingDays, "hari latihan langsung merentas tiga peringkat"], ["1", "projek berteraskan cabaran perniagaan sebenar"], ["Kelayakan", "penilaian biasiswa terpilih untuk pemohon Malaysia"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
@@ -103,14 +103,14 @@ export default function MsMetaLP() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa LIFE Innoversity. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Biasiswa tidak diberikan secara automatik. {HRD_CORP_CLAIM_MS} Pelan ansuran disenaraikan di halaman yuran.</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>Yuran standard ialah {FACTS.priceStd}. Biasiswa LIFE Innoversity terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak automatik dan bukan kod diskaun. {HRD_CORP_CLAIM_MS} Pelan ansuran disenaraikan di halaman yuran.</p></Reveal>
         </div>
       </section>
 
       <section id="apply" className="section">
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
           <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>Dapatkan maklumat program dan biasiswa 2026.</h2></Reveal>
-          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>Terima maklumat ringkas terlebih dahulu, kemudian pilih e-mel, WhatsApp atau panggilan padanan program yang ringkas. Pasukan program akan menerangkan tarikh mula yang diterbitkan, yuran peserta Malaysia dan proses permohonan HRD Corp oleh majikan.</p></Reveal>
+          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>Dapatkan maklumat ringkas dahulu, kemudian pilih e-mel, WhatsApp atau panggilan kesesuaian program yang ringkas. Pasukan program akan menjelaskan tarikh mula sesi pengambilan, yuran peserta Malaysia dan proses permohonan HRD Corp yang diterajui majikan.</p></Reveal>
           <Reveal delay={80}>
             <div style={{ maxWidth: 560, margin: "26px auto 0", textAlign: "left" }}>
               <LeadForm programme="Executive MBA" source={SOURCE} lang="ms" variant="campaign" defaultIntent="details_first" />

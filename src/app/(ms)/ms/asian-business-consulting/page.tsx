@@ -19,7 +19,7 @@ export const metadata = withSeo("/ms/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC didaftarkan di Malaysia" },
   { n: "Julai 2024", s: "Status dianugerahkan dan disokong oleh CMI (UK)" },
-  { n: "17", s: "kohort telah dikendalikan: 16 kohort Bahasa Inggeris dan kohort Mandarin" },
+  { n: "17", s: "kohort telah dikendalikan: 16 kohort Bahasa Inggeris dan 1 kohort Mandarin" },
   { n: "154", s: "graduan program" },
 ];
 
@@ -136,7 +136,7 @@ export default function AbcPageMs() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Majlis graduasi sulung · Ogos 2026</span></div>
             <h2 className="sec-h">17 kohort, 154 graduan, satu detik bersejarah yang dikongsi bersama.</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA mengadakan majlis graduasi sulungnya pada Ogos 2026. Seramai 86 graduan hadir, mewakili komuniti 154 graduan merentasi 17 kohort: 16 kohort Bahasa Inggeris dan kohort Mandarin.</p>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA mengadakan majlis graduasi sulungnya pada Ogos 2026. Seramai 86 graduan hadir, mewakili komuniti 154 graduan merentasi 17 kohort: 16 kohort Bahasa Inggeris dan satu kohort Mandarin.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>

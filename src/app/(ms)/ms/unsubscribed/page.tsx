@@ -15,11 +15,11 @@ const COPY = {
   },
   invalid: {
     heading: "Pautan tidak dapat disahkan.",
-    body: "Pautan berhenti melanggan ini tidak lengkap atau tidak sah, dan keutamaan anda belum diubah. Sila e-mel kami dan kami akan berhenti melanggankan anda secara manual.",
+    body: "Pautan berhenti melanggan ini tidak lengkap atau tidak sah, dan keutamaan anda belum diubah. Sila e-mel kami dan kami akan memberhentikan langganan anda secara manual.",
   },
   error: {
     heading: "Buat masa ini permintaan tidak dapat diproses.",
-    body: "Kami buat masa ini tidak dapat mengemas kini keutamaan anda. Sila e-mel kami dan kami akan berhenti melanggankan anda secara manual.",
+    body: "Kami buat masa ini tidak dapat mengemas kini keutamaan anda. Sila e-mel kami dan kami akan memberhentikan langganan anda secara manual.",
   },
 } as const;
 

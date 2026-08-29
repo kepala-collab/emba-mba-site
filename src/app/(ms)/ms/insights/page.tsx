@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/insights", {
   title: "Wawasan — Rangka Kerja Pemikiran untuk Pemimpin",
   description:
-    "Pengenalan praktikal kepada pemikiran prinsip pertama, pemikiran sistem dan pemikiran reka bentuk untuk keputusan perniagaan.",
+    "Pengenalan praktikal kepada pemikiran prinsip pertama, pemikiran sistem dan pemikiran reka bentuk untuk menajamkan keputusan perniagaan.",
 });
 
 const ARTICLES = [
@@ -17,28 +17,28 @@ const ARTICLES = [
     title: "Pendidikan Eksekutif vs Executive MBA",
     slug: "/ms/insights/executive-education-vs-executive-mba",
     blurb:
-      "Cara membandingkan kelayakan, tempoh, penilaian, aplikasi di tempat kerja dan status akademik sebelum memilih program.",
+      "Cara menimbang kredensial, tempoh, penilaian, aplikasi di tempat kerja dan status akademik sebelum memilih program yang tepat.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Prinsip Pertama untuk Pemimpin Perniagaan",
     slug: "/ms/insights/first-principles-thinking",
     blurb:
-      "Cara mengasingkan kekangan yang telah disahkan daripada andaian, dan membina pilihan daripada fakta asas.",
+      "Cara membezakan kekangan yang benar-benar wujud daripada sekadar andaian, lalu membina pilihan bermula daripada fakta asas.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Sistem untuk Pemimpin",
     slug: "/ms/insights/systems-thinking-for-leaders",
     blurb:
-      "Cara meneliti hubungan, gelung maklum balas dan kesan peringkat kedua sebelum membuat keputusan.",
+      "Cara membaca hubungan, gelung maklum balas dan kesan susulan yang tersembunyi sebelum membuat keputusan.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Reka Bentuk untuk Perniagaan",
     slug: "/ms/insights/design-thinking-for-business",
     blurb:
-      "Cara menggabungkan bukti pelanggan, prototaip dan kekangan komersial sebelum melabur sumber.",
+      "Cara menyatukan bukti daripada pelanggan, prototaip dan kekangan komersial sebelum melaburkan sumber.",
   },
 ];
 
@@ -47,7 +47,7 @@ const jsonLd = {
   "@type": "CollectionPage",
   name: "Wawasan — Rangka Kerja Pemikiran untuk Pemimpin",
   description:
-    "Panduan keputusan program dan pengenalan praktikal kepada pemikiran prinsip pertama, sistem dan reka bentuk untuk keputusan perniagaan.",
+    "Panduan keputusan program dan pengenalan praktikal kepada pemikiran prinsip pertama, sistem dan reka bentuk untuk menajamkan keputusan perniagaan.",
   inLanguage: "ms-MY",
   hasPart: {
     "@type": "ItemList",
@@ -75,7 +75,7 @@ export default function InsightsPage() {
             </div>
             <h1 className="sec-h">Rangka kerja pemikiran untuk pemimpin</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              Panduan keputusan dan pengenalan praktikal kepada kaedah penaakulan yang digunakan dalam program.
+              Panduan keputusan dan pengenalan praktikal kepada cara menaakul yang kami terapkan sepanjang program.
             </p>
           </Reveal>
 
@@ -130,7 +130,7 @@ export default function InsightsPage() {
           </div>
 
           <p className="fine mt-s">
-            Setiap artikel menyatakan sumbernya dan tarikh semakan substantif terkininya.
+            Setiap artikel menyatakan sumbernya serta tarikh ia terakhir disemak secara menyeluruh.
           </p>
         </div>
       </section>
@@ -138,8 +138,8 @@ export default function InsightsPage() {
       <CtaSection
         lang="ms"
         programme="Executive MBA"
-        heading="Gunakan kaedah pemikiran ini terhadap keputusan perniagaan anda sendiri."
-        sub="Pilih panggilan, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar."
+        heading="Terapkan cara berfikir ini pada keputusan perniagaan anda sendiri."
+        sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon oleh majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar."
       />
     </>
   );

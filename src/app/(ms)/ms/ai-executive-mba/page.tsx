@@ -8,23 +8,23 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/ai-executive-mba", {
   title: "Executive MBA untuk Kepimpinan Era AI",
   description:
-    "Gunakan rangka kerja Future Ready Executive MBA untuk penerapan AI, keputusan berasaskan data, reka bentuk semula proses dan pelaksanaan yang bertanggungjawab.",
+    "Terapkan rangka kerja Future Ready Executive MBA pada penggunaan AI, keputusan berpandukan data, reka bentuk semula proses dan pelaksanaan yang bertanggungjawab.",
 });
 
 const BUSINESS_PILLARS = [
-  ["Keutamaan AI", "Kaitkan setiap kes penggunaan AI dengan objektif strategik organisasi dan kekangan operasinya."],
-  ["Tafsiran data", "Asingkan isyarat yang boleh dipercayai daripada data yang tidak lengkap, tidak relevan atau mengelirukan."],
-  ["Reka bentuk semula proses", "Petakan di mana automasi mengubah tugas, kawalan, serahan kerja dan hak membuat keputusan."],
-  ["Tadbir urus inovasi", "Tetapkan cara idea dipilih, diuji, diukur dan dihentikan."],
-  ["Pengukuran nilai", "Tetapkan pemilik, garis asas dan ukuran kejayaan bagi setiap inisiatif."],
+  ["Keutamaan AI", "Hubungkan setiap kes penggunaan AI dengan matlamat strategik organisasi dan batasan operasinya."],
+  ["Tafsiran data", "Bezakan isyarat yang boleh dipercayai daripada data yang tidak lengkap, tidak relevan atau mengelirukan."],
+  ["Reka bentuk semula proses", "Kenal pasti di mana automasi mengubah tugas, kawalan, serahan kerja dan kuasa membuat keputusan."],
+  ["Tadbir urus inovasi", "Tetapkan cara idea dipilih, diuji, diukur dan diberhentikan."],
+  ["Pengukuran nilai", "Tentukan pemilik, garis asas dan ukuran kejayaan bagi setiap inisiatif."],
 ];
 
 const CAREER_PILLARS = [
   ["Kepimpinan", "Tetapkan tujuan, sempadan dan akauntabiliti bagi kerja yang dibantu AI."],
-  ["Pertimbangan kritis", "Persoalkan output model, andaian, kualiti bukti dan kesan yang tidak diingini."],
-  ["Reka bentuk keputusan", "Jelaskan keputusan mana yang kekal dipimpin manusia dan di mana alat hanya memberi sokongan."],
+  ["Pertimbangan kritis", "Persoalkan output model, andaiannya, kualiti bukti dan kesan yang tidak dijangka."],
+  ["Reka bentuk keputusan", "Perjelas keputusan mana yang kekal di tangan manusia dan di mana alat sekadar menyokong."],
   ["Penjajaran pihak berkepentingan", "Terangkan perubahan yang dicadangkan, kawalannya serta kesannya terhadap pasukan dan pelanggan."],
-  ["Pelaksanaan", "Terjemahkan kes penggunaan yang dipilih kepada pelan tindakan dengan pemilik dan ukuran yang jelas."],
+  ["Pelaksanaan", "Terjemahkan kes penggunaan yang dipilih menjadi pelan tindakan dengan pemilik dan ukuran yang jelas."],
 ];
 
 export default function AiExecutiveMbaPage() {
@@ -42,7 +42,7 @@ export default function AiExecutiveMbaPage() {
           <Reveal delay={120}>
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
               Halaman ini menerangkan bagaimana <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> yang diiktiraf CMI{" "}
-              menggunakan rangka kerja keputusannya terhadap strategi AI, data, automasi, tadbir urus dan pelaksanaan.
+              menerapkan rangka kerja membuat keputusannya pada strategi AI, data, automasi, tadbir urus dan pelaksanaan.
               Ia program <b style={{ color: "var(--ink)" }}>6 bulan</b> yang sama, bukan pensijilan perisian atau teknikal yang berasingan.
             </p>
           </Reveal>
@@ -66,8 +66,8 @@ export default function AiExecutiveMbaPage() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Skop lensa AI</span></div></Reveal>
           <Reveal><h2 className="sec-h">Reka bentuk perniagaan dan tanggungjawab kepimpinan.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "56ch" }}>
-            Penerapan yang berkesan menuntut kedua-duanya: justifikasi perniagaan yang kukuh dan akauntabiliti manusia
-            yang jelas. Program ini meneliti organisasi, proses membuat keputusan dan peranan pemimpin dalam pelaksanaan.
+            Penerapan AI yang berkesan menuntut dua-duanya sekali: justifikasi perniagaan yang kukuh dan akauntabiliti manusia
+            yang jelas. Program ini meneliti organisasi anda, cara keputusan dibuat dan peranan pemimpin dalam pelaksanaan.
           </p></Reveal>
 
           <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Perniagaan · keutamaan · data · proses · tadbir urus · ukuran</div></Reveal>
@@ -98,15 +98,15 @@ export default function AiExecutiveMbaPage() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Soalan dahulu, alat kemudian</span></div></Reveal>
           <Reveal><h2 className="sec-h">Mulakan dengan masalah perniagaan, bukan model.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "58ch" }}>
-            <Link href="/ms/how-it-works" className="acc">Kaedah F.A.S.T.</Link> bermula dengan mentakrifkan hasil yang dikehendaki,
-            bukti yang relevan, kekangan dan risiko. Selepas itu barulah pemimpin memutuskan sama ada AI sesuai digunakan dan
+            <Link href="/ms/how-it-works" className="acc">Kaedah F.A.S.T.</Link> bermula dengan menetapkan hasil yang dikehendaki,
+            bukti yang relevan, batasan dan risiko. Barulah selepas itu pemimpin memutuskan sama ada AI sesuai digunakan dan
             bagaimana outputnya akan disemak.
           </p></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {[
               ["01 · Sistem", "Telusuri sistem yang lebih luas", "Teliti punca, kebergantungan dan kesan yang dijangka sebelum membuat keputusan."],
-              ["02 · Prinsip Pertama", "Uji asasnya", "Asingkan kekangan yang telah disahkan daripada andaian, kemudian bina pilihan daripada bukti."],
-              ["03 · Reka Bentuk Integratif", "Gabungkan analisis dan reka cipta", "Bangunkan pilihan yang mengimbangi logik strategik, keperluan pengguna dan kekangan praktikal."],
+              ["02 · Prinsip Pertama", "Uji asasnya", "Bezakan batasan yang telah disahkan daripada andaian, kemudian bina pilihan daripada bukti."],
+              ["03 · Reka Bentuk Integratif", "Gabungkan analisis dan reka cipta", "Bangunkan pilihan yang mengimbangi logik strategik, keperluan pengguna dan batasan praktikal."],
             ].map(([i, h, p]) => (
               <div key={i} className="card">
                 <div className="mono sec-k" style={{ fontSize: ".72rem" }}>{i}</div>
@@ -127,8 +127,8 @@ export default function AiExecutiveMbaPage() {
             {[
               ["Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia bukan ijazah akademik yang dikawal selia MQA."],
               ["HRD Corp", HRD_CORP_CLAIM_MS],
-              ["Format", "Program enam bulan: tiga sesi berjadual berserta bimbingan dan projek aplikasi perniagaan."],
-              ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa LIFE Innoversity; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis."],
+              ["Format", "Program enam bulan: tiga sesi berjadual berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar."],
+              ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Biasiswa LIFE Innoversity adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; ia tidak automatik, dan setiap anugerah serta yuran peserta disahkan satu per satu secara bertulis."],
               ["Projek aplikasi", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
             ].map(([h, p]) => (
               <div key={h} className="card">
@@ -151,8 +151,8 @@ export default function AiExecutiveMbaPage() {
             Semak program sebelum memilih kohort.
           </h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "54ch", marginInline: "auto" }}>
-            Semak kohort yang diterbitkan dan pilih kohort yang tarikhnya sesuai dengan tanggungjawab anda.
-            Pasukan program akan menerangkan kurikulum, format dan keperluan permohonan.
+            Semak kohort yang telah diterbitkan dan pilih yang tarikhnya paling sesuai dengan tanggungjawab anda.
+            Pasukan program akan menerangkan kurikulum, format dan syarat permohonan.
           </p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
             <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide} →</Link>
@@ -161,7 +161,7 @@ export default function AiExecutiveMbaPage() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="AI Executive MBA" heading="Bincangkan bagaimana program ini menyokong keutamaan AI anda." sub="Pilih panggilan, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." />
+      <CtaSection lang="ms" programme="AI Executive MBA" heading="Bincangkan bagaimana program ini menyokong keutamaan AI anda." sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang diterajui majikan. Perbualan ini tanpa sebarang ikatan untuk mendaftar atau membayar." />
     </>
   );
 }

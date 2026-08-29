@@ -60,91 +60,93 @@ export default function Page() {
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              Produk yang dibina dengan baik masih boleh gagal apabila ia menyelesaikan
-              masalah pelanggan yang salah. Pemikiran reka bentuk menangani risiko itu
-              melalui kaedah menyelesaikan masalah yang berpusatkan manusia dan berulang,
-              yang bermula daripada keperluan sebenar dan bukan andaian dalaman, serta
-              melayan setiap idea sebagai hipotesis yang perlu diuji, bukan keputusan
-              yang perlu dipertahankan.
+              Produk yang hebat sekalipun boleh gagal apabila ia menyelesaikan
+              masalah pelanggan yang salah. Di sinilah pemikiran reka bentuk memainkan
+              peranan — satu kaedah menyelesaikan masalah yang berpusatkan manusia dan
+              bersifat berulang, yang bermula daripada keperluan sebenar pelanggan, bukan
+              andaian dalaman syarikat. Setiap idea dianggap sebagai hipotesis yang perlu
+              diuji, bukan keputusan yang perlu dipertahankan mati-matian.
             </p>
           </Reveal>
 
           <div className="prose" style={{ maxWidth: "68ch", marginTop: 40 }}>
-            <h2>Apakah sebenarnya pemikiran reka bentuk</h2>
+            <h2>Apa sebenarnya pemikiran reka bentuk</h2>
             <p>
-              Pemikiran reka bentuk mengambil kebiasaan kerja pereka bentuk dan
-              mengubahnya menjadi kaedah umum untuk menyelesaikan masalah yang sukar
-              dan kabur. Langkah utamanya kelihatan mudah: mulakan dengan orang yang
-              cuba anda bantu, perhatikan realiti mereka dengan teliti, dan biarkan
-              apa yang anda pelajari membentuk penyelesaian — bukan bermula daripada
-              penyelesaian yang anda sudah gemari, kemudian mencari pasaran untuk
-              mengesahkannya.
+              Pemikiran reka bentuk mengambil cara seorang pereka bentuk bekerja, lalu
+              menjadikannya kaedah umum untuk merungkai masalah yang rumit dan kabur.
+              Langkahnya kedengaran mudah: bermula dengan orang yang ingin anda bantu,
+              perhatikan realiti mereka dengan teliti, dan biarkan apa yang anda pelajari
+              membentuk penyelesaian. Bukan sebaliknya — memulakan dengan penyelesaian
+              yang sudah anda minati, kemudian sibuk mencari pasaran untuk mengesahkannya.
             </p>
             <p>
-              Ia sengaja bersifat berulang, bukan linear. Pasukan menguji andaian
-              menggunakan prototaip kos rendah sebelum melancarkan sepenuhnya,
-              kemudian menyemak semula penyelesaian berdasarkan bukti yang diperhatikan.
-              Sikap itu — rasa ingin tahu sebelum keyakinan — yang membezakannya
-              daripada perancangan konvensional.
+              Prosesnya memang berulang, bukan lurus dari satu titik ke titik lain.
+              Pasukan menguji setiap andaian dengan prototaip kos rendah sebelum
+              melancarkannya sepenuhnya, kemudian memperhalus penyelesaian berdasarkan
+              bukti yang benar-benar dilihat di lapangan. Sikap inilah — rasa ingin tahu
+              didahulukan sebelum keyakinan — yang membezakannya daripada perancangan
+              biasa.
             </p>
 
             <blockquote>
-              Matlamatnya bukan untuk jatuh cinta dengan idea anda. Ia untuk jatuh
-              cinta dengan masalah, dan terus mencintainya cukup lama untuk memahaminya.
+              Matlamatnya bukan untuk terpaut pada idea anda sendiri, tetapi untuk
+              terpaut pada masalahnya — dan bertahan dengannya cukup lama sehingga
+              anda benar-benar memahaminya.
             </blockquote>
 
             <h2>Lima peringkat, dalam konteks perniagaan</h2>
             <p>
-              Model klasik mempunyai lima mod. Ia adalah peringkat yang anda ulang
-              alik secara bebas, bukan langkah yang diselesaikan sekali dan ditandakan
-              selesai.
+              Model klasiknya mempunyai lima mod. Anggaplah ia peringkat yang anda ulang
+              alik secara bebas, bukan senarai langkah yang disiapkan sekali lalu
+              ditandakan selesai.
             </p>
             <ul>
               <li>
-                <strong>Empati.</strong> Dekati orang yang anda khidmati — temu bual,
-                pemerhatian, meluangkan masa dalam aliran kerja mereka. Matlamatnya
-                ialah memahami apa yang mereka alami dan hadapi, dalam kata-kata
-                mereka sendiri, sebelum anda memutuskan apa yang perlu dibaiki.
+                <strong>Empati.</strong> Dekati orang yang anda ingin bantu — temu bual,
+                pemerhatian, luangkan masa mengikuti kerja harian mereka. Matlamatnya
+                ialah memahami apa yang mereka lalui dan hadapi, dalam bahasa mereka
+                sendiri, sebelum anda memutuskan apa yang perlu diperbaiki.
               </li>
               <li>
-                <strong>Takrifkan.</strong> Sarikan apa yang anda dengar menjadi
-                pernyataan masalah manusia yang tepat. Takrifan yang jitu — &ldquo;klinisian
-                yang sibuk kehilangan dua puluh minit setiap syif untuk menyelaraskan
-                rekod&rdquo; — memberi lebih banyak makna berbanding taklimat kabur
-                untuk &ldquo;menambah baik kecekapan.&rdquo;
+                <strong>Takrifkan.</strong> Tapiskan apa yang anda dengar menjadi satu
+                pernyataan masalah yang tepat dan bersifat manusiawi. Takrifan yang
+                jitu — &ldquo;klinisian yang sibuk kehilangan dua puluh minit setiap syif
+                semata-mata untuk menyelaraskan rekod&rdquo; — jauh lebih bermakna
+                berbanding taklimat kabur untuk &ldquo;menambah baik kecekapan.&rdquo;
               </li>
               <li>
-                <strong>Ideasi.</strong> Hasilkan jawapan alternatif sebelum menyempitkan
-                pilihan. Kepelbagaian penting di sini; pertimbangan datang selepas
-                alternatif wujud. Matlamatnya ialah keluar daripada idea pertama yang
-                jelas.
+                <strong>Ideasi.</strong> Cetuskan seberapa banyak jawapan alternatif
+                sebelum menyempitkan pilihan. Kepelbagaian idea penting pada peringkat
+                ini; pertimbangan datang kemudian, selepas ada pilihan untuk dibandingkan.
+                Tujuannya ialah melepasi idea pertama yang paling ketara.
               </li>
               <li>
-                <strong>Prototaip.</strong> Jadikan idea itu nyata dengan kos paling rendah —
-                lakaran, mock-up boleh diklik, satu larian manual perkhidmatan.
-                Prototaip ialah soalan yang dijelmakan secara fizikal, bukan produk
-                siap dalam bentuk kecil.
+                <strong>Prototaip.</strong> Jadikan idea itu nyata dengan kos serendah
+                mungkin — lakaran, mock-up boleh diklik, atau satu larian perkhidmatan
+                secara manual. Prototaip ialah soalan yang dizahirkan dalam bentuk
+                fizikal, bukan produk siap yang dikecilkan.
               </li>
               <li>
-                <strong>Uji.</strong> Letakkan prototaip di hadapan pengguna sebenar
-                dan perhatikan apa yang mereka lakukan, bukan sekadar apa yang mereka
-                cakap. Setiap ujian memberi maklum balas kepada empati dan takrifan,
-                dan kitaran itu berulang semula.
+                <strong>Uji.</strong> Bawakan prototaip itu kepada pengguna sebenar dan
+                perhatikan apa yang mereka buat, bukan sekadar apa yang mereka kata.
+                Setiap ujian memberi maklum balas semula kepada peringkat empati dan
+                takrifan, dan kitarannya bermula semula.
               </li>
             </ul>
 
             <h2>Mengapa ia penting bagi pemimpin dan strategi</h2>
             <p>
-              Bagi seorang eksekutif, daya tariknya bersifat komersial, bukan estetik.
-              Pemikiran reka bentuk secara sistematik mengurangkan risiko komersial
-              yang kritikal: membina sesuatu yang tidak dipilih oleh pelanggan.
-              Dengan memaksa bukti diperoleh lebih awal, ia menganjakkan detik
-              kegagalan daripada pelancaran yang mahal kepada prototaip yang murah.
+              Bagi seorang eksekutif, daya tarikannya bersifat komersial, bukan estetik.
+              Pemikiran reka bentuk secara sistematik menekan satu risiko komersial yang
+              paling menyakitkan: membina sesuatu yang akhirnya tidak dipilih oleh
+              pelanggan. Dengan mendesak bukti dikumpul lebih awal, ia mengalihkan detik
+              kegagalan daripada sebuah pelancaran yang mahal kepada sebuah prototaip
+              yang murah.
             </p>
             <p>
-              Ia juga menggabungkan kreativiti dengan logik komersial melalui satu
-              lensa yang mudah dan tegas. Inovasi yang berdaya tahan mesti duduk
-              pada titik pertemuan tiga ujian:
+              Ia juga menyatukan kreativiti dengan logik perniagaan melalui satu lensa
+              yang mudah namun tegas. Inovasi yang benar-benar bertahan mesti berada di
+              titik pertemuan tiga ujian:
             </p>
             <ul>
               <li>
@@ -152,79 +154,81 @@ export default function Page() {
                 (soalan manusia)
               </li>
               <li>
-                <strong>Boleh dilaksanakan</strong> — bolehkah kita benar-benar
+                <strong>Boleh dilaksanakan</strong> — mampukah kita benar-benar
                 membina dan menyampaikannya? (soalan teknikal)
               </li>
               <li>
-                <strong>Boleh disara</strong> — adakah ia masuk akal dari segi
+                <strong>Boleh disara</strong> — adakah ia masuk akal sebagai
                 perniagaan yang mampan? (soalan komersial)
               </li>
             </ul>
             <p>
-              Pemikiran reka bentuk paling kukuh pada aspek keinginan, tepat pada
-              titik strategi konvensional paling lemah — dan tugas pemimpin ialah
-              memegang ketiga-tiganya dalam keseimbangan, bukan mengoptimumkan
+              Pemikiran reka bentuk paling kuat pada aspek keinginan — tepat pada titik
+              yang paling lemah dalam strategi konvensional. Dan di sinilah tugas
+              pemimpin: mengimbangi ketiga-tiga ujian ini serentak, bukan menyempurnakan
               satu dengan mengorbankan yang lain.
             </p>
 
-            <h3>Mentakrifkan semula &ldquo;kerja yang perlu diselesaikan&rdquo; sebenar</h3>
+            <h3>Mentakrif semula &ldquo;kerja sebenar yang perlu diselesaikan&rdquo;</h3>
             <p>
-              Pertimbangkan sebuah bank pasaran pertengahan yang kehilangan pelanggan
-              muda kepada aplikasi fintech. Respons naluri ialah perlumbaan ciri:
-              tambah carta bajet, reka bentuk semula papan pemuka, lancarkan lebih
-              pantas. Meluangkan masa dengan temu bual pelanggan sebenar boleh
-              mendedahkan kerja yang berbeza. Mereka bukan membeli carta; mereka
-              mengupah perkhidmatan untuk menjawab satu soalan yang membimbangkan —
-              &ldquo;bolehkah saya menanggung kos ini sekarang, tanpa kejutan buruk
-              kemudian?&rdquo;
+              Ambil contoh sebuah bank pasaran pertengahan yang kehilangan pelanggan muda
+              kepada aplikasi fintech. Gerak balas naluri ialah perlumbaan ciri: tambah
+              carta bajet, reka bentuk semula papan pemuka, lancarkan lebih pantas. Namun,
+              meluangkan masa menemu bual pelanggan sebenar sering mendedahkan kerja yang
+              sama sekali berbeza. Mereka bukan membeli carta; mereka sebenarnya
+              mengharapkan perkhidmatan itu menjawab satu persoalan yang membimbangkan
+              hati — &ldquo;mampukah saya menanggung kos ini sekarang, tanpa kejutan buruk
+              di kemudian hari?&rdquo;
             </p>
             <p>
-              Ditakrifkan semula begitu, masalahnya bukan antara muka. Ia adalah
-              keyakinan dan kejelasan pada saat keputusan dibuat. Anjakan tunggal
-              itu mengubah hala tuju keseluruhan roadmap — ke arah isyarat
-              keterjangkauan masa nyata dan amaran berbahasa mudah — dan menjauhi
-              timbunan ciri yang akan diuji dengan baik dalam mesyuarat tetapi lemah
-              dalam penggunaan sebenar. Kumpulan pelanggan dan data sumber tidak
-              berubah; pasukan itu telah menghasilkan takrifan yang lebih jitu
-              tentang kerja pelanggan.
+              Ditakrif semula begitu, masalahnya bukan lagi antara muka. Ia soal keyakinan
+              dan kejelasan pada saat keputusan dibuat. Satu anjakan itu sahaja mengubah
+              hala tuju keseluruhan pelan produk — beralih ke arah isyarat kemampuan
+              kewangan secara masa nyata dan amaran berbahasa mudah, serta menjauhi
+              timbunan ciri yang nampak hebat dalam mesyuarat tetapi lemah dalam
+              penggunaan sebenar. Kumpulan pelanggan dan data sumbernya tidak berubah;
+              yang berubah ialah pasukan itu kini memiliki takrifan yang lebih jitu
+              tentang apa yang sebenarnya pelanggan mahukan.
             </p>
 
             <h2>Perangkap biasa</h2>
             <ul>
               <li>
-                <strong>Melangkau kajian pelanggan.</strong> Terus kepada ideasi
-                boleh menukar andaian dalaman menjadi keperluan produk.
+                <strong>Melangkau kajian pelanggan.</strong> Terus melompat ke peringkat
+                ideasi mudah menukar andaian dalaman menjadi keperluan produk secara
+                tidak sedar.
               </li>
               <li>
-                <strong>Membina prototaip terlalu lewat.</strong> Prototaip pertama
-                berfidelity tinggi meningkatkan kos untuk menukar hala tuju sebelum
-                andaian utama diuji.
+                <strong>Terlalu lewat membina prototaip.</strong> Prototaip pertama yang
+                terlalu halus dan lengkap menaikkan kos untuk berpatah balik sebelum
+                andaian utamanya sempat diuji.
               </li>
               <li>
-                <strong>Melayannya sebagai gimik bengkel.</strong> Nota melekit dan
+                <strong>Menganggapnya sekadar gimik bengkel.</strong> Nota melekit dan
                 sesi luar pejabat tidak menjadikannya satu disiplin. Pemikiran reka
-                bentuk hanya memberi hasil apabila dapatan mengubah apa yang dibiayai,
-                dilancarkan dan dihentikan.
+                bentuk hanya berhasil apabila penemuannya benar-benar mengubah apa yang
+                dibiayai, dilancarkan dan diberhentikan.
               </li>
             </ul>
 
             <h2>Daripada kaedah kepada penguasaan</h2>
             <p>
-              Pemikiran reka bentuk-integratif ialah salah satu daripada tujuh
-              disiplin dalam kaedah F.A.S.T. {" "}
-              <Link href="/ms/how-it-works">Future Ready Executive MBA</Link>, di
-              mana ia berada bersama rangka kerja Jobs-To-Be-Done dan Diingini-Boleh
-              Dilaksanakan-Boleh Disara yang diperkenalkan di atas — diajar bukan
-              sebagai teori tetapi sebagai alat yang anda gunakan terhadap masalah
-              strategik anda sendiri. Jika anda mahu menerajui inovasi yang bertahan
-              apabila bertembung dengan pelanggan sebenar, {" "}
-              <Link href="/ms/executive-mba">Executive MBA</Link> membina kebiasaan
-              itu sehingga menjadi naluri.
+              Pemikiran reka bentuk integratif ialah salah satu daripada tujuh disiplin
+              dalam kaedah F.A.S.T. {" "}
+              <Link href="/ms/how-it-works">Future Ready Executive MBA</Link>. Di sini,
+              ia berganding dengan rangka kerja Jobs-To-Be-Done serta ujian
+              Diingini–Boleh Dilaksanakan–Boleh Disara yang diperkenalkan tadi — diajar
+              bukan sebagai teori, tetapi sebagai alat yang terus anda gunakan pada
+              masalah strategik anda sendiri. Jika hasrat anda menerajui inovasi yang
+              mampu bertahan apabila berdepan pelanggan sebenar, {" "}
+              <Link href="/ms/executive-mba">Executive MBA</Link> mengasah kebiasaan itu
+              sehingga menjadi naluri.
             </p>
             <h2>Sumber dan bacaan lanjut</h2>
             <p>
-              Bagi rangka keinginan, kebolehlaksanaan dan kebolehsaraan yang mantap—dan
-              penjelasan semasa IDEO tentang amalan berulang ini—lihat{" "}
+              Untuk memahami rangka keinginan, kebolehlaksanaan dan kebolehsaraan dengan
+              lebih mendalam — berserta penjelasan terkini IDEO tentang amalan berulang
+              ini — rujuk{" "}
               <a href="https://designthinking.ideo.com/introduction" target="_blank" rel="noopener noreferrer">pengenalan IDEO kepada pemikiran reka bentuk</a>.
             </p>
           </div>
@@ -234,7 +238,7 @@ export default function Page() {
       <CtaSection
         lang="ms"
         programme="Executive MBA"
-        heading="Uji apa yang dinilai pelanggan sebelum melabur sumber."
+        heading="Uji apa yang benar-benar dihargai pelanggan sebelum anda melabur sumber."
       />
     </>
   );
