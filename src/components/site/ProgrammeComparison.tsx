@@ -19,10 +19,10 @@ const STRINGS = {
     us: "Future Ready Executive MBA",
   },
   zh: {
-    region: "参考型学术 MBA 与 Future Ready 高管 MBA 对比",
+    region: "参考型学术 MBA 与 Future Ready Executive MBA 对比",
     head: "比较项目",
     them: "参考型学术 MBA",
-    us: "Future Ready 高管 MBA",
+    us: "Future Ready Executive MBA",
   },
   ms: {
     region: "Perbandingan MBA akademik rujukan dengan Future Ready Executive MBA",

@@ -41,7 +41,7 @@ const COPY = {
       "先查看已公布资料，再决定是否联系课程团队。",
     ],
     reassurance: "免费 PDF · 无需付款 · 不代表申请承诺",
-    contact: "希望直接获得答复？通过 WhatsApp 联系 Future Ready 高管 MBA →",
+    contact: "希望直接获得答复？通过 WhatsApp 联系 Future Ready Executive MBA →",
   },
 } as const;
 
@@ -49,7 +49,7 @@ export default function GuideApplyPage({ locale, source }: { locale: Locale; sou
   const copy = COPY[locale];
   const whatsappText = encodeURIComponent(
     locale === "zh"
-      ? "您好，我想了解 Future Ready 高管 MBA。请发送课程及下一期开课资料。"
+      ? "您好，我想了解 Future Ready Executive MBA。请发送课程及下一期开课资料。"
       : locale === "ms"
         ? "Hai pasukan Future Ready EMBA, saya ingin mengetahui lebih lanjut tentang program dan kohort seterusnya."
         : "Hello Future Ready EMBA team, I'd like to understand the programme and next intake.",

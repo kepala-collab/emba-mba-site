@@ -11,14 +11,14 @@ export default function WhatsAppFloat() {
   const pathname = usePathname() || "/";
   const locale = localeOfPath(pathname);
   const label = locale === "zh"
-    ? "通过 WhatsApp 联系 Future Ready 高管 MBA"
+    ? "通过 WhatsApp 联系 Future Ready Executive MBA"
     : locale === "ms"
       ? "Hubungi Future Ready EMBA di WhatsApp"
       : "Contact Future Ready EMBA on WhatsApp";
   const [formState, setFormState] = useState({ pathname: "", visible: false });
   const formVisible = formState.pathname === pathname && formState.visible;
   const msg = encodeURIComponent(locale === "zh"
-    ? "您好，我想进一步了解 Future Ready 高管 MBA（英国 CMI）。请提供课程和下一期开课详情。"
+    ? "您好，我想进一步了解 Future Ready Executive MBA（英国 CMI）。请提供课程和下一期开课详情。"
     : locale === "ms"
       ? "Salam sejahtera, saya ingin mengetahui lebih lanjut tentang Future Ready Executive MBA (CMI UK). Mohon kongsikan butiran program dan tarikh kemasukan seterusnya."
       : "Hello Future Ready EMBA team, I'd like to explore the Future Ready Executive MBA (CMI UK). Please share the programme and next-intake details."

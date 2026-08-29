@@ -7,9 +7,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-sme-owners", {
-  title: "面向中小企业主及创办人的高管 MBA",
+  title: "面向中小企业主及创办人的Executive MBA",
   description:
-    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书。课程在六个月内分三个课程完成，专为中小企业主设计。",
+    "由 CMI 颁授并背书的Executive MBA，六个月分三个课程完成，专为中小企业主打造。",
 });
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书，在六个月内分三个课程为中小企业主及创办人开办。",
+    "由 CMI 颁授并背书的Executive MBA，六个月分三个课程，为中小企业主与创办人开办。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -36,18 +36,18 @@ const jsonLd = {
 };
 
 const CHALLENGES = [
-  { h: "运作依赖企业主", p: "定价、审批、客户决定及问题处理，仍然要靠企业主本人。" },
-  { h: "决策容量有限", p: "企业增长带来的决定数量，增加得比一个人所能处理的速度更快。" },
-  { h: "战略缺乏受保护的时间", p: "紧急的运作事务一再抢先于市场、能力及投资决定之前。" },
-  { h: "接班安排不明确", p: "角色、决策权及运作知识，尚未有足够文件化的记录以供交接。" },
-  { h: "被动式管理", p: "团队处理紧急表象问题，却没有改变产生这些问题的流程或激励机制。" },
+  { h: "运作依赖企业主", p: "定价、审批、客户决策、救火处理，样样都还得企业主亲自出手。" },
+  { h: "决策容量有限", p: "企业越做越大，要拍板的事情多得远超一个人能应付的极限。" },
+  { h: "战略缺乏受保护的时间", p: "紧急的日常事务反复插队，把市场、能力与投资这些大方向一再挤到后面。" },
+  { h: "接班安排不明确", p: "职责、决策权与运作经验都还留在个人脑中，没有形成可供交接的文件。" },
+  { h: "被动式管理", p: "团队忙着扑灭表面问题，却没去改动催生这些问题的流程与激励机制。" },
 ];
 
 const FIT = [
-  { h: "三个指定周末课程", p: "三个课程按月进行；已公布的开课时间表列明每个班次是星期五至星期六，还是星期六至星期日。" },
-  { h: "您的企业就是应用项目", p: "没有传统的论文或考试。学员用课程框架，为自己的组织制定转型方案。" },
+  { h: "三个指定周末课程", p: "三个课程按月推进；已公布的开课表会注明每个班次是周五至周六，还是周六至周日。" },
+  { h: "您的企业就是应用项目", p: "没有传统论文，也没有考试。学员运用课程框架，为自己的公司量身制定转型方案。" },
   { h: "雇主主导的 HRD Corp 资助", p: HRD_CORP_CLAIM_ZH },
-  { h: "马来西亚申请者的奖学金资格", p: `符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认，分期方案列于学费页面。` },
+  { h: "马来西亚申请者的奖学金资格", p: `奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经 ${FACTS.scholarshipProvider} 评估与书面批准；具体金额与应付费用均个别书面确认，分期方案见学费页面。` },
 ];
 
 export default function MbaForSmeOwnersZhPage() {
@@ -64,20 +64,20 @@ export default function MbaForSmeOwnersZhPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              建立能降低<span className="acc">企业主依赖</span>的运作系统。
+              搭建运作系统，摆脱企业对<span className="acc">企业主本人的依赖</span>。
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Future Ready 高管 MBA 帮助中小企业主审视决定、客户知识及运作控制权
-            仍然集中在一个人身上的环节。课程把系统、战略及领导力框架，
-            应用到授权、能力建设、接班及增长等课题上。
+            Future Ready Executive MBA 帮中小企业主找出——决策、客户资源与运作控制权
+            还牢牢集中在一个人身上的那些环节，再把系统、战略与领导力框架，
+            用到授权、育才、接班与增长等课题上。
           </p>
           <p className="mono sec-k mt-s">
             六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
           </p>
           <p className="sec-sub mt-s">
             查看完整的{" "}
-            <Link href="/zh/executive-mba" className="acc">高管 MBA 课程</Link>，
+            <Link href="/zh/executive-mba" className="acc">Executive MBA 课程</Link>，
             或探索{" "}
             <Link href="/zh/curriculum" className="acc">以思维为核心的课程大纲</Link>。
           </p>
@@ -92,10 +92,10 @@ export default function MbaForSmeOwnersZhPage() {
             <span className="mono sec-k">运作指标</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">企业主依赖会在企业哪些环节浮现。</h2>
+            <h2 className="sec-h">企业主依赖，通常藏在这些环节里。</h2>
           </Reveal>
           <p className="sec-sub">
-            用这些指标，判断您的应用项目应该处理哪一个运作限制。
+            对照这些迹象，判断您的应用项目该先攻克哪一处运作瓶颈。
           </p>
           <div className="mt-m grid-forces">
             {CHALLENGES.map((x) => (
@@ -118,20 +118,20 @@ export default function MbaForSmeOwnersZhPage() {
             <span className="mono sec-k">会有什么改变</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">把反复出现的决定，转移到明确的运作系统之中。</h2>
+            <h2 className="sec-h">把反复出现的决策，交给清晰的运作系统来承接。</h2>
           </Reveal>
           <p className="sec-sub">
-            课程聚焦于围绕企业主的运作系统：决策权、流程、信息流动、
-            领导能力及衡量指标。它培养的是管理能力；增长与回报取决于
-            后续的决定与执行方式。
+            课程聚焦于企业主身边的这套运作系统：决策权、流程、信息流转、
+            领导力与衡量指标。它锤炼的是管理能力；至于增长与回报，
+            则取决于此后的决策与执行。
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             <Reveal>
               <div className="card">
                 <h3 className="mono sec-k">看见整个棋局</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  系统思维与第一性原理思维，能在投入资源之前，
-                  追踪一个决定对客户、人员、现金、产能及执行的影响。
+                  凭借系统思维与第一性原理，在投入资源之前，
+                  就把一个决策对客户、人员、现金、产能与执行的连锁影响看清楚。
                 </p>
               </div>
             </Reveal>
@@ -139,8 +139,8 @@ export default function MbaForSmeOwnersZhPage() {
               <div className="card">
                 <h3 className="mono sec-k">建立系统，而不是依赖</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  把企业主掌握的知识，转化为其他领导者也能使用的
-                  文件化流程、决策标准及升级规则。
+                  把只装在企业主脑子里的经验，沉淀成其他管理者也能照着用的
+                  流程文件、决策标准与升级规则。
                 </p>
               </div>
             </Reveal>
@@ -148,8 +148,8 @@ export default function MbaForSmeOwnersZhPage() {
               <div className="card">
                 <h3 className="mono sec-k">以框架为依据授权</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  运用情境领导力及引导框架，分配的是成果、决策权限、
-                  支持方式及检视节点——而不仅仅是任务。
+                  借助情境领导力与引导框架，交出去的是成果、决策权限、
+                  支持方式与检视节点，而不只是一件件任务。
                 </p>
               </div>
             </Reveal>
@@ -157,15 +157,15 @@ export default function MbaForSmeOwnersZhPage() {
               <div className="card">
                 <h3 className="mono sec-k">为扩张或交接做准备</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  经过结构化的战略分析，能让您对企业未来的方向有一份
-                  站得住脚的判断——这是制定明确扩张、接班或退出方案的基础。
+                  经过结构化的战略分析，您会对企业未来走向形成一份
+                  站得住脚的判断——这正是制定扩张、接班或退出方案的底气。
                 </p>
               </div>
             </Reveal>
           </div>
           <p className="fine mt-s">
-            这是一门培养能力的课程，不是增长或回报的保证。
-            了解方法在{" "}
+            这是一门锤炼能力的课程，而非增长或回报的保证。
+            了解这套方法在{" "}
             <Link href="/zh/curriculum" className="acc">课程大纲</Link>{" "}
             中如何运作。
           </p>
@@ -180,10 +180,10 @@ export default function MbaForSmeOwnersZhPage() {
             <span className="mono sec-k">为何适合企业主</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">一种让企业主能够留在企业中的课程安排。</h2>
+            <h2 className="sec-h">一种让您人在企业、照样进修的课程安排。</h2>
           </Reveal>
           <p className="sec-sub">
-            六个月课程采用指定周末课程，企业应用项目以学员自己的组织为对象。
+            六个月课程集中在指定周末进行，企业应用项目就以学员自己的公司为对象。
             资助与付款方式另行说明。
           </p>
           <div className="mt-m grid-forces">
@@ -199,7 +199,7 @@ export default function MbaForSmeOwnersZhPage() {
           <p className="fine mt-s">
             这门专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位。
             <Link href="/zh/apply" className="acc">{CTA_LABELS.zh.guide}</Link>
-            ，再选择开课班次。
+            ，再挑选开课班次。
           </p>
         </div>
       </section>
@@ -208,11 +208,11 @@ export default function MbaForSmeOwnersZhPage() {
       <section className="section center">
         <div className="wrap">
           <Reveal>
-            <h2 className="sec-h">确定课程应该处理哪一种企业主依赖问题。</h2>
+            <h2 className="sec-h">先想清楚，这门课程该帮您解开哪一种企业主依赖。</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
-            与课程团队讨论您的运作课题，并确认应用项目、课程安排及学员背景
-            是否符合您的目标。
+            与课程团队聊聊您的运作课题，一起确认应用项目、课程安排与同学背景
+            是否契合您的目标。
           </p>
           <p className="mt-s">
             <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide}</Link>
@@ -220,7 +220,7 @@ export default function MbaForSmeOwnersZhPage() {
         </div>
       </section>
 
-      <CtaSection lang="zh" programme="Executive MBA" heading="谈一谈您的企业除了企业主本人之外，还需要哪些系统。" />
+      <CtaSection lang="zh" programme="Executive MBA" heading="聊聊除了您本人，企业还需要哪些系统撑起来。" />
     </>
   );
 }

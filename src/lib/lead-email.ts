@@ -164,7 +164,7 @@ function programmeGuideAttachment(language: Language) {
 
 function whatsAppUrl(language: Language): string {
   const message = language === "zh"
-    ? "您好，我已提交 Future Ready 高管 MBA 课程沟通请求，希望进一步了解课程。"
+    ? "您好，我已提交 Future Ready Executive MBA 课程沟通请求，希望进一步了解课程。"
     : language === "ms"
       ? "Salam Pasukan Future Ready EMBA, saya telah memohon perbualan program dan ingin mengetahui lebih lanjut."
       : "Hello Future Ready EMBA team, I requested a programme conversation and would like to learn more.";
@@ -236,7 +236,7 @@ export function buildApplicationReceivedEmail(input: {
         nextCopy: `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
         notice: "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
         siteLabel: "查看 2026 课程资料",
-        whatsAppLabel: "通过 WhatsApp 联系 Future Ready 高管 MBA",
+        whatsAppLabel: "通过 WhatsApp 联系 Future Ready Executive MBA",
         siteUrl,
         waUrl,
       }),

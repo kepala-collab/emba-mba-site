@@ -38,7 +38,7 @@ export const CTA_LABELS = {
     guide: `获取 ${PROGRAMME_YEAR} 课程指南`,
     conversation: "预约课程沟通",
     company: "企业课程咨询",
-    whatsapp: "通过 WhatsApp 联系 Future Ready 高管 MBA",
+    whatsapp: "通过 WhatsApp 联系 Future Ready Executive MBA",
   },
   ms: {
     guide: `Dapatkan panduan program ${PROGRAMME_YEAR}`,

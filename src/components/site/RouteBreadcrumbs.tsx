@@ -60,7 +60,7 @@ const ROUTES: Record<string, Item[]> = {
   "/zh/apply": [ZH_HOME, { name: "课程咨询", path: "/zh/apply" }],
   "/zh/asian-business-consulting": [ZH_HOME, ZH_TEAM, { name: "Asian Business Consulting", path: "/zh/asian-business-consulting" }],
   "/zh/chartered-manager-malaysia": [ZH_HOME, ZH_PROGRAMME, { name: "CMI 认可", path: "/zh/chartered-manager-malaysia" }],
-  "/zh/contact": [ZH_HOME, ZH_TEAM, { name: "联系 Future Ready 高管 MBA", path: "/zh/contact" }],
+  "/zh/contact": [ZH_HOME, ZH_TEAM, { name: "联系 Future Ready Executive MBA", path: "/zh/contact" }],
   "/zh/curriculum": [ZH_HOME, ZH_PROGRAMME, { name: "课程大纲", path: "/zh/curriculum" }],
   "/zh/diagnostic": [ZH_HOME, ZH_RESOURCES, { name: "课程适合度检查", path: "/zh/diagnostic" }],
   "/zh/executive-mba": [ZH_HOME, ZH_PROGRAMME],

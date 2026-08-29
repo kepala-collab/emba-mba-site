@@ -16,7 +16,7 @@ const MODULES_ZH = [
 ] as const;
 
 export const HRD_CORP_CLAIM_ZH =
-  "HRD Corp 注册马来西亚雇主须在开课前通过 e-TRiS 提交 grant 申请。HRD Corp 依据 Allowable Cost Matrix 决定资格及批准金额；资助金额不会超过雇主可用 levy 余额。申请方是雇主，不是学员。";
+  "已在 HRD Corp 注册的马来西亚雇主，须在开课前通过 e-TRiS 提交资助申请。HRD Corp 依据 Allowable Cost Matrix 审定资格与批准金额；资助额不会超过雇主可用的征费（levy）余额。提出申请的是雇主，而非学员。";
 
 export const PROGRAMME_AUDIENCE_ZH =
   "适合负责战略、转型、创新或增长的企业主、董事、总经理及资深管理者。";
@@ -50,9 +50,9 @@ export const CORE_PAGES_ZH = {
     ],
   },
   programme: {
-    eyebrow: "六个月高管 MBA · 英国 CMI 认可",
-    title: "为经验丰富的在职管理者设计",
-    intro: "六个月完成六个培训日、辅导及企业项目。学员可在继续工作的同时完成课程。符合条件的学员可另行咨询 Chartered Manager 后续发展路径。",
+    eyebrow: "六个月 Executive MBA · 英国 CMI 认可",
+    title: "专为在职的资深管理者打造",
+    intro: "六个月内完成六个培训日、导师辅导与一个企业项目，全程无需离岗，边工作边学。符合条件的学员，可另行咨询 Chartered Manager 的后续发展路径。",
     sections: [
       ["六个月课程安排", "完成六个培训日、三个集中课程、企业项目及辅导。达到课程要求后，学员取得获 CMI 认可的 Executive MBA 课程证书。"],
       ["独立的 Chartered Manager 路线", "Chartered Manager 是 CMI 的独立可选路线，具有独立资格、评估及费用。它不包含在本课程或已公布费用内，也不会因完成课程而自动获得。"],
@@ -78,7 +78,7 @@ export const CORE_PAGES_ZH = {
   fees: {
     eyebrow: "学费 · 奖学金 · HRD Corp",
     title: "标准费用 RM10,000.00；奖学金须经择优评估",
-    intro: "符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金择优评估。奖学金名额有限，评估结果及最终费用均会个别以书面确认；奖学金并非自动提供。",
+    intro: "LIFE Innoversity 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准。任何奖学金金额及应付费用均会个别以书面确认；奖学金并非自动提供，也不是折扣码。",
     sections: [
       ["课程费用包含什么", "无论支付标准费用或获得奖学金，课程均包括六个月内的三个现场课程、个人领导力诊断、导师辅导、学习工具及企业项目评审。Chartered Manager 是独立可选路线，具有独立资格、评估及费用，不包含在已公布课程费用内。"],
       ["HRD Corp", HRD_CORP_CLAIM_ZH],

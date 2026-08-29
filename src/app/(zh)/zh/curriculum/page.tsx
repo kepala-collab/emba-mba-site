@@ -6,8 +6,8 @@ const path = "/zh/curriculum";
 const content = CORE_PAGES_ZH.curriculum;
 
 export const metadata = withSeo(path, {
-  title: "课程大纲与 12 个领导力模块",
-  description: "查看高管 MBA 的十二个模块、三个学习阶段、企业项目及无论文、无传统考试的评估方式。",
+  title: "课程大纲与 12 门领导力模块",
+  description: "细看 Executive MBA 的 12 门模块、三个学习阶段、以真实企业课题为核心的应用项目，以及不设论文、不设传统考试的评估方式。",
 });
 
 export default function Page() {

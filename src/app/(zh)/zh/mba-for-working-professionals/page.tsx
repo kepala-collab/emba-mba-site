@@ -10,9 +10,9 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-working-professionals", {
-  title: "面向在职专业人士的兼读高管 MBA",
+  title: "面向在职专业人士的兼读Executive MBA",
   description:
-    "在全职工作的同时进修：一门为期六个月的高管 MBA，专为在职专业人士设计，三个指定周末课程，或以线上课程形式进行。",
+    "一边全职工作，一边进修：为期六个月的Executive MBA，专为在职专业人士打造，三个指定周末授课，也可全程线上。",
 });
 
 const jsonLd = {
@@ -21,7 +21,7 @@ const jsonLd = {
   "@id": COURSE_ID,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "面向未来商业领导力的高管 MBA 由 CMI 颁授并背书，六个月内三个指定课程进行，另设线上课程选项。",
+    "由 CMI 颁授并背书的Executive MBA，六个月内分三个指定课程进行，另设线上选项。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -39,17 +39,17 @@ const jsonLd = {
 };
 
 const FIT = [
-  { h: "三个指定周末课程", p: "课程分三个既定课程，每个课程为期一个周末。" },
-  { h: "或完全线上进行", p: "课程也提供线上直播形式，辅导与框架与现场班次相同。" },
-  { h: "书面补课安排", p: "如学员错过某次课程，ABC 会以书面方式记录经批准的补课方式：指定视频，或指定后续班次的出席。" },
-  { h: "应用于当前工作", p: "没有传统的论文或考试。学员把框架应用于自己目前负责的企业课题。" },
+  { h: "三个指定周末课程", p: "全程分三个固定课程，每个课程为期一个周末。" },
+  { h: "或完全线上进行", p: "也可选择全程线上直播，导师辅导与课程框架与面授班完全一致。" },
+  { h: "书面补课安排", p: "万一错过某次课程，ABC 会以书面确认经批准的补课方式：观看指定录像，或参加指定的后续班次。" },
+  { h: "应用于当前工作", p: "没有传统论文，也没有考试。学员把框架直接用在自己当下负责的经营课题上。" },
 ];
 
 const AUDIENCE = [
-  { h: "企业主与创业者", p: "把企业扩展到直觉已难以独力承担规模的创办人。" },
-  { h: "董事与总经理", p: "对业务单位战略、绩效及交付负责的领导者。" },
-  { h: "资深经理", p: "正从职能执行，转向跨职能决策责任的管理者。" },
-  { h: "资深专业人士", p: "对战略、转型、创新或增长负责的专业人士。" },
+  { h: "企业主与创业者", p: "企业已经做到、光靠直觉难以独力驾驭的创办人。" },
+  { h: "董事与总经理", p: "为业务单元的战略、业绩与交付负责的领导者。" },
+  { h: "资深经理", p: "正从单一职能执行，走向跨部门决策的管理者。" },
+  { h: "资深专业人士", p: "肩负战略、转型、创新或增长重任的专业人士。" },
 ];
 
 export default function MbaForWorkingProfessionalsZhPage() {
@@ -67,21 +67,21 @@ export default function MbaForWorkingProfessionalsZhPage() {
             </div>
             <Reveal>
               <h1 className="sec-h">
-                为仍<span className="acc">留任原有职位</span>的专业人士而设的兼读高管 MBA 时间安排。
+                为<span className="acc">不离开现有岗位</span>的专业人士量身安排的兼读Executive MBA 时间表。
               </h1>
             </Reveal>
             <p className="sec-sub">
-              Future Ready 高管 MBA 专为希望在全职工作期间进修的学员设计。
-              课程为期 {FACTS.durationLong}，采用三个指定周末课程。
-              Chartered Manager 是独立可选的 CMI 路线，具有独立资格、评估及费用；
-              不包含在已公布课程或费用内。
+              Future Ready Executive MBA 专为想在全职工作之余进修的学员打造。
+              课程为期 {FACTS.durationLong}，集中在三个指定周末授课。
+              Chartered Manager 属于独立可选的 CMI 路线，另有各自的资格、评估与费用，
+              不包含在已公布的课程或费用之内。
             </p>
             <p className="mono sec-k mt-s">
               六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
             </p>
             <p className="sec-sub mt-s">
               探索完整的{" "}
-              <Link href="/zh/executive-mba" className="acc">高管 MBA 课程</Link>，
+              <Link href="/zh/executive-mba" className="acc">Executive MBA 课程</Link>，
               或直接查看{" "}
               <Link href="/zh/intakes" className="acc">2026 开课日期</Link>。
             </p>
@@ -96,7 +96,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
                 sizes="(max-width: 900px) 100vw, 38vw"
                 priority
               />
-              <figcaption>专为在学习期间仍持续承担工作的管理者而设。</figcaption>
+              <figcaption>专为学习期间仍照常扛着工作的管理者而设。</figcaption>
             </figure>
           </Reveal>
         </div>
@@ -110,10 +110,10 @@ export default function MbaForWorkingProfessionalsZhPage() {
             <span className="mono sec-k">如何配合您的每周安排</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">为仍在职的学员公布的课程时间表。</h2>
+            <h2 className="sec-h">为在职学员公布的上课时间表。</h2>
           </Reveal>
           <p className="sec-sub">
-            报名前请查看三个课程日期。企业应用项目把课程与学员目前职位中的企业课题连接起来。
+            报名前请先核对三个课程的日期。企业应用项目会把所学与您现职中的经营课题挂钩。
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {FIT.map((x) => (
@@ -136,19 +136,19 @@ export default function MbaForWorkingProfessionalsZhPage() {
             <span className="mono sec-k">与参考型学术 MBA 对比</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">比较两种不同修读形式及资格性质的路线。</h2>
+            <h2 className="sec-h">对比两条修读形式与资格性质各不相同的路线。</h2>
           </Reveal>
           <p className="sec-sub">
-            本对比中的参考型学术 MBA 修读时间为 18–24 个月，采用学术评估及论文。
-            以下是两种已定义修读形式的对比。
+            此处作为参照的学术 MBA 一般需 18–24 个月，采用学术评估与论文。
+            下表比较这两种修读形式。
           </p>
           <Reveal className="mt-s">
-            <ScrollableTableRegion kind="comparison" label="高管 MBA 与参考型学术 MBA 形式对比">
+            <ScrollableTableRegion kind="comparison" label="Executive MBA 与参考型学术 MBA 形式对比">
               <table className="cmp">
                 <thead>
                   <tr>
                     <th></th>
-                    <th className="us">本高管 MBA</th>
+                    <th className="us">本Executive MBA</th>
                     <th>参考型学术 MBA</th>
                   </tr>
                 </thead>
@@ -165,9 +165,9 @@ export default function MbaForWorkingProfessionalsZhPage() {
             </ScrollableTableRegion>
           </Reveal>
           <p className="fine mt-s">
-            此表把参考型学术 MBA 界定为一门 18–24 个月、以学术模块、作业或考试及论文为主的课程，
-            并不代表所有 MBA 课程。这门专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位。
-            请依据您所需要的资格性质及修读形式作出选择。查看完整的{" "}
+            此表所指的参照学术 MBA，是一门为期 18–24 个月、以学术模块、作业或考试及论文为主的课程，
+            并不代表所有 MBA。这门专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位。
+            请按您真正需要的资格性质与修读形式来选择。查看完整的{" "}
             <Link href="/zh/fees" className="acc">学费及课程内容</Link>。
           </p>
         </div>
@@ -184,8 +184,8 @@ export default function MbaForWorkingProfessionalsZhPage() {
             <h2 className="sec-h">2026 英语及华语开课时间表。</h2>
           </Reveal>
           <p className="sec-sub">
-            现行马来西亚公开班次时间为上午 9 时至下午 6 时；第 17 班次为星期六至星期日，
-            其余已公布班次为星期五至星期六。另设完全线上课程选项。
+            目前马来西亚公开班次为上午 9 时至下午 6 时；第 17 班次为周六至周日，
+            其余已公布班次为周五至周六。另设全程线上选项。
           </p>
           <Reveal className="mt-s">
             <IntakeSchedule lang="zh" label="2026 年在职专业人士开课时间表" />
@@ -204,10 +204,10 @@ export default function MbaForWorkingProfessionalsZhPage() {
             <span className="mono sec-k">适合对象</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">面向负责战略或企业整体责任的专业人士。</h2>
+            <h2 className="sec-h">写给肩负战略或企业整体成败的专业人士。</h2>
           </Reveal>
           <p className="sec-sub">
-            课程适合负责战略、转型、创新或增长的企业主、董事、总经理及资深管理者。
+            课程适合肩负战略、转型、创新或增长的企业主、董事、总经理与资深管理者。
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {AUDIENCE.map((x) => (
@@ -220,14 +220,14 @@ export default function MbaForWorkingProfessionalsZhPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            {HRD_CORP_CLAIM_ZH} 符合资格的马来西亚申请者经评估及书面批准后，
-            可接受 {FACTS.scholarshipProvider} 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认。{" "}
+            {HRD_CORP_CLAIM_ZH} 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，
+            须经 {FACTS.scholarshipProvider} 评估与书面批准，并非自动获得；具体金额与应付费用均个别书面确认。{" "}
             <Link href="/zh/apply" className="acc">{CTA_LABELS.zh.guide}</Link>。
           </p>
         </div>
       </section>
 
-      <CtaSection lang="zh" programme="Executive MBA" heading="对照您目前的职位，检视课程安排是否合适。" />
+      <CtaSection lang="zh" programme="Executive MBA" heading="对照您眼下的岗位，看看课程安排是否合适。" />
     </>
   );
 }

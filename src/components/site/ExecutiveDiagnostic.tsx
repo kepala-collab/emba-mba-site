@@ -73,7 +73,7 @@ const RESULT_COPY = [
 
 const QUESTIONS_ZH = [
   {
-    question: "哪一种情况最能说明你现在寻找课程的原因？",
+    question: "哪一种情况最能说明您现在寻找课程的原因？",
     options: [
       "我的职责范围已经超出现有的管理工具。",
       "我正面对一项影响重大的商业决策或转型。",
@@ -91,7 +91,7 @@ const QUESTIONS_ZH = [
     ],
   },
   {
-    question: "什么学习安排最符合你的实际情况？",
+    question: "什么学习安排最符合您的实际情况？",
     options: [
       "已公布并适合全职工作的上课时间。",
       "把学习应用到自己的商业情境。",
@@ -100,7 +100,7 @@ const QUESTIONS_ZH = [
     ],
   },
   {
-    question: "采取下一步之前，你最需要哪项资料？",
+    question: "采取下一步之前，您最需要哪项资料？",
     options: [
       "教学方法、模块及企业项目要求。",
       "完整时间投入与已公布班次日期。",
@@ -125,7 +125,7 @@ const RESULT_COPY_ZH = [
   },
   {
     title: "可执行的时间投入",
-    body: `把六个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合你的工作责任。`,
+    body: `把六个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合您的工作责任。`,
     href: "/zh/intakes",
     action: "查看开课日期",
   },

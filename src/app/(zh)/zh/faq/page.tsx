@@ -9,8 +9,8 @@ import { CTA_LABELS } from "@/lib/content";
 const path = "/zh/faq";
 
 export const metadata = withSeo(path, {
-  title: "高管 MBA 常见问题",
-  description: "关于课程结构、CMI 认可、MQA 学位区别、HRD Corp、出席安排、适合对象及申请流程的直接说明。",
+  title: "Executive MBA 常见问题",
+  description: "直接说明课程结构、CMI 认可、与 MQA 学位的区别、HRD Corp、出席安排、适合对象及申请流程。",
 });
 
 const schema = {
@@ -33,8 +33,8 @@ export default function Page() {
         <div className="wrap maxw-820">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">常见问题</span></div>
-            <h1 className="sec-h">报名之前，您应该知道的答案</h1>
-            <p className="sec-sub">课程资格、费用和日期均以课程团队在报名时提供的最新书面资料为准。</p>
+            <h1 className="sec-h">报名之前，先把关键问题厘清</h1>
+            <p className="sec-sub">课程资格、费用与开课日期，一律以课程团队在报名时提供的最新书面资料为准。</p>
           </Reveal>
           <Reveal className="mt-s">
             {FAQS_ZH.map(([question, answer], index) => (

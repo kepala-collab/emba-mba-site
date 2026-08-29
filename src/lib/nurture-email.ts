@@ -101,7 +101,7 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
     facts: [
       { label: "课程安排", value: "为期六个月 · 三个指定周末课程 · 无需离岗" },
       { label: "认可", value: "CMI（英国）认可的专业发展课程，非学术学位" },
-      { label: "费用", value: "公布费用 RM10,000 · 奖学金逐一评估，以书面确认为准" },
+      { label: "费用", value: "公布费用 RM10,000 · 奖学金名额有限、择优授予，以书面确认为准" },
     ],
     ctaLabel: "预约课程沟通",
     ctaPath: "/zh/apply",
