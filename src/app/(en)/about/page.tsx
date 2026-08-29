@@ -2,9 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
+import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import { ABC_PROFILE, ORGANISATIONAL_STATEMENT, SITE } from "@/lib/content";
-import { withSeo } from "@/lib/seo";
+import { editorialTeamSchema, OPERATOR_ID, withSeo } from "@/lib/seo";
+
+const ABOUT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE.url}/about#roy-affandi`,
+      name: SITE.director,
+      jobTitle: "Programme Coordinator",
+      image: `${SITE.url}/brand/community/affandi-portrait.webp`,
+      worksFor: { "@id": OPERATOR_ID },
+      description:
+        "Programme Coordinator for the Future Ready Executive MBA, with more than 30 years across banking and finance, corporate communication, sales and marketing, property development and corporate strategy.",
+    },
+    editorialTeamSchema(),
+  ],
+};
 
 export const metadata = withSeo("/about", {
   title: "About Us | Meet Roy Affandi",
@@ -15,6 +33,7 @@ export default function AboutPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/home" }, { name: "About", path: "/about" }]} />
+      <JsonLd data={ABOUT_SCHEMA} />
       <section className="section">
         <div className="wrap about-affandi-grid" style={{ display: "grid", gridTemplateColumns: ".85fr 1.15fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <Reveal>
