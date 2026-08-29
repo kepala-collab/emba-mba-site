@@ -10,6 +10,10 @@ import { useEffect, useRef, type ReactNode } from "react";
  * inner wrapper on each route change so the CSS animation replays; the shared
  * chrome (header, footer, analytics) lives outside this and is untouched.
  * Under prefers-reduced-motion the animation is neutralised globally.
+ *
+ * (The native View Transitions API would be preferable, but it is not available
+ * in this Next.js version — the experimental flag and React's ViewTransition
+ * component do not exist in 16.3.2.)
  */
 export default function RouteTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
