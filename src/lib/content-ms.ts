@@ -31,7 +31,7 @@ export const COMPARISON_MS = [
   { k: "Peranan fasilitator", them: "Pengajaran akademik dan penyeliaan penyelidikan", us: "Pengamal industri, perunding dan jurulatih eksekutif" },
   { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: "Metodologi F.A.S.T. dan 12 rangka kerja perniagaan praktikal" },
   { k: "Bentuk pengajian", them: "Mengikut jadual akademik yang ditetapkan institusi penganugerah", us: "Tiga hujung minggu berjadual sepanjang program selama enam bulan; peserta terus bekerja sepenuh masa" },
-  { k: "Yuran kursus", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis" },
+  { k: "Yuran kursus", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: "Yuran standard RM10,000.00; pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa LIFE Innoversity, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis" },
   { k: "Sifat kelayakan", them: "Ijazah MBA akademik daripada institusi penganugerah", us: "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik bertauliah MQA" },
 ] as const;
 
@@ -77,12 +77,12 @@ export const CORE_PAGES_MS = {
   },
   fees: {
     eyebrow: "Yuran · Biasiswa · HRD Corp",
-    title: "Yuran standard RM10,000.00; biasiswa dinilai berdasarkan kelayakan",
-    intro: "Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity, tertakluk pada kekosongan, penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis; biasiswa tidak diberikan secara automatik.",
+    title: "Yuran standard RM10,000.00; biasiswa terhad, dinilai berdasarkan kelayakan",
+    intro: "Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa LIFE Innoversity, tertakluk pada kekosongan terhad, penilaian terpilih dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis; biasiswa tidak diberikan secara automatik.",
     sections: [
       ["Apa yang termasuk dalam yuran kursus", "Sama ada membayar yuran standard atau menerima biasiswa, kursus merangkumi tiga sesi bersemuka dalam tempoh enam bulan, diagnostik kepimpinan peribadi, bimbingan fasilitator, alat pembelajaran dan penilaian projek perniagaan. Chartered Manager ialah laluan pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam yuran kursus yang diterbitkan."],
       ["HRD Corp", HRD_CORP_CLAIM_MS],
-      ["Yuran untuk pemohon Malaysia", "Yuran standard ialah RM10,000.00. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis selepas penilaian; biasiswa tertakluk pada kekosongan dan tidak automatik."],
+      ["Yuran untuk pemohon Malaysia", "Yuran standard ialah RM10,000.00. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa LIFE Innoversity. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis selepas penilaian; biasiswa tertakluk pada kekosongan terhad dan tidak automatik."],
       ["Bayaran individu", "Sebelum bayaran dibuat, pasukan kursus memberikan jadual ansuran bertulis kepada peserta individu, menyatakan jumlah setiap ansuran dan tarikh matang."],
       ["Urusan bayaran balik", REFUND_TERMS_MS],
     ],

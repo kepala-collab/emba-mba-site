@@ -135,7 +135,7 @@ export default function ExecutiveMbaVsMbaPage() {
               program enam bulan, projek aplikasi perniagaan, pengiktirafan CMI terhadap Professional Standard-nya
               dan pekerjaan yang berterusan sepanjang pengajian. Yuran standard Malaysia 2026 yang diterbitkan
               ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima{" "}
-              <Link href="/ms/fees" className="acc">kelayakan biasiswa {FACTS.scholarshipProvider}</Link>, tertakluk pada penilaian dan kelulusan bertulis.
+              <Link href="/ms/fees" className="acc">kelayakan biasiswa {FACTS.scholarshipProvider}</Link>, tertakluk pada kekosongan terhad, penilaian terpilih dan kelulusan bertulis.
             </p>
           </Reveal>
           <Reveal>

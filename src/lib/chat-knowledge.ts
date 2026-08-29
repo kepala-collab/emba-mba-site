@@ -45,7 +45,7 @@ VERIFIED PROGRAMME FACTS
 - Recognition statement: ${PROGRAMME_POSITIONING_SENTENCE} It is a six-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification. Never claim a programme-level CMI qualification level or CMI Fast Track eligibility for Chartered Manager. Do not describe it as an academic MBA degree, a regulated qualification, or a guaranteed career outcome.
 - Intended participants: ${PROGRAMME_AUDIENCE}
 - Malaysian standard fee: ${FACTS.priceStd}.
-- Malaysian scholarship: eligible Malaysian applicants may be considered for a ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
+- Malaysian scholarship: eligible Malaysian applicants may be considered, on a selective basis, for a ${FACTS.scholarshipProvider} scholarship. The scholarship is not automatic. ${FACTS.scholarshipEligibility}
 - Scholarship outcome: any award and resulting participant fee are confirmed individually in writing. Never imply that nationality alone guarantees an award or quote an amount not contained in the applicable written proposal.
 - HRD Corp: ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.process} ${HRD_CORP_CLAIM.responsibility} Never describe approval or reimbursement as automatic.
 - Company enrolment: ${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}

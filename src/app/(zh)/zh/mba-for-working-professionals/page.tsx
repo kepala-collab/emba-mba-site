@@ -221,7 +221,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
           </div>
           <p className="fine mt-s">
             {HRD_CORP_CLAIM_ZH} 符合资格的马来西亚申请者经评估及书面批准后，
-            可接受 {FACTS.scholarshipProvider} 奖学金评估；任何奖学金金额及应付费用均会个别以书面确认。{" "}
+            可接受 {FACTS.scholarshipProvider} 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认。{" "}
             <Link href="/zh/apply" className="acc">{CTA_LABELS.zh.guide}</Link>。
           </p>
         </div>

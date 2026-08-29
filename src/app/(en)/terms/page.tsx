@@ -47,7 +47,7 @@ export default function TermsPage() {
           <h2>No guarantees</h2>
           <p>
             Nothing on this Site guarantees admission, HRD Corp grant approval, employment, income, promotion or a
-            business result. The standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may be considered for the {FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval. Any award and resulting participant fee are confirmed individually in writing. {HRD_CORP_CLAIM.responsibility}
+            business result. The standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship, subject to limited availability, a selective assessment and written approval. Any award and resulting participant fee are confirmed individually in writing. {HRD_CORP_CLAIM.responsibility}
           </p>
 
           <h2>Programme assistant</h2>

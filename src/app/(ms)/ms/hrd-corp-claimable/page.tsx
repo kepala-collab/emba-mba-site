@@ -53,7 +53,7 @@ const HRD_FAQS = [
   },
   {
     q: "Bagaimana jika kami tidak berdaftar dengan HRDC?",
-    a: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
+    a: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
   },
 ];
 
@@ -168,7 +168,7 @@ export default function HrdCorpClaimablePage() {
               majikan Malaysia yang berdaftar dengan HRD Corp mengemukakan permohonan sebelum latihan.
               HRD Corp memutuskan kelayakan dan jumlah yang diluluskan, yang tidak boleh melebihi baki levi
               majikan yang tersedia. Tidak berdaftar levi, atau menyertai sebagai
-              individu? Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa {FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis,
+              individu? Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider} selepas penilaian dan kelulusan bertulis,
               atau memilih pelan ansuran.
             </p>
           </Reveal>

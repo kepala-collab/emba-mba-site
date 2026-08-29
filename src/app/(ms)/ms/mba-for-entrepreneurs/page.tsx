@@ -170,7 +170,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Semak program terhadap keputusan semasa usaha anda.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini berjalan selama enam bulan. Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa {FACTS.scholarshipProvider}, tertakluk pada penilaian dan kelulusan bertulis.
+            Program ini berjalan selama enam bulan. Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}, tertakluk pada kekosongan terhad, penilaian terpilih dan kelulusan bertulis.
           </p>
           <p className="mt-s">
             <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide}</Link>

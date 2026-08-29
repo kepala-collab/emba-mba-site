@@ -23,7 +23,7 @@ ${OPERATOR.name} is ABC's ${OPERATOR.role} for marketing, programme enquiries, p
 ## Important interpretation
 - The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI; it is professional development, not an MQA-accredited academic qualification.
 - ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}
-- The standard programme fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered for a ${FACTS.scholarshipProvider} scholarship, subject to availability, assessment and written approval. Any award and resulting participant fee are confirmed individually in writing; the scholarship is not automatic.
+- The standard programme fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for a ${FACTS.scholarshipProvider} scholarship, subject to limited availability, a selective assessment and written approval. Any award and resulting participant fee are confirmed individually in writing; the scholarship is not automatic.
 - Programme completion provides the CMI-recognised programme certificate. CMI's published CMI Recognised route lists Foundation Chartered Manager (fCMgr) status on completion; CMI controls activation, continued use and membership renewal.
 - The Executive MBA runs for six months and leads to the CMI-recognised programme certificate. Chartered Manager is a separate optional CMI route; CMI controls eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.
 - ${HRD_CORP_CLAIM.process}

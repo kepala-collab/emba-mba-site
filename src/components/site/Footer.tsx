@@ -147,7 +147,7 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}. No. Pendaftaran Perniagaan {OPERATOR.reg}. Alamat perniagaan berdaftar: {OPERATOR.address}.</p>
               <p><strong>Notis rakan kongsi:</strong> {OPERATOR.name} ialah rakan kongsi bersekutu {SITE.provider}, menguruskan pertanyaan program, harga dan penyelarasan pendaftaran.</p>
-              <p><strong>Notis program:</strong> {PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh {SITE.provider}; bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa {FACTS.scholarshipProvider}; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. HRD Corp menentukan kelayakan pembiayaan majikan dan jumlah yang diluluskan.</p>
+              <p><strong>Notis program:</strong> {PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh {SITE.provider}; bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. HRD Corp menentukan kelayakan pembiayaan majikan dan jumlah yang diluluskan.</p>
               <p><strong>Perlindungan data:</strong> Data peribadi diproses oleh {OPERATOR.name} menurut Akta Perlindungan Data Peribadi 2010 [Akta 709] Malaysia, seperti yang dipinda. Lihat Dasar Privasi untuk butiran.</p>
             </div>
           </section>
@@ -192,7 +192,7 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}。商业注册号：{OPERATOR.reg}。注册地址：{OPERATOR.address}。</p>
               <p><strong>合作伙伴声明：</strong>{OPERATOR.name} 是 {SITE.provider} 的市场推广机构，负责课程咨询、报价及报名协调。</p>
-              <p><strong>课程声明：</strong>{PROGRAMME_POSITIONING_ZH} 这是由 {SITE.provider} 提供的六个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金评估；任何奖学金金额及应付费用均会个别以书面确认。HRD Corp 决定雇主资助资格及批准金额。</p>
+              <p><strong>课程声明：</strong>{PROGRAMME_POSITIONING_ZH} 这是由 {SITE.provider} 提供的六个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认。HRD Corp 决定雇主资助资格及批准金额。</p>
               <p><strong>资料保护：</strong>个人资料由 {OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。详情请参阅隐私政策。</p>
             </div>
           </section>
@@ -247,7 +247,7 @@ export default function Footer() {
           <div className="legal-copy">
             <p>© {year} {OPERATOR.name}. Business Registration No. {OPERATOR.reg}. Registered business address: {OPERATOR.address}.</p>
             <p><strong>Partner notice:</strong> {OPERATOR.name} is the {OPERATOR.role}, handling programme enquiries, pricing and enrolment coordination.</p>
-            <p><strong>Programme notice:</strong> {PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme delivered by {SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls Foundation Chartered Manager activation, membership grades, post-nominals, Chartered assessment, membership and fees. Eligible Malaysian applicants may be considered for the {FACTS.scholarshipProvider} scholarship; any award and resulting participant fee are confirmed individually in writing. HRD Corp decides employer funding eligibility and the approved amount.</p>
+            <p><strong>Programme notice:</strong> {PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme delivered by {SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls Foundation Chartered Manager activation, membership grades, post-nominals, Chartered assessment, membership and fees. Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship; any award and resulting participant fee are confirmed individually in writing. HRD Corp decides employer funding eligibility and the approved amount.</p>
             <p><strong>Data protection:</strong> Personal data is processed by {OPERATOR.name} in accordance with Malaysia&rsquo;s Personal Data Protection Act 2010 [Act 709], as amended. See the Privacy Policy for details.</p>
           </div>
         </section>

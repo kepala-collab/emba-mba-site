@@ -53,7 +53,7 @@ const HRD_FAQS = [
   },
   {
     q: "公司没有注册 HRD Corp 怎么办？",
-    a: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金评估；任何奖学金金额及应付费用均会个别以书面确认。个人付款选项列于学费页面。`,
+    a: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认。个人付款选项列于学费页面。`,
   },
 ];
 
@@ -161,7 +161,7 @@ export default function HrdCorpClaimablePage() {
               HRD Corp 索款属于<b style={{ color: "var(--ink)" }}>由公司付款的 B2B</b> 路径：
               HRD Corp 注册马来西亚雇主在开课前提交申请，资格及批准金额由 HRD Corp 决定，
               金额不会超过雇主可用 levy 余额。公司未注册 levy，或以个人身份报读？
-              符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金评估，或选择分期付款安排。任何奖学金金额及应付费用均会个别以书面确认。
+              符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金择优评估，或选择分期付款安排。任何奖学金金额及应付费用均会个别以书面确认。
             </p>
           </Reveal>
           <p className="fine mt-s">

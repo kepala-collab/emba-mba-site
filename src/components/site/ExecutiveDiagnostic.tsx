@@ -234,7 +234,7 @@ const UI_COPY = {
     talk: CTA_LABELS.zh.conversation,
     guideKicker: "下一步",
     guideTitle: "保留结果，并查看完整课程指南。",
-    guideBody: `《${PROGRAMME_YEAR} 在职经理进阶指南》把课程安排、日期、费用、奖学金评估方式及 CMI 认可集中在一份资料中。`,
+    guideBody: `《${PROGRAMME_YEAR} 在职经理进阶指南》把课程安排、日期、费用、奖学金择优评估方式及 CMI 认可集中在一份资料中。`,
     restart: "重新开始",
     back: "返回",
     result: "查看建议起点",

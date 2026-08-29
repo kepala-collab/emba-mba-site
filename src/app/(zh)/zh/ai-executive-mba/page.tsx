@@ -128,7 +128,7 @@ export default function AiExecutiveMbaPage() {
               ["由 CMI 颁授并背书", "面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书，并非 MQA 监管的学术学位。"],
               ["HRD Corp", HRD_CORP_CLAIM_ZH],
               ["修读形式", "六个月课程：三个指定课程，加上辅导及企业应用项目。"],
-              ["课程费用", "标准费用 " + FACTS.priceStd + "。符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金评估；任何奖学金金额及应付费用均会个别以书面确认。"],
+              ["课程费用", "标准费用 " + FACTS.priceStd + "。符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认。"],
               ["应用项目", "学员为自己的企业完成一份转型方案；没有传统考试或论文。"],
             ].map(([h, p]) => (
               <div key={h} className="card">

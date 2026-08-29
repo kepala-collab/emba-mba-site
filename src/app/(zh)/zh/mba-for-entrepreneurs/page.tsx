@@ -166,7 +166,7 @@ export default function MbaForEntrepreneursZhPage() {
           </Reveal>
           <p className="sec-sub">
             课程为期 {FACTS.durationLong}。标准费用为 {FACTS.priceStd}。
-            符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金评估，须经书面批准。
+            符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金择优评估，须经书面批准。
           </p>
           <p className="mt-s">
             <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide}</Link>

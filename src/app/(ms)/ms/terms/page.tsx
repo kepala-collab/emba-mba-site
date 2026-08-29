@@ -30,7 +30,7 @@ export default function Page() {
           <h2>Urusan bayaran balik</h2>
           <p>{REFUND_TERMS_MS} Terma yang ditandatangani juga menyatakan prosedur pembatalan bagi bayaran syarikat dan geran HRD Corp; jika terdapat percanggahan antara laman ini dan terma yang ditandatangani, terma yang ditandatangani diguna pakai.</p>
           <h2>Tiada jaminan hasil</h2>
-          <p>Laman ini tidak menjamin kemasukan, biasiswa, kelulusan HRD Corp, pekerjaan, pendapatan, kenaikan pangkat atau sebarang hasil perniagaan. Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa {FACTS.scholarshipProvider}; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. {HRD_CORP_CLAIM_MS}</p>
+          <p>Laman ini tidak menjamin kemasukan, biasiswa, kelulusan HRD Corp, pekerjaan, pendapatan, kenaikan pangkat atau sebarang hasil perniagaan. Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. {HRD_CORP_CLAIM_MS}</p>
           <h2>Pembantu maklumat program</h2>
           <p>Pembantu maklumat program yang bersifat pilihan menggunakan AI automatik untuk menjawab soalan berdasarkan maklumat program yang terhad. Jawapan AI adalah untuk rujukan sahaja dan tidak membentuk pengesahan kemasukan, sebut harga, biasiswa, HRD Corp atau pendaftaran. Jangan hantar data peribadi, identiti, sulit atau pembayaran melalui pembantu. Cadangan bertulis rasmi dan terma pendaftaran yang ditandatangani sentiasa diguna pakai.</p>
           <h2>Komunikasi pemasaran</h2>

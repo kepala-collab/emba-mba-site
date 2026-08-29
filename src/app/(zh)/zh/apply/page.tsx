@@ -6,7 +6,7 @@ const path = "/zh/apply";
 
 export const metadata = withSeo(path, {
   title: "获取 Future Ready 高管 MBA 课程指南",
-  description: "免费获取 2026 课程指南，了解六个月结构、已公布日期、课程费用、奖学金评估方式及 CMI 认可。",
+  description: "免费获取 2026 课程指南，了解六个月结构、已公布日期、课程费用、奖学金择优评估方式及 CMI 认可。",
 });
 
 export default function Page() {

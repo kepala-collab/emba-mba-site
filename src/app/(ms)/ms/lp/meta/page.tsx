@@ -103,7 +103,7 @@ export default function MsMetaLP() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Biasiswa tidak diberikan secara automatik. {HRD_CORP_CLAIM_MS} Pelan ansuran disenaraikan di halaman yuran.</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>Yuran standard ialah {FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa LIFE Innoversity. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Biasiswa tidak diberikan secara automatik. {HRD_CORP_CLAIM_MS} Pelan ansuran disenaraikan di halaman yuran.</p></Reveal>
         </div>
       </section>
 

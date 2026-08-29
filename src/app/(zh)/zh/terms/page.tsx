@@ -30,7 +30,7 @@ export default function Page() {
           <h2>退款安排</h2>
           <p>{REFUND_TERMS_ZH} 已签署条款也列明公司付款及 HRD Corp grant 的取消程序；如本网站与已签署条款不一致，以已签署条款为准。</p>
           <h2>不作结果保证</h2>
-          <p>本网站不保证录取、奖学金、HRD Corp 批准、就业、收入、晋升或任何商业成果。标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金评估；任何奖学金金额及应付费用均会个别以书面确认。{HRD_CORP_CLAIM_ZH}</p>
+          <p>本网站不保证录取、奖学金、HRD Corp 批准、就业、收入、晋升或任何商业成果。标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金择优评估；任何奖学金金额及应付费用均会个别以书面确认。{HRD_CORP_CLAIM_ZH}</p>
           <h2>课程资讯助手</h2>
           <p>可选用的课程资讯助手以自动化 AI 依据限定的课程资料回答问题。AI 答案仅供参考，并不构成录取、报价、奖学金、HRD Corp 或报名确认。请勿通过助手提交个人、身份、机密或付款资料。正式书面建议书及已签署的报名条款始终优先。</p>
           <h2>营销通讯</h2>

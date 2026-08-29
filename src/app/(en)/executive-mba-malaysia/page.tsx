@@ -19,7 +19,7 @@ const REASONS = [
   },
   {
     h: "Malaysian scholarship eligibility",
-    p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing.`,
+    p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing.`,
   },
   {
     h: "A six-month programme for working leaders",
@@ -84,7 +84,7 @@ export default function ExecutiveMbaMalaysiaPage() {
               development programme for Malaysian owners, directors and senior managers. It is
               awarded and endorsed by CMI and delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
               The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
-              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} scholarship assessment</b>, subject to availability and written approval.
+              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} scholarship assessment</b>, subject to limited availability, a selective assessment and written approval.
               Participants apply the programme frameworks to their own organisation, market and operating context.
             </p>
           </Reveal>

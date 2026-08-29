@@ -14,7 +14,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/fees", {
   title: "Executive MBA Fees, Scholarship & HRD Corp",
   description:
-    "The standard fee is RM10,000. Eligible Malaysian applicants may be considered for a scholarship; any award and resulting participant fee are confirmed individually in writing.",
+    "The standard fee is RM10,000. Eligible Malaysian applicants may be considered, on a selective basis, for a scholarship; any award and resulting participant fee are confirmed individually in writing.",
 });
 
 export default function FeesPage() {
@@ -31,7 +31,7 @@ export default function FeesPage() {
             <Reveal delay={40}><h1>{FACTS.priceStd} standard fee. Scholarships assessed individually.</h1></Reveal>
             <Reveal delay={80}>
               <p className="fees-hero-lede">
-                Eligible Malaysian applicants may be considered for the {FACTS.scholarshipProvider} scholarship. Availability and eligibility are assessed, and any award and resulting participant fee are confirmed individually in writing. The scholarship is never automatic.
+                Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship. Availability and eligibility are assessed, and any award and resulting participant fee are confirmed individually in writing. The scholarship is never automatic.
               </p>
             </Reveal>
             <Reveal delay={110}>

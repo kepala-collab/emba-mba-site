@@ -130,7 +130,7 @@ export default function ExecutiveMbaVsMbaPage() {
               six-month programme, an applied business project, CMI recognition against its
               Professional Standard and continued employment during study. The published 2026 Malaysian
               standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the{" "}
-              <Link href="/fees" className="acc">{FACTS.scholarshipProvider} scholarship eligibility</Link>, subject to assessment and written approval.
+              <Link href="/fees" className="acc">{FACTS.scholarshipProvider} scholarship eligibility</Link>, subject to limited availability, a selective assessment and written approval.
             </p>
           </Reveal>
           <Reveal>

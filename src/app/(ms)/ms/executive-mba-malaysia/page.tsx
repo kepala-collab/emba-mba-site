@@ -20,7 +20,7 @@ const REASONS = [
   },
   {
     h: "Kelayakan biasiswa Malaysia",
-    p: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.`,
+    p: `Yuran standard ialah ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa ${FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.`,
   },
   {
     h: "Program enam bulan untuk pemimpin yang bekerja",
@@ -85,7 +85,7 @@ export default function ExecutiveMbaMalaysiaPage() {
               enam bulan untuk pemilik perniagaan, pengarah dan pengurus kanan di Malaysia. Ia dianugerahkan
               dan disokong oleh CMI serta dikendalikan melalui sesi langsung yang berfokus. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_MS}</b>{" "}
               Yuran program ditetapkan dalam ringgit pada {FACTS.priceStd}. Pemohon Malaysia yang layak boleh menerima{" "}
-              <b style={{ color: "var(--ink)" }}>penilaian biasiswa {FACTS.scholarshipProvider}</b>, tertakluk pada kekosongan dan kelulusan bertulis.
+              <b style={{ color: "var(--ink)" }}>penilaian biasiswa {FACTS.scholarshipProvider}</b>, tertakluk pada kekosongan terhad, penilaian terpilih dan kelulusan bertulis.
               Peserta menggunakan rangka kerja program terhadap organisasi, pasaran dan konteks operasi mereka sendiri.
             </p>
           </Reveal>

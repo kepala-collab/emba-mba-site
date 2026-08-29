@@ -134,7 +134,7 @@ const COPY = {
     audiencePoints: ["带来一项当前企业课题。", "通过严谨并能配合工作的结构学习。", "形成一套能够说明、检验及执行的实用方案。"],
     decisionKicker: "免费 2026 课程指南",
     decisionTitle: "先了解完整资料，再决定是否参与。",
-    decisionBody: "一份 PDF 清楚列出六个月课程结构、已公布日期、课程费用、奖学金评估条件及 CMI 认可。",
+    decisionBody: "一份 PDF 清楚列出六个月课程结构、已公布日期、课程费用、奖学金择优评估条件及 CMI 认可。",
     decisionAside: "是否进一步沟通由您决定。指南的作用，是帮助您判断这项课程是否值得一次对话。",
   },
 } as const;

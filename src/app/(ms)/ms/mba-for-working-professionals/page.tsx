@@ -224,7 +224,7 @@ export default function MbaForWorkingProfessionalsPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            {HRD_CORP_CLAIM_MS} Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa {FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.{" "}
+            {HRD_CORP_CLAIM_MS} Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis.{" "}
             <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>.
           </p>
         </div>

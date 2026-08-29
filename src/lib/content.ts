@@ -87,7 +87,7 @@ export const FEES = {
   malaysia: {
     scholarshipProvider: "LIFE Innoversity",
     eligibility:
-      "Eligible Malaysian applicants may be considered for a scholarship, subject to availability, assessment and written approval. Any award and resulting participant fee are confirmed individually in writing.",
+      "Scholarships are limited and awarded on a selective basis to eligible Malaysian applicants, following individual assessment and written approval. Any award and resulting participant fee are confirmed individually in writing.",
   },
 } as const;
 
@@ -305,7 +305,7 @@ export const COMPARISON = [
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
   { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "The F.A.S.T. method and 12 applied management modules" },
   { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "Three scheduled weekend sessions, coaching and applied project work across six months while participants continue working" },
-  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard fee; eligible Malaysian applicants may be considered for a LIFE Innoversity scholarship, with any award and resulting participant fee confirmed individually in writing" },
+  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard fee; eligible Malaysian applicants may be considered, on a selective basis, for a LIFE Innoversity scholarship, with any award and resulting participant fee confirmed individually in writing" },
   { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
 ];
 

@@ -128,7 +128,7 @@ export default function ExecutiveMbaVsMbaPage() {
               当您需要的是六个月课程、企业应用项目、对照 CMI Professional Standard 的专业认可，
               以及修读期间继续工作，选择本课程。已公布的 2026 马来西亚标准费用为 {FACTS.priceStd}。
               符合资格的马来西亚申请者经评估及书面批准后，可获{" "}
-              <Link href="/zh/fees" className="acc">{FACTS.scholarshipProvider} 奖学金资格</Link>，须经评估及书面批准。
+              <Link href="/zh/fees" className="acc">{FACTS.scholarshipProvider} 奖学金资格</Link>，须经择优评估及书面批准。
             </p>
           </Reveal>
           <Reveal>
