@@ -83,8 +83,7 @@ export default function CommerceHeroMedia({
         src="/media/future-commerce/hero-leader-poster.webp"
         alt={alt}
         fill
-        preload
-        fetchPriority="high"
+        priority
         quality={88}
         sizes="(max-width: 1080px) 100vw, 46vw"
       />
@@ -95,7 +94,7 @@ export default function CommerceHeroMedia({
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
         tabIndex={-1}
         onLoadedData={() => setIsVideoReady(true)}
