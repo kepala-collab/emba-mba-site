@@ -12,6 +12,7 @@ import { OPERATOR_ID, PROVIDER_ID, WEBSITE_ID } from "@/lib/seo";
 import { FloatingUiProvider } from "@/components/site/FloatingUiContext";
 import RouteBreadcrumbs from "@/components/site/RouteBreadcrumbs";
 import RouteScrollManager from "@/components/site/RouteScrollManager";
+import RouteTransition from "@/components/site/RouteTransition";
 import SkipLink from "@/components/site/SkipLink";
 
 export default function SiteChrome({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -92,7 +93,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
         <Header />
         <RouteBreadcrumbs />
         <noscript><style>{`.reveal{opacity:1;transform:none}`}</style></noscript>
-        <main id="main-content" tabIndex={-1}>{children}</main>
+        <main id="main-content" tabIndex={-1}><RouteTransition>{children}</RouteTransition></main>
         <Footer />
         <ConsentBanner />
         <ProgrammeAssistant />

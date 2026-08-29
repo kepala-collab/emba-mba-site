@@ -80,7 +80,9 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,'Times New Roman',serif;fon
 .sec-k{color:var(--crimson-action)}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;font-weight:600;font-size:.96rem;
-  padding:.82rem 1.7rem;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:.22s;font-family:inherit}
+  padding:.82rem 1.7rem;border-radius:999px;cursor:pointer;border:1px solid transparent;font-family:inherit;
+  transition:transform var(--duration-fast) var(--ease-out),box-shadow var(--duration-normal) var(--ease-out),background var(--duration-fast) var(--ease-out),border-color var(--duration-fast) var(--ease-out),color var(--duration-fast) var(--ease-out)}
+.btn:active{transform:translateY(0) scale(.97)}
 .btn-primary{background:linear-gradient(135deg,var(--steel) 0%,var(--crimson-2) 100%);color:#fff;box-shadow:0 12px 32px -12px rgba(20,87,199,.7)}
 .btn-ghost{border-color:var(--line-2);color:var(--ink);background:rgba(255,255,255,.7)}
 .btn-wa{background:#25D366;color:#052e15}
@@ -185,6 +187,8 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,'Times New Roman',serif;fon
 @media(max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .reveal{opacity:1;transform:translateY(20px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+@keyframes route-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.route-fade{animation:route-fade var(--duration-normal) var(--ease-out) both}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
@@ -620,8 +624,8 @@ main .reveal,main .card,main [style*="grid-template-columns"]>*{min-width:0}
 .form :where(input,select,textarea):focus-visible{outline:3px solid var(--color-focus);outline-offset:2px;border-color:var(--steel)}
 
 @media(hover:hover){
-  .btn-primary:hover{background:var(--crimson-2);transform:translateY(-2px);box-shadow:0 16px 44px -12px rgba(230,58,72,.7)}
-  .btn-ghost:hover{border-color:var(--ink);background:rgba(255,255,255,.06)}
+  .btn-primary:hover{background:var(--crimson-2);transform:translateY(-2px);box-shadow:0 18px 46px -14px rgba(20,87,199,.6)}
+  .btn-ghost:hover{border-color:var(--steel);background:var(--bg-2);transform:translateY(-1px)}
   .btn-wa:hover{background:#2ee775;transform:translateY(-2px)}
   .card:hover{border-color:var(--line-2);background:var(--surface-2)}
   .mods .m:hover{background:var(--surface-2)}
@@ -1188,7 +1192,7 @@ html[lang="zh-Hans"] .technical-term{font-family:var(--font-archivo),ui-sans-ser
 .btn-ghost:hover{border-color:var(--steel);background:#fff;transform:translateY(-2px);box-shadow:var(--shadow-sm)}
 .btn-wa:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 30px -12px rgba(37,211,102,.6)}
 .navcta{transition:transform .2s cubic-bezier(.2,.7,.2,1),box-shadow .2s ease,filter .2s ease}
-.navcta:hover{transform:translateY(-1px);filter:saturate(1.05);box-shadow:0 10px 24px -10px rgba(230,58,72,.55)}
+.navcta:hover{transform:translateY(-1px);filter:saturate(1.05);box-shadow:0 12px 26px -10px rgba(20,87,199,.5)}
 .navcta:active{transform:translateY(0) scale(.985)}
 .desktop-nav a:not(.langswitch):not(.navcta){position:relative;transition:color .18s ease}
 .desktop-nav a:not(.langswitch):not(.navcta)::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;border-radius:1px;background:var(--crimson-2);transition:right .24s cubic-bezier(.2,.7,.2,1)}
