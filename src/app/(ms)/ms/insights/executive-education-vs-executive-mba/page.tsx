@@ -82,7 +82,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             </p>
 
             <h2>Bandingkan fakta yang diterbitkan</h2>
-            <ScrollableTableRegion kind="comparison" label="Perbandingan pendidikan eksekutif dan Executive MBA">
+            <ScrollableTableRegion kind="comparison" label="Perbandingan pendidikan eksekutif dan Executive MBA" hint="Leret untuk lihat semua lajur →">
               <table className="cmp">
                 <thead><tr><th>Keputusan</th><th>Pendidikan eksekutif</th><th>Future Ready Executive MBA ini</th></tr></thead>
                 <tbody>

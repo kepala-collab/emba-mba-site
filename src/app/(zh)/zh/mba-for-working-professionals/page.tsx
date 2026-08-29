@@ -143,7 +143,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
             下表比较这两种修读形式。
           </p>
           <Reveal className="mt-s">
-            <ScrollableTableRegion kind="comparison" label="Executive MBA 与参考型学术 MBA 形式对比">
+            <ScrollableTableRegion kind="comparison" label="Executive MBA 与参考型学术 MBA 形式对比" hint="向右滑动查看所有列 →">
               <table className="cmp">
                 <thead>
                   <tr>

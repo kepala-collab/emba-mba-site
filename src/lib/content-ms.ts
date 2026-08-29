@@ -83,7 +83,7 @@ export const CORE_PAGES_MS = {
       ["Apa yang termasuk dalam yuran program", "Sama ada membayar yuran standard atau menerima biasiswa, program merangkumi tiga sesi bersemuka dalam tempoh enam bulan, diagnostik kepimpinan peribadi, bimbingan fasilitator, alat pembelajaran dan penilaian projek perniagaan. Chartered Manager ialah laluan pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam yuran program yang diterbitkan."],
       ["HRD Corp", HRD_CORP_CLAIM_MS],
       ["Yuran untuk pemohon Malaysia", "Yuran standard ialah RM10,000.00. Biasiswa LIFE Innoversity adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; biasiswa tidak automatik dan bukan kod diskaun."],
-      ["Bayaran individu", "Sebelum bayaran dibuat, pasukan program memberikan jadual ansuran bertulis kepada peserta individu, menyatakan jumlah setiap ansuran dan tarikh matang. Pilihan termasuk ansuran kad kredit RHB selama 6–12 bulan dan pelan bayaran empat bulan ABC. Kos perjalanan dan penginapan tidak termasuk dalam yuran."],
+      ["Bayaran individu", "Sebelum bayaran dibuat, pasukan program memberikan jadual ansuran bertulis kepada peserta individu, menyatakan jumlah setiap ansuran dan tarikh matang. Pilihan termasuk ansuran kad kredit RHB selama 6–12 bulan dan pelan bayaran empat bulan oleh ABC. Kos perjalanan dan penginapan tidak termasuk dalam yuran."],
       ["Urusan bayaran balik", REFUND_TERMS_MS],
     ],
   },

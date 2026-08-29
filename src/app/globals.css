@@ -1460,8 +1460,8 @@ html[lang="zh-Hans"] .commerce-home h1,html[lang="zh-Hans"] .commerce-home h2,ht
   .commerce-hero-layout{gap:42px;padding-block:58px 52px}
   .commerce-hero-copy{padding-left:16px}
   .commerce-hero-copy::before{top:42px;bottom:16px}
-  .commerce-status{font-size:.64rem;line-height:1.45}
-  .commerce-product{font-size:.62rem}
+  .commerce-status{font-size:.7rem;line-height:1.45}
+  .commerce-product{font-size:.68rem}
   .commerce-hero h1{max-width:15ch;font-size:clamp(2.8rem,13vw,4rem);line-height:.98}
   .commerce-hero-lede{font-size:1rem;line-height:1.62}
   .commerce-actions{align-items:stretch;flex-direction:column;gap:8px}

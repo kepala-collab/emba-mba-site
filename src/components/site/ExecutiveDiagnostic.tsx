@@ -273,7 +273,12 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
 
   useEffect(() => {
     if (!complete) return;
-    requestAnimationFrame(() => resultRef.current?.scrollIntoView({ block: "start" }));
+    requestAnimationFrame(() => {
+      resultRef.current?.scrollIntoView({ block: "start" });
+      // Move focus to the result heading so screen-reader users are told the
+      // result is ready (the card-level live region was removed as too broad).
+      resultRef.current?.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
+    });
   }, [complete]);
   const choose = (index: number) => {
     setAnswers((current) => {
@@ -302,7 +307,7 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
       {complete ? (
         <div ref={resultRef} className="diagnostic-result">
           <p className="mono sec-k">{copy.resultEyebrow}</p>
-          <h2>{copy.resultTitle}</h2>
+          <h2 tabIndex={-1} style={{ outline: "none" }}>{copy.resultTitle}</h2>
           <p>{copy.resultBody}</p>
           <h3 className="diagnostic-result-label">{copy.selected}</h3>
           <ol className="diagnostic-answer-list">

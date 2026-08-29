@@ -416,6 +416,7 @@ export function getLeadAttribution(): Record<string, string> {
   const attributionJson = fullAttribution.length <= ATTRIBUTION_JSON_CAP
     ? fullAttribution
     : JSON.stringify({
+        version: state.version,
         session_id: state.session_id,
         first_touch: compactTouch(state.first_touch),
         last_touch: compactTouch(touch),

@@ -90,7 +90,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             </p>
 
             <h2>公开事实逐项对比</h2>
-            <ScrollableTableRegion kind="comparison" label="高管教育与 Executive MBA 对比">
+            <ScrollableTableRegion kind="comparison" label="高管教育与 Executive MBA 对比" hint="向右滑动查看所有列 →">
               <table className="cmp">
                 <thead><tr><th>比较项目</th><th>高管教育</th><th>本 Future Ready Executive MBA</th></tr></thead>
                 <tbody>

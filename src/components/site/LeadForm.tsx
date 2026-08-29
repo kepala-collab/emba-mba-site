@@ -407,8 +407,15 @@ export default function LeadForm({
   useEffect(() => {
     const context = conversionContextFromLocation();
     setIntent(!allowedIntents || allowedIntents.includes(context.intent) ? context.intent : initialIntent);
-    if (!campaign) setSelectedCohort(context.cohort_key || "");
-    setCohortToday(malaysiaDateKey());
+    const today = malaysiaDateKey();
+    if (!campaign) {
+      // Only restore a preselected cohort if it is still open for enquiries —
+      // a stored key for a now-started cohort would otherwise be submitted.
+      const key = context.cohort_key || "";
+      const match = key ? INTAKES.find((cohort) => cohortKey(cohort.language, cohort.co) === key) : undefined;
+      setSelectedCohort(match && getIntakeStatus(match.startDate, match.endDate, today) === "upcoming" ? key : "");
+    }
+    setCohortToday(today);
   }, []);
 
   useEffect(() => {

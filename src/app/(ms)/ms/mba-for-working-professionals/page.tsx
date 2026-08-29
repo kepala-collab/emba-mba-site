@@ -145,7 +145,7 @@ export default function MbaForWorkingProfessionalsPage() {
             tersusun ini.
           </p>
           <Reveal className="mt-s">
-            <ScrollableTableRegion kind="comparison" label="Perbandingan format Executive MBA dan MBA akademik rujukan">
+            <ScrollableTableRegion kind="comparison" label="Perbandingan format Executive MBA dan MBA akademik rujukan" hint="Leret untuk lihat semua lajur →">
               <table className="cmp">
                 <thead>
                   <tr>
