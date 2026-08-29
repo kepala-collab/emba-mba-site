@@ -126,7 +126,6 @@ export default function CommerceHeroMedia({
         className="commerce-media-control"
         onClick={togglePlayback}
         aria-label={isPlaying ? pauseLabel : playLabel}
-        aria-pressed={!isPlaying}
       >
         <span aria-hidden="true">{isPlaying ? "Ⅱ" : "▶"}</span>
         {isPlaying ? pauseLabel : playLabel}

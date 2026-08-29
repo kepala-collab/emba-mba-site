@@ -10,7 +10,7 @@ import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 const PUBLISHED = "2026-08-21";
 
 export const metadata = withSeo("/insights/executive-education-vs-executive-mba", {
-  title: "Executive Education vs Executive MBA | Malaysia",
+  title: "Executive Education vs Executive MBA",
   description:
     "Compare executive education and Executive MBA programmes by academic status, credential, duration, assessment, schedule and workplace application.",
   openGraph: {

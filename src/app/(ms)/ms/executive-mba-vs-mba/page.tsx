@@ -18,7 +18,7 @@ const COMPARISON_SCOPE_MS =
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS_MS.filter(([q]) =>
-  ["Adakah ini ijazah bertauliah MQA?", "Bagaimana kursus ini disusun?", "Untuk siapa kursus ini?"].includes(q)
+  ["Adakah ini ijazah bertauliah MQA?", "Bagaimana program ini disusun?", "Untuk siapa program ini?"].includes(q)
 );
 
 const faqLd = {

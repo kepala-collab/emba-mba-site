@@ -4,7 +4,7 @@ import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import { CLIENTS, CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/executive-mba-malaysia", {
@@ -35,7 +35,7 @@ const REASONS = [
 const courseJsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/ms/executive-mba-malaysia#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia dikendalikan di Malaysia dan dalam talian; majikan berdaftar HRD Corp yang layak boleh memohon pembiayaan bagi pihak peserta, tertakluk pada kelulusan.",
@@ -44,7 +44,7 @@ const courseJsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/ms/executive-mba`,
+  url: `${SITE.url}/ms/executive-mba-malaysia`,
   inLanguage: "ms-MY",
   areaServed: { "@type": "Country", name: "MY" },
   hasCourseInstance: {
@@ -186,7 +186,7 @@ export default function ExecutiveMbaMalaysiaPage() {
             </p>
           </Reveal>
           <Reveal className="mt-s">
-            <IntakeSchedule lang="ms" label="Jadual kemasukan Malaysia 2026" />
+            <IntakeSchedule lang="ms" label="Jadual Sesi Pengambilan Malaysia 2026" />
           </Reveal>
           <p className="mt-s">
             <Link href="/ms/intakes" className="btn btn-primary">Lihat semua kohort 2026</Link>

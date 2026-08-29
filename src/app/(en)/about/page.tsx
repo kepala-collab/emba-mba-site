@@ -7,7 +7,7 @@ import { ABC_PROFILE, ORGANISATIONAL_STATEMENT, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/about", {
-  title: "About Future Ready Executive MBA | Meet Roy Affandi",
+  title: "About Us | Meet Roy Affandi",
   description: "Learn about the Future Ready Executive MBA through Programme Coordinator Roy Affandi and the programme's purpose for Malaysian professionals and business leaders.",
 });
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section">
+      <section id="editorial-standards" className="section" style={{ scrollMarginTop: "90px" }}>
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>

@@ -4,7 +4,7 @@ import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { DELIVERY_CONTROL, INTAKES, SITE } from "@/lib/content";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/intakes", {
@@ -16,7 +16,7 @@ export const metadata = withSeo("/intakes", {
 const courseJsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/intakes#course`,
   name: "Future Ready Executive MBA",
   description: "Executive MBA in Malaysia: three scheduled programme sessions. English and Mandarin 2026 schedules are published.",
   provider: {
@@ -24,7 +24,7 @@ const courseJsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/executive-mba`,
+  url: `${SITE.url}/intakes`,
   inLanguage: "en-MY",
   hasCourseInstance: INTAKES.map((c) => ({
     "@type": "CourseInstance",

@@ -289,7 +289,7 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
   };
 
   return (
-    <section ref={cardRef} className="diagnostic-card" aria-live="polite">
+    <section ref={cardRef} className="diagnostic-card">
       <div className="diagnostic-head">
         <p className="mono sec-k">{copy.eyebrow}</p>
         <h1>{copy.title}</h1>

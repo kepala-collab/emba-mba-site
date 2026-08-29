@@ -15,7 +15,7 @@ export const metadata = withSeo("/ms/hrd-corp-claimable", {
 const STEPS = [
   {
     h: "Sahkan program yang didaftarkan",
-    p: `${SITE.provider} membekalkan majikan dengan butiran pendaftaran program, sebut harga, jadual, kandungan kursus dan dokumen jurulatih.`,
+    p: `${SITE.provider} membekalkan majikan dengan butiran pendaftaran program, sebut harga, jadual, kandungan program dan dokumen jurulatih.`,
   },
   {
     h: "Majikan memohon sebelum latihan",
@@ -49,7 +49,7 @@ const HRD_FAQS = [
   },
   {
     q: "Adakah anda menguruskan dokumen?",
-    a: `Pasukan program membekalkan sebut harga, jadual, kandungan kursus dan dokumen jurulatih. Majikan mengemukakan permohonan geran serta dokumen tuntutan di pihak majikan. ${SITE.provider} mengemukakan dokumen tuntutan penyedia latihan.`,
+    a: `Pasukan program membekalkan sebut harga, jadual, kandungan program dan dokumen jurulatih. Majikan mengemukakan permohonan geran serta dokumen tuntutan di pihak majikan. ${SITE.provider} mengemukakan dokumen tuntutan penyedia latihan.`,
   },
   {
     q: "Bagaimana jika kami tidak berdaftar dengan HRDC?",

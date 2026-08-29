@@ -4,6 +4,7 @@ import CommerceHeroMedia from "@/components/site/CommerceHeroMedia";
 import LeadForm from "@/components/site/LeadForm";
 import Reveal from "@/components/site/Reveal";
 import { FACTS, INTAKES, PROGRAMME_PROOF } from "@/lib/content";
+import { malaysiaDateKey } from "@/lib/intakes";
 
 type HomeLocale = "en" | "ms" | "zh";
 
@@ -26,7 +27,7 @@ const COPY = {
     intakesTitle: "Choose the working rhythm that fits.",
     intakeOpen: "Open for enquiries",
     factRecognition: "awarded and endorsed",
-    factCommunity: "16 English · Mandarin cohort",
+    factCommunity: "16 English · 1 Mandarin cohort",
     factDuration: "professional development programme",
     factDays: "training days across three facilitated sessions",
     factModules: "applied management modules",
@@ -144,7 +145,7 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
   const formLang = locale;
   const programmeHref = `${copy.prefix}/executive-mba`;
   const durationValue = locale === "zh" ? "6 个月" : locale === "ms" ? "6 bulan" : FACTS.durationShort;
-  const currentIsoDate = new Date().toISOString().slice(0, 10);
+  const currentIsoDate = malaysiaDateKey();
   const futureIntakes = [...INTAKES]
     .filter((intake) => intake.startDate >= currentIsoDate)
     .sort((a, b) => a.startDate.localeCompare(b.startDate));
@@ -173,7 +174,7 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
             <Reveal delay={80}>
               <div className="commerce-hero-facts" aria-label={locale === "zh" ? "课程概览" : locale === "ms" ? "Ringkasan program" : "Programme at a glance"}>
                 <div><strong>{durationValue}</strong><span>{copy.factDuration}</span></div>
-                <div><strong className="commerce-cmi-wordmark"><Image src="/brand/cmi-logo-official-white.webp" alt="CMI" width={78} height={31} /></strong><span>{copy.factRecognition}</span></div>
+                <div><strong className="commerce-cmi-wordmark"><Image src="/brand/cmi-logo-official-white.webp" alt="Chartered Management Institute" width={78} height={31} /></strong><span>{copy.factRecognition}</span></div>
                 <div><strong>{PROGRAMME_PROOF.cohorts} {copy.cohorts}</strong><span>{copy.factCommunity}</span></div>
               </div>
             </Reveal>

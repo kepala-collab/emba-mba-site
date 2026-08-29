@@ -30,12 +30,11 @@ const ZH_RESOURCES = [
   "/zh/diagnostic", "/zh/insights/advancement-question", "/zh/asian-business-consulting",
 ];
 const ZH_FULL_MIRROR = [
-  "/zh/about", "/zh/ai-executive-mba", "/zh/corporate-training", "/zh/executive-mba-malaysia",
+  "/zh/about", "/zh/ai-executive-mba", "/zh/executive-mba-malaysia",
   "/zh/executive-mba-vs-mba", "/zh/hrd-corp-claimable", "/zh/insights",
   "/zh/insights/design-thinking-for-business", "/zh/insights/executive-education-vs-executive-mba",
   "/zh/insights/first-principles-thinking", "/zh/insights/systems-thinking-for-leaders",
   "/zh/mba-for-entrepreneurs", "/zh/mba-for-sme-owners", "/zh/mba-for-working-professionals",
-  "/zh/online-executive-mba", "/zh/programmes/shift-hr",
 ];
 const MS_CORE = [
   "/ms/executive-mba", "/ms/how-it-works", "/ms/curriculum", "/ms/fees", "/ms/intakes",
@@ -43,12 +42,12 @@ const MS_CORE = [
 ];
 const MS_MIRROR = [
   "/ms/resources", "/ms/resources/advancement-brief", "/ms/diagnostic", "/ms/asian-business-consulting",
-  "/ms/about", "/ms/ai-executive-mba", "/ms/corporate-training", "/ms/executive-mba-malaysia",
+  "/ms/about", "/ms/ai-executive-mba", "/ms/executive-mba-malaysia",
   "/ms/executive-mba-vs-mba", "/ms/hrd-corp-claimable", "/ms/insights",
   "/ms/insights/advancement-question", "/ms/insights/design-thinking-for-business",
   "/ms/insights/executive-education-vs-executive-mba", "/ms/insights/first-principles-thinking",
   "/ms/insights/systems-thinking-for-leaders", "/ms/mba-for-entrepreneurs", "/ms/mba-for-sme-owners",
-  "/ms/mba-for-working-professionals", "/ms/online-executive-mba", "/ms/programmes/shift-hr",
+  "/ms/mba-for-working-professionals",
 ];
 const INFO = ["/about", "/asian-business-consulting", "/contact", "/privacy", "/terms", "/resources", "/resources/advancement-brief", "/diagnostic"];
 

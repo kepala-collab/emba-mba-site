@@ -33,7 +33,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section">
+      <section id="editorial-standards" className="section" style={{ scrollMarginTop: "90px" }}>
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>

@@ -148,7 +148,7 @@ export default function FirstPrinciplesThinkingPage() {
             <p>
               Bayangkan sebuah firma perkhidmatan diberitahu margin mereka memang
               begitu kerana &quot;itulah kadar industri.&quot; Itu analogi, bukan
-              kebenaran. Cuba naakul daripada prinsip pertama. Apa yang kita
+              kebenaran. Cuba menaakul daripada prinsip pertama. Apa yang kita
               betul-betul tahu? Kos menyampaikan perkhidmatan itu ialah hasil
               tambah beberapa input tertentu — jam kerja, peralatan, overhed yang
               diperuntukkan bagi setiap tugasan. Senaraikan kesemuanya. Kemudian

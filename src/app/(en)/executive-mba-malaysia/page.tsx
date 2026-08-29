@@ -3,7 +3,7 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import { CLIENTS, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/executive-mba-malaysia", {
@@ -34,7 +34,7 @@ const REASONS = [
 const courseJsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/executive-mba-malaysia#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered in Malaysia and online; employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
@@ -43,7 +43,7 @@ const courseJsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/executive-mba`,
+  url: `${SITE.url}/executive-mba-malaysia`,
   inLanguage: "en-MY",
   areaServed: { "@type": "Country", name: "MY" },
   hasCourseInstance: {

@@ -276,12 +276,16 @@ export function analyticsPageName(pathname: string) {
 }
 
 function languageContext() {
+  const path = window.location.pathname;
   const pageLocale = document.documentElement.lang ||
-    (window.location.pathname === "/zh" || window.location.pathname.startsWith("/zh/")
+    (path === "/zh" || path.startsWith("/zh/")
       ? "zh-Hans"
-      : "en-MY");
+      : path === "/ms" || path.startsWith("/ms/")
+        ? "ms-MY"
+        : "en-MY");
+  const lc = pageLocale.toLowerCase();
   return {
-    page_language: pageLocale.toLowerCase().startsWith("zh") ? "zh" : "en",
+    page_language: lc.startsWith("zh") ? "zh" : lc.startsWith("ms") ? "ms" : "en",
     page_locale: pageLocale,
   };
 }
@@ -390,6 +394,33 @@ export function getLeadAttribution(): Record<string, string> {
   if (!state) return {};
   const touch = state.last_touch;
   const language = languageContext();
+  // Keep attribution_json comfortably under the API's 4096-char cap so a
+  // UTM-rich campaign visitor's valid submission is never rejected as invalid.
+  const ATTRIBUTION_JSON_CAP = 3900;
+  const clip = (v: string | undefined) => (typeof v === "string" ? v.slice(0, 120) : undefined);
+  const compactTouch = (t: typeof touch) => ({
+    page_path: clip(t.page_path),
+    traffic_source: clip(t.traffic_source),
+    traffic_medium: clip(t.traffic_medium),
+    utm_source: clip(t.utm_source),
+    utm_medium: clip(t.utm_medium),
+    utm_campaign: clip(t.utm_campaign),
+    utm_term: clip(t.utm_term),
+    utm_content: clip(t.utm_content),
+    utm_id: clip(t.utm_id),
+    click_id_type: clip(t.click_id_type),
+    click_id: clip(t.click_id),
+    referrer: clip(t.referrer),
+  });
+  const fullAttribution = JSON.stringify(state);
+  const attributionJson = fullAttribution.length <= ATTRIBUTION_JSON_CAP
+    ? fullAttribution
+    : JSON.stringify({
+        session_id: state.session_id,
+        first_touch: compactTouch(state.first_touch),
+        last_touch: compactTouch(touch),
+        truncated: true,
+      });
   const values: Record<string, string | undefined> = {
     page_path: window.location.pathname,
     page_language: language.page_language,
@@ -404,7 +435,7 @@ export function getLeadAttribution(): Record<string, string> {
     click_id_type: touch.click_id_type,
     click_id: touch.click_id,
     attribution_session_id: state.session_id,
-    attribution_json: JSON.stringify(state),
+    attribution_json: attributionJson,
   };
   return Object.fromEntries(
     Object.entries(values).filter((entry): entry is [string, string] => typeof entry[1] === "string"),

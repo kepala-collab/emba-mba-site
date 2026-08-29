@@ -38,7 +38,7 @@ const PROGRAMME_EN = [
 ] as const;
 
 const PROGRAMME_ZH = [
-  ["01", "CMI（英国）认可", "具有 CMI（英国）Endorsed 及 Recognised status 的六个月专业发展课程；并非学术学位。"],
+  ["01", "CMI（英国）认可", "面向未来商业领导力的 Executive MBA；一项为期六个月、非学术的专业发展课程。"],
   ["02", "证书与 fCMgr", "成功完成课程者取得 CMI Certificate of Recognition；根据 CMI 公布的 Recognised 方案，同时取得 Foundation Chartered Manager 身份。"],
   ["03", "可选下一步：Chartered Manager", "这是一条独立的 CMI 路线，有其资格、评估及费用；不包括在已公布的 Executive MBA 课程或学费内。"],
   ["04", "CMI 独立决定", "只有在 CMI 确认资格并通过适用评估后，申请人才获授 CMgr MCMI。"],
@@ -55,7 +55,7 @@ const COPY = {
   en: {
     k: "Professional progression map",
     h: "The CMI qualification ladder and this programme pathway are two different systems.",
-    intro: "The left side shows CMI's published job-role guide for Level 2–8 qualifications. The right side shows the recognition, certificate and Chartered Manager preparation actually provided through the Future Ready Executive MBA.",
+    intro: "The left side shows CMI's published job-role guide for Level 2–8 qualifications. The right side shows the recognition and certificate the Future Ready Executive MBA actually provides, and how it relates to the separate, optional Chartered Manager route.",
     panelK: "CMI regulated qualifications",
     panelH: "Level 2–8 role pathway",
     progH: "Programme-to-professional pathway",
@@ -67,7 +67,7 @@ const COPY = {
   zh: {
     k: "专业发展路线图",
     h: "CMI 资格等级与本课程路线属于两个不同体系。",
-    intro: "左侧显示 CMI 对 Level 2–8 资格适用职位的官方概述；右侧显示 Future Ready Executive MBA 实际提供的认可、证书与 Chartered Manager 准备路线。",
+    intro: "左侧显示 CMI 对 Level 2–8 资格适用职位的官方概述；右侧显示 Future Ready Executive MBA 实际提供的认可与证书，以及它与独立、可选的 Chartered Manager 路线之间的关系。",
     panelK: "CMI 受监管资格",
     panelH: "Level 2–8 职位路线",
     progH: "课程至专业评估路线",
@@ -79,7 +79,7 @@ const COPY = {
   ms: {
     k: "Peta perkembangan profesional",
     h: "Tangga kelayakan CMI dan laluan program ini ialah dua sistem yang berbeza.",
-    intro: "Sebelah kiri menunjukkan panduan peranan kerja yang diterbitkan CMI bagi kelayakan Level 2–8. Sebelah kanan menunjukkan pengiktirafan, sijil dan persediaan Chartered Manager yang sebenarnya disediakan melalui Future Ready Executive MBA.",
+    intro: "Sebelah kiri menunjukkan panduan peranan kerja yang diterbitkan CMI bagi kelayakan Level 2–8. Sebelah kanan menunjukkan pengiktirafan dan sijil yang sebenarnya disediakan oleh Future Ready Executive MBA, serta kaitannya dengan laluan Chartered Manager yang berasingan dan pilihan.",
     panelK: "Kelayakan CMI yang dikawal selia",
     panelH: "Laluan peranan Level 2–8",
     progH: "Laluan program ke penilaian profesional",

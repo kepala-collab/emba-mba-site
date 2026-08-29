@@ -6,7 +6,7 @@ import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import { COMPARISON_MS, HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/mba-for-working-professionals", {
@@ -18,7 +18,7 @@ export const metadata = withSeo("/ms/mba-for-working-professionals", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/ms/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "Executive MBA enam bulan untuk profesional bekerja, dianugerahkan dan disokong oleh CMI, dengan pilihan penyampaian dalam talian.",
@@ -27,7 +27,7 @@ const jsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/ms/executive-mba`,
+  url: `${SITE.url}/ms/mba-for-working-professionals`,
   inLanguage: "ms-MY",
   hasCourseInstance: {
     "@type": "CourseInstance",
@@ -83,7 +83,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <p className="sec-sub mt-s">
               Terokai keseluruhan{" "}
               <Link href="/ms/executive-mba" className="acc">program Executive MBA</Link>, atau terus ke{" "}
-              <Link href="/ms/intakes" className="acc">intake 2026</Link>.
+              <Link href="/ms/intakes" className="acc">Sesi Pengambilan 2026</Link>.
             </p>
           </div>
           <Reveal delay={80}>
@@ -183,7 +183,7 @@ export default function MbaForWorkingProfessionalsPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Intake 2026 · tiga hujung minggu berjadual sepanjang program</span>
+            <span className="mono sec-k">Sesi Pengambilan 2026 · tiga hujung minggu berjadual sepanjang program</span>
           </div>
           <Reveal>
             <h2 className="sec-h">Jadual kohort Bahasa Inggeris dan Mandarin untuk 2026.</h2>
@@ -193,10 +193,10 @@ export default function MbaForWorkingProfessionalsPage() {
             manakala kohort lain yang diterbitkan menggunakan Jumaat–Sabtu. Pilihan dalam talian sepenuhnya turut tersedia.
           </p>
           <Reveal className="mt-s">
-            <IntakeSchedule lang="ms" label="Jadual intake profesional bekerja 2026" />
+            <IntakeSchedule lang="ms" label="Jadual Sesi Pengambilan profesional bekerja 2026" />
           </Reveal>
           <p className="mt-s">
-            <Link href="/ms/intakes" className="btn btn-primary">Lihat semua intake 2026</Link>
+            <Link href="/ms/intakes" className="btn btn-primary">Lihat semua Sesi Pengambilan 2026</Link>
           </p>
         </div>
       </section>

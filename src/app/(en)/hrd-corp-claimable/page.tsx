@@ -44,7 +44,7 @@ const HRD_FAQS = [
     a: `The programme team supplies the quotation, schedule, course content and trainer documents. The employer submits the grant application and its employer-side claim documents. ${SITE.provider} submits the training-provider claim documents.`,
   },
   {
-    q: "What if we're not HRDC-registered?",
+    q: "What if we're not HRD Corp-registered?",
     a: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing. Individual payment options are listed on the Fees page.`,
   },
 ];
@@ -77,7 +77,7 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              {SITE.provider} is an HRD Corp (HRDC) Approved Training Provider. The Future
+              {SITE.provider} is an HRD Corp (HRDC) Approved Training Provider. The Executive MBA on Future
               Ready Business Leadership is awarded and endorsed by the Chartered Management Institute (CMI).
               <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM.short}</b> The programme team supplies
               the supporting programme documents.
@@ -160,8 +160,7 @@ export default function HrdCorpClaimablePage() {
               the HRD Corp-registered Malaysian employer submits the application before training.
               HRD Corp decides eligibility and the approved amount, which cannot exceed the employer&rsquo;s
               available levy balance. Not levy-registered, or joining as an
-              individual? Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship after assessment and written approval
-              or an installment plan.
+              individual? Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship after assessment and written approval; instalment plans are also available.
             </p>
           </Reveal>
           <p className="fine mt-s">
@@ -176,7 +175,7 @@ export default function HrdCorpClaimablePage() {
       <section className="section faq">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">HRD Corp · quick answers</span></div></Reveal>
-          <Reveal><h2 className="sec-h">The HRDC questions employers ask first.</h2></Reveal>
+          <Reveal><h2 className="sec-h">The HRD Corp questions employers ask first.</h2></Reveal>
           <Reveal className="mt-s">
             {HRD_FAQS.map((f, i) => (
               <details key={f.q} open={i === 0}>
@@ -186,7 +185,7 @@ export default function HrdCorpClaimablePage() {
             ))}
           </Reveal>
           <p className="fine center mt-s">
-            More on cost and funding on the <Link href="/fees">investment</Link> page.
+            More on cost and funding on the <Link href="/fees">Fees</Link> page.
           </p>
         </div>
       </section>

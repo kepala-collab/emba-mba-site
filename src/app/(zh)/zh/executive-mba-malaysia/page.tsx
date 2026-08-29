@@ -4,7 +4,7 @@ import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import { CLIENTS, CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/executive-mba-malaysia", {
@@ -35,7 +35,7 @@ const REASONS = [
 const courseJsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/zh/executive-mba-malaysia#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书，在马来西亚现场与线上开课。符合资格的 HRD Corp 注册雇主可为员工申请资助，须经 HRD Corp 批准。",
@@ -44,7 +44,7 @@ const courseJsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/zh/executive-mba`,
+  url: `${SITE.url}/zh/executive-mba-malaysia`,
   inLanguage: "zh-Hans-MY",
   areaServed: { "@type": "Country", name: "MY" },
   hasCourseInstance: {

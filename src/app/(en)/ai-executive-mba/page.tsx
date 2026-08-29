@@ -20,7 +20,7 @@ const BUSINESS_PILLARS = [
 
 const CAREER_PILLARS = [
   ["Leadership", "Set the purpose, boundaries and accountability for AI-enabled work."],
-  ["Critical judgment", "Question model outputs, assumptions, evidence quality and unintended effects."],
+  ["Critical judgement", "Question model outputs, assumptions, evidence quality and unintended effects."],
   ["Decision design", "Clarify which decisions remain human-led and where tools provide support."],
   ["Stakeholder alignment", "Explain the proposed change, its controls and its effect on teams and customers."],
   ["Implementation", "Translate a selected use case into an action plan with owners and measures."],
@@ -79,7 +79,7 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
 
-          <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Leadership · judgment · decision rights · alignment · implementation</div></Reveal>
+          <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>Leadership · judgement · decision rights · alignment · implementation</div></Reveal>
           <Reveal className="mt-s"><div className="grid-forces">
             {CAREER_PILLARS.map(([h, p]) => (
               <div key={h} className="card">

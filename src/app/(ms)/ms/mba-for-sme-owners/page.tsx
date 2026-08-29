@@ -3,7 +3,7 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/mba-for-sme-owners", {
@@ -15,7 +15,7 @@ export const metadata = withSeo("/ms/mba-for-sme-owners", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/ms/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi tiga sesi berjadual.",
@@ -24,7 +24,7 @@ const jsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/ms/executive-mba`,
+  url: `${SITE.url}/ms/mba-for-sme-owners`,
   inLanguage: "ms-MY",
   hasCourseInstance: {
     "@type": "CourseInstance",
@@ -45,7 +45,7 @@ export default function MbaForSmeOwnersPage() {
   ];
 
   const fit = [
-    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil diadakan sekali sebulan. Jadual intake yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
+    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil diadakan sekali sebulan. Jadual Sesi Pengambilan yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
     { h: "Perniagaan anda sendiri ialah projek aplikasi", p: "Tiada tesis mahupun peperiksaan tradisional. Peserta menggunakan rangka kerja program untuk merangka pelan transformasi bagi organisasi mereka sendiri." },
     { h: "Pembiayaan HRD Corp dipohon oleh majikan", p: HRD_CORP_CLAIM_MS },
     { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran pula disenaraikan di halaman Yuran.` },
@@ -200,7 +200,7 @@ export default function MbaForSmeOwnersPage() {
           <p className="fine mt-s">
             Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik
             yang dikawal selia MQA. <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>{" "}
-            sebelum memilih intake anda.
+            sebelum memilih kohort anda.
           </p>
         </div>
       </section>

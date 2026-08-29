@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import { CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-sme-owners", {
@@ -14,7 +14,7 @@ export const metadata = withSeo("/mba-for-sme-owners", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across three scheduled sessions.",
@@ -23,7 +23,7 @@ const jsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/executive-mba`,
+  url: `${SITE.url}/mba-for-sme-owners`,
   inLanguage: "en-MY",
   hasCourseInstance: {
     "@type": "CourseInstance",

@@ -20,7 +20,7 @@ export const viewport: Viewport = { themeColor: "#F7FBFF", colorScheme: "light",
 
 export default function ChineseRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-Hans" className={`${displaySerif.variable} ${archivo.variable} ${plexMono.variable}`}>
+    <html lang="zh-Hans-MY" className={`${displaySerif.variable} ${archivo.variable} ${plexMono.variable}`}>
       <head>
         <meta httpEquiv="Content-Security-Policy" content={contentSecurityPolicyMeta} />
       </head>

@@ -7,6 +7,7 @@ import { conversionContextFromLocation, updateConversionContext } from "@/lib/co
 import { getExperimentAssignmentsJson } from "@/lib/experiments";
 import { getLeadAttribution, trackEvent } from "@/lib/analytics";
 import { INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
+import { getIntakeStatus, malaysiaDateKey } from "@/lib/intakes";
 import "@/lib/turnstile";
 
 type Lang = "en" | "zh" | "ms";
@@ -70,7 +71,7 @@ const T = {
     intents: [
       ["individual_self_funded", "Career progression", "I am considering the programme for myself."],
       ["employer_sponsored", "Employer sponsorship", "I want to use employer sponsorship or eligible HRD Corp funds."],
-      ["employer_evaluating", "Managers development", "I am evaluating the programme for managers in my company."],
+      ["employer_evaluating", "Manager development", "I am evaluating the programme for managers in my company."],
       ["international", "International participant", "I am applying from outside Malaysia."],
       ["mandarin", "Mandarin programme", "I want to discuss a Mandarin-language cohort."],
       ["details_first", "Programme information first", "Send the programme information before arranging a call."],
@@ -349,6 +350,10 @@ export default function LeadForm({
   const [errorType, setErrorType] = useState<ErrorType>(null);
   const [intent, setIntent] = useState<LeadIntent>(initialIntent);
   const [selectedCohort, setSelectedCohort] = useState("");
+  // Seed with a sentinel so server and first client render agree (no hydration
+  // mismatch); the real Malaysia date is applied after mount, at which point
+  // started/completed cohorts drop out of the enquiry dropdown.
+  const [cohortToday, setCohortToday] = useState("0000-00-00");
   const [contactPreference, setContactPreference] = useState(campaign ? "details_first" : "programme_call");
   const [firstName, setFirstName] = useState("");
   const [leadReference, setLeadReference] = useState("");
@@ -388,6 +393,7 @@ export default function LeadForm({
     const context = conversionContextFromLocation();
     setIntent(!allowedIntents || allowedIntents.includes(context.intent) ? context.intent : initialIntent);
     if (!campaign) setSelectedCohort(context.cohort_key || "");
+    setCohortToday(malaysiaDateKey());
   }, []);
 
   useEffect(() => {
@@ -402,7 +408,9 @@ export default function LeadForm({
     }, { threshold: 0.25 });
     observer.observe(form);
     return () => observer.disconnect();
-  });
+    // Attach the view observer once on mount; formViewed guards duplicates.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const form = formElement.current;
@@ -741,7 +749,7 @@ export default function LeadForm({
             <label htmlFor={id("cohort")}>{t.cohort}</label>
             <select id={id("cohort")} value={selectedCohort} onChange={(event) => setSelectedCohort(event.target.value)}>
               <option value="">{t.cohortUnknown}</option>
-              {INTAKES.map((cohort) => {
+              {INTAKES.filter((cohort) => getIntakeStatus(cohort.startDate, cohort.endDate, cohortToday) === "upcoming").map((cohort) => {
                 const key = cohortKey(cohort.language, cohort.co);
                 return <option key={key} value={key}>{cohortLabel(key, lang)} · {t.cohortOpen}</option>;
               })}
@@ -774,7 +782,7 @@ export default function LeadForm({
             <label htmlFor={id("cohort")}>{t.cohort}</label>
             <select id={id("cohort")} value={selectedCohort} onChange={(event) => setSelectedCohort(event.target.value)}>
               <option value="">{t.cohortUnknown}</option>
-              {INTAKES.map((cohort) => {
+              {INTAKES.filter((cohort) => getIntakeStatus(cohort.startDate, cohort.endDate, cohortToday) === "upcoming").map((cohort) => {
                 const key = cohortKey(cohort.language, cohort.co);
                 return <option key={key} value={key}>{cohortLabel(key, lang)} · {t.cohortOpen}</option>;
               })}

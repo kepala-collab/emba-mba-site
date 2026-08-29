@@ -5,7 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import { COMPARISON, COMPARISON_SCOPE, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-working-professionals", {
@@ -17,7 +17,7 @@ export const metadata = withSeo("/mba-for-working-professionals", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered across six months through three scheduled weekends, with an online delivery option.",
@@ -26,7 +26,7 @@ const jsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/executive-mba`,
+  url: `${SITE.url}/mba-for-working-professionals`,
   inLanguage: "en-MY",
   hasCourseInstance: {
     "@type": "CourseInstance",

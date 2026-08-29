@@ -10,7 +10,7 @@ import { withSeo } from "@/lib/seo";
 const PATH = "/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
-  title: "CMI Recognition for the Future Ready Executive MBA",
+  title: "CMI Recognition for Chartered Managers",
   description: "Understand what CMI (UK) recognition means for the six-month Future Ready Executive MBA, its certificate and any separate optional Chartered Manager route.",
 });
 
@@ -53,7 +53,7 @@ export default function CmiRecognitionPage() {
           <ol className="chartered-preparation-list">
             <li><span>01</span><div><h3>Diagnose before deciding</h3><p>Separate symptoms, assumptions and constraints before committing resources.</p></div></li>
             <li><span>02</span><div><h3>Explain the reasoning</h3><p>Compare options and communicate why one direction deserves support.</p></div></li>
-            <li><span>03</span><div><h3>Convert judgment into action</h3><p>Build an action plan grounded in your current business context.</p></div></li>
+            <li><span>03</span><div><h3>Convert judgement into action</h3><p>Build an action plan grounded in your current business context.</p></div></li>
           </ol>
         </div>
       </section>

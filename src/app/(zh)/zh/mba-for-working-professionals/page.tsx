@@ -6,7 +6,7 @@ import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import { COMPARISON_ZH, HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
-import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-working-professionals", {
@@ -18,7 +18,7 @@ export const metadata = withSeo("/zh/mba-for-working-professionals", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Course",
-  "@id": COURSE_ID,
+  "@id": `${SITE.url}/zh/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
     "由 CMI 颁授并背书的 Executive MBA，六个月内分三个指定课程进行，另设线上选项。",
@@ -27,7 +27,7 @@ const jsonLd = {
     "@id": ORGANIZATION_ID,
     name: SITE.provider,
   },
-  url: `${SITE.url}/executive-mba`,
+  url: `${SITE.url}/zh/mba-for-working-professionals`,
   inLanguage: "zh-Hans-MY",
   hasCourseInstance: {
     "@type": "CourseInstance",

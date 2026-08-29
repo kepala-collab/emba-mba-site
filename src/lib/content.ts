@@ -30,18 +30,18 @@ export const PROGRAMME_POSITIONING_MS =
   "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.";
 
 export const CTA_LABELS = {
-  guide: `Get the ${PROGRAMME_YEAR} programme guide`,
+  guide: `Get the free ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
   company: "Enquire for your company",
   whatsapp: "Contact Future Ready EMBA on WhatsApp",
   zh: {
-    guide: `获取 ${PROGRAMME_YEAR} 课程指南`,
+    guide: `免费获取 ${PROGRAMME_YEAR} 课程指南`,
     conversation: "预约课程沟通",
     company: "企业课程咨询",
     whatsapp: "通过 WhatsApp 联系 Future Ready Executive MBA",
   },
   ms: {
-    guide: `Dapatkan panduan program ${PROGRAMME_YEAR}`,
+    guide: `Dapatkan panduan program ${PROGRAMME_YEAR} percuma`,
     conversation: "Aturkan perbualan program",
     company: "Pertanyaan untuk syarikat anda",
     whatsapp: "Hubungi Future Ready EMBA di WhatsApp",
@@ -300,7 +300,7 @@ export const INCLUSIONS = [
 
 export const COMPARISON = [
   { k: "Duration", them: "18–24 months", us: "Six months: six training days across three scheduled sessions" },
-  { k: "Focus", them: "Academic theory, research and case analysis", us: "Business context, strategic judgment and reusable decision frameworks" },
+  { k: "Focus", them: "Academic theory, research and case analysis", us: "Business context, strategic judgement and reusable decision frameworks" },
   { k: "Assessment", them: "Assignments or examinations plus a dissertation or thesis", us: "An applied project on the participant's own business; no traditional examination or thesis" },
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
   { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "The F.A.S.T. method and 12 applied management modules" },
