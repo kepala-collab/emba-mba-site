@@ -126,6 +126,9 @@ const T = {
       network: "The connection was interrupted. Your entries have been kept; check your connection and submit again.",
     },
     verify: "Complete the security check before submitting. Your entries have been kept.",
+    fieldRequired: "Please complete this field.",
+    emailInvalid: "Enter a valid email address.",
+    consentRequired: "Please tick this box so we can respond.",
     verifyErr: "The security check could not load. Refresh the page or contact Future Ready EMBA on WhatsApp.",
     verifyFallback: "Contact Future Ready EMBA on WhatsApp →",
     security: "Security verification",
@@ -207,6 +210,9 @@ const T = {
       network: "网络连接中断。您填写的内容已保留；请检查网络后再次提交。",
     },
     verify: "提交前请完成安全验证。您填写的内容已保留。",
+    fieldRequired: "请填写此栏。",
+    emailInvalid: "请输入有效的电邮地址。",
+    consentRequired: "请勾选此项，我们才能回复您。",
     verifyErr: "安全验证无法加载。请刷新页面，或通过 WhatsApp 联系 Future Ready Executive MBA。",
     verifyFallback: "通过 WhatsApp 联系 Future Ready Executive MBA →",
     security: "安全验证",
@@ -288,6 +294,9 @@ const T = {
       network: "Sambungan terputus. Maklumat anda telah disimpan; semak sambungan internet anda dan hantar semula.",
     },
     verify: "Lengkapkan semakan keselamatan sebelum menghantar. Maklumat yang anda isi telah disimpan.",
+    fieldRequired: "Sila lengkapkan medan ini.",
+    emailInvalid: "Masukkan alamat e-mel yang sah.",
+    consentRequired: "Sila tandakan kotak ini supaya kami boleh membalas.",
     verifyErr: "Semakan keselamatan tidak dapat dimuatkan. Muat semula halaman atau hubungi Future Ready EMBA melalui WhatsApp.",
     verifyFallback: "Hubungi Future Ready EMBA melalui WhatsApp →",
     security: "Pengesahan keselamatan",
@@ -354,6 +363,12 @@ export default function LeadForm({
   // mismatch); the real Malaysia date is applied after mount, at which point
   // started/completed cohorts drop out of the enquiry dropdown.
   const [cohortToday, setCohortToday] = useState("0000-00-00");
+  // Field-level validation errors (keyed by input name) so each failing field
+  // can carry aria-invalid + a linked aria-describedby message for assistive tech.
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  // Set on a failed submit so the effect below moves focus to the first invalid
+  // field once the error attributes have rendered (not on later error clears).
+  const focusFirstErrorRef = useRef(false);
   const [contactPreference, setContactPreference] = useState(campaign ? "details_first" : "programme_call");
   const [firstName, setFirstName] = useState("");
   const [leadReference, setLeadReference] = useState("");
@@ -395,6 +410,16 @@ export default function LeadForm({
     if (!campaign) setSelectedCohort(context.cohort_key || "");
     setCohortToday(malaysiaDateKey());
   }, []);
+
+  useEffect(() => {
+    if (!focusFirstErrorRef.current) return;
+    focusFirstErrorRef.current = false;
+    const names = Object.keys(fieldErrors);
+    if (names.length === 0) return;
+    formElement.current
+      ?.querySelector<HTMLElement>(names.map((name) => `[name="${name}"]`).join(","))
+      ?.focus();
+  }, [fieldErrors]);
 
   useEffect(() => {
     const form = formElement.current;
@@ -537,7 +562,35 @@ export default function LeadForm({
     trackEvent("lead_form_step_back", { ...formContext, from_step: 2, to_step: 1 });
     setStatus("idle");
     setErrorType(null);
+    setFieldErrors({});
     setStep(1);
+  }
+
+  function clearFieldError(name: string) {
+    setFieldErrors((current) => {
+      if (!current[name]) return current;
+      const next = { ...current };
+      delete next[name];
+      return next;
+    });
+  }
+
+  // Collect per-field validation errors on the step-2 form so each failing
+  // input can be announced individually to assistive tech and visibly flagged.
+  function collectFieldErrors(form: HTMLFormElement): Record<string, string> {
+    const errors: Record<string, string> = {};
+    form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+      "input[name], select[name], textarea[name]",
+    ).forEach((element) => {
+      if (element.name === "website" || element.disabled || element.type === "hidden") return;
+      if (element.name === "consent") {
+        if (element instanceof HTMLInputElement && !element.checked) errors.consent = t.consentRequired;
+        return;
+      }
+      if (element.checkValidity()) return;
+      errors[element.name] = element.validity.typeMismatch ? t.emailInvalid : t.fieldRequired;
+    });
+    return errors;
   }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -547,12 +600,17 @@ export default function LeadForm({
       return;
     }
     const form = event.currentTarget;
-    if (!form.reportValidity()) {
-      trackEvent("lead_form_error", { ...formContext, form_step: 2, error_type: "validation" });
+    const errors = collectFieldErrors(form);
+    if (Object.keys(errors).length > 0) {
+      const consentOnly = Object.keys(errors).length === 1 && errors.consent;
+      trackEvent("lead_form_error", { ...formContext, form_step: 2, error_type: consentOnly ? "consent_required" : "validation" });
+      focusFirstErrorRef.current = true;
+      setFieldErrors(errors);
       setStatus("error");
       setErrorType("validation");
       return;
     }
+    setFieldErrors({});
     const formData = new FormData(form);
     formData.delete("cf-turnstile-response");
     const data = Object.fromEntries(formData.entries());
@@ -567,12 +625,6 @@ export default function LeadForm({
     if (data.website) {
       setFirstName(String(data.name || "").split(" ")[0]);
       setStatus("ok");
-      return;
-    }
-    if (data.consent !== "yes") {
-      trackEvent("lead_form_error", { ...formContext, form_step: 2, error_type: "consent_required" });
-      setStatus("error");
-      setErrorType("validation");
       return;
     }
     if (!turnstileToken) {
@@ -664,6 +716,7 @@ export default function LeadForm({
   return (
     <form
       ref={formElement}
+      noValidate
       className={`form lead-form-progressive${campaign ? " lead-form-campaign" : ""}${compactMode ? " lead-form-compact" : ""}`}
       onSubmit={onSubmit}
       onFocusCapture={() => {
@@ -791,7 +844,8 @@ export default function LeadForm({
         )}
         <div className="fld">
           <label htmlFor={id("name")}>{t.name}</label>
-          <input ref={firstContactField} id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" autoCapitalize="words" enterKeyHint="next" required />
+          <input ref={firstContactField} id={id("name")} name="name" placeholder={t.namePh} autoComplete="name" autoCapitalize="words" enterKeyHint="next" required aria-invalid={fieldErrors.name ? true : undefined} aria-describedby={fieldErrors.name ? id("name-error") : undefined} onInput={() => clearFieldError("name")} />
+          {fieldErrors.name && <p id={id("name-error")} className="field-error">{fieldErrors.name}</p>}
         </div>
         {campaign ? (
           <>
@@ -808,13 +862,16 @@ export default function LeadForm({
                 required
                 list={id("email-domains")}
                 value={emailDraft}
-                onChange={(event) => setEmailDraft(event.target.value)}
+                onChange={(event) => { setEmailDraft(event.target.value); clearFieldError("email"); }}
+                aria-invalid={fieldErrors.email ? true : undefined}
+                aria-describedby={fieldErrors.email ? id("email-error") : undefined}
               />
               <datalist id={id("email-domains")}>
                 {emailSuggestions(emailDraft).map((suggestion) => (
                   <option key={suggestion} value={suggestion} />
                 ))}
               </datalist>
+              {fieldErrors.email && <p id={id("email-error")} className="field-error">{fieldErrors.email}</p>}
               <p className="form-helper">{lang === "zh" ? "提交后，课程决策指南将自动发送至此电邮地址。" : lang === "ms" ? "Panduan keputusan peribadi anda akan dihantar secara automatik ke alamat e-mel ini selepas penghantaran." : "Your private decision guide will be sent automatically to this email address after submission."}</p>
             </div>
             <div className="fld">
@@ -839,8 +896,9 @@ export default function LeadForm({
                     <option key={entry.code} value={entry.code}>{entry.label}</option>
                   ))}
                 </select>
-                <input id={id("phone-local")} name="phone_local" type="tel" inputMode="tel" placeholder="12 345 6789" autoComplete="tel-national" enterKeyHint="next" required />
+                <input id={id("phone-local")} name="phone_local" type="tel" inputMode="tel" placeholder="12 345 6789" autoComplete="tel-national" enterKeyHint="next" required aria-invalid={fieldErrors.phone_local ? true : undefined} aria-describedby={fieldErrors.phone_local ? id("phone-error") : undefined} onInput={() => clearFieldError("phone_local")} />
               </div>
+              {fieldErrors.phone_local && <p id={id("phone-error")} className="field-error">{fieldErrors.phone_local}</p>}
             </div>
             <div className="fld">
               <label htmlFor={id("email")}>{t.email}</label>
@@ -855,13 +913,16 @@ export default function LeadForm({
                 required
                 list={id("email-domains")}
                 value={emailDraft}
-                onChange={(event) => setEmailDraft(event.target.value)}
+                onChange={(event) => { setEmailDraft(event.target.value); clearFieldError("email"); }}
+                aria-invalid={fieldErrors.email ? true : undefined}
+                aria-describedby={fieldErrors.email ? id("email-error") : undefined}
               />
               <datalist id={id("email-domains")}>
                 {emailSuggestions(emailDraft).map((suggestion) => (
                   <option key={suggestion} value={suggestion} />
                 ))}
               </datalist>
+              {fieldErrors.email && <p id={id("email-error")} className="field-error">{fieldErrors.email}</p>}
             </div>
             <div className="two">
               <div className="fld">
@@ -889,9 +950,10 @@ export default function LeadForm({
         <p className="form-helper">{campaign ? t.campaignHelper : t.helper}</p>
         <div className="consent-group" role="group" aria-label={lang === "zh" ? "同意条款" : lang === "ms" ? "Persetujuan" : "Consent"}>
           <label className="check">
-            <input type="checkbox" name="consent" value="yes" required />
+            <input type="checkbox" name="consent" value="yes" required aria-invalid={fieldErrors.consent ? true : undefined} aria-describedby={fieldErrors.consent ? id("consent-error") : undefined} onChange={() => clearFieldError("consent")} />
             <span>{campaign ? t.campaignConsent : t.consent}</span>
           </label>
+          {fieldErrors.consent && <p id={id("consent-error")} className="field-error">{fieldErrors.consent}</p>}
           <label className="check">
             <input type="checkbox" name="consent_marketing" value="yes" />
             <span>{t.consentMarketing}</span>
