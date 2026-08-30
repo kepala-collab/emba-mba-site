@@ -27,7 +27,7 @@ export const REFUND_TERMS_MS =
 export const COMPARISON_MS = [
   { k: "Tempoh pengajian", them: "18–24 bulan", us: "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berjadual" },
   { k: "Fokus pembelajaran", them: "Teori akademik, penyelidikan dan analisis kes", us: "Situasi perniagaan sebenar, keputusan strategik, dan rangka kerja yang boleh anda guna berulang kali" },
-  { k: "Kaedah penilaian", them: "Tugasan atau peperiksaan, berserta tesis", us: "Projek aplikasi berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional" },
+  { k: "Kaedah penilaian", them: "Tugasan atau peperiksaan, berserta tesis", us: "Projek amali berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional" },
   { k: "Peranan fasilitator", them: "Pengajaran akademik dan penyeliaan penyelidikan", us: "Pengamal industri, perunding dan jurulatih eksekutif" },
   { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: "Metodologi F.A.S.T. dan 12 rangka kerja perniagaan praktikal" },
   { k: "Bentuk pengajian", them: "Mengikut jadual akademik yang ditetapkan institusi penganugerah", us: "Tiga hujung minggu berjadual sepanjang program selama enam bulan; peserta terus bekerja sepenuh masa" },
@@ -114,7 +114,7 @@ export const CORE_PAGES_MS = {
 
 export const FAQS_MS = [
   ["Bagaimana program ini disusun?", "Program berlangsung enam bulan, merangkumi enam hari latihan, tiga sesi hujung minggu, bimbingan dan projek perniagaan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager ialah laluan pilihan CMI dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam program ini atau yuran yang diterbitkan."],
-  ["Bolehkah saya menamatkan program sambil bekerja sepenuh masa?", "Boleh. Program awam Malaysia berjalan selama enam bulan dengan enam hari latihan yang ditetapkan. Peserta menamatkan program sambil terus bekerja, dan menyiapkan projek aplikasi berasaskan isu perniagaan semasa mereka. Semak semua tarikh sesi yang diterbitkan sebelum mendaftar."],
+  ["Bolehkah saya menamatkan program sambil bekerja sepenuh masa?", "Boleh. Program awam Malaysia berjalan selama enam bulan dengan enam hari latihan yang ditetapkan. Peserta menamatkan program sambil terus bekerja, dan menyiapkan projek amali berasaskan isu perniagaan semasa mereka. Semak semua tarikh sesi yang diterbitkan sebelum mendaftar."],
   ["Adakah ini program pendidikan eksekutif atau ijazah MBA akademik?", "Ini ialah Executive MBA dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI. Program enam bulan ini ialah program pembangunan profesional dan pendidikan eksekutif — bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
   ["Apakah yang diterima selepas berjaya menamatkan program?", "Peserta yang berjaya menerima sijil pengiktirafan CMI bagi program Future Ready Executive MBA. Format dan perkataan akhir sijil ditentukan oleh CMI. Chartered Manager ialah laluan CMI yang berasingan dan tidak diberikan secara automatik kerana menamatkan program ini."],
   ["Adakah saya menjadi Chartered Manager secara automatik selepas tamat?", "Tidak. Selepas menamatkan program, peserta menerima CMI Certificate of Recognition; di bawah skim CMI Recognised yang diterbitkan, peserta menerima status Foundation Chartered Manager. Chartered Manager (CMgr) penuh ialah penilaian profesional berasingan; laluan permohonan, kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI."],

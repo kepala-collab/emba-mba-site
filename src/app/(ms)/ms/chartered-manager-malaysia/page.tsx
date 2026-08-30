@@ -36,10 +36,10 @@ export default function CmiRecognitionMsPage() {
       </header>
 
       <section className="section chartered-positioning"><div className="wrap">
-        <Reveal><div className="reading-section-head"><p className="mono sec-k">Nilai pengiktirafan ini</p><h2 className="sec-h">Bukti pembangunan profesional, bukan sekadar sijil kehadiran.</h2><p>Program ini menghubungkan pengiktirafan profesional CMI dengan projek gunaan yang berdasarkan situasi perniagaan peserta sendiri.</p></div></Reveal>
+        <Reveal><div className="reading-section-head"><p className="mono sec-k">Nilai pengiktirafan ini</p><h2 className="sec-h">Bukti pembangunan profesional, bukan sekadar sijil kehadiran.</h2><p>Program ini menghubungkan pengiktirafan profesional CMI dengan projek amali yang berdasarkan situasi perniagaan peserta sendiri.</p></div></Reveal>
         <div className="chartered-outcome-grid">
           <Reveal><article><span className="mono">01</span><h3>Bukti tamat program yang diiktiraf</h3><p>CMI Recognition bermaksud program telah dinilai berdasarkan CMI Professional Standard. Peserta yang berjaya menamatkan program menerima CMI Certificate of Recognition bagi program ini.</p></article></Reveal>
-          <Reveal delay={45}><article><span className="mono">02</span><h3>Bukti profesional yang boleh dijelaskan</h3><p>Sijil program dan projek gunaan menjadi bukti yang kukuh untuk menerangkan pembangunan pengurusan anda dalam profil profesional dan komunikasi kerjaya.</p></article></Reveal>
+          <Reveal delay={45}><article><span className="mono">02</span><h3>Bukti profesional yang boleh dijelaskan</h3><p>Sijil program dan projek amali menjadi bukti yang kukuh untuk menerangkan pembangunan pengurusan anda dalam profil profesional dan komunikasi kerjaya.</p></article></Reveal>
           <Reveal delay={90}><article className="chartered-outcome-featured"><span className="mono">03</span><h3>Langkah seterusnya yang jelas sempadannya</h3><p>Chartered Manager ialah laluan berasingan yang bersifat pilihan. CMI menentukan kelayakan, penilaian, keahlian dan yuran; program ini tidak menjanjikan atau merangkumi status profesional tersebut.</p></article></Reveal>
         </div>
         <p className="fine center mt-s"><a href={CERTIFICATE_POSITIONING.cmiRecognitionSource} target="_blank" rel="noreferrer">Baca penerangan rasmi CMI tentang Recognition <span aria-hidden="true">↗</span></a></p>

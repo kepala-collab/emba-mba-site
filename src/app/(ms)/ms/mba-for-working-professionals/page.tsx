@@ -113,7 +113,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <h2 className="sec-h">Rancang minggu anda dengan jadual yang diterbitkan awal.</h2>
           </Reveal>
           <p className="sec-sub">
-            Semak ketiga-tiga tarikh sesi sebelum anda mendaftar. Projek aplikasi menghubungkan program
+            Semak ketiga-tiga tarikh sesi sebelum anda mendaftar. Projek amali menghubungkan program
             terus dengan cabaran perniagaan dalam peranan semasa anda.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>

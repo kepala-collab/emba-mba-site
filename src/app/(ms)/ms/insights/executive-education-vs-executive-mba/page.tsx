@@ -97,14 +97,14 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             <ol>
               <li><strong>Apa sebenarnya yang saya terima?</strong> Minta nama penuh kredensial itu dan contoh sijilnya jika ada.</li>
               <li><strong>Adakah ini ijazah akademik?</strong> Jika kelayakan akademik penting bagi anda, sahkan institusi penganugerah serta pengiktirafan yang terpakai.</li>
-              <li><strong>Bagaimana pembelajaran dinilai?</strong> Bandingkan peperiksaan, tesis, tugasan, projek aplikasi dan syarat kehadiran.</li>
+              <li><strong>Bagaimana pembelajaran dinilai?</strong> Bandingkan peperiksaan, tesis, tugasan, projek amali dan syarat kehadiran.</li>
               <li><strong>Mampukah saya menghabiskannya sambil bekerja?</strong> Semak setiap tarikh sesi, mod penyampaian, keperluan projek dan dasar gantian sesi.</li>
               <li><strong>Berapa komitmen keseluruhannya?</strong> Bandingkan yuran yang diterbitkan, syarat pembiayaan, kos perjalanan, masa yang terpaksa diambil daripada kerja dan sebarang yuran keahlian atau penilaian yang berasingan.</li>
             </ol>
 
             <h2>Untuk siapa program ini sesuai</h2>
             <p>
-              Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang mahukan pembangunan kepimpinan berstruktur, terarah pada isu perniagaan semasa. Ia menyatukan bengkel berasaskan kohort, bimbingan, rangka kerja keputusan strategik dan projek gunaan sepanjang enam bulan. Peserta terus kekal dalam peranan masing-masing sambil menyiapkan kerja itu.
+              Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang mahukan pembangunan kepimpinan berstruktur, terarah pada isu perniagaan semasa. Ia menyatukan bengkel berasaskan kohort, bimbingan, rangka kerja keputusan strategik dan projek amali sepanjang enam bulan. Peserta terus kekal dalam peranan masing-masing sambil menyiapkan kerja itu.
             </p>
             <p>
               Chartered Manager ialah laluan pilihan CMI yang berasingan. CMI yang menentukan kelayakan, penilaian, keahlian dan yurannya; ia tidak termasuk dalam program mahupun yuran yang diterbitkan. Semak <Link href="/ms/chartered-manager-malaysia">laluan CMI</Link>, <Link href="/ms/fees">yuran penuh dan terma biasiswa</Link>, serta <Link href="/ms/intakes">tarikh sesi yang diterbitkan</Link> sebelum membuat keputusan.

@@ -168,7 +168,7 @@ const QUESTIONS_MS = [
   {
     question: "Bukti apa yang anda perlukan sebelum mengambil langkah seterusnya?",
     options: [
-      "Kaedah pembelajaran, modul dan keperluan projek aplikasi.",
+      "Kaedah pembelajaran, modul dan keperluan projek amali.",
       "Komitmen masa yang tepat serta tarikh kemasukan yang diterbitkan.",
       "Maksud pengiktirafan CMI dan cara penilaian Chartered Manager dijalankan.",
       "Yuran di Malaysia, biasiswa dan proses HRD Corp.",
@@ -184,8 +184,8 @@ const RESULT_COPY_MS = [
     action: "Teliti kaedahnya",
   },
   {
-    title: "Projek perniagaan aplikasi",
-    body: "Semak kurikulum dan projek perniagaan aplikasi. Ujian yang berguna: adakah tugasan itu dapat menjawab persoalan sebenar organisasi anda.",
+    title: "Projek amali perniagaan",
+    body: "Semak kurikulum dan projek amali perniagaan. Ujian yang berguna: adakah tugasan itu dapat menjawab persoalan sebenar organisasi anda.",
     href: "/ms/curriculum",
     action: "Semak kurikulum",
   },

@@ -67,7 +67,7 @@ export default function MbaForEntrepreneursPage() {
             Setiap hari, seorang pengasas berdepan keputusan yang saling berkait — tentang pelanggan,
             produk, harga, modal, keupayaan dan masa. Selama enam bulan, Future Ready Executive MBA
             membawa rangka kerja prinsip asas, pemikiran sistem dan Job-To-Be-Done terus kepada
-            keputusan sebegini. Projek aplikasinya pula bermula daripada usaha atau organisasi
+            keputusan sebegini. Projek amalinya pula bermula daripada usaha atau organisasi
             yang sedang anda bina sendiri.
           </p>
           <p className="mono sec-k mt-s">
@@ -121,7 +121,7 @@ export default function MbaForEntrepreneursPage() {
             <span className="mono sec-k">Diterapkan pada usaha anda sendiri</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Selesaikan cabaran sebenar perniagaan anda dalam projek aplikasi.</h2>
+            <h2 className="sec-h">Selesaikan cabaran sebenar perniagaan anda dalam projek amali.</h2>
           </Reveal>
           <p className="sec-sub">
             Tiada tesis mahupun peperiksaan biasa. Anda pilih satu cabaran sebenar, pakai rangka kerja

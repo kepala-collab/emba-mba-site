@@ -129,7 +129,7 @@ export default function AiExecutiveMbaPage() {
               ["HRD Corp", HRD_CORP_CLAIM_MS],
               ["Format", "Program enam bulan: tiga sesi berjadual berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar."],
               ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Biasiswa LIFE Innoversity terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; ia bukan automatik, dan setiap anugerah serta yuran peserta disahkan satu per satu secara bertulis."],
-              ["Projek aplikasi", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
+              ["Projek amali", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
             ].map(([h, p]) => (
               <div key={h} className="card">
                 <h3 style={{ fontSize: "1.1rem", margin: "0 0 8px" }}>{h}</h3>

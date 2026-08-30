@@ -46,7 +46,7 @@ export default function MbaForSmeOwnersPage() {
 
   const fit = [
     { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil diadakan sekali sebulan. Jadual Sesi Pengambilan yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
-    { h: "Perniagaan anda sendiri ialah projek aplikasi", p: "Tiada tesis mahupun peperiksaan biasa. Anda guna rangka kerja program untuk merangka pelan transformasi bagi organisasi anda sendiri." },
+    { h: "Perniagaan anda sendiri ialah projek amali", p: "Tiada tesis mahupun peperiksaan biasa. Anda guna rangka kerja program untuk merangka pelan transformasi bagi organisasi anda sendiri." },
     { h: "Pembiayaan HRD Corp dipohon oleh majikan", p: HRD_CORP_CLAIM_MS },
     { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran pula disenaraikan di halaman Yuran.` },
   ];
@@ -95,7 +95,7 @@ export default function MbaForSmeOwnersPage() {
             <h2 className="sec-h">Kenal pasti di mana perniagaan terlalu bergantung pada pemilik.</h2>
           </Reveal>
           <p className="sec-sub">
-            Guna tanda-tanda ini untuk mengenal pasti kekangan operasi mana yang berbaloi ditangani oleh projek aplikasi anda.
+            Guna tanda-tanda ini untuk mengenal pasti kekangan operasi mana yang berbaloi ditangani oleh projek amali anda.
           </p>
           <div className="mt-m grid-forces">
             {challenges.map((x) => (
@@ -184,7 +184,7 @@ export default function MbaForSmeOwnersPage() {
             <h2 className="sec-h">Terus menerajui perniagaan sambil menamatkan program.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program enam bulan ini menggunakan sesi hujung minggu berjadual, dengan projek aplikasi
+            Program enam bulan ini menggunakan sesi hujung minggu berjadual, dengan projek amali
             yang berteraskan organisasi anda sendiri. Laluan pembiayaan dan bayaran diterangkan secara berasingan.
           </p>
           <div className="mt-m grid-forces">
