@@ -57,7 +57,7 @@ const COPY = {
     prefix: "/ms",
     eyebrow: "Malaysia · Pembangunan Eksekutif",
     product: "Future Ready Executive MBA",
-    title: "Langkah pertama menjadi pemimpin pengurusan dan perniagaan bermula di sini.",
+    title: "Langkah memimpin bermula di sini.",
     lede: "Program pembangunan profesional selama enam bulan untuk pemilik perniagaan, pengurus dan pemimpin kanan di Malaysia. Untuk anda yang mahu membuat keputusan dengan lebih yakin, melihat gambaran yang lebih besar, dan melangkah ke peringkat kepimpinan seterusnya.",
     guide: "Muat turun panduan 2026 percuma",
     explore: "Ketahui lebih lanjut",
