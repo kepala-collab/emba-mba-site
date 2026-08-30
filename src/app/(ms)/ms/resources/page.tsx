@@ -58,7 +58,7 @@ export default function ResourcesPage() {
           <Reveal delay={60}>
             <article className="guide-card" id="decision-checklist">
               <p className="mono sec-k">Senarai semak keputusan yang neutral</p>
-              <h2>Soalan yang wajar diajukan sebelum membuat pilihan.</h2>
+              <h2>Soalan yang wajar anda ajukan sebelum memilih.</h2>
               <ul>
                 <li>Kerja mana yang mesti dibantu oleh pembelajaran ini?</li>
                 <li>Apakah yang diajar, diaplikasikan dan dinilai dalam program? Siapa yang mengendalikannya?</li>

@@ -39,7 +39,7 @@ export default function MsGoogleLP() {
         <div className="wrap">
           <div className="lpg-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 48, alignItems: "start" }}>
             <div>
-              <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Untuk pengurus di Malaysia yang sedang menimbang langkah pembangunan profesional seterusnya</span></div></Reveal>
+              <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Untuk pengurus Malaysia yang sedang merancang langkah seterusnya</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
                   Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
@@ -88,7 +88,7 @@ export default function MsGoogleLP() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang termasuk</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Semua pembelajaran dan sokongan ini sudah termasuk dalam yuran program.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Semuanya sudah termasuk dalam yuran.</h2></Reveal>
           <div className="insight-grid mt-m">
             {INCLUDED.map(([h, p], i) => (
               <Reveal key={h} delay={(i % 3) * 60}>

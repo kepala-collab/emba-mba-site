@@ -93,7 +93,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
               </table>
             </ScrollableTableRegion>
 
-            <h2>Lima soalan untuk diajukan kepada setiap penyedia</h2>
+            <h2>Lima soalan untuk anda ajukan kepada setiap penyedia</h2>
             <ol>
               <li><strong>Apa sebenarnya yang saya terima?</strong> Minta nama penuh kredensial itu dan contoh sijilnya jika ada.</li>
               <li><strong>Adakah ini ijazah akademik?</strong> Jika kelayakan akademik penting bagi anda, sahkan institusi penganugerah serta pengiktirafan yang terpakai.</li>

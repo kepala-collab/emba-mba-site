@@ -13,7 +13,7 @@ export default function AdvancementQuestionPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Laman utama", path: "/ms" }, { name: "Bahan program", path: "/ms/resources" }, { name: "Cara membandingkan program pengurusan", path: "/ms/insights/advancement-question" }]} />
-      <header className="resource-hero"><div className="wrap maxw-820"><p className="mono sec-k">Panduan perbandingan program</p><h1>Cara membandingkan program pengurusan.</h1><p>Kenal pasti dahulu keupayaan kerja yang anda mahu perkukuh. Barulah bandingkan cara pengajaran, komitmen masa, pengiktirafan dan yuran penuhnya.</p></div></header>
+      <header className="resource-hero"><div className="wrap maxw-820"><p className="mono sec-k">Panduan perbandingan program</p><h1>Bandingkan program pengurusan dengan betul.</h1><p>Kenal pasti dahulu keupayaan kerja yang anda mahu perkukuh. Barulah bandingkan cara pengajaran, komitmen masa, pengiktirafan dan yuran penuhnya.</p></div></header>
       <article className="section"><div className="wrap prose">
         <ArticleAttribution lang="ms" />
         <p>Profesional berpengalaman kembali ke pembelajaran berstruktur bukan kerana kurang maklumat. Sebab yang lebih tepat: tanggungjawab yang mereka pikul sekarang sudah melebihi cara lama mereka menyusun maklumat, menguji andaian dan membuat keputusan.</p>

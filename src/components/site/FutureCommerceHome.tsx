@@ -80,7 +80,7 @@ const COPY = {
     experienceIntro: "Bengkel yang tersusun, projek berdasarkan kerja sebenar anda, dan komuniti rakan eksekutif — semuanya menjadikan apa yang anda pelajari benar-benar boleh terus digunakan di pejabat.",
     experienceLabels: ["Bengkel strategi", "Projek gunaan", "Komuniti eksekutif"],
     recognitionKicker: "Bukti dan pengiktirafan",
-    recognitionTitle: "Kredibiliti yang nyata. Komuniti yang benar-benar wujud.",
+    recognitionTitle: "Kredibiliti yang nyata. Komuniti yang boleh anda jumpa.",
     recognitionIntro: "Executive MBA dalam Future Ready Business Leadership, dianugerahkan dan disokong oleh CMI.",
     graduates: "graduan",
     cohorts: "kohort",

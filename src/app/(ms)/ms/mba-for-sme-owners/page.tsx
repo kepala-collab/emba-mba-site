@@ -92,7 +92,7 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Tanda-tanda dalam operasi</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Di mana pergantungan pada pemilik menampakkan diri dalam perniagaan.</h2>
+            <h2 className="sec-h">Kenal pasti di mana perniagaan terlalu bergantung pada pemilik.</h2>
           </Reveal>
           <p className="sec-sub">
             Guna tanda-tanda ini untuk mengenal pasti kekangan operasi mana yang berbaloi ditangani oleh projek aplikasi anda.
@@ -181,7 +181,7 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Mengapa ia sesuai untuk pemilik</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Format yang membolehkan pemilik terus menerajui perniagaan.</h2>
+            <h2 className="sec-h">Terus menerajui perniagaan sambil menamatkan program.</h2>
           </Reveal>
           <p className="sec-sub">
             Program enam bulan ini menggunakan sesi hujung minggu berjadual, dengan projek aplikasi
@@ -209,7 +209,7 @@ export default function MbaForSmeOwnersPage() {
       <section className="section center">
         <div className="wrap">
           <Reveal>
-            <h2 className="sec-h">Kenal pasti pergantungan pada pemilik yang mana perlu ditangani program ini.</h2>
+            <h2 className="sec-h">Kenal pasti pergantungan pada pemilik yang wajar anda tangani.</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
             Bincangkan cabaran operasi anda dengan pasukan program, dan pastikan sama ada projek

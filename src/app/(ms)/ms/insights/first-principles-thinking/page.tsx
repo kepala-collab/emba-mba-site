@@ -180,7 +180,7 @@ export default function FirstPrinciplesThinkingPage() {
               itu — bukan alasan untuk membahaskan semula segala-galanya.
             </p>
 
-            <h2>Disiplin yang boleh dilatih</h2>
+            <h2>Latih disiplin ini</h2>
             <p>
               Berita baiknya, tiada satu pun daripada ini bergantung pada bakat
               semula jadi. Berfikir daripada asas ialah kemahiran yang semakin
@@ -212,7 +212,7 @@ export default function FirstPrinciplesThinkingPage() {
       <CtaSection
         lang="ms"
         programme="Executive MBA"
-        heading="Belajar berfikir bertitik tolak daripada prinsip pertama."
+        heading="Berfikir semula daripada prinsip pertama."
       />
     </>
   );

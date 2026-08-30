@@ -21,7 +21,7 @@ export default function MbaForEntrepreneursPage() {
       p: `${firstPrinciples?.p ?? "Bezakan kekangan yang benar-benar wujud daripada andaian yang anda warisi begitu sahaja."} Dari situ, anda rangka dan uji tawaran nilai yang tersendiri.`,
     },
     {
-      h: "Pemikiran model perniagaan & JTBD",
+      h: "Kuasai model perniagaan & JTBD",
       p: "Jelaskan apa sebenarnya yang pelanggan mahu selesaikan, buktinya, pilihan lain yang mereka ada, dan sejauh mana mereka sanggup bayar — sebelum anda kunci keputusan produk dan harga.",
     },
     {
@@ -29,15 +29,15 @@ export default function MbaForEntrepreneursPage() {
       p: "Kenali di mana AI benar-benar membantu kerja kajian, analisis atau aliran kerja anda — dan di mana pertimbangan dan tanggungjawab manusia tetap tak boleh diganti.",
     },
     {
-      h: "Strategi yang siap dibentangkan",
+      h: "Bina strategi yang siap dibentangkan",
       p: `${systems?.p ?? "Jejak satu sebab sampai ke kesan peringkat ketiganya sebelum anda melangkah."} Catat andaian, pilihan, tindakan dan ukuran anda supaya ia siap untuk dibentangkan kepada rakan pengasas, lembaga atau pelabur.`,
     },
     {
-      h: "Pandangan merentas jabatan",
+      h: "Buat keputusan merentas jabatan",
       p: "Selesaikan keputusan bersama peserta lain yang sama-sama memikul tanggungjawab sebenar — merentas pemilikan, pengurusan am dan fungsi kanan.",
     },
     {
-      h: "Cara menyusun keutamaan yang berlumba",
+      h: "Susun keutamaan yang berlumba",
       p: framework?.p ?? "Ubah kerumitan yang membebankan menjadi keputusan yang benar-benar boleh anda laksanakan.",
     },
   ];
@@ -45,7 +45,7 @@ export default function MbaForEntrepreneursPage() {
   const format = [
     { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berjadual membawa anda ke sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja." },
     { h: "Tiga hujung minggu berjadual, atau sepenuhnya dalam talian", p: "Program berjalan pada tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global pula bermakna anda tak perlu hadir secara fizikal." },
-    { h: "Terus dipakai sepanjang program", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai setiap rangka kerja terus pada usaha atau organisasi yang anda terajui." },
+    { h: "Terus pakai sepanjang program", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai setiap rangka kerja terus pada usaha atau organisasi yang anda terajui." },
     { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
   ];
 
@@ -60,7 +60,7 @@ export default function MbaForEntrepreneursPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Rangka kerja untuk setiap keputusan yang anda buat sambil <span className="acc">membina usaha.</span>
+              Kuasai setiap keputusan besar sambil anda <span className="acc">membina usaha.</span>
             </h1>
           </Reveal>
           <p className="sec-sub">
@@ -89,7 +89,7 @@ export default function MbaForEntrepreneursPage() {
             <span className="mono sec-k">Ruang keputusan seorang pengasas</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Daripada sekadar idea, kepada model perniagaan yang benar-benar boleh dilaksanakan.</h2>
+            <h2 className="sec-h">Ubah idea menjadi model perniagaan yang benar-benar boleh dilaksanakan.</h2>
           </Reveal>
           <p className="sec-sub">
             Rangka kerja ini menyusun semuanya — daripada bukti pelanggan, pilihan strategik dan cara
@@ -121,7 +121,7 @@ export default function MbaForEntrepreneursPage() {
             <span className="mono sec-k">Diterapkan pada usaha anda sendiri</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Projek aplikasi yang menyelesaikan cabaran perniagaan anda sendiri.</h2>
+            <h2 className="sec-h">Selesaikan cabaran sebenar perniagaan anda dalam projek aplikasi.</h2>
           </Reveal>
           <p className="sec-sub">
             Tiada tesis mahupun peperiksaan biasa. Anda pilih satu cabaran sebenar, pakai rangka kerja
@@ -169,7 +169,7 @@ export default function MbaForEntrepreneursPage() {
       <section className="section">
         <div className="wrap center">
           <Reveal>
-            <h2 className="sec-h">Uji program ini dengan keputusan yang sedang anda hadapi dalam usaha anda.</h2>
+            <h2 className="sec-h">Uji program ini pada keputusan yang anda hadapi sekarang.</h2>
           </Reveal>
           <p className="sec-sub">
             Program ini berjalan selama enam bulan. Yuran standard ialah {FACTS.priceStd}. Biasiswa {FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik, dan bukan kod diskaun.

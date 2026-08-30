@@ -70,7 +70,7 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Perbandingan sebelah-menyebelah</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Lapan ciri dibandingkan sekali imbas.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Banding lapan ciri sekali imbas.</h2></Reveal>
           <Reveal className="mt-s">
             <ProgrammeComparison lang="ms" />
           </Reveal>
@@ -155,7 +155,7 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Soalan lazim</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Soalan yang sering ditanya pemimpin sebelum membuat keputusan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Fahami soalan lazim sebelum anda membuat keputusan.</h2></Reveal>
           <div className="mt-s">
             {PAGE_FAQS.map(([q, a], i) => (
               <Reveal key={q} delay={i * 60}>

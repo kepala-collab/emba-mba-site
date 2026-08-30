@@ -73,7 +73,7 @@ export default function InsightsPage() {
               <span className="l" />
               <span className="mono sec-k">Wawasan · Pemikiran</span>
             </div>
-            <h1 className="sec-h">Rangka kerja pemikiran untuk pemimpin</h1>
+            <h1 className="sec-h">Tajamkan cara anda berfikir</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
               Panduan keputusan dan pengenalan ringkas kepada cara berfikir yang kami guna sepanjang program.
             </p>

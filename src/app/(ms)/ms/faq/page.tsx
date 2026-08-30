@@ -34,7 +34,7 @@ export default function Page() {
         <div className="wrap maxw-820">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Soalan lazim</span></div>
-            <h1 className="sec-h">Jawapan yang anda perlu tahu sebelum mendaftar</h1>
+            <h1 className="sec-h">Ketahui jawapannya sebelum anda mendaftar</h1>
             <p className="sec-sub">Kelayakan, yuran dan tarikh program sentiasa mengikut maklumat bertulis terkini daripada pasukan program semasa anda mendaftar.</p>
           </Reveal>
           <Reveal className="mt-s">

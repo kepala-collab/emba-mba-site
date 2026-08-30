@@ -16,12 +16,12 @@ export const metadata = withSeo("/ms/lp/meta", {
 const SOURCE = "lp-meta-ms";
 
 const EDGE = [
-  ["Memahami keseluruhan sistem", "Lihat punca, kaitan dan kesan susulan sesuatu isu sebelum anda membuat keputusan."],
-  ["Menguji andaian asas", "Bezakan fakta, kekangan dan andaian, kemudian bentuk pilihan berdasarkan bukti sebenar."],
-  ["Menggabungkan analisis dan inovasi", "Imbangkan logik strategik, keperluan pengguna dan kekangan sebenar di lapangan."],
-  ["Menyusun maklumat yang rumit", "Ubah maklumat yang rumit menjadi keputusan yang mudah dijelaskan dan terus boleh dilaksanakan."],
-  ["Menilai dari lima sudut", "Nilai setiap keputusan menerusi lima sudut perniagaan yang jelas."],
-  ["Menghubungkan bakat dan perniagaan", "Timbangkan keupayaan insan, inovasi dan keperluan komersial secara serentak."],
+  ["Fahami keseluruhan sistem", "Lihat punca, kaitan dan kesan susulan sesuatu isu sebelum anda membuat keputusan."],
+  ["Uji andaian asas", "Bezakan fakta, kekangan dan andaian, kemudian bentuk pilihan berdasarkan bukti sebenar."],
+  ["Gabungkan analisis dan inovasi", "Imbangkan logik strategik, keperluan pengguna dan kekangan sebenar di lapangan."],
+  ["Susun maklumat yang rumit", "Ubah maklumat yang rumit menjadi keputusan yang mudah dijelaskan dan terus boleh dilaksanakan."],
+  ["Nilai dari lima sudut", "Nilai setiap keputusan menerusi lima sudut perniagaan yang jelas."],
+  ["Hubungkan bakat dan perniagaan", "Timbangkan keupayaan insan, inovasi dan keperluan komersial secara serentak."],
 ];
 
 const WALK = [
@@ -38,7 +38,7 @@ export default function MsMetaLP() {
     <div lang="ms">
       <section className="section" style={{ paddingTop: "clamp(44px,6vw,80px)", borderBottom: "none" }}>
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
-          <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">Untuk pemimpin yang memikul tanggungjawab keputusan merentas jabatan</span></div></Reveal>
+          <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">Untuk pemimpin yang membuat keputusan merentas jabatan</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
               Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
@@ -66,7 +66,7 @@ export default function MsMetaLP() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Keupayaan yang dibina</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Enam kaedah keputusan yang saling melengkapi.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Kuasai enam kaedah membuat keputusan.</h2></Reveal>
           <div className="insight-grid mt-m">
             {EDGE.map(([h, p], i) => (
               <Reveal key={h} delay={(i % 3) * 60}>
@@ -92,7 +92,7 @@ export default function MsMetaLP() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang termasuk</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Pengajaran, bimbingan, alat dan penilaian dalam program.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Lihat semua yang anda dapat dalam program.</h2></Reveal>
           <div role="list" style={{ padding: 0, margin: "26px 0 0", display: "grid", gap: 14 }}>
             {WALK.map((w) => (
               <Reveal key={w}>

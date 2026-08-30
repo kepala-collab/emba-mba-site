@@ -200,7 +200,7 @@ export default function SystemsThinkingForLeaders() {
               </li>
             </ul>
 
-            <h2>Disiplin yang boleh diasah</h2>
+            <h2>Asah disiplin ini</h2>
             <p>
               Tiada satu pun daripada semua ini bakat semula jadi. Pemikiran sistem
               ialah kemahiran yang semakin tajam melalui latihan berstruktur, refleksi

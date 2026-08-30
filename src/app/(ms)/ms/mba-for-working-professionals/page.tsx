@@ -67,7 +67,7 @@ export default function MbaForWorkingProfessionalsPage() {
             </div>
             <Reveal>
               <h1 className="sec-h">
-                Jadual Executive MBA separuh masa untuk profesional yang terus bekerja <span className="acc">dalam peranan sedia ada</span>.
+                Sertai Executive MBA separuh masa tanpa berhenti kerja, sambil kekal <span className="acc">dalam peranan sedia ada</span>.
               </h1>
             </Reveal>
             <p className="sec-sub">
@@ -110,7 +110,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Bagaimana ia serasi dengan minggu anda</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Jadual yang diterbitkan awal untuk peserta yang terus bekerja.</h2>
+            <h2 className="sec-h">Rancang minggu anda dengan jadual yang diterbitkan awal.</h2>
           </Reveal>
           <p className="sec-sub">
             Semak ketiga-tiga tarikh sesi sebelum anda mendaftar. Projek aplikasi menghubungkan program
@@ -186,7 +186,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Sesi Pengambilan 2026 · tiga hujung minggu berjadual sepanjang program</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Jadual kohort Bahasa Inggeris dan Mandarin untuk 2026.</h2>
+            <h2 className="sec-h">Pilih kohort Bahasa Inggeris atau Mandarin untuk 2026.</h2>
           </Reveal>
           <p className="sec-sub">
             Kohort awam Malaysia semasa berlangsung 9 pagi–6 petang; Kohort 17 menggunakan Sabtu–Ahad
@@ -209,7 +209,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Untuk siapa</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Untuk profesional yang memikul tanggungjawab strategik atau merentas perniagaan.</h2>
+            <h2 className="sec-h">Untuk anda yang memikul strategi merentas perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
             Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan

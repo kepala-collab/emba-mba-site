@@ -38,7 +38,7 @@ export const COMPARISON_MS = [
 export const CORE_PAGES_MS = {
   method: {
     eyebrow: "Kaedah keputusan pengurusan F.A.S.T.",
-    title: "Menyusun isu yang rumit menjadi keputusan yang boleh dijelaskan dan dilaksanakan",
+    title: "Ubah isu yang rumit menjadi keputusan yang jelas dan boleh dilaksanakan",
     intro: "F.A.S.T. bermula daripada isu perniagaan sebenar. Ia membantu anda menentukan masalah yang betul, menguji andaian, menimbang pilihan, dan mengubah keputusan menjadi pelan tindakan yang boleh dilaksanakan.",
     sections: [
       ["Langkah 1: Kenal pasti masalah sebenar", "Asingkan gejala di permukaan, fakta, kekangan dan andaian yang belum diuji, supaya keputusan pengurusan yang sebenarnya perlu dibuat menjadi jelas."],
@@ -101,7 +101,7 @@ export const CORE_PAGES_MS = {
   },
   faculty: {
     eyebrow: "Fasilitator dan jurulatih perniagaan",
-    title: "Dikendalikan oleh pengamal industri, perunding dan jurulatih eksekutif",
+    title: "Dipimpin oleh pengamal industri, perunding dan jurulatih eksekutif",
     intro: "Fasilitator program datang daripada bidang strategi, operasi, bakat, kewangan, tadbir urus, perubahan dan bimbingan perniagaan. ABC mengesahkan barisan fasilitator setiap kohort dalam makluman kohort yang dihantar sebelum sesi pertama.",
     sections: [
       ["Pengalaman praktikal", "Barisan fasilitator merangkumi profesional yang pernah menerajui pembuatan berskala besar, kewangan syarikat tersenarai, transformasi organisasi, dasar kewangan, pembangunan bakat dan perundingan perniagaan."],

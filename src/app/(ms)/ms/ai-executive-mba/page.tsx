@@ -64,7 +64,7 @@ export default function AiExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Skop lensa AI</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Reka bentuk perniagaan dan tanggungjawab kepimpinan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Seimbangkan reka bentuk perniagaan dengan tanggungjawab kepimpinan.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "56ch" }}>
             Untuk menggunakan AI dengan berkesan, anda perlukan dua-duanya sekali: alasan perniagaan yang kukuh dan tanggungjawab manusia
             yang jelas. Program ini meneliti organisasi anda, cara keputusan dibuat dan peranan pemimpin dalam pelaksanaan.

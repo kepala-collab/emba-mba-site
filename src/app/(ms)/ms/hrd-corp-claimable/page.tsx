@@ -104,7 +104,7 @@ export default function HrdCorpClaimablePage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Bagaimana tuntutan berjalan</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Empat tanggungjawab yang jelas, dari permohonan hingga tuntutan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Kenali empat tanggungjawab, dari permohonan hingga tuntutan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               Majikan, HRD Corp dan penyedia latihan masing-masing memegang bahagian tersendiri dalam proses ini.
@@ -129,7 +129,7 @@ export default function HrdCorpClaimablePage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang dirangkumi</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Komponen program yang termasuk dalam jumlah geran yang diluluskan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Lihat komponen program yang termasuk dalam geran yang diluluskan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               HRD Corp menyatakan jumlah yang diluluskan dalam keputusan gerannya. Executive MBA ialah
@@ -161,7 +161,7 @@ export default function HrdCorpClaimablePage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Siapa yang boleh menuntut</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Laluan pembiayaan majikan dan bayaran individu.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Pilih laluan pembiayaan majikan atau bayaran individu.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               Tuntutan HRD Corp ialah laluan <b style={{ color: "var(--ink)" }}>B2B yang dibayar syarikat</b>:
@@ -184,7 +184,7 @@ export default function HrdCorpClaimablePage() {
       <section className="section faq">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">HRD Corp · jawapan ringkas</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Soalan HRDC yang mula-mula ditanya majikan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Fahami soalan HRDC yang majikan sering tanya.</h2></Reveal>
           <Reveal className="mt-s">
             {HRD_FAQS.map((f, i) => (
               <details key={f.q} open={i === 0}>

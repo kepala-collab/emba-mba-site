@@ -76,7 +76,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "24ch" }}>
-              Executive MBA yang direka khusus untuk pemimpin di Malaysia.
+              Executive MBA untuk pemimpin Malaysia yang terus bekerja.
             </h1>
           </Reveal>
           <Reveal>
@@ -151,7 +151,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Profil syarikat ABC</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Organisasi yang tersenarai dalam profil penyedia program.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Lihat organisasi dalam profil penyedia program.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               Profil syarikat terkini {SITE.provider} menyenaraikan organisasi berikut
@@ -178,7 +178,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Kohort Bahasa Inggeris dan Mandarin 2026</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Jadual Bahasa Inggeris dan Mandarin telah diterbitkan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Semak jadual Bahasa Inggeris dan Mandarin yang telah diterbitkan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               Kohort awam Malaysia semasa berjalan dari 9 pagi hingga 6 petang. Kohort 17 diadakan Sabtu hingga Ahad,

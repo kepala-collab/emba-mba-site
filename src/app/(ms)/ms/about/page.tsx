@@ -41,7 +41,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="card" style={{ padding: "clamp(24px,4vw,44px)" }}>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Pasukan program</span></div>
-              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>Hubungan langsung antara pereka program dengan orang yang menjawab pertanyaan anda.</h2>
+              <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>Berhubung terus dengan pereka program dan pasukan yang menjawab pertanyaan anda.</h2>
               <p className="sec-sub" style={{ maxWidth: "62ch" }}><strong>{ABC_PROFILE.name} (ABC)</strong> ialah Penyedia Latihan Berdaftar HRD Corp. ABC membangunkan dan menyusun program latihan berstruktur untuk profesional dan organisasi. Future Ready Executive MBA, CMI (UK) ialah salah satu program utamanya.</p>
               <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>{ORGANISATIONAL_STATEMENT_MS}</p>
               <Link href="/ms/asian-business-consulting" className="text-action" style={{ marginTop: 16 }}>Lanjut tentang Asian Business Consulting <span aria-hidden="true">↗</span></Link>

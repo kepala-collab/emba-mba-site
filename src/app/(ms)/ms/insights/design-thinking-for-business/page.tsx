@@ -211,7 +211,7 @@ export default function Page() {
               </li>
             </ul>
 
-            <h2>Daripada kaedah kepada penguasaan</h2>
+            <h2>Asah kaedah ini menjadi naluri</h2>
             <p>
               Pemikiran reka bentuk integratif ialah salah satu daripada tujuh disiplin
               dalam kaedah F.A.S.T. {" "}
