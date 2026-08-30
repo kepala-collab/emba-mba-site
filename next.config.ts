@@ -99,14 +99,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-          { key: "CDN-Cache-Control", value: "public, s-maxage=31536000, immutable" },
-        ],
-      },
-      {
-        source: "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
+        source: "/media/future-commerce/future-ready-emba-leadership-hero-v7.mp4",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
           { key: "CDN-Cache-Control", value: "public, s-maxage=31536000, immutable" },
