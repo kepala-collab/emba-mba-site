@@ -6,7 +6,7 @@ import { cohortKey, type LeadIntent } from "@/lib/conversion-contract";
 import { conversionContextFromLocation, updateConversionContext } from "@/lib/conversion-context";
 import { getExperimentAssignmentsJson } from "@/lib/experiments";
 import { getLeadAttribution, trackEvent } from "@/lib/analytics";
-import { INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
+import { FACTS, INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
 import { getIntakeStatus, malaysiaDateKey } from "@/lib/intakes";
 import "@/lib/turnstile";
 
@@ -85,7 +85,7 @@ const T = {
     campaignTitle: `Get the ${PROGRAMME_YEAR} Future Ready EMBA guide.`,
     campaignIntro: "Review the programme before deciding whether to speak with us.",
     campaignBenefits: [
-      "See how the six months and six training days work",
+      `See how the ${FACTS.durationMonths} months and ${FACTS.trainingDays} training days work`,
       "Understand the CMI recognition and programme boundaries",
       "Compare dates, the published fee and scholarship criteria",
     ],
@@ -169,7 +169,7 @@ const T = {
     campaignTitle: `获取 ${PROGRAMME_YEAR} Future Ready Executive MBA 课⁠程⁠指⁠南。`,
     campaignIntro: "先了解课程内容，再决定是否与课程团队沟通。",
     campaignBenefits: [
-      "了解六个月课程及六个培训日的安排",
+      `了解 ${FACTS.durationMonths} 个月课程及 ${FACTS.trainingDays} 个培训日的安排`,
       "了解 CMI 专业认可及课程属性边界",
       "比较开课日期、标准费用及奖学金择优评估条件",
     ],
@@ -253,7 +253,7 @@ const T = {
     campaignTitle: `Dapatkan panduan Future Ready EMBA ${PROGRAMME_YEAR}.`,
     campaignIntro: "Semak program terlebih dahulu sebelum memutuskan sama ada mahu berbincang dengan kami.",
     campaignBenefits: [
-      "Lihat susunan enam bulan dan enam hari latihan",
+      `Lihat susunan ${FACTS.durationMonths} bulan dan ${FACTS.trainingDays} hari latihan`,
       "Fahami pengiktirafan CMI dan batas status program",
       "Bandingkan tarikh, yuran yang diterbitkan dan penilaian biasiswa",
     ],
@@ -655,6 +655,7 @@ export default function LeadForm({
         body: JSON.stringify({
           ...data,
           ...getLeadAttribution(),
+          page_language: lang,
           submission_id: submissionId.current,
           lead_intent: intent,
           cohort_key: selectedCohort || null,

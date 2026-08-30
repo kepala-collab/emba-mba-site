@@ -2,7 +2,7 @@ import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS } from "@/lib/content";
+import { CTA_LABELS, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const path = "/zh/intakes";
@@ -21,7 +21,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">2026 英语及华语班</span></div>
             <h1 className="sec-h">选择与工作日程契合的班次。</h1>
-            <p className="sec-sub">五个已公布班次，都在六个月内以三个周末完成。Chartered Manager 属于独立可选的 CMI 路线，不含在本课程与已公布费用之内。</p>
+            <p className="sec-sub">五个已公布班次，都在 {FACTS.durationMonths} 个月内以 {FACTS.liveSessions} 个周末完成。Chartered Manager 属于独立可选的 CMI 路线，不含在本课程与已公布费用之内。</p>
             <p className="fine mt-s">班次名额将由课程团队在回复咨询时确认。</p>
           </Reveal>
         </div>

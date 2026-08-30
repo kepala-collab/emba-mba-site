@@ -6,8 +6,7 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/mba-for-entrepreneurs", {
   title: "面向创业者及创办人的 Executive MBA",
-  description:
-    "专为创办人打造的六个月专业管理课程，结业即获 CMI 认可的课程证书。",
+  description: `专为创办人打造的 ${FACTS.durationMonths} 个月专业管理课程，结业即获 CMI 认可的课程证书。`,
 });
 
 const BUILT = [
@@ -38,8 +37,8 @@ const BUILT = [
 ];
 
 const FORMAT = [
-  { h: "明确的六个月安排", p: "六个月修完，一边照常工作，一边取得 CMI 认可的课程证书。" },
-  { h: "三个指定周末课程，或线上课程", p: "课程集中在三个指定周末进行；选择线上班则无需到场。" },
+  { h: `明确的 ${FACTS.durationMonths} 个月安排`, p: `${FACTS.durationMonths} 个月修完，一边照常工作，一边取得 CMI 认可的课程证书。` },
+  { h: `${FACTS.liveSessions} 个指定周末的导师带领研习课，或线上课程`, p: `课程集中在 ${FACTS.liveSessions} 个指定周末进行；选择线上班则无需到场。` },
   { h: "在课程期间应用", p: "没有传统论文，也没有考试。学员直接把所学框架用在自己经营的创业项目或企业上。" },
   { h: "书面补课安排", p: "万一错过某次课程，ABC 会以书面确认经批准的补课方式：观看指定录像，或参加指定的后续班次。" },
 ];
@@ -66,7 +65,7 @@ export default function MbaForEntrepreneursZhPage() {
             企业应用项目就以您正在打造的企业或项目为对象。
           </p>
           <p className="mono sec-k mt-s">
-            六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
+            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁授并背书
           </p>
           <p className="sec-sub mt-s">
             查看完整的{" "}
@@ -142,7 +141,7 @@ export default function MbaForEntrepreneursZhPage() {
             <h2 className="sec-h">修读课程，不必放下手上的企业。</h2>
           </Reveal>
           <p className="sec-sub">
-            六个月内，课程涵盖三个周末的面授、导师辅导与企业应用项目。
+            {FACTS.durationMonths} 个月内，课程涵盖 {FACTS.liveSessions} 个指定周末的导师带领研习课、导师辅导与企业应用项目。
             Chartered Manager 属于独立可选的 CMI 路线，另有各自的资格、评估与费用。
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>

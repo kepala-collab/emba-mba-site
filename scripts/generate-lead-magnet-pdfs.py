@@ -231,7 +231,7 @@ DOCS["decision"] = {
   "subhead": "Untuk keputusan yang anda hadapi sekarang.",
   "intro": "Gunakan panduan ini untuk menilai sama ada program sesuai dengan tanggungjawab yang anda pikul sekarang — bukan sekadar jawatan yang anda inginkan.",
   "cover_cta": f"Hubungi pasukan program — {EMAIL}",
-  "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia.",
+  "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
   "blocks": [
    ("h1", "Apa sebenarnya program ini."),
    ("p", "Ini ialah pembangunan pengurusan yang diguna pakai untuk pengurus berpengalaman yang sedang bekerja. Anda membawa cabaran perniagaan semasa, menggunakan rangka kerja berstruktur untuk menguji andaian dan pilihan, dan menyiapkan projek sebenar berdasarkan kerja anda sendiri — bukan kajian kes."),
@@ -241,7 +241,7 @@ DOCS["decision"] = {
    ("h2", "Sesuai jika anda"),
    ("p", "•&nbsp; sudah membuat keputusan yang memberi kesan kepada orang, operasi atau prestasi perniagaan<br/>•&nbsp; boleh membawa cabaran perniagaan semasa ke dalam pembelajaran<br/>•&nbsp; mahukan pembangunan yang diguna pakai, bukan MBA akademik tradisional<br/>•&nbsp; boleh meluangkan masa untuk tiga sesi berjadual, bimbingan dan projek sepanjang enam bulan"),
    ("sp", 3),
-   ("notice", "Apa yang ia bukan: ijazah universiti, MBA akademik bertauliah MQA, janji kenaikan pangkat, atau anugerah Chartered Manager secara automatik."),
+   ("notice", "Apa yang ia bukan: ijazah universiti, MBA akademik terakreditasi MQA, janji kenaikan pangkat, atau anugerah Chartered Manager secara automatik."),
    ("pb",),
    ("h1", "Program ini berbanding MBA tradisional."),
    ("table", ("Aspek", "Program ini", "MBA akademik tradisional"), [
@@ -263,7 +263,7 @@ DOCS["decision"] = {
    ("sp", 5),
    ("h1", "Soalan lazim."),
    ("faq", [
-     ("Adakah ini MBA sebenar?", "Ini ialah program Executive MBA yang diiktiraf oleh CMI (UK) menurut CMI Professional Standards. Ia pembangunan profesional, bukan ijazah akademik bertauliah MQA."),
+     ("Adakah ini MBA sebenar?", "Ini ialah program Executive MBA yang diiktiraf oleh CMI (UK) menurut CMI Professional Standards. Ia pembangunan profesional, bukan ijazah akademik terakreditasi MQA."),
      ("Adakah saya menjadi Chartered Manager?", "Tidak secara automatik. Selepas tamat anda menerima sijil CMI; Chartered Manager ialah laluan CMI pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri yang ditentukan CMI."),
      ("Boleh saya ikut sambil bekerja sepenuh masa?", "Boleh — ia direka untuk pengurus yang bekerja: tiga sesi berjadual sepanjang enam bulan, dengan projek aplikasi berdasarkan kerja anda sendiri. Tiada peperiksaan atau tesis."),
    ]),
@@ -379,7 +379,7 @@ DOCS["employer"] = {
   "subhead": "Hasilnya diguna pakai, bukan sekadar kehadiran.",
   "intro": "Ini program berstruktur yang dibina atas isu perniagaan sebenar dan projek aplikasi — supaya organisasi melihat keupayaan diperkukuh pada kerjanya sendiri, bukan sekadar rekod kehadiran.",
   "cover_cta": f"Minta pek dokumen majikan — {EMAIL}",
-  "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia.",
+  "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
   "blocks": [
    ("h1", "Apa yang dinilai oleh majikan."),
    ("p", "Keputusan pembangunan pengurusan yang praktikal menghubungkan tiga perkara: tanggungjawab peserta, isu perniagaan yang akan ditanganinya, dan keupayaan yang perlu diperkukuh oleh organisasi."),
@@ -503,7 +503,7 @@ DOCS["scholarship"] = {
   "subhead": "Terma yang jelas melindungi semua pihak.",
   "intro": "Biasiswa adalah terhad dan dianugerahkan secara terpilih. Kelayakan dinilai, dan sesuatu anugerah wujud hanya setelah disahkan secara bertulis. Mengetahui perkara ini lebih awal menjadikan perbualan anda dengan pasukan program lebih pantas dan jelas.",
   "cover_cta": f"Tanya tentang penilaian biasiswa — {EMAIL}",
-  "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia.",
+  "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
   "blocks": [
    ("h1", "Yuran Malaysia yang diterbitkan."),
    ("card", "Yuran standard program", "RM10,000.00"),

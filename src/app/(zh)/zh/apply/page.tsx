@@ -1,12 +1,13 @@
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import GuideApplyPage from "@/components/site/GuideApplyPage";
+import { FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const path = "/zh/apply";
 
 export const metadata = withSeo(path, {
   title: "获取 Future Ready Executive MBA 课程指南",
-  description: "免费下载 2026 课程指南，了解六个月的课程结构、已公布日期、费用、奖学金择优评估方式及 CMI 认可。",
+  description: `免费下载 2026 课程指南，了解 ${FACTS.durationMonths} 个月的课程结构、已公布日期、费用、奖学金择优评估方式及 CMI 认可。`,
 });
 
 export default function Page() {

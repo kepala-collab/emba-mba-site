@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import { trackEvent } from "@/lib/analytics";
+import { FACTS } from "@/lib/content";
 
 const VIDEO_URL = process.env.NEXT_PUBLIC_PROGRAMME_VIDEO_URL;
 const CAPTIONS_URL = process.env.NEXT_PUBLIC_PROGRAMME_VIDEO_CAPTIONS_URL;
@@ -167,15 +168,15 @@ export default function ProgrammeIntroduction({ image = "hero", placement = "pro
             ) : (
               <div className="film-placeholder" aria-label="Programme overview">
                 <div>
-                  <strong>Six months. One focused programme.</strong>
-                  <p>Three scheduled sessions cover the programme workshops, coaching and applied business project. Chartered Manager is a separate CMI route and is not included in the published Executive MBA programme or fee.</p>
+                  <strong>{FACTS.durationMonths} months. One focused programme.</strong>
+                  <p>{FACTS.liveSessions} scheduled sessions cover the programme workshops, coaching and applied business project. Chartered Manager is a separate CMI route and is not included in the published Executive MBA programme or fee.</p>
                 </div>
               </div>
             )}
             <div className="film-transcript">
               <h3>Transcript</h3>
               <p><strong>This programme is designed for experienced working managers.</strong> It uses your real business responsibilities as the context for learning.</p>
-              <p>Across six months, you attend six training days in three scheduled sessions, receive coaching and complete an applied business project. Successful completion leads to the CMI Certificate of Recognition for the programme.</p>
+              <p>Across {FACTS.durationMonths} months, you attend {FACTS.trainingDays} training days in {FACTS.liveSessions} scheduled sessions, receive coaching and complete an applied business project. Successful completion leads to the CMI Certificate of Recognition for the programme.</p>
               <p>Chartered Manager is a separate optional CMI route. CMI controls eligibility, assessment, membership and fees, and Chartered Manager status is not included in the published programme or fee.</p>
             </div>
           </section>

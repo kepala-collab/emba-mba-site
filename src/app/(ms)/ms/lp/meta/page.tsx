@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/lp/meta", {
   title: "Executive MBA untuk Pemimpin yang Sedang Bekerja | Future Ready",
   description:
-    "Future Ready Executive MBA selama enam bulan untuk pengurus yang sedang bekerja di Malaysia: enam hari latihan, tiga sesi berpandu dan projek berteraskan cabaran perniagaan sebenar.",
+    `Future Ready Executive MBA selama ${FACTS.durationMonths} bulan untuk pengurus yang sedang bekerja di Malaysia: ${FACTS.trainingDays} hari latihan, ${FACTS.liveSessions} sesi berpandu dan projek berteraskan cabaran perniagaan sebenar.`,
   robots: { index: false, follow: false },
   alternates: { canonical: "/ms/lp/meta" },
 });
@@ -25,7 +25,7 @@ const EDGE = [
 ];
 
 const WALK = [
-  "Enam hari latihan berpandu secara langsung, dikendalikan fasilitator yang disahkan pasukan program",
+  `${FACTS.trainingDays} hari latihan berpandu secara langsung, dikendalikan fasilitator yang disahkan pasukan program`,
   "Diagnostik kepimpinan peribadi untuk melihat cara anda membuat keputusan dan bahagian mana yang paling berbaloi anda kembangkan",
   "Bimbingan eksekutif peribadi yang terus dipakai pada situasi perniagaan anda sendiri",
   "Rangka kerja dan pustaka alat (LMS) yang kekal milik anda selepas program tamat",
@@ -41,12 +41,12 @@ export default function MsMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">Untuk pemimpin yang membuat keputusan merentas jabatan</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
+              Tamatkan dalam {FACTS.durationMonths} bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              Selesaikan enam hari latihan, bimbingan dan projek berteraskan cabaran perniagaan sebenar dalam enam bulan — sambil anda terus bekerja. Chartered Manager pula ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
+              Selesaikan {FACTS.trainingDays} hari latihan, bimbingan dan projek berteraskan cabaran perniagaan sebenar dalam {FACTS.durationMonths} bulan — sambil anda terus bekerja. Chartered Manager pula ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
             </p>
           </Reveal>
           <Reveal delay={160}>

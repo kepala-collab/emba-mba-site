@@ -43,8 +43,8 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "A defined six-month schedule", p: "Three scheduled sessions lead to the CMI-recognised programme certificate while you continue working." },
-    { h: "Three scheduled weekends across the programme, or online", p: "The programme uses three scheduled weekends across the programme; the global online route removes the need for physical attendance." },
+    { h: `A defined ${FACTS.durationMonths}-month schedule`, p: `${FACTS.liveSessions} scheduled sessions lead to the CMI-recognised programme certificate while you continue working.` },
+    { h: `${FACTS.liveSessions} scheduled weekends across the programme, or online`, p: `The programme uses ${FACTS.liveSessions} scheduled weekends across the programme; the global online route removes the need for physical attendance.` },
     { h: "Applied during the programme", p: "There is no traditional thesis or examination. Participants apply the frameworks to the venture or organisation they lead." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
   ];

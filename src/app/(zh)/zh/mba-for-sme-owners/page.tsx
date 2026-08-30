@@ -8,8 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-sme-owners", {
   title: "面向中小企业主及创办人的 Executive MBA",
-  description:
-    "由 CMI 颁授并背书的 Executive MBA，六个月分三个课程完成，专为中小企业主打造。",
+  description: `由 CMI 颁授并背书的 Executive MBA，${FACTS.durationMonths} 个月分 ${FACTS.liveSessions} 次导师带领的研习课完成，专为中小企业主打造。`,
 });
 
 const jsonLd = {
@@ -18,7 +17,7 @@ const jsonLd = {
   "@id": `${SITE.url}/zh/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "由 CMI 颁授并背书的 Executive MBA，六个月分三个课程，为中小企业主与创办人开办。",
+    `由 CMI 颁授并背书的 Executive MBA，${FACTS.durationMonths} 个月分 ${FACTS.liveSessions} 次导师带领的研习课，为中小企业主与创办人开办。`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -44,8 +43,8 @@ const CHALLENGES = [
 ];
 
 const FIT = [
-  { h: "三个指定周末课程", p: "三个课程按月推进；已公布的开课表会注明每个班次是周五至周六，还是周六至周日。" },
-  { h: "您的企业就是应用项目", p: "没有传统论文，也没有考试。学员运用课程框架，为自己的公司量身制定转型方案。" },
+  { h: `${FACTS.liveSessions} 个指定周末的导师带领研习课`, p: `${FACTS.liveSessions} 次研习课按月推进；已公布的开课表会注明每个班次是周五至周六，还是周六至周日。` },
+  { h: "您的企业就是企业应用项目", p: "没有传统论文，也没有考试。学员运用课程框架，为自己的公司量身制定转型方案。" },
   { h: "雇主主导的 HRD Corp 资助", p: HRD_CORP_CLAIM_ZH },
   { h: "马来西亚申请者的奖学金资格", p: `奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经 ${FACTS.scholarshipProvider} 评估与书面批准；具体金额与应付费用均个别书面确认，分期方案见学费页面。` },
 ];
@@ -73,7 +72,7 @@ export default function MbaForSmeOwnersZhPage() {
             用到授权、育才、接班与增长等课题上。
           </p>
           <p className="mono sec-k mt-s">
-            六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
+            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁授并背书
           </p>
           <p className="sec-sub mt-s">
             查看完整的{" "}
@@ -95,7 +94,7 @@ export default function MbaForSmeOwnersZhPage() {
             <h2 className="sec-h">企业主依赖，藏在这些环节里。</h2>
           </Reveal>
           <p className="sec-sub">
-            对照这些迹象，判断您的应用项目该先攻克哪一处运作瓶颈。
+            对照这些迹象，判断您的企业应用项目该先攻克哪一处运作瓶颈。
           </p>
           <div className="mt-m grid-forces">
             {CHALLENGES.map((x) => (
@@ -183,7 +182,7 @@ export default function MbaForSmeOwnersZhPage() {
             <h2 className="sec-h">一种让您人在企业、照样进修的课程安排。</h2>
           </Reveal>
           <p className="sec-sub">
-            六个月课程集中在指定周末进行，企业应用项目就以学员自己的公司为对象。
+            {FACTS.durationMonths} 个月课程集中在指定周末进行，企业应用项目就以学员自己的公司为对象。
             资助与付款方式另行说明。
           </p>
           <div className="mt-m grid-forces">
@@ -211,7 +210,7 @@ export default function MbaForSmeOwnersZhPage() {
             <h2 className="sec-h">先想清楚，这门课程该帮您解开哪一种企业主依赖。</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
-            与课程团队聊聊您的运作课题，一起确认应用项目、课程安排与同学背景
+            与课程团队聊聊您的运作课题，一起确认企业应用项目、课程安排与同学背景
             是否契合您的目标。
           </p>
           <p className="mt-s">

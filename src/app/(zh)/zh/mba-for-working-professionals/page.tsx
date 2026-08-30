@@ -11,8 +11,7 @@ import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-working-professionals", {
   title: "面向在职专业人士的兼读 Executive MBA",
-  description:
-    "一边全职工作，一边进修：为期六个月的 Executive MBA，专为在职专业人士打造，三个指定周末授课，也可全程线上。",
+  description: `一边全职工作，一边进修：为期 ${FACTS.durationMonths} 个月的 Executive MBA，专为在职专业人士打造，${FACTS.liveSessions} 个指定周末授课，也可全程线上。`,
 });
 
 const jsonLd = {
@@ -21,7 +20,7 @@ const jsonLd = {
   "@id": `${SITE.url}/zh/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "由 CMI 颁授并背书的 Executive MBA，六个月内分三个指定课程进行，另设线上选项。",
+    `由 CMI 颁授并背书的 Executive MBA，${FACTS.durationMonths} 个月内分 ${FACTS.liveSessions} 次导师带领的研习课进行，另设线上选项。`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -39,7 +38,7 @@ const jsonLd = {
 };
 
 const FIT = [
-  { h: "三个指定周末课程", p: "全程分三个固定课程，每个课程为期一个周末。" },
+  { h: `${FACTS.liveSessions} 个指定周末的导师带领研习课`, p: `全程分 ${FACTS.liveSessions} 次研习课，每次为期一个周末。` },
   { h: "或完全线上进行", p: "也可选择全程线上直播，导师辅导与课程框架与面授班完全一致。" },
   { h: "书面补课安排", p: "万一错过某次课程，ABC 会以书面确认经批准的补课方式：观看指定录像，或参加指定的后续班次。" },
   { h: "应用于当前工作", p: "没有传统论文，也没有考试。学员把框架直接用在自己当下负责的经营课题上。" },
@@ -72,12 +71,12 @@ export default function MbaForWorkingProfessionalsZhPage() {
             </Reveal>
             <p className="sec-sub">
               Future Ready Executive MBA 专为想在全职工作之余进修的学员打造。
-              课程为期 {FACTS.durationLong}，集中在三个指定周末授课。
+              课程为期 {FACTS.durationMonths} 个月，集中在 {FACTS.liveSessions} 个指定周末授课。
               Chartered Manager 属于独立可选的 CMI 路线，另有各自的资格、评估与费用，
               不包含在已公布的课程或费用之内。
             </p>
             <p className="mono sec-k mt-s">
-              六个月 · 三个指定课程周末 · 由 CMI 颁授并背书
+            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁授并背书
             </p>
             <p className="sec-sub mt-s">
               探索完整的{" "}
@@ -113,7 +112,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
             <h2 className="sec-h">为在职学员公布的上课时间表。</h2>
           </Reveal>
           <p className="sec-sub">
-            报名前请先核对三个课程的日期。企业应用项目会把所学与您现职中的经营课题挂钩。
+            报名前请先核对 {FACTS.liveSessions} 次研习课的日期。企业应用项目会把所学与您现职中的经营课题挂钩。
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {FIT.map((x) => (
@@ -178,7 +177,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">2026 开课日期 · 三个指定周末课程</span>
+            <span className="mono sec-k">2026 开课日期 · {FACTS.liveSessions} 个指定周末</span>
           </div>
           <Reveal>
             <h2 className="sec-h">2026 英语及华语开课时间表。</h2>

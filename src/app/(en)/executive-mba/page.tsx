@@ -10,6 +10,7 @@ import {
   COMPANY_ENROLMENT,
   COMPLIANCE,
   CTA_LABELS,
+  FACTS,
   HRD_CORP_CLAIM,
   INCLUSIONS,
   MODULES,
@@ -69,7 +70,7 @@ export default function ExecutiveMbaPage() {
             </Reveal>
             <Reveal delay={90}>
               <p className="programme-overview-lede">
-                A focused six-month programme for working leaders: six training days, coaching and an applied business project built around a live business issue.
+                A focused {FACTS.durationMonths}-month programme for working leaders: {FACTS.trainingDays} training days, coaching and an applied business project built around a live business issue.
               </p>
             </Reveal>
             <Reveal delay={120}>
@@ -93,7 +94,7 @@ export default function ExecutiveMbaPage() {
               </div>
               <dl>
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
-                <div><dt>Schedule</dt><dd>Six training days across three scheduled sessions</dd></div>
+                <div><dt>Schedule</dt><dd>{FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions</dd></div>
                 <div><dt>Assessment</dt><dd>Applied business project; no traditional examination or thesis</dd></div>
                 <div><dt>Scholarship</dt><dd>Eligibility-based assessment for Malaysian applicants</dd></div>
               </dl>
@@ -108,8 +109,8 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">How the six months work</p>
-              <h2 className="sec-h">Six intensive days. One real business challenge. A practical way forward.</h2>
-              <p>Complete the programme in three scheduled sessions while continuing to work. There are no traditional examinations or thesis.</p>
+              <h2 className="sec-h">{FACTS.trainingDays} intensive days. One real business challenge. A practical way forward.</h2>
+              <p>Complete the programme in {FACTS.liveSessions} scheduled sessions while continuing to work. There are no traditional examinations or thesis.</p>
             </div>
           </Reveal>
           <Reveal delay={40}>
@@ -130,7 +131,7 @@ export default function ExecutiveMbaPage() {
                 <span className="programme-stage-number" aria-hidden="true">01</span>
                 <p className="mono sec-k">Six months</p>
                 <h3>Executive MBA programme and certificate</h3>
-                <p>Attend six training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
+                <p>Attend {FACTS.trainingDays} training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
                 <Link href="/curriculum" className="text-action">Review the curriculum <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>

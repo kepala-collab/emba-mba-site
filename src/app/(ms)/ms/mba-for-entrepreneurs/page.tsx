@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/mba-for-entrepreneurs", {
   title: "Executive MBA untuk Usahawan & Pengasas",
   description:
-    "Program pembangunan profesional enam bulan untuk usahawan dan pengasas di Malaysia, dengan sijil program yang diiktiraf CMI. Untuk anda yang mahu membuat keputusan dengan lebih yakin.",
+    `Program ${FACTS.durationMonths} bulan untuk usahawan dan pengasas Malaysia, dengan sijil program CMI dan pembelajaran praktikal untuk keputusan perniagaan.`,
 });
 
 export default function MbaForEntrepreneursPage() {
@@ -43,8 +43,8 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berpandu membawa anda ke sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja." },
-    { h: "Tiga hujung minggu berjadual, atau sepenuhnya dalam talian", p: "Program berjalan pada tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global pula bermakna anda tidak perlu hadir secara fizikal." },
+    { h: `Jadual ${FACTS.durationMonths} bulan yang jelas`, p: `${FACTS.liveSessions} sesi berpandu membawa anda ke sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja.` },
+    { h: `${FACTS.liveSessions} hujung minggu berjadual, atau sepenuhnya dalam talian`, p: `Program berjalan pada ${FACTS.liveSessions} hujung minggu berjadual sepanjang ${FACTS.durationMonths} bulan; laluan dalam talian global pula bermakna anda tidak perlu hadir secara fizikal.` },
     { h: "Terus pakai sepanjang program", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai setiap rangka kerja terus pada usaha atau organisasi yang anda terajui." },
     { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
   ];
@@ -71,7 +71,7 @@ export default function MbaForEntrepreneursPage() {
             yang sedang anda bina sendiri.
           </p>
           <p className="mono sec-k mt-s">
-            Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
+            {FACTS.durationMonths} bulan · {FACTS.liveSessions} hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
           </p>
           <p className="sec-sub mt-s">
             Lihat keseluruhan{" "}
@@ -148,7 +148,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Teruskan urus perniagaan sambil menamatkan program.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini berjalan menerusi tiga sesi hujung minggu berjadual, bimbingan dan projek
+            Program ini berjalan menerusi {FACTS.liveSessions} sesi hujung minggu berjadual, bimbingan dan projek
             aplikasi. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat
             kelayakan, penilaian dan yuran tersendiri.
           </p>

@@ -3,7 +3,7 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { DELIVERY_CONTROL, INTAKES, SITE } from "@/lib/content";
+import { DELIVERY_CONTROL, FACTS, INTAKES, SITE } from "@/lib/content";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -88,9 +88,9 @@ export default function IntakesPage() {
           style={{ display: "grid", gap: "var(--space-4, 1rem)" }}
         >
           <div className="card">
-            <h3 style={{ margin: 0 }}>Three scheduled weekends across the programme</h3>
+            <h3 style={{ margin: 0 }}>{FACTS.liveSessions} scheduled weekends across the programme</h3>
             <p style={{ margin: "0.5rem 0 0", color: "var(--muted)" }}>
-              Each session runs 9am–6pm. Cohort 17 uses Saturday–Sunday; the remaining published cohorts use Friday–Saturday. Three weekends
+              Each session runs 9am–6pm. Cohort 17 uses Saturday–Sunday; the remaining published cohorts use Friday–Saturday. {FACTS.liveSessions} weekends
               during the six-month programme. Participants continue in their professional roles between sessions.
             </p>
           </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS } from "@/lib/content";
+import { CTA_LABELS, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const path = "/ms/intakes";
@@ -10,7 +10,7 @@ const path = "/ms/intakes";
 export const metadata = withSeo(path, {
   title: "Tarikh Kohort Executive MBA 2026 — Bahasa Inggeris dan Mandarin",
   description:
-    "Semak tarikh dan waktu tiga sesi hujung minggu bagi Kohort 17–19 (Bahasa Inggeris) dan Kohort 2–3 (Mandarin) untuk tahun 2026.",
+    `Semak tarikh dan waktu ${FACTS.liveSessions} sesi hujung minggu bagi Kohort 17–19 (Bahasa Inggeris) dan Kohort 2–3 (Mandarin) untuk tahun 2026.`,
 });
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Kohort Bahasa Inggeris dan Mandarin 2026</span></div>
             <h1 className="sec-h">Pilih kohort yang sesuai dengan jadual kerja anda.</h1>
-            <p className="sec-sub">Setiap kohort yang diterbitkan selesai dalam enam bulan menerusi tiga sesi hujung minggu. Chartered Manager pula ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
+            <p className="sec-sub">Setiap kohort yang diterbitkan selesai dalam {FACTS.durationMonths} bulan menerusi {FACTS.liveSessions} sesi hujung minggu. Chartered Manager pula ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
             <p className="fine mt-s">Pasukan program mengesahkan kekosongan kohort semasa membalas pertanyaan anda.</p>
           </Reveal>
         </div>

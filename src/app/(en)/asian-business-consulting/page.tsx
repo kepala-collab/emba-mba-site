@@ -5,7 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import YouTubeFilm from "@/components/site/YouTubeFilm";
-import { OPERATOR, SITE } from "@/lib/content";
+import { OPERATOR, PROGRAMME_PROOF, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
@@ -19,8 +19,8 @@ export const metadata = withSeo("/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC registered in Malaysia" },
   { n: "Jul 2024", s: "Awarded and endorsed by CMI" },
-  { n: "17", s: "cohorts delivered: 16 English and a Mandarin cohort" },
-  { n: "154", s: "graduates of the signature programme" },
+  { n: String(PROGRAMME_PROOF.cohorts), s: `cohorts delivered: ${PROGRAMME_PROOF.englishCohorts} English and ${PROGRAMME_PROOF.mandarinCohorts} Mandarin cohort` },
+  { n: String(PROGRAMME_PROOF.graduates), s: "graduates of the signature programme" },
 ];
 
 const LEADERS = [
@@ -137,15 +137,15 @@ export default function AsianBusinessConsultingPage() {
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>
-            <h2 className="sec-h">Seventeen cohorts. 154 graduates. One shared milestone.</h2>
-            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in August 2026. Eighty-six graduates attended, representing a wider community of 154 graduates across 17 cohorts: 16 English cohorts and a Mandarin cohort.</p>
+            <h2 className="sec-h">{PROGRAMME_PROOF.cohorts} cohorts. {PROGRAMME_PROOF.graduates} graduates. One shared milestone.</h2>
+            <p className="sec-sub" style={{ maxWidth: "60ch" }}>The Future Ready Executive MBA held its inaugural graduation ceremony in {PROGRAMME_PROOF.inauguralGraduation}. {PROGRAMME_PROOF.graduationAttendance} graduates attended, representing a wider community of {PROGRAMME_PROOF.graduates} graduates across {PROGRAMME_PROOF.cohorts} cohorts: {PROGRAMME_PROOF.englishCohorts} English cohorts and {PROGRAMME_PROOF.mandarinCohorts} Mandarin cohort.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
-              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Inaugural graduation · 86 attendees · August 2026</div>
-              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Inaugural Graduation Film", description: "Highlights from the inaugural Future Ready Executive MBA graduation in August 2026, attended by 86 graduates.", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "en-MY" }} />
+              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Inaugural graduation · {PROGRAMME_PROOF.graduationAttendance} attendees · {PROGRAMME_PROOF.inauguralGraduation}</div>
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Inaugural Graduation Film", description: `Highlights from the inaugural Future Ready Executive MBA graduation in ${PROGRAMME_PROOF.inauguralGraduation}, attended by ${PROGRAMME_PROOF.graduationAttendance} graduates.`, "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "en-MY" }} />
               <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.webp" lang="en" />
-              <div className="film-cap"><strong>Eighty-six graduates attended,</strong> joined by faculty and guests from Malaysian business and public life.</div>
+              <div className="film-cap"><strong>{PROGRAMME_PROOF.graduationAttendance} graduates attended,</strong> joined by faculty and guests from Malaysian business and public life.</div>
             </div>
           </Reveal>
         </div>

@@ -92,6 +92,7 @@ export const FEES = {
 } as const;
 
 export const FACTS = {
+  durationMonths: "6",
   durationLong: "6 months",
   durationShort: "6 months",
   certificationPhase: "6 months · 3 sessions",
@@ -147,9 +148,9 @@ export const COMPARISON_SCOPE =
 // separate optional CMI route, with its own eligibility, assessment and fees.
 export const STAGES = [
   {
-    t: "6 months · 3 sessions",
+    t: `${FACTS.durationLong} · ${FACTS.liveSessions} sessions`,
     h: "Executive MBA programme certificate",
-    d: "Complete six training days across three scheduled sessions, the coaching requirements and the applied business project. Successful participants are awarded the CMI Certificate of Recognition for the Executive MBA programme.",
+    d: `Complete ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions, the coaching requirements and the applied business project. Successful participants are awarded the CMI Certificate of Recognition for the Executive MBA programme.`,
   },
   {
     t: "Professional recognition",
@@ -290,7 +291,7 @@ export const INTAKES = [
 ];
 
 export const INCLUSIONS = [
-  { b: "Six training days across three sessions", s: "Practitioner-led framework workshops scheduled once a month during the six-month programme." },
+  { b: `${FACTS.trainingDays} training days across ${FACTS.liveSessions} sessions`, s: `Practitioner-led framework workshops scheduled once a month during the ${FACTS.durationMonths}-month programme.` },
   { b: "Guided management self-assessment", s: "Review current decision habits and select specific areas to improve during the programme." },
   { b: "Executive coaching & project review", s: "One-to-one guidance applied to the participant's own organisational context." },
   { b: "The Leverage Management System (LMS)", s: "Participants retain the programme frameworks, references and working templates." },
@@ -299,19 +300,19 @@ export const INCLUSIONS = [
 ];
 
 export const COMPARISON = [
-  { k: "Duration", them: "18–24 months", us: "Six months: six training days across three scheduled sessions" },
+  { k: "Duration", them: "18–24 months", us: `${FACTS.durationLong}: ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions` },
   { k: "Focus", them: "Academic theory, research and case analysis", us: "Business context, strategic judgement and reusable decision frameworks" },
   { k: "Assessment", them: "Assignments or examinations plus a dissertation or thesis", us: "An applied project on the participant's own business; no traditional examination or thesis" },
   { k: "Faculty role", them: "Academic teaching and research supervision", us: "Business practitioners, consultants and executive coaches" },
-  { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: "The F.A.S.T. method and 12 applied management modules" },
-  { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: "Three scheduled weekend sessions, coaching and applied project work across six months while participants continue working" },
-  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: "RM10,000.00 standard fee; eligible Malaysian applicants may be considered, on a selective basis, for a LIFE Innoversity scholarship, with any award and resulting participant fee confirmed individually in writing" },
+  { k: "Primary toolkit", them: "Academic texts, research literature and case studies", us: `The F.A.S.T. method and ${FACTS.moduleCount} applied management modules` },
+  { k: "Format", them: "Scheduled academic study under the institution's published timetable", us: `${FACTS.liveSessions} scheduled weekend sessions, coaching and applied project work across ${FACTS.durationLong} while participants continue working` },
+  { k: "Investment", them: "The institution's published tuition and ancillary fees", us: `${FACTS.priceStd} standard fee; eligible Malaysian applicants may be considered, on a selective basis, for a ${FACTS.scholarshipProvider} scholarship, with any award and resulting participant fee confirmed individually in writing` },
   { k: "Credential", them: "An academic MBA degree from the awarding institution", us: "CMI Certificate of Recognition for a professional programme; not an MQA-accredited academic degree" },
 ];
 
 export const FAQS = [
-  { q: "How is the programme structured?", a: "The Executive MBA runs for six months. Participants complete six training days across three scheduled sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee." },
-  { q: "Can I complete the programme while working full time?", a: "Yes. The Malaysian public programme runs across three scheduled sessions, with six scheduled training days in total. Participants remain in their professional roles and complete an applied project based on a current business issue. Review every published session date before enrolling." },
+  { q: "How is the programme structured?", a: `The Executive MBA runs for ${FACTS.durationLong}. Participants complete ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee.` },
+  { q: "Can I complete the programme while working full time?", a: `Yes. The Malaysian public programme runs across ${FACTS.liveSessions} scheduled sessions, with ${FACTS.trainingDays} scheduled training days in total. Participants remain in their professional roles and complete an applied project based on a current business issue. Review every published session date before enrolling.` },
   { q: "Is this executive education or an academic MBA degree?", a: `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development and executive education programme, not an MQA-accredited academic degree or a regulated qualification.` },
   { q: "What do successful participants receive?", a: "Successful participants receive the CMI Certificate of Recognition for the Future Ready Executive MBA programme. CMI controls the final certificate format and wording. Chartered Manager is a separate CMI route and is not automatically awarded through programme completion." },
   { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },

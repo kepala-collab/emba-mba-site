@@ -38,7 +38,7 @@ const articleSchema = {
 
 const COMPARISON = [
   ["核心目的", "有的放矢地提升领导力、管理力或某项专业能力。", "看提供方而定。学术型 EMBA 授予学位；定位为专业课程的项目，则必须把自身资格性质讲清楚。"],
-  ["修读时间", "有的做成短期或模块化形式；具体时间表由各提供方自行公布。", `本课程为期 ${FACTS.durationLong}，六个月内分三个课程修完，共六个培训日。`],
+  ["修读时间", "有的做成短期或模块化形式；具体时间表由各提供方自行公布。", `本课程为期 ${FACTS.durationMonths} 个月，分 ${FACTS.liveSessions} 次导师带领的研习课修完，共 ${FACTS.trainingDays} 个培训日。`],
   ["评估方式", "因提供方而异：工作坊、项目、案例分析或结业证书。", "本课程以导师辅导加企业应用项目为评估，不设传统考试或论文。"],
   ["学术地位", "有的属于非学位的专业发展课程；提供方声明的具体地位须自行核实。", "这门 Future Ready Executive MBA 并非 MQA 认证的学术学位，也非受监管资格。"],
   ["工作应用", "着眼于当下就能用在本职工作上的能力。", "学员把课程框架直接套用到自家企业的真实课题上。"],
@@ -84,7 +84,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             </p>
             <p>
               <Link href="/zh/executive-mba">面向未来商业领导力的 Executive MBA</Link>{" "}
-              由 CMI 颁授并背书，是一门为期六个月的专业发展课程。
+              由 CMI 颁授并背书，是一门为期 {FACTS.durationMonths} 个月的专业发展课程。
               顺利结业的学员，将获得本课程的 CMI Certificate of Recognition。
               它并非 MQA 认证的学术学位，也非受监管资格。
             </p>
@@ -105,7 +105,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             <ol>
               <li><strong>我到底能拿到什么？</strong> 请对方说清完整的资格名称，并出示证书样本供您核对。</li>
               <li><strong>这算学术学位吗？</strong> 如果学术资格对您很重要，请核实颁授院校，以及它适用的认证情况。</li>
-              <li><strong>学习成果怎么评？</strong> 把考试、论文、作业、应用项目和出勤要求逐项比一比。</li>
+              <li><strong>学习成果怎么评？</strong> 把考试、论文、作业、企业应用项目和出勤要求逐项比一比。</li>
               <li><strong>能边工作边读完吗？</strong> 逐一确认每个上课日期、授课形式、项目要求，以及缺课后的补课安排。</li>
               <li><strong>总投入是多少？</strong> 把公开费用、资助条件、交通、离岗时间，连同任何单独收取的会员费或评估费，一并算进去比较。</li>
             </ol>
@@ -113,7 +113,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             <h2>本课程的定位</h2>
             <p>
               本课程面向企业主、董事、总经理与高级经理——他们想围绕手头的企业课题，
-              把领导力发展做得更成体系。六个月里，课程把小组工作坊、导师辅导、战略决策框架
+              把领导力发展做得更成体系。{FACTS.durationMonths} 个月里，课程把小组工作坊、导师辅导、战略决策框架
               与企业应用项目串在一起；整个学习期间，学员照常留在原有岗位上。
             </p>
             <p>

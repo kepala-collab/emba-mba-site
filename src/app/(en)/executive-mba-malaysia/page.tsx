@@ -23,7 +23,7 @@ const REASONS = [
   },
   {
     h: "A six-month programme for working leaders",
-    p: "The programme uses three scheduled weekends across the programme, 9am–6pm, across six months. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
+    p: `The programme uses ${FACTS.liveSessions} scheduled weekends across the programme, 9am–6pm, across ${FACTS.durationMonths} months. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.`,
   },
   {
     h: "ASEAN-relevant faculty & cases",
@@ -90,7 +90,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              You keep working while completing three scheduled weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across three scheduled sessions while participants continue working.
+              You keep working while completing {FACTS.liveSessions} scheduled weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across {FACTS.liveSessions} scheduled sessions while participants continue working.
             </p>
           </Reveal>
           <Reveal className="mt-s">

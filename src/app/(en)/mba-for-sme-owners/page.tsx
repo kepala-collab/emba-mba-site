@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/mba-for-sme-owners", {
   title: "Executive MBA for SME Owners & Founders",
   description:
-    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Built for SME owners across three scheduled sessions.",
+    `The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Built for SME owners across ${FACTS.liveSessions} scheduled sessions.`,
 });
 
 const jsonLd = {
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": `${SITE.url}/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across three scheduled sessions.",
+    `The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across ${FACTS.liveSessions} scheduled sessions.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -44,7 +44,7 @@ export default function MbaForSmeOwnersPage() {
   ];
 
   const fit = [
-    { h: "Three scheduled weekends across the programme", p: "The three scheduled sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort." },
+    { h: `${FACTS.liveSessions} scheduled weekends across the programme`, p: `The ${FACTS.liveSessions} scheduled sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort.` },
     { h: "Your business is the applied project", p: "There is no traditional thesis or examination. Participants use the frameworks to develop a transformation plan for their own organisation." },
     { h: "Employer-applied HRD Corp funding", p: HRD_CORP_CLAIM.short },
     { h: "Scholarship eligibility for Malaysians", p: `Eligible Malaysian applicants may be considered, on a selective basis, for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing; instalment options are listed on the Fees page.` },

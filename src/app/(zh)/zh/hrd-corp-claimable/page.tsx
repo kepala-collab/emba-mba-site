@@ -32,7 +32,7 @@ const STEPS = [
 ];
 
 const INCLUSIONS_ZH = [
-  { b: "三次课程、六个培训日", s: "六个月里每月一次，由实战导师带领的框架工作坊。" },
+  { b: `${FACTS.liveSessions} 次研习课、${FACTS.trainingDays} 个培训日`, s: `${FACTS.durationMonths} 个月内分 ${FACTS.liveSessions} 次进行，由实战导师带领。` },
   { b: "导师带领的管理自评", s: "梳理眼下的决策习惯，圈定课程期间要打磨的几个方向。" },
   { b: "高管辅导与项目评审", s: "贴着学员自己企业的处境，给出一对一的指点。" },
   { b: "Leverage Management System（LMS）", s: "课程框架、参考资料与工作模板，学员结业后仍可留用。" },
@@ -129,7 +129,7 @@ export default function HrdCorpClaimablePage() {
           <Reveal><h2 className="sec-h">批准金额对应的课程内容。</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              批准金额以 HRD Corp 的 grant 裁定为准。Executive MBA 为期六个月，通向课程证书，内容包括：
+              批准金额以 HRD Corp 的 grant 裁定为准。Executive MBA 为期 {FACTS.durationMonths} 个月，通向课程证书，内容包括：
             </p>
           </Reveal>
           <Reveal className="mt-s">

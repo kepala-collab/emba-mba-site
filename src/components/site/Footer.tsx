@@ -97,7 +97,7 @@ export default function Footer() {
               <p><strong>{zh ? "课程声明：" : ms ? "Notis program:" : "Programme notice:"}</strong> {zh
                 ? `${PROGRAMME_POSITIONING_ZH} 这是由 ${SITE.provider} 提供的六个月专业发展课程；并非 MQA 认证的学术学位或受监管资格。CMI 决定会员等级、后缀称号、Chartered 评估、会员资格及费用。`
                 : ms
-                  ? `${PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh ${SITE.provider}, bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. CMI menentukan gred keahlian, gelaran pasca-nama, penilaian Chartered, keahlian dan yuran.`
+                  ? `${PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh ${SITE.provider}, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. CMI menentukan gred keahlian, gelaran pasca-nama, penilaian Chartered, keahlian dan yuran.`
                   : `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme delivered by ${SITE.provider}, not an MQA-accredited academic degree or a regulated qualification. CMI controls membership grades, post-nominals, Chartered assessment, membership and fees.`}</p>
               <p><strong>{zh ? "资料保护：" : ms ? "Perlindungan data:" : "Data protection:"}</strong> {zh
                 ? `个人资料由 ${OPERATOR.name} 按照马来西亚《2010 年个人资料保护法》[Act 709] 及其修订处理。`
@@ -147,7 +147,7 @@ export default function Footer() {
             <div className="legal-copy">
               <p>© {year} {OPERATOR.name}. No. Pendaftaran Perniagaan {OPERATOR.reg}. Alamat perniagaan berdaftar: {OPERATOR.address}.</p>
               <p><strong>Notis rakan kongsi:</strong> {OPERATOR.name} ialah rakan kongsi bersekutu {SITE.provider}, menguruskan pertanyaan program, harga dan penyelarasan pendaftaran.</p>
-              <p><strong>Notis program:</strong> {PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh {SITE.provider}; bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. HRD Corp menentukan kelayakan pembiayaan majikan dan jumlah yang diluluskan.</p>
+              <p><strong>Notis program:</strong> {PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional enam bulan yang dikendalikan oleh {SITE.provider}; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. Pemohon Malaysia yang layak boleh dipertimbangkan, secara terpilih, untuk biasiswa {FACTS.scholarshipProvider}; sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. HRD Corp menentukan kelayakan pembiayaan majikan dan jumlah yang diluluskan.</p>
               <p><strong>Perlindungan data:</strong> Data peribadi diproses oleh {OPERATOR.name} menurut Akta Perlindungan Data Peribadi 2010 [Akta 709] Malaysia, seperti yang dipinda. Lihat Dasar Privasi untuk butiran.</p>
             </div>
           </section>

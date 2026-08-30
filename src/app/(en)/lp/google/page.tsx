@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/lp/google", {
   title: "Executive MBA Malaysia — Awarded and Endorsed by CMI",
   description:
-    "A six-month programme leading to the CMI-recognised Executive MBA programme certificate.",
+    `A ${FACTS.durationMonths}-month programme leading to the CMI-recognised Executive MBA programme certificate.`,
   // Ad landing page — keep it out of organic index so it doesn't compete with SEO pages.
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/google" },
@@ -29,12 +29,12 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.2rem,4.6vw,3.4rem)", letterSpacing: "-.02em", lineHeight: 1.06, marginTop: 6 }}>
-                  Complete the CMI-recognised Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>in 6 months.</em>
+                  Complete the CMI-recognised Executive MBA <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>in {FACTS.durationMonths} months.</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.12rem", maxWidth: "46ch", margin: "22px 0 26px" }}>
-                  Continue working while you complete six facilitated training days, coaching and an applied project.
+                  Continue working while you complete {FACTS.trainingDays} facilitated training days, coaching and an applied project.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -45,7 +45,7 @@ export default function GoogleLandingPage() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 months", "CMI-recognised Executive MBA programme"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["Eligibility", "Scholarship assessment for Malaysian applicants"]].map(([b, s]) => (
+                  {[[`${FACTS.durationMonths} months`, "CMI-recognised Executive MBA programme"], [FACTS.trainingDays, `Facilitated training days across ${FACTS.liveSessions} sessions`], ["Eligibility", "Scholarship assessment for Malaysian applicants"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".6rem", letterSpacing: ".06em", color: "var(--muted)" }}>{s}</span>
@@ -68,7 +68,7 @@ export default function GoogleLandingPage() {
       {/* FACTUAL PROOF — testimonial assets will be added only after permission and verification. */}
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "Awarded and endorsed by CMI"], [FACTS.trainingDays, "Facilitated training days across three sessions"], ["1", "Applied project built around a live business issue"], ["Eligibility", "Scholarship assessment for Malaysian applicants"]].map(([value, label]) => (
+          {[["CMI", "Awarded and endorsed by CMI"], [FACTS.trainingDays, `Facilitated training days across ${FACTS.liveSessions} sessions`], ["1", "Applied project built around a live business issue"], ["Eligibility", "Scholarship assessment for Malaysian applicants"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

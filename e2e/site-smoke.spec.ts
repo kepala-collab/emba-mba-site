@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { readFileSync } from "node:fs";
 
 async function captureConsoleFailures(page: Page) {
   const failures: string[] = [];
@@ -685,6 +686,61 @@ test("lead form keeps the existing submit flow behind a Turnstile token", async 
   await form.getByRole("button", { name: /Email me the guide/i }).click();
   await expect(page.getByText("Request received")).toBeVisible();
   await expect(page.getByText("TEST-LEAD")).toBeVisible();
+});
+
+test("release fingerprint and representative routes resolve in all three locales", async ({ page }) => {
+  const releaseId = readFileSync("release-id.txt", "utf8").trim();
+  for (const route of [
+    "/",
+    "/ms",
+    "/zh",
+    "/asian-business-consulting",
+    "/ms/asian-business-consulting",
+    "/zh/asian-business-consulting",
+  ]) {
+    const response = await page.request.get(route);
+    expect(response.status(), route).toBe(200);
+    expect(response.headers()["x-release-id"], `${route} release fingerprint`).toBe(releaseId);
+    const pageResponse = await goto(page, route);
+    expect(pageResponse?.status(), route).toBe(200);
+    await expect(page.locator("main h1")).toHaveCount(1);
+  }
+});
+
+test("English, Malay and Chinese guide forms submit through the guarded contract", async ({ page }) => {
+  await mockTurnstile(page);
+  const submissions: Array<Record<string, unknown>> = [];
+  await page.route("**/api/lead", async (route) => {
+    const request = route.request().postDataJSON() as Record<string, unknown>;
+    submissions.push(request);
+    expect(request.turnstile_token).toBe("lead-test-token");
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ lead_reference: `LOCALE-${String(request.page_language).toUpperCase()}` }),
+    });
+  });
+
+  const locales = [
+    { route: "/apply", language: "en", name: "Parity Test", result: "Request received" },
+    { route: "/ms/apply", language: "ms", name: "Ujian Kesetaraan", result: "Permohonan diterima" },
+    { route: "/zh/apply", language: "zh", name: "语言测试", result: "沟通请求已收到" },
+  ] as const;
+
+  for (const locale of locales) {
+    await goto(page, locale.route);
+    await dismissConsent(page);
+    const form = page.locator('form[data-form-id]').filter({ has: page.locator('input[name="phone_local"]') });
+    await expect(form.locator("[data-widget-id]")).toBeVisible();
+    await form.locator('input[name="name"]').fill(locale.name);
+    await form.locator('input[name="email"]').fill(`${locale.language}@example.com`);
+    await form.getByRole("checkbox").first().check();
+    await form.locator('button[type="submit"]').click();
+    await expect(page.getByText(locale.result)).toBeVisible();
+    await expect(page.getByText(`LOCALE-${locale.language.toUpperCase()}`)).toBeVisible();
+  }
+
+  expect(submissions.map((request) => request.page_language)).toEqual(["en", "ms", "zh"]);
 });
 
 test("lead form resets a redeemed Turnstile token before a retry", async ({ page }) => {

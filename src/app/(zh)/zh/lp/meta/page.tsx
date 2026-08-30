@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/zh/lp/meta", {
   title: "为在职领导者而设的 Executive MBA | Future Ready",
   description:
-    "为在职管理者打造的六个月 Future Ready Executive MBA：6 个培训日、三次导师带领的研习课，以及真实企业应用项目。",
+    `为在职管理者打造的 ${FACTS.durationMonths} 个月 Future Ready Executive MBA：${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次导师带领的研习课，以及真实企业应用项目。`,
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/meta" },
 });
@@ -25,7 +25,7 @@ const EDGE = [
 ];
 
 const WALK = [
-  "6 个培训日全程现场带领，由课程团队确认的导师亲自主讲",
+  `${FACTS.trainingDays} 个培训日全程由课程团队确认的导师带领`,
   "个人领导力诊断，厘清决策模式与重点发展方向",
   "一对一高管教练，直接落地到学员自身的企业情境",
   "结课之后依然保留的框架与工具库（LMS）",
@@ -41,12 +41,12 @@ export default function ZhMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">为肩负跨部门决策责任的在职领导者而设</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              六个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
+              {FACTS.durationMonths} 个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              照常在职工作的同时，六个月内完成 6 个培训日、教练辅导与企业应用项目。Chartered Manager 属独立可选的 CMI 路线，另有独立的资格、评估与费用。
+              照常在职工作的同时，{FACTS.durationMonths} 个月内完成 {FACTS.trainingDays} 个培训日、教练辅导与企业应用项目。Chartered Manager 属独立可选的 CMI 路线，另有独立的资格、评估与费用。
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -57,7 +57,7 @@ export default function ZhMetaLP() {
           <Reveal delay={200}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
               <ProgrammeMarks lang="zh" centered labelled />
-              <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次课程 · ABC 报告已完成 {FACTS.cohorts} 届</span>
+              <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次研习课 · ABC 已开办 {FACTS.cohorts} 个班次</span>
             </div>
           </Reveal>
         </div>
@@ -83,7 +83,7 @@ export default function ZhMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "由 CMI（英国）颁授并背书"], [FACTS.trainingDays, "分三个阶段的现场培训日"], ["1", "以真实企业课题为核心的应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
+          {[["CMI", "由 CMI（英国）颁授并背书"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次进行的培训日`], ["1", "以真实企业课题为核心的企业应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

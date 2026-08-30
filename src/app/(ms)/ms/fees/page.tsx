@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS } from "@/lib/content";
+import { CTA_LABELS, FACTS } from "@/lib/content";
 import { CORE_PAGES_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
@@ -10,8 +10,7 @@ const content = CORE_PAGES_MS.fees;
 
 export const metadata = withSeo(path, {
   title: "Yuran, Biasiswa dan HRD Corp",
-  description:
-    "Yuran standard RM10,000. Pemohon Malaysia yang layak boleh dinilai untuk biasiswa terhad dan terpilih; anugerah serta yuran peserta disahkan secara bertulis.",
+  description: `Yuran standard ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dinilai untuk biasiswa terhad dan terpilih; anugerah serta yuran peserta disahkan secara bertulis.`,
 });
 
 export default function Page() {

@@ -1,5 +1,5 @@
-// Bilingual nurture email sequence — stage-gated follow-ups for guide requesters.
-// Self-contained: no imports from app content so it can be rendered anywhere.
+// Trilingual nurture email sequence — stage-gated follow-ups for guide requesters.
+import { FACTS } from "./content";
 
 export type NurtureLanguage = "en" | "zh" | "ms";
 export type NurtureStepKey = "day3" | "day7" | "day14";
@@ -47,9 +47,9 @@ const EN: Record<NurtureStepKey, StepCopy> = {
       "If anything in those pages is unclear, that is exactly what a programme conversation is for. No payment, no enrolment commitment — just answers.",
     ],
     facts: [
-      { label: "Format", value: "6 months · three scheduled weekends across the programme · no time out of the business" },
+      { label: "Format", value: `${FACTS.durationLong} · ${FACTS.liveSessions} scheduled weekends across the programme · no time out of the business` },
       { label: "Recognition", value: "Awarded and endorsed by CMI · professional programme, not an academic degree" },
-      { label: "Fee", value: "RM10,000 published · scholarship assessed individually, confirmed in writing" },
+      { label: "Fee", value: `${FACTS.priceStd} published · scholarship assessed individually, confirmed in writing` },
     ],
     ctaLabel: "Arrange a programme conversation",
     ctaPath: "/apply",
@@ -65,7 +65,7 @@ const EN: Record<NurtureStepKey, StepCopy> = {
       "The live calendar of remaining 2026 cohorts, in English and Mandarin, is on the website. If a date almost works, tell the team before you rule it out — the calendar conversation is usually the shortest one.",
     ],
     facts: [
-      { label: "Commitment", value: "6 training days across 3 weekend sessions" },
+      { label: "Commitment", value: `${FACTS.trainingDays} training days across ${FACTS.liveSessions} weekend sessions` },
       { label: "Between sessions", value: "Coaching plus an applied project on your own business" },
       { label: "Employers", value: "Funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval" },
     ],
@@ -95,13 +95,13 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `${name}，您好：`,
     headline: "课程指南解答了您的疑问吗？",
     paragraphs: [
-      "几天前您索取了 Future Ready Executive MBA 课程指南。多数读者告诉我们，三个部分最能帮助他们做决定：六个月如何安排、CMI（英国）认可的含义与边界，以及已公布的课程费用。",
+      `几天前您索取了 Future Ready Executive MBA 课程指南。多数读者告诉我们，三个部分最能帮助他们做决定：${FACTS.durationMonths} 个月如何安排、CMI（英国）认可的含义与边界，以及已公布的课程费用。`,
       "如果其中任何内容不够清楚，这正是课程沟通的意义——无需付款，不构成报名承诺，只为解答。",
     ],
     facts: [
-      { label: "课程安排", value: "为期六个月 · 三个指定周末课程 · 无需离岗" },
+      { label: "课程安排", value: `为期 ${FACTS.durationMonths} 个月 · ${FACTS.liveSessions} 个指定周末的导师带领研习课 · 无需离岗` },
       { label: "认可", value: "CMI（英国）认可的专业发展课程，非学术学位" },
-      { label: "费用", value: "公布费用 RM10,000 · 奖学金名额有限、择优授予，以书面确认为准" },
+      { label: "费用", value: `公布费用 ${FACTS.priceStd} · 奖学金名额有限、择优授予，以书面确认为准` },
     ],
     ctaLabel: "预约课程沟通",
     ctaPath: "/zh/apply",
@@ -113,12 +113,12 @@ const ZH: Record<NurtureStepKey, StepCopy> = {
     greeting: (name) => `${name}，您好：`,
     headline: "日历比宣传册更能决定选择。",
     paragraphs: [
-      "每个班次均覆盖完整的六个月课程：三个排定的周末，9am–6pm，并按公布日期进行——应用项目就在两次课程之间、在您自己的业务中完成。",
+      `每个班次均覆盖完整的 ${FACTS.durationMonths} 个月课程：${FACTS.liveSessions} 个指定周末的导师带领研习课，上课时间为上午 9 时至下午 6 时，并按公布日期进行——企业应用项目就在两次研习课之间、在您自己的业务中完成。`,
       "网站上有 2026 年剩余英语及华语班次的实时日历。如果某个日期只差一点就合适，请先告诉团队再做决定——关于日历的沟通通常是最短的一次。",
     ],
     facts: [
-      { label: "时间投入", value: "三个周末共六个培训日" },
-      { label: "课程之间", value: "一对一辅导，及基于您自身业务的应用项目" },
+      { label: "时间投入", value: `${FACTS.liveSessions} 个周末共 ${FACTS.trainingDays} 个培训日` },
+      { label: "课程之间", value: "一对一辅导，及基于您自身业务的企业应用项目" },
       { label: "雇主赞助", value: "符合条件的 HRD Corp 注册雇主或可申请资助，以 HRD Corp 审批为准" },
     ],
     ctaLabel: "查看 2026 实时日历",
@@ -151,9 +151,9 @@ const MS: Record<NurtureStepKey, StepCopy> = {
       "Jika mana-mana bahagian dalam panduan itu kurang jelas, itulah sebabnya perbualan program wujud. Tiada pembayaran, tiada komitmen pendaftaran — hanya jawapan.",
     ],
     facts: [
-      { label: "Format", value: "Tempoh enam bulan · tiga hujung minggu berjadual sepanjang program · tanpa perlu keluar dari kerja" },
-      { label: "Pengiktirafan", value: "Dianugerah dan disokong oleh CMI · program profesional, bukan ijazah akademik" },
-      { label: "Yuran", value: "RM10,000 diterbitkan · biasiswa dinilai secara individu, disahkan secara bertulis" },
+      { label: "Format", value: `Tempoh ${FACTS.durationMonths} bulan · ${FACTS.liveSessions} hujung minggu berjadual sepanjang program · tanpa perlu keluar dari kerja` },
+      { label: "Pengiktirafan", value: "Dianugerahkan dan disokong oleh CMI · program profesional, bukan ijazah akademik" },
+      { label: "Yuran", value: `${FACTS.priceStd} diterbitkan · biasiswa dinilai secara individu, disahkan secara bertulis` },
     ],
     ctaLabel: "Atur perbualan program",
     ctaPath: "/ms/apply",
@@ -169,7 +169,7 @@ const MS: Record<NurtureStepKey, StepCopy> = {
       "Kalendar langsung bagi kohort 2026 yang masih tinggal, dalam Bahasa Inggeris dan Mandarin, terdapat di laman web. Jika satu-satu tarikh hampir sesuai, maklumkan kepada pasukan sebelum anda menolaknya — perbualan mengenai kalendar biasanya yang paling ringkas.",
     ],
     facts: [
-      { label: "Komitmen", value: "6 hari latihan sepanjang 3 sesi hujung minggu" },
+      { label: "Komitmen", value: `${FACTS.trainingDays} hari latihan sepanjang ${FACTS.liveSessions} sesi hujung minggu` },
       { label: "Antara sesi", value: "Bimbingan bersama projek aplikasi ke atas perniagaan anda sendiri" },
       { label: "Majikan", value: "Pembiayaan mungkin tersedia untuk majikan berdaftar HRD Corp yang layak, tertakluk kepada kelulusan HRD Corp" },
     ],
@@ -204,7 +204,7 @@ const FOOTER = {
   },
   zh: {
     statement:
-      "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的六个月专业发展课程。Right Dots Resources 是其市场推广机构，负责课程咨询与报名协调。",
+      `面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的 ${FACTS.durationMonths} 个月专业发展课程。Right Dots Resources 是其市场推广机构，负责课程咨询与报名协调。`,
     reason: "您收到本邮件，是因为您索取了课程指南并同意接收课程资讯及营销通讯。",
     unsubscribe: "退订",
     contact: "support@futurereadymba.com · +60 12-981 8533 · futurereadymba.com",
@@ -212,7 +212,7 @@ const FOOTER = {
   },
   ms: {
     statement:
-      "Executive MBA dalam Future Ready Business Leadership dianugerah dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama enam bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources ialah agensi pemasaran bagi pertanyaan program dan penyelarasan pendaftaran.",
+      `Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama ${FACTS.durationMonths} bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources ialah agensi pemasaran bagi pertanyaan program dan penyelarasan pendaftaran.`,
     reason:
       "Anda menerima e-mel ini kerana anda memohon panduan program dan bersetuju menerima kemas kini program serta komunikasi pemasaran.",
     unsubscribe: "Berhenti langgan",

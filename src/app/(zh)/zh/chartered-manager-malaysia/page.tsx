@@ -4,19 +4,19 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import TechnicalText from "@/components/site/TechnicalText";
-import { CERTIFICATE_POSITIONING, CTA_LABELS } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const PATH = "/zh/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "Future Ready Executive MBA 的 CMI 认可｜马来西亚",
-  description: "看清六个月 Future Ready Executive MBA 的 CMI（英国）认可、课程证书，以及独立可选的 Chartered Manager 路线。",
+  description: `看清 ${FACTS.durationMonths} 个月 Future Ready Executive MBA 的 CMI（英国）认可、课程证书，以及独立可选的 Chartered Manager 路线。`,
 });
 
 const FAQS = [
   ["顺利结业能拿到什么？", "顺利结业者将获颁 Future Ready Executive MBA 课程的 CMI Certificate of Recognition。证书的最终格式、措辞与签发均由 CMI 决定。"],
-  ["这是学术 MBA 学位吗？", "不是。这是一门面向未来商业领导力、由 CMI 颁授并背书的六个月 Executive MBA 专业发展课程，并非 MQA 认证的学术学位或受监管资格。"],
+  ["这是学术 MBA 学位吗？", `不是。这是一门面向未来商业领导力、由 CMI 颁授并背书的 ${FACTS.durationMonths} 个月 Executive MBA 专业发展课程，并非 MQA 认证的学术学位或受监管资格。`],
   ["结业后会自动成为 Chartered Manager 吗？", "不会。Chartered Manager 是一条独立可选的 CMI 路线，其资格、评估、会员与费用皆由 CMI 决定，不包含在本课程或已公布费用之内。"],
 ] as const;
 
@@ -31,15 +31,15 @@ export default function CmiRecognitionZhPage() {
           <p className="mono sec-k">CMI（英国）背书及认可</p>
           <h1><TechnicalText>让真实的管理成果，获得专业认可。</TechnicalText></h1>
           <p>Future Ready Executive MBA 帮助资深管理者把一个真实企业课题，化为可落地的行动方案。顺利结业者将获颁 CMI 课程认可证书。</p>
-          <div className="chartered-hero-actions"><Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} <span aria-hidden="true">→</span></Link><Link href="/zh/executive-mba" className="btn btn-ghost">了解六个月课程</Link></div>
+          <div className="chartered-hero-actions"><Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} <span aria-hidden="true">→</span></Link><Link href="/zh/executive-mba" className="btn btn-ghost">了解 {FACTS.durationMonths} 个月课程</Link></div>
         </div>
       </header>
 
       <section className="section chartered-positioning"><div className="wrap">
-        <Reveal><div className="reading-section-head"><p className="mono sec-k">认可带来的价值</p><h2 className="sec-h">拿得出的专业发展证据，而不只是一纸出席证明。</h2><p>课程把 CMI 的专业认可，与学员自身企业情境下的应用项目扣在一起。</p></div></Reveal>
+        <Reveal><div className="reading-section-head"><p className="mono sec-k">认可带来的价值</p><h2 className="sec-h">拿得出的专业发展证据，而不只是一纸出席证明。</h2><p>课程把 CMI 的专业认可，与学员自身企业情境下的企业应用项目扣在一起。</p></div></Reveal>
         <div className="chartered-outcome-grid">
           <Reveal><article><span className="mono">01</span><h3>获认可的结业证明</h3><p>CMI Recognition 意味着课程已对标 CMI Professional Standard 完成基准评估。顺利结业者获颁课程的 CMI Certificate of Recognition。</p></article></Reveal>
-          <Reveal delay={45}><article><span className="mono">02</span><h3>说得清的专业依据</h3><p>课程证书与应用项目，可在专业履历与职业沟通中，作为管理发展的可信佐证。</p></article></Reveal>
+          <Reveal delay={45}><article><span className="mono">02</span><h3>说得清的专业依据</h3><p>课程证书与企业应用项目，可在专业履历与职业沟通中，作为管理发展的可信佐证。</p></article></Reveal>
           <Reveal delay={90}><article className="chartered-outcome-featured"><span className="mono">03</span><h3>把下一步分得清楚</h3><p>Chartered Manager 是一条独立可选的路线，其资格、评估、会员与费用由 CMI 决定；本课程不承诺、也不包含这一专业身份。</p></article></Reveal>
         </div>
         <p className="fine center mt-s"><a href={CERTIFICATE_POSITIONING.cmiRecognitionSource} target="_blank" rel="noreferrer">阅读 CMI 对 Recognition 的官方说明 <span aria-hidden="true">↗</span></a></p>

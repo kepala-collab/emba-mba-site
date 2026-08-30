@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/lp/google", {
   title: "Executive MBA Malaysia — Diiktiraf CMI (UK), Program Enam Bulan",
   description:
-    "Program pembangunan profesional Future Ready Executive MBA selama enam bulan di Malaysia: enam hari latihan, tiga sesi berpandu dan projek berteraskan cabaran perniagaan sebenar. Permohonan HRD Corp diterajui majikan, tertakluk pada syarat dan kelulusan.",
+    `Program pembangunan profesional Future Ready Executive MBA selama ${FACTS.durationMonths} bulan di Malaysia: ${FACTS.trainingDays} hari latihan, ${FACTS.liveSessions} sesi berpandu dan projek berteraskan cabaran perniagaan sebenar. Permohonan HRD Corp diterajui majikan, tertakluk pada syarat dan kelulusan.`,
   robots: { index: false, follow: false },
   alternates: { canonical: "/ms/lp/google" },
 });
@@ -16,7 +16,7 @@ export const metadata = withSeo("/ms/lp/google", {
 const SOURCE = "lp-google-ms";
 
 const INCLUDED = [
-  ["Tiga sesi berpandu secara langsung", "Dikendalikan oleh pengamal perniagaan, perunding dan jurulatih eksekutif yang disahkan ABC — anda belajar secara langsung bersama kohort anda."],
+  [`${FACTS.liveSessions} sesi berpandu secara langsung`, "Dikendalikan oleh pengamal perniagaan, perunding dan jurulatih eksekutif yang disahkan ABC — anda belajar secara langsung bersama kohort anda."],
   ["Diagnostik kepimpinan peribadi", "Penilaian tersusun untuk melihat cara anda membuat keputusan dan bahagian mana yang paling berbaloi anda kembangkan."],
   ["Bimbingan eksekutif untuk projek anda", "Bimbingan peribadi yang terus dipakai pada perniagaan sebenar anda — bukan sekadar kajian kes."],
   ["Sistem pengurusan pembelajaran (LMS)", "Simpan semua rangka kerja, rujukan dan templat, dan terus gunakannya di pejabat selepas program tamat."],
@@ -25,9 +25,9 @@ const INCLUDED = [
 ];
 
 const CMP = [
-  ["Masa", "Enam bulan — enam hari latihan, anda selesaikan menerusi tiga sesi berpandu", "18–24 bulan"],
-  ["Pelaburan", "Yuran standard RM10,000.00. Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik dan bukan kod diskaun", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
-  ["Format", "Tiga hujung minggu berjadual sepanjang program — anda terus bekerja seperti biasa sepanjang tempoh itu", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
+  ["Masa", `${FACTS.durationMonths} bulan — ${FACTS.trainingDays} hari latihan, anda selesaikan menerusi ${FACTS.liveSessions} sesi berpandu`, "18–24 bulan"],
+  ["Pelaburan", `Yuran standard ${FACTS.priceStd}. Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik dan bukan kod diskaun`, "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
+  ["Format", `${FACTS.liveSessions} hujung minggu berjadual sepanjang program — anda terus bekerja seperti biasa sepanjang tempoh itu`, "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
   ["Penilaian", "Projek berteraskan cabaran perniagaan anda sendiri — tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
   ["Sijil", "Sijil pengiktirafan program profesional CMI — bukan ijazah akademik terakreditasi MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
 ];
@@ -42,12 +42,12 @@ export default function MsGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Untuk pengurus yang sedang merancang langkah seterusnya</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
+                  Tamatkan dalam {FACTS.durationMonths} bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.1rem", maxWidth: "44ch", margin: "22px 0 26px", lineHeight: 1.9 }}>
-                  Selesaikan tiga sesi berpandu, projek perniagaan sebenar dan program pembangunan profesional yang disokong CMI dalam enam bulan — sambil anda terus bekerja. <b style={{ color: "var(--ink)" }}>Chartered Manager</b> pula ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
+                  Selesaikan {FACTS.liveSessions} sesi berpandu, projek perniagaan sebenar dan program pembangunan profesional yang disokong CMI dalam {FACTS.durationMonths} bulan — sambil anda terus bekerja. <b style={{ color: "var(--ink)" }}>Chartered Manager</b> pula ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -58,7 +58,7 @@ export default function MsGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Anda selesaikan menerusi tiga sesi berpandu"], ["Kelayakan", "Penilaian biasiswa terpilih untuk pemohon Malaysia"]].map(([b, s]) => (
+                  {[[`${FACTS.durationMonths} bulan`, "Program pembangunan profesional lengkap"], [`${FACTS.trainingDays} hari`, `Anda selesaikan menerusi ${FACTS.liveSessions} sesi berpandu`], ["Kelayakan", "Penilaian biasiswa terpilih untuk pemohon Malaysia"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>

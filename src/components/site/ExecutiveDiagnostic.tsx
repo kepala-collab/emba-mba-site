@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import LeadForm from "@/components/site/LeadForm";
-import { CTA_LABELS, PROGRAMME_YEAR } from "@/lib/content";
+import { CTA_LABELS, FACTS, PROGRAMME_YEAR } from "@/lib/content";
 
 const QUESTIONS = [
   {
@@ -102,7 +102,7 @@ const QUESTIONS_ZH = [
   {
     question: "采取下一步之前，您最需要哪项资料？",
     options: [
-      "教学方法、模块及企业项目要求。",
+      "教学方法、模块及企业应用项目要求。",
       "完整时间投入与已公布班次日期。",
       "CMI 认可及 Chartered Manager 的明确边界。",
       "马来西亚学员费用、奖学金与 HRD Corp 流程。",
@@ -125,7 +125,7 @@ const RESULT_COPY_ZH = [
   },
   {
     title: "可执行的时间投入",
-    body: `把六个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合您的工作责任。`,
+    body: `把 ${FACTS.durationMonths} 个月课程结构与已公布的 ${PROGRAMME_YEAR} 年日期逐项比较，再判断是否符合您的工作责任。`,
     href: "/zh/intakes",
     action: "查看开课日期",
   },

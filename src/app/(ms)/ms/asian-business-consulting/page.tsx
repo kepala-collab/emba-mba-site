@@ -5,7 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import YouTubeFilm from "@/components/site/YouTubeFilm";
-import { OPERATOR, SITE } from "@/lib/content";
+import { OPERATOR, PROGRAMME_PROOF, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
@@ -19,8 +19,8 @@ export const metadata = withSeo("/ms/asian-business-consulting", {
 const MILESTONES = [
   { n: "2020", s: "ABC didaftarkan di Malaysia" },
   { n: "Julai 2024", s: "Status dianugerahkan dan disokong oleh CMI (UK)" },
-  { n: "17", s: "kohort telah dikendalikan: 16 kohort Bahasa Inggeris dan 1 kohort Mandarin" },
-  { n: "154", s: "graduan program" },
+  { n: String(PROGRAMME_PROOF.cohorts), s: `kohort telah dikendalikan: ${PROGRAMME_PROOF.englishCohorts} kohort Bahasa Inggeris dan ${PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin` },
+  { n: String(PROGRAMME_PROOF.graduates), s: "graduan program" },
 ];
 
 const LEADERS = [
@@ -135,15 +135,15 @@ export default function AbcPageMs() {
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Majlis graduasi sulung · Ogos 2026</span></div>
-            <h2 className="sec-h">17 kohort, 154 graduan, satu detik bersejarah yang dikongsi bersama.</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA mengadakan majlis graduasi sulungnya pada Ogos 2026. Seramai 86 graduan hadir, mewakili komuniti 154 graduan merentasi 17 kohort: 16 kohort Bahasa Inggeris dan satu kohort Mandarin.</p>
+            <h2 className="sec-h">{PROGRAMME_PROOF.cohorts} kohort, {PROGRAMME_PROOF.graduates} graduan, satu detik bersejarah yang dikongsi bersama.</h2>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA mengadakan majlis graduasi sulungnya pada Ogos 2026. Seramai {PROGRAMME_PROOF.graduationAttendance} graduan hadir, mewakili komuniti {PROGRAMME_PROOF.graduates} graduan merentasi {PROGRAMME_PROOF.cohorts} kohort: {PROGRAMME_PROOF.englishCohorts} kohort Bahasa Inggeris dan {PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
-              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Majlis graduasi sulung · 86 graduan hadir · Ogos 2026</div>
-              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Filem Majlis Graduasi Sulung", description: "Sorotan majlis graduasi sulung Future Ready Executive MBA pada Ogos 2026, dihadiri 86 graduan.", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "ms-MY" }} />
+              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Majlis graduasi sulung · {PROGRAMME_PROOF.graduationAttendance} graduan hadir · Ogos 2026</div>
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Filem Majlis Graduasi Sulung", description: `Sorotan majlis graduasi sulung Future Ready Executive MBA pada Ogos 2026, dihadiri ${PROGRAMME_PROOF.graduationAttendance} graduan.`, "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "ms-MY" }} />
               <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.webp" lang="ms" />
-              <div className="film-cap"><strong>86 graduan menghadiri majlis tersebut,</strong> bersama fasilitator serta tetamu daripada komuniti perniagaan dan sektor awam Malaysia bagi meraikan detik bersejarah ini.</div>
+              <div className="film-cap"><strong>{PROGRAMME_PROOF.graduationAttendance} graduan menghadiri majlis tersebut,</strong> bersama fasilitator serta tetamu daripada komuniti perniagaan dan sektor awam Malaysia bagi meraikan detik bersejarah ini.</div>
             </div>
           </Reveal>
         </div>

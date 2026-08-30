@@ -12,7 +12,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-working-professionals", {
   title: "Executive MBA Separuh Masa untuk Profesional Bekerja",
   description:
-    "Executive MBA enam bulan untuk profesional bekerja di Malaysia — belajar pada tiga hujung minggu berjadual atau menerusi sesi dalam talian langsung, tanpa berhenti kerja.",
+    `Executive MBA ${FACTS.durationMonths} bulan untuk profesional bekerja di Malaysia — belajar pada ${FACTS.liveSessions} hujung minggu berjadual atau menerusi sesi dalam talian langsung, tanpa berhenti kerja.`,
 });
 
 const jsonLd = {
@@ -40,7 +40,7 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berpandu, setiap satu berlangsung sepanjang satu hujung minggu." },
+    { h: `${FACTS.liveSessions} hujung minggu berjadual sepanjang ${FACTS.durationMonths} bulan`, p: `Program merangkumi ${FACTS.liveSessions} sesi berpandu, setiap satu berlangsung sepanjang satu hujung minggu.` },
     { h: "Atau sepenuhnya dalam talian", p: "Program ini turut ditawarkan menerusi sesi dalam talian secara langsung, dengan bimbingan dan rangka kerja yang sama seperti laluan bersemuka." },
     { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
     { h: "Terus pakai pada kerja anda sekarang", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai rangka kerja terus kepada cabaran perniagaan yang sedang anda pikul sekarang." },
@@ -72,13 +72,13 @@ export default function MbaForWorkingProfessionalsPage() {
             </Reveal>
             <p className="sec-sub">
               Future Ready Executive MBA direka untuk anda yang mahu belajar tanpa perlu berhenti
-              kerja sepenuh masa. Program ini berjalan selama enam bulan, menerusi tiga hujung minggu
+              kerja sepenuh masa. Program ini berjalan selama {FACTS.durationMonths} bulan, menerusi {FACTS.liveSessions} hujung minggu
               berjadual sepanjang tempoh itu. Chartered Manager pula ialah laluan pilihan CMI yang
               berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri; ia tidak termasuk
               dalam program atau yuran yang diterbitkan.
             </p>
             <p className="mono sec-k mt-s">
-              Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
+              {FACTS.durationMonths} bulan · {FACTS.liveSessions} hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
             </p>
             <p className="sec-sub mt-s">
               Terokai keseluruhan{" "}
@@ -183,7 +183,7 @@ export default function MbaForWorkingProfessionalsPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">Sesi Pengambilan 2026 · tiga hujung minggu berjadual sepanjang program</span>
+            <span className="mono sec-k">Sesi Pengambilan 2026 · {FACTS.liveSessions} hujung minggu berjadual sepanjang program</span>
           </div>
           <Reveal>
             <h2 className="sec-h">Pilih kohort Bahasa Inggeris atau Mandarin untuk 2026.</h2>

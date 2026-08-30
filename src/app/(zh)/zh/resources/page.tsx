@@ -49,7 +49,7 @@ export default function ResourcesPage() {
               <ol>
                 <li>说明您要处理的商业决策、能力短板或转型议题。</li>
                 <li>确认企业应用项目如何回应这一情境。</li>
-                <li>确认六个培训日与三个课程周末是否安排得开。</li>
+                <li>确认 {FACTS.trainingDays} 个培训日与 {FACTS.liveSessions} 个指定周末是否安排得开。</li>
                 <li>列明标准费用 {FACTS.priceStd}，并说明奖学金仅择优授予通过资格评估并获书面批准的马来西亚申请者；具体奖学金金额与应付费用均以书面个别确认。</li>
                 <li>由雇主决定是否申请 HRD Corp 资助；雇主须在开课前提交，资格与批准金额由 HRD Corp 决定。</li>
               </ol>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import LeadForm from "@/components/site/LeadForm";
 import ProgrammeMarks from "@/components/site/ProgrammeMarks";
 import Reveal from "@/components/site/Reveal";
-import { SITE } from "@/lib/content";
+import { FACTS, SITE } from "@/lib/content";
 
 type Locale = "en" | "ms" | "zh";
 
@@ -10,9 +10,9 @@ const COPY = {
   en: {
     eyebrow: "Free 2026 programme guide",
     title: "Get the programme guide. Then decide if a conversation is worthwhile.",
-    intro: "The PDF explains the six-month structure, published dates, standard fee, scholarship assessment and CMI recognition in one clear document.",
+    intro: `The PDF explains the ${FACTS.durationMonths}-month structure, published dates, standard fee, scholarship assessment and CMI recognition in one clear document.`,
     points: [
-      "See how six training days are structured across six months.",
+      `See how ${FACTS.trainingDays} training days are structured across ${FACTS.durationMonths} months.`,
       "Understand who the programme is for and what you complete.",
       "Review the published facts before speaking with the programme team.",
     ],
@@ -22,9 +22,9 @@ const COPY = {
   ms: {
     eyebrow: "Panduan program 2026 percuma",
     title: "Dapatkan panduan program. Kemudian tentukan sama ada perbualan diperlukan.",
-    intro: "PDF ini menerangkan struktur enam bulan, tarikh diterbitkan, yuran standard, penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen yang jelas.",
+    intro: `PDF ini menerangkan struktur ${FACTS.durationMonths} bulan, tarikh diterbitkan, yuran standard, penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen yang jelas.`,
     points: [
-      "Lihat susunan enam hari latihan sepanjang enam bulan.",
+      `Lihat susunan ${FACTS.trainingDays} hari latihan sepanjang ${FACTS.durationMonths} bulan.`,
       "Fahami sasaran peserta dan hasil yang perlu disiapkan.",
       "Semak fakta yang diterbitkan sebelum berbincang dengan pasukan program.",
     ],
@@ -34,9 +34,9 @@ const COPY = {
   zh: {
     eyebrow: "免费 2026 课程指南",
     title: "先获取课程指南，再决定是否需要进一步沟通。",
-    intro: "一份 PDF 清楚说明六个月课程结构、已公布日期、标准费用、奖学金择优评估方式及 CMI 认可。",
+    intro: `一份 PDF 清楚说明 ${FACTS.durationMonths} 个月课程结构、已公布日期、标准费用、奖学金择优评估方式及 CMI 认可。`,
     points: [
-      "了解六个培训日如何分布在六个月内。",
+      `了解 ${FACTS.trainingDays} 个培训日如何分布在 ${FACTS.durationMonths} 个月内。`,
       "确认课程适合对象及学员需要完成的成果。",
       "先查看已公布资料，再决定是否联系课程团队。",
     ],

@@ -45,16 +45,16 @@
 ### Fees and Scholarship
 
 1. RM10,000 standard fee.
-2. RM4,000 scholarship for eligible Malaysian applicants.
+2. Selective scholarship assessment for eligible Malaysian applicants.
 3. Explicit availability, assessment and written-approval conditions.
-4. RM6,000 payable only after scholarship approval.
+4. Any award and resulting participant fee confirmed individually in writing.
 5. Programme inclusions, payment options and separate HRD Corp process.
 
 ### Campaign Landing Pages
 
 1. Audience-specific problem and applied outcome.
 2. Short proof strip.
-3. RM4,000 scholarship as an eligibility-based incentive, never an automatic discount.
+3. Scholarship eligibility as a selective assessment, never an automatic discount.
 4. Minimal programme-guide form.
 5. No competing main-site navigation.
 
@@ -70,7 +70,7 @@
 ### Scholarship-interested Malaysian applicant
 
 1. Land on Home or a campaign page.
-2. See that a RM4,000 scholarship is available to eligible applicants.
+2. See that eligible applicants may be considered for a limited, selective scholarship.
 3. Open Fees and Scholarship.
 4. Review the standard fee, conditions and approved-recipient scenario.
 5. Submit an enquiry for an eligibility review.
@@ -89,7 +89,7 @@
 | Lead action | Request/Get Programme Guide | Lower commitment than Apply Now |
 | Commercial baseline | Standard fee | Always RM10,000 unless formally changed |
 | Incentive | Scholarship for eligible Malaysian applicants | Never call it an automatic Malaysian fee |
-| Discounted outcome | Fee after scholarship approval | RM6,000 only after written approval |
+| Scholarship outcome | Individually confirmed award and participant fee | State only after written approval |
 | Employer funding | Employer-led HRD Corp funding | Separate from scholarship eligibility |
 | Professional status | Chartered Manager assessment | Separate CMI eligibility and assessment |
 | Root destination | Home | URL remains `/`; GA receives `page_name: home` to avoid a duplicate `/home` route |

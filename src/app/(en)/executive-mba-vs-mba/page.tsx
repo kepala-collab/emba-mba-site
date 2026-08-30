@@ -109,7 +109,7 @@ export default function ExecutiveMbaVsMbaPage() {
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   This route is designed for participants with strategic or business-wide responsibility who want
                   structured decision frameworks, an applied project and a CMI Certificate of Recognition. The
-                  six-month programme uses three scheduled weekends across the programme.
+                  {FACTS.durationMonths}-month programme uses {FACTS.liveSessions} scheduled weekends across the programme.
                 </p>
               </div>
             </Reveal>

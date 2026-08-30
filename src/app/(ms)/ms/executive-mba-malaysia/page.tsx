@@ -24,7 +24,7 @@ const REASONS = [
   },
   {
     h: "Enam bulan yang seiring dengan kerjaya anda",
-    p: "Sepanjang enam bulan ini, anda hadir tiga hujung minggu berjadual, dari 9 pagi hingga 6 petang, berserta sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri.",
+    p: `Sepanjang ${FACTS.durationMonths} bulan ini, anda hadir ${FACTS.liveSessions} hujung minggu berjadual, dari 9 pagi hingga 6 petang, berserta sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri.`,
   },
   {
     h: "Fasilitator dan kajian kes yang dekat dengan konteks ASEAN",
@@ -91,7 +91,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Anda terus bekerja sepanjang tempoh ini sambil melengkapkan tiga sesi hujung minggu berjadual, sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program mahupun yuran yang diterbitkan di sini.
+              Anda terus bekerja sepanjang tempoh ini sambil melengkapkan {FACTS.liveSessions} sesi hujung minggu berjadual, sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program mahupun yuran yang diterbitkan di sini.
             </p>
           </Reveal>
           <Reveal className="mt-s">

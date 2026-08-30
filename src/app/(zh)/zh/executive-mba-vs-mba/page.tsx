@@ -107,8 +107,8 @@ export default function ExecutiveMbaVsMbaPage() {
                   您要的是带企业应用项目、又能兼顾工作的专业课程。
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  这条路线为肩负战略或全局业务责任的学员而设：一套结构化的决策框架、一个应用项目，外加一张 CMI
-                  课程认可证书。六个月里，每月只占用一个排定好的周末。
+                  这条路线为肩负战略或全局业务责任的学员而设：一套结构化的决策框架、一个企业应用项目，外加一张 CMI
+                  课程认可证书。{FACTS.durationMonths} 个月里，每月只占用一个排定好的周末。
                 </p>
               </div>
             </Reveal>
@@ -125,7 +125,7 @@ export default function ExecutiveMbaVsMbaPage() {
           <Reveal>
             <p className="sec-sub">
               别急着比价格，先弄清楚自己要的是什么。下一步需要学术学位，就选 MQA 认证的学术 MBA；
-              若您要的是六个月的课程、一个企业应用项目、对照 CMI Professional Standard 的专业认可，
+              若您要的是 {FACTS.durationMonths} 个月的课程、一个企业应用项目、对照 CMI Professional Standard 的专业认可，
               而且希望修读期间照常工作，那就选这门课程。2026 年马来西亚已公布的标准费用为 {FACTS.priceStd}。
               奖学金名额有限，符合资格的马来西亚申请者须经择优评估与书面批准，方可获{" "}
               <Link href="/zh/fees" className="acc">{FACTS.scholarshipProvider} 奖学金资格</Link>。
@@ -133,7 +133,7 @@ export default function ExecutiveMbaVsMbaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub mt-s">
-              课程不保证加薪、晋升、就业或任何商业成果。学员边工作边学习，把框架用在自己的企业项目上。{REFUND_TERMS_ZH}
+              课程不保证加薪、晋升、就业或任何商业成果。学员边工作边学习，把框架用在自己的企业应用项目上。{REFUND_TERMS_ZH}
             </p>
           </Reveal>
           <Reveal className="center mt-m">

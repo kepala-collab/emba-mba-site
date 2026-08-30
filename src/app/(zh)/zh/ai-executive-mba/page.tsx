@@ -49,7 +49,7 @@ export default function AiExecutiveMbaPage() {
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
               本页讲清楚：获 CMI 认可的 <Link href="/zh/executive-mba" className="acc">Future Ready Executive MBA</Link>{" "}
               如何把决策框架用在 AI 战略、数据、自动化、治理与执行上。
-              它就是那门<b style={{ color: "var(--ink)" }}>六个月</b>的课程，而非另设的软件或技术认证。
+              它就是那门<b style={{ color: "var(--ink)" }}>{FACTS.durationMonths} 个月</b>的课程，而非另设的软件或技术认证。
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -127,9 +127,9 @@ export default function AiExecutiveMbaPage() {
             {[
               ["由 CMI 颁授并背书", "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书，并非 MQA 监管的学术学位。"],
               ["HRD Corp", HRD_CORP_CLAIM_ZH],
-              ["修读形式", "六个月的课程：三次指定的研习课，加上辅导与企业应用项目。"],
+              ["修读形式", `${FACTS.durationMonths} 个月的课程：${FACTS.liveSessions} 次指定的研习课，加上辅导与企业应用项目。`],
               ["课程费用", "标准费用 " + FACTS.priceStd + "。LIFE Innoversity 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准；最终金额与应付费用均以书面个别确认。"],
-              ["应用项目", "学员为自己的企业交出一份转型方案，没有传统的考试或论文。"],
+              ["企业应用项目", "学员为自己的企业交出一份转型方案，没有传统的考试或论文。"],
             ].map(([h, p]) => (
               <div key={h} className="card">
                 <h3 style={{ fontSize: "1.1rem", margin: "0 0 8px" }}>{h}</h3>

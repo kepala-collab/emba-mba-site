@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-sme-owners", {
   title: "Executive MBA untuk Pemilik & Pengasas PKS",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS Malaysia, merentas tiga sesi berpandu dalam enam bulan.",
+    `Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS Malaysia, merentas ${FACTS.liveSessions} sesi berpandu dalam ${FACTS.durationMonths} bulan.`,
 });
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
   "@id": `${SITE.url}/ms/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi tiga sesi berpandu.",
+    `Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi ${FACTS.liveSessions} sesi berpandu.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -45,7 +45,7 @@ export default function MbaForSmeOwnersPage() {
   ];
 
   const fit = [
-    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Tiga sesi fasa sijil diadakan sekali sebulan. Jadual Sesi Pengambilan yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
+    { h: `${FACTS.liveSessions} hujung minggu berjadual sepanjang ${FACTS.durationMonths} bulan`, p: `${FACTS.liveSessions} sesi fasa sijil diadakan sekali sebulan. Jadual Sesi Pengambilan yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort.` },
     { h: "Perniagaan anda sendiri ialah projek amali", p: "Tiada tesis mahupun peperiksaan biasa. Anda guna rangka kerja program untuk merangka pelan transformasi bagi organisasi anda sendiri." },
     { h: "Pembiayaan HRD Corp dipohon oleh majikan", p: HRD_CORP_CLAIM_MS },
     { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran pula disenaraikan di halaman Yuran.` },
@@ -74,7 +74,7 @@ export default function MbaForSmeOwnersPage() {
             membina keupayaan pasukan, merancang penggantian dan memacu pertumbuhan.
           </p>
           <p className="mono sec-k mt-s">
-            Enam bulan · tiga hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
+            {FACTS.durationMonths} bulan · {FACTS.liveSessions} hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
           </p>
           <p className="sec-sub mt-s">
             Lihat keseluruhan{" "}

@@ -11,7 +11,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/mba-for-working-professionals", {
   title: "Part-Time Executive MBA for Working Professionals",
   description:
-    "Study while working full time: a six-month Executive MBA for working professionals, delivered three scheduled weekends across the programme or through live online sessions.",
+    `Study while working full time: a ${FACTS.durationMonths}-month Executive MBA for working professionals, delivered across ${FACTS.liveSessions} scheduled weekends or through live online sessions.`,
 });
 
 const jsonLd = {
@@ -20,7 +20,7 @@ const jsonLd = {
   "@id": `${SITE.url}/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered across six months through three scheduled weekends, with an online delivery option.",
+    `The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered across ${FACTS.durationMonths} months through ${FACTS.liveSessions} scheduled weekends, with an online delivery option.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -39,7 +39,7 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "Three scheduled weekends across the programme", p: "The programme comprises three scheduled sessions, each running over one weekend." },
+    { h: `${FACTS.liveSessions} scheduled weekends across the programme`, p: `The programme comprises ${FACTS.liveSessions} scheduled sessions, each running over one weekend.` },
     { h: "Or fully online", p: "The programme is also available through live online sessions, with the same coaching and frameworks as the in-person track." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
     { h: "Apply it to current work", p: "There is no traditional thesis or examination. Participants apply the frameworks to a business challenge they currently own." },
@@ -71,7 +71,7 @@ export default function MbaForWorkingProfessionalsPage() {
             </Reveal>
             <p className="sec-sub">
               The Future Ready Executive MBA is designed for participants who want to study while working full time.
-              The programme runs across {FACTS.durationLong}, using three scheduled weekends across the programme.
+              The programme runs across {FACTS.durationLong}, using {FACTS.liveSessions} scheduled weekends across the programme.
               Chartered Manager is a separate optional CMI route with its own eligibility, assessment
               and fees; it is not included in the published programme or fee.
             </p>
@@ -177,7 +177,7 @@ export default function MbaForWorkingProfessionalsPage() {
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
-            <span className="mono sec-k">2026 intakes · three scheduled weekends across the programme</span>
+            <span className="mono sec-k">2026 intakes · {FACTS.liveSessions} scheduled weekends across the programme</span>
           </div>
           <Reveal>
             <h2 className="sec-h">English and Mandarin schedules for 2026.</h2>

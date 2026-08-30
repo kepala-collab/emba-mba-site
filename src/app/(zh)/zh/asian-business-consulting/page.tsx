@@ -5,7 +5,7 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import YouTubeFilm from "@/components/site/YouTubeFilm";
-import { OPERATOR, SITE } from "@/lib/content";
+import { FACTS, OPERATOR, PROGRAMME_PROOF, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
@@ -18,9 +18,9 @@ export const metadata = withSeo("/zh/asian-business-consulting", {
 
 const MILESTONES = [
   { n: "2020", s: "ABC 于马来西亚注册成立" },
-  { n: "2024年7月", s: "取得 CMI（英国）背书与认可" },
-  { n: "17", s: "个已开办班次：16 个英语班、1 个华语班" },
-  { n: "154", s: "位课程毕业生" },
+  { n: "2024 年 7 月", s: "由 CMI 颁授并背书" },
+  { n: String(PROGRAMME_PROOF.cohorts), s: `个已开办班次：${PROGRAMME_PROOF.englishCohorts} 个英语班、${PROGRAMME_PROOF.mandarinCohorts} 个华语班` },
+  { n: String(PROGRAMME_PROOF.graduates), s: "位课程毕业生" },
 ];
 
 const LEADERS = [
@@ -81,7 +81,7 @@ export default function AbcPageZh() {
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "60ch" }}>
-              Asian Business Consulting（ABC）2020 年在马来西亚注册，专注管理咨询、企业培训与高管学习。历经近三年，与 CMI（UK）共同打磨出这门六个月的 Future Ready Executive MBA，并以 CMI（UK）认可中心的身份交付课程。
+              Asian Business Consulting（ABC）2020 年在马来西亚注册，专注管理咨询、企业培训与高管学习。历经近三年，与 CMI（UK）共同打磨出这门 {FACTS.durationMonths} 个月的 Future Ready Executive MBA，并以 CMI（UK）认可中心的身份交付课程。
             </p>
           </Reveal>
           <Reveal delay={110}>
@@ -134,16 +134,16 @@ export default function AbcPageZh() {
       <section id="abc-film" className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届毕业典礼 · 2026年8月</span></div>
-            <h2 className="sec-h">17 个班次、154 位毕业生，共同见证的里程碑。</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA 于 2026 年 8 月举行首届毕业典礼。86 位毕业生到场，代表着横跨 17 个班次、共 154 位毕业生的社群：16 个英语班、1 个华语班。</p>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届毕业典礼 · 2026 年 8 月</span></div>
+            <h2 className="sec-h">{PROGRAMME_PROOF.cohorts} 个班次、{PROGRAMME_PROOF.graduates} 位毕业生，共同见证的里程碑。</h2>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA 于 2026 年 8 月举行首届毕业典礼。{PROGRAMME_PROOF.graduationAttendance} 位毕业生到场，代表着横跨 {PROGRAMME_PROOF.cohorts} 个班次、共 {PROGRAMME_PROOF.graduates} 位毕业生的社群：{PROGRAMME_PROOF.englishCohorts} 个英语班、{PROGRAMME_PROOF.mandarinCohorts} 个华语班。</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
-              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> 首届毕业典礼 · 86 位毕业生到场 · 2026年8月</div>
-              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — 首届毕业典礼影片", description: "2026 年 8 月首届 Future Ready Executive MBA 毕业典礼精华，86 位毕业生到场。", "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "zh-Hans-MY" }} />
+              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> 首届毕业典礼 · {PROGRAMME_PROOF.graduationAttendance} 位毕业生到场 · 2026 年 8 月</div>
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — 首届毕业典礼影片", description: `2026 年 8 月首届 Future Ready Executive MBA 毕业典礼精华，${PROGRAMME_PROOF.graduationAttendance} 位毕业生到场。`, "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "zh-Hans-MY" }} />
               <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.webp" lang="zh" />
-              <div className="film-cap"><strong>86 位毕业生齐聚典礼，</strong>与导师，以及来自马来西亚商界与公共领域的嘉宾，一同见证这一里程碑。</div>
+              <div className="film-cap"><strong>{PROGRAMME_PROOF.graduationAttendance} 位毕业生齐聚典礼，</strong>与导师，以及来自马来西亚商界与公共领域的嘉宾，一同见证这一里程碑。</div>
             </div>
           </Reveal>
         </div>

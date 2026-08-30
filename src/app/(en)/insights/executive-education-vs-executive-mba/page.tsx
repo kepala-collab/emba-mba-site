@@ -38,7 +38,7 @@ const articleSchema = {
 
 const COMPARISON = [
   ["Primary purpose", "Focused development of leadership, management or specialist capabilities.", "Varies by provider. Academic EMBAs normally lead to a degree; professionally positioned programmes must state their own credential clearly."],
-  ["Duration", "May be delivered in shorter or modular formats; each provider must publish its schedule.", `This programme runs for ${FACTS.durationLong}, with six training days across three scheduled sessions.`],
+  ["Duration", "May be delivered in shorter or modular formats; each provider must publish its schedule.", `This programme runs for ${FACTS.durationLong}, with ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions.`],
   ["Assessment", "May use workshops, projects, cases or a certificate of completion.", "This programme uses coaching and an applied business project, with no traditional examination or thesis."],
   ["Academic status", "May be non-degree professional development; verify the status stated by the provider.", "This Future Ready Executive MBA is not an MQA-accredited academic degree or a regulated qualification."],
   ["Workplace application", "Designed to develop capabilities that can be used in a current role.", "Participants apply the frameworks to a live business issue in their own organisational context."],

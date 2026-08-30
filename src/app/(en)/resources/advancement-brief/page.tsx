@@ -73,7 +73,7 @@ export default function AdvancementBriefPage() {
           <span className="mono">04 / Six months</span>
           <div>
             <h2>A focused six-month programme.</h2>
-            <p><strong>Six months:</strong> six facilitated training days across three scheduled sessions, coaching and an applied business project leading to the CMI-recognised programme certificate.</p>
+            <p><strong>{FACTS.durationMonths} months:</strong> {FACTS.trainingDays} facilitated training days across {FACTS.liveSessions} scheduled sessions, coaching and an applied business project leading to the CMI-recognised programme certificate.</p>
             <div className="brief-facts">
               <div><strong>{FACTS.trainingDays} days</strong><span>facilitated training</span></div>
               <div><strong>{FACTS.liveSessions} sessions</strong><span>scheduled monthly</span></div>

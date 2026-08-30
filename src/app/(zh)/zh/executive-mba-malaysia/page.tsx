@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/zh/executive-mba-malaysia", {
   title: "马来西亚 Executive MBA · 为在职领导者而设",
   description:
-    "六个月高管教育课程，专为马来西亚在职领导者而设：把管理所学落地到日常工作，获 CMI 认可，并有由雇主主导的 HRD Corp 资助途径。",
+    `${FACTS.durationMonths} 个月高管教育课程，专为马来西亚在职领导者而设：把管理所学落地到日常工作，获 CMI 认可，并有由雇主主导的 HRD Corp 资助途径。`,
 });
 
 const REASONS = [
@@ -23,8 +23,8 @@ const REASONS = [
     p: `标准费用为 ${FACTS.priceStd}。${FACTS.scholarshipProvider} 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准，并非自动，也不是折扣码；最终金额与应付费用均以书面个别确认。`,
   },
   {
-    h: "专为在职领导者而设的六个月课程",
-    p: "课程为期六个月，每月只占用一个周末，上午 9 时至下午 6 时。Chartered Manager 属 CMI 另设的可选路线，另有独立的资格要求、评估与费用。",
+    h: `专为在职领导者而设的 ${FACTS.durationMonths} 个月课程`,
+    p: `课程为期 ${FACTS.durationMonths} 个月，每月只占用一个周末，上午 9 时至下午 6 时。Chartered Manager 属 CMI 另设的可选路线，另有独立的资格要求、评估与费用。`,
   },
   {
     h: "熟悉东盟情境的导师与案例",
@@ -81,7 +81,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Future Ready Executive MBA 专为马来西亚的企业主、董事与资深管理者而设，是一门为期六个月的高管教育及专业发展课程，
+              Future Ready Executive MBA 专为马来西亚的企业主、董事与资深管理者而设，是一门为期 {FACTS.durationMonths} 个月的高管教育及专业发展课程，
               由 CMI 颁授并背书，以集中现场授课的方式进行。<b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_ZH}</b>{" "}
               课程以令吉计价，标准费用为 {FACTS.priceStd}。奖学金名额有限，符合资格的马来西亚申请者经评估与书面批准后，方可获{" "}
               <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} 奖学金资格评估</b>，评估结果与最终费用均以书面个别确认。
@@ -90,7 +90,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              您无须离开工作岗位，在职期间即可完成三个指定周末的研习课、辅导与应用项目。Chartered Manager 属 CMI 另设的可选路线，不包含在已公布的课程内容与费用之内。
+              您无须离开工作岗位，在职期间即可完成 {FACTS.liveSessions} 个指定周末的研习课、辅导与企业应用项目。Chartered Manager 属 CMI 另设的可选路线，不包含在已公布的课程内容与费用之内。
             </p>
           </Reveal>
           <Reveal className="mt-s">

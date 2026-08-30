@@ -1,4 +1,4 @@
-import { FACULTY, INTAKES } from "@/lib/content";
+import { FACTS, FACULTY, INTAKES } from "@/lib/content";
 
 const MODULES_MS = [
   { c: "M01", title: "Tinjauan Masa Hadapan", outcome: "Membaca landskap perniagaan" },
@@ -25,13 +25,13 @@ export const REFUND_TERMS_MS =
   "Terma pendaftaran ABC yang ditandatangani menyatakan kelayakan bayaran balik, tempoh notis, jumlah yang boleh dikembalikan, syarat pemulangan bahan pembelajaran dan tarikh pemprosesan. Peserta menerima dan menyemak terma tersebut sebelum membuat bayaran; tiada janji bayaran balik dibuat di luar terma yang ditandatangani.";
 
 export const COMPARISON_MS = [
-  { k: "Tempoh pengajian", them: "18–24 bulan", us: "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berpandu" },
+  { k: "Tempoh pengajian", them: "18–24 bulan", us: `${FACTS.durationMonths} bulan: ${FACTS.trainingDays} hari latihan, diselesaikan dalam ${FACTS.liveSessions} sesi berpandu` },
   { k: "Fokus pembelajaran", them: "Teori akademik, penyelidikan dan analisis kes", us: "Situasi perniagaan sebenar, keputusan strategik, dan rangka kerja yang boleh anda guna berulang kali" },
   { k: "Kaedah penilaian", them: "Tugasan atau peperiksaan, berserta tesis", us: "Projek amali berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional" },
   { k: "Peranan fasilitator", them: "Pengajaran akademik dan penyeliaan penyelidikan", us: "Pengamal industri, perunding dan jurulatih eksekutif" },
-  { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: "Metodologi F.A.S.T. dan 12 rangka kerja perniagaan praktikal" },
-  { k: "Bentuk pengajian", them: "Mengikut jadual akademik yang ditetapkan institusi penganugerah", us: "Tiga hujung minggu berjadual sepanjang program selama enam bulan; peserta terus bekerja sepenuh masa" },
-  { k: "Yuran program", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: "Yuran standard RM10,000.00; biasiswa LIFE Innoversity terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis" },
+  { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: `Metodologi F.A.S.T. dan ${FACTS.moduleCount} rangka kerja perniagaan praktikal` },
+  { k: "Bentuk pengajian", them: "Mengikut jadual akademik yang ditetapkan institusi penganugerah", us: `${FACTS.liveSessions} hujung minggu berjadual sepanjang program selama ${FACTS.durationMonths} bulan; peserta terus bekerja sepenuh masa` },
+  { k: "Yuran program", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: `Yuran standard ${FACTS.priceStd}; biasiswa ${FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis` },
   { k: "Sifat kelayakan", them: "Ijazah MBA akademik daripada institusi penganugerah", us: "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik terakreditasi MQA" },
 ] as const;
 
@@ -50,11 +50,11 @@ export const CORE_PAGES_MS = {
     ],
   },
   programme: {
-    eyebrow: "Executive MBA enam bulan · Diiktiraf CMI (UK)",
+    eyebrow: `Executive MBA ${FACTS.durationMonths} bulan · Diiktiraf CMI (UK)`,
     title: "Direka khas untuk pengurus berpengalaman yang sedang bekerja",
-    intro: "Enam hari latihan, bimbingan dan satu projek perniagaan — semuanya diselesaikan dalam tempoh enam bulan, dan anda terus bekerja sepenuh masa sepanjang program. Jika anda layak, anda boleh bertanya secara berasingan tentang laluan lanjutan Chartered Manager.",
+    intro: `${FACTS.trainingDays} hari latihan, bimbingan dan satu projek perniagaan — semuanya diselesaikan dalam tempoh ${FACTS.durationMonths} bulan, dan anda terus bekerja sepenuh masa sepanjang program. Jika anda layak, anda boleh bertanya secara berasingan tentang laluan lanjutan Chartered Manager.`,
     sections: [
-      ["Susunan program enam bulan", "Selesaikan enam hari latihan, tiga sesi intensif, projek perniagaan dan bimbingan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI."],
+      [`Susunan program ${FACTS.durationMonths} bulan`, `Selesaikan ${FACTS.trainingDays} hari latihan, ${FACTS.liveSessions} sesi berpandu, projek perniagaan dan bimbingan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI.`],
       ["Laluan Chartered Manager yang berasingan", "Chartered Manager ialah laluan pilihan CMI yang berasingan, dengan kelayakan, penilaian dan yuran tersendiri. Ia tidak termasuk dalam program ini atau yuran yang diterbitkan, dan tidak diberikan secara automatik kerana menamatkan program."],
       ["Status profesional CMI", "Terma program CMI Recognised yang diterbitkan CMI menyatakan bahawa peserta yang menamatkan program menerima status Foundation Chartered Manager (fCMgr). CMI menguruskan pengaktifan status, pembaharuan keahlian dan penggunaan gelaran profesional."],
       ["Sifat program", "Ini ialah program pembangunan profesional untuk pengurus kanan. Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. Yuran penilaian Chartered Manager dan yuran keahlian CMI dikutip secara berasingan oleh CMI kecuali dinyatakan sebagai termasuk dalam jadual yuran rasmi."],
@@ -64,25 +64,25 @@ export const CORE_PAGES_MS = {
     ],
   },
   curriculum: {
-    eyebrow: "Kurikulum · 12 modul",
+    eyebrow: `Kurikulum · ${FACTS.moduleCount} modul`,
     title: "Dua belas modul. Satu perjalanan kepimpinan bersepadu",
     intro: "Program eksekutif enam bulan yang menggabungkan metodologi F.A.S.T. dengan pembelajaran praktikal, bimbingan dan satu projek akhir berdasarkan perniagaan anda sendiri — tanpa peperiksaan, tanpa tesis.",
     sections: [
       ["Peringkat 1: Mencipta nilai", "Melalui F.A.S.T., Jobs-To-Be-Done, tinjauan masa hadapan, DNA strategi dan perancangan tindakan, takrifkan semula nilai pelanggan dan hala tuju perniagaan."],
       ["Peringkat 2: Menyampaikan nilai", "Melalui kepimpinan situasi, intervensi pasukan, pemikiran sistem dan pengurusan transformasi, terjemahkan strategi kepada tingkah laku pasukan dan mekanisme pelaksanaan."],
       ["Peringkat 3: Membentuk pelan tindakan", "Gunakan reka bentuk pengaruh, hubungan pihak berkepentingan dan analisis sistem perniagaan untuk menyiapkan pelan tindakan perniagaan yang dinilai fasilitator."],
-      ["Dua belas modul", MODULES_MS.map((module) => `${module.c} ${module.title} — ${module.outcome}`).join("; ")],
+      [`${FACTS.moduleCount} modul`, MODULES_MS.map((module) => `${module.c} ${module.title} — ${module.outcome}`).join("; ")],
       ["Kaedah penilaian", "Tiada peperiksaan atau tesis tradisional. Penilaian berasaskan penyertaan dalam sesi, proses bimbingan dan satu projek yang berkait terus dengan perniagaan peserta."],
     ],
   },
   fees: {
     eyebrow: "Yuran · Biasiswa · HRD Corp",
-    title: "Yuran standard RM10,000.00; biasiswa terhad, dinilai berdasarkan kelayakan",
+    title: `Yuran standard ${FACTS.priceStd}; biasiswa terhad, dinilai berdasarkan kelayakan`,
     intro: "Biasiswa LIFE Innoversity adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis; biasiswa tidak automatik dan bukan kod diskaun.",
     sections: [
-      ["Apa yang termasuk dalam yuran program", "Sama ada membayar yuran standard atau menerima biasiswa, program merangkumi tiga sesi bersemuka dalam tempoh enam bulan, diagnostik kepimpinan peribadi, bimbingan fasilitator, alat pembelajaran dan penilaian projek perniagaan. Chartered Manager ialah laluan pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam yuran program yang diterbitkan."],
+      ["Apa yang termasuk dalam yuran program", `Sama ada membayar yuran standard atau menerima biasiswa, program merangkumi ${FACTS.liveSessions} sesi bersemuka dalam tempoh ${FACTS.durationMonths} bulan, diagnostik kepimpinan peribadi, bimbingan fasilitator, alat pembelajaran dan penilaian projek perniagaan. Chartered Manager ialah laluan pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam yuran program yang diterbitkan.`],
       ["HRD Corp", HRD_CORP_CLAIM_MS],
-      ["Yuran untuk pemohon Malaysia", "Yuran standard ialah RM10,000.00. Biasiswa LIFE Innoversity adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; biasiswa tidak automatik dan bukan kod diskaun."],
+      ["Yuran untuk pemohon Malaysia", `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; biasiswa tidak automatik dan bukan kod diskaun.`],
       ["Bayaran individu", "Sebelum bayaran dibuat, pasukan program memberikan jadual ansuran bertulis kepada peserta individu, menyatakan jumlah setiap ansuran dan tarikh matang. Pilihan termasuk ansuran kad kredit RHB selama 6–12 bulan dan pelan bayaran empat bulan oleh ABC. Kos perjalanan dan penginapan tidak termasuk dalam yuran."],
       ["Urusan bayaran balik", REFUND_TERMS_MS],
     ],
@@ -90,7 +90,7 @@ export const CORE_PAGES_MS = {
   intakes: {
     eyebrow: "Tarikh kohort 2026 — Bahasa Inggeris dan Mandarin",
     title: "Pilih kohort yang paling sesuai dengan jadual kerja anda",
-    intro: "Setiap kohort dijalankan pada tiga hujung minggu sepanjang program, merentasi tiga sesi. Pasukan program akan sahkan kekosongan kohort apabila membalas pertanyaan anda.",
+    intro: `Setiap kohort dijalankan pada ${FACTS.liveSessions} hujung minggu sepanjang program, merentasi ${FACTS.liveSessions} sesi. Pasukan program akan sahkan kekosongan kohort apabila membalas pertanyaan anda.`,
     sections: [
       ...INTAKES.map((intake) => [
         `${intake.language === "Mandarin" ? "Mandarin" : "Bahasa Inggeris"} ${intake.co}`,
@@ -113,8 +113,8 @@ export const CORE_PAGES_MS = {
 } as const;
 
 export const FAQS_MS = [
-  ["Bagaimana program ini disusun?", "Program berlangsung enam bulan, merangkumi enam hari latihan, tiga sesi hujung minggu, bimbingan dan projek perniagaan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager ialah laluan pilihan CMI dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam program ini atau yuran yang diterbitkan."],
-  ["Bolehkah saya menamatkan program sambil bekerja sepenuh masa?", "Boleh. Program awam Malaysia berjalan selama enam bulan dengan enam hari latihan yang ditetapkan. Peserta menamatkan program sambil terus bekerja, dan menyiapkan projek amali berasaskan isu perniagaan semasa mereka. Semak semua tarikh sesi yang diterbitkan sebelum mendaftar."],
+  ["Bagaimana program ini disusun?", `Program berlangsung ${FACTS.durationMonths} bulan, merangkumi ${FACTS.trainingDays} hari latihan, ${FACTS.liveSessions} sesi hujung minggu, bimbingan dan projek perniagaan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager ialah laluan pilihan CMI dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam program ini atau yuran yang diterbitkan.`],
+  ["Bolehkah saya menamatkan program sambil bekerja sepenuh masa?", `Boleh. Program awam Malaysia berjalan selama ${FACTS.durationMonths} bulan dengan ${FACTS.trainingDays} hari latihan yang ditetapkan. Peserta menamatkan program sambil terus bekerja, dan menyiapkan projek amali berasaskan isu perniagaan semasa mereka. Semak semua tarikh sesi yang diterbitkan sebelum mendaftar.`],
   ["Adakah ini program pendidikan eksekutif atau ijazah MBA akademik?", "Ini ialah Executive MBA dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI. Program enam bulan ini ialah program pembangunan profesional dan pendidikan eksekutif — bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
   ["Apakah yang diterima selepas berjaya menamatkan program?", "Peserta yang berjaya menerima sijil pengiktirafan CMI bagi program Future Ready Executive MBA. Format dan perkataan akhir sijil ditentukan oleh CMI. Chartered Manager ialah laluan CMI yang berasingan dan tidak diberikan secara automatik kerana menamatkan program ini."],
   ["Adakah saya menjadi Chartered Manager secara automatik selepas tamat?", "Tidak. Selepas menamatkan program, peserta menerima CMI Certificate of Recognition; di bawah skim CMI Recognised yang diterbitkan, peserta menerima status Foundation Chartered Manager. Chartered Manager (CMgr) penuh ialah penilaian profesional berasingan; laluan permohonan, kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI."],

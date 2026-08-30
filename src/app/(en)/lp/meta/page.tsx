@@ -8,7 +8,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/lp/meta", {
   title: "A Practical Management Programme for Working Leaders",
   description:
-    "Complete the six-month CMI-recognised Executive MBA while continuing to work. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.",
+    `Complete the ${FACTS.durationMonths}-month CMI-recognised Executive MBA while continuing to work. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.`,
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/meta" },
 });
@@ -37,17 +37,17 @@ export default function MetaLandingPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">For experienced Malaysian managers</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>Complete the CMI-recognised Executive MBA in 6 months.</h1>
+              <h1>Complete the CMI-recognised Executive MBA in {FACTS.durationMonths} months.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="cold-funnel-lede">
-                Continue working while you complete six facilitated training days, coaching and an applied project.
+                Continue working while you complete {FACTS.trainingDays} facilitated training days, coaching and an applied project.
               </p>
             </Reveal>
             <Reveal delay={130}>
               <ul className="cold-funnel-proof-list" aria-label="Programme highlights">
-                <li>Six-month CMI-recognised professional programme</li>
-                <li>Six training days across three scheduled sessions</li>
+                <li>{FACTS.durationMonths}-month CMI-recognised professional programme</li>
+                <li>{FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions</li>
                 <li>Designed around full-time work</li>
                 <li>No traditional examination or thesis</li>
               </ul>
@@ -71,7 +71,7 @@ export default function MetaLandingPage() {
         <div className="wrap campaign-fact-grid">
           {[
             ["CMI", "Awarded and endorsed by CMI"],
-            [FACTS.trainingDays, "Facilitated training days across three scheduled sessions"],
+            [FACTS.trainingDays, `Facilitated training days across ${FACTS.liveSessions} scheduled sessions`],
             ["1", "Applied project built around a live business issue"],
             ["Eligibility", "Scholarship assessment for Malaysian applicants"],
           ].map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}

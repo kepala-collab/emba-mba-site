@@ -127,7 +127,7 @@ export default function AiExecutiveMbaPage() {
             {[
               ["Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia bukan ijazah akademik yang dikawal selia MQA."],
               ["HRD Corp", HRD_CORP_CLAIM_MS],
-              ["Format", "Program enam bulan: tiga sesi berpandu berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar."],
+              ["Format", `Program ${FACTS.durationMonths} bulan: ${FACTS.liveSessions} sesi berpandu berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar.`],
               ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Biasiswa LIFE Innoversity terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; ia bukan automatik, dan setiap anugerah serta yuran peserta disahkan satu per satu secara bertulis."],
               ["Projek amali", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
             ].map(([h, p]) => (

@@ -84,7 +84,7 @@ const COPY = {
     panelH: "Laluan peranan Level 2–8",
     progH: "Laluan program ke penilaian profesional",
     boundaryH: "Pembangunan profesional; bukan ijazah akademik.",
-    boundaryP: "Program ini bukan akademik. Ia bukan ijazah akademik bertauliah MQA dan bukan kelayakan yang dikawal selia.",
+    boundaryP: "Program ini bukan akademik. Ia bukan ijazah akademik terakreditasi MQA dan bukan kelayakan yang dikawal selia.",
     caption: "CMI qualification level menggambarkan tahap kesukaran dan kerumitan sesuatu kelayakan yang dikawal selia. Ia tidak secara automatik menjadikan setiap program yang diiktiraf CMI setara dengan ijazah akademik.",
     link: "Lihat panduan kelayakan semasa CMI",
   },

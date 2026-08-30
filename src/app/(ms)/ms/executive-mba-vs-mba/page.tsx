@@ -113,7 +113,7 @@ export default function ExecutiveMbaVsMbaPage() {
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   Laluan ini untuk anda yang memikul tanggungjawab strategik atau menyeluruh dalam
                   perniagaan, dan mahukan cara membuat keputusan yang lebih tersusun, projek berteraskan cabaran perniagaan sebenar
-                  dan CMI Certificate of Recognition. Sepanjang enam bulan, program ini berjalan menerusi tiga hujung minggu berjadual,
+                  dan CMI Certificate of Recognition. Sepanjang {FACTS.durationMonths} bulan, program ini berjalan menerusi {FACTS.liveSessions} hujung minggu berjadual,
                   sesi bimbingan dan projek yang anda terapkan pada kerja sendiri.
                 </p>
               </div>
