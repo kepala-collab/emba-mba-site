@@ -10,7 +10,7 @@ const path = "/ms/intakes";
 export const metadata = withSeo(path, {
   title: "Tarikh Kohort Executive MBA 2026 — Bahasa Inggeris dan Mandarin",
   description:
-    "Semak tarikh dan waktu tiga sesi hujung minggu bagi Cohort 17–19 (Bahasa Inggeris) dan Cohort 2–3 (Mandarin) untuk tahun 2026.",
+    "Semak tarikh dan waktu tiga sesi hujung minggu bagi Kohort 17–19 (Bahasa Inggeris) dan Kohort 2–3 (Mandarin) untuk tahun 2026.",
 });
 
 export default function Page() {
@@ -33,7 +33,7 @@ export default function Page() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Jadual penuh</span></div></Reveal>
           <Reveal><h2 className="sec-h">Pastikan anda dapat hadir pada ketiga-tiga hujung minggu.</h2></Reveal>
           <Reveal className="mt-m"><IntakeSchedule lang="ms" /></Reveal>
-          <p className="fine mt-s">Cohort 17 berlangsung pada hari Sabtu hingga Ahad; kohort lain yang diterbitkan berlangsung pada hari Jumaat hingga Sabtu. Semua sesi bermula 9 pagi hingga 6 petang. Jika ABC mengubah tarikh yang diterbitkan, peserta berdaftar akan menerima tarikh gantian secara bertulis.</p>
+          <p className="fine mt-s">Kohort 17 berlangsung pada hari Sabtu hingga Ahad; kohort lain yang diterbitkan berlangsung pada hari Jumaat hingga Sabtu. Semua sesi bermula 9 pagi hingga 6 petang. Jika ABC mengubah tarikh yang diterbitkan, peserta berdaftar akan menerima tarikh gantian secara bertulis.</p>
         </div>
       </section>
 

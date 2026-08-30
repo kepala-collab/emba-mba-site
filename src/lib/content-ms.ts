@@ -32,7 +32,7 @@ export const COMPARISON_MS = [
   { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: "Metodologi F.A.S.T. dan 12 rangka kerja perniagaan praktikal" },
   { k: "Bentuk pengajian", them: "Mengikut jadual akademik yang ditetapkan institusi penganugerah", us: "Tiga hujung minggu berjadual sepanjang program selama enam bulan; peserta terus bekerja sepenuh masa" },
   { k: "Yuran program", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: "Yuran standard RM10,000.00; biasiswa LIFE Innoversity terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis" },
-  { k: "Sifat kelayakan", them: "Ijazah MBA akademik daripada institusi penganugerah", us: "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik bertauliah MQA" },
+  { k: "Sifat kelayakan", them: "Ijazah MBA akademik daripada institusi penganugerah", us: "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik terakreditasi MQA" },
 ] as const;
 
 export const CORE_PAGES_MS = {
@@ -57,10 +57,10 @@ export const CORE_PAGES_MS = {
       ["Susunan program enam bulan", "Selesaikan enam hari latihan, tiga sesi intensif, projek perniagaan dan bimbingan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI."],
       ["Laluan Chartered Manager yang berasingan", "Chartered Manager ialah laluan pilihan CMI yang berasingan, dengan kelayakan, penilaian dan yuran tersendiri. Ia tidak termasuk dalam program ini atau yuran yang diterbitkan, dan tidak diberikan secara automatik kerana menamatkan program."],
       ["Status profesional CMI", "Terma program CMI Recognised yang diterbitkan CMI menyatakan bahawa peserta yang menamatkan program menerima status Foundation Chartered Manager (fCMgr). CMI menguruskan pengaktifan status, pembaharuan keahlian dan penggunaan gelaran profesional."],
-      ["Sifat program", "Ini ialah program pembangunan profesional untuk pengurus kanan. Ia bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia. Yuran penilaian Chartered Manager dan yuran keahlian CMI dikutip secara berasingan oleh CMI kecuali dinyatakan sebagai termasuk dalam jadual yuran rasmi."],
+      ["Sifat program", "Ini ialah program pembangunan profesional untuk pengurus kanan. Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. Yuran penilaian Chartered Manager dan yuran keahlian CMI dikutip secara berasingan oleh CMI kecuali dinyatakan sebagai termasuk dalam jadual yuran rasmi."],
       ["Untuk siapa", PROGRAMME_AUDIENCE_MS],
       ["Hasil pembelajaran", "Pada akhir program, peserta membentangkan pelan tindakan terhadap isu perniagaan mereka sendiri, dinilai oleh fasilitator program dan pengamal industri."],
-      ["Penjelasan kelayakan", "Ini ialah program pembangunan profesional yang diiktiraf oleh Chartered Management Institute (CMI), United Kingdom. Ia bukan ijazah akademik bertauliah Agensi Kelayakan Malaysia (MQA)."],
+      ["Penjelasan kelayakan", "Ini ialah program pembangunan profesional yang diiktiraf oleh Chartered Management Institute (CMI), United Kingdom. Ia bukan ijazah akademik terakreditasi Agensi Kelayakan Malaysia (MQA)."],
     ],
   },
   curriculum: {
@@ -115,11 +115,11 @@ export const CORE_PAGES_MS = {
 export const FAQS_MS = [
   ["Bagaimana program ini disusun?", "Program berlangsung enam bulan, merangkumi enam hari latihan, tiga sesi hujung minggu, bimbingan dan projek perniagaan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager ialah laluan pilihan CMI dengan kelayakan, penilaian dan yuran tersendiri, dan tidak termasuk dalam program ini atau yuran yang diterbitkan."],
   ["Bolehkah saya menamatkan program sambil bekerja sepenuh masa?", "Boleh. Program awam Malaysia berjalan selama enam bulan dengan enam hari latihan yang ditetapkan. Peserta menamatkan program sambil terus bekerja, dan menyiapkan projek aplikasi berasaskan isu perniagaan semasa mereka. Semak semua tarikh sesi yang diterbitkan sebelum mendaftar."],
-  ["Adakah ini program pendidikan eksekutif atau ijazah MBA akademik?", "Ini ialah Executive MBA dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI. Program enam bulan ini ialah program pembangunan profesional dan pendidikan eksekutif — bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia."],
+  ["Adakah ini program pendidikan eksekutif atau ijazah MBA akademik?", "Ini ialah Executive MBA dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI. Program enam bulan ini ialah program pembangunan profesional dan pendidikan eksekutif — bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
   ["Apakah yang diterima selepas berjaya menamatkan program?", "Peserta yang berjaya menerima sijil pengiktirafan CMI bagi program Future Ready Executive MBA. Format dan perkataan akhir sijil ditentukan oleh CMI. Chartered Manager ialah laluan CMI yang berasingan dan tidak diberikan secara automatik kerana menamatkan program ini."],
   ["Adakah saya menjadi Chartered Manager secara automatik selepas tamat?", "Tidak. Selepas menamatkan program, peserta menerima CMI Certificate of Recognition; di bawah skim CMI Recognised yang diterbitkan, peserta menerima status Foundation Chartered Manager. Chartered Manager (CMgr) penuh ialah penilaian profesional berasingan; laluan permohonan, kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI."],
   ["Adakah Chartered Manager termasuk dalam program?", "Tidak termasuk. Chartered Manager ialah laluan pilihan CMI yang berasingan; kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI. Pasukan program tidak menilai kelayakan permohonan atau menjanjikan sebarang keputusan."],
-  ["Adakah ini ijazah bertauliah MQA?", "Bukan. Ini ialah program pembangunan profesional yang diiktiraf oleh CMI, United Kingdom — bukan ijazah akademik bertauliah MQA."],
+  ["Adakah ini ijazah terakreditasi MQA?", "Bukan. Ini ialah program pembangunan profesional yang diiktiraf oleh CMI, United Kingdom — bukan ijazah akademik terakreditasi MQA."],
   ["Bolehkah syarikat menggunakan levi HRD Corp?", HRD_CORP_CLAIM_MS],
   ["Bagaimana CMI menentukan laluan Chartered Manager?", "CMI kini menerbitkan laluan Full Assessment, CMI Fast Track dan Apprenticeship. Full Assessment terbuka kepada pengurus yang memiliki ijazah dalam pengurusan, perniagaan atau kepimpinan berserta tiga tahun pengalaman pengurusan, atau sekurang-kurangnya lima tahun pengalaman pengurusan tanpa kelayakan khusus pengurusan. Fast Track memerlukan kelayakan CMI yang tersenarai dan disiapkan dalam tempoh lima tahun berserta sekurang-kurangnya tiga tahun pengalaman pengurusan. Program ini diiktiraf CMI (CMI Recognised), bukan kelayakan CMI, jadi CMI perlu mengesahkan laluan yang berkenaan bagi setiap peserta."],
   ["Apakah terma bayaran balik?", REFUND_TERMS_MS],

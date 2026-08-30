@@ -43,7 +43,7 @@ export default function AiExecutiveMbaPage() {
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
               Halaman ini menerangkan bagaimana <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> yang diiktiraf CMI{" "}
               membawa rangka kerja membuat keputusannya ke strategi AI, data, automasi, tadbir urus dan pelaksanaan.
-              Ia program <b style={{ color: "var(--ink)" }}>6 bulan</b> yang sama — bukan pensijilan perisian atau teknikal yang berasingan.
+              Ia merupakan program <b style={{ color: "var(--ink)" }}>enam bulan</b> yang sama — bukan pensijilan perisian atau teknikal yang berasingan.
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -138,7 +138,7 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
           <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "72ch" }}>
-            Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik bertauliah MQA
+            Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik terakreditasi MQA
             atau kelayakan yang dikawal selia. Ia tidak menjamin pendapatan, kenaikan pangkat atau hasil perniagaan.
           </p></Reveal>
         </div>

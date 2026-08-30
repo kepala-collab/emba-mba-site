@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.programme;
 export const metadata = withSeo(path, {
   title: "Butiran Program Executive MBA (Diiktiraf CMI, UK)",
   description:
-    "Fahami struktur program Future Ready Executive MBA, untuk siapa ia direka, hasil pembelajaran, pengiktirafan CMI dan bezanya dengan ijazah akademik bertauliah MQA.",
+    "Fahami struktur program Future Ready Executive MBA, untuk siapa ia direka, hasil pembelajaran, pengiktirafan CMI dan bezanya dengan ijazah akademik terakreditasi MQA.",
 });
 
 export default function Page() {

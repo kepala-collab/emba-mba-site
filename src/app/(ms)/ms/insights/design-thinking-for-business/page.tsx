@@ -110,7 +110,7 @@ export default function Page() {
               <li>
                 <strong>Takrifkan.</strong> Tapiskan apa yang anda dengar menjadi satu
                 pernyataan masalah yang tepat dan bersifat manusiawi. Takrifan yang
-                jitu — &ldquo;klinisian yang sibuk kehilangan dua puluh minit setiap syif
+                jitu — &ldquo;klinisi yang sibuk kehilangan dua puluh minit setiap syif
                 semata-mata untuk menyelaraskan rekod&rdquo; — jauh lebih bermakna
                 berbanding taklimat kabur untuk &ldquo;menambah baik kecekapan.&rdquo;
               </li>

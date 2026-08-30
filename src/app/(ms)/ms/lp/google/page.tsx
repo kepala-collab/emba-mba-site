@@ -29,7 +29,7 @@ const CMP = [
   ["Pelaburan", "Yuran standard RM10,000.00. Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik dan bukan kod diskaun", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
   ["Format", "Tiga hujung minggu berjadual sepanjang program — anda terus bekerja seperti biasa sepanjang tempoh itu", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
   ["Penilaian", "Projek berteraskan cabaran perniagaan anda sendiri — tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
-  ["Sijil", "Sijil pengiktirafan program profesional CMI — bukan ijazah akademik bertauliah MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
+  ["Sijil", "Sijil pengiktirafan program profesional CMI — bukan ijazah akademik terakreditasi MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
 ];
 
 export default function MsGoogleLP() {

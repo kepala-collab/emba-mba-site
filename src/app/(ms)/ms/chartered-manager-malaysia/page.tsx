@@ -16,7 +16,7 @@ export const metadata = withSeo(PATH, {
 
 const FAQS = [
   ["Apakah yang saya terima selepas berjaya menamatkan program?", "Peserta yang berjaya menamatkan program menerima CMI Certificate of Recognition bagi Future Ready Executive MBA. Format akhir, perkataan dan pengeluaran sijil ditentukan oleh CMI."],
-  ["Adakah ini ijazah MBA akademik?", "Bukan. Ini ialah program pembangunan profesional Executive MBA enam bulan dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI — bukan ijazah akademik bertauliah MQA atau kelayakan yang dikawal selia."],
+  ["Adakah ini ijazah MBA akademik?", "Bukan. Ini ialah program pembangunan profesional Executive MBA enam bulan dalam kepimpinan perniagaan masa hadapan, dianugerahkan dan disokong oleh CMI — bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
   ["Adakah saya menjadi Chartered Manager secara automatik selepas tamat program?", "Tidak. Chartered Manager ialah laluan CMI yang berasingan dan bersifat pilihan. Kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI, dan tidak termasuk dalam program ini atau yuran yang diterbitkan."],
 ] as const;
 

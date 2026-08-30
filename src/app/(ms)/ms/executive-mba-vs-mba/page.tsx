@@ -18,7 +18,7 @@ const COMPARISON_SCOPE_MS =
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS_MS.filter(([q]) =>
-  ["Adakah ini ijazah bertauliah MQA?", "Bagaimana program ini disusun?", "Untuk siapa program ini?"].includes(q)
+  ["Adakah ini ijazah terakreditasi MQA?", "Bagaimana program ini disusun?", "Untuk siapa program ini?"].includes(q)
 );
 
 const faqLd = {
@@ -51,7 +51,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Bandingkan kedua-dua laluan dari segi kelayakan, penilaian, format, masa dan yuran yang diterbitkan.{" "}
               <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> ialah program
-              profesional yang dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik bertauliah MQA
+              profesional yang dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik terakreditasi MQA
               atau kelayakan yang dikawal selia. Pilih MBA akademik apabila matlamat anda menuntut
               ijazah akademik. Pilih program ini apabila yang anda mahu ialah pembangunan pengurusan yang boleh terus dipakai
               sambil anda terus bekerja.
@@ -76,7 +76,7 @@ export default function ExecutiveMbaVsMbaPage() {
           </Reveal>
           <p className="fine mt-s">
             {COMPARISON_SCOPE_MS} Program Future Ready tidak setara dengan, dan bukan pengganti kepada,
-            ijazah akademik bertauliah MQA. Lihat <Link href="/ms/fees" className="acc">pecahan pelaburan sepenuhnya</Link>.
+            ijazah akademik terakreditasi MQA. Lihat <Link href="/ms/fees" className="acc">pecahan pelaburan sepenuhnya</Link>.
           </p>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default function ExecutiveMbaVsMbaPage() {
                   Langkah seterusnya anda menuntut ijazah akademik atau kelayakan yang dikawal selia.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  Jika matlamat anda menuntut kelayakan akademik atau bertauliah MQA — untuk badan pelesenan,
+                  Jika matlamat anda menuntut kelayakan akademik atau terakreditasi MQA — untuk badan pelesenan,
                   laluan PhD, kerjaya akademik, atau syarat kelayakan yang ditetapkan dalam sektor anda —
                   MBA akademik ialah laluan yang betul. Bandingkan syarat kemasukan, kurikulum, tempoh, yuran
                   dan pengiktirafan yang diterbitkan setiap institusi sebelum anda mendaftar.
@@ -130,7 +130,7 @@ export default function ExecutiveMbaVsMbaPage() {
           <Reveal><h2 className="sec-h">Pilih ikut hasil yang anda mahu capai.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              Tetapkan dahulu hasil yang anda mahu capai sebelum membandingkan harga. Pilih MBA akademik bertauliah MQA
+              Tetapkan dahulu hasil yang anda mahu capai sebelum membandingkan harga. Pilih MBA akademik terakreditasi MQA
               apabila langkah seterusnya anda menuntut ijazah akademik. Pilih program ini apabila yang anda perlukan ialah
               program enam bulan, projek berteraskan cabaran perniagaan sebenar, pengiktirafan CMI terhadap Professional Standard-nya
               dan kerjaya yang terus berjalan sepanjang pengajian. Yuran standard Malaysia 2026 yang diterbitkan

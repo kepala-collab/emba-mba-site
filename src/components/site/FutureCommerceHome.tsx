@@ -70,7 +70,7 @@ const COPY = {
     intakesTitle: "Pilih sesi yang bersesuaian dengan anda.",
     intakeOpen: "Pertanyaan dibuka",
     factRecognition: "dianugerahkan dan disokong",
-    factCommunity: "16 Bahasa Inggeris · 1 kohort Mandarin",
+    factCommunity: "16 kohort Bahasa Inggeris · 1 kohort Mandarin",
     factDuration: "program pembangunan profesional",
     factDays: "hari latihan merangkumi tiga sesi berpandu",
     factModules: "modul pengurusan gunaan",
