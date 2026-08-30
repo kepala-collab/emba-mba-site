@@ -11,7 +11,7 @@ export const metadata = withSeo("/ms/unsubscribed", {
 const COPY = {
   done: {
     heading: "Anda telah berhenti melanggan.",
-    body: "Kami tidak akan menghantar e-mel pemasaran lagi kepada anda. Kalau ada pertanyaan yang masih berjalan, pasukan program tetap akan membalasnya. Anda boleh menyertai semula senarai e-mel pada bila-bila masa dengan meminta semula panduan program.",
+    body: "Kami tidak akan menghantar e-mel pemasaran lagi kepada anda. Jika ada pertanyaan yang masih berjalan, pasukan program tetap akan membalasnya. Anda boleh menyertai semula senarai e-mel pada bila-bila masa dengan meminta semula panduan program.",
   },
   invalid: {
     heading: "Pautan tidak dapat disahkan.",

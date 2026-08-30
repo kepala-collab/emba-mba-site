@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-sme-owners", {
   title: "Executive MBA untuk Pemilik & Pengasas PKS",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS Malaysia, merentas tiga sesi berjadual dalam enam bulan.",
+    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS Malaysia, merentas tiga sesi berpandu dalam enam bulan.",
 });
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
   "@id": `${SITE.url}/ms/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi tiga sesi berjadual.",
+    "Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi tiga sesi berpandu.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -68,7 +68,7 @@ export default function MbaForSmeOwnersPage() {
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Future Ready Executive MBA membantu pemilik PKS mengenal pasti di mana keputusan,
+            Future Ready Executive MBA membantu pemilik PKS mengenal pasti sejauh mana keputusan,
             pengetahuan pelanggan dan kawalan operasi masih tertumpu pada satu orang sahaja. Program
             ini membawa rangka kerja sistem, strategi dan kepimpinan kepada kerja mengagihkan tugas,
             membina keupayaan pasukan, merancang penggantian dan memacu pertumbuhan.
@@ -92,7 +92,7 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Tanda-tanda dalam operasi</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Kenal pasti di mana perniagaan terlalu bergantung pada pemilik.</h2>
+            <h2 className="sec-h">Kenal pasti sejauh mana perniagaan terlalu bergantung pada pemilik.</h2>
           </Reveal>
           <p className="sec-sub">
             Guna tanda-tanda ini untuk mengenal pasti kekangan operasi mana yang berbaloi ditangani oleh projek amali anda.

@@ -38,14 +38,14 @@ const jsonLd = {
     "@id": PROVIDER_ID,
     name: "Asian Business Consulting",
   },
-  articleSection: "Insights",
+  articleSection: "Wawasan",
   about: "Pemikiran reka bentuk untuk pemimpin perniagaan dan strategi",
 };
 
 export default function Page() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Insights", path: "/ms/insights" }, { name: "Pemikiran Reka Bentuk", path: "/ms/insights/design-thinking-for-business" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Wawasan", path: "/ms/insights" }, { name: "Pemikiran Reka Bentuk", path: "/ms/insights/design-thinking-for-business" }]} />
       <JsonLd data={jsonLd} />
 
       <section className="section">
@@ -53,14 +53,14 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">Insights · Pemikiran</span>
+              <span className="mono sec-k">Wawasan · Pemikiran</span>
             </div>
             <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "18ch" }}>
               Pemikiran reka bentuk untuk perniagaan
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              Produk sehebat mana pun boleh gagal kalau ia menyelesaikan
+              Produk sehebat mana pun boleh gagal jika ia menyelesaikan
               masalah pelanggan yang salah. Di sinilah pemikiran reka bentuk masuk
               — satu kaedah menyelesaikan masalah yang berpusatkan manusia dan
               berulang, yang bermula daripada keperluan sebenar pelanggan, bukan
@@ -134,7 +134,7 @@ export default function Page() {
               </li>
             </ul>
 
-            <h2>Kenapa ia penting bagi pemimpin dan strategi</h2>
+            <h2>Mengapa ia penting bagi pemimpin dan strategi</h2>
             <p>
               Bagi seorang eksekutif, tarikannya bersifat komersial, bukan estetik.
               Pemikiran reka bentuk secara sistematik menekan satu risiko komersial yang
@@ -185,7 +185,7 @@ export default function Page() {
               dan kejelasan pada saat keputusan dibuat. Satu anjakan itu sahaja mengubah
               hala tuju keseluruhan pelan produk — beralih ke arah isyarat kemampuan
               kewangan secara masa nyata dan amaran berbahasa mudah, serta menjauhi
-              timbunan ciri yang nampak hebat dalam mesyuarat tetapi lemah dalam
+              timbunan ciri yang kelihatan hebat dalam mesyuarat tetapi lemah dalam
               penggunaan sebenar. Kumpulan pelanggan dan data sumbernya tidak berubah;
               yang berubah ialah pasukan itu kini memiliki takrifan yang lebih jitu
               tentang apa yang sebenarnya pelanggan mahukan.

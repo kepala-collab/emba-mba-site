@@ -44,7 +44,7 @@ const jsonLd = {
 export default function SystemsThinkingForLeaders() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Insights", path: "/ms/insights" }, { name: "Pemikiran Sistem", path: "/ms/insights/systems-thinking-for-leaders" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Wawasan", path: "/ms/insights" }, { name: "Pemikiran Sistem", path: "/ms/insights/systems-thinking-for-leaders" }]} />
       <JsonLd data={jsonLd} />
 
       <section className="section">
@@ -52,14 +52,14 @@ export default function SystemsThinkingForLeaders() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">Insights · Pemikiran</span>
+              <span className="mono sec-k">Wawasan · Pemikiran</span>
             </div>
             <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "16ch" }}>
               Pemikiran Sistem untuk Pemimpin
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Pemikiran sistem membantu pemimpin nampak struktur tersembunyi yang
+              Pemikiran sistem membantu pemimpin melihat struktur tersembunyi yang
               berulang kali melahirkan sesuatu masalah. Fokusnya beralih daripada
               peristiwa yang terpencil kepada hubungan, gelung maklum balas dan
               kelewatan yang sebenarnya membentuk hasil akhir.
@@ -91,7 +91,7 @@ export default function SystemsThinkingForLeaders() {
               itu — bukan menyalahkan orangnya.
             </blockquote>
 
-            <h2>Kenapa ia penting bagi pemimpin</h2>
+            <h2>Mengapa ia penting bagi pemimpin</h2>
             <p>
               Sesuatu masalah perniagaan bersifat sistemik apabila mengubah satu
               bahagian turut menggerakkan bahagian yang lain. Contohnya, anda mengetatkan

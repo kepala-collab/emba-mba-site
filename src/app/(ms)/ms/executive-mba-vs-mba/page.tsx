@@ -132,7 +132,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               Tetapkan dahulu hasil yang anda mahu capai sebelum membandingkan harga. Pilih MBA akademik terakreditasi MQA
               apabila langkah seterusnya anda menuntut ijazah akademik. Pilih program ini apabila yang anda perlukan ialah
-              program enam bulan, projek berteraskan cabaran perniagaan sebenar, pengiktirafan CMI terhadap Professional Standard-nya
+              program enam bulan, projek berteraskan cabaran perniagaan sebenar, pengiktirafan terhadap CMI Professional Standard
               dan kerjaya yang terus berjalan sepanjang pengajian. Yuran standard Malaysia 2026 yang diterbitkan
               ialah {FACTS.priceStd}. Pemohon Malaysia yang layak berpeluang menerima{" "}
               <Link href="/ms/fees" className="acc">penilaian biasiswa {FACTS.scholarshipProvider}</Link> — biasiswa yang terhad, diberikan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.

@@ -38,7 +38,7 @@ const articleSchema = {
 
 const COMPARISON = [
   ["Tujuan utama", "Membangunkan keupayaan kepimpinan, pengurusan atau kepakaran tertentu secara tertumpu.", "Berbeza mengikut penyedia. EMBA akademik lazimnya membawa kepada ijazah; program yang diposisikan sebagai pembangunan profesional pula wajib menyatakan kredensialnya sendiri dengan jelas."],
-  ["Tempoh", "Boleh disampaikan dalam format yang lebih pendek atau bermodul; setiap penyedia wajib menerbitkan jadualnya.", `Program ini berjalan selama enam bulan, merangkumi enam hari latihan merentasi tiga sesi berjadual.`],
+  ["Tempoh", "Boleh disampaikan dalam format yang lebih pendek atau bermodul; setiap penyedia wajib menerbitkan jadualnya.", `Program ini berjalan selama enam bulan, merangkumi enam hari latihan merentasi tiga sesi berpandu.`],
   ["Penilaian", "Boleh menggunakan bengkel, projek, kajian kes atau sijil penyelesaian.", "Program ini menggunakan bimbingan dan projek berteraskan cabaran perniagaan sebenar, tanpa peperiksaan atau tesis konvensional."],
   ["Status akademik", "Mungkin merupakan pembangunan profesional bukan ijazah; sahkan status yang dinyatakan oleh penyedia.", "Future Ready Executive MBA ini bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
   ["Aplikasi di tempat kerja", "Direka untuk membina keupayaan yang boleh terus digunakan dalam peranan semasa.", "Peserta menerapkan rangka kerja pada isu perniagaan sebenar dalam konteks organisasi mereka sendiri."],
@@ -49,7 +49,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
     <>
       <BreadcrumbJsonLd items={[
         { name: "Laman Utama", path: "/ms" },
-        { name: "Insights", path: "/ms/insights" },
+        { name: "Wawasan", path: "/ms/insights" },
         { name: "Pendidikan Eksekutif lawan Executive MBA", path: "/ms/insights/executive-education-vs-executive-mba" },
       ]} />
       <JsonLd data={articleSchema} />

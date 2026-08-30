@@ -40,7 +40,7 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berjadual, setiap satu berlangsung sepanjang satu hujung minggu." },
+    { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berpandu, setiap satu berlangsung sepanjang satu hujung minggu." },
     { h: "Atau sepenuhnya dalam talian", p: "Program ini turut ditawarkan menerusi sesi dalam talian secara langsung, dengan bimbingan dan rangka kerja yang sama seperti laluan bersemuka." },
     { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
     { h: "Terus pakai pada kerja anda sekarang", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai rangka kerja terus kepada cabaran perniagaan yang sedang anda pikul sekarang." },

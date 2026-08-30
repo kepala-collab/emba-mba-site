@@ -32,7 +32,7 @@ const STEPS = [
 ];
 
 const INCLUSIONS_MS = [
-  { b: "6 hari latihan merentasi tiga sesi berpandu", s: "Bengkel rangka kerja yang dikendalikan pengamal, mengikut tarikh yang telah diterbitkan sepanjang program enam bulan." },
+  { b: "Enam hari latihan merentasi tiga sesi berpandu", s: "Bengkel rangka kerja yang dikendalikan pengamal, mengikut tarikh yang telah diterbitkan sepanjang program enam bulan." },
   { b: "Penilaian kendiri pengurusan berpandu", s: "Nilai semula cara anda membuat keputusan hari ini, dan pilih bidang khusus untuk diperkukuh sepanjang program." },
   { b: "Bimbingan eksekutif & semakan projek", s: "Bimbingan bersemuka satu-dengan-satu, disesuaikan dengan konteks organisasi peserta sendiri." },
   { b: "The Leverage Management System (LMS)", s: "Peserta menyimpan rangka kerja program, bahan rujukan dan templat kerja untuk digunakan semula." },

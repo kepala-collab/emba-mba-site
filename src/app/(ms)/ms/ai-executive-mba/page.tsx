@@ -14,7 +14,7 @@ export const metadata = withSeo("/ms/ai-executive-mba", {
 const BUSINESS_PILLARS = [
   ["Keutamaan AI", "Hubungkan setiap kegunaan AI dengan matlamat strategik dan batasan operasi organisasi anda."],
   ["Tafsiran data", "Bezakan isyarat yang boleh dipercayai daripada data yang tidak lengkap, tidak relevan atau mengelirukan."],
-  ["Reka bentuk semula proses", "Kenal pasti di mana automasi mengubah tugas, kawalan, serahan kerja dan kuasa membuat keputusan."],
+  ["Reka bentuk semula proses", "Kenal pasti bahagian yang automasi mengubah tugas, kawalan, serahan kerja dan kuasa membuat keputusan padanya."],
   ["Tadbir urus inovasi", "Tetapkan cara idea dipilih, diuji, diukur dan diberhentikan."],
   ["Pengukuran nilai", "Tentukan pemilik, garis asas dan ukuran kejayaan bagi setiap inisiatif."],
 ];
@@ -22,7 +22,7 @@ const BUSINESS_PILLARS = [
 const CAREER_PILLARS = [
   ["Kepimpinan", "Tetapkan tujuan, sempadan dan akauntabiliti bagi kerja yang dibantu AI."],
   ["Pertimbangan kritis", "Persoalkan output model, andaiannya, kualiti bukti dan kesan yang tidak dijangka."],
-  ["Reka bentuk keputusan", "Perjelas keputusan mana yang kekal di tangan manusia dan di mana alat sekadar menyokong."],
+  ["Reka bentuk keputusan", "Perjelas keputusan mana yang kekal di tangan manusia dan bila alat sekadar menyokong."],
   ["Penjajaran pihak berkepentingan", "Terangkan perubahan yang dicadangkan, kawalannya serta kesannya terhadap pasukan dan pelanggan."],
   ["Pelaksanaan", "Ubah kegunaan yang dipilih menjadi pelan tindakan, dengan pemilik dan ukuran yang jelas."],
 ];
@@ -127,7 +127,7 @@ export default function AiExecutiveMbaPage() {
             {[
               ["Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia bukan ijazah akademik yang dikawal selia MQA."],
               ["HRD Corp", HRD_CORP_CLAIM_MS],
-              ["Format", "Program enam bulan: tiga sesi berjadual berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar."],
+              ["Format", "Program enam bulan: tiga sesi berpandu berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar."],
               ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Biasiswa LIFE Innoversity terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; ia bukan automatik, dan setiap anugerah serta yuran peserta disahkan satu per satu secara bertulis."],
               ["Projek amali", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
             ].map(([h, p]) => (

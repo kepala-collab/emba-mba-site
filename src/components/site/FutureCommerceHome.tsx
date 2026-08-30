@@ -93,7 +93,7 @@ const COPY = {
     decisionKicker: "Panduan program 2026 percuma",
     decisionTitle: "Dapatkan gambaran lengkap sebelum membuat komitmen.",
     decisionBody: "Semua yang anda perlu tahu — struktur enam bulan, tarikh, yuran, penilaian biasiswa dan pengiktirafan CMI — dalam satu PDF yang ringkas.",
-    decisionAside: "Anda tak perlu berbincang dahulu. Baca panduan ini dan nilai sendiri sama ada program ini berbaloi untuk anda.",
+    decisionAside: "Anda tidak perlu berbincang dahulu. Baca panduan ini dan nilai sendiri sama ada program ini berbaloi untuk anda.",
   },
   zh: {
     lang: "zh-Hans",

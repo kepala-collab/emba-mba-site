@@ -26,7 +26,7 @@ export default function MbaForEntrepreneursPage() {
     },
     {
       h: "Buat keputusan dengan bantuan AI",
-      p: "Kenali di mana AI benar-benar membantu kerja kajian, analisis atau aliran kerja anda — dan di mana pertimbangan dan tanggungjawab manusia tetap tak boleh diganti.",
+      p: "Kenali bahagian yang AI benar-benar membantu kerja kajian, analisis atau aliran kerja anda — dan bahagian yang pertimbangan serta tanggungjawab manusia tetap tidak boleh diganti.",
     },
     {
       h: "Bina strategi yang siap dibentangkan",
@@ -43,8 +43,8 @@ export default function MbaForEntrepreneursPage() {
   ];
 
   const format = [
-    { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berjadual membawa anda ke sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja." },
-    { h: "Tiga hujung minggu berjadual, atau sepenuhnya dalam talian", p: "Program berjalan pada tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global pula bermakna anda tak perlu hadir secara fizikal." },
+    { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berpandu membawa anda ke sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja." },
+    { h: "Tiga hujung minggu berjadual, atau sepenuhnya dalam talian", p: "Program berjalan pada tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global pula bermakna anda tidak perlu hadir secara fizikal." },
     { h: "Terus pakai sepanjang program", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai setiap rangka kerja terus pada usaha atau organisasi yang anda terajui." },
     { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
   ];

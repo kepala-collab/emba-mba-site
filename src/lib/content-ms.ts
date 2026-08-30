@@ -25,7 +25,7 @@ export const REFUND_TERMS_MS =
   "Terma pendaftaran ABC yang ditandatangani menyatakan kelayakan bayaran balik, tempoh notis, jumlah yang boleh dikembalikan, syarat pemulangan bahan pembelajaran dan tarikh pemprosesan. Peserta menerima dan menyemak terma tersebut sebelum membuat bayaran; tiada janji bayaran balik dibuat di luar terma yang ditandatangani.";
 
 export const COMPARISON_MS = [
-  { k: "Tempoh pengajian", them: "18–24 bulan", us: "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berjadual" },
+  { k: "Tempoh pengajian", them: "18–24 bulan", us: "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berpandu" },
   { k: "Fokus pembelajaran", them: "Teori akademik, penyelidikan dan analisis kes", us: "Situasi perniagaan sebenar, keputusan strategik, dan rangka kerja yang boleh anda guna berulang kali" },
   { k: "Kaedah penilaian", them: "Tugasan atau peperiksaan, berserta tesis", us: "Projek amali berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional" },
   { k: "Peranan fasilitator", them: "Pengajaran akademik dan penyeliaan penyelidikan", us: "Pengamal industri, perunding dan jurulatih eksekutif" },

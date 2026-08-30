@@ -19,7 +19,7 @@ export default function Page() {
           <p className="mono" style={{ color: "var(--muted)", marginTop: 8 }}>Kemas kini terakhir: 13 Ogos 2026</p>
         </Reveal>
         <div className="prose mt-m" style={{ marginLeft: 0 }}>
-          <p>Dasar ini menerangkan cara laman web ini memproses data peribadi menurut Akta Perlindungan Data Peribadi 2010 Malaysia [Akta 709] dan pindaannya.</p>
+          <p>Dasar ini menerangkan cara laman web ini memproses data peribadi menurut Akta Perlindungan Data Peribadi 2010 (Akta 709) dan pindaannya.</p>
           <h2>Pengawal data dan penyedia program</h2>
           <p>Laman web ini dan borang pertanyaannya dikendalikan oleh <strong>{OPERATOR.name}</strong> (nombor pendaftaran {OPERATOR.reg}), yang bertindak sebagai rakan pemasaran <strong>{SITE.provider}</strong> bagi pertanyaan program, sebut harga dan penyelarasan pendaftaran. Program disediakan oleh <strong>{SITE.provider}</strong>; data permohonan dikongsi dengan pasukan programnya untuk memproses pertanyaan, penilaian kelayakan, permohonan dan pendaftaran.</p>
           <h2>Data yang kami kumpul</h2>

@@ -30,14 +30,14 @@ const jsonLd = {
     "Panduan praktikal untuk mendedahkan andaian, mengenal pasti kebenaran asas dan membina semula pilihan strategik yang lebih baik daripada prinsip pertama.",
   author: { "@type": "Organization", "@id": EDITORIAL_TEAM_ID, name: "Asian Business Consulting Editorial Team" },
   publisher: { "@type": "Organization", "@id": PROVIDER_ID, name: "Asian Business Consulting" },
-  articleSection: "Insights",
+  articleSection: "Wawasan",
   about: "Pemikiran prinsip pertama untuk strategi perniagaan",
 };
 
 export default function FirstPrinciplesThinkingPage() {
   return (
     <>
-      <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Insights", path: "/ms/insights" }, { name: "Pemikiran Prinsip Pertama", path: "/ms/insights/first-principles-thinking" }]} />
+      <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Wawasan", path: "/ms/insights" }, { name: "Pemikiran Prinsip Pertama", path: "/ms/insights/first-principles-thinking" }]} />
       <section className="section">
         <div className="wrap">
           <JsonLd data={jsonLd} />
@@ -45,7 +45,7 @@ export default function FirstPrinciplesThinkingPage() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">Insights · Pemikiran</span>
+              <span className="mono sec-k">Wawasan · Pemikiran</span>
             </div>
             <h1
               style={{
@@ -64,7 +64,7 @@ export default function FirstPrinciplesThinkingPage() {
               Pemikiran prinsip pertama bermula apabila kita asingkan fakta yang
               benar-benar disahkan daripada kebiasaan yang sekadar diwarisi, lalu
               bina keputusan bermula daripada fakta itu. Artikel ini
-              menerangkan apa itu pemikiran prinsip pertama, kenapa ramai pemimpin
+              menerangkan apa itu pemikiran prinsip pertama, mengapa ramai pemimpin
               terlepas pandang, dan satu kaedah yang boleh anda mula guna esok
               di pejabat.
             </p>
@@ -76,14 +76,14 @@ export default function FirstPrinciplesThinkingPage() {
               Prinsip pertama ialah kebenaran asas yang tidak boleh lagi
               dipecahkan kepada sesuatu yang lebih ringkas — Aristotle menyebutnya
               titik mula segala pengetahuan tentang sesuatu perkara.
-              Pemikiran prinsip pertama sebenarnya cuma tabiat memecahkan
+              Pemikiran prinsip pertama sebenarnya hanya tabiat memecahkan
               masalah kepada kebenaran asas itu, lalu berfikir semula daripadanya —
               bukan meniru begitu sahaja apa yang orang lain sudah buat.
               Disiplin ini enggan menerima bulat-bulat kesimpulan yang belum pernah diuji pada
               masalah yang kita hadapi sekarang.
             </p>
             <p>
-              Analogi bergerak ikut corak: <strong>ini nampak macam itu, dan
+              Analogi bergerak ikut corak: <strong>ini kelihatan seperti itu, dan
               itu dahulu berjaya, jadi kita buat begini juga.</strong> Cara ini
               bukan sahaja memindahkan penyelesaian lama, malah segala andaian di
               sebaliknya sekali. Analisis prinsip pertama pula menguji setiap
@@ -91,14 +91,14 @@ export default function FirstPrinciplesThinkingPage() {
               menerimanya.
             </p>
 
-            <h2>Kenapa pemimpin cenderung meniru</h2>
+            <h2>Mengapa pemimpin cenderung meniru</h2>
             <p>
               &quot;Amalan terbaik&quot; dan penanda aras pesaing terasa seperti
               keputusan yang selamat. Ia mudah dipertahankan dalam mesyuarat
               lembaga, tidak menuntut banyak inovasi, dan memberi ketenangan bahawa
               orang lain sudah pun merintis jalan. Tetapi masalahnya ada pada
-              strukturnya: kalau strategi anda disusun daripada jawapan orang lain,
-              paling hebat pun anda cuma sampai sedikit lebih awal ke destinasi
+              strukturnya: jika strategi anda disusun daripada jawapan orang lain,
+              paling hebat pun anda hanya sampai sedikit lebih awal ke destinasi
               yang sama. Analogi mengurung anda dalam keuntungan yang bertambah
               sedikit demi sedikit. Ia berguna untuk memperhalus
               permainan yang sedia diketahui, tetapi lemah apabila anda perlu
@@ -114,7 +114,7 @@ export default function FirstPrinciplesThinkingPage() {
             <h2>Kaedah praktikal</h2>
             <p>
               Pemikiran prinsip pertama bukan percikan kebijaksanaan luar biasa.
-              Ia cuma empat langkah yang boleh diulang oleh sesiapa sahaja:
+              Ia hanya empat langkah yang boleh diulang oleh sesiapa sahaja:
             </p>
             <ul>
               <li>
@@ -132,7 +132,7 @@ export default function FirstPrinciplesThinkingPage() {
               </li>
               <li>
                 <strong>Cabar setiap andaian.</strong> Bagi setiap &quot;memang
-                beginilah caranya,&quot; tanya kenapa. Kekangan yang mana benar-benar
+                beginilah caranya,&quot; tanya mengapa. Kekangan yang mana benar-benar
                 hukum alam atau matematik, dan yang mana hanya kebiasaan, sejarah
                 atau kemudahan yang menyamar sebagai peraturan?
               </li>
@@ -158,7 +158,7 @@ export default function FirstPrinciplesThinkingPage() {
               input ini pula berharga sekian kerana pembekalnya dipilih
               bertahun-tahun lalu dan tidak pernah dikaji semula. Bina semula
               struktur kos daripada input yang sebenar, dan selalunya anda akan
-              dapati &quot;margin industri&quot; itu cuma andaian yang dikongsi
+              dapati &quot;margin industri&quot; itu hanya andaian yang dikongsi
               bersama, bukan siling yang tetap — lalu terbukalah ruang untuk
               tawaran yang jauh berbeza.
             </p>
@@ -167,10 +167,10 @@ export default function FirstPrinciplesThinkingPage() {
             <p>
               Kaedah ini ada dua kelemahan tersendiri. Pertama,{" "}
               <strong>prinsip pertama palsu</strong>: tersilap menganggap andaian
-              yang kukuh sebagai kebenaran asas. Kalau anda memecahkan masalah
+              yang kukuh sebagai kebenaran asas. Jika anda memecahkan masalah
               hanya sampai ke tahap kepercayaan sedia ada lalu berhenti di situ,
-              anda cuma menghias analogi lama dengan bahasa yang lebih yakin.
-              Teruskan bertanya kenapa sehingga anda tiba pada sesuatu yang
+              anda hanya menghias analogi lama dengan bahasa yang lebih yakin.
+              Teruskan bertanya mengapa sehingga anda tiba pada sesuatu yang
               benar-benar boleh disahkan. Kedua,{" "}
               <strong>kelumpuhan analisis</strong>: menganggap setiap perkara yang
               sudah selesai sebagai terbuka semula, lalu membina semula dunia dari

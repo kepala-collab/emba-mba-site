@@ -139,7 +139,7 @@ export default function InsightsPage() {
         lang="ms"
         programme="Executive MBA"
         heading="Terapkan cara berfikir ini pada keputusan perniagaan anda sendiri."
-        sub="Pilih panggilan telefon, pertemuan dalam talian, jumpa bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon oleh majikan. Anda tak terikat untuk mendaftar atau membayar."
+        sub="Pilih panggilan telefon, pertemuan dalam talian, jumpa bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon oleh majikan. Anda tidak terikat untuk mendaftar atau membayar."
       />
     </>
   );
