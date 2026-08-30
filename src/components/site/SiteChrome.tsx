@@ -49,7 +49,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
           "@type": "ImageObject",
           url: `${SITE.url}${OPERATOR.logo}`,
         },
-        description: `${OPERATOR.name} is the authorised ${OPERATOR.role} for marketing, programme enquiries, pricing and enrolment coordination.`,
+        description: `${OPERATOR.name} is the authorised ${OPERATOR.role} for programme enquiries, pricing and enrolment coordination.`,
         ...(operatorSameAs.length ? { sameAs: operatorSameAs } : {}),
         address: {
           "@type": "PostalAddress",

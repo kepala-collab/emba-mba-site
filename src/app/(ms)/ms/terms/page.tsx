@@ -22,7 +22,7 @@ export default function Page() {
         <div className="prose mt-m" style={{ marginLeft: 0 }}>
           <p>Dengan menggunakan laman web ini atau menghantar pertanyaan, anda bersetuju dengan terma laman berikut. Pendaftaran rasmi, bayaran dan bayaran balik tertakluk pada terma pendaftaran bertulis yang dikeluarkan oleh penyedia program.</p>
           <h2>Laman web dan penyedia program</h2>
-          <p>Laman web ini dikendalikan oleh <strong>{OPERATOR.name}</strong> (nombor pendaftaran {OPERATOR.reg}), yang bertindak sebagai rakan pemasaran <strong>{SITE.provider}</strong> bagi pertanyaan program, sebut harga dan penyelarasan pendaftaran. Program disediakan dan disampaikan oleh <strong>{SITE.provider}</strong>; kedua-duanya ialah syarikat yang berasingan.</p>
+          <p>Laman web ini dikendalikan oleh <strong>{OPERATOR.name}</strong> (nombor pendaftaran {OPERATOR.reg}), yang bertindak sebagai agensi pemasaran <strong>{SITE.provider}</strong> bagi pertanyaan program, sebut harga dan penyelarasan pendaftaran. Program disediakan dan disampaikan oleh <strong>{SITE.provider}</strong>; kedua-duanya ialah syarikat yang berasingan.</p>
           <h2>Maklumat program dan kelayakan</h2>
           <p>Laman ini menerbitkan maklumat program yang disediakan oleh ABC. Cadangan bertulis dan terma pendaftaran yang ditandatangani bagi setiap peserta menyatakan harga, kaedah penyampaian, keperluan tamat program dan sijil. Jika ABC mengubah tarikh yang diterbitkan, peserta berdaftar akan menerima tarikh gantian secara bertulis. Executive MBA dalam kepimpinan perniagaan masa hadapan dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.</p>
           <h2>Chartered Manager</h2>

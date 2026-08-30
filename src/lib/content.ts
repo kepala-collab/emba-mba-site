@@ -58,7 +58,7 @@ export const PROGRAMME_PROOF = {
 } as const;
 
 export const ORGANISATIONAL_STATEMENT =
-  `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount.`;
+  `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its marketing agency for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount.`;
 
 export const ABC_PROFILE = {
   name: "Asian Business Consulting",
@@ -70,11 +70,11 @@ export const ABC_PROFILE = {
     `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification.`,
 } as const;
 
-// The Associate Partner to Asian Business Consulting that operates this site
+// The marketing agency to Asian Business Consulting that operates this site
 // and handles marketing, enquiries, pricing and enrolment coordination.
 export const OPERATOR = {
   name: "Right Dots Resources",
-  role: "Associate Partner",
+  role: "marketing agency",
   reg: "202603145615 (003856919-U)",
   address:
     "No. 86, Jalan Desa Bakti, Taman Desa, Jalan Klang Lama, 58100 Kuala Lumpur, Wilayah Persekutuan, Malaysia",

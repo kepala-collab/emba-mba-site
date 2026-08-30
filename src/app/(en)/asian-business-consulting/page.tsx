@@ -170,7 +170,7 @@ export default function AsianBusinessConsultingPage() {
             </div>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Right Dots Resources</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>ABC develops and delivers the programme; {OPERATOR.name} is its Associate Partner, handling marketing, programme enquiries, pricing and enrolment coordination.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>ABC develops and delivers the programme; {OPERATOR.name} is its marketing agency, handling programme enquiries, pricing and enrolment coordination.</p>
               <Link href="/about" className="text-action" style={{ marginTop: 10 }}>About the programme team <span aria-hidden="true">↗</span></Link>
             </div>
           </div>

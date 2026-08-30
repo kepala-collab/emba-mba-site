@@ -40,7 +40,7 @@ export default function AboutPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">课程团队</span></div>
               <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.25rem)", maxWidth: "22ch" }}>从设计课程的人，到解答您疑问的人，责任线一清二楚。</h2>
               <p className="sec-sub" style={{ maxWidth: "62ch" }}><strong>Asian Business Consulting（ABC）</strong>是 HRD Corp 注册培训机构，为专业人士与企业设计并交付自家的招牌课程，Future Ready Executive MBA, CMI (UK) 便是其一。</p>
-              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>这门面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书，是 Asian Business Consulting 设计并交付的六个月专业发展课程。Right Dots Resources 是其 Associate Partner，负责课程咨询与报名协调。已注册 HRD Corp 的马来西亚雇主须在开课前经 e-TRiS 递交 grant 申请；资格与批准金额由 HRD Corp 裁定。</p>
+              <p className="fine" style={{ maxWidth: "62ch", marginTop: 18 }}>这门面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书，是 Asian Business Consulting 设计并交付的六个月专业发展课程。Right Dots Resources 是其市场推广机构，负责课程咨询与报名协调。已注册 HRD Corp 的马来西亚雇主须在开课前经 e-TRiS 递交 grant 申请；资格与批准金额由 HRD Corp 裁定。</p>
               <Link href="/zh/asian-business-consulting" className="text-action" style={{ marginTop: 16 }}>进一步了解 Asian Business Consulting <span aria-hidden="true">↗</span></Link>
               <figure className="partnership-seal">
                 <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting 与 Right Dots Resources 战略合作" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />

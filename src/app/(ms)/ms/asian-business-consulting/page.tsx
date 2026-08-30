@@ -168,7 +168,7 @@ export default function AbcPageMs() {
             </div>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Right Dots Resources</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>ABC membangunkan dan menyampaikan program; {OPERATOR.name} ialah rakan pemasarannya yang menguruskan promosi, pertanyaan program, sebut harga dan penyelarasan pendaftaran.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>ABC membangunkan dan menyampaikan program; {OPERATOR.name} ialah agensi pemasarannya yang menguruskan promosi, pertanyaan program, sebut harga dan penyelarasan pendaftaran.</p>
               <Link href="/ms/contact" className="text-action" style={{ marginTop: 10 }}>Hubungi pasukan program <span aria-hidden="true">↗</span></Link>
             </div>
           </div>

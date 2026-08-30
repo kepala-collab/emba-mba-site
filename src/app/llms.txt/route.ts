@@ -7,7 +7,7 @@ export function GET() {
 
 > ${PROGRAMME_POSITIONING_SENTENCE} The programme is delivered by ${SITE.provider} in Malaysia and is not an MQA-accredited academic qualification.
 
-${OPERATOR.name} is ABC's ${OPERATOR.role} for marketing, programme enquiries, pricing and enrolment coordination. ${OPERATOR.name} and ${SITE.provider} are separate independent companies; ${SITE.provider} provides and delivers the programme. ${ABC_PROFILE.name} is a ${ABC_PROFILE.hrdStatus} and develops and structures signature training programmes.
+${OPERATOR.name} is ABC's ${OPERATOR.role} for programme enquiries, pricing and enrolment coordination. ${OPERATOR.name} and ${SITE.provider} are separate independent companies; ${SITE.provider} provides and delivers the programme. ${ABC_PROFILE.name} is a ${ABC_PROFILE.hrdStatus} and develops and structures signature training programmes.
 
 ## Primary sources
 - [Programme](${SITE.url}/executive-mba): scope, format, credential and audience

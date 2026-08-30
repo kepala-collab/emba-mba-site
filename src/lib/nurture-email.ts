@@ -195,7 +195,7 @@ const MS: Record<NurtureStepKey, StepCopy> = {
 const FOOTER = {
   en: {
     statement:
-      "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its Associate Partner for programme enquiries and enrolment coordination.",
+      "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its marketing agency for programme enquiries and enrolment coordination.",
     reason:
       "You are receiving this because you requested the programme guide and agreed to receive programme updates and marketing communications.",
     unsubscribe: "Unsubscribe",
@@ -204,7 +204,7 @@ const FOOTER = {
   },
   zh: {
     statement:
-      "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的六个月专业发展课程。Right Dots Resources 为其课程咨询与报名协调的合作伙伴。",
+      "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。这是由 Asian Business Consulting 设计及授课的六个月专业发展课程。Right Dots Resources 是其市场推广机构，负责课程咨询与报名协调。",
     reason: "您收到本邮件，是因为您索取了课程指南并同意接收课程资讯及营销通讯。",
     unsubscribe: "退订",
     contact: "support@futurereadymba.com · +60 12-981 8533 · futurereadymba.com",
@@ -212,7 +212,7 @@ const FOOTER = {
   },
   ms: {
     statement:
-      "Executive MBA dalam Future Ready Business Leadership dianugerah dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama enam bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources adalah Rakan Bersekutu bagi pertanyaan program dan penyelarasan pendaftaran.",
+      "Executive MBA dalam Future Ready Business Leadership dianugerah dan disokong oleh CMI. Ia merupakan program pembangunan profesional selama enam bulan yang direka dan disampaikan oleh Asian Business Consulting. Right Dots Resources ialah agensi pemasaran bagi pertanyaan program dan penyelarasan pendaftaran.",
     reason:
       "Anda menerima e-mel ini kerana anda memohon panduan program dan bersetuju menerima kemas kini program serta komunikasi pemasaran.",
     unsubscribe: "Berhenti langgan",
