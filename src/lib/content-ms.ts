@@ -38,7 +38,7 @@ export const COMPARISON_MS = [
 export const CORE_PAGES_MS = {
   method: {
     eyebrow: "Kaedah keputusan pengurusan F.A.S.T.",
-    title: "Ubah isu yang rumit menjadi keputusan yang jelas dan boleh dilaksanakan",
+    title: "Ubah kerumitan ke keputusan",
     intro: "F.A.S.T. bermula daripada isu perniagaan sebenar. Ia membantu anda menentukan masalah yang betul, menguji andaian, menimbang pilihan, dan mengubah keputusan menjadi pelan tindakan yang boleh dilaksanakan.",
     sections: [
       ["Langkah 1: Kenal pasti masalah sebenar", "Asingkan gejala di permukaan, fakta, kekangan dan andaian yang belum diuji, supaya keputusan pengurusan yang sebenarnya perlu dibuat menjadi jelas."],

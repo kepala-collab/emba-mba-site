@@ -76,7 +76,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "24ch" }}>
-              Executive MBA untuk pemimpin Malaysia yang terus bekerja.
+              Executive MBA untuk pemimpin yang terus bekerja.
             </h1>
           </Reveal>
           <Reveal>
@@ -106,7 +106,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       {/* WHY MALAYSIAN LEADERS CHOOSE IT */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Mengapa pemimpin Malaysia memilihnya</span></div></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Kenapa pemimpin memilihnya</span></div></Reveal>
           <Reveal><h2 className="sec-h">Yuran dalam ringgit, pembiayaan diterajui majikan dan jadual yang jelas.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
