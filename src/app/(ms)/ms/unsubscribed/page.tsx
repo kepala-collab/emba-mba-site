@@ -11,15 +11,15 @@ export const metadata = withSeo("/ms/unsubscribed", {
 const COPY = {
   done: {
     heading: "Anda telah berhenti melanggan.",
-    body: "Kami tidak akan menghantar e-mel pemasaran lagi kepada anda. Jika anda mempunyai pertanyaan yang sedang berjalan, pasukan program akan tetap membalas perbualan tersebut. Anda boleh menyertai semula senarai e-mel pada bila-bila masa dengan memohon semula panduan program.",
+    body: "Kami tidak akan menghantar e-mel pemasaran lagi kepada anda. Kalau ada pertanyaan yang masih berjalan, pasukan program tetap akan membalasnya. Anda boleh menyertai semula senarai e-mel pada bila-bila masa dengan meminta semula panduan program.",
   },
   invalid: {
     heading: "Pautan tidak dapat disahkan.",
-    body: "Pautan berhenti melanggan ini tidak lengkap atau tidak sah, dan keutamaan anda belum diubah. Sila e-mel kami dan kami akan memberhentikan langganan anda secara manual.",
+    body: "Pautan berhenti melanggan ini tidak lengkap atau tidak sah, jadi keutamaan anda belum diubah. E-mel sahaja kami dan kami akan hentikan langganan anda secara manual.",
   },
   error: {
     heading: "Buat masa ini permintaan tidak dapat diproses.",
-    body: "Kami buat masa ini tidak dapat mengemas kini keutamaan anda. Sila e-mel kami dan kami akan memberhentikan langganan anda secara manual.",
+    body: "Buat masa ini kami tidak dapat mengemas kini keutamaan anda. E-mel sahaja kami dan kami akan hentikan langganan anda secara manual.",
   },
 } as const;
 

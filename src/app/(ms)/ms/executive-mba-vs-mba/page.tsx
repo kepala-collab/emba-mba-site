@@ -53,8 +53,8 @@ export default function ExecutiveMbaVsMbaPage() {
               <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> ialah program
               profesional yang dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik bertauliah MQA
               atau kelayakan yang dikawal selia. Pilih MBA akademik apabila matlamat anda menuntut
-              ijazah akademik. Pilih program ini apabila matlamat anda ialah pembangunan pengurusan yang boleh terus diterapkan
-              sambil anda kekal bekerja.
+              ijazah akademik. Pilih program ini apabila yang anda mahu ialah pembangunan pengurusan yang boleh terus dipakai
+              sambil anda terus bekerja.
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -108,13 +108,13 @@ export default function ExecutiveMbaVsMbaPage() {
               <div className="card" style={{ height: "100%", border: "1px solid var(--line-2)", background: "linear-gradient(180deg,var(--surface-2),var(--surface))" }}>
                 <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>Pilih Executive MBA ini jika…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "var(--ink)" }}>
-                  Anda mahukan program profesional yang diterapkan pada kerja sebenar, dengan format separuh masa.
+                  Anda mahukan program profesional yang boleh terus dipakai pada kerja sebenar, dengan format separuh masa.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  Laluan ini direka untuk mereka yang memikul tanggungjawab strategik atau menyeluruh dalam
-                  perniagaan, dan yang mahukan rangka kerja membuat keputusan yang berstruktur, projek berteraskan cabaran perniagaan sebenar
+                  Laluan ini untuk anda yang memikul tanggungjawab strategik atau menyeluruh dalam
+                  perniagaan, dan mahukan cara membuat keputusan yang lebih tersusun, projek berteraskan cabaran perniagaan sebenar
                   dan CMI Certificate of Recognition. Sepanjang enam bulan, program ini berjalan menerusi tiga hujung minggu berjadual,
-                  sesi bimbingan dan projek yang diterapkan pada kerja anda sendiri.
+                  sesi bimbingan dan projek yang anda terapkan pada kerja sendiri.
                 </p>
               </div>
             </Reveal>
@@ -135,7 +135,7 @@ export default function ExecutiveMbaVsMbaPage() {
               program enam bulan, projek berteraskan cabaran perniagaan sebenar, pengiktirafan CMI terhadap Professional Standard-nya
               dan kerjaya yang terus berjalan sepanjang pengajian. Yuran standard Malaysia 2026 yang diterbitkan
               ialah {FACTS.priceStd}. Pemohon Malaysia yang layak berpeluang menerima{" "}
-              <Link href="/ms/fees" className="acc">penilaian biasiswa {FACTS.scholarshipProvider}</Link> — biasiswa yang terhad, dianugerahkan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.
+              <Link href="/ms/fees" className="acc">penilaian biasiswa {FACTS.scholarshipProvider}</Link> — biasiswa yang terhad, diberikan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.
             </p>
           </Reveal>
           <Reveal>

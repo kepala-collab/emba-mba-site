@@ -8,7 +8,7 @@ export const metadata = withSeo("/ms", {
   openGraph: {
     type: "website",
     title: "Executive MBA Enam Bulan untuk Pengurus Bekerja",
-    description: "Asah pertimbangan pengurusan, kemahiran membuat keputusan dan pelaksanaan melalui isu perniagaan sebenar.",
+    description: "Tajamkan pertimbangan pengurusan, keputusan dan pelaksanaan anda menerusi isu perniagaan sebenar.",
     locale: "ms_MY",
     url: `${SITE.url}/ms`,
   },

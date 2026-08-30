@@ -17,28 +17,28 @@ const ARTICLES = [
     title: "Pendidikan Eksekutif vs Executive MBA",
     slug: "/ms/insights/executive-education-vs-executive-mba",
     blurb:
-      "Cara menimbang kredensial, tempoh, penilaian, aplikasi di tempat kerja dan status akademik sebelum memilih program yang tepat.",
+      "Cara menimbang kredensial, tempoh, penilaian, penggunaan di pejabat dan status akademik sebelum anda pilih program yang betul.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Prinsip Pertama untuk Pemimpin Perniagaan",
     slug: "/ms/insights/first-principles-thinking",
     blurb:
-      "Cara membezakan kekangan yang benar-benar wujud daripada sekadar andaian, lalu membina pilihan bermula daripada fakta asas.",
+      "Cara membezakan halangan yang betul-betul wujud daripada sekadar andaian, lalu membina pilihan bermula daripada fakta asas.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Sistem untuk Pemimpin",
     slug: "/ms/insights/systems-thinking-for-leaders",
     blurb:
-      "Cara membaca hubungan, gelung maklum balas dan kesan susulan yang tersembunyi sebelum membuat keputusan.",
+      "Cara membaca hubungan, gelung maklum balas dan kesan susulan yang tersembunyi sebelum anda buat keputusan.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Reka Bentuk untuk Perniagaan",
     slug: "/ms/insights/design-thinking-for-business",
     blurb:
-      "Cara menyatukan bukti daripada pelanggan, prototaip dan kekangan komersial sebelum melaburkan sumber.",
+      "Cara menyatukan bukti daripada pelanggan, prototaip dan realiti komersial sebelum anda melabur sumber.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function InsightsPage() {
             </div>
             <h1 className="sec-h">Rangka kerja pemikiran untuk pemimpin</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              Panduan keputusan dan pengenalan praktikal kepada cara menaakul yang kami terapkan sepanjang program.
+              Panduan keputusan dan pengenalan ringkas kepada cara berfikir yang kami guna sepanjang program.
             </p>
           </Reveal>
 
@@ -130,7 +130,7 @@ export default function InsightsPage() {
           </div>
 
           <p className="fine mt-s">
-            Setiap artikel menyatakan sumbernya serta tarikh ia terakhir disemak secara menyeluruh.
+            Setiap artikel menyatakan sumbernya dan tarikh ia terakhir disemak.
           </p>
         </div>
       </section>
@@ -139,7 +139,7 @@ export default function InsightsPage() {
         lang="ms"
         programme="Executive MBA"
         heading="Terapkan cara berfikir ini pada keputusan perniagaan anda sendiri."
-        sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon oleh majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar."
+        sub="Pilih panggilan telefon, pertemuan dalam talian, jumpa bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon oleh majikan. Anda tak terikat untuk mendaftar atau membayar."
       />
     </>
   );

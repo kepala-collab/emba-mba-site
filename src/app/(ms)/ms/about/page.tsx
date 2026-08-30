@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Perspektif Malaysia</span></div>
               <h2 className="sec-h" style={{ fontSize: "clamp(2rem,4vw,3.35rem)", maxWidth: "16ch" }}>Lebih ramai rakyat Malaysia, melangkah maju.</h2>
-              <p className="sec-sub">Dunia perniagaan bergerak pantas. Pertimbangan yang baik memberi seseorang tempat berpijak yang teguh.</p>
+              <p className="sec-sub">Dunia perniagaan bergerak pantas. Keputusan yang baik memberi anda tempat berpijak yang teguh.</p>
               <p className="fine" style={{ maxWidth: "58ch", marginTop: 20 }}>Roy Affandi pernah berkhidmat di Pejabat Gabenor Bank Negara Malaysia serta memegang jawatan kanan dalam strategi korporat dan perniagaan di sektor swasta. Beliau memiliki B.Econs (Hons) (Analytical) dari Universiti Malaya, melanjutkan pengajian pascasiswazah di University of Melbourne, dan merupakan ahli CMI (UK).</p>
               <p className="fine" style={{ maxWidth: "58ch", marginTop: 16 }}>Hari ini, pasaran, jangkaan pelanggan dan teknologi berubah lebih pantas. AI mengubah maklumat yang perlu ditimbang pemimpin sebelum membuat keputusan. Jawapannya bukan lebih banyak hingar atau teori semata-mata, tetapi rangka kerja praktikal yang membantu orang bertanya soalan yang lebih tepat, berfikir dengan jelas dan bertindak dengan yakin.</p>
             </div>

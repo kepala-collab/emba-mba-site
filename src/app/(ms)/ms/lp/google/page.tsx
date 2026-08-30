@@ -16,20 +16,20 @@ export const metadata = withSeo("/ms/lp/google", {
 const SOURCE = "lp-google-ms";
 
 const INCLUDED = [
-  ["Tiga sesi berpandu secara langsung", "Dikendalikan oleh pengamal perniagaan, perunding dan jurulatih eksekutif yang disahkan ABC, dalam sesi bersama kohort anda."],
-  ["Diagnostik kepimpinan peribadi", "Penilaian berstruktur untuk mengenal pasti corak anda membuat keputusan dan keutamaan pembangunan diri."],
-  ["Bimbingan eksekutif untuk projek anda", "Bimbingan peribadi yang diterapkan terus pada perniagaan sebenar anda, bukan sekadar kajian kes."],
-  ["Sistem pengurusan pembelajaran (LMS)", "Simpan rangka kerja, rujukan dan templat kerja untuk terus digunakan selepas program tamat."],
-  ["Projek berteraskan cabaran perniagaan sebenar", "Hantar satu pelan tindakan perniagaan untuk dinilai fasilitator; tiada tesis atau peperiksaan tradisional."],
+  ["Tiga sesi berpandu secara langsung", "Dikendalikan oleh pengamal perniagaan, perunding dan jurulatih eksekutif yang disahkan ABC — anda belajar secara langsung bersama kohort anda."],
+  ["Diagnostik kepimpinan peribadi", "Penilaian tersusun untuk melihat cara anda membuat keputusan dan bahagian mana yang paling berbaloi anda kembangkan."],
+  ["Bimbingan eksekutif untuk projek anda", "Bimbingan peribadi yang terus dipakai pada perniagaan sebenar anda — bukan sekadar kajian kes."],
+  ["Sistem pengurusan pembelajaran (LMS)", "Simpan semua rangka kerja, rujukan dan templat, dan terus gunakannya di pejabat selepas program tamat."],
+  ["Projek berteraskan cabaran perniagaan sebenar", "Hantar satu pelan tindakan perniagaan untuk dinilai fasilitator — tiada tesis atau peperiksaan tradisional."],
   ["Dianugerahkan dan disokong oleh CMI (UK)", "Chartered Manager ialah laluan pilihan yang berasingan, dengan kelayakan, penilaian dan yuran tersendiri."],
 ];
 
 const CMP = [
-  ["Masa", "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berpandu", "18–24 bulan"],
-  ["Pelaburan", "Yuran standard RM10,000.00; biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak automatik dan bukan kod diskaun", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
-  ["Format", "Tiga hujung minggu berjadual sepanjang program; anda terus bekerja sepanjang tempoh itu", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
-  ["Penilaian", "Projek berteraskan cabaran perniagaan anda sendiri; tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
-  ["Sijil", "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik bertauliah MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
+  ["Masa", "Enam bulan — enam hari latihan, anda selesaikan menerusi tiga sesi berpandu", "18–24 bulan"],
+  ["Pelaburan", "Yuran standard RM10,000.00. Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik dan bukan kod diskaun", "Yuran pengajian dan caj tambahan yang diterbitkan institusi penganugerah"],
+  ["Format", "Tiga hujung minggu berjadual sepanjang program — anda terus bekerja seperti biasa sepanjang tempoh itu", "Mengikut jadual akademik yang diterbitkan institusi penganugerah"],
+  ["Penilaian", "Projek berteraskan cabaran perniagaan anda sendiri — tiada peperiksaan atau tesis tradisional", "Tugasan atau peperiksaan, berserta tesis"],
+  ["Sijil", "Sijil pengiktirafan program profesional CMI — bukan ijazah akademik bertauliah MQA", "Ijazah MBA akademik daripada institusi penganugerah"],
 ];
 
 export default function MsGoogleLP() {
@@ -39,7 +39,7 @@ export default function MsGoogleLP() {
         <div className="wrap">
           <div className="lpg-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 48, alignItems: "start" }}>
             <div>
-              <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Untuk pengurus di Malaysia yang sedang menimbang program pembangunan profesional</span></div></Reveal>
+              <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Untuk pengurus di Malaysia yang sedang menimbang langkah pembangunan profesional seterusnya</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
                   Tamatkan dalam enam bulan: Executive MBA dalam kepimpinan perniagaan masa hadapan, <em style={{ color: "var(--crimson)", fontStyle: "normal" }}>dianugerahkan dan disokong oleh CMI.</em>
@@ -47,7 +47,7 @@ export default function MsGoogleLP() {
               </Reveal>
               <Reveal delay={110}>
                 <p style={{ color: "var(--ink-2)", fontSize: "1.1rem", maxWidth: "44ch", margin: "22px 0 26px", lineHeight: 1.9 }}>
-                  Lengkapkan tiga sesi berpandu, projek perniagaan sebenar dan program pembangunan profesional yang disokong CMI dalam enam bulan, sambil anda terus bekerja. <b style={{ color: "var(--ink)" }}>Chartered Manager</b> ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
+                  Selesaikan tiga sesi berpandu, projek perniagaan sebenar dan program pembangunan profesional yang disokong CMI dalam enam bulan — sambil anda terus bekerja. <b style={{ color: "var(--ink)" }}>Chartered Manager</b> pula ialah laluan CMI yang berasingan dan bersifat pilihan, dengan kelayakan, penilaian dan yuran tersendiri.
                 </p>
               </Reveal>
               <Reveal delay={150}>
@@ -58,7 +58,7 @@ export default function MsGoogleLP() {
               </Reveal>
               <Reveal delay={190}>
                 <div className="lpg-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "var(--line)", marginTop: 24, borderRadius: 12, overflow: "hidden" }}>
-                  {[["6 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Diselesaikan dalam tiga sesi berpandu"], ["Kelayakan", "Penilaian biasiswa terpilih untuk pemohon Malaysia"]].map(([b, s]) => (
+                  {[["6 bulan", "Program pembangunan profesional lengkap"], [FACTS.trainingDays + " hari", "Anda selesaikan menerusi tiga sesi berpandu"], ["Kelayakan", "Penilaian biasiswa terpilih untuk pemohon Malaysia"]].map(([b, s]) => (
                     <div key={s} className={b.includes("→") ? "lpg-price-stat" : undefined} style={{ background: "var(--surface)", padding: "16px 14px" }}>
                       <b style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.3rem", display: "block", color: "var(--ink)" }}>{b}</b>
                       <span className="mono" style={{ fontSize: ".58rem", letterSpacing: ".04em", color: "var(--muted)" }}>{s}</span>
@@ -88,7 +88,7 @@ export default function MsGoogleLP() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang termasuk</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Pembelajaran dan sokongan yang sudah termasuk dalam yuran program.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Semua pembelajaran dan sokongan ini sudah termasuk dalam yuran program.</h2></Reveal>
           <div className="insight-grid mt-m">
             {INCLUDED.map(([h, p], i) => (
               <Reveal key={h} delay={(i % 3) * 60}>
@@ -124,7 +124,7 @@ export default function MsGoogleLP() {
       <section id="request-plan-again" className="section">
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
           <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>Dapatkan maklumat program dan biasiswa 2026.</h2></Reveal>
-          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>Dapatkan maklumat lengkap dahulu, kemudian pilih sama ada mahu berbincang lanjut melalui WhatsApp atau panggilan ringkas. Pasukan program akan menjelaskan tarikh sesi pengambilan, yuran peserta Malaysia dan proses permohonan HRD Corp yang diterajui majikan. {HRD_CORP_CLAIM_MS}</p></Reveal>
+          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>Ambil maklumat lengkap dahulu, kemudian barulah pilih sama ada mahu berbincang lanjut melalui WhatsApp atau panggilan ringkas. Pasukan program akan menerangkan tarikh sesi pengambilan, yuran peserta Malaysia dan proses permohonan HRD Corp yang diterajui majikan. {HRD_CORP_CLAIM_MS}</p></Reveal>
           <Reveal delay={80}>
             <div style={{ maxWidth: 560, margin: "26px auto 0", textAlign: "left" }}>
               <LeadForm programme="Executive MBA" source={SOURCE} lang="ms" placement="footer-cta" variant="campaign" defaultIntent="details_first" />

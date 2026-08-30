@@ -22,7 +22,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Kohort Bahasa Inggeris dan Mandarin 2026</span></div>
             <h1 className="sec-h">Pilih kohort yang sesuai dengan jadual kerja anda.</h1>
-            <p className="sec-sub">Kelima-lima kohort yang diterbitkan lengkap dalam tempoh enam bulan menerusi tiga sesi hujung minggu. Chartered Manager ialah laluan pilihan CMI yang berasingan dan tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
+            <p className="sec-sub">Setiap kohort yang diterbitkan selesai dalam enam bulan menerusi tiga sesi hujung minggu. Chartered Manager pula ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
             <p className="fine mt-s">Pasukan program mengesahkan kekosongan kohort semasa membalas pertanyaan anda.</p>
           </Reveal>
         </div>
@@ -41,7 +41,7 @@ export default function Page() {
         <div className="wrap maxw-820">
           <Reveal>
             <h2 className="sec-h">Sebelum membuat keputusan, sahkan tarikh dan urusan kehadiran anda.</h2>
-            <p className="sec-sub">Maklumkan kepada pasukan program tarikh dan bahasa pilihan anda. Anda boleh memilih panggilan ringkas, sesi penerangan dalam talian, pertemuan di lokasi yang dipersetujui, atau menerima maklumat terlebih dahulu.</p>
+            <p className="sec-sub">Beritahu pasukan program tarikh dan bahasa pilihan anda. Anda boleh pilih panggilan ringkas, sesi penerangan dalam talian, pertemuan di lokasi yang dipersetujui, atau sekadar menerima maklumat dahulu.</p>
             <div className="mt-m"><Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.conversation} →</Link></div>
           </Reveal>
         </div>

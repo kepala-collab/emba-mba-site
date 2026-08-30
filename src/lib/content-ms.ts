@@ -19,14 +19,14 @@ export const HRD_CORP_CLAIM_MS =
   "Majikan Malaysia yang berdaftar dengan HRD Corp perlu mengemukakan permohonan geran melalui e-TRiS sebelum program bermula. HRD Corp menentukan kelayakan dan jumlah yang diluluskan berdasarkan Allowable Cost Matrix; jumlah pembiayaan tidak melebihi baki levi majikan. Pihak yang memohon ialah majikan, bukan peserta.";
 
 export const PROGRAMME_AUDIENCE_MS =
-  "Sesuai untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang bertanggungjawab ke atas hasil perniagaan, pasukan, keputusan rentas fungsi atau rancangan pertumbuhan.";
+  "Sesuai untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan — mereka yang memikul tanggungjawab sebenar: hasil syarikat, pasukan, keputusan merentas jabatan atau hala tuju pertumbuhan.";
 
 export const REFUND_TERMS_MS =
   "Terma pendaftaran ABC yang ditandatangani menyatakan kelayakan bayaran balik, tempoh notis, jumlah yang boleh dikembalikan, syarat pemulangan bahan pembelajaran dan tarikh pemprosesan. Peserta menerima dan menyemak terma tersebut sebelum membuat bayaran; tiada janji bayaran balik dibuat di luar terma yang ditandatangani.";
 
 export const COMPARISON_MS = [
   { k: "Tempoh pengajian", them: "18–24 bulan", us: "Enam bulan: enam hari latihan, diselesaikan dalam tiga sesi berjadual" },
-  { k: "Fokus pembelajaran", them: "Teori akademik, penyelidikan dan analisis kes", us: "Situasi perniagaan sebenar, pertimbangan strategik dan rangka kerja keputusan yang boleh diguna semula" },
+  { k: "Fokus pembelajaran", them: "Teori akademik, penyelidikan dan analisis kes", us: "Situasi perniagaan sebenar, keputusan strategik, dan rangka kerja yang boleh anda guna berulang kali" },
   { k: "Kaedah penilaian", them: "Tugasan atau peperiksaan, berserta tesis", us: "Projek aplikasi berasaskan perniagaan peserta sendiri; tiada peperiksaan atau tesis tradisional" },
   { k: "Peranan fasilitator", them: "Pengajaran akademik dan penyeliaan penyelidikan", us: "Pengamal industri, perunding dan jurulatih eksekutif" },
   { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: "Metodologi F.A.S.T. dan 12 rangka kerja perniagaan praktikal" },
@@ -39,7 +39,7 @@ export const CORE_PAGES_MS = {
   method: {
     eyebrow: "Kaedah keputusan pengurusan F.A.S.T.",
     title: "Menyusun isu yang rumit menjadi keputusan yang boleh dijelaskan dan dilaksanakan",
-    intro: "F.A.S.T. bermula daripada isu perniagaan sebenar: ia membantu pengurus mentakrifkan masalah, menguji andaian, membandingkan pilihan dan menterjemahkan keputusan kepada pelan tindakan.",
+    intro: "F.A.S.T. bermula daripada isu perniagaan sebenar. Ia membantu anda menentukan masalah yang betul, menguji andaian, menimbang pilihan, dan mengubah keputusan menjadi pelan tindakan yang boleh dilaksanakan.",
     sections: [
       ["Langkah 1: Kenal pasti masalah sebenar", "Asingkan gejala di permukaan, fakta, kekangan dan andaian yang belum diuji, supaya keputusan pengurusan yang sebenarnya perlu dibuat menjadi jelas."],
       ["Langkah 2: Lihat keseluruhan sistem", "Analisis pihak terlibat, proses, sumber, kebergantungan dan kesan susulan — bukan sekadar merawat satu bahagian masalah."],
@@ -52,7 +52,7 @@ export const CORE_PAGES_MS = {
   programme: {
     eyebrow: "Executive MBA enam bulan · Diiktiraf CMI (UK)",
     title: "Direka khas untuk pengurus berpengalaman yang sedang bekerja",
-    intro: "Enam hari latihan, bimbingan dan projek perniagaan diselesaikan dalam tempoh enam bulan. Peserta terus bekerja sepenuh masa sepanjang program. Peserta yang layak boleh bertanya secara berasingan tentang laluan lanjutan Chartered Manager.",
+    intro: "Enam hari latihan, bimbingan dan satu projek perniagaan — semuanya diselesaikan dalam tempoh enam bulan, dan anda terus bekerja sepenuh masa sepanjang program. Jika anda layak, anda boleh bertanya secara berasingan tentang laluan lanjutan Chartered Manager.",
     sections: [
       ["Susunan program enam bulan", "Selesaikan enam hari latihan, tiga sesi intensif, projek perniagaan dan bimbingan. Peserta yang memenuhi keperluan program menerima sijil program Executive MBA yang diiktiraf CMI."],
       ["Laluan Chartered Manager yang berasingan", "Chartered Manager ialah laluan pilihan CMI yang berasingan, dengan kelayakan, penilaian dan yuran tersendiri. Ia tidak termasuk dalam program ini atau yuran yang diterbitkan, dan tidak diberikan secara automatik kerana menamatkan program."],
@@ -66,7 +66,7 @@ export const CORE_PAGES_MS = {
   curriculum: {
     eyebrow: "Kurikulum · 12 modul",
     title: "Dua belas modul. Satu perjalanan kepimpinan bersepadu",
-    intro: "Program eksekutif enam bulan yang menggabungkan metodologi F.A.S.T. dengan pembelajaran praktikal, bimbingan dan projek kemuncak berasaskan perniagaan — tanpa peperiksaan dan tanpa tesis.",
+    intro: "Program eksekutif enam bulan yang menggabungkan metodologi F.A.S.T. dengan pembelajaran praktikal, bimbingan dan satu projek akhir berdasarkan perniagaan anda sendiri — tanpa peperiksaan, tanpa tesis.",
     sections: [
       ["Peringkat 1: Mencipta nilai", "Melalui F.A.S.T., Jobs-To-Be-Done, tinjauan masa hadapan, DNA strategi dan perancangan tindakan, takrifkan semula nilai pelanggan dan hala tuju perniagaan."],
       ["Peringkat 2: Menyampaikan nilai", "Melalui kepimpinan situasi, intervensi pasukan, pemikiran sistem dan pengurusan transformasi, terjemahkan strategi kepada tingkah laku pasukan dan mekanisme pelaksanaan."],
@@ -90,7 +90,7 @@ export const CORE_PAGES_MS = {
   intakes: {
     eyebrow: "Tarikh kohort 2026 — Bahasa Inggeris dan Mandarin",
     title: "Pilih kohort yang paling sesuai dengan jadual kerja anda",
-    intro: "Setiap kohort diselesaikan melalui tiga hujung minggu berjadual sepanjang program, merentasi tiga sesi. Pasukan program mengesahkan kekosongan kohort semasa membalas pertanyaan.",
+    intro: "Setiap kohort dijalankan pada tiga hujung minggu sepanjang program, merentasi tiga sesi. Pasukan program akan sahkan kekosongan kohort apabila membalas pertanyaan anda.",
     sections: [
       ...INTAKES.map((intake) => [
         `${intake.language === "Mandarin" ? "Mandarin" : "Bahasa Inggeris"} ${intake.co}`,

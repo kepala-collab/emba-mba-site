@@ -59,7 +59,7 @@ export default function SystemsThinkingForLeaders() {
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Pemikiran sistem membantu pemimpin melihat struktur tersembunyi yang
+              Pemikiran sistem membantu pemimpin nampak struktur tersembunyi yang
               berulang kali melahirkan sesuatu masalah. Fokusnya beralih daripada
               peristiwa yang terpencil kepada hubungan, gelung maklum balas dan
               kelewatan yang sebenarnya membentuk hasil akhir.
@@ -91,14 +91,14 @@ export default function SystemsThinkingForLeaders() {
               itu — bukan menyalahkan orangnya.
             </blockquote>
 
-            <h2>Mengapa ia penting bagi pemimpin</h2>
+            <h2>Kenapa ia penting bagi pemimpin</h2>
             <p>
               Sesuatu masalah perniagaan bersifat sistemik apabila mengubah satu
               bahagian turut menggerakkan bahagian yang lain. Contohnya, anda mengetatkan
               terma kredit lalu kehilangan pelanggan terbaik; anda mengurangkan tenaga
               kerja dan mendapati kualiti merosot dua suku tahun kemudian; anda
-              memperkenalkan insentif, tetapi yang menerima ganjaran secara teknikal
-              justeru gelagat yang salah. Insentif, gelung maklum balas dan kelewatan
+              memperkenalkan insentif, tetapi yang akhirnya diberi ganjaran ialah
+              gelagat yang salah. Insentif, gelung maklum balas dan kelewatan
               membentuk gelagat jauh lebih boleh diramal berbanding sahsiah atau usaha
               mana-mana individu.
             </p>
@@ -172,8 +172,8 @@ export default function SystemsThinkingForLeaders() {
 
             <h2>Cara menggunakannya dalam amalan</h2>
             <p>
-              Pemikiran sistem bukan falsafah yang abstrak; ia satu cara yang boleh
-              diulang untuk meneliti sesuatu keputusan sebelum anda membuatnya:
+              Pemikiran sistem bukan falsafah abstrak. Ia satu cara yang boleh
+              diulang untuk meneliti sesuatu keputusan sebelum anda buat:
             </p>
             <ul>
               <li>

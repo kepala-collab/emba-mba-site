@@ -15,7 +15,7 @@ export const metadata = withSeo("/ms/hrd-corp-claimable", {
 const STEPS = [
   {
     h: "Sahkan program yang didaftarkan",
-    p: `${SITE.provider} membekalkan majikan dengan butiran pendaftaran program, sebut harga, jadual, kandungan program dan dokumen jurulatih.`,
+    p: `${SITE.provider} memberi majikan butiran pendaftaran program, sebut harga, jadual, kandungan program dan dokumen jurulatih.`,
   },
   {
     h: "Majikan memohon sebelum latihan",
@@ -53,7 +53,7 @@ const HRD_FAQS = [
   },
   {
     q: "Bagaimana jika kami tidak berdaftar dengan HRDC?",
-    a: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
+    a: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia bukan automatik. Setiap anugerah dan yuran peserta disahkan satu per satu secara bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
   },
 ];
 
@@ -87,7 +87,7 @@ export default function HrdCorpClaimablePage() {
             <p className="sec-sub">
               {SITE.provider} ialah Penyedia Latihan HRD Corp (HRDC) yang diluluskan. Future
               Ready Business Leadership dianugerahkan dan disokong oleh Chartered Management Institute (CMI).
-              <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM_MS}</b> Pasukan program membekalkan
+              <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM_MS}</b> Pasukan program menyediakan
               dokumen sokongan program.
             </p>
           </Reveal>
@@ -168,7 +168,7 @@ export default function HrdCorpClaimablePage() {
               majikan Malaysia yang berdaftar dengan HRD Corp mengemukakan permohonan sebelum latihan.
               HRD Corp memutuskan kelayakan dan jumlah yang diluluskan, yang tidak boleh melebihi baki levi
               majikan yang ada. Belum berdaftar levi, atau menyertai secara
-              individu? Biasiswa {FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis —
+              individu? Biasiswa {FACTS.scholarshipProvider} terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis —
               atau anda boleh memilih pelan ansuran.
             </p>
           </Reveal>

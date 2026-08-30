@@ -7,7 +7,7 @@ const path = "/ms/apply";
 export const metadata = withSeo(path, {
   title: "Dapatkan Panduan Future Ready Executive MBA",
   description:
-    "Terima panduan program 2026 dengan struktur enam bulan, tarikh diterbitkan, yuran program, penilaian biasiswa dan pengiktirafan CMI.",
+    "Dapatkan panduan program 2026 dengan struktur enam bulan, tarikh yang diterbitkan, yuran program, penilaian biasiswa dan pengiktirafan CMI.",
 });
 
 export default function Page() {

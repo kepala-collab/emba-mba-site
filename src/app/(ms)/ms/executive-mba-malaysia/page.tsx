@@ -10,25 +10,25 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/executive-mba-malaysia", {
   title: "Executive MBA Malaysia untuk Pemimpin yang Bekerja",
   description:
-    "Program enam bulan di Malaysia untuk pemimpin yang terus bekerja, dengan aplikasi pada kerja sebenar, pengiktirafan CMI dan pembiayaan HRD Corp yang diterajui majikan.",
+    "Program enam bulan di Malaysia untuk pemimpin yang terus bekerja — belajar pada kerja sebenar anda, dengan pengiktirafan CMI dan pembiayaan HRD Corp yang diterajui majikan.",
 });
 
 const REASONS = [
   {
     h: "Pembiayaan HRD Corp yang diterajui majikan",
-    p: `${HRD_CORP_CLAIM_MS} Pasukan program menyediakan sebut harga, jadual, kandungan program dan dokumen jurulatih bagi menyokong permohonan majikan.`,
+    p: `${HRD_CORP_CLAIM_MS} Pasukan program menyediakan sebut harga, jadual, kandungan program dan dokumen jurulatih untuk membantu majikan memohon.`,
   },
   {
     h: "Kelayakan biasiswa untuk pemohon Malaysia",
-    p: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak automatik: setiap anugerah dan yuran peserta disahkan satu per satu secara bertulis.`,
+    p: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia bukan automatik — setiap anugerah dan yuran peserta disahkan satu per satu secara bertulis.`,
   },
   {
     h: "Enam bulan yang seiring dengan kerjaya anda",
-    p: "Sepanjang enam bulan ini, anda hadir tiga hujung minggu berjadual, dari 9 pagi hingga 6 petang, disertai sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri.",
+    p: "Sepanjang enam bulan ini, anda hadir tiga hujung minggu berjadual, dari 9 pagi hingga 6 petang, berserta sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri.",
   },
   {
     h: "Fasilitator dan kajian kes yang dekat dengan konteks ASEAN",
-    p: "Fasilitator membawa pengalaman sebenar di Malaysia dan serantau dalam kepimpinan korporat, perundingan, pembuatan, kewangan, pengurusan bakat dan transformasi organisasi.",
+    p: "Fasilitator membawa pengalaman sebenar di Malaysia dan serantau — dalam kepimpinan korporat, perundingan, pembuatan, kewangan, pengurusan bakat dan transformasi organisasi.",
   },
 ];
 
@@ -83,15 +83,15 @@ export default function ExecutiveMbaMalaysiaPage() {
             <p className="sec-sub">
               Future Ready Executive MBA ialah program pembangunan profesional selama enam bulan
               untuk pemilik perniagaan, pengarah dan pengurus kanan di Malaysia. Program ini dianugerahkan
-              dan disokong oleh CMI serta dikendalikan menerusi sesi langsung yang padat dan fokus. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_MS}</b>{" "}
-              Yuran program ditetapkan dalam ringgit, iaitu {FACTS.priceStd}. Pemohon Malaysia yang layak berpeluang menerima{" "}
-              <b style={{ color: "var(--ink)" }}>penilaian biasiswa {FACTS.scholarshipProvider}</b> — biasiswa yang terhad, dianugerahkan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.
-              Setiap peserta menerapkan rangka kerja program pada organisasi, pasaran dan realiti operasi mereka sendiri.
+              dan disokong oleh CMI, dan berjalan menerusi sesi langsung yang padat dan fokus. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_MS}</b>{" "}
+              Yuran program dalam ringgit, iaitu {FACTS.priceStd}. Pemohon Malaysia yang layak berpeluang menerima{" "}
+              <b style={{ color: "var(--ink)" }}>penilaian biasiswa {FACTS.scholarshipProvider}</b> — biasiswa yang terhad, diberikan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.
+              Setiap peserta membawa rangka kerja program ke organisasi, pasaran dan realiti operasi mereka sendiri.
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Anda terus bekerja sepanjang tempoh ini sambil melengkapkan tiga sesi hujung minggu berjadual, sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager ialah laluan pilihan CMI yang berasingan dan tidak termasuk dalam program mahupun yuran yang diterbitkan di sini.
+              Anda terus bekerja sepanjang tempoh ini sambil melengkapkan tiga sesi hujung minggu berjadual, sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program mahupun yuran yang diterbitkan di sini.
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -110,8 +110,8 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal><h2 className="sec-h">Yuran dalam ringgit, pembiayaan diterajui majikan dan jadual yang jelas.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              Program ini menyatukan CMI Certificate of Recognition dengan kelayakan biasiswa untuk pemohon Malaysia,
-              proses HRD Corp yang diterajui majikan, serta jadual kohort dalam Bahasa Inggeris dan Mandarin.
+              Dalam satu program, anda dapat CMI Certificate of Recognition, kelayakan biasiswa untuk pemohon Malaysia,
+              proses HRD Corp yang diterajui majikan, dan jadual kohort dalam Bahasa Inggeris dan Mandarin.
             </p>
           </Reveal>
           <div className="mt-m" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 18 }}>

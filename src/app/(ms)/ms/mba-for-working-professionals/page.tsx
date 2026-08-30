@@ -12,7 +12,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-working-professionals", {
   title: "Executive MBA Separuh Masa untuk Profesional Bekerja",
   description:
-    "Executive MBA enam bulan untuk profesional bekerja, disampaikan pada tiga hujung minggu berjadual atau melalui sesi dalam talian langsung.",
+    "Executive MBA enam bulan untuk profesional bekerja di Malaysia — belajar pada tiga hujung minggu berjadual atau menerusi sesi dalam talian langsung, tanpa berhenti kerja.",
 });
 
 const jsonLd = {
@@ -41,16 +41,16 @@ const jsonLd = {
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
     { h: "Tiga hujung minggu berjadual sepanjang enam bulan", p: "Program merangkumi tiga sesi berjadual, setiap satu berlangsung sepanjang satu hujung minggu." },
-    { h: "Atau sepenuhnya dalam talian", p: "Program ini turut ditawarkan menerusi sesi dalam talian secara langsung, dengan bimbingan dan rangka kerja yang serupa seperti laluan bersemuka." },
-    { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC menyediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
-    { h: "Terapkan pada kerja anda sekarang", p: "Tiada tesis mahupun peperiksaan tradisional. Peserta menerapkan rangka kerja terus kepada cabaran perniagaan yang sedang mereka pikul ketika ini." },
+    { h: "Atau sepenuhnya dalam talian", p: "Program ini turut ditawarkan menerusi sesi dalam talian secara langsung, dengan bimbingan dan rangka kerja yang sama seperti laluan bersemuka." },
+    { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
+    { h: "Terus pakai pada kerja anda sekarang", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai rangka kerja terus kepada cabaran perniagaan yang sedang anda pikul sekarang." },
   ];
 
   const audience = [
-    { h: "Pemilik & usahawan", p: "Pengasas yang sudah berkembang melangkaui apa yang mampu dibawa oleh naluri semata-mata." },
-    { h: "Pengarah & pengurus besar", p: "Pemimpin yang bertanggungjawab ke atas strategi, prestasi dan penyampaian sesebuah unit perniagaan." },
-    { h: "Pengurus kanan", p: "Pengurus yang sedang beralih daripada menyampaikan satu fungsi kepada memikul keputusan rentas fungsi." },
-    { h: "Profesional berpengalaman", p: "Profesional yang bertanggungjawab ke atas strategi, transformasi, inovasi atau pertumbuhan." },
+    { h: "Pemilik & usahawan", p: "Pengasas yang perniagaannya sudah membesar melangkaui apa yang mampu dibawa oleh naluri semata-mata." },
+    { h: "Pengarah & pengurus besar", p: "Pemimpin yang memikul strategi, prestasi dan penyampaian sesebuah unit perniagaan." },
+    { h: "Pengurus kanan", p: "Pengurus yang sedang beralih daripada mengurus satu fungsi kepada memikul keputusan merentas jabatan." },
+    { h: "Profesional berpengalaman", p: "Profesional yang memikul strategi, transformasi, inovasi atau pertumbuhan." },
   ];
 
   return (
@@ -67,13 +67,13 @@ export default function MbaForWorkingProfessionalsPage() {
             </div>
             <Reveal>
               <h1 className="sec-h">
-                Jadual Executive MBA separuh masa untuk profesional yang terus bekerja <span className="acc">dalam peranan mereka</span>.
+                Jadual Executive MBA separuh masa untuk profesional yang terus bekerja <span className="acc">dalam peranan sedia ada</span>.
               </h1>
             </Reveal>
             <p className="sec-sub">
-              Future Ready Executive MBA direka untuk mereka yang mahu belajar tanpa perlu meninggalkan
+              Future Ready Executive MBA direka untuk anda yang mahu belajar tanpa perlu berhenti
               kerja sepenuh masa. Program ini berjalan selama enam bulan, menerusi tiga hujung minggu
-              berjadual sepanjang tempoh tersebut. Chartered Manager pula ialah laluan pilihan CMI yang
+              berjadual sepanjang tempoh itu. Chartered Manager pula ialah laluan pilihan CMI yang
               berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri; ia tidak termasuk
               dalam program atau yuran yang diterbitkan.
             </p>
@@ -90,7 +90,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <figure className="editorial-visual editorial-visual-portrait persona-hero-visual">
               <Image
                 src="/images/future-ready-emba/future-ready-emba-working-leader-portrait-malaysia-4x5.webp"
-                alt="Seorang pemimpin bekerja Malaysia menyemak dokumen perniagaan di sebelah langit kota Kuala Lumpur"
+                alt="Seorang pemimpin bekerja Malaysia menyemak dokumen perniagaan di tepi langit kota Kuala Lumpur"
                 width={1664}
                 height={2080}
                 sizes="(max-width: 900px) 100vw, 38vw"
@@ -113,8 +113,8 @@ export default function MbaForWorkingProfessionalsPage() {
             <h2 className="sec-h">Jadual yang diterbitkan awal untuk peserta yang terus bekerja.</h2>
           </Reveal>
           <p className="sec-sub">
-            Semak ketiga-tiga tarikh sesi sebelum mendaftar. Projek aplikasi menghubungkan program
-            terus dengan cabaran perniagaan dalam peranan semasa peserta.
+            Semak ketiga-tiga tarikh sesi sebelum anda mendaftar. Projek aplikasi menghubungkan program
+            terus dengan cabaran perniagaan dalam peranan semasa anda.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {fit.map((x) => (
@@ -141,8 +141,8 @@ export default function MbaForWorkingProfessionalsPage() {
           </Reveal>
           <p className="sec-sub">
             MBA akademik rujukan dalam perbandingan ini berjalan selama 18–24 bulan, dengan penilaian
-            akademik serta disertasi atau tesis. Berikut perbandingan antara kedua-dua format yang
-            tersusun ini.
+            akademik serta disertasi atau tesis. Berikut perbandingan kedua-dua format ini secara
+            bersebelahan.
           </p>
           <Reveal className="mt-s">
             <ScrollableTableRegion kind="comparison" label="Perbandingan format Executive MBA dan MBA akademik rujukan" hint="Leret untuk lihat semua lajur →">
@@ -171,7 +171,7 @@ export default function MbaForWorkingProfessionalsPage() {
             di sekeliling modul akademik, tugasan atau peperiksaan, serta disertasi atau tesis. Ia
             tidak mewakili setiap program MBA.{" "}
             Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik
-            yang dikawal selia MQA. Pilih mengikut kredensial dan format pembelajaran yang anda perlukan.
+            yang dikawal selia MQA. Pilih mengikut kredensial dan cara belajar yang anda perlukan.
             Lihat keseluruhan{" "}
             <Link href="/ms/fees" className="acc">yuran &amp; kemasukan</Link>.
           </p>
@@ -209,11 +209,11 @@ export default function MbaForWorkingProfessionalsPage() {
             <span className="mono sec-k">Untuk siapa</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Untuk profesional yang memikul tanggungjawab strategik atau rentas perniagaan.</h2>
+            <h2 className="sec-h">Untuk profesional yang memikul tanggungjawab strategik atau merentas perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
             Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan
-            yang bertanggungjawab ke atas strategi, transformasi, inovasi atau pertumbuhan.
+            yang memikul strategi, transformasi, inovasi atau pertumbuhan.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {audience.map((x) => (

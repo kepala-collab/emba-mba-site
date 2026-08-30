@@ -60,11 +60,11 @@ export default function Page() {
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              Produk yang hebat sekalipun boleh gagal apabila ia menyelesaikan
-              masalah pelanggan yang salah. Di sinilah pemikiran reka bentuk memainkan
-              peranan — satu kaedah menyelesaikan masalah yang berpusatkan manusia dan
-              bersifat berulang, yang bermula daripada keperluan sebenar pelanggan, bukan
-              andaian dalaman syarikat. Setiap idea dianggap sebagai hipotesis yang perlu
+              Produk sehebat mana pun boleh gagal kalau ia menyelesaikan
+              masalah pelanggan yang salah. Di sinilah pemikiran reka bentuk masuk
+              — satu kaedah menyelesaikan masalah yang berpusatkan manusia dan
+              berulang, yang bermula daripada keperluan sebenar pelanggan, bukan
+              andaian dalaman syarikat. Setiap idea dianggap hipotesis yang perlu
               diuji, bukan keputusan yang perlu dipertahankan mati-matian.
             </p>
           </Reveal>
@@ -74,9 +74,9 @@ export default function Page() {
             <p>
               Pemikiran reka bentuk mengambil cara seorang pereka bentuk bekerja, lalu
               menjadikannya kaedah umum untuk merungkai masalah yang rumit dan kabur.
-              Langkahnya kedengaran mudah: bermula dengan orang yang ingin anda bantu,
+              Langkahnya kedengaran mudah: mulakan dengan orang yang anda mahu bantu,
               perhatikan realiti mereka dengan teliti, dan biarkan apa yang anda pelajari
-              membentuk penyelesaian. Bukan sebaliknya — memulakan dengan penyelesaian
+              membentuk penyelesaian. Bukan sebaliknya — bermula dengan penyelesaian
               yang sudah anda minati, kemudian sibuk mencari pasaran untuk mengesahkannya.
             </p>
             <p>
@@ -134,13 +134,13 @@ export default function Page() {
               </li>
             </ul>
 
-            <h2>Mengapa ia penting bagi pemimpin dan strategi</h2>
+            <h2>Kenapa ia penting bagi pemimpin dan strategi</h2>
             <p>
-              Bagi seorang eksekutif, daya tarikannya bersifat komersial, bukan estetik.
+              Bagi seorang eksekutif, tarikannya bersifat komersial, bukan estetik.
               Pemikiran reka bentuk secara sistematik menekan satu risiko komersial yang
-              paling menyakitkan: membina sesuatu yang akhirnya tidak dipilih oleh
+              paling menyakitkan: membina sesuatu yang akhirnya tidak dipilih
               pelanggan. Dengan mendesak bukti dikumpul lebih awal, ia mengalihkan detik
-              kegagalan daripada sebuah pelancaran yang mahal kepada sebuah prototaip
+              kegagalan daripada pelancaran yang mahal kepada prototaip
               yang murah.
             </p>
             <p>

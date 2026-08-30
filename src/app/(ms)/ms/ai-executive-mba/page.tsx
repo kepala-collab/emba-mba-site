@@ -12,7 +12,7 @@ export const metadata = withSeo("/ms/ai-executive-mba", {
 });
 
 const BUSINESS_PILLARS = [
-  ["Keutamaan AI", "Hubungkan setiap kes penggunaan AI dengan matlamat strategik organisasi dan batasan operasinya."],
+  ["Keutamaan AI", "Hubungkan setiap kegunaan AI dengan matlamat strategik dan batasan operasi organisasi anda."],
   ["Tafsiran data", "Bezakan isyarat yang boleh dipercayai daripada data yang tidak lengkap, tidak relevan atau mengelirukan."],
   ["Reka bentuk semula proses", "Kenal pasti di mana automasi mengubah tugas, kawalan, serahan kerja dan kuasa membuat keputusan."],
   ["Tadbir urus inovasi", "Tetapkan cara idea dipilih, diuji, diukur dan diberhentikan."],
@@ -24,7 +24,7 @@ const CAREER_PILLARS = [
   ["Pertimbangan kritis", "Persoalkan output model, andaiannya, kualiti bukti dan kesan yang tidak dijangka."],
   ["Reka bentuk keputusan", "Perjelas keputusan mana yang kekal di tangan manusia dan di mana alat sekadar menyokong."],
   ["Penjajaran pihak berkepentingan", "Terangkan perubahan yang dicadangkan, kawalannya serta kesannya terhadap pasukan dan pelanggan."],
-  ["Pelaksanaan", "Terjemahkan kes penggunaan yang dipilih menjadi pelan tindakan dengan pemilik dan ukuran yang jelas."],
+  ["Pelaksanaan", "Ubah kegunaan yang dipilih menjadi pelan tindakan, dengan pemilik dan ukuran yang jelas."],
 ];
 
 export default function AiExecutiveMbaPage() {
@@ -42,13 +42,13 @@ export default function AiExecutiveMbaPage() {
           <Reveal delay={120}>
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
               Halaman ini menerangkan bagaimana <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> yang diiktiraf CMI{" "}
-              menerapkan rangka kerja membuat keputusannya pada strategi AI, data, automasi, tadbir urus dan pelaksanaan.
-              Ia program <b style={{ color: "var(--ink)" }}>6 bulan</b> yang sama, bukan pensijilan perisian atau teknikal yang berasingan.
+              membawa rangka kerja membuat keputusannya ke strategi AI, data, automasi, tadbir urus dan pelaksanaan.
+              Ia program <b style={{ color: "var(--ink)" }}>6 bulan</b> yang sama — bukan pensijilan perisian atau teknikal yang berasingan.
             </p>
           </Reveal>
           <Reveal delay={160}>
             <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(1.3rem,3vw,1.9rem)", lineHeight: 1.3, margin: "26px 0 30px", maxWidth: "24ch" }}>
-              Daripada pemilihan kes penggunaan kepada <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>pelaksanaan yang terkawal.</em>
+              Daripada memilih kegunaan AI kepada <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>pelaksanaan yang terkawal.</em>
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -66,7 +66,7 @@ export default function AiExecutiveMbaPage() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Skop lensa AI</span></div></Reveal>
           <Reveal><h2 className="sec-h">Reka bentuk perniagaan dan tanggungjawab kepimpinan.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "56ch" }}>
-            Penerapan AI yang berkesan menuntut dua-duanya sekali: justifikasi perniagaan yang kukuh dan akauntabiliti manusia
+            Untuk menggunakan AI dengan berkesan, anda perlukan dua-duanya sekali: alasan perniagaan yang kukuh dan tanggungjawab manusia
             yang jelas. Program ini meneliti organisasi anda, cara keputusan dibuat dan peranan pemimpin dalam pelaksanaan.
           </p></Reveal>
 
@@ -98,9 +98,9 @@ export default function AiExecutiveMbaPage() {
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Soalan dahulu, alat kemudian</span></div></Reveal>
           <Reveal><h2 className="sec-h">Mulakan dengan masalah perniagaan, bukan model.</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "58ch" }}>
-            <Link href="/ms/how-it-works" className="acc">Kaedah F.A.S.T.</Link> bermula dengan menetapkan hasil yang dikehendaki,
+            <Link href="/ms/how-it-works" className="acc">Kaedah F.A.S.T.</Link> bermula dengan menetapkan hasil yang anda mahu,
             bukti yang relevan, batasan dan risiko. Barulah selepas itu pemimpin memutuskan sama ada AI sesuai digunakan dan
-            bagaimana outputnya akan disemak.
+            bagaimana outputnya disemak.
           </p></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {[
@@ -128,7 +128,7 @@ export default function AiExecutiveMbaPage() {
               ["Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia bukan ijazah akademik yang dikawal selia MQA."],
               ["HRD Corp", HRD_CORP_CLAIM_MS],
               ["Format", "Program enam bulan: tiga sesi berjadual berserta bimbingan dan projek berteraskan cabaran perniagaan sebenar."],
-              ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Biasiswa LIFE Innoversity adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; ia tidak automatik, dan setiap anugerah serta yuran peserta disahkan satu per satu secara bertulis."],
+              ["Pelaburan", "Yuran standard " + FACTS.priceStd + ". Biasiswa LIFE Innoversity terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis; ia bukan automatik, dan setiap anugerah serta yuran peserta disahkan satu per satu secara bertulis."],
               ["Projek aplikasi", "Peserta menyiapkan pelan transformasi untuk perniagaan mereka sendiri; tiada peperiksaan atau tesis tradisional."],
             ].map(([h, p]) => (
               <div key={h} className="card">

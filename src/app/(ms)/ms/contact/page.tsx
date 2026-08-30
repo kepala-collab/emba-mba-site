@@ -19,7 +19,7 @@ export default function Page() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Hubungi</span></div>
             <h1 className="sec-h">Hubungi Future Ready Executive MBA</h1>
-            <p className="sec-sub">Tanyakan tentang kesesuaian program, tarikh mula, biasiswa atau permohonan HRD Corp. Menghantar borang tidak bermakna kemasukan automatik atau komitmen bayaran.</p>
+            <p className="sec-sub">Tanya kami tentang kesesuaian program, tarikh mula, biasiswa atau permohonan HRD Corp. Menghantar borang tidak bermakna kemasukan automatik atau apa-apa komitmen bayaran.</p>
             <div className="mt-m" style={{ display: "grid", gap: 10 }}>
               <p style={{ margin: 0 }}><strong>{SITE.director}</strong> · Penyelaras Program</p>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>

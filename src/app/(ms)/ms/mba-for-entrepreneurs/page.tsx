@@ -7,7 +7,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/mba-for-entrepreneurs", {
   title: "Executive MBA untuk Usahawan & Pengasas",
   description:
-    "Program pembangunan profesional enam bulan untuk usahawan dan pengasas di Malaysia, dengan sijil program yang diiktiraf CMI.",
+    "Program pembangunan profesional enam bulan untuk usahawan dan pengasas di Malaysia, dengan sijil program yang diiktiraf CMI. Untuk anda yang mahu membuat keputusan dengan lebih yakin.",
 });
 
 export default function MbaForEntrepreneursPage() {
@@ -17,36 +17,36 @@ export default function MbaForEntrepreneursPage() {
 
   const built = [
     {
-      h: "Menyelesaikan masalah dari prinsip asas",
-      p: `${firstPrinciples?.p ?? "Bezakan kekangan yang benar-benar wujud daripada andaian yang sekadar diwarisi."} Daripada situ, rangka dan uji proposisi nilai yang tersendiri.`,
+      h: "Selesaikan masalah dari prinsip asas",
+      p: `${firstPrinciples?.p ?? "Bezakan kekangan yang benar-benar wujud daripada andaian yang anda warisi begitu sahaja."} Dari situ, anda rangka dan uji tawaran nilai yang tersendiri.`,
     },
     {
       h: "Pemikiran model perniagaan & JTBD",
-      p: "Perjelas tugas sebenar pelanggan, buktinya, alternatif yang ada dan sejauh mana mereka sanggup membayar — sebelum anda muktamadkan keputusan produk dan harga.",
+      p: "Jelaskan apa sebenarnya yang pelanggan mahu selesaikan, buktinya, pilihan lain yang mereka ada, dan sejauh mana mereka sanggup bayar — sebelum anda kunci keputusan produk dan harga.",
     },
     {
-      h: "Menimbang keputusan dengan bantuan AI",
-      p: "Kenali di mana AI benar-benar membantu kerja penyelidikan, analisis atau aliran kerja anda — dan di mana pertimbangan serta akauntabiliti manusia tetap tidak boleh digantikan.",
+      h: "Buat keputusan dengan bantuan AI",
+      p: "Kenali di mana AI benar-benar membantu kerja kajian, analisis atau aliran kerja anda — dan di mana pertimbangan dan tanggungjawab manusia tetap tak boleh diganti.",
     },
     {
-      h: "Strategi yang siap dibentangkan kepada pihak berkepentingan",
-      p: `${systems?.p ?? "Jejaki sesuatu sebab hingga ke kesan peringkat ketiganya sebelum anda melangkah."} Dokumenkan andaian, pilihan, tindakan dan ukuran anda supaya sedia dibentangkan kepada rakan pengasas, lembaga atau pelabur.`,
+      h: "Strategi yang siap dibentangkan",
+      p: `${systems?.p ?? "Jejak satu sebab sampai ke kesan peringkat ketiganya sebelum anda melangkah."} Catat andaian, pilihan, tindakan dan ukuran anda supaya ia siap untuk dibentangkan kepada rakan pengasas, lembaga atau pelabur.`,
     },
     {
-      h: "Perspektif rentas fungsi",
-      p: "Tangani keputusan bersama peserta lain yang sama-sama memikul tanggungjawab merentasi pemilikan, pengurusan am dan fungsi kanan.",
+      h: "Pandangan merentas jabatan",
+      p: "Selesaikan keputusan bersama peserta lain yang sama-sama memikul tanggungjawab sebenar — merentas pemilikan, pengurusan am dan fungsi kanan.",
     },
     {
-      h: "Struktur untuk keutamaan yang berlumba",
+      h: "Cara menyusun keutamaan yang berlumba",
       p: framework?.p ?? "Ubah kerumitan yang membebankan menjadi keputusan yang benar-benar boleh anda laksanakan.",
     },
   ];
 
   const format = [
-    { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berjadual membawa anda kepada sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja." },
-    { h: "Tiga hujung minggu berjadual, atau sepenuhnya dalam talian", p: "Program berlangsung pada tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global pula menghapuskan keperluan hadir secara fizikal." },
-    { h: "Diterapkan sepanjang program", p: "Tiada tesis mahupun peperiksaan tradisional. Peserta menerapkan setiap rangka kerja terus kepada usaha atau organisasi yang mereka terajui." },
-    { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC menyediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
+    { h: "Jadual enam bulan yang jelas", p: "Tiga sesi berjadual membawa anda ke sijil program yang diiktiraf CMI — tanpa perlu berhenti kerja." },
+    { h: "Tiga hujung minggu berjadual, atau sepenuhnya dalam talian", p: "Program berjalan pada tiga hujung minggu berjadual sepanjang enam bulan; laluan dalam talian global pula bermakna anda tak perlu hadir secara fizikal." },
+    { h: "Terus dipakai sepanjang program", p: "Tiada tesis mahupun peperiksaan biasa. Anda pakai setiap rangka kerja terus pada usaha atau organisasi yang anda terajui." },
+    { h: "Laluan gantian yang bertulis", p: "Jika anda terlepas satu sesi, ABC sediakan kaedah gantian yang diluluskan secara bertulis: akses video atau hadir semula dalam kohort susulan yang ditetapkan." },
   ];
 
   return (
@@ -66,8 +66,8 @@ export default function MbaForEntrepreneursPage() {
           <p className="sec-sub">
             Setiap hari, seorang pengasas berdepan keputusan yang saling berkait — tentang pelanggan,
             produk, harga, modal, keupayaan dan masa. Selama enam bulan, Future Ready Executive MBA
-            menerapkan rangka kerja prinsip asas, pemikiran sistem dan Job-To-Be-Done terus kepada
-            keputusan sebegitu. Projek aplikasinya pula bertitik tolak daripada usaha atau organisasi
+            membawa rangka kerja prinsip asas, pemikiran sistem dan Job-To-Be-Done terus kepada
+            keputusan sebegini. Projek aplikasinya pula bermula daripada usaha atau organisasi
             yang sedang anda bina sendiri.
           </p>
           <p className="mono sec-k mt-s">
@@ -92,8 +92,8 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Daripada sekadar idea, kepada model perniagaan yang benar-benar boleh dilaksanakan.</h2>
           </Reveal>
           <p className="sec-sub">
-            Rangka kerja ini menyusun segala-galanya — daripada bukti pelanggan, pilihan strategik dan
-            pembahagian sumber, hinggalah cara anda berkomunikasi dengan pihak berkepentingan dan
+            Rangka kerja ini menyusun semuanya — daripada bukti pelanggan, pilihan strategik dan cara
+            anda agihkan sumber, sampailah kepada cara anda berhubung dengan pihak berkepentingan dan
             melaksanakannya.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
@@ -107,7 +107,7 @@ export default function MbaForEntrepreneursPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            Lihat bagaimana program menerapkan rangka kerja keputusannya dalam{" "}
+            Lihat bagaimana program membawa rangka kerja keputusannya ke dalam{" "}
             <Link href="/ms/ai-executive-mba" className="acc">kepimpinan berbantukan AI</Link>.
           </p>
         </div>
@@ -124,10 +124,10 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Projek aplikasi yang menyelesaikan cabaran perniagaan anda sendiri.</h2>
           </Reveal>
           <p className="sec-sub">
-            Tiada tesis mahupun peperiksaan tradisional. Peserta memilih satu cabaran sebenar,
-            menerapkan rangka kerja program dan menghasilkan pelan transformasi tersusun untuk dinilai
-            fasilitator. Pelan itu memperincikan andaian, keputusan, tindakan, pemilik dan ukuran —
-            sedia untuk dibincangkan bersama rakan pengasas, lembaga atau pelabur.
+            Tiada tesis mahupun peperiksaan biasa. Anda pilih satu cabaran sebenar, pakai rangka kerja
+            program dan hasilkan pelan transformasi yang tersusun untuk dinilai fasilitator. Pelan itu
+            menyenaraikan andaian, keputusan, tindakan, pemilik dan ukuran — siap untuk dibincangkan
+            bersama rakan pengasas, lembaga atau pelabur.
           </p>
           <p className="fine mt-s">
             Tiada pembiayaan atau pertumbuhan yang dijanjikan — rangka kerja dan pelan itu milik anda
@@ -148,7 +148,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Teruskan urus perniagaan sambil menamatkan program.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini dijalankan menerusi tiga sesi hujung minggu berjadual, bimbingan dan projek
+            Program ini berjalan menerusi tiga sesi hujung minggu berjadual, bimbingan dan projek
             aplikasi. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat
             kelayakan, penilaian dan yuran tersendiri.
           </p>
@@ -180,7 +180,7 @@ export default function MbaForEntrepreneursPage() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan keputusan yang perlu disusun rapi dalam usaha anda." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan keputusan yang perlu anda susun rapi dalam usaha anda." />
     </>
   );
 }

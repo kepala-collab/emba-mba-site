@@ -61,46 +61,46 @@ export default function FirstPrinciplesThinkingPage() {
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="sec-sub" style={{ maxWidth: "62ch" }}>
-              Pemikiran prinsip pertama bermula apabila kita memisahkan fakta yang
+              Pemikiran prinsip pertama bermula apabila kita asingkan fakta yang
               benar-benar disahkan daripada kebiasaan yang sekadar diwarisi, lalu
-              membina keputusan bertitik tolak daripada fakta itu. Rencana ini
-              menerangkan apa itu pemikiran prinsip pertama, mengapa ramai pemimpin
-              terleka daripadanya, dan satu kaedah yang boleh anda mula guna esok
+              bina keputusan bermula daripada fakta itu. Artikel ini
+              menerangkan apa itu pemikiran prinsip pertama, kenapa ramai pemimpin
+              terlepas pandang, dan satu kaedah yang boleh anda mula guna esok
               di pejabat.
             </p>
           </Reveal>
 
           <div className="prose" style={{ maxWidth: "68ch", marginTop: 44 }}>
-            <h2>Menaakul daripada asas, bukan daripada analogi</h2>
+            <h2>Berfikir daripada asas, bukan daripada analogi</h2>
             <p>
-              Prinsip pertama ialah kebenaran asas yang tidak lagi boleh
-              disandarkan pada sesuatu yang lebih ringkas — Aristotle menyebutnya
-              sebagai titik mula segala pengetahuan tentang sesuatu perkara.
-              Pemikiran prinsip pertama tidak lebih daripada tabiat memecahkan
-              masalah kepada kebenaran asas itu dan menaakul semula daripadanya,
-              bukan meniru begitu sahaja apa yang orang lain sudah lakukan.
-              Disiplin ini enggan mewarisi kesimpulan yang belum pernah diuji pada
+              Prinsip pertama ialah kebenaran asas yang tidak boleh lagi
+              dipecahkan kepada sesuatu yang lebih ringkas — Aristotle menyebutnya
+              titik mula segala pengetahuan tentang sesuatu perkara.
+              Pemikiran prinsip pertama sebenarnya cuma tabiat memecahkan
+              masalah kepada kebenaran asas itu, lalu berfikir semula daripadanya —
+              bukan meniru begitu sahaja apa yang orang lain sudah buat.
+              Disiplin ini enggan menerima bulat-bulat kesimpulan yang belum pernah diuji pada
               masalah yang kita hadapi sekarang.
             </p>
             <p>
-              Analogi bergerak mengikut corak: <strong>ini nampak macam itu, dan
+              Analogi bergerak ikut corak: <strong>ini nampak macam itu, dan
               itu dahulu berjaya, jadi kita buat begini juga.</strong> Cara ini
-              memindahkan bukan sahaja penyelesaian lama, malah segala andaian di
+              bukan sahaja memindahkan penyelesaian lama, malah segala andaian di
               sebaliknya sekali. Analisis prinsip pertama pula menguji setiap
-              andaian yang dipindahkan itu pada keadaan semasa sebelum
+              andaian itu pada keadaan semasa sebelum
               menerimanya.
             </p>
 
-            <h2>Mengapa pemimpin cenderung meniru</h2>
+            <h2>Kenapa pemimpin cenderung meniru</h2>
             <p>
               &quot;Amalan terbaik&quot; dan penanda aras pesaing terasa seperti
-              satu keputusan yang tegas. Ia mudah dipertahankan di dalam mesyuarat
+              keputusan yang selamat. Ia mudah dipertahankan dalam mesyuarat
               lembaga, tidak menuntut banyak inovasi, dan memberi ketenangan bahawa
-              orang lain sudah pun merintis jalan. Namun masalahnya terletak pada
-              strukturnya: jika strategi anda disusun daripada jawapan orang lain,
-              paling hebat pun anda hanya sampai sedikit lebih awal ke destinasi
-              yang sama. Analogi mengurung anda dalam keuntungan yang sekadar
-              bertokok sedikit demi sedikit. Ia berguna untuk memperhalus
+              orang lain sudah pun merintis jalan. Tetapi masalahnya ada pada
+              strukturnya: kalau strategi anda disusun daripada jawapan orang lain,
+              paling hebat pun anda cuma sampai sedikit lebih awal ke destinasi
+              yang sama. Analogi mengurung anda dalam keuntungan yang bertambah
+              sedikit demi sedikit. Ia berguna untuk memperhalus
               permainan yang sedia diketahui, tetapi lemah apabila anda perlu
               mengubah permainan itu sendiri.
             </p>
@@ -113,8 +113,8 @@ export default function FirstPrinciplesThinkingPage() {
 
             <h2>Kaedah praktikal</h2>
             <p>
-              Pemikiran prinsip pertama bukan percikan kebijaksanaan luar biasa;
-              ia satu urutan empat langkah yang boleh diulang sesiapa sahaja:
+              Pemikiran prinsip pertama bukan percikan kebijaksanaan luar biasa.
+              Ia cuma empat langkah yang boleh diulang oleh sesiapa sahaja:
             </p>
             <ul>
               <li>
@@ -148,7 +148,7 @@ export default function FirstPrinciplesThinkingPage() {
             <p>
               Bayangkan sebuah firma perkhidmatan diberitahu margin mereka memang
               begitu kerana &quot;itulah kadar industri.&quot; Itu analogi, bukan
-              kebenaran. Cuba menaakul daripada prinsip pertama. Apa yang kita
+              kebenaran. Cuba berfikir daripada prinsip pertama. Apa yang kita
               betul-betul tahu? Kos menyampaikan perkhidmatan itu ialah hasil
               tambah beberapa input tertentu — jam kerja, peralatan, overhed yang
               diperuntukkan bagi setiap tugasan. Senaraikan kesemuanya. Kemudian
@@ -176,14 +176,14 @@ export default function FirstPrinciplesThinkingPage() {
               sudah selesai sebagai terbuka semula, lalu membina semula dunia dari
               kosong pada setiap kali membuat keputusan. Pemikiran prinsip pertama
               ialah alat untuk masalah yang benar-benar penting — apabila
-              kebiasaan lama itu mahal dan taruhannya berbaloi dengan usaha
-              tersebut — bukan alasan untuk membahaskan semula segala-galanya.
+              kebiasaan lama itu mahal dan hasilnya berbaloi dengan usaha
+              itu — bukan alasan untuk membahaskan semula segala-galanya.
             </p>
 
             <h2>Disiplin yang boleh dilatih</h2>
             <p>
               Berita baiknya, tiada satu pun daripada ini bergantung pada bakat
-              semula jadi. Menaakul daripada asas ialah kemahiran yang semakin
+              semula jadi. Berfikir daripada asas ialah kemahiran yang semakin
               tajam dengan struktur dan latihan, sama seperti pertimbangan
               kewangan atau seni rundingan. Ia salah satu daripada tujuh disiplin
               pemikiran teras {" "}

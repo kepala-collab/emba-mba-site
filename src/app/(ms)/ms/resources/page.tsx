@@ -9,7 +9,7 @@ export const metadata = withSeo("/ms/resources", {
 });
 
 const RESOURCES = [
-  ["01", "Semakan padanan program", "Jawab empat soalan untuk membina senarai semak peribadi bagi matlamat, masa, yuran dan pengiktirafan. Tiada markah, tiada penyimpanan, dan pilihan anda tidak dihantar ke mana-mana.", "/ms/diagnostic", "Mulakan semakan"],
+  ["01", "Semakan padanan program", "Jawab empat soalan untuk membina senarai semak peribadi bagi matlamat, masa, yuran dan pengiktirafan anda. Tiada markah, tiada rekod disimpan, dan pilihan anda tidak dihantar ke mana-mana.", "/ms/diagnostic", "Mulakan semakan"],
   ["02", "Panduan program Executive MBA", "Baca atau cetak struktur program, yuran penuh untuk peserta Malaysia, pengiktirafan CMI dan soalan yang wajar disahkan sebelum memilih program.", "/ms/resources/advancement-brief", "Buka panduan program"],
   ["03", "Cara membandingkan program pengurusan", "Bandingkan program pengurusan profesional dari lima sudut: kandungan pengajaran, aplikasi praktikal, masa, sijil dan yuran.", "/ms/insights/advancement-question", "Baca panduan perbandingan"],
   ["04", "Chartered Manager di Malaysia", "Fahami laluan permohonan CMI semasa, kelayakan, yuran penilaian, fCMgr, CMgr MCMI dan rangkaian profesional di Malaysia.", "/ms/chartered-manager-malaysia", "Fahami laluan profesional"],
@@ -22,7 +22,7 @@ export default function ResourcesPage() {
         <div className="wrap">
           <p className="mono sec-k">Bahan program · Tanpa perlu memberikan maklumat hubungan</p>
           <h1>Fahami dengan jelas sebelum memberikan maklumat anda.</h1>
-          <p>Bahan ini boleh diakses tanpa mengisi maklumat hubungan, dan menyatakan dengan jelas sempadan masa, yuran, pengiktirafan dan pembiayaan.</p>
+          <p>Semua bahan ini boleh anda baca tanpa perlu mengisi maklumat hubungan, dan menyatakan dengan jelas hal masa, yuran, pengiktirafan dan pembiayaan.</p>
         </div>
       </header>
 
@@ -45,7 +45,7 @@ export default function ResourcesPage() {
           <Reveal>
             <article className="guide-card">
               <p className="mono sec-k">Berbincang dengan majikan</p>
-              <h2>Bina justifikasi pembelajaran daripada keperluan kerja sebenar.</h2>
+              <h2>Bina hujah pembelajaran yang kukuh daripada keperluan kerja sebenar.</h2>
               <ol>
                 <li>Nyatakan keputusan perniagaan, jurang keupayaan atau agenda transformasi yang perlu ditangani.</li>
                 <li>Sahkan bagaimana projek aplikasi perniagaan menjawab situasi tersebut.</li>
