@@ -104,13 +104,15 @@ export default function CommerceHeroMedia({
         onPause={() => setIsPlaying(false)}
         onPlaying={() => setIsPlaying(true)}
       >
+        {/* Keep the complete eight-second take: its final beat is the intentional
+            direct-to-viewer gaze that gives the portrait its editorial purpose. */}
         <source
-          src="/media/future-commerce/future-ready-emba-leadership-hero-v6.webm"
+          src="/media/future-commerce/future-ready-emba-leadership-hero-v4.webm"
           type="video/webm"
           media="(min-width: 641px) and (prefers-reduced-motion: no-preference)"
         />
         <source
-          src="/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4"
+          src="/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4"
           type="video/mp4"
           media="(min-width: 641px) and (prefers-reduced-motion: no-preference)"
         />

@@ -473,11 +473,11 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   const heroSources = page.locator(".commerce-hero-media video source");
   await expect(heroSources.first()).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v6.webm",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
   );
   await expect(heroSources.nth(1)).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
   );
 });
 
@@ -496,11 +496,11 @@ test("programme introduction keeps a visible text alternative beside the leaders
   await expect(media).toBeVisible();
   await expect(video.locator("source").first()).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v6.webm",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
   );
   await expect(video.locator("source").nth(1)).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
   );
   await expect.poll(() => video.evaluate((element) => (element as HTMLVideoElement).readyState)).toBeGreaterThanOrEqual(3);
   await expect.poll(() => video.evaluate((element) => (element as HTMLVideoElement).currentTime)).toBeGreaterThan(0);
@@ -789,11 +789,11 @@ test("home hero presents the leadership film inside an accessible editorial fram
   await expect(media).toBeVisible();
   await expect(media.locator("video source").first()).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v6.webm",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
   );
   await expect(media.locator("video source").nth(1)).toHaveAttribute(
     "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v6.mp4",
+    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
   );
   const poster = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
   await expect(poster).toBeVisible();
@@ -809,6 +809,9 @@ test("home hero film becomes visible and advances after hydration", async ({ pag
   const video = page.locator(".commerce-hero-media video");
   await expect(video).toHaveClass(/is-ready/);
   await expect(video).toHaveCSS("opacity", "1");
+  await expect.poll(
+    () => video.evaluate((element) => (element as HTMLVideoElement).duration),
+  ).toBeGreaterThanOrEqual(7.9);
   const initialTime = await video.evaluate((element) => (element as HTMLVideoElement).currentTime);
   await expect.poll(
     () => video.evaluate((element) => (element as HTMLVideoElement).currentTime),

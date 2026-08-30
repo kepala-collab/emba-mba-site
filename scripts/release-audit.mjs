@@ -29,14 +29,14 @@ const heroVideoPath = resolve(
   "public",
   "media",
   "future-commerce",
-  "future-ready-emba-leadership-hero-v6.mp4",
+  "future-ready-emba-leadership-hero-v4.mp4",
 );
 const heroWebmPath = resolve(
   process.cwd(),
   "public",
   "media",
   "future-commerce",
-  "future-ready-emba-leadership-hero-v6.webm",
+  "future-ready-emba-leadership-hero-v4.webm",
 );
 const heroVideo = readFileSync(heroVideoPath);
 const heroVideoBytes = statSync(heroVideoPath).size;
