@@ -95,7 +95,7 @@ export default function CommerceHeroMedia({
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-hidden="true"
         tabIndex={-1}
         onLoadedData={() => setIsVideoReady(true)}
