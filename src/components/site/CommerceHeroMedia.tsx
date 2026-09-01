@@ -107,7 +107,7 @@ export default function CommerceHeroMedia({
         {/* Light single-file H.264 take (no audio, faststart) — plays in every
             browser incl. Safari/iOS; gated off on mobile / reduced-motion. */}
         <source
-          src="/media/future-commerce/future-ready-emba-leadership-hero-v7.mp4"
+          src="/media/future-commerce/future-ready-emba-leadership-hero-v8.mp4"
           type="video/mp4"
           media="(min-width: 641px) and (prefers-reduced-motion: no-preference)"
         />
