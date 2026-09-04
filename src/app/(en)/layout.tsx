@@ -12,8 +12,8 @@ const displaySerif = Source_Serif_4({
   adjustFontFallback: true,
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
-const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], display: "optional", adjustFontFallback: true });
-const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["500", "600"], display: "optional", adjustFontFallback: true });
+const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], display: "optional", adjustFontFallback: true, preload: false });
+const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["500", "600"], display: "optional", adjustFontFallback: true, preload: false });
 
 export const metadata = ROOT_METADATA;
 export const viewport: Viewport = { themeColor: "#F7FBFF", colorScheme: "light", viewportFit: "cover" };
