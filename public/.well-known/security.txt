@@ -1,4 +1,4 @@
 Contact: mailto:support@futurereadymba.com
-Expires: 2027-08-11T00:00:00.000Z
+Expires: 2028-08-11T00:00:00.000Z
 Canonical: https://futurereadymba.com/.well-known/security.txt
-Preferred-Languages: en, zh
+Preferred-Languages: en, ms, zh
