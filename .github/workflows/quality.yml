@@ -3,7 +3,7 @@ name: Quality and release readiness
 on:
   pull_request:
   push:
-    branches: [main, "codex/**"]
+    branches: [main, "codex/**", "feat/**"]
 
 permissions:
   contents: read
