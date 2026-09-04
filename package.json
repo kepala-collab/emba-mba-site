@@ -24,7 +24,6 @@
     "test:e2e": "playwright test",
     "start": "node .next/standalone/server.js",
     "lint": "oxlint . --deny-warnings",
-    "media:compress-hero": "node scripts/compress-hero-video.mjs",
     "media:optimize-image": "node scripts/optimize-image.mjs"
   },
   "dependencies": {

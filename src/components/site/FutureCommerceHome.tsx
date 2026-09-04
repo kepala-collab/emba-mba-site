@@ -186,8 +186,6 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
               guideHref="#programme-guide"
               guideLabel={copy.guide}
               kicker={copy.mediaKicker}
-              pauseLabel={copy.pauseVideo}
-              playLabel={copy.playVideo}
               title={copy.mediaTitle}
             />
           </Reveal>
