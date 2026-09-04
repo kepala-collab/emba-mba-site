@@ -471,15 +471,12 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
-  const heroSources = page.locator(".commerce-hero-media video source");
-  await expect(heroSources.first()).toHaveAttribute(
-    "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
-  );
-  await expect(heroSources.nth(1)).toHaveAttribute(
-    "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
-  );
+  const heroImage = page.locator('.commerce-hero-media img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  await expect(heroImage).toBeVisible();
+  await expect(heroImage).toHaveAttribute("src", /hero-leader/);
+  await expect(heroImage).toHaveAttribute("fetchpriority", "high");
+  await expect(page.locator(".commerce-hero-media video")).toHaveCount(0);
+  await expect(page.locator(".commerce-media-control")).toHaveCount(0);
 });
 
 test("mobile Apply presents the form immediately after its introduction", async ({ page }) => {
@@ -490,22 +487,16 @@ test("mobile Apply presents the form immediately after its introduction", async 
   expect(box?.y || 9999).toBeLessThan(900);
 });
 
-test("programme introduction keeps a visible text alternative beside the leadership film", async ({ page }) => {
+test("home hero presents a still image beside a visible text caption", async ({ page }) => {
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
-  const video = media.locator("video");
   await expect(media).toBeVisible();
-  await expect(video.locator("source").first()).toHaveAttribute(
-    "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
-  );
-  await expect(video.locator("source").nth(1)).toHaveAttribute(
-    "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
-  );
-  await expect.poll(() => video.evaluate((element) => (element as HTMLVideoElement).readyState)).toBeGreaterThanOrEqual(3);
-  await expect.poll(() => video.evaluate((element) => (element as HTMLVideoElement).currentTime)).toBeGreaterThan(0);
-  expect(await video.evaluate((element) => (element as HTMLVideoElement).playbackRate)).toBe(1);
+  const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute("src", /hero-leader/);
+  await expect(image).toHaveAttribute("fetchpriority", "high");
+  await expect(media.locator("video")).toHaveCount(0);
+  await expect(page.locator(".commerce-media-control")).toHaveCount(0);
   await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
 });
 
@@ -839,41 +830,29 @@ test("campaign routes have no automated accessibility violations", async ({ page
   }
 });
 
-test("home hero presents the leadership film inside an accessible editorial frame", async ({ page }) => {
+test("home hero presents a still image inside an accessible editorial frame", async ({ page }) => {
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  await expect(media.locator("video source").first()).toHaveAttribute(
-    "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.webm",
-  );
-  await expect(media.locator("video source").nth(1)).toHaveAttribute(
-    "src",
-    "/media/future-commerce/future-ready-emba-leadership-hero-v4.mp4",
-  );
-  const poster = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
-  await expect(poster).toBeVisible();
-  await expect(poster).toHaveAttribute("fetchpriority", "high");
+  await expect(media.locator("video")).toHaveCount(0);
+  const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute("src", /hero-leader/);
+  await expect(image).toHaveAttribute("fetchpriority", "high");
   await expect(media.locator("figcaption")).toBeVisible();
-  await expect(media.getByRole("button", { name: /(?:Pause|Play) video/ })).toBeVisible();
+  await expect(page.locator(".commerce-media-control")).toHaveCount(0);
 });
 
-test("home hero film becomes visible and advances after hydration", async ({ page }) => {
+test("home hero image is visible and prioritized after hydration", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await goto(page, "/home");
-  const video = page.locator(".commerce-hero-media video");
-  await expect(video).toHaveClass(/is-ready/);
-  await expect(video).toHaveCSS("opacity", "1");
-  await expect.poll(
-    () => video.evaluate((element) => (element as HTMLVideoElement).duration),
-  ).toBeGreaterThanOrEqual(7.9);
-  const initialTime = await video.evaluate((element) => (element as HTMLVideoElement).currentTime);
-  await expect.poll(
-    () => video.evaluate((element) => (element as HTMLVideoElement).currentTime),
-    { timeout: 5_000 },
-  ).toBeGreaterThan(initialTime + 0.2);
-  await expect(page.locator(".commerce-media-control")).toHaveAttribute("aria-label", "Pause video");
+  const media = page.locator(".commerce-hero-media");
+  const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute("fetchpriority", "high");
+  await expect(media.locator("video")).toHaveCount(0);
+  await expect(page.locator(".commerce-media-control")).toHaveCount(0);
 });
 
 test("home hero actions remain readable and touch-sized at 320px", async ({ page }) => {
@@ -950,21 +929,22 @@ test("home hero keeps its copy and media aligned across desktop widths", async (
       expect(Math.abs((copy?.y || 0) - (media?.y || 0)), `${width}px top alignment`).toBeLessThanOrEqual(150);
     }
     expect(media?.height || 0, `${width}px media height`).toBeGreaterThanOrEqual(520);
+    await expect(page.locator(".commerce-hero-media video")).toHaveCount(0);
+    await expect(page.locator(".commerce-media-control")).toHaveCount(0);
   }
 });
 
-test("home hero preserves its poster and removes motion on compact screens", async ({ page }) => {
-  for (const width of [390, 768, 1280] as const) {
+test("home hero image loads at mobile and desktop widths", async ({ page }) => {
+  for (const width of [320, 1440] as const) {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     await goto(page, "/home");
     const media = page.locator(".commerce-hero-media");
     const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
     await expect.poll(
       () => image.evaluate((element: HTMLImageElement) => element.naturalWidth),
-      { message: `${width}px hero poster should finish loading` },
+      { message: `${width}px hero image should finish loading` },
     ).toBeGreaterThan(0);
-    const videoDisplay = await media.locator("video").evaluate((element) => getComputedStyle(element).display);
-    expect(videoDisplay).toBe(width <= 640 ? "none" : "block");
+    await expect(media.locator("video")).toHaveCount(0);
   }
 });
 

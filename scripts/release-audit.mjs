@@ -1,5 +1,6 @@
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { extname, relative, resolve } from "node:path";
+import sharp from "sharp";
 
 const root = resolve(process.cwd(), ".next", "server", "app");
 
@@ -24,31 +25,31 @@ let jsonLdCount = 0;
 let indexedCount = 0;
 const longDescriptions = [];
 
-const heroVideoPath = resolve(
+const heroImagePath = resolve(
   process.cwd(),
   "public",
   "media",
   "future-commerce",
-  "future-ready-emba-leadership-hero-v7.mp4",
+  "hero-leader.webp",
 );
-const heroVideo = readFileSync(heroVideoPath);
-const heroVideoBytes = statSync(heroVideoPath).size;
-const heroAtoms = [];
-let heroAtomOffset = 0;
+const HERO_IMAGE_MAX_BYTES = 400_000;
+const HERO_IMAGE_MIN_WIDTH = 1280;
+const HERO_IMAGE_MIN_HEIGHT = 720;
 
-while (heroAtomOffset + 8 <= heroVideo.length) {
-  const atomSize = heroVideo.readUInt32BE(heroAtomOffset);
-  const atomType = heroVideo.toString("ascii", heroAtomOffset + 4, heroAtomOffset + 8);
-  heroAtoms.push(atomType);
-  if (atomSize < 8) break;
-  heroAtomOffset += atomSize;
-}
-
-const moovIndex = heroAtoms.indexOf("moov");
-const mdatIndex = heroAtoms.indexOf("mdat");
-if (heroVideoBytes > 1_000_000) failures.push(`Hero video exceeds the 1 MB performance budget: ${heroVideoBytes} bytes`);
-if (moovIndex < 0 || mdatIndex < 0 || moovIndex > mdatIndex) {
-  failures.push("Hero video is not fast-start enabled (the moov atom must precede mdat)");
+if (!existsSync(heroImagePath)) {
+  failures.push(`Hero image missing: ${heroImagePath}`);
+} else {
+  const heroImageBytes = statSync(heroImagePath).size;
+  const heroImageMeta = await sharp(heroImagePath).metadata();
+  if ((heroImageMeta.width ?? 0) < HERO_IMAGE_MIN_WIDTH) {
+    failures.push(`Hero image width below the ${HERO_IMAGE_MIN_WIDTH}px minimum: ${heroImageMeta.width}px`);
+  }
+  if ((heroImageMeta.height ?? 0) < HERO_IMAGE_MIN_HEIGHT) {
+    failures.push(`Hero image height below the ${HERO_IMAGE_MIN_HEIGHT}px minimum: ${heroImageMeta.height}px`);
+  }
+  if (heroImageBytes > HERO_IMAGE_MAX_BYTES) {
+    failures.push(`Hero image exceeds the ${HERO_IMAGE_MAX_BYTES} byte performance budget: ${heroImageBytes} bytes`);
+  }
 }
 
 for (const [route, html] of pageMap) {
