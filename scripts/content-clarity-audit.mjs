@@ -1,6 +1,9 @@
 import { readFileSync } from "node:fs";
 import { globSync } from "node:fs";
 
+const strictLocales = process.argv.includes("--strict-locales");
+const warnings = [];
+
 const files = [
   ...globSync("src/app/**/*.ts"),
   ...globSync("src/app/**/*.tsx"),
@@ -8,6 +11,7 @@ const files = [
   ...globSync("src/components/site/**/*.tsx"),
   "src/lib/content.ts",
   "src/lib/content-zh.ts",
+  "src/lib/content-ms.ts",
   "src/lib/lead-email.ts",
   "src/lib/chat-knowledge.ts",
   "src/lib/root-metadata.ts",
@@ -50,6 +54,27 @@ const banned = [
   ["Chinese pressure or prestige framing", /(?:立即报名|同等的公信力|看看你是否符合|准备好取得|无需承诺|无须承诺|颠覆性的答案)/],
 ];
 
+const bannedMs = [
+  ["Malay undefined norm", /\b(?:biasanya|kebiasaannya|selalunya|kebanyakan|lebih kurang|kira-kira)\b/i],
+  ["Malay wrong endorsement verb", /disokong(?:\s+\w+){0,3}\s+CMI|CMI(?:\s+\w+){0,3}\s+disokong/i],
+  ["Malay software-application calque", /\bprojek aplikasi\b/i],
+  ["Malay working-manager calque", /\bpengurus bekerja\b/i],
+  ["Malay non-collocation CTA", /\bperbualan program\b/i],
+  ["Malay government-programme calque", /\bprogram awam\b/i],
+  ["Malay Chartered Manager as next stage", /\blaluan lanjutan\b/i],
+];
+
+const bannedZh = [
+  ["Chinese transport-schedule cohort word", /班次/],
+  ["Chinese wrong participant noun", /参与者/],
+  ["Chinese honest-boundary calque", /诚实边界/],
+  ["Chinese finance-register endorsement", /颁授并背书/],
+  ["Chinese status calque", /身份启用/],
+  ["Chinese e-commerce framing", /折扣码/],
+  ["Chinese app-store CTA verb", /免费获取/],
+  ["Chinese mainland lexis", /渠道|创始人|首席执行官|营销/],
+];
+
 const failures = [];
 
 for (const file of files) {
@@ -60,6 +85,30 @@ for (const file of files) {
     lines.forEach((line, index) => {
       if (pattern.test(line)) failures.push(`${file}:${index + 1} [${label}] ${line.trim()}`);
     });
+  }
+  const runsMs = normalizedFile.includes("content-ms.ts") || normalizedFile.includes("/(ms)/") || normalizedFile.includes("lead-email.ts") || normalizedFile.includes("nurture-email.ts") || normalizedFile.includes("src/components/site/");
+  const runsZh = normalizedFile.includes("content-zh.ts") || normalizedFile.includes("/(zh)/") || normalizedFile.includes("lead-email.ts") || normalizedFile.includes("nurture-email.ts") || normalizedFile.includes("src/components/site/");
+  if (runsMs) {
+    for (const [label, pattern] of bannedMs) {
+      lines.forEach((line, index) => {
+        if (pattern.test(line)) {
+          const hit = `${file}:${index + 1} [${label}] ${line.trim()}`;
+          if (strictLocales) failures.push(hit);
+          else warnings.push(hit);
+        }
+      });
+    }
+  }
+  if (runsZh) {
+    for (const [label, pattern] of bannedZh) {
+      lines.forEach((line, index) => {
+        if (pattern.test(line)) {
+          const hit = `${file}:${index + 1} [${label}] ${line.trim()}`;
+          if (strictLocales) failures.push(hit);
+          else warnings.push(hit);
+        }
+      });
+    }
   }
   if (!normalizedFile.includes("/programmes/shift-hr/")) {
     lines.forEach((line, index) => {
@@ -101,6 +150,10 @@ for (const [file, statement] of identityChecks) {
 if (failures.length > 0) {
   console.error("Content clarity audit failed:\n" + failures.join("\n"));
   process.exit(1);
+}
+
+if (warnings.length > 0) {
+  console.warn(`Locale register warnings (${warnings.length}) — not blocking in Release 1:\n` + warnings.join("\n"));
 }
 
 console.log(`Content clarity audit passed across ${files.length - excluded.size} public content files.`);
