@@ -27,6 +27,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 -m pip install -r scripts/pdf/requirements.txt
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
@@ -39,6 +43,7 @@ jobs:
       - run: npm run audit:release
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+      - run: npm run pdfs:check
       - uses: actions/upload-artifact@v7
         if: failure()
         with:

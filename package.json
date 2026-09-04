@@ -25,7 +25,9 @@
     "start": "node .next/standalone/server.js",
     "lint": "oxlint . --deny-warnings",
     "media:compress-hero": "node scripts/compress-hero-video.mjs",
-    "media:optimize-image": "node scripts/optimize-image.mjs"
+    "media:optimize-image": "node scripts/optimize-image.mjs",
+    "pdfs:build": "node scripts/pdf/run.mjs scripts/pdf/build.py",
+    "pdfs:check": "node scripts/pdf/run.mjs scripts/pdf/check.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
