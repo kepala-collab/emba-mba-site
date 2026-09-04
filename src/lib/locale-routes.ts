@@ -4,7 +4,7 @@ type LocaleTriple = { en: string; zh: string; ms: string };
  * Full trilingual route registry. `zh` and `ms` mirror the English tree:
  * /zh and /ms are the localized homepages (English home lives at /home).
  */
-const EN_ROUTES = [
+export const EN_ROUTES = [
   "/home",
   "/executive-mba",
   "/how-it-works",
