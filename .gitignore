@@ -35,6 +35,8 @@
 /web_*.zip
 /web_*.tar.gz
 /emba_*.zip
+__pycache__/
+*.pyc
 
 # debug
 npm-debug.log*
