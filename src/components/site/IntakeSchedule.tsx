@@ -5,7 +5,14 @@ import { useEffect, useState } from "react";
 import { CTA_LABELS, INTAKES, PROGRAMME_YEAR } from "@/lib/content";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import { cohortKey } from "@/lib/conversion-contract";
-import { getIntakeStatus, intakeStatusLabel, malaysiaDateKey, type IntakeStatus } from "@/lib/intakes";
+import {
+  formatIntakeDateRange,
+  formatIntakeTime,
+  getIntakeStatus,
+  intakeStatusLabel,
+  malaysiaDateKey,
+  type IntakeStatus,
+} from "@/lib/intakes";
 
 type Props = {
   lang?: "en" | "zh" | "ms";
@@ -125,13 +132,13 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                 <tr key={key} data-status={status}>
                   <td className="co">{cohort.co}</td>
                   <td>{cohort.language === "Mandarin" ? t.mandarin : t.english}</td>
-                  <td className="s mono">{cohort.s1}</td>
-                  <td className="s mono">{cohort.s2}</td>
-                  <td className="s mono">{cohort.s3}</td>
+                  <td className="s mono">{formatIntakeDateRange(cohort.s1, lang)}</td>
+                  <td className="s mono">{formatIntakeDateRange(cohort.s2, lang)}</td>
+                  <td className="s mono">{formatIntakeDateRange(cohort.s3, lang)}</td>
                   <td className="seats">
                     {cohort.days === "Sat–Sun" ? t.satSun : t.friSat}
                     <br />
-                    {cohort.time}
+                    {formatIntakeTime(cohort.time, lang)}
                   </td>
                   <td className="intake-action-cell">
                     {canEnquire ? <Link className="intake-action-link" href={href} data-track-event="cohort_select" data-track-id={`cohort_${key}`} data-track-location="intake_schedule" data-track-cohort={key} data-track-intent={intent}>
@@ -166,11 +173,11 @@ export default function IntakeSchedule({ lang = "en", label }: Props) {
                 <span className={`intake-availability is-${status}`}>{canEnquire ? availability : statusLabel(status, lang)}</span>
               </header>
               <dl>
-                <div><dt>{t.s1}</dt><dd>{cohort.s1}</dd></div>
-                <div><dt>{t.s2}</dt><dd>{cohort.s2}</dd></div>
-                <div><dt>{t.s3}</dt><dd>{cohort.s3}</dd></div>
+                <div><dt>{t.s1}</dt><dd>{formatIntakeDateRange(cohort.s1, lang)}</dd></div>
+                <div><dt>{t.s2}</dt><dd>{formatIntakeDateRange(cohort.s2, lang)}</dd></div>
+                <div><dt>{t.s3}</dt><dd>{formatIntakeDateRange(cohort.s3, lang)}</dd></div>
               </dl>
-              <footer><span>{days}</span><strong>{cohort.time}</strong></footer>
+              <footer><span>{days}</span><strong>{formatIntakeTime(cohort.time, lang)}</strong></footer>
               {canEnquire ? <Link className="intake-card-action" href={href} data-track-event="cohort_select" data-track-id={`mobile_cohort_${key}`} data-track-location="intake_schedule_mobile" data-track-cohort={key} data-track-intent={intent}>
                 {`${t.cta} →`}
               </Link> : <Link className="intake-card-action" href={t.intakesPath}>{t.nextCohort}</Link>}
