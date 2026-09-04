@@ -1,0 +1,527 @@
+{
+  "decision-guide": {
+    "blocks": [
+      {
+        "kind": "h1",
+        "text": "What this programme actually is."
+      },
+      {
+        "kind": "p",
+        "text": "This is applied management development for experienced, working managers. You bring a live business challenge, use structured frameworks to test your assumptions and options, and complete a real project on your own work — not a case study."
+      },
+      {
+        "body": "Six training days across three scheduled sessions, coaching and an applied project, completed across the full six months while you keep working.",
+        "kind": "card",
+        "title": "Six-month shape"
+      },
+      {
+        "body": "Participants who meet the requirements receive the CMI-recognised Executive MBA programme certificate. Chartered Manager remains a separate, optional CMI route.",
+        "kind": "card",
+        "title": "On completion"
+      },
+      {
+        "body": "The F.A.S.T. approach and twelve management frameworks give you a repeatable way to define a problem, weigh options and turn a decision into an action plan.",
+        "kind": "card",
+        "title": "The method"
+      },
+      {
+        "kind": "h2",
+        "text": "A good fit if you"
+      },
+      {
+        "kind": "p",
+        "text": "•&nbsp; already make decisions that affect people, operations or business performance<br/>•&nbsp; can bring a live business challenge into the learning<br/>•&nbsp; want applied development rather than a traditional academic MBA<br/>•&nbsp; can protect time for three scheduled sessions, coaching and project work across six months"
+      },
+      {
+        "kind": "sp",
+        "mm": 3
+      },
+      {
+        "kind": "notice",
+        "text": "What it is not: a university degree, an MQA-accredited academic MBA, a promise of promotion, or an automatic Chartered Manager award."
+      },
+      {
+        "kind": "pb"
+      },
+      {
+        "kind": "h1",
+        "text": "This programme vs a traditional MBA."
+      },
+      {
+        "header": [
+          "Aspect",
+          "This programme",
+          "A traditional academic MBA"
+        ],
+        "kind": "table",
+        "rows": [
+          [
+            "Time",
+            "Six months, alongside full-time work",
+            "Typically 18–24 months"
+          ],
+          [
+            "What you build",
+            "Judgment on your own live business issue, plus reusable frameworks",
+            "Academic theory, research and case analysis"
+          ],
+          [
+            "Assessment",
+            "One applied business project — no exams, no thesis",
+            "Assignments or exams, plus a dissertation"
+          ],
+          [
+            "Who teaches",
+            "Industry practitioners, consultants and executive coaches",
+            "Academic faculty and research supervisors"
+          ],
+          [
+            "Format",
+            "Three scheduled sessions across six months; keep working",
+            "A set academic calendar"
+          ],
+          [
+            "Credential",
+            "CMI (UK)-recognised programme certificate",
+            "An academic MBA degree"
+          ]
+        ]
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "notice",
+        "text": "This table describes a reference academic MBA of 18–24 months built around academic modules and a dissertation. It does not describe every MBA programme."
+      },
+      {
+        "kind": "pb"
+      },
+      {
+        "kind": "h1",
+        "text": "Four questions to ask before you enquire."
+      },
+      {
+        "body": "Pick a current decision, constraint or opportunity that genuinely matters to your role or business — that becomes your project.",
+        "kind": "card",
+        "title": "1.  Is the work relevant?"
+      },
+      {
+        "body": "The six months run across three scheduled sessions plus coaching and project work. Check the published cohort dates against your responsibilities.",
+        "kind": "card",
+        "title": "2.  Is the schedule workable?"
+      },
+      {
+        "body": "If funding or sponsorship matters, ask for the employer conversation and the HRD Corp briefing before your company applies.",
+        "kind": "card",
+        "title": "3.  Do you need employer support?"
+      },
+      {
+        "body": "A limited number of LIFE Innoversity scholarships are awarded on a selective basis to eligible Malaysian applicants, after assessment and written approval. They are never automatic.",
+        "kind": "card",
+        "title": "4.  Are you exploring the scholarship?"
+      },
+      {
+        "kind": "sp",
+        "mm": 5
+      },
+      {
+        "kind": "h1",
+        "text": "Common questions."
+      },
+      {
+        "items": [
+          [
+            "Is this a real MBA?",
+            "It is an Executive MBA programme recognised by CMI (UK) against CMI Professional Standards. It is professional development, not an MQA-accredited academic degree."
+          ],
+          [
+            "Will I become a Chartered Manager?",
+            "Not automatically. On completion you receive the CMI certificate; Chartered Manager is a separate, optional CMI route with its own eligibility, assessment and fees, decided by CMI."
+          ],
+          [
+            "Can I do it while working full-time?",
+            "Yes — it is built for working managers: three scheduled sessions across six months, with an applied project on your own work. No exams, no thesis."
+          ]
+        ],
+        "kind": "faq"
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "cta",
+        "text": "Request a no-obligation programme-fit conversation — support@futurereadymba.com"
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "notice",
+        "text": "Published Malaysian standard fee: RM10,000.00. Any scholarship award and resulting participant fee are confirmed individually in writing. This guide is not an offer of admission, scholarship approval or payment commitment."
+      }
+    ],
+    "cover_cta": "Talk to the programme team — support@futurereadymba.com",
+    "cover_notice": "The Future Ready Executive MBA is a professional development programme recognised by CMI (UK). It is not an MQA-accredited academic degree or a regulated qualification.",
+    "facts": [
+      [
+        "6",
+        "months"
+      ],
+      [
+        "6",
+        "training days"
+      ],
+      [
+        "3",
+        "scheduled sessions"
+      ],
+      [
+        "1",
+        "applied project"
+      ]
+    ],
+    "intro": "Use this to judge whether the programme fits the responsibility you already carry — not just the title you would like next.",
+    "kicker": "A PRIVATE DECISION GUIDE",
+    "lead": "A plain-English guide for Malaysian managers who want a better next move — without stepping away from work.",
+    "promise": "A clear view of the programme, the CMI-recognised certificate, the separate Chartered Manager route, the real time commitment, how it compares to an academic MBA, and the questions worth asking before you enquire.",
+    "promise_t": "What you'll get",
+    "subhead": "Made for the decision you're facing now.",
+    "title": "Is this programme right for you?"
+  },
+  "employer-funding-brief": {
+    "blocks": [
+      {
+        "kind": "h1",
+        "text": "What an employer is evaluating."
+      },
+      {
+        "kind": "p",
+        "text": "A practical management-development decision connects three things: the participant's responsibility, the business issue they will work on, and the capability the organisation needs strengthened."
+      },
+      {
+        "body": "Participants bring a current business challenge, use management frameworks to test assumptions and options, and complete an applied business project.",
+        "kind": "card",
+        "title": "Applied work"
+      },
+      {
+        "body": "Six months across six training days, three scheduled sessions, coaching and applied project work.",
+        "kind": "card",
+        "title": "Defined commitment"
+      },
+      {
+        "body": "Successful participants receive the CMI Certificate of Recognition for the programme — not an academic MBA degree or regulated qualification.",
+        "kind": "card",
+        "title": "Professional recognition"
+      },
+      {
+        "kind": "h2",
+        "text": "The employer-led HRD Corp process"
+      },
+      {
+        "kind": "p",
+        "text": "1.&nbsp; Employer confirms its current eligibility and levy position.<br/>2.&nbsp; Programme team supplies the quotation, schedule, course content and trainer documents.<br/>3.&nbsp; Employer submits the application before training begins. HRD Corp decides eligibility and the approved amount."
+      },
+      {
+        "kind": "sp",
+        "mm": 2
+      },
+      {
+        "kind": "notice",
+        "text": "Funding is not automatic. The employer and HRD Corp control eligibility, timing and the approved amount."
+      },
+      {
+        "kind": "pb"
+      },
+      {
+        "kind": "h1",
+        "text": "A short internal conversation starter."
+      },
+      {
+        "body": "The manager is responsible for [team / business unit / project] and needs a more structured method for evaluating complex decisions and leading implementation.",
+        "kind": "card",
+        "title": "The capability need"
+      },
+      {
+        "body": "The participant will work on [current business challenge] and produce an applied business project that can be discussed with the organisation.",
+        "kind": "card",
+        "title": "The applied outcome"
+      },
+      {
+        "body": "Six facilitated training days across three scheduled sessions, coaching and applied work across the six-month programme.",
+        "kind": "card",
+        "title": "The format"
+      },
+      {
+        "body": "Should sponsorship, or an employer-led HRD Corp application, be explored before the selected intake?",
+        "kind": "card",
+        "title": "The funding question"
+      },
+      {
+        "kind": "sp",
+        "mm": 5
+      },
+      {
+        "kind": "h1",
+        "text": "Common employer questions."
+      },
+      {
+        "items": [
+          [
+            "Does the levy cover the full fee?",
+            "Not necessarily. HRD Corp decides the approved amount under its Allowable Cost Matrix, and funding cannot exceed the employer's available levy balance. The programme team supplies the documents needed to apply."
+          ],
+          [
+            "Who applies — the company or the participant?",
+            "The employer applies, in e-TRiS, before training begins. The participant does not submit the grant. HRD Corp — not the programme provider — decides approval."
+          ],
+          [
+            "What does the company get back?",
+            "An applied project on a real business issue the manager already owns, plus a CMI-recognised programme certificate on successful completion."
+          ]
+        ],
+        "kind": "faq"
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "cta",
+        "text": "Request the employer document pack — support@futurereadymba.com"
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "notice",
+        "text": "Right Dots Resources is the authorised programme partner for marketing, enquiries, pricing and enrolment coordination. The applicable written proposal controls delivery, pricing and terms."
+      }
+    ],
+    "cover_cta": "Request the employer document pack — support@futurereadymba.com",
+    "cover_notice": "The Future Ready Executive MBA is a professional development programme recognised by CMI (UK). It is not an MQA-accredited academic degree or a regulated qualification.",
+    "facts": [
+      [
+        "6",
+        "months"
+      ],
+      [
+        "6",
+        "training days"
+      ],
+      [
+        "3",
+        "scheduled sessions"
+      ],
+      [
+        "1",
+        "applied project"
+      ]
+    ],
+    "intro": "This is a structured programme built around a live business issue and an applied project — so the organisation sees capability strengthened on its own work, not a generic attendance record.",
+    "kicker": "EMPLOYER DECISION BRIEF",
+    "lead": "A concise internal briefing for a manager, HR team or learning leader evaluating practical management development.",
+    "promise": "A clear employer-led funding process, the programme's applied format, a short internal case you can adapt, and answers to the questions a sponsor usually asks.",
+    "promise_t": "What you'll get",
+    "subhead": "The outcome is applied, not just attendance.",
+    "title": "Employer sponsorship & HRD Corp funding."
+  },
+  "scholarship-eligibility": {
+    "blocks": [
+      {
+        "kind": "h1",
+        "text": "The published Malaysian fee."
+      },
+      {
+        "body": "RM10,000.00",
+        "kind": "card",
+        "title": "Standard programme fee"
+      },
+      {
+        "body": "A limited number are awarded on a selective basis to eligible Malaysian applicants, after assessment and written approval.",
+        "kind": "card",
+        "title": "LIFE Innoversity scholarship"
+      },
+      {
+        "body": "Confirmed individually in writing after assessment. Installment schedules are provided in writing before payment.",
+        "kind": "card",
+        "title": "Award & participant fee"
+      },
+      {
+        "kind": "h2",
+        "text": "The scholarship is not"
+      },
+      {
+        "kind": "p",
+        "text": "•&nbsp; automatic for every Malaysian participant<br/>•&nbsp; a discount code or a guarantee<br/>•&nbsp; a replacement for a written fee schedule<br/>•&nbsp; an HRD Corp decision"
+      },
+      {
+        "kind": "sp",
+        "mm": 2
+      },
+      {
+        "kind": "notice",
+        "text": "There is no fee to request information or to ask the programme team about the assessment process."
+      },
+      {
+        "kind": "pb"
+      },
+      {
+        "kind": "h1",
+        "text": "Prepare for an eligibility conversation."
+      },
+      {
+        "kind": "p",
+        "text": "Use these prompts to organise the facts you want to discuss. They are not selection criteria and do not predict an outcome."
+      },
+      {
+        "body": "What responsibility, business issue or management capability are you looking to strengthen?",
+        "kind": "card",
+        "title": "Your programme goal"
+      },
+      {
+        "body": "Which published English or Mandarin cohort works with your commitments?",
+        "kind": "card",
+        "title": "Your intended cohort"
+      },
+      {
+        "body": "Self-funding, employer sponsorship, or asking your employer to explore HRD Corp funding?",
+        "kind": "card",
+        "title": "Your funding route"
+      },
+      {
+        "body": "What would you need clarified about fit, dates, fee, scholarship conditions or the separate Chartered Manager route before deciding?",
+        "kind": "card",
+        "title": "Your next question"
+      },
+      {
+        "kind": "sp",
+        "mm": 5
+      },
+      {
+        "kind": "h1",
+        "text": "Common questions."
+      },
+      {
+        "items": [
+          [
+            "Do all Malaysians get the scholarship?",
+            "No. A limited number are awarded on a selective basis to eligible Malaysian applicants, after assessment and written approval. It is not automatic and is not a discount code."
+          ],
+          [
+            "Is the scholarship the same as HRD Corp funding?",
+            "No. The scholarship is assessed by the programme's scholarship provider; HRD Corp funding is a separate, employer-led route decided by HRD Corp."
+          ],
+          [
+            "When is my fee confirmed?",
+            "Your award, if any, and the resulting participant fee are confirmed individually in writing after assessment, with an installment schedule before payment."
+          ]
+        ],
+        "kind": "faq"
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "cta",
+        "text": "Request an eligibility conversation — support@futurereadymba.com"
+      },
+      {
+        "kind": "sp",
+        "mm": 4
+      },
+      {
+        "kind": "notice",
+        "text": "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Chartered Manager assessment, membership, fees and awards are controlled separately by CMI."
+      }
+    ],
+    "cover_cta": "Ask about the scholarship assessment — support@futurereadymba.com",
+    "cover_notice": "The Future Ready Executive MBA is a professional development programme recognised by CMI (UK). It is not an MQA-accredited academic degree or a regulated qualification.",
+    "facts": [
+      [
+        "6",
+        "months"
+      ],
+      [
+        "6",
+        "training days"
+      ],
+      [
+        "3",
+        "scheduled sessions"
+      ],
+      [
+        "1",
+        "applied project"
+      ]
+    ],
+    "intro": "Scholarships are limited and awarded on a selective basis. Eligibility is assessed, and an award exists only once it has been confirmed in writing. Knowing that up front makes your conversation with the programme team faster and clearer.",
+    "kicker": "ELIGIBILITY INFORMATION",
+    "lead": "Use this before you ask about the scholarship. It helps you prepare the right questions — it is not an application or approval form.",
+    "promise": "The standard fee, the scholarship assessment conditions, the questions worth preparing, the facts that matter to a conversation, and the next step for an eligibility discussion.",
+    "promise_t": "What you'll get",
+    "subhead": "Clear terms protect everyone.",
+    "title": "Scholarship & eligibility self-check."
+  },
+  "working-managers-guide": {
+    "checks": [
+      "You carry responsibility for business results, people or major decisions.",
+      "You can bring a current business issue into the applied work.",
+      "You can attend all published session dates and complete work across six months.",
+      "You understand the programme is professional development, not an academic MBA degree.",
+      "You want the exact fee, scholarship or employer-funding route confirmed in writing."
+    ],
+    "cover_h1": "Six months. One applied outcome.",
+    "cta": "Request the programme guide or arrange a conversation",
+    "facts": [
+      [
+        "6",
+        "months"
+      ],
+      [
+        "6",
+        "training days"
+      ],
+      [
+        "3",
+        "scheduled sessions"
+      ],
+      [
+        "1",
+        "applied project"
+      ]
+    ],
+    "fit_title": "Use these five checks before you enquire",
+    "kicker": "2026 WORKING MANAGER'S GUIDE",
+    "lead": "Everything to verify before you decide: programme structure, CMI recognition, published fees, scholarship assessment and employer funding.",
+    "notice": "No payment or enrolment commitment is required to request information.",
+    "sections": [
+      [
+        "What you are evaluating",
+        "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed for business owners, directors, general managers and senior managers who want to work on a live business issue while remaining in their roles."
+      ],
+      [
+        "How the six months work",
+        "Six facilitated training days are delivered across three scheduled sessions. Coaching and applied project work continue across the programme. You use the frameworks on a current business challenge and complete one applied business project. There are no traditional examinations or thesis."
+      ],
+      [
+        "Recognition, stated precisely",
+        "Successful participants receive the CMI Certificate of Recognition for the programme. This is a professional development programme, not an MQA-accredited academic degree or a regulated qualification. Chartered Manager is a separate optional CMI route with its own eligibility, assessment, membership and fees."
+      ],
+      [
+        "Published Malaysian fee",
+        "The standard programme fee is RM10,000.00. Eligible Malaysian applicants may be considered for a LIFE Innoversity scholarship, subject to availability, assessment and written approval. Any award and resulting participant fee are confirmed individually in writing."
+      ],
+      [
+        "Employer funding",
+        "An eligible HRD Corp-registered employer may submit a grant application before training begins. The programme team supplies the quotation, schedule, course content and trainer documents. HRD Corp decides eligibility and the approved amount; funding is not guaranteed by the programme provider."
+      ]
+    ],
+    "title": "A clear guide to the six-month Future Ready Executive MBA."
+  }
+}
