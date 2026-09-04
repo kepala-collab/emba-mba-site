@@ -73,6 +73,20 @@ a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,'Times New Roman',serif;font-weight:500;line-height:var(--line-heading);
   letter-spacing:0;margin:0;text-wrap:balance;font-kerning:normal;font-optical-sizing:none;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0;font-synthesis:none;overflow-wrap:normal;word-break:normal;hyphens:none}
 .technical-term{font-family:var(--font-archivo),ui-sans-serif,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:1em;font-weight:650;line-height:inherit;letter-spacing:0;font-variant-ligatures:none;font-synthesis:none;white-space:nowrap}
+/* R1.6: explicit CJK fallback stack for zh-Hans-MY, scoped to elements not
+   already covered by the sitewide html[lang^="zh-Hans"] body/h1-h4 rule below
+   (see line ~956) - that rule wins on body and h1-h4 by specificity, so this
+   closes the gap for p/li/td/th, including component classes such as
+   .lead-form-intro that set font-family directly on a <p> without a CJK
+   fallback. Latin variable first so embedded English/RM figures keep the
+   site face; the sitewide rule's own order is unchanged. */
+:lang(zh-Hans-MY) body,
+[lang="zh-Hans-MY"] body,
+[lang="zh-Hans-MY"] p,
+[lang="zh-Hans-MY"] li,
+[lang="zh-Hans-MY"] td,
+[lang="zh-Hans-MY"] th{font-family:var(--font-archivo),"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",sans-serif}
+[lang="zh-Hans-MY"] h1,[lang="zh-Hans-MY"] h2,[lang="zh-Hans-MY"] h3,[lang="zh-Hans-MY"] h4{font-family:var(--font-fraunces),"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",sans-serif}
 
 .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,4vw,26px);position:relative;z-index:1}
 .mono{font-family:var(--font-plex-mono),ui-monospace,monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
