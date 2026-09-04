@@ -1,6 +1,52 @@
 import { ABC_PROFILE, FACTS, HRD_CORP_CLAIM, OPERATOR, PROGRAMME_POSITIONING_SENTENCE, SITE } from "@/lib/content";
+import { EN_ROUTES, LOCALE_PAIRS } from "@/lib/locale-routes";
 
 export const dynamic = "force-static";
+
+// Routes carrying a noindex directive: excluded from every AI-crawler discovery
+// document, in every language mirror.
+const NOINDEX_ROUTES = new Set<string>([
+  "/corporate-training",
+  "/online-executive-mba",
+  "/programmes/shift-hr",
+  "/lp/google",
+  "/lp/meta",
+  "/unsubscribed",
+]);
+
+const INDEXABLE_ROUTES = EN_ROUTES.filter((path) => !NOINDEX_ROUTES.has(path));
+
+const ACRONYMS = new Set(["mba", "hrd", "cmi", "faq", "ai", "sme"]);
+const MINOR_WORDS = new Set(["for", "vs", "and", "the", "a", "on", "of", "in"]);
+
+function humanizeWord(word: string, isFirst: boolean): string {
+  if (ACRONYMS.has(word)) return word.toUpperCase();
+  if (!isFirst && MINOR_WORDS.has(word)) return word;
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function humanizeSegment(segment: string): string {
+  return segment
+    .split("-")
+    .map((word, index) => humanizeWord(word, index === 0))
+    .join(" ");
+}
+
+function labelForPath(path: string): string {
+  if (path === "/home") return "Homepage";
+  return path.split("/").filter(Boolean).map(humanizeSegment).join(" – ");
+}
+
+// Placeholder-neutral for Release 1: R3.4 replaces these one-clause
+// descriptions with final copy once Malay and Chinese pages carry it.
+function localizedSources(locale: "ms" | "zh"): string {
+  const language = locale === "ms" ? "Bahasa Melayu" : "简体中文";
+  return INDEXABLE_ROUTES.map((path) => {
+    const pair = LOCALE_PAIRS.find((candidate) => candidate.en === path)!;
+    const localizedPath = locale === "ms" ? pair.ms : pair.zh;
+    return `- [${labelForPath(path)}](${SITE.url}${localizedPath}): ${language} mirror of ${SITE.url}${pair.en}.`;
+  }).join("\n");
+}
 
 export function GET() {
   const body = `# ${SITE.name}
@@ -19,6 +65,16 @@ ${OPERATOR.name} is ABC's ${OPERATOR.role} for programme enquiries, pricing and 
 - [FAQ](${SITE.url}/faq): recognition, attendance, claims and eligibility
 - [About](${SITE.url}/about): provider, website operator and editorial standards
 - [Chinese programme information](${SITE.url}/zh): Chinese-language overview and enquiry route
+- [Insights](${SITE.url}/insights): management-thinking articles behind the programme
+- [Resources](${SITE.url}/resources): decision guides and comparison checklists
+- [Apply](${SITE.url}/apply): the enrolment enquiry form
+- [Diagnostic](${SITE.url}/diagnostic): the no-data programme-fit check
+
+## Malay sources (Bahasa Melayu)
+${localizedSources("ms")}
+
+## Chinese sources (简体中文)
+${localizedSources("zh")}
 
 ## Important interpretation
 - The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI; it is professional development, not an MQA-accredited academic qualification.
