@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { setAnalyticsConsent } from "@/lib/analytics";
+import { CONSENT_PREFERENCES_EVENT, setAnalyticsConsent } from "@/lib/analytics";
 import { usePathname } from "next/navigation";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 
 const CONSENT_STORAGE_KEY = "fr_emba_consent_v1";
-export const CONSENT_PREFERENCES_EVENT = "future-ready:open-consent";
 
 export default function ConsentBanner() {
   const { consentVisible, setConsentStatus } = useFloatingUi();
