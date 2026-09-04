@@ -1,11 +1,9 @@
 import { Suspense } from "react";
 import AnalyticsBridge from "@/components/site/AnalyticsBridge";
-import GoogleTagManager from "@/components/site/GoogleTagManager";
-import ConsentBanner from "@/components/site/ConsentBanner";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import WhatsAppFloat from "@/components/site/WhatsAppFloat";
-import ProgrammeAssistant from "@/components/site/ProgrammeAssistant";
+import IdleChrome from "@/components/site/IdleChrome";
 import JsonLd from "@/components/site/JsonLd";
 import { SITE, COMPLIANCE, OPERATOR } from "@/lib/content";
 import { OPERATOR_ID, PROVIDER_ID, WEBSITE_ID } from "@/lib/seo";
@@ -85,7 +83,6 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
   return (
     <>
       <JsonLd data={structuredData} />
-      <GoogleTagManager />
       <Suspense fallback={null}><AnalyticsBridge /></Suspense>
       <RouteScrollManager />
       <FloatingUiProvider>
@@ -95,8 +92,7 @@ export default function SiteChrome({ children }: Readonly<{ children: React.Reac
         <noscript><style>{`.reveal{opacity:1;transform:none}`}</style></noscript>
         <main id="main-content" tabIndex={-1}><RouteTransition>{children}</RouteTransition></main>
         <Footer />
-        <ConsentBanner />
-        <ProgrammeAssistant />
+        <IdleChrome />
         <WhatsAppFloat />
       </FloatingUiProvider>
     </>

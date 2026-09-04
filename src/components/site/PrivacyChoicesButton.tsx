@@ -1,6 +1,6 @@
 "use client";
 
-import { CONSENT_PREFERENCES_EVENT } from "@/components/site/ConsentBanner";
+import { CONSENT_PREFERENCES_EVENT } from "@/lib/analytics";
 
 export default function PrivacyChoicesButton({ label }: { label: string }) {
   return (

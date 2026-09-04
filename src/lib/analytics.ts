@@ -2,6 +2,12 @@ const ATTRIBUTION_STORAGE_KEY = "fr_emba_attribution_v1";
 const CONSENT_STORAGE_KEY = "fr_emba_consent_v1";
 const SCHEMA_VERSION = "1.0";
 
+// Shared with ConsentBanner (listens, to reopen) and PrivacyChoicesButton
+// (dispatches it). Lives here rather than in ConsentBanner.tsx so importing
+// it does not pull that "use client" component into callers that only need
+// the event name — ConsentBanner itself is now loaded lazily via IdleChrome.
+export const CONSENT_PREFERENCES_EVENT = "future-ready:open-consent";
+
 const UTM_KEYS = [
   "utm_source",
   "utm_medium",
