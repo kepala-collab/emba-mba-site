@@ -471,7 +471,7 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(1);
-  const heroImage = page.locator('.commerce-hero-media img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  const heroImage = page.locator('.commerce-hero-media img[alt="Future Ready Executive MBA participant in the programme’s ceremonial gown and cap, in a modern office atrium"]');
   await expect(heroImage).toBeVisible();
   await expect(heroImage).toHaveAttribute("src", /hero-leader/);
   await expect(heroImage).toHaveAttribute("fetchpriority", "high");
@@ -491,7 +491,7 @@ test("home hero presents a still image beside a visible text caption", async ({ 
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
-  const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  const image = media.locator('img[alt="Future Ready Executive MBA participant in the programme’s ceremonial gown and cap, in a modern office atrium"]');
   await expect(image).toBeVisible();
   await expect(image).toHaveAttribute("src", /hero-leader/);
   await expect(image).toHaveAttribute("fetchpriority", "high");
@@ -835,7 +835,7 @@ test("home hero presents a still image inside an accessible editorial frame", as
   const media = page.locator(".commerce-hero-media");
   await expect(media).toBeVisible();
   await expect(media.locator("video")).toHaveCount(0);
-  const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  const image = media.locator('img[alt="Future Ready Executive MBA participant in the programme’s ceremonial gown and cap, in a modern office atrium"]');
   await expect(image).toBeVisible();
   await expect(image).toHaveAttribute("src", /hero-leader/);
   await expect(image).toHaveAttribute("fetchpriority", "high");
@@ -848,7 +848,7 @@ test("home hero image is visible and prioritized after hydration", async ({ page
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await goto(page, "/home");
   const media = page.locator(".commerce-hero-media");
-  const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+  const image = media.locator('img[alt="Future Ready Executive MBA participant in the programme’s ceremonial gown and cap, in a modern office atrium"]');
   await expect(image).toBeVisible();
   await expect(image).toHaveAttribute("fetchpriority", "high");
   await expect(media.locator("video")).toHaveCount(0);
@@ -939,7 +939,7 @@ test("home hero image loads at mobile and desktop widths", async ({ page }) => {
     await page.setViewportSize({ width, height: width < 1000 ? 844 : 800 });
     await goto(page, "/home");
     const media = page.locator(".commerce-hero-media");
-    const image = media.locator('img[alt="Malaysian executive leader overlooking Kuala Lumpur"]');
+    const image = media.locator('img[alt="Future Ready Executive MBA participant in the programme’s ceremonial gown and cap, in a modern office atrium"]');
     await expect.poll(
       () => image.evaluate((element: HTMLImageElement) => element.naturalWidth),
       { message: `${width}px hero image should finish loading` },
