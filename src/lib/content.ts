@@ -24,29 +24,44 @@ export const PROGRAMME_POSITIONING_SENTENCE =
   "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI.";
 
 export const PROGRAMME_POSITIONING_ZH =
-  "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。";
+  "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可。";
 
 export const PROGRAMME_POSITIONING_MS =
   "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.";
 
 export const CTA_LABELS = {
-  guide: `Get the free ${PROGRAMME_YEAR} programme guide`,
+  guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
   company: "Enquire for your company",
   whatsapp: "Contact Future Ready EMBA on WhatsApp",
+  submit: "Send my programme enquiry →",
   zh: {
-    guide: `免费获取 ${PROGRAMME_YEAR} 课程指南`,
-    conversation: "预约课程沟通",
+    guide: `索取 ${PROGRAMME_YEAR} 年课程指南`,
+    conversation: "预约课程咨询",
     company: "企业课程咨询",
     whatsapp: "通过 WhatsApp 联系 Future Ready Executive MBA",
+    submit: "提交课程咨询 →",
   },
   ms: {
-    guide: `Dapatkan panduan program ${PROGRAMME_YEAR} percuma`,
-    conversation: "Aturkan perbualan program",
+    guide: `Dapatkan panduan program ${PROGRAMME_YEAR}`,
+    conversation: "Jadualkan sesi perbincangan program",
     company: "Pertanyaan untuk syarikat anda",
     whatsapp: "Hubungi Future Ready EMBA di WhatsApp",
+    submit: "Hantar pertanyaan program saya →",
   },
 } as const;
+
+// Single approved name for the fit-check tool, referenced across NAV, title,
+// eyebrow, result, resources card, insights links and llms.txt.
+export const PROGRAMME_FIT_CHECK = {
+  en: "Programme fit check",
+  ms: "Semakan kesesuaian program",
+  zh: "课程适配检查",
+} as const;
+
+// The controlled enquiry-commitment sentence: present in every enquiry variant.
+export const ENQUIRY_COMMITMENT =
+  "An enquiry does not commit you to enrol or pay.";
 
 export const PROGRAMME_PROOF = {
   graduates: 154,
@@ -395,7 +410,7 @@ export const NAV: NavItem[] = [
       { href: "/insights", label: "Insights" },
       { href: "/executive-mba-vs-mba", label: "Executive MBA vs MBA" },
       { href: "/faq", label: "Frequently asked questions" },
-      { href: "/diagnostic", label: "Programme fit check" },
+      { href: "/diagnostic", label: PROGRAMME_FIT_CHECK.en },
     ],
   },
 ];

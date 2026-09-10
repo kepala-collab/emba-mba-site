@@ -17,7 +17,7 @@ const COPY = {
   zh: {
     group: "课程认可与雇主资助标志",
     cmiAlt: "英国特许管理协会 CMI 官方标志",
-    cmi: "CMI（英国）背书及认可",
+    cmi: "CMI（英国）颁发及认可",
     hrdAlt: "HRD Corp Claimable 官方标志",
     hrd: "HRD Corp 可申请资助 · 以雇主申请及审批为准",
   },

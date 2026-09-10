@@ -84,7 +84,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
             </p>
             <p>
               <Link href="/zh/executive-mba">面向未来商业领导力的 Executive MBA</Link>{" "}
-              由 CMI 颁授并背书，是一门为期 {FACTS.durationMonths} 个月的专业发展课程。
+              由 CMI 颁发并认可，是一门为期 {FACTS.durationMonths} 个月的专业发展课程。
               顺利结业的学员，将获得本课程的 CMI Certificate of Recognition。
               它并非 MQA 认证的学术学位，也非受监管资格。
             </p>

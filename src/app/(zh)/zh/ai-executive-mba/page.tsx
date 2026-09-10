@@ -125,7 +125,7 @@ export default function AiExecutiveMbaPage() {
           <Reveal><h2 className="sec-h">加入 AI 主题，课程的正式属性不变。</h2></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {[
-              ["由 CMI 颁授并背书", "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书，并非 MQA 监管的学术学位。"],
+              ["由 CMI 颁发并认可", "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可，并非 MQA 监管的学术学位。"],
               ["HRD Corp", HRD_CORP_CLAIM_ZH],
               ["修读形式", `${FACTS.durationMonths} 个月的课程：${FACTS.liveSessions} 次指定的研习课，加上辅导与企业应用项目。`],
               ["课程费用", "标准费用 " + FACTS.priceStd + "。LIFE Innoversity 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准；最终金额与应付费用均以书面个别确认。"],
@@ -138,7 +138,7 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
           <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "72ch" }}>
-            本专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位或受监管资格。课程不保证收入、晋升或任何商业成果。
+            本专业课程由 CMI 颁发并认可，并非 MQA 认证的学术学位或受监管资格。课程不保证收入、晋升或任何商业成果。
           </p></Reveal>
         </div>
       </section>

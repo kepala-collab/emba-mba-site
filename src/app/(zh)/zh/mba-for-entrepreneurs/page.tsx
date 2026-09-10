@@ -65,7 +65,7 @@ export default function MbaForEntrepreneursZhPage() {
             企业应用项目就以您正在打造的企业或项目为对象。
           </p>
           <p className="mono sec-k mt-s">
-            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁授并背书
+            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁发并认可
           </p>
           <p className="sec-sub mt-s">
             查看完整的{" "}

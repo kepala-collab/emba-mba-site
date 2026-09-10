@@ -51,7 +51,7 @@ export default function ExecutiveMbaVsMbaPage() {
             <p className="sec-sub">
               从资格性质、评估方式、修读形式、所需时间到已公布费用，把两条路线逐项摆在一起看。{" "}
               <Link href="/zh/executive-mba" className="acc">Future Ready Executive MBA</Link>{" "}
-              是由 CMI 颁授并背书的专业课程，并非 MQA 认证的学术学位或受监管资格。
+              是由 CMI 颁发并认可的专业课程，并非 MQA 认证的学术学位或受监管资格。
               目标需要一纸学术学位，就选学术 MBA；想在不离开岗位的前提下把管理能力真正落地，就选这门课程。
             </p>
           </Reveal>

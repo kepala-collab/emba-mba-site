@@ -85,7 +85,7 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              {SITE.provider} 是 HRD Corp（HRDC）核准的培训机构，Future Ready Business Leadership 由英国特许管理协会（CMI）颁授并背书。
+              {SITE.provider} 是 HRD Corp（HRDC）核准的培训机构，Future Ready Business Leadership 由英国特许管理协会（CMI）颁发并认可。
               <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM_ZH}</b> 配套的课程文件由课程团队备妥。
             </p>
           </Reveal>
@@ -146,7 +146,7 @@ export default function HrdCorpClaimablePage() {
             </ul>
           </Reveal>
           <p className="fine mt-s">
-            完整课程详情见<Link href="/zh/executive-mba">Executive MBA</Link> 页面。这是一门由 CMI 颁授并背书的专业发展课程，并非 MQA 监管的学术学位。
+            完整课程详情见<Link href="/zh/executive-mba">Executive MBA</Link> 页面。这是一门由 CMI 颁发并认可的专业发展课程，并非 MQA 监管的学术学位。
           </p>
         </div>
       </section>

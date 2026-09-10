@@ -41,7 +41,7 @@ export default function ZhMetaLP() {
           <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">为肩负跨部门决策责任的在职领导者而设</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              {FACTS.durationMonths} 个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
+              {FACTS.durationMonths} 个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁发并认可的 Executive MBA。</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
@@ -83,7 +83,7 @@ export default function ZhMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "由 CMI（英国）颁授并背书"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次进行的培训日`], ["1", "以真实企业课题为核心的企业应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
+          {[["CMI", "由 CMI（英国）颁发并认可"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次进行的培训日`], ["1", "以真实企业课题为核心的企业应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

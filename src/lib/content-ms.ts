@@ -18,6 +18,22 @@ const MODULES_MS = [
 export const HRD_CORP_CLAIM_MS =
   "Majikan Malaysia yang berdaftar dengan HRD Corp perlu mengemukakan permohonan geran melalui e-TRiS sebelum program bermula. HRD Corp menentukan kelayakan dan jumlah yang diluluskan berdasarkan Allowable Cost Matrix; jumlah pembiayaan tidak melebihi baki levi majikan. Pihak yang memohon ialah majikan, bukan peserta.";
 
+// Mirror of HRD_CORP_CLAIM.label in content.ts.
+export const HRD_CORP_CLAIM_LABEL_MS =
+  "Pembiayaan HRD Corp yang diterajui majikan · tertakluk kepada kelulusan";
+
+// Mirror of INCLUSIONS[5].s in content.ts.
+export const INCLUSIONS_CMI_CERTIFICATE_MS =
+  "Penyempurnaan program yang berjaya membawa kepada CMI Certificate of Recognition. Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan, penilaian dan yuran tersendiri.";
+
+// Mirror of CERTIFICATE_POSITIONING.professionalRelevance in content.ts.
+export const CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS =
+  "Sijil ini merekodkan penyempurnaan pembangunan pengurusan dan kepimpinan yang diiktiraf berdasarkan Professional Standard CMI, dan boleh disenaraikan dalam profil profesional. Ia tidak menjamin kenaikan pangkat, pekerjaan, kenaikan gaji atau sebarang hasil kerjaya lain.";
+
+// Mirror of ENQUIRY_COMMITMENT in content.ts.
+export const ENQUIRY_COMMITMENT_MS =
+  "Pertanyaan tidak mengikat anda untuk mendaftar atau membayar.";
+
 export const PROGRAMME_AUDIENCE_MS =
   "Sesuai untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan — mereka yang memikul tanggungjawab sebenar: hasil syarikat, pasukan, keputusan merentas jabatan atau hala tuju pertumbuhan.";
 

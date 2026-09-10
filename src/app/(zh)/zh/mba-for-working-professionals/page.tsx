@@ -20,7 +20,7 @@ const jsonLd = {
   "@id": `${SITE.url}/zh/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `由 CMI 颁授并背书的 Executive MBA，${FACTS.durationMonths} 个月内分 ${FACTS.liveSessions} 次导师带领的研习课进行，另设线上选项。`,
+    `由 CMI 颁发并认可的 Executive MBA，${FACTS.durationMonths} 个月内分 ${FACTS.liveSessions} 次导师带领的研习课进行，另设线上选项。`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -76,7 +76,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
               不包含在已公布的课程或费用之内。
             </p>
             <p className="mono sec-k mt-s">
-            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁授并背书
+            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁发并认可
             </p>
             <p className="sec-sub mt-s">
               探索完整的{" "}
@@ -165,7 +165,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
           </Reveal>
           <p className="fine mt-s">
             此表所指的参照学术 MBA，是一门为期 18–24 个月、以学术模块、作业或考试及论文为主的课程，
-            并不代表所有 MBA。这门专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位。
+            并不代表所有 MBA。这门专业课程由 CMI 颁发并认可，并非 MQA 认证的学术学位。
             请按您真正需要的资格性质与修读形式来选择。查看完整的{" "}
             <Link href="/zh/fees" className="acc">学费及课程内容</Link>。
           </p>

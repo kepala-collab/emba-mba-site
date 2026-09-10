@@ -38,7 +38,7 @@ const courseJsonLd = {
   "@id": `${SITE.url}/zh/executive-mba-malaysia#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书，在马来西亚现场与线上开课。符合资格的 HRD Corp 注册雇主可为员工申请资助，须经 HRD Corp 批准。",
+    "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可，在马来西亚现场与线上开课。符合资格的 HRD Corp 注册雇主可为员工申请资助，须经 HRD Corp 批准。",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -82,7 +82,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           <Reveal>
             <p className="sec-sub">
               Future Ready Executive MBA 专为马来西亚的企业主、董事与资深管理者而设，是一门为期 {FACTS.durationMonths} 个月的高管教育及专业发展课程，
-              由 CMI 颁授并背书，以集中现场授课的方式进行。<b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_ZH}</b>{" "}
+              由 CMI 颁发并认可，以集中现场授课的方式进行。<b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_ZH}</b>{" "}
               课程以令吉计价，标准费用为 {FACTS.priceStd}。奖学金名额有限，符合资格的马来西亚申请者经评估与书面批准后，方可获{" "}
               <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} 奖学金资格评估</b>，评估结果与最终费用均以书面个别确认。
               学员把课堂上的框架直接用在自己的企业、市场与运营情境中。
@@ -165,7 +165,7 @@ export default function ExecutiveMbaMalaysiaPage() {
             </ul>
           </Reveal>
           <p className="fine mt-s">
-            上列组织反映 {SITE.providerShort} 旗下各课程的客户与学员构成；列出并不代表这些组织为课程背书。
+            上列组织反映 {SITE.providerShort} 旗下各课程的客户与学员构成；列出并不代表这些组织认可课程。
           </p>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function ExecutiveMbaMalaysiaPage() {
             <Link href="/zh/intakes" className="btn btn-primary">查看全部 2026 班次</Link>
           </p>
           <p className="fine center mt-s">
-            本专业课程由 CMI 颁授并背书，并非 MQA 监管的学术学位。符合资格的马来西亚雇主可在开课前申请 HRD Corp 资助，是否批准及批准金额由 HRD Corp 决定。您也可以先<Link href="/zh/apply">预约一次课程沟通</Link>，再作决定。
+            本专业课程由 CMI 颁发并认可，并非 MQA 监管的学术学位。符合资格的马来西亚雇主可在开课前申请 HRD Corp 资助，是否批准及批准金额由 HRD Corp 决定。您也可以先<Link href="/zh/apply">预约一次课程沟通</Link>，再作决定。
           </p>
         </div>
       </section>

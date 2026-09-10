@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/mba-for-sme-owners", {
   title: "面向中小企业主及创办人的 Executive MBA",
-  description: `由 CMI 颁授并背书的 Executive MBA，${FACTS.durationMonths} 个月分 ${FACTS.liveSessions} 次导师带领的研习课完成，专为中小企业主打造。`,
+  description: `由 CMI 颁发并认可的 Executive MBA，${FACTS.durationMonths} 个月分 ${FACTS.liveSessions} 次导师带领的研习课完成，专为中小企业主打造。`,
 });
 
 const jsonLd = {
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": `${SITE.url}/zh/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `由 CMI 颁授并背书的 Executive MBA，${FACTS.durationMonths} 个月分 ${FACTS.liveSessions} 次导师带领的研习课，为中小企业主与创办人开办。`,
+    `由 CMI 颁发并认可的 Executive MBA，${FACTS.durationMonths} 个月分 ${FACTS.liveSessions} 次导师带领的研习课，为中小企业主与创办人开办。`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -72,7 +72,7 @@ export default function MbaForSmeOwnersZhPage() {
             用到授权、育才、接班与增长等课题上。
           </p>
           <p className="mono sec-k mt-s">
-            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁授并背书
+            {FACTS.durationMonths} 个月 · {FACTS.liveSessions} 个指定周末 · 由 CMI 颁发并认可
           </p>
           <p className="sec-sub mt-s">
             查看完整的{" "}
@@ -196,7 +196,7 @@ export default function MbaForSmeOwnersZhPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            这门专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位。
+            这门专业课程由 CMI 颁发并认可，并非 MQA 认证的学术学位。
             <Link href="/zh/apply" className="acc">{CTA_LABELS.zh.guide}</Link>
             ，再挑选开课班次。
           </p>

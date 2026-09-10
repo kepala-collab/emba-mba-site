@@ -18,7 +18,7 @@ export const metadata = withSeo("/zh/asian-business-consulting", {
 
 const MILESTONES = [
   { n: "2020", s: "ABC 于马来西亚注册成立" },
-  { n: "2024 年 7 月", s: "由 CMI 颁授并背书" },
+  { n: "2024 年 7 月", s: "由 CMI 颁发并认可" },
   { n: String(PROGRAMME_PROOF.cohorts), s: `个已开办班次：${PROGRAMME_PROOF.englishCohorts} 个英语班、${PROGRAMME_PROOF.mandarinCohorts} 个华语班` },
   { n: String(PROGRAMME_PROOF.graduates), s: "位课程毕业生" },
 ];
@@ -158,7 +158,7 @@ export default function AbcPageZh() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>英国特许管理协会（CMI）</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是独立的第三方品质机构。本课程自 2024 年 7 月起由 CMI 颁授并背书，ABC 也列入其认可的国际中心名单。</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI 是独立的第三方品质机构。本课程自 2024 年 7 月起由 CMI 颁发并认可，ABC 也列入其认可的国际中心名单。</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>在 CMI 名录中查证 <span aria-hidden="true">↗</span></a>
             </div>
             <div>

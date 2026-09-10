@@ -120,7 +120,7 @@ export default function Footer() {
               <span className="foot-contact">{SITE.director} · Penyelaras Program</span>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <Link href="/ms/apply">Aturkan perbualan program</Link>
+              <Link href="/ms/apply">Jadualkan sesi perbincangan program</Link>
               <Link href="/home">English site →</Link>
               <Link href="/zh">中文网站 →</Link>
               <FooterBrandMarks locale="ms" />
@@ -165,7 +165,7 @@ export default function Footer() {
               <span className="foot-contact">{SITE.director} · 课程协调员</span>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <Link href="/zh/apply">预约课程沟通</Link>
+              <Link href="/zh/apply">预约课程咨询</Link>
               <Link href="/home">English site →</Link>
               <Link href="/ms">Laman Bahasa Melayu →</Link>
               <FooterBrandMarks locale="zh" />

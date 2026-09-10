@@ -21,7 +21,7 @@ const INCLUDED = [
   ["高管教练与项目辅导", "一对一带教，直接落地到您真实的企业，而非纸上案例。"],
   ["杠杆管理系统（LMS）", "结课之后依然保留全套框架、参考资料与实用模板。"],
   ["企业应用项目", "提交一份由导师评审的企业行动方案，不设传统论文或考试。"],
-  ["由 CMI（英国）颁授并背书", "Chartered Manager 属独立可选的 CMI 路线，另有独立的资格、评估与费用。"],
+  ["由 CMI（英国）颁发并认可", "Chartered Manager 属独立可选的 CMI 路线，另有独立的资格、评估与费用。"],
 ];
 
 const CMP = [
@@ -42,7 +42,7 @@ export default function ZhGoogleLP() {
               <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">专为正在比较专业发展课程的马来西亚管理者而设</span></div></Reveal>
               <Reveal delay={60}>
                 <h1 style={{ fontSize: "clamp(2.1rem,4.6vw,3.3rem)", letterSpacing: "-.01em", lineHeight: 1.16, marginTop: 6 }}>
-                  {FACTS.durationMonths} 个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
+                  {FACTS.durationMonths} 个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁发并认可的 Executive MBA。</em>
                 </h1>
               </Reveal>
               <Reveal delay={110}>
@@ -79,7 +79,7 @@ export default function ZhGoogleLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "由 CMI（英国）颁授并背书"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次进行的培训日`], ["1", "以真实企业课题为核心的企业应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
+          {[["CMI", "由 CMI（英国）颁发并认可"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次进行的培训日`], ["1", "以真实企业课题为核心的企业应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>

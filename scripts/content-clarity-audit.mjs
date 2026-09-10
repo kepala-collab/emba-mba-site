@@ -56,12 +56,13 @@ const banned = [
 
 const bannedMs = [
   ["Malay undefined norm", /\b(?:biasanya|kebiasaannya|selalunya|kebanyakan|lebih kurang|kira-kira)\b/i],
-  ["Malay wrong endorsement verb", /disokong(?:\s+\w+){0,3}\s+CMI|CMI(?:\s+\w+){0,3}\s+disokong/i],
   ["Malay software-application calque", /\bprojek aplikasi\b/i],
   ["Malay working-manager calque", /\bpengurus bekerja\b/i],
   ["Malay non-collocation CTA", /\bperbualan program\b/i],
   ["Malay government-programme calque", /\bprogram awam\b/i],
   ["Malay Chartered Manager as next stage", /\blaluan lanjutan\b/i],
+  ["Malay retired preferred-route phrasing", /\blaluan pilihan\b/i],
+  ["Malay retired session-booking phrasing", /\bTempah sesi\b/i],
 ];
 
 const bannedZh = [

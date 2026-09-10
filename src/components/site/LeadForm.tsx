@@ -305,7 +305,7 @@ const T = {
     okK: "Permohonan diterima",
     okH: (name: string) => `Terima kasih${name ? `, ${name}` : ""}. Kami akan menghubungi anda mengikut pilihan anda.`,
     okP: "Pasukan program akan membalas mengenai kesesuaian program, kohort pilihan anda, permohonan HRD Corp oleh majikan serta kelayakan biasiswa. Permohonan ini bukan pengesahan kemasukan, kelulusan biasiswa atau komitmen bayaran.",
-    campaignOkP: "Panduan PDF anda sedia dimuat turun di bawah dan telah dihantar melalui e-mel. Semak dahulu; perbualan program adalah pilihan.",
+    campaignOkP: "Panduan PDF anda sedia dimuat turun di bawah dan telah dihantar melalui e-mel. Semak dahulu; perbincangan program adalah pilihan.",
     okRef: "Rujukan perbualan",
     okPlan: "Muat turun panduan PDF →",
     okWa: "Hubungi Future Ready EMBA melalui WhatsApp →",

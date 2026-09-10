@@ -8,6 +8,18 @@ import {
   PROGRAMME_POSITIONING_ZH,
   PROGRAMME_PROOF,
 } from "../content";
+import {
+  CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS,
+  ENQUIRY_COMMITMENT_MS,
+  HRD_CORP_CLAIM_LABEL_MS,
+  INCLUSIONS_CMI_CERTIFICATE_MS,
+} from "../content-ms";
+import {
+  CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH,
+  ENQUIRY_COMMITMENT_ZH,
+  HRD_CORP_CLAIM_LABEL_ZH,
+  INCLUSIONS_CMI_CERTIFICATE_ZH,
+} from "../content-zh";
 
 const ROOT = process.cwd();
 const MALAY_MQA_QUESTION = "Adakah ini ijazah terakreditasi MQA?";
@@ -47,7 +59,7 @@ describe("cross-language programme fact parity", () => {
   it("locks the three flagship CMI claims verbatim", () => {
     expect(PROGRAMME_POSITIONING_SENTENCE).toContain("awarded and endorsed by CMI");
     expect(PROGRAMME_POSITIONING_MS).toContain("dianugerahkan dan disokong oleh CMI");
-    expect(PROGRAMME_POSITIONING_ZH).toContain("颁授并背书");
+    expect(PROGRAMME_POSITIONING_ZH).toContain("颁发并认可");
   });
 
   it("keeps forbidden scholarship amounts and deprecated terms out of published source", () => {
@@ -68,5 +80,29 @@ describe("cross-language programme fact parity", () => {
   it("keeps the Malay MQA FAQ selector byte-identical to its source question", () => {
     expect(read("src/lib/content-ms.ts")).toContain(`["${MALAY_MQA_QUESTION}",`);
     expect(read("src/app/(ms)/ms/executive-mba-vs-mba/page.tsx")).toContain(`"${MALAY_MQA_QUESTION}"`);
+  });
+
+  it("keeps the banned Chinese endorsement character out of the whole codebase", () => {
+    const searchable = filesBelow("src").filter(
+      (path) => /\.(?:ts|tsx)$/.test(path) && !path.endsWith("fact-parity.test.ts"),
+    );
+    const corpus = searchable.map((path) => read(path)).join("\n");
+    expect(corpus).not.toContain("背" + "书");
+  });
+
+  it("defines non-empty Malay and Chinese mirrors of the shared constants", () => {
+    for (const value of [
+      HRD_CORP_CLAIM_LABEL_MS,
+      INCLUSIONS_CMI_CERTIFICATE_MS,
+      CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS,
+      ENQUIRY_COMMITMENT_MS,
+      HRD_CORP_CLAIM_LABEL_ZH,
+      INCLUSIONS_CMI_CERTIFICATE_ZH,
+      CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH,
+      ENQUIRY_COMMITMENT_ZH,
+    ]) {
+      expect(typeof value).toBe("string");
+      expect(value.length).toBeGreaterThan(0);
+    }
   });
 });

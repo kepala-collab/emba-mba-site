@@ -16,7 +16,7 @@ const COPY = {
     product: "Future Ready Executive MBA",
     title: "Your next leadership chapter starts here.",
     lede: `A ${FACTS.durationMonths}-month professional development programme for ambitious Malaysian managers, business owners and senior leaders ready to sharpen judgement, widen perspective and lead what comes next.`,
-    guide: "Get the free 2026 guide",
+    guide: "Get the 2026 guide",
     explore: "Explore the programme",
     mediaKicker: `${FACTS.durationLong} · built around work`,
     mediaTitle: "Programme and cohort clarity.",
@@ -59,7 +59,7 @@ const COPY = {
     product: "Future Ready Executive MBA",
     title: "Langkah memimpin bermula di sini.",
     lede: `Program pembangunan profesional selama ${FACTS.durationMonths} bulan untuk pemilik perniagaan, pengurus dan pemimpin kanan. Untuk anda yang mahu membuat keputusan dengan lebih yakin, melihat gambaran yang lebih besar, dan melangkah ke peringkat kepimpinan seterusnya.`,
-    guide: "Muat turun panduan 2026 percuma",
+    guide: "Muat turun panduan 2026",
     explore: "Ketahui lebih lanjut",
     mediaKicker: `${FACTS.durationMonths} bulan · Fleksibel dengan waktu kerja`,
     mediaTitle: "Kejelasan program dan kohort.",
@@ -102,7 +102,7 @@ const COPY = {
     product: "Future Ready Executive MBA",
     title: "成为管理与商业领袖的第一步，从这里开始。",
     lede: `一项为期 ${FACTS.durationMonths} 个月的专业发展课程，专为马来西亚的企业主、经理与高级经理打造，助您磨炼判断、开阔格局，迈出成为领袖的下一步。`,
-    guide: "免费下载 2026 课程指南",
+    guide: "下载 2026 课程指南",
     explore: "了解更多",
     mediaKicker: `${FACTS.durationMonths} 个月 · 灵活配合工作`,
     mediaTitle: "课程与班次，一目了然。",
@@ -112,7 +112,7 @@ const COPY = {
     intakesKicker: "2026 年开课班次",
     intakesTitle: "选择最适合您的班次。",
     intakeOpen: "开放咨询",
-    factRecognition: "由 CMI 颁授并背书",
+    factRecognition: "由 CMI 颁发并认可",
     factCommunity: `${PROGRAMME_PROOF.englishCohorts} 个英语班 · ${PROGRAMME_PROOF.mandarinCohorts} 个华语班`,
     factDuration: "专业发展课程",
     factDays: `个培训日，分 ${FACTS.liveSessions} 次导师带领的研习课`,
@@ -124,7 +124,7 @@ const COPY = {
     experienceLabels: ["策略工作坊", "企业应用项目", "高管学习社群"],
     recognitionKicker: "成果与认可",
     recognitionTitle: "可信度看得见，社群找得到。",
-    recognitionIntro: "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。",
+    recognitionIntro: "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可。",
     graduates: "名毕业生",
     cohorts: "个班次",
     englishCohorts: "个英语班",
@@ -242,7 +242,7 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
         <div className="wrap">
           <Reveal><header className="commerce-section-head"><div><p className="mono">{copy.recognitionKicker}</p><h2>{copy.recognitionTitle}</h2></div><p>{copy.recognitionIntro}</p></header></Reveal>
           <div className="commerce-recognition-wall">
-            <article className="commerce-credential"><div><span className="mono">CMI recognition</span><h3>{locale === "zh" ? "颁授并背书" : locale === "ms" ? "Dianugerahkan dan disokong" : "Awarded and endorsed"}</h3><p>{copy.recognitionIntro}</p></div><Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute" width={144} height={98} /></article>
+            <article className="commerce-credential"><div><span className="mono">CMI recognition</span><h3>{locale === "zh" ? "颁发并认可" : locale === "ms" ? "Dianugerahkan dan disokong" : "Awarded and endorsed"}</h3><p>{copy.recognitionIntro}</p></div><Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute" width={144} height={98} /></article>
             <div className="commerce-proof-stats"><div><strong>{PROGRAMME_PROOF.graduates}</strong><span>{copy.graduates}</span></div><div><strong>{PROGRAMME_PROOF.cohorts}</strong><span>{copy.cohorts}</span></div><div><strong>{PROGRAMME_PROOF.englishCohorts}</strong><span>{copy.englishCohorts}</span></div><div><strong>{PROGRAMME_PROOF.mandarinCohorts}</strong><span>{copy.mandarin}</span></div></div>
           </div>
           <div className="commerce-recognition-support">
