@@ -8,7 +8,7 @@ const content = CORE_PAGES_ZH.curriculum;
 
 export const metadata = withSeo(path, {
   title: `课程大纲与 ${FACTS.moduleCount} 门领导力模块`,
-  description: `细看 Executive MBA 的 ${FACTS.moduleCount} 门模块、三个学习阶段、以真实企业课题为核心的企业应用项目，以及不设论文、不设传统考试的评估方式。`,
+  description: `细看 Executive MBA 的 ${FACTS.moduleCount} 门模块、三个学习阶段，以及以真实企业课题为核心的企业应用项目；评估以课堂参与、辅导及项目为基础，不设传统论文或考试。`,
 });
 
 export default function Page() {

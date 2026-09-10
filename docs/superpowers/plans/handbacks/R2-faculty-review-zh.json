@@ -1,0 +1,18 @@
+{
+  "unit": "faculty",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": "CORE_PAGES_ZH.faculty.title (H1)",
+      "problem": "Writer flagged this themselves: H1 \"看重您的思路，不只看结果\" used 您, which follows the spec §13 named per-page example verbatim but conflicts with the same section's own general rule (\"no 您 or 你 in any headline\") and with zh-register.md §5 rule 5 / §2.7 point 5 (press headlines never use 您; they name the group and let the reader self-select — the register guide is the authority on what reads natural in the Sin Chew education register). Decided in favour of the general no-pronoun rule and the register guide, since the guide's evidence base (13 newspaper sources) is specific and consistent on this point, while the spec's own example reads as an oversight against its adjacent rule.",
+      "fix_applied": "Changed H1 to \"导师看重思路，不只看结果\" — names the group (导师, faculty) instead of addressing the reader directly, keeps the same two-beat contrast and meaning, 12 characters, under the 14-character cap."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "Confirm the H1 pronoun decision (register guide's general no-pronoun-in-headline rule over the spec's own named 您-containing example) is the right call; if the owner prefers the spec's literal example, the H1 should be reverted to \"看重您的思路，不只看结果\"."
+  ],
+  "notes": "该届导师安排 (届, not 班次) and the full-width servant-leadership bracket were already correct from the writer's pass. FACULTY JSON-LD on the zh page mirrors the English page correctly (affiliation, not employment). npm run typecheck and node scripts/content-clarity-audit.mjs both pass with zero warnings in this unit's block."
+}

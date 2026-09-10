@@ -2,14 +2,19 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
-import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
+import {
+  CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS,
+  ENQUIRY_COMMITMENT_MS,
+  HRD_CORP_CLAIM_LABEL_MS,
+  HRD_CORP_CLAIM_MS,
+} from "@/lib/content-ms";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/mba-for-sme-owners", {
   title: "Executive MBA untuk Pemilik & Pengasas PKS",
   description:
-    `Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Dibina untuk pemilik PKS Malaysia, merentas ${FACTS.liveSessions} sesi berpandu dalam ${FACTS.durationMonths} bulan.`,
+    `Daripada keputusan yang tersimpan di kepala kepada keputusan yang tertulis: projek amali perniagaan membawa satu isu operasi kepada pelan yang disemak fakulti sepanjang ${FACTS.durationMonths} bulan. Dianugerahkan dan disokong oleh CMI; bukan ijazah akademik terakreditasi MQA.`,
 });
 
 const jsonLd = {
@@ -18,7 +23,7 @@ const jsonLd = {
   "@id": `${SITE.url}/ms/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Ia disampaikan untuk pemilik dan pengasas PKS merentasi ${FACTS.liveSessions} sesi berpandu.`,
+    `Pemilik membawa satu isu operasi — harga, penggantian atau pergantungan pelanggan — daripada masalah kepada pelan bertulis berserta pemilik dan ukuran, disemak oleh fakulti, sepanjang ${FACTS.durationMonths} bulan merentas ${FACTS.liveSessions} sesi berpandu. Dianugerahkan dan disokong oleh CMI; bukan ijazah akademik terakreditasi MQA.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -37,25 +42,25 @@ const jsonLd = {
 
 export default function MbaForSmeOwnersPage() {
   const challenges = [
-    { h: "Semuanya berbalik kepada pemilik", p: "Soal harga, kelulusan, keputusan pelanggan dan selesaikan masalah — semuanya masih kembali kepada pemilik." },
-    { h: "Keputusan bertimbun sampai tepu", p: "Semakin perniagaan membesar, semakin banyak keputusan menumpuk — lebih pantas daripada yang mampu ditangani seorang." },
-    { h: "Tiada masa untuk fikir strategi", p: "Urusan harian sentiasa mendahului, jadi keputusan penting tentang pasaran, keupayaan dan pelaburan terus tertangguh." },
-    { h: "Penggantian yang belum jelas", p: "Peranan, kuasa membuat keputusan dan pengetahuan operasi belum dicatat cukup rapi untuk diserahkan kepada barisan kepimpinan seterusnya." },
-    { h: "Sekadar memadam api", p: "Pasukan sibuk memadam api, sedangkan proses atau insentif yang menyalakannya tidak pernah diubah." },
+    { h: "Harga dan kelulusan", p: "Soal harga, kelulusan dan keputusan pelanggan masih melalui anda." },
+    { h: "Bilangan keputusan", p: "Perniagaan berkembang, keputusan bertambah lebih pantas daripada yang mampu ditangani seorang." },
+    { h: "Masa terlindung untuk strategi", p: "Urusan operasi mengambil masa yang sepatutnya untuk keputusan pasaran, keupayaan dan pelaburan." },
+    { h: "Penggantian belum tertulis", p: "Peranan, kuasa membuat keputusan dan pengetahuan operasi belum dicatat untuk diserahkan kepada orang lain." },
+    { h: "Masalah yang sama, ditangani semula", p: "Pasukan menangani gejala tanpa mengubah proses atau insentif yang menghasilkannya." },
   ];
 
   const fit = [
-    { h: `${FACTS.liveSessions} hujung minggu berjadual sepanjang ${FACTS.durationMonths} bulan`, p: `${FACTS.liveSessions} sesi fasa sijil diadakan sekali sebulan. Jadual Sesi Pengambilan yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort.` },
-    { h: "Perniagaan anda sendiri ialah projek amali", p: "Tiada tesis mahupun peperiksaan biasa. Anda guna rangka kerja program untuk merangka pelan transformasi bagi organisasi anda sendiri." },
+    { h: `${FACTS.trainingDays} hari latihan merentas ${FACTS.liveSessions} sesi berjadual`, p: "Jadual pengambilan yang diterbitkan menetapkan sama ada Jumaat–Sabtu atau Sabtu–Ahad bagi setiap kohort." },
+    { h: "Perniagaan anda sendiri ialah projek amali", p: "Projek amali perniagaan ialah pelan bertulis untuk disemak fakulti, dibina atas organisasi anda sendiri — tiada tesis mahupun peperiksaan biasa." },
     { h: "Pembiayaan HRD Corp dipohon oleh majikan", p: HRD_CORP_CLAIM_MS },
-    { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik. Setiap anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis; pilihan ansuran pula disenaraikan di halaman Yuran.` },
+    { h: "Kelayakan biasiswa untuk warganegara Malaysia", p: `Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis; sebarang anugerah dan yuran peserta disahkan secara individu, secara bertulis. Biasiswa tidak automatik; pilihan ansuran disenaraikan di halaman Yuran.` },
   ];
 
   return (
     <>
       <JsonLd data={jsonLd} />
 
-      {/* 1 · Intro — name the real pain */}
+      {/* 1 · Intro — name the change of experience */}
       <section className="section geo-section">
         <div className="wrap">
           <div className="eyebrow">
@@ -64,18 +69,37 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Bina sistem yang mengurangkan <span className="acc">pergantungan pada pemilik</span>.
+              Daripada keputusan di kepala kepada <span className="acc">keputusan bertulis</span>.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Future Ready Executive MBA membantu pemilik PKS mengenal pasti sejauh mana keputusan,
-            pengetahuan pelanggan dan kawalan operasi masih tertumpu pada satu orang sahaja. Program
-            ini membawa rangka kerja sistem, strategi dan kepimpinan kepada kerja mengagihkan tugas,
-            membina keupayaan pasukan, merancang penggantian dan memacu pertumbuhan.
+            Pemilik menyimpan pengetahuan pelanggan, soal harga dan kawalan operasi di kepala sendiri.
+            Sepanjang {FACTS.durationMonths} bulan, projek amali perniagaan membawa satu isu operasi —
+            harga, penggantian atau pergantungan pelanggan — daripada masalah kepada pelan bertulis
+            berserta pemilik dan ukuran, disemak oleh fakulti. Ia membina keupayaan pengurusan; pertumbuhan
+            dan pulangan bergantung pada keputusan dan pelaksanaan yang menyusul.
+          </p>
+          <p className="sec-sub mt-s">
+            {FACTS.trainingDays} hari latihan merentas {FACTS.liveSessions} sesi berjadual, bimbingan
+            satu-ke-satu dan projek amali perniagaan atas isu dalam tanggungjawab anda sendiri. Rangka
+            kerja dan templat kerja terus menjadi milik anda.
+          </p>
+          <p className="sec-sub mt-s">
+            Executive MBA on Future Ready Business Leadership dianugerahkan dan disokong oleh CMI.
+            Peserta yang berjaya menerima CMI Certificate of Recognition; ia bukan ijazah akademik
+            terakreditasi MQA atau kelayakan yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}
           </p>
           <p className="mono sec-k mt-s">
-            {FACTS.durationMonths} bulan · {FACTS.liveSessions} hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
+            Yuran standard {FACTS.priceStd} · {HRD_CORP_CLAIM_LABEL_MS}. Biasiswa {FACTS.scholarshipProvider}{" "}
+            adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas
+            penilaian dan kelulusan bertulis. Biasiswa tidak automatik. {ENQUIRY_COMMITMENT_MS}
           </p>
+          <Reveal className="mt-s">
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide}</Link>
+              <Link href="/ms/apply?intent=employer_sponsored" className="btn">{CTA_LABELS.ms.company}</Link>
+            </div>
+          </Reveal>
           <p className="sec-sub mt-s">
             Lihat keseluruhan{" "}
             <Link href="/ms/executive-mba" className="acc">program Executive MBA</Link>, atau terokai
@@ -84,7 +108,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      {/* 2 · Sound familiar? */}
+      {/* 2 · Di mana perniagaan bergantung kepada anda */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <div className="eyebrow">
@@ -92,10 +116,11 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Tanda-tanda dalam operasi</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Kenal pasti sejauh mana perniagaan terlalu bergantung pada pemilik.</h2>
+            <h2 className="sec-h">Di mana perniagaan masih bergantung kepada anda.</h2>
           </Reveal>
           <p className="sec-sub">
-            Guna tanda-tanda ini untuk mengenal pasti kekangan operasi mana yang berbaloi ditangani oleh projek amali anda.
+            Ini ialah keadaan operasi yang boleh ditangani oleh projek amali anda — bukan penilaian
+            tentang cara anda menguruskan perniagaan.
           </p>
           <div className="mt-m grid-forces">
             {challenges.map((x) => (
@@ -110,7 +135,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      {/* 3 · What changes */}
+      {/* 3 · Apa yang berubah, dalam susunan 5S */}
       <section className="section">
         <div className="wrap">
           <div className="eyebrow">
@@ -118,50 +143,47 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Apa yang berubah</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Alihkan keputusan berulang kepada sistem operasi yang tersusun.</h2>
+            <h2 className="sec-h">Satu isu operasi menjadi pelan bertulis.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini menumpukan pada sistem operasi di sekeliling pemilik: kuasa membuat keputusan,
-            proses, aliran maklumat, keupayaan kepimpinan dan ukuran. Ia membina keupayaan pengurusan;
-            manakala pertumbuhan dan pulangan bergantung pada keputusan dan pelaksanaan yang menyusul.
+            Projek amali perniagaan menangani sistem operasi di sekeliling anda: kuasa membuat
+            keputusan, proses, aliran maklumat, keupayaan kepimpinan dan ukuran. Ia membina keupayaan
+            pengurusan; pertumbuhan dan pulangan bergantung pada keputusan dan pelaksanaan yang menyusul.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Lihat gambaran yang lebih besar</h3>
+                <h3 className="mono sec-k">Perniagaan terus berjalan tanpa anda di dalam bilik</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Pemikiran sistem dan prinsip asas menjejak bagaimana satu keputusan memberi kesan
-                  kepada pelanggan, pasukan, aliran tunai, kapasiti dan pelaksanaan — sebelum anda
-                  laburkan sebarang sumber.
+                  Kriteria keputusan dan garis panduan eskalasi dicatat secara bertulis, jadi operasi
+                  terus berjalan semasa anda berada dalam sesi.
                 </p>
               </div>
             </Reveal>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Bina sistem, bukan pergantungan</h3>
+                <h3 className="mono sec-k">Penggantian mempunyai pelan bertulis</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Ubah pengetahuan yang selama ini dipegang pemilik menjadi proses bertulis, kriteria
-                  keputusan dan garis panduan eskalasi yang boleh terus dipakai pemimpin lain.
+                  Peranan, kuasa membuat keputusan dan pengetahuan operasi berpindah daripada ingatan
+                  anda kepada dokumen yang boleh disemak fakulti.
                 </p>
               </div>
             </Reveal>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Agihkan tugas dengan rangka kerja</h3>
+                <h3 className="mono sec-k">Pasukan bertindak atas keputusan, bukan sekadar tugasan</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Guna kepimpinan situasi dan rangka kerja fasilitasi untuk menetapkan hasil yang
-                  diharap, kuasa membuat keputusan, sokongan dan titik semakan — bukan sekadar
-                  melempar tugasan.
+                  Kepimpinan situasi dan rangka kerja fasilitasi menetapkan hasil, kuasa membuat
+                  keputusan, sokongan dan titik semakan kepada orang yang memikulnya.
                 </p>
               </div>
             </Reveal>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Rancang untuk berkembang atau keluar</h3>
+                <h3 className="mono sec-k">Pemimpin lain turut dibina, bukan sekadar diagihkan tugas</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Strategi yang tersusun memberi anda pandangan yang jelas tentang hala tuju perniagaan
-                  seterusnya — asas kepada pelan untuk berkembang, menyerahkan tampuk atau keluar dengan
-                  jelas.
+                  Pelan ini untuk orang yang bergantung pada keputusan anda: pasukan yang memikulnya,
+                  pelanggan yang dituju, dan sesiapa yang meneruskan perniagaan selepas anda.
                 </p>
               </div>
             </Reveal>
@@ -173,7 +195,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      {/* 4 · Why it fits owners */}
+      {/* 4 · Mengapa ia sesuai untuk pemilik */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <div className="eyebrow">
@@ -181,11 +203,12 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">Mengapa ia sesuai untuk pemilik</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Terus menerajui perniagaan sambil menamatkan program.</h2>
+            <h2 className="sec-h">Susunan yang membolehkan anda terus dalam perniagaan.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program enam bulan ini menggunakan sesi hujung minggu berjadual, dengan projek amali
-            yang berteraskan organisasi anda sendiri. Laluan pembiayaan dan bayaran diterangkan secara berasingan.
+            Sepanjang {FACTS.durationMonths} bulan anda terus dalam peranan anda, dan projek amali
+            dikerjakan atas organisasi anda sendiri. Laluan pembiayaan dan bayaran diterangkan secara
+            berasingan.
           </p>
           <div className="mt-m grid-forces">
             {fit.map((x) => (
@@ -198,8 +221,10 @@ export default function MbaForSmeOwnersPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik
-            yang dikawal selia MQA. <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>{" "}
+            Program profesional ini dianugerahkan dan disokong oleh CMI. Peserta yang berjaya menerima
+            CMI Certificate of Recognition; ia bukan ijazah akademik terakreditasi MQA atau kelayakan
+            yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}{" "}
+            <Link href="/ms/apply" className="acc">{CTA_LABELS.ms.guide}</Link>{" "}
             sebelum memilih kohort anda.
           </p>
         </div>
@@ -209,11 +234,12 @@ export default function MbaForSmeOwnersPage() {
       <section className="section center">
         <div className="wrap">
           <Reveal>
-            <h2 className="sec-h">Kenal pasti pergantungan pada pemilik yang wajar anda tangani.</h2>
+            <h2 className="sec-h">Tentukan isu operasi yang wajar ditangani projek amali.</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
-            Bincangkan cabaran operasi anda dengan pasukan program, dan pastikan sama ada projek
-            aplikasi, jadual dan profil peserta benar-benar sepadan dengan matlamat anda.
+            Pelan yang anda bina adalah untuk orang yang bergantung pada keputusan anda. Bincangkan
+            isu yang anda timbang dengan pasukan program, dan pastikan sama ada projek amali, jadual
+            dan profil peserta benar-benar sepadan. {ENQUIRY_COMMITMENT_MS}
           </p>
           <p className="mt-s">
             <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide}</Link>
@@ -221,7 +247,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan sistem yang perlu dibina supaya perniagaan tidak lagi bergantung pada pemilik." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Dapatkan fakta untuk isu operasi yang sedang anda hadapi." />
     </>
   );
 }

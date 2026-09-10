@@ -1,0 +1,36 @@
+{
+  "unit": "how-it-works",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": "CORE_PAGES_ZH.method.title (page H1, was \"收入放缓，成本上升：您的团队在等一个决定\")",
+      "problem": "H1 was 18 characters across three clauses and carried 您, violating both the 14-character/two-beat zh headline cap and \"no 您/你 in any headline\" (spec §13, zh-register.md §5 rule 5/27). The English H1 is the owner's own verbatim example and is exempt from the 9-word cap, but no equivalent exemption exists for the Chinese rendering — it must still meet the general zh limit.",
+      "fix_applied": "Rewrote to \"收入放缓、成本走高，团队待决\" — 14 characters, two beats, no pronoun, preserves both pressures (revenue, costs) and the team-waiting fact."
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": "CORE_PAGES_ZH.method.sections (two entries, section keys \"…在您自己的机构内\")",
+      "problem": "These section keys render as <h2> via ChineseCorePage and contained 您, another headline-pronoun violation.",
+      "fix_applied": "Changed \"在您自己的机构内\" to \"在自己机构内\" in both between-session section keys; body copy (which correctly keeps 您) was untouched."
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": "CORE_PAGES_ZH.method.sections[6] (F.A.S.T./servant-leadership line)",
+      "problem": "Servant-leadership gloss used half-width parentheses with a leading ASCII space — \"仆人式领导 (servant leadership)\" — inconsistent with the full-width-bracket typography rule (zh-register.md §5 rule 23) and with the faculty block's own correct rendering.",
+      "fix_applied": "Changed to full-width brackets, no space: \"仆人式领导（servant leadership）\"."
+    },
+    {
+      "file": "src/app/(zh)/zh/how-it-works/page.tsx",
+      "line": "metadata (title/description)",
+      "problem": "Extra task: the writer left the old F.A.S.T.-method metadata (\"F.A.S.T. 管理决策方法\" / decision-method description) untouched after rewriting the page around the new \"what changes across the six months\" narrative spine — metadata no longer matched the page content or the updated English metadata.",
+      "fix_applied": "Added a FACTS import and rewrote metadata to match the new English framing: title \"{FACTS.durationMonths} 个月内，会有什么改变\"; description names what happens in/between sessions, the faculty-reviewed written plan, and what stays with the participant afterwards, tokenized via FACTS.durationMonths."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "Confirm the compressed ZH H1 \"收入放缓、成本走高，团队待决\" is an acceptable register-driven shortening of the owner's four-clause English example H1 for this page, since no locked ZH example exists for /how-it-works in the spec."
+  ],
+  "notes": "Servant leadership is still named exactly once on this page (F.A.S.T. section), per spec §6. npm run typecheck and node scripts/content-clarity-audit.mjs both pass with zero warnings in this unit's files."
+}

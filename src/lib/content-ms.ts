@@ -53,16 +53,19 @@ export const COMPARISON_MS = [
 
 export const CORE_PAGES_MS = {
   method: {
-    eyebrow: "Kaedah keputusan pengurusan F.A.S.T.",
-    title: "Ubah kerumitan ke keputusan",
-    intro: "F.A.S.T. bermula daripada isu perniagaan sebenar. Ia membantu anda menentukan masalah yang betul, menguji andaian, menimbang pilihan, dan mengubah keputusan menjadi pelan tindakan yang boleh dilaksanakan.",
+    eyebrow: "Keputusan di bawah tekanan",
+    title: "Hasil jualan turun. Kos meningkat. Pasukan anda menanti keputusan.",
+    intro: `Naluri dan pengalaman membawa anda ke sini. Keputusan itu kekal di kepala anda, dipertahankan dalam mesyuarat, sementara pasukan yang perlu bertindak menanti — dan jawatan anda tidak boleh berhenti supaya anda belajar memimpinnya. Sepanjang ${FACTS.durationMonths} bulan anda membawa satu keputusan itu, daripada tanggungjawab anda sendiri, dan membinanya menjadi pelan tindakan bertulis yang boleh dilaksanakan pasukan anda: ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berjadual, bimbingan satu-ke-satu dan satu projek amali perniagaan, dalam organisasi anda sendiri, sambil anda kekal dalam jawatan anda. Rangka kerja dan templat kerja kekal bersama anda.`,
     sections: [
-      ["Langkah 1: Kenal pasti masalah sebenar", "Asingkan gejala di permukaan, fakta, kekangan dan andaian yang belum diuji, supaya keputusan pengurusan yang sebenarnya perlu dibuat menjadi jelas."],
-      ["Langkah 2: Lihat keseluruhan sistem", "Analisis pihak terlibat, proses, sumber, kebergantungan dan kesan susulan — bukan sekadar merawat satu bahagian masalah."],
-      ["Langkah 3: Bina pilihan yang boleh dibandingkan", "Gabungkan pemikiran prinsip pertama, pemikiran reka bentuk dan rangka kerja strategik untuk membentuk pilihan praktikal yang dinilai atas kriteria yang sama."],
-      ["Langkah 4: Jelaskan asas keputusan", "Nyatakan bukti, pertimbangan untung rugi, risiko dan hasil yang dijangka, supaya pasukan memahami mengapa arah itu dipilih."],
-      ["Langkah 5: Terjemahkan kepada tindakan", "Susun cadangan menjadi pelan tindakan perniagaan yang jelas pemiliknya, keutamaannya, langkah utamanya dan titik semakannya."],
-      ["Penggunaan dalam program", "Peserta menggunakan kaedah ini terhadap isu perniagaan yang sedang mereka tangani. Maklum balas fasilitator tertumpu pada proses pertimbangan, logik pelaksanaan dan pelan tindakan — bukan hafalan teori."],
+      ["Sesi 1", "Anda mentakrifkan keputusan itu sebagai masalah dan mengujinya terhadap rangka kerja bersama jurulatih."],
+      ["Antara sesi 1 dan 2, dalam organisasi anda sendiri", "Anda menggunakan apa yang diuji terhadap isu yang anda bawa, dan membawa balik apa yang berlaku."],
+      ["Sesi 2", "Anda menimbang pilihan berdasarkan bukti, dengan fasilitator dan jurulatih menyemak pertimbangan anda."],
+      ["Antara sesi 2 dan 3, dalam organisasi anda sendiri", "Anda membawa keputusan itu kembali ke jawatan anda dan mengujinya di sana sebelum pelan itu siap."],
+      ["Sesi 3", "Anda menyiapkan pelan itu: keputusan, tindakan, pemilik dan ukuran, sedia untuk disemak fasilitator."],
+      ["Pelan tindakan dan apa yang kekal", `Anda menghantar pelan tindakan bertulis itu — keputusan, tindakan, pemilik dan ukuran — untuk disemak fasilitator. Rangka kerja dan templat kerja kekal bersama anda selepas ${FACTS.durationMonths} bulan itu berakhir.`],
+      ["Kaedah F.A.S.T. sepanjang ketiga-tiga sesi", "Takrifkan masalah yang betul, uji bukti, bina pilihan yang boleh dibandingkan, jelaskan asas keputusan, dan terjemahkan kepada pelan tindakan. Right Questions ialah tempat anda memilih soalan yang melayani orang yang terkesan oleh keputusan itu — kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya."],
+      ["Jika anda terlepas sesi", "Hubungi pasukan program sebelum sesi berkenaan. ABC merekodkan kaedah gantian yang diluluskan secara bertulis: akses video atau kehadiran dalam kohort kemudian yang dinamakan."],
+      ["Pengiktirafan CMI", `${INCLUSIONS_CMI_CERTIFICATE_MS} ${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}`],
     ],
   },
   programme: {
@@ -84,9 +87,9 @@ export const CORE_PAGES_MS = {
     title: `${FACTS.moduleCount} modul. Satu pelan pasukan anda boleh laksanakan.`,
     intro: `Sepanjang ${FACTS.durationMonths} bulan, anda membawa satu isu perniagaan sebenar melalui ${FACTS.moduleCount} modul aplikasi berasaskan kaedah F.A.S.T. Anda mentakrifkan masalah, mengujinya bersama jurulatih, dan menulisnya menjadi pelan tindakan dengan keputusan, tindakan, pemilik dan ukuran untuk semakan fasilitator.`,
     sections: [
-      ["Peringkat 1: Mencipta nilai", "Melalui F.A.S.T., Jobs-To-Be-Done, tinjauan masa hadapan, DNA strategi dan perancangan tindakan, takrifkan semula nilai pelanggan dan hala tuju perniagaan."],
-      ["Peringkat 2: Menyampaikan nilai", "Melalui kepimpinan situasi, intervensi pasukan, pemikiran sistem dan pengurusan transformasi, terjemahkan strategi kepada tingkah laku pasukan dan mekanisme pelaksanaan."],
-      ["Peringkat 3: Membentuk pelan tindakan", "Gunakan reka bentuk pengaruh, hubungan pihak berkepentingan dan analisis sistem perniagaan untuk menyiapkan pelan tindakan perniagaan yang dinilai fasilitator. Pemilik dan ukuran yang jelas adalah kepimpinan berkhidmat (servant leadership) dalam tindakan — pelan itu menjadi sesuatu yang pasukan anda boleh laksanakan, bukan sekadar sesuatu yang anda selesaikan."],
+      ["Peringkat 1", "Mencipta nilai — melalui F.A.S.T., Jobs-To-Be-Done, tinjauan masa hadapan, DNA strategi dan perancangan tindakan, takrifkan semula nilai pelanggan dan hala tuju perniagaan."],
+      ["Peringkat 2", "Menyampaikan nilai — melalui kepimpinan situasi, intervensi pasukan, pemikiran sistem dan pengurusan transformasi, terjemahkan strategi kepada tingkah laku pasukan dan mekanisme pelaksanaan."],
+      ["Peringkat 3", "Membentuk pelan tindakan — gunakan reka bentuk pengaruh, hubungan pihak berkepentingan dan analisis sistem perniagaan untuk menyiapkan pelan tindakan perniagaan yang dinilai fasilitator. Pemilik dan ukuran yang jelas menjadikan pelan itu sesuatu yang pasukan anda boleh laksanakan, bukan sekadar sesuatu yang anda selesaikan."],
       [`${FACTS.moduleCount} modul`, MODULES_MS.map((module) => `${module.c} ${module.title} — ${module.outcome}`).join("; ")],
       ["Kaedah penilaian", "Penilaian berasaskan penyertaan dalam sesi, proses bimbingan dan satu projek amali yang berkait terus dengan perniagaan peserta, tanpa peperiksaan atau tesis tradisional."],
     ],
@@ -118,11 +121,11 @@ export const CORE_PAGES_MS = {
   },
   faculty: {
     eyebrow: "Fasilitator dan jurulatih perniagaan",
-    title: "Dipimpin oleh pengamal industri, perunding dan jurulatih eksekutif",
-    intro: "Fasilitator program datang daripada bidang strategi, operasi, bakat, kewangan, tadbir urus, perubahan dan bimbingan perniagaan. ABC mengesahkan barisan fasilitator setiap kohort dalam makluman kohort yang dihantar sebelum sesi pertama.",
+    title: "Mereka menyemak cara anda berfikir, bukan hasil semata-mata.",
+    intro: "Fasilitator dan jurulatih program membawa pengalaman merentasi kepimpinan korporat, perundingan, pembuatan, kewangan, bakat dan transformasi. Mereka menyemak sebab di sebalik pelan anda, bukan sekadar pelan itu sendiri. Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya. Ini termasuk pasukan yang akan bertindak atas apa yang anda tulis.",
     sections: [
       ["Pengalaman praktikal", "Barisan fasilitator merangkumi profesional yang pernah menerajui pembuatan berskala besar, kewangan syarikat tersenarai, transformasi organisasi, dasar kewangan, pembangunan bakat dan perundingan perniagaan."],
-      ["Bimbingan peribadi", "Program menggunakan rangka kerja terhadap isu perniagaan peserta sendiri; projek menerima maklum balas daripada fasilitator dan pengamal industri."],
+      ["Bimbingan peribadi", "Program menggunakan rangka kerja terhadap isu perniagaan anda sendiri. Fasilitator menyemak sebab di sebalik pelan anda, bukan hanya hasil akhirnya."],
       ["Barisan fasilitator semasa", FACULTY.map((faculty) => `${faculty.n} (${faculty.focus})`).join("; ")],
       ["Fasilitator kohort", "ABC menyenaraikan fasilitator kohort, latar belakang dan modul yang dikendalikan dalam makluman kohort sebelum sesi pertama."],
     ],

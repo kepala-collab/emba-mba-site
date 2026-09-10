@@ -1,9 +1,10 @@
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
+import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS } from "@/lib/content";
+import { CTA_LABELS, FACULTY, SITE } from "@/lib/content";
 import { CORE_PAGES_MS } from "@/lib/content-ms";
-import { withSeo } from "@/lib/seo";
+import { PROVIDER_ID, withSeo } from "@/lib/seo";
 
 const path = "/ms/faculty";
 const content = CORE_PAGES_MS.faculty;
@@ -11,13 +12,32 @@ const content = CORE_PAGES_MS.faculty;
 export const metadata = withSeo(path, {
   title: "Fasilitator dan Jurulatih Perniagaan",
   description:
-    "Kenali barisan fasilitator Future Ready Executive MBA: pengamal industri, perunding dan jurulatih dalam strategi, operasi, kewangan, bakat dan pengurusan perubahan.",
+    "Kenali fasilitator dan jurulatih Future Ready Executive MBA yang menyemak sebab di sebalik pelan anda, bukan sekadar pelan itu sendiri, merentasi strategi, operasi, kewangan, bakat dan pengurusan perubahan.",
 });
 
 export default function Page() {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: FACULTY.map((f, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Person",
+        "@id": `${SITE.url}/faculty#${f.n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`,
+        name: f.n,
+        jobTitle: f.r,
+        description: f.b,
+        image: `${SITE.url}${f.img}`,
+        affiliation: { "@id": PROVIDER_ID },
+        knowsAbout: f.focus.split(" · "),
+      },
+    })),
+  };
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: content.title, path }]} />
+      <JsonLd data={ld} />
       <section className="section zh-core-page geo-section" data-page={path}>
         <div className="wrap">
           <Reveal>

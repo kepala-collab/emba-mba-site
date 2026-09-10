@@ -9,3 +9,4 @@
 - [ ] content-ms.ts HRD Corp label uses "diterajui" while CtaSection uses "dipohon"; unify at source to the employer-applies wording ("dipohon oleh majikan, ditentukan oleh HRD Corp").
 - [ ] content-ms.ts still carries "laluan pilihan CMI" in several places; replace with "laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI" at source.
 - [ ] Malay fees link label "halaman pelaburan" (investment page) reads as investment framing; use "halaman yuran". Fix wherever it appears in ms pages and content-ms.ts.
+- [ ] content-ms.ts COMPARISON_MS still carries the "dalam bentuk bertulis" calque; replace with "secara bertulis" at source.

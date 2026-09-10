@@ -7,29 +7,29 @@ import { CTA_LABELS, DELIVERY_CONTROL, MODULES, FACTS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/curriculum", {
-  title: "Curriculum — The 12 Modules",
+  title: `Curriculum — The ${FACTS.moduleCount} Modules`,
   description:
-    "Twelve applied modules across Creating, Delivering and Capturing Value — facilitated workshops, one-to-one coaching and a live business project. No exam, no thesis.",
+    `${FACTS.moduleCount} applied modules across three stages — facilitated workshops, one-to-one coaching and an applied business project — leading to a written action plan reviewed by faculty.`,
 });
 
 const STAGES = [
   {
-    lvl: "Level 1",
+    lvl: "Stage 1",
     approach: "Workshop-Based Learning",
     outcome: "Creating Value",
     p: "Live, facilitated framework workshops for analysing an organisation as a value-creation system.",
   },
   {
-    lvl: "Level 2",
+    lvl: "Stage 2",
     approach: "Coaching-Based Learning",
     outcome: "Delivering Value",
     p: "One-to-one executive coaching that applies the frameworks to the participant's role and organisational context.",
   },
   {
-    lvl: "Level 3",
+    lvl: "Stage 3",
     approach: "Project-Based Learning",
     outcome: "Capturing Value",
-    p: "A transformation project applied to your own business, with defined actions, owners and measures.",
+    p: "An applied business project on your own organisation, written up with decisions, actions, owners and measures.",
   },
 ];
 
@@ -41,23 +41,24 @@ export default function CurriculumPage() {
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">The Curriculum · 12 Modules</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">The Curriculum · {FACTS.moduleCount} Modules</span></div>
           </Reveal>
           <Reveal>
             <h1 style={{ fontSize: "clamp(2.3rem,5vw,3.8rem)", letterSpacing: "-.02em", lineHeight: 1.06, maxWidth: "18ch" }}>
-              Twelve modules. One integrated <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>leadership journey</em>.
+              {FACTS.moduleCount} modules. One <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>plan your team can act on</em>.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub" style={{ maxWidth: "56ch" }}>
-              A <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b> executive programme combining the F.A.S.T.
-              methodology with practical learning, coaching and a business-driven capstone — no exam, no thesis.
+              Across <b style={{ color: "var(--ink)" }}>{FACTS.durationLong}</b>, you take one live business issue through {FACTS.moduleCount}
+              {" "}applied modules built on the F.A.S.T. method — defining the problem, testing it with a coach, and writing it into an
+              action plan with decisions, actions, owners and measures for faculty review.
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
-              <Link href="/how-it-works" className="btn btn-ghost">See the method</Link>
+              <Link href="/how-it-works" className="btn btn-ghost">See how the six months work</Link>
             </div>
           </Reveal>
         </div>
@@ -89,7 +90,7 @@ export default function CurriculumPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The framework library · M01–M12</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Twelve modules. One integrated leadership journey.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Every module builds toward the plan you take back to work.</h2></Reveal>
           <Reveal><p className="sec-sub">From sensing the business landscape to building trust and influence across the stakeholder ecosystem.</p></Reveal>
           <Reveal className="mt-m">
             <div className="mods">
@@ -106,7 +107,7 @@ export default function CurriculumPage() {
         </div>
       </section>
 
-      {/* THE CAPSTONE */}
+      {/* THE APPLIED BUSINESS PROJECT */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap curriculum-capstone-grid">
           <Reveal>
@@ -122,15 +123,16 @@ export default function CurriculumPage() {
             </figure>
           </Reveal>
           <div>
-            <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The capstone</span></div></Reveal>
+            <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The applied business project</span></div></Reveal>
             <Reveal>
-              <h2 className="sec-h">An applied project based on the participant&rsquo;s own organisation.</h2>
+              <h2 className="sec-h">One issue from your own organisation becomes a written plan.</h2>
             </Reveal>
             <Reveal>
               <p className="sec-sub">
-                There is no traditional examination or thesis in the six-month programme. Participants select
-                a business challenge within their responsibility, apply relevant frameworks and prepare a sequenced
-                transformation plan for faculty review. The plan identifies decisions, actions, owners and measures.
+                Across the six months, you select a business challenge within your own responsibility, apply the
+                relevant frameworks and write a sequenced action plan for faculty review, naming the decisions,
+                actions, owners and measures. Owners and measures are what make the plan something your team can
+                act on, not only something you completed. The frameworks and working templates stay with you.
               </p>
             </Reveal>
             <Reveal className="mt-s">

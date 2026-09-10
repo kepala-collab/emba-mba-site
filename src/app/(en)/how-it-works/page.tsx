@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CTA_LABELS, THINKING_EDGE, FLOW, FACTS } from "@/lib/content";
+import { CTA_LABELS, THINKING_EDGE, FLOW, FACTS, CERTIFICATE_POSITIONING, FAQS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/how-it-works", {
-  title: "Applied Leadership Development & F.A.S.T. Method",
+  title: "What Changes Across the Six Months",
   description:
-    "How applied leadership development, coaching and the F.A.S.T. method build strategic decision-making through a live workplace business project.",
+    `See what changes across ${FACTS.durationLong}: what you do in each scheduled session and between them, the written action plan reviewed by faculty, and what stays with you afterwards.`,
 });
+
+const CATCH_UP_RULE = FAQS.find((f) => f.q === "What if I miss a session?")!.a;
 
 // Truthful, generic amplifications of each discipline — no fabricated claims.
 const EDGE_MORE: Record<string, string> = {
@@ -35,6 +37,18 @@ const DELIVERY = [
   { h: "Applied business project", p: "You use the frameworks to develop a transformation plan for your own organisation." },
 ];
 
+// The narrative spine: what happens across the three scheduled sessions and
+// between them, ending in the written action plan and what stays with the
+// participant. No day counts beyond FACTS — the split within a session is
+// not a published fact.
+const SPINE = [
+  { k: "First session", d: "You define the decision as a problem and test it against the frameworks and a coach." },
+  { k: "Between sessions, inside your own organisation", d: "You apply what you tested to the issue you brought, and bring back what happened." },
+  { k: "Second session", d: "You weigh the options against the evidence, with faculty and coaches reviewing your reasoning." },
+  { k: "Between sessions, inside your own organisation", d: "You carry the decision back into your role and test it there before the plan is finished." },
+  { k: "Third session", d: "You complete the plan: decisions, actions, owners and measures, ready for faculty review." },
+];
+
 export default function HowItWorks() {
   return (
     <>
@@ -44,18 +58,18 @@ export default function HowItWorks() {
           <div>
             <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">A decision under pressure</span></div></Reveal>
             <Reveal>
-              <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-                Revenue is slowing. Costs are rising. Which problem do you solve first?
+              <h1 className="sec-h" style={{ maxWidth: "28ch" }}>
+                Revenue slows, costs rise. Which do you solve first?
               </h1>
             </Reveal>
             <Reveal>
               <p className="sec-sub">
-                The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money.
+                Instinct and experience carried you here. Right now the reasoning lives in your own head, defended in meetings rather than shown, while the people who must act on it wait — and the role does not pause so you can step out and learn how to lead it.
               </p>
             </Reveal>
             <Reveal className="mt-s">
               <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
-                The programme gives that work a repeatable structure. You use it on a live issue inside your own business, then make the reasoning visible enough for others to review and act on.
+                Across {FACTS.durationLong} you take that one decision, from your own responsibility, and work it into a written action plan your team can act on: {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, one-to-one coaching and an applied business project, inside your own organisation, while you stay in your role. The frameworks and working templates stay with you.
               </p>
             </Reveal>
           </div>
@@ -73,6 +87,31 @@ export default function HowItWorks() {
             </figure>
           </Reveal>
         </div>
+      </section>
+
+      {/* WHAT CHANGES ACROSS THE SIX MONTHS — narrative spine */}
+      <section className="section" style={{ background: "var(--bg-2)" }}>
+        <div className="wrap">
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What changes across {FACTS.durationLong}</span></div></Reveal>
+          <Reveal><h2 className="sec-h">From carrying the decision alone to leading it.</h2></Reveal>
+          <Reveal><p className="sec-sub">Both states are things you do, not things that happen to you. {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions; the applied work happens in your organisation between them.</p></Reveal>
+          <Reveal className="mt-m">
+            <div style={{ display: "grid", gap: 14 }}>
+              {SPINE.map((step, i) => (
+                <div key={`${step.k}-${i}`} className="card" style={{ display: "grid", gridTemplateColumns: "160px 1fr", gap: 18, alignItems: "start" }}>
+                  <div className="mono sec-k acc" style={{ fontSize: ".78rem" }}>{step.k}</div>
+                  <p style={{ margin: 0, color: "var(--ink-2)" }}>{step.d}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal className="mt-s">
+            <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
+              You submit the written action plan, with decisions, actions, owners and measures, for faculty review. The frameworks and working templates stay with you after the {FACTS.durationLong} end.
+            </p>
+          </Reveal>
+        </div>
+        <style>{`@media(max-width:700px){.wrap .card[style*="grid-template-columns"]{grid-template-columns:1fr!important}}`}</style>
       </section>
 
       {/* THE 7 DISCIPLINES */}
@@ -102,7 +141,7 @@ export default function HowItWorks() {
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The thinking flow</span></div></Reveal>
           <Reveal><h2 className="sec-h">From a well-framed question to measurable value.</h2></Reveal>
-          <Reveal><p className="sec-sub">The F.A.S.T. sequence connects problem framing, questions, options, solutions and value. Each stage produces the input required by the next.</p></Reveal>
+          <Reveal><p className="sec-sub">The F.A.S.T. sequence connects problem framing, questions, options, solutions and value. Each stage produces the input required by the next. Right Questions is where you choose the question that serves the people the decision affects — real leadership is servant leadership: it is measured by the people it serves.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14, padding: 26, border: "1px solid var(--line)", borderRadius: 16, background: "linear-gradient(180deg,var(--surface),transparent)" }}>
               {FLOW.map((s, i) => (
@@ -144,8 +183,8 @@ export default function HowItWorks() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How it&rsquo;s delivered</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Learned by doing, in {FACTS.durationLong}.</h2></Reveal>
-          <Reveal><p className="sec-sub">The programme uses cohort-based workshops, coaching and an applied business project to connect professional learning with immediate workplace application. It does not use a traditional thesis or examination.</p></Reveal>
+          <Reveal><h2 className="sec-h">Learned by doing, across {FACTS.durationLong}.</h2></Reveal>
+          <Reveal><p className="sec-sub">The programme uses cohort-based workshops, coaching and an applied business project to connect professional learning with immediate workplace application. Assessment is the written action plan reviewed by faculty; there is no traditional thesis or examination.</p></Reveal>
           <Reveal className="mt-m">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="edge-grid">
               {DELIVERY.map((d, i) => (
@@ -158,8 +197,18 @@ export default function HowItWorks() {
             </div>
           </Reveal>
           <Reveal className="mt-s">
+            <p style={{ color: "var(--ink-2)", maxWidth: "70ch", margin: "24px auto 0" }} className="center">
+              {CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance}
+            </p>
+          </Reveal>
+          <Reveal className="mt-s">
+            <p style={{ color: "var(--ink-2)", maxWidth: "70ch", margin: "12px auto 0" }} className="center">
+              {CATCH_UP_RULE}
+            </p>
+          </Reveal>
+          <Reveal className="mt-s">
             <div className="fine center" style={{ marginTop: 24 }}>
-              A professional programme awarded and endorsed by CMI — built for applied leadership development. Explore{" "}
+              Explore{" "}
               <Link href="/curriculum" className="acc" style={{ textDecoration: "underline" }}>the twelve modules</Link> or{" "}
               <Link href="/apply" className="acc" style={{ textDecoration: "underline" }}>{CTA_LABELS.guide}</Link>.
             </div>
@@ -167,7 +216,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Explore how the F.A.S.T. method applies to your role." />
+      <CtaSection programme="Executive MBA" heading="Discuss the decision you are carrying right now." />
     </>
   );
 }
