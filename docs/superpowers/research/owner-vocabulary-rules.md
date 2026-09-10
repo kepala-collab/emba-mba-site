@@ -25,3 +25,7 @@ These override the register guides where they differ.
 
 - "Deserving comes out of serving" and "he is greatest who serves most" are posture, never a claim about the scholarship, fees or HRD Corp, and never a promise. The audit's own banned-word list means "most" cannot appear in that sentence on the site; render it as leadership measured by the people it serves.
 - Facts never change and are always the constants in `src/lib/content.ts`, `content-ms.ts`, `content-zh.ts`.
+
+## CTA verbs (owner decision 2026-09-10)
+
+- Malay conversation CTA: **Jadualkan sesi perbincangan program**. "Tempah" is banned for this action because it reads as making a booking; the reader is scheduling a conversation. Use "jadualkan" for arranging a session; keep "dapatkan" for the guide.
