@@ -1,0 +1,51 @@
+{
+  "unit": "home",
+  "filesChanged": [
+    "src/components/site/FutureCommerceHome.tsx",
+    "src/app/(en)/home/page.tsx",
+    "src/app/(ms)/ms/page.tsx",
+    "src/app/(zh)/zh/page.tsx"
+  ],
+  "filesUntouched": [
+    "src/components/site/CommerceHeroMedia.tsx — caption strings are passed in as props (kicker/title) from FutureCommerceHome's COPY object, which was rewritten; the component itself has no hardcoded caption text, image, or alt text to edit, so it was left as-is per the brief (structure and alt text unchanged)."
+  ],
+  "h1AndLede": {
+    "en": {
+      "h1": "From carrying the decision alone to leading it.",
+      "lede": "Bring one live business issue and, across 6 months, work it into a written action plan your team can act on, with faculty and coaches reviewing your reasoning. The method stays with you. [ABC_PROFILE.programmePositioning: positioning + not-an-MQA-degree boundary]"
+    },
+    "ms": {
+      "h1": "Daripada memikul keputusan sendirian kepada memimpin pelaksanaannya.",
+      "lede": "Bawa satu isu perniagaan sebenar dan, sepanjang 6 bulan, ubahnya menjadi pelan tindakan bertulis yang boleh dilaksanakan oleh pasukan anda. Fasilitator dan jurulatih menyemak cara anda berfikir, dan kaedah itu kekal bersama anda. [PROGRAMME_POSITIONING_MS] Ini ialah program pembangunan profesional bukan akademik selama 6 bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."
+    },
+    "zh": {
+      "h1": "从独自决策，到带队落实",
+      "lede": "带一个手上的企业课题来，6 个月内写成团队可落实的行动方案；导师与教练检视思路，方法留给您。[PROGRAMME_POSITIONING_ZH: 由 CMI 颁发并认可]"
+    }
+  },
+  "constantsUsed": [
+    "ABC_PROFILE.programmePositioning (EN hero lede)",
+    "CERTIFICATE_POSITIONING.distinction + .professionalRelevance (EN recognition block)",
+    "CTA_LABELS.guide / CTA_LABELS.ms.guide / CTA_LABELS.zh.guide (primary CTA, all 3 languages)",
+    "PROGRAMME_AUDIENCE / PROGRAMME_AUDIENCE_MS / PROGRAMME_AUDIENCE_ZH (audience section body)",
+    "ENQUIRY_COMMITMENT / ENQUIRY_COMMITMENT_MS / ENQUIRY_COMMITMENT_ZH (enquiry fine print)",
+    "PROGRAMME_POSITIONING_MS / PROGRAMME_POSITIONING_ZH (hero lede + recognition block, ms/zh)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS / _ZH (recognition block, ms/zh)",
+    "PROGRAMME_YEAR, FACTS.durationLong/durationMonths/liveSessions (facts strip, intakes, eyebrow)",
+    "All constants pre-existed from the unit-1 constants pass; no new constants were added — composition of two existing constants (positioning + professionalRelevance) covered the recognition-block requirement without inventing new source strings."
+  ],
+  "auditResults": {
+    "typecheckExitCode": 0,
+    "contentClarityAuditExitCode": 0,
+    "note": "One pre-existing warning was newly visible in my touched file (zh 'cohorts' label rendered '个班次', the banned transport-schedule cohort word) — fixed by changing the label to '届'. Zero warnings remain attributable to home-unit files after the fix (verified by grepping audit output for FutureCommerceHome.tsx / (en)/home/page.tsx / (ms)/ms/page.tsx / (zh)/zh/page.tsx / CommerceHeroMedia.tsx — no hits)."
+  },
+  "selfCheckResults": {
+    "ms": "Grepped my ms output for: kamu/awak/korang/engkau/-lah/nak/tak, laluan pilihan, perbualan program, projek aplikasi, pengurus bekerja, dalam bentuk bertulis — zero hits. CTA uses 'Jadualkan sesi perbincangan program' pattern not needed on this page (home uses guide CTA only); conversation CTA constant is correctly sourced from CTA_LABELS.ms elsewhere. Hero content matches the reviewed/corrected hero-review-ms.json 'revised.primary' object (actionable-plan fix, 'Pengambilan 2026' not 'Sesi Pengambilan 2026', purpose-line/supporting-3 token consistency).",
+    "zh": "Grepped my zh output for: 班次, 参与者, 颁授并背书, 身份启用, 折扣码, 免费获取, 渠道, 创始人, 首席执行官, 营销, 周末 — zero hits after the cohorts-label fix. Title reverted to the spec-approved '从独自决策，到带队落实' (not the '独扛决策' variant the hero review flagged as an awkward collocation lacking owner sign-off). Lede/recognition block use PROGRAMME_POSITIONING_ZH, which already carries the owner's 2026-09-10 fix (颁发并认可, not 颁授并背书)."
+  },
+  "leftForReviewer": [
+    "Owner decision §14.2 says wherever the certificate/CMI is named in the hero or first viewport, CERTIFICATE_POSITIONING.professionalRelevance must render in the same block, joining supporting line 2 for the home hero. FutureCommerceHome's actual hero JSX only has three short stat-fact fragments (duration/recognition badge/cohort count), not full sentences, so there is no room to add the professionalRelevance sentence inside the hero fold without touching JSX structure — which the unit brief forbids. I placed the certificate distinction + professionalRelevance pairing in the 'recognition' section instead (same page, later block, both languages) and did not restructure the hero. This is the same structural gap the hero-review-ms.json review flagged as unresolved between spec §9 and §12 item 4, and it should be escalated to the owner/reviewer rather than resolved unilaterally, per that review's own methodology note.",
+    "Malay 'kohort Bahasa Inggeris' / 'Bahasa Inggeris' label capitalisation inside a short tag (languageName helper, factCommunity) was left unchanged — pre-existing pattern, not full-sentence body prose, so the register guide's lowercase-in-running-prose rule arguably doesn't apply, but flagging for the reviewer's judgement.",
+    "The three-language hero A/B alternative (spec §9 'Bring one real decision. Leave with the method.') was not implemented anywhere on this page — only the primary hero exists in FutureCommerceHome.tsx, matching current component structure; no A/B test scaffold exists to attach it to."
+  ]
+}

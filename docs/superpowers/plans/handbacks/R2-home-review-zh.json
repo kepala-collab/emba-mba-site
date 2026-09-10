@@ -1,0 +1,31 @@
+{
+  "unit": "home",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 31,
+      "problem": "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (rendered in the home hero as heroSupport, and again in the recognition section) opened its second sentence with sentence-initial 它 standing for the abstract English subject 'It' -- the single most recognisable translationese pattern per zh-register.md rule 7 and self-validation checklist item 17. This constant is shared across many pages, so the defect was live on every first-viewport CMI mention site-wide.",
+      "fix": "Replaced 它 with the repeated noun 证书 and changed the comma to a semicolon: '...可列入专业档案；证书不保证晋升、就业、加薪或任何其他职业结果。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/page.tsx",
+      "line": 12,
+      "problem": "OG description '带一个手上的企业课题来，锤炼管理判断、决策与执行能力。' promised a capability outcome ('hones judgement, decision-making and execution ability') rather than an artefact/act, and used the literary/mainland-flavoured verb 锤炼 not attested in the corpus -- against governance checklist item 2 (after-state must be an artefact or act, never a capability/trait claim).",
+      "fix": "Replaced with '带一个手上的企业课题来，写成团队可落实的行动方案。', matching the approved lede pattern used elsewhere on the page (an act during the six months, not a capability promise)."
+    }
+  ],
+  "checked_and_passed": [
+    "Hero title '从独自决策，到带队落实' matches hero-review-zh.json revised.primary.title exactly (11 characters, spec-approved, not the flagged 独扛 variant).",
+    "Hero lede matches revised.primary.lede exactly, closing on PROGRAMME_POSITIONING_ZH which already reads '由 CMI 颁发并认可' (owner decision 14.1, no 颁授/背书).",
+    "heroSupport renders CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH in the same hero block as the CMI/certificate mention, satisfying owner decision 14.2.",
+    "CTA_LABELS.zh.guide / .conversation already match the owner's 14.6 naming decisions (索取 ... 课程指南 / 预约课程咨询); no 免费/获取 lead the primary CTA.",
+    "No 班次/参与者/渠道/创始人/首席执行官/营销/背书/它 elsewhere in FutureCommerceHome.tsx's zh block; pangu spacing and full-width punctuation consistent; no traditional glyphs.",
+    "npm run typecheck and node scripts/content-clarity-audit.mjs both pass with zero warnings in home-unit files after the fixes."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "None. The two fixes were rule-driven (translationese pronoun, capability-claim OG copy), not fact or naming questions."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "unit": "components",
+  "language": "en",
+  "verdictBeforeFixes": "pass with one gap",
+  "problems": [
+    {
+      "file": "src/components/site/GuideApplyPage.tsx",
+      "line": "guide-apply-marks block",
+      "problem": "Governance checklist item 4 (professionalRelevance in the same viewport as any CMI/certificate mention) was unmet: lede names 'CMI recognition' and a labelled ProgrammeMarks badge reads 'Awarded and endorsed by CMI' in the first viewport, with no no-guarantee sentence nearby.",
+      "fix": "Added CERTIFICATE_POSITIONING.professionalRelevance (+ MS/ZH mirrors) as a <p className=\"fine\"> under the marks, and passed lang={locale} to <ProgrammeMarks> (it had no lang prop before and always rendered English labels on ms/zh pages)."
+    },
+    {
+      "file": "src/components/site/CmiProgressionChart.tsx",
+      "line": "boundaryP",
+      "problem": "Same governance item 4 gap: heavy CMI/certificate/progression language throughout the component, but the boundary block carried only the not-an-MQA-degree sentence.",
+      "fix": "Appended CERTIFICATE_POSITIONING.professionalRelevance (+ MS/ZH mirrors) to boundaryP in en/ms/zh."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "reportedNotFixed": {
+    "item": "ProgrammeIntroduction lang prop wiring",
+    "finding": "Confirmed by repo-wide search: no page.tsx or other component in src/app or src/components currently renders <ProgrammeIntroduction>. The writer added an optional lang prop with full MS/ZH copy, but the component has zero call sites in the app today, so there is nothing to wire yet. Flagging for whichever page unit eventually embeds it (e.g. a future /executive-mba or /ms /zh equivalent) to pass lang."
+  }
+}

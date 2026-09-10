@@ -44,7 +44,7 @@ const STRINGS = {
   zh: {
     region: `${PROGRAMME_YEAR} 年 Executive MBA 开课日期`,
     hint: "左右滑动查看所有日期 →",
-    cohort: "班次",
+    cohort: "届别",
     language: "语言",
     s1: "第一次",
     s2: "第二次",
@@ -57,7 +57,7 @@ const STRINGS = {
     friSat: "星期五至星期六",
     open: "开放咨询",
     confirm: "请确认名额",
-    nextCohort: "查看下一个开放班次 →",
+    nextCohort: "查看下一个开放届别 →",
     intakesPath: "/zh/intakes",
     applyPath: "/zh/apply",
     cta: CTA_LABELS.zh.conversation,

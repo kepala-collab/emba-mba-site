@@ -1,4 +1,6 @@
-import { CMI_PATHWAY } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, CMI_PATHWAY } from "@/lib/content";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS } from "@/lib/content-ms";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH } from "@/lib/content-zh";
 import TechnicalText from "@/components/site/TechnicalText";
 
 type Props = { lang?: "en" | "zh" | "ms" };
@@ -38,14 +40,14 @@ const PROGRAMME_EN = [
 ] as const;
 
 const PROGRAMME_ZH = [
-  ["01", "CMI（英国）认可", "面向未来商业领导力的 Executive MBA；一项为期六个月、非学术的专业发展课程。"],
+  ["01", "由 CMI 颁发并认可", "面向未来商业领导力的 Executive MBA；一项为期六个月、非学术的专业发展课程。"],
   ["02", "证书与 fCMgr", "成功完成课程者取得 CMI Certificate of Recognition；根据 CMI 公布的 Recognised 方案，同时取得 Foundation Chartered Manager 身份。"],
   ["03", "可选下一步：Chartered Manager", "这是一条独立的 CMI 路线，有其资格、评估及费用；不包括在已公布的 Executive MBA 课程或学费内。"],
   ["04", "CMI 独立决定", "只有在 CMI 确认资格并通过适用评估后，申请人才获授 CMgr MCMI。"],
 ] as const;
 
 const PROGRAMME_MS = [
-  ["01", "Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Future Ready Business Leadership. Program pembangunan profesional bukan akademik selama enam bulan."],
+  ["01", "Dianugerahkan dan disokong oleh CMI", "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan. Program pembangunan profesional bukan akademik selama enam bulan."],
   ["02", "Sijil dan fCMgr", "Peserta yang berjaya menamatkan program menerima CMI Certificate of Recognition serta status Foundation Chartered Manager di bawah tawaran Recognised yang diterbitkan CMI."],
   ["03", "Langkah seterusnya (pilihan): Chartered Manager", "Laluan CMI yang berasingan dengan kelayakan, penilaian dan yuran tersendiri; tidak termasuk dalam program Executive MBA atau yuran yang diterbitkan."],
   ["04", "Keputusan bebas CMI", "CMgr MCMI dianugerahkan hanya selepas CMI mengesahkan kelayakan dan pemohon lulus penilaian yang berkenaan."],
@@ -54,13 +56,13 @@ const PROGRAMME_MS = [
 const COPY = {
   en: {
     k: "Professional progression map",
-    h: "The CMI qualification ladder and this programme pathway are two different systems.",
+    h: "CMI's regulated qualification levels and this programme pathway are two different systems.",
     intro: "The left side shows CMI's published job-role guide for Level 2–8 qualifications. The right side shows the recognition and certificate the Future Ready Executive MBA actually provides, and how it relates to the separate, optional Chartered Manager route.",
     panelK: "CMI regulated qualifications",
     panelH: "Level 2–8 role pathway",
     progH: "Programme-to-professional pathway",
     boundaryH: "Professional development; not an academic degree.",
-    boundaryP: "The programme is non-academic. It is not an MQA-accredited academic degree or a regulated qualification.",
+    boundaryP: `The programme is non-academic. It is not an MQA-accredited academic degree or a regulated qualification. ${CERTIFICATE_POSITIONING.professionalRelevance}`,
     caption: "A CMI qualification level describes the difficulty and complexity of a regulated qualification. It does not automatically make every CMI-recognised programme equivalent to an academic degree.",
     link: "View CMI's current qualification guide",
   },
@@ -72,19 +74,19 @@ const COPY = {
     panelH: "Level 2–8 职位路线",
     progH: "课程至专业评估路线",
     boundaryH: "专业发展课程，不是学术学位。",
-    boundaryP: "本课程为非学术专业课程，并非 MQA 认证学位或受监管资格。",
+    boundaryP: `本课程为非学术专业课程，并非 MQA 认证学位或受监管资格。${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}`,
     caption: "CMI qualification level 表示受监管资格的难度与复杂程度；不能据此把每项 CMI 认可课程自动视为某个学术学位。",
     link: "查看 CMI 当前资格说明",
   },
   ms: {
     k: "Peta perkembangan profesional",
-    h: "Tangga kelayakan CMI dan laluan program ini ialah dua sistem yang berbeza.",
+    h: "Tahap kelayakan terkawal CMI dan laluan program ini ialah dua sistem yang berbeza.",
     intro: "Sebelah kiri menunjukkan panduan peranan kerja yang diterbitkan CMI bagi kelayakan Level 2–8. Sebelah kanan menunjukkan pengiktirafan dan sijil yang sebenarnya disediakan oleh Future Ready Executive MBA, serta kaitannya dengan laluan Chartered Manager yang berasingan dan pilihan.",
     panelK: "Kelayakan CMI yang dikawal selia",
     panelH: "Laluan peranan Level 2–8",
     progH: "Laluan program ke penilaian profesional",
     boundaryH: "Pembangunan profesional; bukan ijazah akademik.",
-    boundaryP: "Program ini bukan akademik. Ia bukan ijazah akademik terakreditasi MQA dan bukan kelayakan yang dikawal selia.",
+    boundaryP: `Program ini bukan akademik. Ia bukan ijazah akademik terakreditasi MQA dan bukan kelayakan yang dikawal selia. ${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}`,
     caption: "CMI qualification level menggambarkan tahap kesukaran dan kerumitan sesuatu kelayakan yang dikawal selia. Ia tidak secara automatik menjadikan setiap program yang diiktiraf CMI setara dengan ijazah akademik.",
     link: "Lihat panduan kelayakan semasa CMI",
   },

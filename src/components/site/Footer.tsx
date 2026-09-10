@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { CTA_LABELS, FACTS, SITE, OPERATOR, PROGRAMME_POSITIONING_MS, PROGRAMME_POSITIONING_SENTENCE, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
+import { CTA_LABELS, FACTS, SITE, OPERATOR, PROGRAMME_FIT_CHECK, PROGRAMME_POSITIONING_MS, PROGRAMME_POSITIONING_SENTENCE, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
 import { localeOfPath } from "@/lib/locale-routes";
 import PrivacyChoicesButton from "@/components/site/PrivacyChoicesButton";
 import { isCampaignRoute } from "@/lib/locale-routes";
@@ -22,8 +22,8 @@ const LEGAL_LINKS_ZH = [
 
 const LEGAL_LINKS_MS = [
   ["/ms/privacy", "Dasar Privasi"],
-  ["/ms/terms", "Terma & Syarat"],
-  ["/ms/contact", "Hubungan undang-undang & privasi"],
+  ["/ms/terms", "Terma dan Syarat"],
+  ["/ms/contact", "Hubungan undang-undang dan privasi"],
 ] as const;
 
 function FooterBrandMarks({ locale }: { locale: "en" | "ms" | "zh" }) {
@@ -120,7 +120,7 @@ export default function Footer() {
               <span className="foot-contact">{SITE.director} · Penyelaras Program</span>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <Link href="/ms/apply">Jadualkan sesi perbincangan program</Link>
+              <Link href="/ms/apply">{CTA_LABELS.ms.conversation}</Link>
               <Link href="/home">English site →</Link>
               <Link href="/zh">中文网站 →</Link>
               <FooterBrandMarks locale="ms" />
@@ -133,7 +133,7 @@ export default function Footer() {
               <Link href="/ms/intakes">Tarikh kohort</Link>
               <Link href="/ms/faculty">Barisan fasilitator</Link>
               <Link href="/ms/resources">Bahan keputusan</Link>
-              <Link href="/ms/diagnostic">Semakan kesesuaian program</Link>
+              <Link href="/ms/diagnostic">{PROGRAMME_FIT_CHECK.ms}</Link>
               <Link href="/ms/insights/advancement-question">Wawasan pengurusan</Link>
               <Link href="/ms/faq">Soalan lazim</Link>
               <Link href="/ms/asian-business-consulting">Tentang Asian Business Consulting</Link>
@@ -165,7 +165,7 @@ export default function Footer() {
               <span className="foot-contact">{SITE.director} · 课程协调员</span>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <Link href="/zh/apply">预约课程咨询</Link>
+              <Link href="/zh/apply">{CTA_LABELS.zh.conversation}</Link>
               <Link href="/home">English site →</Link>
               <Link href="/ms">Laman Bahasa Melayu →</Link>
               <FooterBrandMarks locale="zh" />
@@ -178,7 +178,7 @@ export default function Footer() {
               <Link href="/zh/intakes">开课日期</Link>
               <Link href="/zh/faculty">导师团队</Link>
               <Link href="/zh/resources">决策资料</Link>
-              <Link href="/zh/diagnostic">课程匹配检查</Link>
+              <Link href="/zh/diagnostic">{PROGRAMME_FIT_CHECK.zh}</Link>
               <Link href="/zh/insights/advancement-question">管理洞察</Link>
               <Link href="/zh/faq">常见问题</Link>
               <Link href="/zh/asian-business-consulting">关于 Asian Business Consulting</Link>
@@ -221,7 +221,7 @@ export default function Footer() {
           </FooterDirectoryGroup>
           <FooterDirectoryGroup title="Guides">
             <Link href="/resources">Decision resources</Link>
-            <Link href="/diagnostic">Programme fit check</Link>
+            <Link href="/diagnostic">{PROGRAMME_FIT_CHECK.en}</Link>
             <Link href="/insights">Insights</Link>
             <Link href="/insights/executive-education-vs-executive-mba">Executive education vs Executive MBA</Link>
             <Link href="/faq">Frequently asked questions</Link>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import JsonLd from "@/components/site/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo";
 import { isCampaignRoute, localeOfPath } from "@/lib/locale-routes";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 
 type Item = { name: string; path: string };
 
@@ -22,8 +23,8 @@ const ZH_FEES: Item = { name: "学费与日期", path: "/zh/fees" };
 const MS_HOME: Item = { name: "Laman Utama", path: "/ms" };
 const MS_PROGRAMME: Item = { name: "Program", path: "/ms/executive-mba" };
 const MS_RESOURCES: Item = { name: "Panduan", path: "/ms/resources" };
-const MS_TEAM: Item = { name: "Pengiktirafan & Pasukan", path: "/ms/chartered-manager-malaysia" };
-const MS_FEES: Item = { name: "Yuran & Tarikh", path: "/ms/fees" };
+const MS_TEAM: Item = { name: "Pengiktirafan dan Pasukan", path: "/ms/chartered-manager-malaysia" };
+const MS_FEES: Item = { name: "Yuran dan Tarikh", path: "/ms/fees" };
 
 const ROUTES: Record<string, Item[]> = {
   "/about": [HOME, TEAM, { name: "About Future Ready EMBA", path: "/about" }],
@@ -33,7 +34,7 @@ const ROUTES: Record<string, Item[]> = {
   "/chartered-manager-malaysia": [HOME, PROGRAMME, { name: "CMI recognition", path: "/chartered-manager-malaysia" }],
   "/contact": [HOME, TEAM, { name: "Contact Future Ready EMBA", path: "/contact" }],
   "/curriculum": [HOME, PROGRAMME, { name: "Curriculum", path: "/curriculum" }],
-  "/diagnostic": [HOME, RESOURCES, { name: "Programme fit check", path: "/diagnostic" }],
+  "/diagnostic": [HOME, RESOURCES, { name: PROGRAMME_FIT_CHECK.en, path: "/diagnostic" }],
   "/executive-mba": [HOME, PROGRAMME],
   "/executive-mba-malaysia": [HOME, PROGRAMME, { name: "Executive MBA Malaysia", path: "/executive-mba-malaysia" }],
   "/executive-mba-vs-mba": [HOME, RESOURCES, { name: "Executive MBA vs MBA", path: "/executive-mba-vs-mba" }],
@@ -62,7 +63,7 @@ const ROUTES: Record<string, Item[]> = {
   "/zh/chartered-manager-malaysia": [ZH_HOME, ZH_PROGRAMME, { name: "CMI 认可", path: "/zh/chartered-manager-malaysia" }],
   "/zh/contact": [ZH_HOME, ZH_TEAM, { name: "联系 Future Ready Executive MBA", path: "/zh/contact" }],
   "/zh/curriculum": [ZH_HOME, ZH_PROGRAMME, { name: "课程大纲", path: "/zh/curriculum" }],
-  "/zh/diagnostic": [ZH_HOME, ZH_RESOURCES, { name: "课程适合度检查", path: "/zh/diagnostic" }],
+  "/zh/diagnostic": [ZH_HOME, ZH_RESOURCES, { name: PROGRAMME_FIT_CHECK.zh, path: "/zh/diagnostic" }],
   "/zh/executive-mba": [ZH_HOME, ZH_PROGRAMME],
   "/zh/faculty": [ZH_HOME, ZH_TEAM, { name: "师资与导师", path: "/zh/faculty" }],
   "/zh/faq": [ZH_HOME, ZH_RESOURCES, { name: "常见问题", path: "/zh/faq" }],
@@ -80,18 +81,18 @@ const ROUTES: Record<string, Item[]> = {
   "/ms/chartered-manager-malaysia": [MS_HOME, MS_PROGRAMME, { name: "Pengiktirafan CMI", path: "/ms/chartered-manager-malaysia" }],
   "/ms/contact": [MS_HOME, MS_TEAM, { name: "Hubungi Future Ready EMBA", path: "/ms/contact" }],
   "/ms/curriculum": [MS_HOME, MS_PROGRAMME, { name: "Kurikulum", path: "/ms/curriculum" }],
-  "/ms/diagnostic": [MS_HOME, MS_RESOURCES, { name: "Semakan kesesuaian program", path: "/ms/diagnostic" }],
+  "/ms/diagnostic": [MS_HOME, MS_RESOURCES, { name: PROGRAMME_FIT_CHECK.ms, path: "/ms/diagnostic" }],
   "/ms/executive-mba": [MS_HOME, MS_PROGRAMME],
-  "/ms/faculty": [MS_HOME, MS_TEAM, { name: "Fasilitator & jurulatih", path: "/ms/faculty" }],
+  "/ms/faculty": [MS_HOME, MS_TEAM, { name: "Fasilitator dan jurulatih", path: "/ms/faculty" }],
   "/ms/faq": [MS_HOME, MS_RESOURCES, { name: "Soalan lazim", path: "/ms/faq" }],
   "/ms/fees": [MS_HOME, MS_FEES],
   "/ms/how-it-works": [MS_HOME, MS_PROGRAMME, { name: "Cara program berjalan", path: "/ms/how-it-works" }],
   "/ms/insights/advancement-question": [MS_HOME, MS_RESOURCES, { name: "Cara membandingkan program pengurusan", path: "/ms/insights/advancement-question" }],
-  "/ms/intakes": [MS_HOME, MS_FEES, { name: "Kemasukan 2026", path: "/ms/intakes" }],
+  "/ms/intakes": [MS_HOME, MS_FEES, { name: "Pengambilan 2026", path: "/ms/intakes" }],
   "/ms/privacy": [MS_HOME, { name: "Dasar privasi", path: "/ms/privacy" }],
   "/ms/resources": [MS_HOME, MS_RESOURCES],
-  "/ms/resources/advancement-brief": [MS_HOME, MS_RESOURCES, { name: "Ringkasan keputusan kemajuan kerjaya", path: "/ms/resources/advancement-brief" }],
-  "/ms/terms": [MS_HOME, { name: "Terma & syarat", path: "/ms/terms" }],
+  "/ms/resources/advancement-brief": [MS_HOME, MS_RESOURCES, { name: "Ringkasan keputusan langkah seterusnya", path: "/ms/resources/advancement-brief" }],
+  "/ms/terms": [MS_HOME, { name: "Terma dan syarat", path: "/ms/terms" }],
 };
 
 function fallbackItems(pathname: string): Item[] {

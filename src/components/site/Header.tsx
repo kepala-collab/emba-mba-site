@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, type MouseEvent as ReactMouseEvent, type SyntheticEvent } from "react";
-import { CTA_LABELS, NAV, type NavItem } from "@/lib/content";
+import { CTA_LABELS, NAV, PROGRAMME_FIT_CHECK, type NavItem } from "@/lib/content";
 import { isCampaignRoute, localeOfPath, pairedRoute, type SiteLocale } from "@/lib/locale-routes";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import RdrMark from "./RdrMark";
@@ -26,7 +26,7 @@ const NAV_ZH: NavItem[] = [
   { href: "/zh/resources", label: "指南与帮助", children: [
     { href: "/zh/resources", label: "课程资料" },
     { href: "/zh/faq", label: "常见问题" },
-    { href: "/zh/diagnostic", label: "课程适合度检查" },
+    { href: "/zh/diagnostic", label: PROGRAMME_FIT_CHECK.zh },
   ] },
 ];
 
@@ -36,33 +36,33 @@ const NAV_MS: NavItem[] = [
     { href: "/ms/how-it-works", label: "Kaedah program" },
     { href: "/ms/curriculum", label: "Kurikulum" },
   ] },
-  { href: "/ms/about", label: "Pengiktirafan & Pasukan", children: [
+  { href: "/ms/about", label: "Pengiktirafan dan Pasukan", children: [
     { href: "/ms/executive-mba#recognition", label: "Pengiktirafan CMI" },
     { href: "/ms/faculty", label: "Fasilitator" },
     { href: "/ms/asian-business-consulting", label: "Asian Business Consulting" },
     { href: "/ms/contact", label: "Hubungi Future Ready EMBA" },
   ] },
-  { href: "/ms/fees", label: "Yuran & Tarikh", children: [
-    { href: "/ms/fees", label: "Yuran & biasiswa" },
+  { href: "/ms/fees", label: "Yuran dan Tarikh", children: [
+    { href: "/ms/fees", label: "Yuran dan biasiswa" },
     { href: "/ms/intakes", label: "Tarikh 2026" },
   ] },
-  { href: "/ms/resources", label: "Panduan & Bantuan", children: [
+  { href: "/ms/resources", label: "Panduan dan Bantuan", children: [
     { href: "/ms/resources", label: "Bahan program" },
     { href: "/ms/faq", label: "Soalan lazim" },
-    { href: "/ms/diagnostic", label: "Semakan kesesuaian" },
+    { href: "/ms/diagnostic", label: PROGRAMME_FIT_CHECK.ms },
   ] },
 ];
 
 const HEADER_UI = {
-  en: { home: "Home", getGuide: "Get the guide", getGuideShort: "Get guide", menu: "Menu", close: "Close",
+  en: { home: "Home", menu: "Menu", close: "Close",
     openMenu: "Open menu", closeMenu: "Close menu", explore: "Explore the programme",
     assistant: "Ask the programme assistant →", primaryNav: "Primary navigation", mobileNav: "Mobile navigation",
     mobilePrimaryNav: "Mobile primary navigation", campaignNav: "Programme plan actions" },
-  zh: { home: "首页", getGuide: "获取指南", getGuideShort: "获取指南", menu: "菜单", close: "关闭",
+  zh: { home: "首页", menu: "菜单", close: "关闭",
     openMenu: "打开菜单", closeMenu: "关闭菜单", explore: "浏览课程",
     assistant: "询问课程助手 →", primaryNav: "主导航", mobileNav: "移动导航",
     mobilePrimaryNav: "移动主导航", campaignNav: "课程资料操作" },
-  ms: { home: "Utama", getGuide: "Dapatkan panduan", getGuideShort: "Panduan", menu: "Menu", close: "Tutup",
+  ms: { home: "Utama", menu: "Menu", close: "Tutup",
     openMenu: "Buka menu", closeMenu: "Tutup menu", explore: "Terokai program",
     assistant: "Tanya pembantu program →", primaryNav: "Navigasi utama", mobileNav: "Navigasi mudah alih",
     mobilePrimaryNav: "Navigasi utama mudah alih", campaignNav: "Tindakan pelan program" },
@@ -276,10 +276,10 @@ export default function Header() {
                 ))}
               </div>
             </details>
-            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{t.getGuide}</Link>
+            <Link href={applyHref} className="navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="header_apply" data-track-location="header">{cta.guide}</Link>
           </nav>
           <div className="mobile-header-actions">
-            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{t.getGuideShort}</Link>
+            <Link href={applyHref} className="navcta mobile-navcta" onClick={handleApplyClick} data-track-event="cta_click" data-track-id="mobile_header_apply" data-track-location="mobile_header">{cta.guide}</Link>
             <button
               ref={toggleRef}
               className="mobile-menu-toggle"

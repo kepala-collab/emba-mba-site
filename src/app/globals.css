@@ -990,6 +990,7 @@ body::before{opacity:.7;background:radial-gradient(860px 500px at 88% -10%,rgba(
 .commerce-product{margin:0 0 20px;color:#94c5ff}
 .commerce-hero h1{max-width:14ch;color:#fff;font-size:clamp(3.25rem,5.8vw,6.1rem);font-weight:450;line-height:.94;letter-spacing:-.025em;text-wrap:balance}
 .commerce-hero-lede{max-width:62ch;margin:27px 0 0;color:#cbd8e7;font-size:clamp(1.02rem,1.35vw,1.16rem);line-height:1.72;text-wrap:pretty}
+.commerce-hero-support{max-width:62ch;margin:12px 0 0;color:#9fb2c8;font-size:.86rem;line-height:1.58;text-wrap:pretty}
 .commerce-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:32px}
 .commerce-text-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:inherit;font-size:.92rem;font-weight:700}
 .commerce-text-link span{color:#72b6ff;transition:transform .2s ease}

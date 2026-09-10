@@ -1,10 +1,10 @@
 import FutureCommerceHome from "@/components/site/FutureCommerceHome";
-import { PROGRAMME_POSITIONING_SENTENCE } from "@/lib/content";
+import { ABC_PROFILE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/home", {
-  title: "Executive MBA Malaysia for Working Managers",
-  description: `${PROGRAMME_POSITIONING_SENTENCE} Built for Malaysian working managers over six months.`,
+  title: "Executive MBA for Working Managers in Malaysia",
+  description: `${ABC_PROFILE.programmePositioning} Bring one live business issue and leave with a plan your team can act on.`,
   alternates: { canonical: "/home" },
 });
 

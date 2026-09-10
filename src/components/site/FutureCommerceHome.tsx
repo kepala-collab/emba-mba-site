@@ -3,8 +3,30 @@ import Link from "next/link";
 import CommerceHeroMedia from "@/components/site/CommerceHeroMedia";
 import LeadForm from "@/components/site/LeadForm";
 import Reveal from "@/components/site/Reveal";
-import { FACTS, INTAKES, PROGRAMME_PROOF } from "@/lib/content";
-import { malaysiaDateKey } from "@/lib/intakes";
+import {
+  ABC_PROFILE,
+  CERTIFICATE_POSITIONING,
+  CTA_LABELS,
+  ENQUIRY_COMMITMENT,
+  FACTS,
+  INTAKES,
+  PROGRAMME_AUDIENCE,
+  PROGRAMME_POSITIONING_MS,
+  PROGRAMME_POSITIONING_ZH,
+  PROGRAMME_PROOF,
+  PROGRAMME_YEAR,
+} from "@/lib/content";
+import {
+  CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS,
+  ENQUIRY_COMMITMENT_MS,
+  PROGRAMME_AUDIENCE_MS,
+} from "@/lib/content-ms";
+import {
+  CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH,
+  ENQUIRY_COMMITMENT_ZH,
+  PROGRAMME_AUDIENCE_ZH,
+} from "@/lib/content-zh";
+import { formatIntakeDateRange, malaysiaDateKey } from "@/lib/intakes";
 
 type HomeLocale = "en" | "ms" | "zh";
 
@@ -12,131 +34,146 @@ const COPY = {
   en: {
     lang: "en-MY",
     prefix: "",
-    eyebrow: "Malaysia · Executive development",
+    eyebrow: `For people whose decisions affect more than their own desk · Malaysia · ${PROGRAMME_YEAR} intakes`,
     product: "Future Ready Executive MBA",
-    title: "Your next leadership chapter starts here.",
-    lede: `A ${FACTS.durationMonths}-month professional development programme for ambitious Malaysian managers, business owners and senior leaders ready to sharpen judgement, widen perspective and lead what comes next.`,
-    guide: "Get the 2026 guide",
-    explore: "Explore the programme",
-    mediaKicker: `${FACTS.durationLong} · built around work`,
-    mediaTitle: "Programme and cohort clarity.",
+    title: "From carrying the decision alone to leading it.",
+    lede: `Bring one live business issue and, across ${FACTS.durationLong}, work it into a written action plan your team can act on, with faculty and coaches reviewing your reasoning. The method stays with you. ${ABC_PROFILE.programmePositioning}`,
+    heroSupport: CERTIFICATE_POSITIONING.professionalRelevance,
+    guide: CTA_LABELS.guide,
+    explore: `See what changes across the ${FACTS.durationLong}`,
+    mediaKicker: `${FACTS.durationLong} · built around your role`,
+    mediaTitle: "One issue. One plan you can lead.",
     mediaAlt: "Future Ready Executive MBA participant in the programme’s ceremonial gown and cap, in a modern office atrium",
     pauseVideo: "Pause video",
     playVideo: "Play video",
-    intakesKicker: "2026 intakes",
-    intakesTitle: "Choose the working rhythm that fits.",
+    intakesKicker: `${PROGRAMME_YEAR} intakes`,
+    intakesTitle: "Choose when your six months start.",
     intakeOpen: "Open for enquiries",
     factRecognition: "awarded and endorsed",
     factCommunity: `${PROGRAMME_PROOF.englishCohorts} English · ${PROGRAMME_PROOF.mandarinCohorts} Mandarin cohort`,
     factDuration: "professional development programme",
-    factDays: `training days across ${FACTS.liveSessions} facilitated sessions`,
+    factDays: `training days across ${FACTS.liveSessions} scheduled sessions`,
     factModules: "applied management modules",
-    factProject: "built around a live business challenge",
+    factProject: "on one live business issue within your own responsibility",
     experienceKicker: "The programme experience",
     experienceTitle: "A working room built around real decisions.",
-    experienceIntro: "Structured workshops, applied project work and a peer community turn leadership development into something you can use back at work.",
+    experienceIntro: "A training day from your seat, coaching between sessions, and peers carrying decisions of similar weight — the method is practised on your own decisions across the six months.",
     experienceLabels: ["Strategy workshop", "Applied project work", "Executive community"],
     recognitionKicker: "Proof and recognition",
-    recognitionTitle: "Credibility you can see. A community you can meet.",
-    recognitionIntro: "Executive MBA on Future Ready Business Leadership, awarded and endorsed by CMI.",
+    recognitionTitle: "Evidence attributed to ABC, and a credential with its boundary.",
+    recognitionIntro: `${CERTIFICATE_POSITIONING.distinction} ${CERTIFICATE_POSITIONING.professionalRelevance}`,
     graduates: "graduates",
     cohorts: "cohorts",
     englishCohorts: "English cohorts",
     mandarin: "Mandarin cohort",
-    audienceKicker: "The right room matters",
+    audienceKicker: "Who it's for",
     audienceTitle: "For people whose decisions affect more than their own desk.",
-    audienceBody: "Designed for business owners, directors, general managers and senior managers responsible for results, teams, cross-functional decisions or growth plans.",
-    audiencePoints: ["Bring a current business issue.", "Learn through a rigorous structure that fits around work.", "Leave with a practical plan you can explain, test and act on."],
-    decisionKicker: "Free 2026 programme guide",
-    decisionTitle: "Get the complete picture before you commit.",
-    decisionBody: `Review the ${FACTS.durationMonths}-month structure, published dates, programme fee, scholarship criteria and CMI recognition in one focused PDF.`,
-    decisionAside: "A conversation is optional. The guide is designed to help you decide whether the programme deserves one.",
+    audienceBody: PROGRAMME_AUDIENCE,
+    audiencePoints: [
+      "Markets and technology move quickly; a leader can still test the decision before committing to it.",
+      "AI is now part of the role; a leader can still start with the business problem, not the model.",
+      "Competitors adapt; a leader can still decide what to change first.",
+    ],
+    decisionKicker: `The ${PROGRAMME_YEAR} programme guide`,
+    decisionTitle: "Get the facts for the decision in front of you.",
+    decisionBody: `Review the ${FACTS.durationMonths}-month structure, the published ${PROGRAMME_YEAR} dates, the fee, the scholarship assessment and the CMI recognition in one PDF.`,
+    decisionAside: ENQUIRY_COMMITMENT,
   },
   ms: {
     lang: "ms-MY",
     prefix: "/ms",
-    eyebrow: "Malaysia · Pembangunan Eksekutif",
+    eyebrow: "Untuk mereka yang keputusannya memberi kesan kepada orang lain · Malaysia · Pengambilan 2026",
     product: "Future Ready Executive MBA",
-    title: "Langkah memimpin bermula di sini.",
-    lede: `Program pembangunan profesional selama ${FACTS.durationMonths} bulan untuk pemilik perniagaan, pengurus dan pemimpin kanan. Untuk anda yang mahu membuat keputusan dengan lebih yakin, melihat gambaran yang lebih besar, dan melangkah ke peringkat kepimpinan seterusnya.`,
-    guide: "Muat turun panduan 2026",
-    explore: "Ketahui lebih lanjut",
-    mediaKicker: `${FACTS.durationMonths} bulan · Fleksibel dengan waktu kerja`,
-    mediaTitle: "Kejelasan program dan kohort.",
+    title: "Daripada memikul keputusan sendirian kepada memimpin pelaksanaannya.",
+    lede: `Bawa satu isu perniagaan sebenar dan, sepanjang ${FACTS.durationLong}, ubahnya menjadi pelan tindakan bertulis yang boleh dilaksanakan oleh pasukan anda. Fasilitator dan jurulatih menyemak cara anda berfikir, dan kaedah itu kekal bersama anda. ${PROGRAMME_POSITIONING_MS} Ini ialah program pembangunan profesional bukan akademik selama ${FACTS.durationMonths} bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.`,
+    heroSupport: CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS,
+    guide: CTA_LABELS.ms.guide,
+    explore: `Lihat apa yang berubah sepanjang ${FACTS.durationLong}`,
+    mediaKicker: `${FACTS.durationMonths} bulan · disusun di sekeliling peranan anda`,
+    mediaTitle: "Satu isu. Satu pelan yang boleh dilaksanakan oleh pasukan anda.",
     mediaAlt: "Peserta Future Ready Executive MBA dalam jubah dan topi istiadat program, di atrium pejabat moden",
     pauseVideo: "Jeda video",
     playVideo: "Mainkan video",
-    intakesKicker: "Sesi Pengambilan 2026",
-    intakesTitle: "Pilih sesi yang bersesuaian dengan anda.",
-    intakeOpen: "Pertanyaan dibuka",
+    intakesKicker: "Pengambilan 2026",
+    intakesTitle: "Pilih tarikh permulaan 6 bulan anda.",
+    intakeOpen: "Terbuka untuk pertanyaan",
     factRecognition: "dianugerahkan dan disokong",
-    factCommunity: `${PROGRAMME_PROOF.englishCohorts} kohort Bahasa Inggeris · ${PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin`,
+    factCommunity: `${PROGRAMME_PROOF.englishCohorts} kohort bahasa Inggeris · ${PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin`,
     factDuration: "program pembangunan profesional",
-    factDays: `hari latihan merangkumi ${FACTS.liveSessions} sesi berpandu`,
+    factDays: `hari latihan merentasi ${FACTS.liveSessions} sesi berjadual`,
     factModules: "modul pengurusan gunaan",
-    factProject: "projek berteraskan cabaran perniagaan sebenar",
+    factProject: "berteraskan satu isu perniagaan sebenar di bawah tanggungjawab anda",
     experienceKicker: "Pengalaman program",
-    experienceTitle: "Belajar daripada keputusan sebenar, bukan sekadar teori.",
-    experienceIntro: "Bengkel yang tersusun, projek berdasarkan kerja sebenar anda, dan komuniti rakan eksekutif — semuanya menjadikan apa yang anda pelajari benar-benar boleh terus digunakan di pejabat.",
+    experienceTitle: "Ruang kerja dibina di sekeliling keputusan sebenar.",
+    experienceIntro: "Satu hari latihan dari tempat duduk anda, bimbingan antara sesi, dan rakan sekelas yang turut memikul keputusan seberat itu — kaedah itu dipraktikkan atas keputusan anda sendiri sepanjang 6 bulan.",
     experienceLabels: ["Bengkel strategi", "Projek amali", "Komuniti eksekutif"],
     recognitionKicker: "Bukti dan pengiktirafan",
-    recognitionTitle: "Kredibiliti yang nyata. Komuniti yang boleh anda jumpa.",
-    recognitionIntro: "Executive MBA dalam Future Ready Business Leadership, dianugerahkan dan disokong oleh CMI.",
+    recognitionTitle: "Bukti daripada ABC, dan sijil yang sempadannya dinyatakan.",
+    recognitionIntro: `${PROGRAMME_POSITIONING_MS} ${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}`,
     graduates: "graduan",
     cohorts: "kohort",
-    englishCohorts: "kohort Bahasa Inggeris",
+    englishCohorts: "kohort bahasa Inggeris",
     mandarin: "kohort Mandarin",
-    audienceKicker: "Gandingan yang tepat penentu kejayaan",
-    audienceTitle: "Untuk mereka yang keputusannya menentukan hala tuju, bukan sekadar tugas sendiri.",
-    audienceBody: "Sesuai untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan — mereka yang memikul tanggungjawab sebenar: hasil syarikat, pasukan, keputusan merentas jabatan dan hala tuju pertumbuhan.",
-    audiencePoints: ["Bawa satu isu perniagaan yang anda hadapi sekarang.", "Belajar dalam struktur yang tersusun, tetapi tetap sesuai dengan kesibukan kerja anda.", "Pulang dengan pelan praktikal yang boleh anda terangkan, uji dan laksanakan."],
-    decisionKicker: "Panduan program 2026 percuma",
-    decisionTitle: "Dapatkan gambaran lengkap sebelum membuat komitmen.",
-    decisionBody: `Semua yang anda perlu tahu — struktur ${FACTS.durationMonths} bulan, tarikh, yuran, penilaian biasiswa dan pengiktirafan CMI — dalam satu PDF yang ringkas.`,
-    decisionAside: "Anda tidak perlu berbincang dahulu. Baca panduan ini dan nilai sendiri sama ada program ini berbaloi untuk anda.",
+    audienceKicker: "Untuk siapa program ini",
+    audienceTitle: "Untuk mereka yang keputusannya memberi kesan kepada orang lain.",
+    audienceBody: PROGRAMME_AUDIENCE_MS,
+    audiencePoints: [
+      "Pasaran dan teknologi berubah dengan pantas; pemimpin tetap boleh menguji keputusan sebelum bertindak.",
+      "AI kini sebahagian daripada peranan anda; pemimpin tetap boleh mulakan dengan masalah perniagaan, bukan model AI.",
+      "Pesaing turut menyesuaikan diri; pemimpin tetap boleh memutuskan apa yang perlu diubah dahulu.",
+    ],
+    decisionKicker: "Panduan program 2026",
+    decisionTitle: "Dapatkan fakta untuk keputusan yang anda hadapi sekarang.",
+    decisionBody: `Semak struktur ${FACTS.durationMonths} bulan, tarikh 2026 yang diterbitkan, yuran, penilaian biasiswa dan pengiktirafan CMI dalam satu PDF.`,
+    decisionAside: ENQUIRY_COMMITMENT_MS,
   },
   zh: {
     lang: "zh-Hans",
     prefix: "/zh",
-    eyebrow: "马来西亚 · 高管发展",
+    eyebrow: `专为决定影响不止一人的管理者而设 · 马来西亚 · ${PROGRAMME_YEAR} 年开课日期`,
     product: "Future Ready Executive MBA",
-    title: "成为管理与商业领袖的第一步，从这里开始。",
-    lede: `一项为期 ${FACTS.durationMonths} 个月的专业发展课程，专为马来西亚的企业主、经理与高级经理打造，助您磨炼判断、开阔格局，迈出成为领袖的下一步。`,
-    guide: "下载 2026 课程指南",
-    explore: "了解更多",
-    mediaKicker: `${FACTS.durationMonths} 个月 · 灵活配合工作`,
-    mediaTitle: "课程与班次，一目了然。",
+    title: "从独自决策，到带队落实",
+    lede: `带一个手上的企业课题来，${FACTS.durationMonths} 个月内写成团队可落实的行动方案；导师与教练检视思路，方法留给您。${PROGRAMME_POSITIONING_ZH}`,
+    heroSupport: CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH,
+    guide: CTA_LABELS.zh.guide,
+    explore: `查看这 ${FACTS.durationMonths} 个月会改变什么`,
+    mediaKicker: `${FACTS.durationMonths} 个月 · 围绕您的角色安排`,
+    mediaTitle: "一个课题，一份团队能落实的方案。",
     mediaAlt: "身穿课程礼服、头戴礼帽的 Future Ready Executive MBA 学员，站在现代办公大楼中庭",
     pauseVideo: "暂停视频",
     playVideo: "播放视频",
-    intakesKicker: "2026 年开课班次",
-    intakesTitle: "选择最适合您的班次。",
+    intakesKicker: `${PROGRAMME_YEAR} 年开课日期`,
+    intakesTitle: "选定您 6 个月的开始日期。",
     intakeOpen: "开放咨询",
     factRecognition: "由 CMI 颁发并认可",
     factCommunity: `${PROGRAMME_PROOF.englishCohorts} 个英语班 · ${PROGRAMME_PROOF.mandarinCohorts} 个华语班`,
     factDuration: "专业发展课程",
-    factDays: `个培训日，分 ${FACTS.liveSessions} 次导师带领的研习课`,
+    factDays: `个培训日，分 ${FACTS.liveSessions} 次指定研习课完成`,
     factModules: "个应用管理模块",
-    factProject: "以一项真实企业课题为核心",
+    factProject: "以您分内的一项真实企业课题为核心",
     experienceKicker: "课程体验",
     experienceTitle: "围绕真实决策打造的学习场域。",
-    experienceIntro: "结构化工作坊、贴合实务的企业应用项目，加上高管同侪社群，让领导力发展真正落地到日常工作中。",
+    experienceIntro: "培训日从您的座位展开，课次之间有辅导同行，还有肩负相近课题的同侪——方法用在您自己的决策上，贯穿这 6 个月。",
     experienceLabels: ["策略工作坊", "企业应用项目", "高管学习社群"],
     recognitionKicker: "成果与认可",
-    recognitionTitle: "可信度看得见，社群找得到。",
-    recognitionIntro: "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可。",
+    recognitionTitle: "ABC 提供的实证，以及附带清晰边界的证书。",
+    recognitionIntro: `${PROGRAMME_POSITIONING_ZH} ${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}`,
     graduates: "名毕业生",
-    cohorts: "个班次",
+    cohorts: "届",
     englishCohorts: "个英语班",
     mandarin: "华语班",
-    audienceKicker: "与谁同行，决定成败",
-    audienceTitle: "为那些每个决策都关乎全局、而非只是分内之事的人而设。",
-    audienceBody: "专为对业绩、团队、跨部门决策或增长计划负责的企业主、董事、总经理与高级经理打造。",
-    audiencePoints: ["带来一项您当前面对的企业课题。", "在严谨而贴合工作的结构中学习。", "带走一套能讲清、能验证、能落地的实用方案。"],
-    decisionKicker: "免费 2026 课程指南",
-    decisionTitle: "先看清全貌，再决定是否参与。",
-    decisionBody: `一份 PDF，清楚列出 ${FACTS.durationMonths} 个月课程结构、已公布日期、课程费用、奖学金择优评估与 CMI 认可。`,
-    decisionAside: "是否进一步沟通，由您决定。这份指南，帮您判断这项课程是否值得一谈。",
+    audienceKicker: "适合对象",
+    audienceTitle: "专为决定影响不止一人的管理者而设。",
+    audienceBody: PROGRAMME_AUDIENCE_ZH,
+    audiencePoints: [
+      "市场瞬息万变；领导者仍可在投入之前先验证决策。",
+      "AI 已成为职务的一部分；领导者仍可先看业务问题，再选工具。",
+      "对手也在调整；领导者仍可决定先改变什么。",
+    ],
+    decisionKicker: `${PROGRAMME_YEAR} 年课程指南`,
+    decisionTitle: "先看清眼前这项决定的事实。",
+    decisionBody: `一份 PDF，涵盖 ${FACTS.durationMonths} 个月课程结构、已公布的 ${PROGRAMME_YEAR} 年开课日期、费用、奖学金评估与 CMI 认可。`,
+    decisionAside: ENQUIRY_COMMITMENT_ZH,
   },
 } as const;
 
@@ -152,8 +189,9 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
   const featuredIntakes = (futureIntakes.length ? futureIntakes : [...INTAKES].reverse()).slice(0, 3);
   const languageName = (language: string) => {
     if (language === "Mandarin") return locale === "zh" ? "华语" : "Mandarin";
-    return locale === "zh" ? "英语" : locale === "ms" ? "Bahasa Inggeris" : "English";
+    return locale === "zh" ? "英语" : locale === "ms" ? "bahasa Inggeris" : "English";
   };
+  const cohortLabel = (co: string) => (locale === "ms" ? co.replace("Cohort", "Kohort") : co);
 
   return (
     <div className="commerce-home" lang={copy.lang}>
@@ -166,6 +204,7 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
               <p className="mono commerce-product">{copy.product}</p>
               <h1 id="commerce-hero-title">{copy.title}</h1>
               <p className="commerce-hero-lede">{copy.lede}</p>
+              <p className="commerce-hero-support">{copy.heroSupport}</p>
               <div className="commerce-actions">
                 <Link href="#programme-guide" className="btn btn-primary">{copy.guide} <span aria-hidden="true">↗</span></Link>
                 <Link href={programmeHref} className="commerce-text-link">{copy.explore} <span aria-hidden="true">→</span></Link>
@@ -195,8 +234,8 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
           <div className="commerce-intake-heading"><span className="mono">{copy.intakesKicker}</span><strong>{copy.intakesTitle}</strong></div>
           {featuredIntakes.map((intake) => (
             <Link key={`${intake.language}-${intake.co}`} href={`${copy.prefix}/intakes`} className="commerce-intake-card">
-              <span className="mono">{languageName(intake.language)} · {intake.co}</span>
-              <strong>{intake.s1}</strong>
+              <span className="mono">{languageName(intake.language)} · {cohortLabel(intake.co)}</span>
+              <strong>{formatIntakeDateRange(intake.s1, locale)}</strong>
               <small>{copy.intakeOpen} <span aria-hidden="true">↗</span></small>
             </Link>
           ))}
@@ -249,7 +288,7 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
             <figure className="commerce-recognition-photo"><Image src="/brand/community/graduation-cohort.webp" alt="Future Ready Executive MBA graduation cohort" width={894} height={596} quality={88} sizes="(max-width: 820px) calc(100vw - 50px), (max-width: 1080px) 88vw, 625px" /><figcaption>{PROGRAMME_PROOF.graduationAttendance} {locale === "zh" ? "名毕业生出席首届毕业典礼。" : locale === "ms" ? "graduan menghadiri majlis graduasi pertama." : "graduates attended the inaugural graduation."}</figcaption></figure>
             <div className="commerce-recognition-organizations" aria-label={locale === "zh" ? "课程机构与认可" : locale === "ms" ? "Organisasi dan pengiktirafan program" : "Programme organizations and recognition"}>
               <div><Image src="/brand/abc-mark.webp" alt="Asian Business Consulting" width={360} height={100} /><p><strong>{locale === "zh" ? "课程设计与授课" : locale === "ms" ? "Reka bentuk dan penyampaian" : "Programme design and delivery"}</strong>Asian Business Consulting</p></div>
-              <div><Image src="/brand/hrdcorp-claimable-official.webp" alt="HRD Corp Claimable" width={180} height={180} /><p><strong>{locale === "zh" ? "雇主资助路线" : locale === "ms" ? "Laluan pembiayaan majikan" : "Employer-funding route"}</strong>{locale === "zh" ? "以雇主申请及 HRD Corp 审批为准" : locale === "ms" ? "Tertakluk pada permohonan majikan dan kelulusan HRD Corp" : "Subject to employer application and HRD Corp approval"}</p></div>
+              <div><Image src="/brand/hrdcorp-claimable-official.webp" alt="HRD Corp Claimable" width={180} height={180} /><p><strong>{locale === "zh" ? "雇主资助路线" : locale === "ms" ? "Laluan pembiayaan majikan" : "Employer-funding route"}</strong>{locale === "zh" ? "以雇主申请及 HRD Corp 审批为准" : locale === "ms" ? "Tertakluk kepada permohonan majikan dan kelulusan HRD Corp" : "Subject to employer application and HRD Corp approval"}</p></div>
             </div>
           </div>
         </div>

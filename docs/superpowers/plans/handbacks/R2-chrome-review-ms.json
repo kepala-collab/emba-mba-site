@@ -1,0 +1,18 @@
+{
+  "unit": "chrome",
+  "language": "ms",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    { "file": "src/components/site/Header.tsx", "problem": "NAV_MS used ampersands in three group labels ('Pengiktirafan & Pasukan', 'Yuran & Tarikh', 'Yuran & biasiswa', 'Panduan & Bantuan') — ms-register.md Don't 28 bans ampersands in BM headings.", "fix": "Replaced every '&' with 'dan'." },
+    { "file": "src/components/site/Footer.tsx", "problem": "LEGAL_LINKS_MS used ampersands ('Terma & Syarat', 'Hubungan undang-undang & privasi').", "fix": "Replaced with 'dan'." },
+    { "file": "src/components/site/RouteBreadcrumbs.tsx", "problem": "MS_TEAM/MS_FEES and two route labels also used ampersands ('Pengiktirafan & Pasukan', 'Yuran & Tarikh', 'Fasilitator & jurulatih', 'Terma & syarat').", "fix": "Replaced with 'dan'." },
+    { "file": "src/components/site/RouteBreadcrumbs.tsx", "problem": "'/ms/resources/advancement-brief' breadcrumb label was 'Ringkasan keputusan kemajuan kerjaya' — 'kemajuan kerjaya' matches the banned owner-vocabulary pattern (kemajuan must never attach to a career outcome; ms-register-audit-checklist.json missingRule 'Owner vocabulary — progress', fail regex kemajuan (kerjaya|gaji|pangkat)).", "fix": "Renamed to 'Ringkasan keputusan langkah seterusnya' (no career-outcome claim)." },
+    { "file": "src/components/site/RouteBreadcrumbs.tsx", "problem": "'/ms/intakes' breadcrumb label was 'Kemasukan 2026' — 'kemasukan' collides with the site's 'admission' sense and is not the site's defined intake-window term; the audit's site-specific-senses missingRule reserves 'pengambilan' for the intake window.", "fix": "Renamed to 'Pengambilan 2026' (matches the home hero eyebrow already using this term)." },
+    { "file": "src/components/site/ProgrammeMarks.tsx", "problem": "'tertakluk pada permohonan dan kelulusan majikan' used 'pada' instead of the dictionary-attested 'tertakluk kepada' (ms-register-audit-rules.json confirmedStrong row 19).", "fix": "Changed to 'tertakluk kepada'." },
+    { "file": "src/components/site/WhatsAppFloat.tsx", "problem": "Prefilled WhatsApp message used 'tarikh kemasukan seterusnya' (same 'kemasukan' vs 'pengambilan' issue as above).", "fix": "Changed to 'tarikh pengambilan seterusnya'." }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "CtaSection.tsx (already correct, 'pembiayaan HRD Corp yang dipohon majikan') and content-ms.ts's HRD_CORP_CLAIM_LABEL_MS constant ('...yang diterajui majikan') render the same fact two different ways; hero-review-ms.json already flagged this. ms-register-audit-rules.json row 22 (high-value) says 'diterajui' is the wrong verb ('to head/lead', not 'to apply through'); CtaSection.tsx's 'dipohon' is the audit-correct form. content.ts/content-ms.ts are out of scope for chrome; recommend the owner fix the constant to match CtaSection.tsx, not the reverse."
+  ]
+}

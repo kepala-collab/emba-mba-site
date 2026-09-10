@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { SITE } from "@/lib/content";
+import { CTA_LABELS, SITE } from "@/lib/content";
 import { useFloatingUi } from "@/components/site/FloatingUiContext";
 import { isCampaignRoute, localeOfPath } from "@/lib/locale-routes";
 
@@ -11,16 +11,16 @@ export default function WhatsAppFloat() {
   const pathname = usePathname() || "/";
   const locale = localeOfPath(pathname);
   const label = locale === "zh"
-    ? "通过 WhatsApp 联系 Future Ready Executive MBA"
+    ? CTA_LABELS.zh.whatsapp
     : locale === "ms"
-      ? "Hubungi Future Ready EMBA di WhatsApp"
-      : "Contact Future Ready EMBA on WhatsApp";
+      ? CTA_LABELS.ms.whatsapp
+      : CTA_LABELS.whatsapp;
   const [formState, setFormState] = useState({ pathname: "", visible: false });
   const formVisible = formState.pathname === pathname && formState.visible;
   const msg = encodeURIComponent(locale === "zh"
     ? "您好，我想进一步了解 Future Ready Executive MBA（英国 CMI）。请提供课程和下一期开课详情。"
     : locale === "ms"
-      ? "Salam sejahtera, saya ingin mengetahui lebih lanjut tentang Future Ready Executive MBA (CMI UK). Mohon kongsikan butiran program dan tarikh kemasukan seterusnya."
+      ? "Salam sejahtera, saya ingin mengetahui lebih lanjut tentang Future Ready Executive MBA (CMI UK). Mohon kongsikan butiran program dan tarikh pengambilan seterusnya."
       : "Hello Future Ready EMBA team, I'd like to explore the Future Ready Executive MBA (CMI UK). Please share the programme and next-intake details."
   );
 
