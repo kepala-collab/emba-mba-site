@@ -1,0 +1,279 @@
+{
+  "lens": "Conversion strategist who has run executive-education lead-generation in Malaysia: paid social and search into guide-download and WhatsApp funnels for working managers, both HRD Corp-sponsored and self-funded. Judged on what a manager reading on a phone between meetings understands in one viewport, what the copy costs in lead quality, and what survives Malay and Malaysian Chinese rendering under the governance and owner vocabulary rules.",
+  "scores": [
+    {
+      "proposal": "progress-first",
+      "fidelityToFramework": 9,
+      "governanceSafety": 8,
+      "conversionClarity": 7,
+      "localisability": 7,
+      "distinctiveness": 8,
+      "total": 39,
+      "notes": "Fidelity: the only proposal whose spine is literally the change of experience (before-state to after-state on every surface), which is what the owner says people buy; RJTBD, 5S, hope-without-promises and right-vs-good are each worked through, and the good-thing/right-thing table is the best writer's checklist in any proposal. Loses a point because 'deserves a conversation' sits in the hero CTA line beside 'scholarship assessment', and 'hope' is used pejoratively once ('a decision rather than a hope'). Governance: careful (Stage 1/2/3 rename, boundary in the hero viewport, one name per artefact, audit file-list additions), but every example retypes facts instead of tokenising them, 'The people who did it can be met' is an unverifiable access claim, and the SME H1 states an organisational outcome. Clarity: 'From carrying the decision alone to leading it.' is elegant but abstract (leading what?), the audience H1s run to 15-20 words, and the lede is one 50-word sentence; on the plus side the CTA purpose line puts RM10,000.00 in the first viewport, which in Malaysia raises lead quality rather than lowering volume, the secondary CTA names the change, and the /executive-mba and /lp/google H1s are the most concrete lines in any proposal. Localisability: 'Daripada ... kepada ...' and '从...到...' are genuinely portable frames and 'the way you decide' matches the owner's own Malay rendering, but 'leading it' has no Malay or Chinese collocation and the long H1s expand by a quarter in Malay. Distinctiveness: the from-to narrative is well outside generic MBA copy, though from-to is itself a familiar copy formula."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "fidelityToFramework": 9,
+      "governanceSafety": 9,
+      "conversionClarity": 8,
+      "localisability": 8,
+      "distinctiveness": 9,
+      "total": 43,
+      "notes": "Fidelity: the four good things in the reader's own voice is the most faithful rendering of 'the good thing always gets in the way of the right thing', the site holds its own six months, certificate and fee to the same rule, before/during/after is present, and hope honours the base ('instinct and experience carried you here'). Loses a point because the hero lede opens on credential, fee and schedule, even to subordinate them; the framework says not to lead with the product or the terms at all. Governance: the only proposal that tokenises every fact to content.ts constants, with explicit permitted and forbidden uses of 'deserving', neverWrite lists, MS/ZH notes tied to the register audits, and flags on the CTA constant change and on whether 'not the right fit' is operationally true. Deductions for the on-page good-thing panel, which puts 'A fee to minimise' and 'A faster route' cards on the home page, and for 'letters after my name', which implies post-nominals the CMI Certificate of Recognition does not confer. Clarity: 'Bring one real decision. Leave with the method.' is the only H1 of the three a manager parses in one read on a phone, and the primary CTA names action and purpose; but the first lede sentence spends the most valuable line on the page lecturing the reader about their priorities (Malaysian buyers read 'the fee comes second' as evasive), the fee is not in the hero viewport, and 'check fit' next to 'fit check' blurs the two CTAs. Localisability: the H1 translates near-literally (带来一个真实的决策，带走一套方法 / Bawa satu keputusan sebenar. Pulang dengan kaedahnya), right-vs-good already has owner-approved renderings, and the multilingual notes are concrete; 'sized to the job, not to the calendar', 'worked in the open', 'a real door' and 'the job the customer is hiring for' need re-expression for meaning. Distinctiveness: naming the buyer's own temptations, 'people who review your reasoning, not only your result', and 'a starting point, not a verdict' are lines no generic MBA page carries."
+    },
+    {
+      "proposal": "service-first",
+      "fidelityToFramework": 7,
+      "governanceSafety": 7,
+      "conversionClarity": 7,
+      "localisability": 6,
+      "distinctiveness": 7,
+      "total": 34,
+      "notes": "Fidelity: servant leadership and 'deserving comes out of serving' rendered as posture in two directions (the site serves first, the leader serves first) is the best treatment of that one line, and 'a leader can still' plus an activity is a clean hope rendering of Survival. But the spine is the 5S ladder shown on the page as a labelled section and a climb metaphor; the owner's 5S is a lens to write with, not a thing to display. The hero is an imperative, not a change of experience, and the Success and Service rungs repeatedly drift into organisational outcomes (a business that decides without you, scale or exit as options, the next leaders built). Governance: retypes facts; several Service-rung lines state outcomes for the people served, which the proposal's own rule forbids; 'which is servant leadership in practice' uses the term as a badge; 'The outcome is applied, not just attendance' is an implicit contrast with attendance-only training. Credit for replacing the gown-and-cap hero image, for never rendering 5S beside STAGES, and for the 'claimable' adjacency rule. Clarity: the hero lede is the single clearest sentence in any proposal and supporting line 3 puts fee, dates and HRD Corp in the viewport; but 'Decide well for the people who depend on you' reads as an instruction (the proposal flags this itself and offers an A/B fallback), and a home section labelled Survival/Safety/Social/Success/Service is scaffolding the reader has to decode. Localisability: the organising metaphor (ladder, climb, rung) is banned in MS and ZH by the proposal's own avoid list, so the kicker, the oneThing line and the 5S section cannot ship in two of three languages; the remainder translates adequately and the Malay/Chinese register notes are useful. Distinctiveness: servant posture is rare in MBA marketing, but a moral imperative H1 is a recognisable leadership-institute genre."
+    }
+  ],
+  "winner": "rjtbd-first",
+  "graftIdeas": [
+    {
+      "from": "service-first · pageArchetypes[Hero / home].example.lede",
+      "idea": "Replace the RJTBD hero lede's first sentence ('Credential, fee and schedule are fair questions, and they come second...') with the service-first lede: 'Bring one live business issue and, across six months, work it into a written action plan your team can act on, with faculty and coaches reviewing your reasoning.' It is the clearest sentence in any proposal, it is the change of experience stated as activity, and it costs no lecture. Keep the RJTBD second sentence ('...and you keep the method') after it, tokenised."
+    },
+    {
+      "from": "service-first · sampleHero.supporting[3]",
+      "idea": "Put the fee in the first viewport: 'RM10,000.00 standard fee, published 2026 dates, employer-led HRD Corp funding subject to HRD Corp approval. An enquiry does not commit you to enrol or pay.' (as FEES.standard.label and HRD_CORP_CLAIM tokens). In Malaysia the published fee is a reason to keep reading and a lead-quality filter; the RJTBD hero leaves it below the fold."
+    },
+    {
+      "from": "progress-first · pageArchetypes[Hero / home].example.eyebrow",
+      "idea": "Use 'For people whose decisions affect more than their own desk · Malaysia · 2026 intakes' as the eyebrow instead of the RJTBD 'Malaysia · Executive development'. It opens the Service rung in the first line without a slogan. In MS and ZH render the meaning (keputusan anda memberi kesan kepada orang lain / 你的决策影响的不只是你自己), not the desk."
+    },
+    {
+      "from": "progress-first · pageArchetypes[Hero / home].ctaPattern and example.secondaryCta",
+      "idea": "Make the secondary CTA 'See what changes across the six months →' (link to /how-it-works) instead of 'Take the programme fit check →'. One primary CTA about the guide and one secondary about the change; the fit check gets its own card lower on the page so two 'fit' buttons never sit side by side."
+    },
+    {
+      "from": "progress-first · rightVsGood.goodThingsAndTheirRightThing",
+      "idea": "Adopt the eight-row good-thing/right-thing table (free guide, 6 months, no exam, HRD Corp claimable, scholarship, CMI, AI, fits your calendar) as the writers' checklist in the style guide, and drop the RJTBD on-page good-thing panel. The discipline belongs in the editorial rule, not in three cards on the home page that name price and speed cues."
+    },
+    {
+      "from": "service-first · pageArchetypes[Hero / home].example.forcesRestated",
+      "idea": "Use the 'a leader can still + activity' pattern for all five FORCES items (subject to ABC approval of the constant). It turns Survival into hope without fear, contains no verdict on the reader, and translates cleanly (pemimpin masih boleh ... / 领导者仍然可以...)."
+    },
+    {
+      "from": "progress-first · pageArchetypes[Campaign landing pages].example.pressuresPairedWithChanges",
+      "idea": "On /lp/meta pair each 'why managers begin looking' pressure with a 'what changes' line (Your role has grown → the decisions you carry become the material of the applied project; You cannot pause your career → 6 training days across 3 scheduled sessions, the work happens inside your organisation between them). This is a proven paid-social landing-page device: every pain has its answer in the same row."
+    },
+    {
+      "from": "progress-first · pageArchetypes[Campaign landing pages].furtherExamples[/lp/google].steps",
+      "idea": "Keep step '04 Reuse the method — the frameworks and working templates stay with you' beside the hero on both landing pages. It is the anti-shortcut stated as a benefit the reader keeps, and it makes 'Leave with the method' concrete."
+    },
+    {
+      "from": "service-first · pageArchetypes[Hero / home].example.heroImageNote",
+      "idea": "Replace the gown-and-cap hero image with a working-room photograph (strategy workshop or project review). Gown-and-cap beside 'awarded' and 'graduates' is the single biggest degree-implication risk on the site and it mismatches a decision-led H1; a working room is also the more honest conversion image for a working manager."
+    },
+    {
+      "from": "service-first · pageArchetypes[Trust and recognition pages].example.faq.order",
+      "idea": "Order the FAQ in the sequence a manager actually asks: Will this change how I decide at work? / Can I carry it alongside the job? / What will I hold at the end, and what will I not? / What will it cost, in writing? / Who decides employer funding? / What if I miss a session? / What are the refund terms? The first question is the RJTBD; the rest are the Safety rung in buying order."
+    },
+    {
+      "from": "service-first · pageArchetypes[The four emails].example.day3",
+      "idea": "Use the service-first day-3 structure, which answers the three fit questions inside the email (days and sessions; what the certificate is and is not; the fee in writing) rather than asking whether the guide settled them. Answers-first is the serve-first posture applied to nurture, and it converts better than a reminder."
+    },
+    {
+      "from": "progress-first · pageArchetypes[Shared enquiry section and lead form].example.leadForm.optionalField",
+      "idea": "Add the optional one-line field 'The decision or business issue you are weighing (optional, one line)' to the LeadForm and carry it into the WhatsApp prefill. It operationalises 'the team answers for the decision you named' and gives the coordinator a real first reply; it also self-qualifies leads without a gate."
+    },
+    {
+      "from": "progress-first · pageArchetypes[The diagnostic].example.resultHeadline",
+      "idea": "Result headline reflects the reader's own words back: 'You said: {chosen Q1 option}. Here are the four facts that tell you whether that change is realistic for you now.' Stronger than the RJTBD paraphrase because the reader recognises their own sentence, and it is a verdict-free result."
+    },
+    {
+      "from": "progress-first · governanceRisks (Level 1/2/3) and pageArchetypes[Programme core pages].furtherExamples[/curriculum].stageLabelNote",
+      "idea": "Rename curriculum 'Level 1 / 2 / 3' to 'Stage 1 / 2 / 3' so no stage label can be misread as a qualification level next to the CMI mark."
+    },
+    {
+      "from": "service-first and progress-first · /executive-mba H1 ('Bring one live business issue. Leave with a plan your team can act on.')",
+      "idea": "Use this as the /executive-mba and landing-page H1 under the RJTBD architecture, and A/B test it against 'Bring one real decision. Leave with the method.' as the home H1. 'A plan your team can act on' is more tangible than 'the method' for a first-time visitor; 'the method' wins on the anti-shortcut point. Let the data decide which leads."
+    }
+  ],
+  "rejectLines": [
+    {
+      "proposal": "rjtbd-first",
+      "line": "Credential, fee and schedule are fair questions, and they come second; the first is how your next consequential decision gets made, and who depends on it. (hero lede, sentence 1)",
+      "why": "Spends the first line of the highest-traffic viewport telling the reader their priorities are wrong. Malaysian buyers read 'the fee comes second' as evasive, and the framework says not to lead with products or terms even to subordinate them. Replace with the service-first lede."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "A fee to minimise — Decide fit first; the standard fee is FEES.standard.label and any scholarship award is confirmed individually in writing. (goodThingPanel card)",
+      "why": "A card titled 'A fee to minimise' beside the scholarship sentence is a discount cue on the home page; governance's controlled term is 'individually confirmed scholarship award', never a price to be reduced. Keep the sentence on /fees, drop the card."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "A faster route — FACTS.durationLong is sized to the job, not to the calendar. (goodThingPanel card)",
+      "why": "A home-page card headed 'A faster route' is exactly the shortcut cue the proposal bans elsewhere, and 'sized to the job, not to the calendar' is an idiom with no Malay or Chinese equivalent."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "I want letters after my name and a certificate I can show. (theFourGoodThings[credential].readerVoice)",
+      "why": "The CMI Certificate of Recognition confers no post-nominals; putting 'letters after my name' in the reader's mouth next to the certificate implies it does. Also imputes vanity to the reader."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Six months, no thesis: that sounds like the quick one. (theFourGoodThings[faster route].readerVoice)",
+      "why": "Reintroduces 'no thesis' and 'quick' as on-page hooks the same proposal bans. Reader-voice temptation lines must stay in the style guide; printed, they become diagnoses of a reader who never said them."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "A certificate documents work; it is not the work. If the reasoning behind your decisions does not change, the paper changes nothing for the people who depend on you.",
+      "why": "'The paper' is dismissive of the credential ABC awards and CMI recognises; it undercuts the Safety rung the site relies on and reads as preaching."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Being the person who knows is a good thing; it built the business. The right thing now is a business whose decisions are documented well enough for others to act on. (smeOwners_lede)",
+      "why": "Tells an owner what is 'right' for their business, and the after-state is an organisational outcome, not an artefact the participant produces. Rewrite as the applied project on one operating issue."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "The tool is the good thing; it is visible, new and easy to buy. (ai_lede)",
+      "why": "Talks down to a reader who is evaluating AI seriously. Keep 'Start with the business problem, not the model.' and delete the sentence."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Running a business or a unit in Malaysia, with more decisions than there used to be. (malaysia_h1)",
+      "why": "A verbless fragment with no change and no offer; a manager cannot tell what the page is for. Use the from-to or bring/leave pattern instead."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Get the 2026 programme guide and check fit → next to Take the programme fit check → (hero CTAs)",
+      "why": "Two 'fit' calls to action side by side blur into one; the reader does not know which is the next step. One guide CTA, one 'see what changes' link; the fit check gets its own card."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Review the six-month structure, published dates, RM10,000.00 standard fee, scholarship assessment and CMI recognition, then decide whether the programme deserves a conversation. (hero ctaPurposeLine; same phrase in the guide aside)",
+      "why": "'Deserves' and 'scholarship assessment' in one sentence is the adjacency the owner vocabulary rule forbids. Use 'then decide whether a conversation is worth your time' (the proposal's own acknowledgement-email wording)."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From every decision routing through you to a business that runs on documented decisions. (/mba-for-sme-owners H1)",
+      "why": "The after-state is an organisational outcome the programme does not control, which breaks the proposal's own rule that every after-state is an artefact or act during the six months."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The work is recognised. The people who did it can be met. (/home#recognition headline)",
+      "why": "Promises access to graduates, which is unverifiable and turns attributed counts into implied endorsement. Governance: participant claims describe ABC source materials and never imply endorsement."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From a decision you carry inside your own organisation to a faculty-reviewed plan, while you keep leading in Malaysia. (/executive-mba-malaysia H1)",
+      "why": "Twenty words in English, longer in Malay; 'while you keep leading in Malaysia' is keyword filler. It breaks the proposal's own nine-word H1 rule."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Where has your role outgrown the way you decide? (diagnostic H1)",
+      "why": "'Outgrown' is a verdict on the reader's current judgement dressed as a question, and 'peranan anda telah melebihi cara anda membuat keputusan' is not natural Malay. Use the RJTBD question 'Which decision is your role now asking you to make differently?'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Stop copying the answer. First-principles thinking for business leaders. (insights H1)",
+      "why": "An imperative that accuses the reader of copying; preachy. The proposal's own lede line 'From inherited answers to decisions you can verify and own' is the H1."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "scale or exit becomes a decision rather than a hope (SME cardOrder)",
+      "why": "Uses 'hope' as a pejorative while the framework says hope is the basis of progress, and 'scale or exit' is an implied business outcome. Rewrite as 'scale or exit becomes a decision you have written down'."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Get the free 2026 programme guide (hero primary CTA)",
+      "why": "'Free' as the lead word of the button; the ZH register bans 免费获取 and both other proposals move 'free' to the reassurance strip. Keep the constant, change its value to 'Get the 2026 programme guide' and put 'Free PDF' once in the fine print."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Service-first: the ladder you climb for others / The ladder you climb for others (5S kicker) / You climb for the people who depend on you; the programme is how you climb, never why. (oneThing) / The point of climbing is the people at each rung.",
+      "why": "Ladder, climb and rung are career-ladder language (the outcome connotation governance bans) and the proposal's own avoid list bars them in MS and ZH, so the organising metaphor cannot ship in two of three languages."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Decide well for the people who depend on you. (hero H1)",
+      "why": "An imperative addressed to the reader reads as 'you decide badly now'; it is instruction, not a change of experience, and the proposal itself flags the risk. Its own A/B fallback 'You decide for more than yourself.' is a statement, not a hero."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Five questions a working manager answers for other people. with rung labels Survival / Safety / Social / Success / Service (home 5S section)",
+      "why": "Puts the owner's internal scaffold on the page as jargon the reader must decode; 'Survival' on an EMBA home page reads as alarm. Use 5S as the ordering logic for cards and FAQ, never as visible labels."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Build a business that can decide without you in the room. (SME H1)",
+      "why": "An organisational outcome as the headline; the programme develops management capability and does not deliver a business that runs itself."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Lead AI adoption as a decision your team and customers can trust. (AI H1)",
+      "why": "'Trust' is an outcome for the people served, which the proposal's own Service rule forbids ('never what happens to the people served'). The RJTBD 'Start with the business problem, not the model.' is the H1."
+    },
+    {
+      "proposal": "service-first",
+      "line": "so the people who depend on you are served by the work while you learn it (working professionals lede)",
+      "why": "States an outcome for third parties during the programme; unverifiable and outside the capability-only rule."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Success: scale, partnership or exit as options the business can support. / Service: the next leaders, built while you are still there to build them. (SME cards)",
+      "why": "Both are implied business outcomes (growth options, a built leadership bench). The capability disclaimer beside them does not neutralise a headline promise."
+    },
+    {
+      "proposal": "service-first",
+      "line": "which is servant leadership in practice: taking responsibility for the structure instead of assigning it to a person. (systems thinking lede)",
+      "why": "Names the term as a badge, which the proposal's own posture rule forbids ('the site never says we practise servant leadership'). Show the behaviour, do not label it."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Borrowed answers feel safe. Owned decisions are the work. (first principles H1)",
+      "why": "Aphorism that lectures; 'the work' is insider shorthand and 'owned decisions' has no clean Malay rendering."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Recognition that documents the work, stated precisely. (home recognition H2)",
+      "why": "'Stated precisely' is the site praising its own governance; the reader does not care how precise the site is. 'What the certificate is, and what it is not.' does the job."
+    },
+    {
+      "proposal": "all three",
+      "line": "The outcome is applied, not just attendance. (employer funding brief subhead in progress-first, rjtbd-first and service-first)",
+      "why": "'Not just attendance' is an implicit contrast with attendance-only training after all three retire 'not another attendance certificate'; governance bans describing other routes as inferior. Write 'The manager brings a live company issue and leaves with a written action plan.'"
+    },
+    {
+      "proposal": "all three",
+      "line": "Use this to judge whether the programme fits the responsibility you already carry, not just the title you would like next. (decision guide / programme guide intro in progress-first and service-first; the same posture in rjtbd-first PDFs)",
+      "why": "'Not just the title you would like next' imputes a title-seeking motive to the reader; it is the shaming governance bans, in the reader's own downloaded PDF."
+    },
+    {
+      "proposal": "rjtbd-first and service-first",
+      "line": "the next published date is a real door, not a lost one (day-14 email; hopeWithoutPromises modelLines)",
+      "why": "Door metaphor with a loss-aversion tail; '一扇真正的门，而不是失去的门' and 'pintu sebenar, bukan pintu yang hilang' are calques nobody would say. Write 'the next published date is still open to you'."
+    },
+    {
+      "proposal": "rjtbd-first and service-first",
+      "line": "the job the customer is actually hiring for / the job the customer is hiring for (design thinking lines)",
+      "why": "JTBD insider idiom ('hire' a product) that a Malaysian manager does not use and that renders awkwardly (客户雇用产品来完成的任务; kerja yang pelanggan upah). Say 'the job the customer needs done'."
+    },
+    {
+      "proposal": "progress-first and service-first",
+      "line": "The calendar decides more than the brochure does. (day-7 email H1)",
+      "why": "A clever line whose meaning is unclear in translation and whose 'brochure' undercuts the guide the reader just downloaded. Say 'Check the published dates before anything else.'"
+    },
+    {
+      "proposal": "progress-first and service-first",
+      "line": "Every example line that hardcodes a number or a controlled sentence (RM10,000.00, 154 graduates, 17 cohorts, 86, August 2026, 6/3/12/5, 'registered in 2020', 'since July 2024', the scholarship and HRD Corp sentences)",
+      "why": "Retyped facts drift across three languages and JSON-LD. Governance requires reuse of content.ts constants; adopt the rjtbd-first token discipline (FACTS.*, FEES.standard.label, PROGRAMME_PROOF.*, HRD_CORP_CLAIM.*, CERTIFICATE_POSITIONING.*) before any line lands in code."
+    },
+    {
+      "proposal": "all three",
+      "line": "For people whose decisions affect more than their own desk (eyebrow / audience line)",
+      "why": "Not rejected in English; rejected as a calque. 'Desk' must not be translated literally (meja / 办公桌). Render the meaning: keputusan yang memberi kesan kepada orang lain / 你的决策影响的不只是你自己."
+    }
+  ],
+  "heroPreference": {
+    "proposal": "rjtbd-first",
+    "why": "'Bring one real decision. Leave with the method.' is the only H1 a working manager parses in one read on a phone: eight words, an activity pair, no product name, no count, no outcome noun, and it translates near-literally into both Malay and Chinese (带来一个真实的决策，带走一套方法 / Bawa satu keputusan sebenar. Pulang dengan kaedahnya). It is also the anti-shortcut stated as a benefit the reader keeps. Ship it with three grafts: the service-first lede in place of the RJTBD first sentence, the fee and HRD Corp line as the third supporting line (tokenised) so RM10,000.00 is in the first viewport, and the progress-first eyebrow and 'See what changes across the six months' secondary link. A/B the /executive-mba variant 'Bring one live business issue. Leave with a plan your team can act on.' as the home H1 once the funnel is stable; if it wins, the difference is tangibility, and 'the method' moves to step 04 of the process strip."
+  }
+}

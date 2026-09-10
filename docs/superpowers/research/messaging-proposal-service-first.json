@@ -1,0 +1,684 @@
+{
+  "name": "Service-first: the ladder you climb for others",
+  "thesis": "The reader is a working manager whose decisions already carry other people: a team, a company, customers, a family business. The site has one job: to serve that reader's progress, which is a change in the experience of deciding, from decisions carried alone on instinct to decisions they can examine, explain and hand to the people who must act on them. It serves that change for the sake of those people, not for the reader's title. The 5S ladder (Survival, Safety, Social, Success, Service) is the reader's ladder of responsibility, climbed for others; each rung is a question about who depends on them, and at every rung the programme is the means, never the hero. Deserving comes out of serving in two directions the copy can show without promising anything: the site serves first (facts in writing, boundaries stated plainly, an honest no, an enquiry that commits nothing) and the leader serves first (visible reasoning, a plan with owners and measures, managers built after them). Hope is expressed as practice inside the six months, never as an outcome after them; the right route is named even when it is not this one; and the programme facts appear as the plain means, quoted from src/lib/content.ts: six months, 6 training days across 3 scheduled sessions, 12 modules, an applied business project, the CMI Certificate of Recognition, RM10,000.00.",
+  "narrativeSpine": [
+    {
+      "beat": "01 Responsibility named",
+      "carrier": "Hero H1 on /home (and the H1 pattern for every audience page)",
+      "line": "Decide well for the people who depend on you."
+    },
+    {
+      "beat": "02 The change of experience, then the positioning sentence",
+      "carrier": "Hero lede",
+      "line": "Bring one live business issue and, across six months, work it into a written action plan your team can act on, with faculty and coaches reviewing your reasoning. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI."
+    },
+    {
+      "beat": "03 The means, stated plainly",
+      "carrier": "Hero supporting lines and facts strip",
+      "line": "6 training days across 3 scheduled sessions; CMI Certificate of Recognition on successful completion, not an MQA-accredited academic degree or a regulated qualification; RM10,000.00 standard fee; an enquiry does not commit you to enrol or pay."
+    },
+    {
+      "beat": "04 The pressures, turned to hope",
+      "carrier": "FORCES section on /home and /executive-mba (ABC approval for the constant)",
+      "line": "AI is rewriting how work gets done; a leader can still decide what the work is for."
+    },
+    {
+      "beat": "05 The room and the people in it",
+      "carrier": "Audience and programme-experience sections on /home",
+      "line": "For people whose decisions affect more than their own desk. Bring a current business issue. Learn through a rigorous structure that fits around work. Leave with a practical plan you can explain, test and act on."
+    },
+    {
+      "beat": "06 The ladder you climb for others",
+      "carrier": "New 5S section on /home, reused as the ordering logic on /mba-for-sme-owners and in the working manager's guide",
+      "line": "Survival: can the business keep running while I learn? Safety: what am I committing to, and who decides? Social: who will I work this through with? Success: what will I have made? Service: who is it for?"
+    },
+    {
+      "beat": "07 The right job",
+      "carrier": "/how-it-works H1 and the /insights/advancement-question spine, linked from the 5S section",
+      "line": "Which consequential work must I become better able to examine, explain and lead?"
+    },
+    {
+      "beat": "08 The method as the means",
+      "carrier": "F.A.S.T. disciplines and FLOW (Right Thinking, Right Questions, Right Ideas, Right Solutions, Exceptional Value) with the existing disclaimer kept adjacent",
+      "line": "The right question comes before the good idea. The method develops decision capabilities; business outcomes depend on the participant's evidence, choices and execution."
+    },
+    {
+      "beat": "09 Right over good: what the recognition is and is not",
+      "carrier": "Recognition section on /home and /executive-mba#recognition",
+      "line": "The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome. Chartered Manager is a separate optional CMI route."
+    },
+    {
+      "beat": "10 Who has walked it, attributed",
+      "carrier": "Proof strip (PROGRAMME_PROOF, attributed to ABC and dated)",
+      "line": "154 graduates across 17 cohorts, as listed by Asian Business Consulting, each of whom brought a live issue from their own organisation."
+    },
+    {
+      "beat": "11 Safety in writing",
+      "carrier": "/fees, /intakes, /hrd-corp-claimable, /faq and the refund and delivery-control sentences",
+      "line": "Before you commit anything, you will know in writing who decides each thing: the fee, any scholarship award, employer funding, the dates and the certificate."
+    },
+    {
+      "beat": "12 The serve-first enquiry",
+      "carrier": "CtaSection #apply default heading and sub on every page",
+      "line": "Get the facts for the decision you carry. The programme team answers first; you decide afterwards, and 'not the right route' is one of the answers you may receive. An enquiry does not commit you to enrol or pay."
+    },
+    {
+      "beat": "13 The preference honoured downstream",
+      "carrier": "Form success screen, acknowledgement email, nurture emails, WhatsApp prefill",
+      "line": "You asked for programme details first, with no call yet. The programme team will follow that preference and will not call unless you ask."
+    }
+  ],
+  "fiveS": {
+    "survival": {
+      "carriers": [
+        "FORCES section restated as hope on /home and /executive-mba",
+        "/mba-for-working-professionals hero",
+        "/how-it-works H1 hook (symptom plus the people waiting on the decision)",
+        "Diagnostic Q1 option 'I want structured professional development without leaving work'"
+      ],
+      "audience": "Managers and owners who cannot step away from the job or the people in it while they learn; employer-sponsored managers whose absence the business would feel.",
+      "modelSentence": "You cannot step away from the people who rely on you, so the work of the programme happens inside your role: 6 training days across 3 scheduled sessions, and the applied project on a live issue you already carry, worked between them."
+    },
+    "safety": {
+      "carriers": [
+        "/fees, /hrd-corp-claimable, /intakes, /faq",
+        "Refund, delivery-control and catch-up sentences (REFUND_TERMS, DELIVERY_CONTROL)",
+        "Recognition boundaries on every page that shows the CMI mark",
+        "Diagnostic privacy line; form fine print; acknowledgement email notice"
+      ],
+      "audience": "Every reader at the moment of commitment; the sponsoring employer; the reader deciding whether to ask about the scholarship.",
+      "modelSentence": "Before you commit anything, you will know in writing who decides each thing: the standard fee is RM10,000.00; any scholarship award and resulting participant fee are confirmed individually in writing; the employer applies and HRD Corp decides; the dates are published; and the certificate is a CMI Certificate of Recognition, not an MQA-accredited academic degree or a regulated qualification."
+    },
+    "social": {
+      "carriers": [
+        "Programme-experience section on /home (Strategy workshop, Applied project work, Executive community)",
+        "/faculty (what coaches do with the participant's issue)",
+        "/asian-business-consulting proof strip (attributed counts)",
+        "Mandarin cohort entries on /intakes; the cohort selector on the form"
+      ],
+      "audience": "Readers who decide alone in their organisation and want their reasoning examined by people who carry the same kind of responsibility.",
+      "modelSentence": "You work the issue alongside a cohort of working leaders, with faculty and one-to-one coaches reviewing your reasoning, so the decision is examined by people who carry the same kind of responsibility before your team has to act on it."
+    },
+    "success": {
+      "carriers": [
+        "/curriculum capstone section (decisions, actions, owners and measures)",
+        "/executive-mba H1 and lede",
+        "Audience pages: /mba-for-sme-owners, /mba-for-entrepreneurs, /ai-executive-mba",
+        "Form intent relabelled 'My own role'",
+        "Working manager's guide cover"
+      ],
+      "audience": "Owners, directors, general managers and senior managers responsible for business results, teams, cross-functional decisions or growth plans (PROGRAMME_AUDIENCE).",
+      "modelSentence": "Success here is a decision you can stand behind: a written action plan for a current business issue, with decisions, actions, owners and measures, reviewed by faculty and ready for your team to act on."
+    },
+    "service": {
+      "carriers": [
+        "Hero H1 and the audience line 'For people whose decisions affect more than their own desk'",
+        "Fifth rung of the 5S section on /home",
+        "/hrd-corp-claimable and the employer funding guide (developing a manager for the people they lead)",
+        "/about purpose sentence and the team's serve-first posture in CtaSection, emails and the assistant",
+        "Insights: design thinking (begin with the person you serve), systems thinking (own the structure, not the blame)"
+      ],
+      "audience": "Leaders who measure a decision by the people it lands on: their team, their customers, the managers they will build after them; HR and L&D readers deciding on behalf of someone else.",
+      "modelSentence": "The point of climbing is the people at each rung: the team that has to act on your decision, the customers whose job you are serving, and the managers you build after you."
+    }
+  },
+  "rjtbd": "The working manager's right job to be done is not to obtain a credential, an MBA-shaped name, employer funding or a faster route; those are the good things that get in the way when they lead. The right job is to become better able to examine, explain and lead the consequential decisions that other people depend on, decisions they already carry at work, without leaving those people while they learn. The programme is hired for exactly that job and for nothing larger: across six months a live business issue from the participant's own responsibility is worked, with the programme frameworks, one-to-one coaching and faculty review, into a written action plan that states decisions, actions, owners and measures, so that a team can pick it up and act on it. The CMI Certificate of Recognition documents that the work was done to a standard; the fee, the published dates and the employer-led HRD Corp route make the work possible; none of them is the job, and the copy must never let any of them stand in for it.",
+  "hopeWithoutPromises": {
+    "principle": "Hope is the basis of progress, so every page must carry it; but governance bans outcome framing, so hope is written as practice the participant does and things the participant holds, in the present tense of the six months, never as what happens to their career, company or salary afterwards.",
+    "rules": [
+      "Use activity verbs the participant performs: bring, define, examine, test, weigh, write, explain, review, keep, hand over. Do not use result verbs: achieve, secure, advance, transform, unlock.",
+      "Give every hope sentence an object the participant owns: their issue, their plan, their reasoning, their team. Never an object the world confers: a promotion, a seat, a title, a return.",
+      "Time-box hope to the programme: 'across the six months', 'between sessions', 'by Session 3'. Do not extend it: 'after the programme you will', 'graduates go on to'.",
+      "Wherever money, recognition or funding is mentioned, the hope sentence sits in the same viewport as the controlling sentence from content.ts (scholarshipEligibility, HRD_CORP_CLAIM.short, CERTIFICATE_POSITIONING.professionalRelevance).",
+      "Hope is never urgency: no seat counts, countdowns, 'remaining' beyond the factual calendar, 'last chance'. The only availability wording is 'Open for enquiries'.",
+      "The CMI designations (fCMgr on completion under CMI's published terms; CMgr MCMI as a separate optional route; Fellow) are CMI's ladder, not the reader's progress ladder. Present them as what CMI controls after the programme, never as the next rung of the 5S climb.",
+      "An honest no is part of hope: the copy says when the right route is a different one (an MQA-accredited academic degree for a regulated purpose), so the hope offered here is credible.",
+      "Honour the reader's existing experience as the base they build on; never diagnose a deficit. The reader asks the question of themselves; the site does not answer it for them."
+    ],
+    "pairs": [
+      {
+        "insteadOf": "Lead with certainty in chaos. Build decisions that move the business forward.",
+        "write": "Bring one live business issue. Leave with a plan your team can act on."
+      },
+      {
+        "insteadOf": "Complete the CMI-recognised Executive MBA in 6 months.",
+        "write": "A business issue enters. A plan your team can act on leaves. Six months, while you stay in role."
+      },
+      {
+        "insteadOf": "Your next leadership chapter starts here.",
+        "write": "Decide well for the people who depend on you."
+      },
+      {
+        "insteadOf": "builds the habit until it becomes instinct",
+        "write": "practised on your own decisions across the six months"
+      },
+      {
+        "insteadOf": "Competitors are adapting faster than you",
+        "write": "Competitors adapt; a leader can still build a team that adapts with them."
+      },
+      {
+        "insteadOf": "Career progression — I am considering the programme for myself.",
+        "write": "My own role — I am considering the programme for the responsibility I carry now."
+      },
+      {
+        "insteadOf": "Credibility you can see. A community you can meet.",
+        "write": "Recognition that documents the work, stated precisely. The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome."
+      }
+    ]
+  },
+  "rightVsGood": {
+    "principle": "Right versus good is rendered only as a choice the reader makes between purposes, or as a critique of methods and of this site's own claims. It is never a ranking of providers, academic MBAs, attendance-based training or HRD Corp programmes. The reference academic MBA stays defined by COMPARISON_SCOPE and its column stays neutral.",
+    "renderings": [
+      "Purpose before price. /executive-mba-vs-mba gains a first row, 'Built to do': reference academic MBA, 'Provide an MQA-accredited academic degree through 18–24 months of academic study'; Future Ready Executive MBA, 'Work one live business issue into an action plan across six months while you remain in role'. The H1 becomes 'Executive MBA or academic MBA: choose by the job the route must do.'",
+      "Name the right route when it is not ours. The decision guide, the vs page, the FAQ and the assistant all carry: 'If you need an MQA-accredited academic degree for a regulated purpose, an academic MBA is the right route; this programme is not it.'",
+      "Recognition is the good thing; it is always shown beside the right thing. Wherever the CMI mark or the word 'awarded' appears, the professionalRelevance sentence and the not-an-MQA-degree sentence sit in the same viewport, including the /home recognition section where they are currently absent.",
+      "Method critique lives only in Insights and is aimed only at methods: benchmarking that caps you at incremental gains, blame that leaves the structure intact, workshops that end at the sticky notes. Never at an institution, a programme category or a provider.",
+      "ABC's FLOW already encodes the principle. One framing line may sit beside it, with the existing disclaimer kept: 'The right question comes before the good idea. The method develops decision capabilities; business outcomes depend on the participant's evidence, choices and execution.'"
+    ],
+    "shortcutCuts": [
+      "The shortcut the site refuses is its own. Speed headlines go: 'Complete the CMI-recognised Executive MBA in 6 months' becomes what changes inside the six months, with '6 months' kept as a fact in the fact band.",
+      "'Free' appears once per surface, in the reassurance strip ('No payment · No application commitment'), not as the lead word of the CTA.",
+      "'No exam, no thesis' stops being a hook. The assessment is stated as a presence: 'The assessment is a sequenced action plan for a business challenge within your own responsibility, reviewed by faculty. There is no traditional examination or thesis.'",
+      "'Fits your calendar' becomes the commitment: 'The between-session weeks are where the frameworks are applied to your live issue; the three sessions are the checkpoints.'",
+      "Six months is described as the shape of the work, not the reason to choose it: 'Six months is how long this work takes for a working manager. It is the shape of the programme, not the reason to choose it.'",
+      "In Insights, the shortcut that cuts is a method: 'Copying what worked for someone else feels safe today and caps what you can decide tomorrow.' The Safety rung (borrowed answers) versus the Success rung (owned decisions), kept inside the business example."
+    ],
+    "neverAimedAt": [
+      "Academic MBAs or any awarding institution",
+      "Other HRD Corp training providers or attendance-based training ('not another attendance certificate' is retired)",
+      "AI tools, vendors or other AI courses",
+      "The reader's past choices or current competence"
+    ]
+  },
+  "servantLeadership": {
+    "posture": "Servant leadership is the site's posture and the reader's stance, shown through what the copy does rather than claimed as a badge. The site never says 'we practise servant leadership'; it serves first and lets the reader notice.",
+    "hero": "The H1 names the people the reader decides for; the audience line 'For people whose decisions affect more than their own desk' is kept and extended so the people who depend on the reader are named as who the change is for, with no result promised for them.",
+    "curriculum": "The capstone description already says the plan states decisions, actions, owners and measures; the page adds that owners and measures are how a leader makes the plan usable by others: the plan serves the team, not the certificate. Module glosses for M07 Transformational Leadership, M08 Team Intervention and M12 Stakeholder Ecosystem may be re-glossed toward whom the capability serves, subject to ABC approval; the site does not claim the curriculum teaches 'servant leadership' unless ABC confirms the term.",
+    "faculty": "Faculty and coaches are introduced by what they do for the participant's issue (review the problem definition, challenge the reasoning, coach one-to-one in the participant's own context) before their biographies, which stay verbatim and affiliation-based.",
+    "insights": "Design thinking: 'begin with the person you are trying to serve' becomes the article's stated spine; the leader earns the decision by serving first. Systems thinking: the leader takes responsibility for the structure instead of assigning blame to a person. First principles: owning a decision rather than borrowing one is how a leader can explain it to the people who act on it. Advancement question: 'lead' in the RJTBD question is given its serving meaning by naming whose work improves when the decision improves.",
+    "emails": "The acknowledgement email honours the preference actually chosen (no call unless asked), uses the one guide name, and invites the reader to reply with the decision they are weighing so the first reply serves the real job. Nurture emails answer first, invite the one unanswered question, and say plainly that 'not the right route' is a possible answer.",
+    "employerPages": "/hrd-corp-claimable and the employer funding guide frame sponsorship as the organisation developing a manager who is responsible for a team, with the employer's application and HRD Corp's decision stated verbatim; the 'Manager development' intent becomes the default for readers arriving from /corporate-training.",
+    "team": "/about keeps Roy Affandi's purpose sentence and introduces him as the person who answers, including when the answer is 'not this route'; /asian-business-consulting introduces the firm through whom it has served (154 graduates across 17 cohorts, as listed by ABC) rather than as 'the firm behind'.",
+    "assistant": "The assistant asks one situational question about the responsibility and decision in front of the visitor before listing features, answers only from verified facts, and hands off to the Programme Coordinator as a service, not a deflection.",
+    "neverTouches": [
+      "The scholarship: no merit story, no 'deserving' language, no new criteria, no amounts; only FACTS.scholarshipEligibility verbatim, and the team's posture limited to 'the conversation exists to help you decide, including deciding not to ask'.",
+      "Outcomes for the team or company: Service-rung sentences describe what the leader does (explain, hand over, build), never what happens to the people served.",
+      "The owner's line 'he is greatest who serves most': it contains the audit-banned norm word and is rendered on site as 'Real leadership is servant leadership: it is measured by the people it serves.'"
+    ]
+  },
+  "pageArchetypes": [
+    {
+      "pageType": "Hero / home",
+      "headlinePattern": "A practice the reader performs, for the people who depend on them. The programme name is absent from the H1; responsibility is the subject.",
+      "ledePattern": "Sentence 1: the change of experience in activity terms using the programme's own facts (one live issue, six months, a plan the team can act on, faculty review). Sentence 2: PROGRAMME_POSITIONING_SENTENCE verbatim. The not-an-MQA-degree boundary follows in the first supporting line so the English home body finally carries it.",
+      "ctaPattern": "Primary: the single guide name plus its purpose ('Get the 2026 programme guide to check the fit'). Secondary: CTA_LABELS.conversation. Aside kept: 'A conversation is optional. The guide is designed to help you decide whether the programme deserves one.'",
+      "example": {
+        "h1": "Decide well for the people who depend on you.",
+        "lede": "Bring one live business issue and, across six months, work it into a written action plan your team can act on, with faculty and coaches reviewing your reasoning. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI.",
+        "supporting": [
+          "6 training days across 3 scheduled sessions; the applied project runs inside your own role between them.",
+          "CMI Certificate of Recognition on successful completion. It is not an MQA-accredited academic degree or a regulated qualification; Chartered Manager is a separate optional CMI route.",
+          "RM10,000.00 standard fee, published 2026 dates, employer-led HRD Corp funding subject to HRD Corp approval. An enquiry does not commit you to enrol or pay."
+        ],
+        "forcesRestated": [
+          "01 Markets re-price overnight; a leader can still decide with evidence.",
+          "02 Technology dissolves industry lines; a leader can still define the job the customer is hiring for.",
+          "03 AI is rewriting how work gets done; a leader can still decide what the work is for.",
+          "04 Customers expect what did not exist last year; a leader can still test what they value before committing resources.",
+          "05 Competitors adapt; a leader can still build a team that adapts with them."
+        ],
+        "fiveSSection": {
+          "kicker": "The ladder you climb for others",
+          "h2": "Five questions a working manager answers for other people.",
+          "rungs": [
+            "Survival: can the business keep running while I learn? The programme runs on 6 training days across 3 scheduled sessions; the applied project runs inside your role between them.",
+            "Safety: what am I committing to, and who decides? Fee, dates, recognition and funding are stated in writing, with the decision-maker named for each.",
+            "Social: who will I work this through with? A cohort of working leaders, faculty and one-to-one coaches who review your reasoning.",
+            "Success: what will I have made? A written action plan for a current business issue: decisions, actions, owners and measures, reviewed by faculty.",
+            "Service: who is it for? The team that has to act on your decision, the customers whose job you serve, and the managers you build after you."
+          ]
+        },
+        "recognitionSection": {
+          "h2": "Recognition that documents the work, stated precisely.",
+          "body": "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Successful participants are awarded a CMI Certificate of Recognition. It is non-academic, not an MQA-accredited academic degree or a regulated qualification. The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome.",
+          "proof": "154 graduates across 17 cohorts (16 English, 1 Mandarin), as listed by Asian Business Consulting; 86 graduates attended the inaugural graduation in August 2026."
+        },
+        "guideSection": {
+          "kicker": "2026 programme guide",
+          "h2": "Check the fit before you commit.",
+          "sub": "Review the six-month structure, published dates, the RM10,000.00 standard fee, the scholarship assessment process and the CMI recognition, and decide whether this is the right next step for the responsibility you carry now."
+        },
+        "heroImageNote": "Replace the gown-and-cap hero with a working-room photograph (strategy workshop or project review), or keep it only with the boundary sentence inside the same viewport and a plainly descriptive alt."
+      }
+    },
+    {
+      "pageType": "Programme core pages (/executive-mba, /how-it-works, /curriculum, /faculty, /intakes)",
+      "headlinePattern": "What the participant brings and what they leave with, or the decision they already face; counts (12 modules, 5 schedules, 7 practitioners) move to the fact band.",
+      "ledePattern": "The six months described from the participant's seat in activity terms, then the verbatim structure facts (FACTS.trainingDays, FACTS.liveSessions, FACTS.moduleCount), then the boundary sentence where recognition is mentioned.",
+      "ctaPattern": "Primary: 'Get the 2026 programme guide to check the fit'. Ghost: a see-how action ('See how the six months run'). CtaSection heading: the decision the reader carries for others, keeping 'An enquiry does not commit you to enrol or pay.'",
+      "example": {
+        "executiveMba": {
+          "h1": "Bring one live business issue. Leave with a plan your team can act on.",
+          "lede": "Across six months, in 6 training days across 3 scheduled sessions, with one-to-one coaching and an applied business project, you work a current issue from your own responsibility into a written action plan that faculty review. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is not an MQA-accredited academic degree or a regulated qualification.",
+          "primaryCta": "Get the 2026 programme guide to check the fit",
+          "ghostCta": "See how the six months run"
+        },
+        "howItWorks": {
+          "h1": "Revenue is slowing. Costs are rising. Your team is waiting for a decision. Which problem do you solve first?",
+          "lede": "The visible symptom may sit in sales, pricing, operations or customer retention. The useful first move is to define the decision, test the evidence and expose the trade-offs before committing people and money, and to make the reasoning visible enough for the people who must act on it to review it.",
+          "flowLine": "The right question comes before the good idea. The method develops decision capabilities; business outcomes depend on the participant's evidence, choices and execution.",
+          "ctaSectionHeading": "Make your reasoning visible to the people who act on it."
+        },
+        "curriculum": {
+          "h1": "Twelve modules. One plan with owners and measures.",
+          "lede": "A 6-month executive programme that moves from sensing the business landscape (M01 Future Foresight) to building trust and influence across the stakeholder ecosystem (M12). Every cohort covers all 12 modules. The assessment is a sequenced action plan for a business challenge within your own responsibility, reviewed by faculty: decisions, actions, owners and measures that your team can pick up. There is no traditional examination or thesis.",
+          "servantLine": "Owners and measures are how a leader makes the plan usable by others. The plan serves the team, not the certificate."
+        },
+        "faculty": {
+          "h1": "Practitioners and coaches who work on your issue with you.",
+          "lede": "Teaching, project feedback and one-to-one coaching are applied to your own organisational context: faculty review the problem definition, the reasoning and the proposed action. ABC confirms the faculty assigned to each cohort in the briefing issued before Session 1.",
+          "note": "All seven biographies stay verbatim and affiliation-based; any per-coach line on how they work with a participant's decision requires ABC confirmation before each cohort."
+        },
+        "intakes": {
+          "h1": "Choose when your six months begin.",
+          "lede": "Five published 2026 schedules: English Cohorts 17, 18 and 19 and Mandarin Cohorts 2 and 3. Each covers the full programme across 3 scheduled sessions, 9am–6pm, on the dates below; between sessions the applied project runs inside your role. If ABC changes a date, registered participants receive the replacement date in writing.",
+          "rowCta": "Arrange a programme conversation",
+          "codeNote": "Rename the source comment '4 — URGENCY + CTA' to '4 — CLOSING CTA'; availability wording stays 'Open for enquiries'."
+        }
+      }
+    },
+    {
+      "pageType": "Fees and scholarship (/fees, /hrd-corp-claimable)",
+      "headlinePattern": "The exact figure or the exact process first; the work the money funds second; no value, return or savings claim. On the HRD Corp page, the person being developed leads and the grant process is the means.",
+      "ledePattern": "FACTS.scholarshipEligibility or HRD_CORP_CLAIM.short and HRD_CORP_CLAIM.responsibility verbatim, followed by one sentence tying the fee or grant to the applied work on the participant's own business issue.",
+      "ctaPattern": "'See what the fee includes' / 'Arrange a programme conversation' / CTA_LABELS.company. The serve-first line is the team's clarity posture only; no Service-rung or 'deserving' language anywhere on these pages.",
+      "example": {
+        "fees": {
+          "h1": "RM10,000.00 standard fee. Scholarships assessed individually.",
+          "lede": "Scholarships are limited and awarded on a selective basis to eligible Malaysian applicants, following individual assessment and written approval. Any award and resulting participant fee are confirmed individually in writing. The scholarship is never automatic.",
+          "workLine": "The fee funds 6 training days across 3 scheduled sessions, one-to-one coaching and project review, the Leverage Management System, and faculty review of the applied business project on your own business issue.",
+          "serveLine": "There is no fee to request information or ask for an eligibility review, and the programme team will say plainly if the programme is not the right route for your purpose."
+        },
+        "hrdCorp": {
+          "h1": "Fund a manager's six months of applied work. The employer applies; HRD Corp decides.",
+          "lede": "An HRD Corp-registered Malaysian employer submits the grant application in e-TRiS before training. HRD Corp determines eligibility and the approved amount under its Allowable Cost Matrix; funding cannot exceed the employer's available levy balance. The employer—not the participant—applies for the grant. HRD Corp—not the programme provider—decides approval and the approved amount.",
+          "employerLine": "What the employer is funding is a named manager, responsible for a team, working a live company issue into an action plan across six months: 6 training days across 3 scheduled sessions, guided management self-assessment, one-to-one coaching on their own issue, and the frameworks and templates they keep.",
+          "primaryCta": "Enquire for your company"
+        }
+      }
+    },
+    {
+      "pageType": "Audience cluster pages (/executive-mba-malaysia, /mba-for-working-professionals, /mba-for-sme-owners, /mba-for-entrepreneurs, /ai-executive-mba)",
+      "headlinePattern": "The reader's present responsibility and the changed practice, addressed to the people it lands on; never the schedule, the credential or the fee as the hook.",
+      "ledePattern": "Situation (what the reader carries now) → what the applied project does inside their organisation across the six months → the verbatim facts (fee, HRD Corp, scholarship, recognition) → the existing capability disclaimer ('It develops management capability; growth and return depend on the decisions and execution that follow.').",
+      "ctaPattern": "'Get the 2026 programme guide to check the fit' plus the page's fact links; CtaSection heading names the decision the reader carries for others.",
+      "example": {
+        "smeOwners": {
+          "h1": "Build a business that can decide without you in the room.",
+          "lede": "If every decision, client relationship and operating control routes through you, that is what the applied project can work on: across six months you document where control sits with one person and build the systems, and the managers, that carry it. It develops management capability; growth and return depend on the decisions and execution that follow.",
+          "cardsOrderedBy5S": [
+            "Survival: the business keeps running while the owner is in a session.",
+            "Safety: succession, pricing and client knowledge written down instead of remembered.",
+            "Social: a management team that can act on a decision they can see the reasoning for.",
+            "Success: scale, partnership or exit as options the business can support.",
+            "Service: the next leaders, built while you are still there to build them."
+          ]
+        },
+        "workingProfessionals": {
+          "h1": "Keep carrying the work. Change how you carry it.",
+          "lede": "You stay in role for the whole six months. 6 training days across 3 scheduled sessions on published dates, one-to-one coaching between them, and an applied project on a current issue from your own responsibility, so the people who depend on you are served by the work while you learn it. If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort."
+        },
+        "entrepreneurs": {
+          "h1": "Decide with a structure your co-founders and investors can follow.",
+          "lede": "Founders make linked decisions about customers, product, pricing, capital, capability and timing, under pressure and by instinct. Across six months the programme applies first-principles, systems and Jobs-To-Be-Done frameworks to those decisions and produces a sequenced transformation plan for faculty review. No funding or growth is promised; the frameworks and the plan are yours, and the outcomes depend on how you execute."
+        },
+        "aiExecutiveMba": {
+          "h1": "Lead AI adoption as a decision your team and customers can trust.",
+          "lede": "You are being asked to decide on AI without a method for deciding. This page explains how the same six-month programme applies its decision frameworks to AI strategy, data, automation, governance and implementation: the business question comes before the tool. It is the same 6 months programme, not a separate software or technical certification, and the AI focus does not change the programme's formal status."
+        },
+        "malaysia": {
+          "h1": "For Malaysian owners and directors whose decisions carry other people.",
+          "lede": "Running a business or a unit in Malaysia while the decisions multiply, you work one live issue from your own organisation into a faculty-reviewed action plan across six months, and keep the method. The standard fee is RM10,000.00. Eligible Malaysian applicants may be considered, on a selective basis, for the LIFE Innoversity scholarship. Any award and resulting participant fee are confirmed individually in writing.",
+          "fix": "Replace 'Certificate-phase training days' with '6 training days across 3 scheduled sessions'; remove 'Why Malaysian leaders choose it' (an unsourced norm)."
+        }
+      }
+    },
+    {
+      "pageType": "Trust and recognition pages (/chartered-manager-malaysia, /asian-business-consulting, /about, /faq, /executive-mba-vs-mba)",
+      "headlinePattern": "The reader's gain stated positively (what the evidence is, who answers, which route does which job), then the boundary; no contrast with unnamed other certificates or programmes.",
+      "ledePattern": "The change in the reader's practice in one clause, the recognition or provenance as evidence of it, the controlling sentence verbatim, and the decision-maker named for each condition.",
+      "ctaPattern": "'Get the 2026 programme guide to check the fit' / 'Arrange a programme conversation'; the FAQ fine print keeps 'A conversation request is not an admission or payment commitment.'",
+      "example": {
+        "charteredManager": {
+          "h1": "Recognition for work your team can use.",
+          "lede": "The Future Ready Executive MBA helps experienced managers turn a live business issue into a defensible action plan; successful completion is recognised with a CMI Certificate of Recognition, benchmarked against CMI's Professional Standard. Any Chartered Manager application is separate and optional. CMI determines eligibility, assessment, membership and fees; the programme does not promise or include that award.",
+          "evidenceLine": "The evidence is the work: a plan for your own organisation, reviewed by faculty, on a programme recognised against CMI's Professional Standard. The programme is designed to enrich how you lead, diagnose problems, make a case and move a team into action. It does not guarantee promotion, salary growth, employment or business results.",
+          "retire": "'not another attendance certificate'"
+        },
+        "asianBusinessConsulting": {
+          "h1": "The firm that designed the programme, in service of the managers who brought their own issues to it.",
+          "lede": "Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the six-month Executive MBA on Future Ready Business Leadership for a working manager's real decision; the programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre. 154 graduates across 17 cohorts, as listed by ABC, have completed an applied project on their own organisation.",
+          "fix": "Drop 'over almost three years of development with CMI'; describe CMI's role as recognition against CMI Professional Standards, not co-development; replace 'partners' in metadata with 'the firm, its leaders and the programme's marketing agency'."
+        },
+        "about": {
+          "h1": "Roy Affandi.",
+          "sub": "Programme Coordinator: the person who answers your questions, including when the answer is 'not this route'.",
+          "keep": "For Roy Affandi, the purpose is simple: to help more Malaysians move forward in their careers, businesses and communities.",
+          "note": "The 'answers, including not this route' line is published only if operationally true on every channel."
+        },
+        "faq": {
+          "h1": "Questions to answer before you decide, in the order you will ask them.",
+          "order": "Will this change how I decide at work? / Can I carry it alongside the job? / What will I hold at the end, and what will I not? / What will it cost, in writing? / Who decides employer funding? / What if I miss a session? / What are the refund terms?",
+          "newQuestion": "What changes for me during the six months?",
+          "newAnswer": "You work one current business issue from problem definition to a sequenced action plan with decisions, actions, owners and measures, using the programme frameworks, with one-to-one coaching and faculty review. The programme develops decision capability; business outcomes depend on your evidence, choices and execution.",
+          "note": "New FAQ text lives in content.ts (FAQS) with zh/ms mirrors and FAQPage JSON-LD; ABC approval required."
+        },
+        "vsMba": {
+          "h1": "Executive MBA or academic MBA: choose by the job the route must do.",
+          "lede": "Compare the routes by the job each is built to do, then by credential, assessment, format, time and published price. The Future Ready Executive MBA is a professional programme awarded and endorsed by CMI; it is not an MQA-accredited academic degree or a regulated qualification. This table defines its reference academic MBA as an 18–24 month programme built around academic modules, assignments or examinations, and a dissertation or thesis. It does not describe every MBA programme.",
+          "newFirstRow": "Built to do — Reference academic MBA: Provide an MQA-accredited academic degree through 18–24 months of academic study. Future Ready Executive MBA: Work one live business issue into an action plan across six months while you remain in role.",
+          "retire": "'Decided it fits? Let's talk about your intake.' becomes 'Discuss which route fits your purpose.'"
+        }
+      }
+    },
+    {
+      "pageType": "Insights articles",
+      "headlinePattern": "The reader's moment or the person they serve, before the method's name; the method is named in the lede as the means.",
+      "ledePattern": "The felt shift (from → to) in the reader's working week, the method named, and the servant thread made explicit in one clause; hope stated at the top, not the end.",
+      "ctaPattern": "CtaSection heading = apply it to the decision you carry for others; inline link to /how-it-works names F.A.S.T. as where the discipline is practised on the participant's own decisions.",
+      "example": {
+        "index": {
+          "h1": "Before a decision you must lead, think it through where others can see it.",
+          "lede": "Practical introductions to first-principles, systems and design thinking for leaders moving from decisions carried by instinct to decisions they can examine and explain to the people who act on them. Each is one of the disciplines practised in the programme's F.A.S.T. method."
+        },
+        "systemsThinking": {
+          "h1": "When the same problem keeps coming back, lead the structure, not the blame.",
+          "lede": "Systems thinking moves a leader from reacting to events toward redesigning the relationships, feedback loops and delays that produce them. It replaces 'who is responsible?' with 'what structure makes this failure the natural result?', which is servant leadership in practice: taking responsibility for the structure instead of assigning it to a person.",
+          "ctaSectionHeading": "Discuss the problem that keeps returning with the programme team."
+        },
+        "designThinking": {
+          "h1": "Begin with the person you are trying to serve.",
+          "lede": "A well-built product still fails when it solves the wrong customer problem. Design thinking starts from the job the customer is hiring for, tests what they value before resources are committed, and earns the decision by serving first. Desirable, feasible and viable is the filter that separates the cute, nice, interesting idea from the right one.",
+          "fix": "'builds the habit until it becomes instinct' becomes 'practised on your own strategic problems across the six months'; the heading 'From method to mastery' becomes 'From method to your own decision'."
+        },
+        "firstPrinciples": {
+          "h1": "Borrowed answers feel safe. Owned decisions are the work.",
+          "lede": "First-principles thinking separates verified facts from inherited conventions and builds the decision from the facts. Copying what worked for someone else protects today and caps tomorrow; owning the decision is what lets you explain it to the people who must act on it.",
+          "fix": "'you frequently find' becomes 'you find'; keep 'Analogy caps you at incremental gains' as a method critique only."
+        },
+        "advancementQuestion": {
+          "h1": "Which consequential work must you become better able to examine, explain and lead?",
+          "lede": "Start with the work you need to do better, and with whose work improves when yours does; then compare the learning, schedule, recognition and complete cost. Choose the learning by the quality of work it helps you examine."
+        },
+        "reviewedDateNote": "A framework rewrite of any article is substantive; update ARTICLE_REVIEWED (split the constant per article first) and dateModified."
+      }
+    },
+    {
+      "pageType": "Campaign landing pages (/lp/google, /lp/meta)",
+      "headlinePattern": "The change of state inside the six months, in the page's own best line; elapsed time moves to the fact band.",
+      "ledePattern": "What the six days, coaching and project produce for the reader's own issue, then the verbatim fact band (CMI mark, 6 days across 3 sessions, 1 applied project, scholarship eligibility sentence).",
+      "ctaPattern": "One guide name across hero form, CtaSection and success screen; 'free' once, in the reassurance strip; the HRD Corp and scholarship sentences verbatim under the CtaSection.",
+      "example": {
+        "h1": "A business issue enters. A plan your team can act on leaves.",
+        "lede": "Across six months, in 6 facilitated training days across 3 sessions, with coaching and an applied project, you work one current decision from your own role into a written action plan, and keep the method. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is not an MQA-accredited academic degree or a regulated qualification.",
+        "formKicker": "2026 programme guide",
+        "formH2": "Get the 2026 programme guide to check the fit.",
+        "formIntro": "Review the programme before deciding whether to speak with us. A conversation is optional.",
+        "formBenefits": [
+          "Decide whether you can carry this alongside the job: how the 6 months and 6 training days work",
+          "Know what you will hold at the end, and what you will not: the CMI recognition and its boundaries",
+          "Know what it costs, in writing: published dates, the RM10,000.00 standard fee and the scholarship assessment process"
+        ],
+        "emailHelper": "The 2026 programme guide will be sent automatically to this email address after submission.",
+        "reassuranceStrip": "Free PDF · No payment · No application commitment · Unsubscribe anytime",
+        "processSteps": "01 Bring a current decision · 02 Apply the frameworks · 03 Build the action plan your team can act on · 04 Keep the method",
+        "ctaSectionHeading": "Get the 2026 programme guide to check the fit.",
+        "ctaSectionSub": "Receive the guide first, then choose whether you want WhatsApp or a short fit call. The team will explain the published intake, RM10,000.00 standard fee, scholarship assessment and employer-led HRD Corp process. Scholarship awards are not automatic. The employer—not the participant—applies for the grant. HRD Corp—not the programme provider—decides approval and the approved amount."
+      }
+    },
+    {
+      "pageType": "The diagnostic (/diagnostic, public name 'Programme fit check' everywhere: NAV, title, eyebrow, result)",
+      "headlinePattern": "A question the reader asks of themselves about the decisions they carry, never a judgement about their toolkit.",
+      "ledePattern": "What the check helps them decide (whether this is the right next step now, for the people who depend on it), the privacy fact, and the not-an-admission-test line.",
+      "ctaPattern": "Step buttons unchanged; result CTAs = 'Get the 2026 programme guide to check the fit' and CTA_LABELS.conversation; the result reflects the chosen state back and recommends nothing.",
+      "example": {
+        "metaTitle": "Programme fit check",
+        "h1": "Which of your decisions have grown faster than the way you make them?",
+        "intro": "Answer four private questions to see which programme facts matter to your next step and to the people who depend on it. Your selections stay in this browser and are not transmitted or stored. This is not an admission test or a prediction of career outcomes.",
+        "q1AddedOption": "I am responsible for a team, a company or a family business, and my decisions affect them.",
+        "q3ShortcutFix": "'Practitioner guidance instead of a traditional thesis route' becomes 'An applied project on my own business, reviewed by faculty'.",
+        "resultH2": "Here is what to check next.",
+        "resultReflection": "You said your role is becoming broader than the way you currently decide. These four programme facts tell you whether working one live issue across six months is realistic for you now. This is not a recommendation to enrol.",
+        "firstCard": "Applied business project — The useful test is whether the work can address a real organisational question that other people are waiting on. Review the curriculum and the project requirements.",
+        "resultKeepLine": "Your answers are not stored; what you keep is the 2026 programme guide."
+      }
+    },
+    {
+      "pageType": "The four emails (acknowledgement, nurture day 3, day 7, day 14)",
+      "headlinePattern": "Subject names the reader's request or question as they made it; H1 states what the team gives first.",
+      "ledePattern": "Answer or fact first, the reader's chosen preference echoed back, then the one question invited; every fact from content.ts; the notice sentence verbatim.",
+      "ctaPattern": "CTA_LABELS.conversation, 'See the 2026 calendar', or 'Reply with your one question'; WhatsApp link uses CTA_LABELS.whatsapp; no 'no commitment' as a subject line.",
+      "example": {
+        "acknowledgement": {
+          "subjectDetailsFirst": "Your 2026 programme guide is attached. No call unless you ask.",
+          "subjectConversation": "We've received your programme conversation request",
+          "body": "Hello {first name}, Thank you. Your 2026 programme guide is attached. You asked for programme details first, with no call yet; the programme team will follow that preference and will not call unless you ask. If it would help the team answer your actual question, reply with the decision or business issue you are weighing. This email confirms your request only. It is not an offer of admission or a payment commitment.",
+          "linkLabel": "Open the 2026 programme guide online",
+          "whatsappPrefillDetailsFirst": "Hello Future Ready EMBA team, I requested the 2026 programme guide and have one question about fit.",
+          "signOff": "Roy Affandi, Programme Coordinator · Future Ready Programme Team"
+        },
+        "day3": {
+          "subject": "Three questions to settle before you decide",
+          "h1": "The three questions a working manager needs settled.",
+          "body": "Can I carry this alongside the job? 6 training days across 3 scheduled sessions on the published dates, Friday–Saturday or Saturday–Sunday as listed for each cohort; the applied project runs inside your role between them. What will I hold at the end, and what will I not? The CMI Certificate of Recognition for the programme; not an MQA-accredited academic degree or a regulated qualification; Chartered Manager is a separate optional CMI route. What will it cost, in writing? The standard fee is RM10,000.00; any scholarship award and resulting participant fee are confirmed individually in writing.",
+          "cta": "Arrange a programme conversation →",
+          "secondary": "Or reply with the one question the guide did not answer.",
+          "fix": "Removes 'Most readers tell us' and 'no time out of the business'."
+        },
+        "day7": {
+          "subject": "The 2026 dates still ahead, in one view",
+          "h1": "The calendar decides more than the brochure does.",
+          "body": "Every cohort covers the full six-month programme across 3 scheduled sessions, 9am–6pm, on the published dates; the applied work happens inside your business between them, which is what the dates protect. If a date clashes, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort. If your employer is sponsoring you, it is developing a manager responsible for a team: the employer applies before training and HRD Corp decides eligibility and the approved amount.",
+          "cta": "See the 2026 calendar →",
+          "fix": "Removes 'usually the shortest one' and 'three scheduled weekends'."
+        },
+        "day14": {
+          "subject": "One question, answered before you decide",
+          "h1": "Start with the question you have been sitting on.",
+          "body": "Two weeks ago you asked for the 2026 programme guide. If the timing is not right, that is a legitimate decision, and the next published date is a real door, not a lost one. If one unanswered question stands between you and a decision, the programme team will answer it first: fit, dates, the fee, the scholarship assessment, or what the recognition does and does not mean. The team will also say plainly if the programme is not the right route for your purpose. An enquiry does not commit you to enrol or pay.",
+          "cta": "Arrange a programme conversation →",
+          "fix": "Retires 'One conversation. No commitment.' and 'no follow-up pressure'."
+        },
+        "sharedFooter": "Contact Future Ready EMBA on WhatsApp · The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its marketing agency for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount."
+      }
+    },
+    {
+      "pageType": "The PDFs (2026 programme guide, decision guide, employer funding guide, scholarship eligibility self-check)",
+      "headlinePattern": "Cover title = the decision the reader is facing; cover H1 = the change inside the six months; kicker = one plain document name.",
+      "ledePattern": "The responsibility the reader already carries, the work the six months does on it, then the reference facts reused verbatim from content.ts.",
+      "ctaPattern": "'Arrange a programme conversation — support@futurereadymba.com' with what the team brings; never the retired 'Request the programme guide'; the scholarship self-check carries only the eligibility sentence and the team's clarity posture.",
+      "example": {
+        "programmeGuide": {
+          "kicker": "2026 PROGRAMME GUIDE",
+          "coverTitle": "Is this the right next step for the responsibility you carry now?",
+          "coverH1": "Six months. One live issue worked into a plan your team can act on.",
+          "intro": "Use this to judge whether the programme fits the responsibility you already carry, not just the title you would like next. Everything to verify before you decide: programme structure, CMI recognition, published fees, scholarship assessment and employer funding.",
+          "cta": "Arrange a programme conversation — support@futurereadymba.com. The team answers first; you decide afterwards.",
+          "fix": "Retires 'Request the programme guide or arrange a conversation' (a banned, circular CTA)."
+        },
+        "decisionGuide": {
+          "kicker": "PROGRAMME FIT GUIDE",
+          "coverTitle": "Is this programme right for you?",
+          "subhead": "Made for the decision you're facing now.",
+          "notRightFit": "If you need an MQA-accredited academic degree for a regulated purpose, an academic MBA is the right route; this programme is not it.",
+          "fix": "'Typically 18–24 months' becomes '18–24 months (the reference academic MBA as defined on the comparison page)'; 'no-obligation' becomes 'An enquiry does not commit you to enrol or pay.'"
+        },
+        "employerFundingGuide": {
+          "kicker": "EMPLOYER FUNDING GUIDE",
+          "coverTitle": "Employer sponsorship & HRD Corp funding.",
+          "subhead": "The outcome is applied, not just attendance.",
+          "intro": "A concise internal briefing for a manager, HR team or learning leader developing a manager who is responsible for a team. The programme is built around a live business issue and an applied project; the employer applies before training and HRD Corp decides eligibility and the approved amount under its Allowable Cost Matrix. Funding is not automatic.",
+          "fix": "Retires the kicker 'EMPLOYER DECISION BRIEF' (banned pattern); 'the questions a sponsor usually asks' becomes 'the questions to settle before the employer applies'; 'authorised programme partner' becomes 'marketing agency'."
+        },
+        "scholarshipSelfCheck": {
+          "kicker": "ELIGIBILITY INFORMATION",
+          "coverTitle": "Scholarship & eligibility self-check.",
+          "subhead": "Clear terms protect everyone.",
+          "postureLine": "The conversation exists to help you decide, including deciding not to ask about the scholarship. These prompts are not selection criteria and do not predict an outcome.",
+          "rule": "No 5S Service language, no 'deserving', no merit story, no amounts; only FACTS.scholarshipEligibility verbatim."
+        }
+      }
+    },
+    {
+      "pageType": "The assistant and llms.txt",
+      "headlinePattern": "System instruction states the serve-first order: understand the visitor's situation, answer from verified facts, hand off as a service.",
+      "ledePattern": "All facts imported from content.ts; one new constant (PARTICIPANT_PRACTICE, ABC approval) describes what participants do during the six months so 'what changes for me' can be answered in activity terms.",
+      "ctaPattern": "No buttons; the routing instruction names the Programme Coordinator and the low-pressure options, and says 'not the right route' is a possible answer.",
+      "example": {
+        "assistantInstructionAddition": "Before listing programme features, ask one situational question about what the visitor is trying to change: the responsibility they carry and the decision in front of them. Use situational wording only; never ask for personal data. Then answer from the VERIFIED PROGRAMME FACTS. If the visitor needs an MQA-accredited academic degree for a regulated purpose, say that an academic MBA is the right route and that this programme is not it.",
+        "participantPracticeConstant": "During the six months, participants define a current business issue within their own responsibility, weigh options with the programme frameworks, and write a sequenced action plan with decisions, actions, owners and measures for faculty review, with one-to-one coaching between sessions. The programme develops decision capability; business outcomes depend on the participant's evidence, choices and execution.",
+        "handoffLine": "Human programme contact: Roy Affandi, Programme Coordinator; telephone/WhatsApp +60 12-981 8533; email support@futurereadymba.com. The coordinator answers programme questions first and will say if the programme is not the right route for the visitor's purpose.",
+        "llmsTxtFixes": [
+          "[Apply]: the programme enquiry form; an enquiry is not enrolment, admission or a payment commitment",
+          "Add PROGRAMME_AUDIENCE, imported: Business owners, directors, general managers and senior managers responsible for business results, teams, cross-functional decisions or growth plans.",
+          "Add PARTICIPANT_PRACTICE, imported, directly after the structure line",
+          "Keep the Comparison rule verbatim; never characterise attendance-only training as worthless or HRD Corp providers as inferior"
+        ]
+      }
+    }
+  ],
+  "sampleHero": {
+    "title": "Decide well for the people who depend on you.",
+    "lede": "Bring one live business issue and, across six months, work it into a written action plan your team can act on, with faculty and coaches reviewing your reasoning. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI.",
+    "cta": "Get the 2026 programme guide to check the fit",
+    "supporting": [
+      "6 training days across 3 scheduled sessions; the applied project runs inside your own role between them.",
+      "CMI Certificate of Recognition on successful completion. It is not an MQA-accredited academic degree or a regulated qualification; Chartered Manager is a separate optional CMI route.",
+      "RM10,000.00 standard fee, published 2026 dates, employer-led HRD Corp funding subject to HRD Corp approval. An enquiry does not commit you to enrol or pay."
+    ]
+  },
+  "vocabulary": {
+    "use": [
+      "the people who depend on you / on your decisions",
+      "the responsibility you already carry",
+      "a live business issue / a current business issue",
+      "applied business project; a sequenced action plan with decisions, actions, owners and measures",
+      "examine, explain and lead",
+      "reasoning your team can follow, review and act on",
+      "decide well; a decision you can stand behind",
+      "the right route for your purpose; check the fit",
+      "programme enquiry; programme conversation; an enquiry does not commit you to enrol or pay",
+      "confirmed individually in writing",
+      "employer-led HRD Corp funding, subject to HRD Corp approval; the employer applies, HRD Corp decides",
+      "CMI Certificate of Recognition; recognised against CMI's Professional Standard; awarded and endorsed by CMI (verbatim constant only)",
+      "separate optional CMI route",
+      "published dates; Open for enquiries",
+      "answers first, decision afterwards; an honest no; not the right route",
+      "build the managers after you; serve the team; serve the customer's job",
+      "the 2026 programme guide (the single name for the PDF, on every surface and in the attachment filename)",
+      "Programme fit check (the single name for /diagnostic)",
+      "six months; 6 training days across 3 scheduled sessions; 12 modules (from FACTS, never retyped)",
+      "activity verbs: bring, define, examine, test, weigh, write, explain, review, keep, hand over",
+      "hope rendered as 'a leader can still' plus an activity",
+      "Real leadership is servant leadership: it is measured by the people it serves",
+      "Malay register: melayani / berkhidmat untuk orang yang bergantung kepada anda; keep 'diiktiraf' for recognition and avoid the 'disokong ... CMI' construction",
+      "Chinese register: 为依赖你的人做出更好的决定; 服务型领导 / 仆人式领导; 学员 for participants; 课程咨询 for enquiry"
+    ],
+    "avoid": [
+      "most, usually, typically, often, commonly, generally, normally, frequently, about/roughly/approximately before a number (including the owner's line 'he is greatest who serves most' in any audited file)",
+      "future-proof, board-ready, game-changing, transform your career / organisation, unlock, elevate, empower, transformative journey",
+      "promotion, salary, ROI, return, guaranteed, results for your team",
+      "claim your seat, limited seats, filling fast, act now, last chance, countdown, remaining seats",
+      "no-pressure, no-obligation, 'No commitment.' as a headline or subject",
+      "free as the lead word or more than once per surface",
+      "shortcut, fast-track (except CMI's own named route), easier, lighter, faster than an MBA, 'no exam, no thesis' as a hook",
+      "deserve / deserving anywhere near fee, scholarship, HRD Corp or admission",
+      "progression, advancement as artefact or check names; Working Manager's Progression Guide; Career progression as an intent label",
+      "private decision guide, decision brief, decision dossier, readiness, pathway",
+      "certificate phase, certificate-phase, working scholar, three-month",
+      "Level 7 near the programme; Executive Master of Business Administration",
+      "authorised programme partner; partners with CMI; co-developed with CMI; the firm behind",
+      "world-class, prestigious, elite, unrivalled, same credibility",
+      "your toolkit is inadequate; competitors are adapting faster than you; any line that diagnoses the reader",
+      "not another attendance certificate; not lecturers; certificate on a shelf; any contrast with unnamed providers",
+      "'we practise servant leadership' as a badge; 'the curriculum teaches servant leadership' without ABC confirmation",
+      "the 5S ladder mapped onto fCMgr / CMgr / Fellow; 'the next rung' for Chartered Manager",
+      "literal 'ladder' and 'climb' in Malay and Chinese; translate the meaning (tanggungjawab kepada orang lain / 为他人承担的责任)",
+      "Malay: perbualan program, disokong oleh CMI, pengurus bekerja, projek aplikasi, laluan lanjutan, biasanya / kebanyakan",
+      "Chinese: 颁授并背书, 免费获取, 参与者, 班次, 折扣码, 无需承诺, 通常 / 多数 / 大约",
+      "programme plan, advancement brief, Future Ready EMBA guide, decision guide as additional names for the same PDF",
+      "reply-within promises, completion rates, satisfaction figures or any number without an ABC-attributed source"
+    ]
+  },
+  "oneThing": "You climb for the people who depend on you; the programme is how you climb, never why.",
+  "governanceRisks": [
+    {
+      "risk": "'Deserving comes out of serving' drifts toward the scholarship, where it would read as a merit criterion and contradict 'selective, individually assessed, confirmed in writing, no amounts'.",
+      "defusal": "The phrase, the word 'deserve' and all Service-rung language are barred from /fees, /hrd-corp-claimable, the scholarship self-check and any scholarship sentence. On those surfaces the only serving posture allowed is the team's clarity: 'the conversation exists to help you decide, including deciding not to ask'. FACTS.scholarshipEligibility is quoted verbatim everywhere it appears; the sample hero avoids 'deserve' entirely."
+    },
+    {
+      "risk": "The owner's line 'he is greatest who serves most' contains 'most', a hard failure under the audit's undefined-norm regex, and 'greatest' is the kind of superlative governance discourages.",
+      "defusal": "Never quoted verbatim in an audited file. Rendered as 'Real leadership is servant leadership: it is measured by the people it serves.' The proposal's own copy was scanned against the audit's banned patterns before delivery."
+    },
+    {
+      "risk": "The Service rung slides into outcomes for the team or company ('transform your organisation', 'results for your people').",
+      "defusal": "Every Service sentence describes what the leader does (explain, hand over, build the managers after you), never what happens to the people served. The existing capability disclaimers ('It develops management capability; growth and return depend on the decisions and execution that follow.') stay adjacent on audience pages."
+    },
+    {
+      "risk": "The Success rung becomes promotion or salary language, reinforced by 'Career progression', 'Progression Check' and 'Progression Guide'.",
+      "defusal": "Success is defined as a decision you can stand behind and a plan with owners and measures. The intent label becomes 'My own role — I am considering the programme for the responsibility I carry now'; the check is named 'Programme fit check' everywhere; the PDF is 'the 2026 programme guide' everywhere; CERTIFICATE_POSITIONING.professionalRelevance sits beside every recognition mention."
+    },
+    {
+      "risk": "The Survival rung becomes fear or reader-shaming (FORCES item 05, 'your toolkit is inadequate').",
+      "defusal": "Each force is restated as 'a leader can still' plus an activity; item 05 loses 'faster than you'. The diagnostic H1 is a question the reader asks of themselves; the result reflects their words back and recommends nothing. FORCES is an ABC constant and needs ABC approval."
+    },
+    {
+      "risk": "Hope becomes urgency near dates or the scholarship.",
+      "defusal": "The only availability wording is 'Open for enquiries'; no seat counts, countdowns or 'remaining' beyond the factual calendar; day-14 email says the next published date is 'a real door, not a lost one'; the /intakes source comment 'URGENCY + CTA' is renamed so no future editor is invited to add a device."
+    },
+    {
+      "risk": "'The shortcut cuts' is read as a verdict on academic MBAs, attendance-based training, HRD Corp providers or AI tools, breaching the no-disparagement rule and the assistant's Comparison rule.",
+      "defusal": "The shortcut the site refuses is its own: speed headlines, 'free' repeated, 'no exam, no thesis' as a hook. Method critique lives only in Insights and names only methods. The comparison table gains a 'Built to do' row, keeps COMPARISON_SCOPE adjacent, and its academic column stays neutral; 'not another attendance certificate' is retired."
+    },
+    {
+      "risk": "Two ladders on one site: the 5S ladder and CMI's designations (fCMgr, CMgr MCMI, Fellow) blur, implying Chartered Manager is the next rung of the reader's progress.",
+      "defusal": "The 5S section is never rendered next to STAGES; STAGES is introduced as 'what CMI controls after the programme'; Chartered Manager remains 'a separate optional CMI route' in every mention, and the words 'next rung' or 'second stage' are barred."
+    },
+    {
+      "risk": "The site claims the curriculum teaches servant leadership, which ABC owns and has not confirmed.",
+      "defusal": "Servant leadership is the site's posture and the reader's stance, shown through copy behaviour. Module glosses (M07, M08, M12) and any 'taught' claim require ABC approval; FLOW and THINKING_EDGE are quoted, never paraphrased."
+    },
+    {
+      "risk": "A progress-led hero displaces the ABC-owned positioning sentence, or pairs 'awarded', gown-and-cap imagery and 'graduates' with no degree boundary on /home.",
+      "defusal": "PROGRAMME_POSITIONING_SENTENCE is the hero's second sentence verbatim; the not-an-MQA-degree boundary is the first supporting line; the recognition section carries the full CERTIFICATE_POSITIONING distinction and professionalRelevance; the hero image is replaced with a working-room photograph or kept only with the boundary in the same viewport."
+    },
+    {
+      "risk": "'Decide well for the people who depend on you' is read as an accusation that the reader decides badly.",
+      "defusal": "The imperative names a practice and its beneficiaries, not a deficit; the lede immediately gives the practice a concrete form the reader already performs (bringing a live issue). The A/B alternative 'You decide for more than yourself.' is offered if testing shows the imperative reads as judgement."
+    },
+    {
+      "risk": "The framework's word 'right' collides with ABC's FLOW ('Right Thinking … Exceptional Value') and 'Right Solutions' invites 'the right MBA' comparisons.",
+      "defusal": "FLOW is quoted unaltered with its disclaimer; the site's own 'right' language is lowercase and always about the reader's purpose ('the right route for your purpose'), never about a provider; 'Exceptional Value' is never extended into a value or ROI claim."
+    },
+    {
+      "risk": "Nurture emails and the PDF copy JSONs are outside content-clarity-audit.mjs, so the existing breaches ('Most readers', 'usually', 'Typically 18–24 months', 'EMPLOYER DECISION BRIEF', 'Request the programme guide') and any new copy would ship unchecked.",
+      "defusal": "Add src/lib/nurture-email.ts and scripts/pdf/copy/*.json to the audit file list before any rewrite; every example in this proposal already removes those breaches and was checked against the audit regexes."
+    },
+    {
+      "risk": "Naming Roy Affandi as the person who answers, including 'not this route', becomes untrue on some channel.",
+      "defusal": "Published only if operationally true on every channel (form, email, WhatsApp, assistant); otherwise the line reads 'the programme team answers first'."
+    },
+    {
+      "risk": "The Social rung borrows prestige from counts and client lists.",
+      "defusal": "154 graduates and 17 cohorts are always 'as listed by Asian Business Consulting' and dated; CLIENTS and ASSOCIATES are captioned as organisations ABC lists in its own profile, never as endorsements; no derived rates or satisfaction figures."
+    },
+    {
+      "risk": "The three-language rollout preserves English metaphors ('ladder', 'climb', 'carry the work') or trips the Malay and Chinese register lists (perbualan program; 颁授并背书; 免费获取).",
+      "defusal": "Translate meaning, not metaphor: responsibility to others, serving the people who depend on you. Dropping 'free' from the guide CTA removes the 免费获取 warning; the Malay conversation CTA and the Chinese positioning verb are flagged for the ms/zh register audits before the rung names and hero are localised."
+    },
+    {
+      "risk": "The word 'serve' lands next to 'HRD Corp claimable' and produces the banned unqualified sentence ('we serve employers with an HRD Corp claimable programme.').",
+      "defusal": "Employer copy uses 'employer-led HRD Corp funding, subject to HRD Corp approval' and the two HRD_CORP_CLAIM sentences verbatim; 'claimable' appears only in the existing metadata title and the mark's qualified label."
+    }
+  ]
+}

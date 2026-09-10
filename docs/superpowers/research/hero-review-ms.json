@@ -1,0 +1,64 @@
+{
+  "language": "ms",
+  "verdict": "fail",
+  "problems": [
+    {
+      "where": "primary.lede (sentence 1, the action-plan clause)",
+      "problem": "Drops the actionability the EN source names explicitly: 'a written action plan your team can act on' becomes 'ubahnya menjadi pelan tindakan bertulis untuk pasukan anda' — a plan 'for' the team, not one the team 'can act on'. The alternative hero's lede keeps this element ('Pelan itu boleh diikuti orang lain'), so the two heroes are no longer equivalent to each other or to the EN source on this point, and it quietly weakens the after-state governance rule (spec §12 item 2: the after-state must be an artefact or an act, not just a deliverable named at someone).",
+      "fix": "'...ubahnya menjadi pelan tindakan bertulis yang boleh dilaksanakan oleh pasukan anda.' — reuses the site's own established 'pelan tindakan yang boleh dilaksanakan' pattern (content-ms.ts F.A.S.T. intro)."
+    },
+    {
+      "where": "primary.eyebrow",
+      "problem": "'Kohort 2026' for EN '{PROGRAMME_YEAR} intakes' blurs the site's own term distinction (ms-register-audit-rules.json missingRule 'pengambilan / kohort / sesi'): 'kohort' names one dated group (Kohort 17, 18, 19…), 'pengambilan' names the intake window/year. 'Kohort 2026' reads as if there is a single cohort called '2026' rather than several 2026 cohorts.",
+      "fix": "'Pengambilan 2026' — matches the audit's defined term more precisely than 'kohort', and does not collide with the separately-banned 'sesi pengambilan'."
+    },
+    {
+      "where": "primary.purposeLine vs primary.supporting[2]",
+      "problem": "The same EN token (published {PROGRAMME_YEAR} dates) renders two different ways inside the same hero: purposeLine has 'tarikh kohort 2026 yang diterbitkan' (adds 'kohort', which is not in the EN token) while Supporting 3 has 'tarikh 2026 yang diterbitkan' (matches the token exactly). One fact should render identically everywhere it appears on the same surface.",
+      "fix": "Drop 'kohort' from the purpose line: '...tarikh 2026 yang diterbitkan, yuran, penilaian biasiswa dan pengiktirafan CMI.' — matching Supporting 3."
+    },
+    {
+      "where": "primary.lede and alternative.lede — opening of the ABC_PROFILE not-an-MQA-degree sentence",
+      "problem": "'Ia program pembangunan profesional...' uses no copula, unlike every other shipped instance of this identity sentence on the site (Footer.tsx, content-ms.ts FAQ), which all open 'Ini ialah program...'. Zero-copula is legal Malay grammar, but it breaks house consistency and reads flatter/terser than the surrounding sentences, right where the boundary claim needs to land clearly.",
+      "fix": "'Ini ialah program pembangunan profesional bukan akademik selama 6 bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.' in both heroes."
+    },
+    {
+      "where": "primary hero overall — spec §12 governance checklist item 4",
+      "problem": "CMI, 'dianugerahkan' and 'CMI Certificate of Recognition' all appear in the hero, but CERTIFICATE_POSITIONING.professionalRelevance (the no-guarantee sentence: 'does not guarantee promotion, employment, salary progression or any other career outcome') never appears, although checklist item 4 requires it in the same viewport as the not-an-MQA-degree sentence wherever those trigger words occur. This is not a Malay-specific defect: the EN 'Approved hero' in spec §9 has the identical gap, so it is an unresolved conflict between §9 and §12 item 4, inherited faithfully by the translation.",
+      "fix": "Do not invent Malay wording for this unilaterally. Escalate to the owner: either add a compact professionalRelevance clause to Supporting 2 in EN and MS together, or amend checklist item 4 to exempt the hero's compressed format. The writer's own choice to flag rather than invent was the right call methodologically; it should not be silently resolved inside a translation task."
+    },
+    {
+      "where": "primary.supporting[0] — 'isu dalam tanggungjawab anda sendiri'",
+      "problem": "'dalam tanggungjawab anda sendiri' is a mildly stiff, calque-adjacent collocation; Malay more idiomatically pairs 'tanggungjawab' with 'di bawah'. The identical construction also appears in alternative.lede.",
+      "fix": "Primary Supporting 1: '...terhadap isu di bawah tanggungjawab anda.' (drops 'sendiri', which keeps the sentence at exactly 20 words, the hero cap in ms-register.md §13). Left alternative.lede's equivalent phrase unchanged because the same substitution would push that sentence to 21 words; this needs a wording pass, not a direct swap, so it is flagged rather than force-fixed there."
+    }
+  ],
+  "revised": {
+    "primary": {
+      "eyebrow": "Untuk mereka yang keputusannya memberi kesan kepada orang lain · Malaysia · Pengambilan 2026",
+      "title": "Daripada memikul keputusan sendirian kepada memimpin pelaksanaannya.",
+      "lede": "Bawa satu isu perniagaan sebenar dan, sepanjang 6 bulan, ubahnya menjadi pelan tindakan bertulis yang boleh dilaksanakan oleh pasukan anda. Fasilitator dan jurulatih menyemak cara anda berfikir, dan kaedah itu kekal bersama anda. Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI. Ini ialah program pembangunan profesional bukan akademik selama 6 bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
+      "cta": "Dapatkan panduan program 2026",
+      "purposeLine": "Semak struktur program, tarikh 2026 yang diterbitkan, yuran, penilaian biasiswa dan pengiktirafan CMI. Kemudian, putuskan sama ada anda mahu mengatur satu sesi perbincangan program.",
+      "secondaryCta": "Lihat apa yang berubah sepanjang 6 bulan →",
+      "supporting": [
+        "6 hari latihan merentasi 3 sesi berjadual, bimbingan peribadi dan satu projek amali perniagaan terhadap isu di bawah tanggungjawab anda. Rangka kerja dan templat kerja itu kekal bersama anda.",
+        "Selepas berjaya menamatkan program, peserta menerima CMI Certificate of Recognition. Chartered Manager ialah laluan yang berasingan dan tidak wajib, dengan kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI.",
+        "Yuran standard RM10,000.00 · tarikh 2026 yang diterbitkan · Pembiayaan HRD Corp diterajui majikan · tertakluk kepada kelulusan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar."
+      ]
+    },
+    "alternative": {
+      "title": "Bawa satu keputusan sebenar. Pulang dengan kaedahnya.",
+      "lede": "Sepanjang 6 bulan, anda mengambil satu isu perniagaan sebenar dalam tanggungjawab anda, daripada mengenal pasti masalah hingga pelan tindakan bertulis. Pelan itu boleh diikuti orang lain, dengan fasilitator dan jurulatih menyemak cara anda berfikir, sambil anda kekal dalam jawatan anda. Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI. Ini ialah program pembangunan profesional bukan akademik selama 6 bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
+      "supporting1": "6 hari latihan merentasi 3 sesi berjadual, bimbingan peribadi dan satu projek amali perniagaan terhadap isu dalam tanggungjawab anda sendiri. Kaedah itu ialah rangka kerja dan templat kerja yang anda kekalkan."
+    }
+  },
+  "sourceConstantNotes": [
+    "PROGRAMME_POSITIONING_MS itself ('Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.', src/lib/content.ts:29-30) is a half-translated programme name matching the exact failure shape ms-register-audit-rules.json's missingRule 'Programme name, credential names and CMI terms mid-sentence' warns against ('Executive MBA dalam Future Ready…'). The hero draft correctly reused this constant verbatim, since governance requires tokens rather than retyped names — this is not the hero draft's fault. It is a source-constant defect for ABC/owner to correct (keep 'Executive MBA on Future Ready Business Leadership' verbatim with a bracketed Malay gloss on first mention, per ms-register.md item 3 and the audit's own worked example), and it should be fixed once, upstream, rather than patched inside every page that quotes the constant.",
+    "The site already renders 'employer-led HRD Corp funding' two different ways for the same fact: content-ms.ts:126 has 'pembiayaan HRD Corp yang diterajui majikan' (used correctly by this hero draft) while CtaSection.tsx:32 has 'pembiayaan HRD Corp yang dipohon majikan'. Both are defensible Malay, but a single site should pick one; not a hero-specific defect.",
+    "CTA_LABELS.ms.guide in content.ts still reads 'Dapatkan panduan program 2026 percuma' (with 'percuma'), while this hero anticipates the spec §9/§10 naming decision to drop 'percuma' from the button. The hero draft is correct to anticipate the approved change, but the constant itself needs the matching edit before other surfaces that still pull CTA_LABELS.ms.guide verbatim fall out of sync with the hero.",
+    "The live site also has 'Sesi Pengambilan 2026' shipped in three places (FutureCommerceHome.tsx, two /ms pages), which itself violates the audit's own new missingRule banning the 'sesi pengambilan' collocation. This review's fix recommends plain 'Pengambilan 2026' for the hero eyebrow rather than copying that existing (already-flagged) site pattern."
+  ],
+  "nativeReadingScore": 6,
+  "notes": "What the draft got right, verified against source: the primary and alternative titles are lifted verbatim from spec §13 and are within the 9-word cap in the approved Daripada/kepada and bring/leave shapes; PROGRAMME_POSITIONING_MS, HRD_CORP_CLAIM-derived wording, FEES.standard.label ('RM10,000.00', correctly formatted), and every duration/count fact (6 bulan, 6 hari latihan, 3 sesi, 2026) trace exactly to content.ts with no new numbers invented. The high-confidence audit correction on Chartered Manager ('laluan yang berasingan dan tidak wajib ... ditentukan oleh CMI', avoiding the banned 'laluan pilihan') is applied correctly, as is the owner's override keeping 'disokong oleh CMI' against the older ms-register.md ban, and the corrected 'sesi perbincangan program' collocation instead of the banned 'perbualan program'. No colloquialisms (kamu/awak/-lah/nak/tak), no exclamation marks, no 'adalah' misuse, no 'ke atas'/'di antara' calques, and no more than two 'di-' passives in any one sentence, each with a named agent, were found anywhere in the draft. The verdict is FAIL rather than PASS because of a genuine meaning-equivalence gap in the flagship primary lede (dropped actionability), an internal fact-token inconsistency between the purpose line and Supporting 3, and an unresolved governance-checklist item 4 gap around the certificate no-guarantee sentence — all narrow, nameable fixes rather than a structural rewrite. On the specific question asked: 'memimpin pelaksanaannya' for 'leading it' is correct and intentional per spec §13's own explanation (memimpin needs a people/organisation/implementation object, so 'leading the implementation' is the right transcreation, not an error), and the title's trailing full stop matches the site's own established H1 convention (e.g. 'Langkah memimpin bermula di sini.') rather than violating the newer, still-informal missingRule against punctuated headlines — that missingRule is better read as targeting subpage H1/H2s, not this aphoristic hero title. Read side by side with a Berita Harian feature and a UM/UNITAR programme page, most of this copy would pass unremarked; the sentences flagged above are exactly the ones a KL executive reader would notice as slightly translated or slightly inconsistent, which is why they are called out rather than let through."
+}

@@ -1,0 +1,59 @@
+{
+  "language": "ms",
+  "primary": {
+    "eyebrow": "Untuk mereka yang keputusannya memberi kesan kepada orang lain · Malaysia · Kohort 2026",
+    "title": "Daripada memikul keputusan sendirian kepada memimpin pelaksanaannya.",
+    "lede": "Bawa satu isu perniagaan sebenar dan, sepanjang 6 bulan, ubahnya menjadi pelan tindakan bertulis untuk pasukan anda. Fasilitator dan jurulatih menyemak cara anda berfikir, dan kaedah itu kekal bersama anda. Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI. Ia program pembangunan profesional bukan akademik selama 6 bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
+    "cta": "Dapatkan panduan program 2026",
+    "purposeLine": "Semak struktur program, tarikh kohort 2026 yang diterbitkan, yuran, penilaian biasiswa dan pengiktirafan CMI. Kemudian, putuskan sama ada anda mahu mengatur satu sesi perbincangan program.",
+    "secondaryCta": "Lihat apa yang berubah sepanjang 6 bulan →",
+    "supporting": [
+      "6 hari latihan merentasi 3 sesi berjadual, bimbingan peribadi dan satu projek amali perniagaan terhadap isu dalam tanggungjawab anda sendiri. Rangka kerja dan templat kerja itu kekal bersama anda.",
+      "Selepas berjaya menamatkan program, peserta menerima CMI Certificate of Recognition. Chartered Manager ialah laluan yang berasingan dan tidak wajib, dengan kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI.",
+      "Yuran standard RM10,000.00 · tarikh 2026 yang diterbitkan · Pembiayaan HRD Corp diterajui majikan · tertakluk kepada kelulusan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar."
+    ]
+  },
+  "alternative": {
+    "title": "Bawa satu keputusan sebenar. Pulang dengan kaedahnya.",
+    "lede": "Sepanjang 6 bulan, anda mengambil satu isu perniagaan sebenar dalam tanggungjawab anda, daripada mengenal pasti masalah hingga pelan tindakan bertulis. Pelan itu boleh diikuti orang lain, dengan fasilitator dan jurulatih menyemak cara anda berfikir, sambil anda kekal dalam jawatan anda. Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI. Ia program pembangunan profesional bukan akademik selama 6 bulan, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
+    "supporting1": "6 hari latihan merentasi 3 sesi berjadual, bimbingan peribadi dan satu projek amali perniagaan terhadap isu dalam tanggungjawab anda sendiri. Kaedah itu ialah rangka kerja dan templat kerja yang anda kekalkan."
+  },
+  "factTokens": [
+    "PROGRAMME_YEAR = 2026",
+    "FACTS.durationLong / durationMonths = 6 bulan",
+    "FACTS.trainingDays = 6 hari latihan",
+    "FACTS.liveSessions = 3 sesi",
+    "FEES.standard.label = RM10,000.00",
+    "HRD_CORP_CLAIM.label = Employer-led HRD Corp funding · subject to approval (rendered as diterajui majikan · tertakluk kepada kelulusan, HRD Corp kept in English)",
+    "PROGRAMME_POSITIONING_MS = Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.",
+    "not-an-MQA-degree clause mirrored from ABC_PROFILE.programmePositioning / CORE_PAGES_MS phrasing (\"bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia\")",
+    "CERTIFICATE_POSITIONING.credential = CMI Certificate of Recognition (kept in English, roman type)",
+    "INCLUSIONS[5].s meaning (successful completion → CMI Certificate of Recognition; Chartered Manager as separate optional CMI route)",
+    "CTA_LABELS.guide (updated value, \"percuma\"/free dropped from the button per the 2026-09-04 naming decision) = Dapatkan panduan program 2026",
+    "Conversation collocation corrected per spec §10 naming decision: \"sesi perbincangan program\", not \"perbualan program\"",
+    "\"Pertanyaan tidak mengikat anda untuk mendaftar atau membayar.\" reused verbatim from src/components/site/CtaSection.tsx"
+  ],
+  "selfChecks": [
+    { "check": "Pronoun/colloquial scan: kamu|awak|korang|engkau|nak |tak |macam |tapi|-lah", "result": "pass — zero hits; only \"anda\" used as second person" },
+    { "check": "meN- prefix on verbs after akan/boleh/perlu etc.", "result": "pass — no bare-root verbs after an auxiliary; \"akan\" is not used at all in this copy" },
+    { "check": "English month abbreviations / DBP \"Sept\" rule", "result": "n/a — hero contains no month names, only the year 2026" },
+    { "check": "RM currency format", "result": "pass — \"RM10,000.00\" used verbatim from FEES.standard.label; no space, comma thousands, two decimals" },
+    { "check": "Qualifier words (biasanya, sering, kebanyakan, lebih kurang, kira-kira)", "result": "pass — none present" },
+    { "check": "Banned collocations: perbualan program, laluan pilihan, program awam, dalam bentuk bertulis, atas talian, emel, kepemimpinan, Cohort (untranslated)", "result": "pass — none present; used \"sesi perbincangan program\" and the audit-corrected Chartered Manager phrasing (\"laluan yang berasingan dan tidak wajib ... ditentukan oleh CMI\") instead of the banned \"laluan pilihan\"" },
+    { "check": "\"disokong oleh CMI\"", "result": "present twice, inside PROGRAMME_POSITIONING_MS as shipped in src/lib/content.ts — kept per this task's explicit correction that the phrase is acceptable, overriding the older ms-register-audit-checklist.json row 6 ban" },
+    { "check": "Controlled identifiers verbatim and untranslated", "result": "pass — HRD Corp, CMI, CMI Certificate of Recognition, Chartered Manager, Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan (the shipped MS name) all appear untranslated/verbatim" },
+    { "check": "Fact values match content.ts, no new numbers introduced", "result": "pass — 6 bulan, 6 hari latihan, 3 sesi, RM10,000.00, 2026; all interpolated, none retyped as different values" },
+    { "check": "Fee/HRD Corp/CMI sentences name the decision-maker with tertakluk kepada / ditentukan oleh", "result": "pass — \"tertakluk kepada kelulusan\" (HRD Corp) and \"ditentukan oleh CMI\" (Chartered Manager) both name the deciding party" },
+    { "check": "No promotion/salary/ROI/berjaya-as-career-outcome claims", "result": "pass — \"berjaya menamatkan program\" is completion-only, not a career-outcome claim" },
+    { "check": "CTA is verb + object, not \"Mohon Sekarang\"", "result": "pass — \"Dapatkan panduan program 2026\" and \"Lihat apa yang berubah sepanjang 6 bulan →\"" },
+    { "check": "Exclamation marks", "result": "pass — zero" },
+    { "check": "\"anda\" absent from the fee/levy/accreditation fact sentence itself", "result": "pass — Supporting 3's fee/HRD Corp clause has no \"anda\"; \"anda\" appears only in the separate, already-shipped enquiry-commitment sentence" },
+    { "check": "Pronoun consistency (peserta inside the programme, anda for the reader, no pemohon for guide-requesters)", "result": "pass — \"peserta\" used for the certificate holder, \"anda\" for the reader throughout, \"pemohon\" not used" },
+    { "check": "Sentence length: hero sentences ≤ 20 words (ms-register.md §13 limits)", "result": "pass on recount — narrative lede sentences are 17 and 13 words (primary) and 20 and 20 words (alternative); Supporting 1 sentences are 20 and 9 words; longer compound lines (purpose line, Supporting 3) were split with \"Kemudian,\" so no single clause exceeds ~20 words" },
+    { "check": "Title ≤ 9 words and uses the native \"Daripada … kepada …\" shape", "result": "pass — primary title is 7 words in the Daripada/kepada shape, taken verbatim from spec §13; alternative title is 7 words in the approved bring/leave shape" },
+    { "check": "EN/BM equivalence and naturalness (would this read as native UM/UNITAR-style copy, not a translation)", "result": "pass by construction — reused already-shipped MS constants and phrases verbatim wherever they existed (PROGRAMME_POSITIONING_MS, \"tarikh 2026 yang diterbitkan\", \"projek amali perniagaan\", the CtaSection.tsx enquiry sentence) rather than retranslating them" },
+    { "check": "Governance checklist §12 item 4 (not-an-MQA-degree sentence in the same viewport wherever CMI/certificate appears)", "result": "pass for the not-an-MQA-degree sentence, which is appended to the lede alongside every CMI/Certificate mention in the hero. CERTIFICATE_POSITIONING.professionalRelevance (the no-guarantee sentence) is not part of the owner-approved hero copy in spec §9 and was not invented for this task; flagging for owner attention rather than adding unapproved content" },
+    { "check": "Chartered Manager wording matches the high-confidence audit correction, not ms-register.md §5 Do 10's now-superseded \"laluan pilihan CMI yang berasingan\"", "result": "pass — used \"laluan yang berasingan dan tidak wajib ... ditentukan oleh CMI\" per ms-register-audit-rules.json §6.4/7.10" }
+  ],
+  "notes": "Both heroes mirror the English structure in spec §9 field-for-field: eyebrow, title (Daripada/kepada or bring/leave shape), a 2-sentence narrative lede followed by the mandatory positioning + not-an-MQA-degree constant, primary CTA, a 2-sentence purpose line, secondary CTA, and 3 supporting lines (2 shared, 1 shared + 1 alternative-only per the spec's 'Approved A/B alternative' note). Two corrections from the audit files were applied over the older ms-register.md text: (1) Chartered Manager is described as a separate, non-mandatory CMI route ('laluan yang berasingan dan tidak wajib ... ditentukan oleh CMI') rather than the banned 'laluan pilihan CMI yang berasingan', which DBP shows reads as CMI's chosen/preferred route; (2) 'disokong oleh CMI' was kept because this task's brief marks it acceptable, overriding ms-register-audit-checklist.json's older zero-tolerance row for that string — it only appears because it is inside the already-shipped PROGRAMME_POSITIONING_MS constant, not newly authored. The CTA_LABELS.guide value follows the spec §9/§10 naming decision to drop 'percuma' (free) from the button itself. The conversation reference in the purpose line uses the audit-corrected collocation 'sesi perbincangan program' instead of the banned 'perbualan program' that CTA_LABELS.ms.conversation still carries in content.ts (that constant itself needs the same fix, tracked separately in spec §10). Long single-clause English sentences (especially the A/B lede) were split into two Malay sentences to satisfy the 20-word hero-sentence cap in ms-register.md §13 without cutting any meaning component; DBP-style small numerals (6, 3) follow the site's existing convention of always rendering programme facts as digits rather than spelled-out words."
+}

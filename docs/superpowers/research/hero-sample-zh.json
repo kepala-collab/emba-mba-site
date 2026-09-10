@@ -1,0 +1,65 @@
+{
+  "language": "zh",
+  "primary": {
+    "eyebrow": "专为决定影响的不只是自己的管理者而设 · 马来西亚 · {PROGRAMME_YEAR} 年开课日期",
+    "title": "从独扛决策，到带队落实",
+    "lede": "带一个手上的企业课题来，{FACTS.durationMonths} 个月内写成团队可落实的行动方案；导师与教练检视思路，方法留给您。{PROGRAMME_POSITIONING_ZH}",
+    "cta": "索取 {PROGRAMME_YEAR} 年课程指南",
+    "purposeLine": "先看清课程安排、已公布的 {PROGRAMME_YEAR} 年开课日期、费用、奖学金评估与 CMI 认可，再决定是否预约课程咨询。",
+    "secondaryCta": "查看这 {FACTS.durationMonths} 个月会改变什么 →",
+    "supporting": [
+      "{FACTS.trainingDays} 个培训日，分 {FACTS.liveSessions} 次指定研习课完成；另有一对一辅导，以及一个以您分内的课题为题的企业应用项目。课程框架与工作模板归您保留。",
+      "达到课程要求的学员，将获颁 Executive MBA 课程的 CMI 认可证书（{CERTIFICATE_POSITIONING.credential}）；本课程属非学术性的专业发展课程，并非马来西亚学术资格鉴定机构（MQA）认证的学术学位或受官方监管的正式资格。Chartered Manager 是 CMI 另设的独立可选路线，另有独立的资格、评估及费用，均由 CMI 审定。",
+      "标准费用 {FEES.standard.label} · {PROGRAMME_YEAR} 年开课日期已公布 · 由雇主申请的人力资源发展机构（HRD Corp）资助，须经 HRD Corp 批准。咨询不构成报读或付款承诺。"
+    ]
+  },
+  "alternative": {
+    "title": "带着决策来，带着方法走",
+    "lede": "手上一个企业课题，{FACTS.durationMonths} 个月内从界定问题写到他人可循的行动方案；导师与教练检视思路，职位不变。{PROGRAMME_POSITIONING_ZH}",
+    "supporting1": "{FACTS.trainingDays} 个培训日，分 {FACTS.liveSessions} 次指定研习课完成；另有一对一辅导，以及一个以您分内的课题为题的企业应用项目。带走的方法，就是归您保留的课程框架与工作模板。"
+  },
+  "factTokens": [
+    "{PROGRAMME_YEAR} — eyebrow, CTA, purpose line, supporting 3 (rendered with 年 after the digits)",
+    "{FACTS.durationMonths} — lede, secondary CTA; carries the English {FACTS.durationLong} as N 个月 because durationLong is an English string",
+    "{FACTS.trainingDays} — supporting 1 (个培训日)",
+    "{FACTS.liveSessions} — supporting 1 (次指定研习课; canonical 'across N scheduled sessions' = 分 N 次指定研习课完成)",
+    "{FEES.standard.label} — supporting 3 (exact string RM10,000.00, never 令吉)",
+    "{CERTIFICATE_POSITIONING.credential} — supporting 2 (inside the full-width gloss brackets after CMI 认可证书)",
+    "{PROGRAMME_POSITIONING_ZH} — closes both ledes verbatim; audit-flagged 颁授并背书 is ABC's to replace at the source constant, not in copy",
+    "{HRD_CORP_CLAIM.label} — no zh mirror exists; supporting 3 transcreates the label with employer as applicant and HRD Corp as decision-maker; the e-TRiS / Allowable Cost Matrix / levy-ceiling sentence is {HRD_CORP_CLAIM_ZH} on the funding page",
+    "{INCLUSIONS[5].s} — no zh mirror exists; supporting 2 transcreates it (获颁 + credential token + separate optional Chartered Manager route)",
+    "{ABC_PROFILE.programmePositioning} — no zh mirror exists; its first sentence is {PROGRAMME_POSITIONING_ZH} at the end of the lede, its not-an-MQA-degree / not-a-regulated-qualification sentence renders in supporting 2 so both sit in the same viewport"
+  ],
+  "selfChecks": [
+    { "check": "Guide 7.1 — every number, fee string, duration, name and condition present unchanged via tokens (durationMonths, trainingDays, liveSessions, PROGRAMME_YEAR, FEES.standard.label, CERTIFICATE_POSITIONING.credential, PROGRAMME_POSITIONING_ZH; CMI, MQA, HRD Corp, Chartered Manager, Executive MBA in Latin)", "result": "pass" },
+    { "check": "Guide 7.2 + audit — no 约 / 大约 / 通常 / 一般 / 左右 / 多数 / 可能 / 往往 / 全球认可 / 须视…而定 before or around any quantity", "result": "pass" },
+    { "check": "Guide 7.3 + audit split rule — no urgency device about seats or deadlines (名额有限, 先到先得, 万勿错失, 立即, 马上, 现在就, 限时); 名额 does not appear at all; availability wording absent from the hero", "result": "pass" },
+    { "check": "Guide 7.4 + audit — no prestige label or outcome promise (顶尖, 卓越, 保证, 必定, 晋升, 加薪, 助您成功); 成功 not used", "result": "pass" },
+    { "check": "Guide 7.5 — 认可 for CMI (CMI 认可, CMI 认可证书（CMI Certificate of Recognition）); 认证 appears only with 马来西亚学术资格鉴定机构（MQA）; no 资格认证 / 学位 for the certificate", "result": "pass" },
+    { "check": "Guide 7.6 + audit — Chartered Manager only as CMI 另设的独立可选路线 with 独立的资格、评估及费用, 由 CMI 审定; no 自动 / 第二阶段 / 后续路径", "result": "pass" },
+    { "check": "Guide 7.7 — HRD Corp: employer named as applicant (由雇主申请), HRD Corp as decision-maker (须经 HRD Corp 批准), 人力资源发展机构（HRD Corp） glossed on first mention; e-TRiS / Allowable Cost Matrix / levy ceiling live in {HRD_CORP_CLAIM_ZH} on the funding page, mirroring the English strip label {HRD_CORP_CLAIM.label} which also omits them", "result": "pass (strip label; full sentence on /hrd-corp-claimable)" },
+    { "check": "Guide 7.8 — scholarship appears only as the term 奖学金评估 in the purpose line (a term beside the fee, never a price or reason, per spec §3); no 折扣 / 优惠 / 折扣码; no conditions claimed so none omitted", "result": "pass" },
+    { "check": "Guide 7.9 — CTAs use 索取 / 查看 / 预约…咨询 and name a purpose; nothing reads as 报名 / 录取 / 申请入学; 免费获取 absent", "result": "pass" },
+    { "check": "Guide 7.10 + spec §13 — no 您 / 你 in eyebrow or either title; 您 only in body (lede: 方法留给您; supporting 1: 您分内的课题, 归您保留); no 你 anywhere", "result": "pass" },
+    { "check": "Guide 7.11 (as corrected by the audits) — none of 参与者, 宣传册, 渠道, 创始人, 首席执行官, 账户, 数字化, 营销, 班次, 批次, 打工人, 身份启用, 衔称; 背书 occurs only inside the quoted constant {PROGRAMME_POSITIONING_ZH}, which ABC replaces at source", "result": "pass (背书 is in the constant, not in copy)" },
+    { "check": "Guide 7.12 — Malaysian forms where relevant: 学员, 报读, 咨询, 管理者, 索取, 开课日期, 研习课; fee rendered as the RM string; 马来西亚 not 大马", "result": "pass" },
+    { "check": "Guide 7.13 — decoration budget: primary H1 carries the 从…到… 对仗 only (独扛决策 / 带队落实 are compressed phrases, not idioms); A/B H1 carries the 带着…来 / 带着…走 对仗 only; fee line (supporting 3) and recognition line (supporting 2) carry no 四字词; no 排比 longer than three beats", "result": "pass" },
+    { "check": "Guide 7.14 — no quality judgement asserted in the site's voice; the only judgements are decisions attributed to CMI and HRD Corp", "result": "pass" },
+    { "check": "Guide 7.15 + audit — full-width ，。；：（）、 in Chinese text; full-width brackets around Latin glosses; ' · ' eyebrow separator, no U+3000, no —— in an H1; pangu spacing between Chinese and Latin/digits (6 个月, 2026 年, CMI 认可, Executive MBA 课程, HRD Corp 资助); no space inside RM10,000.00; no 「」『』; no traditional glyphs; no half-width commas", "result": "pass" },
+    { "check": "Guide 7.16 + audit exception — Arabic numerals for all factual counts (via tokens); 一个 / 一对一 used only as indefinite article and fixed term", "result": "pass" },
+    { "check": "Guide 7.17 — no sentence-initial 它 / 这 as abstract subject (supporting 2 uses 本课程); no stacked verbs (取得获); no cleft …的是… copied from English", "result": "pass" },
+    { "check": "Guide 7.18 — read aloud in Malaysian Mandarin: 手上的课题, 分内, 带队落实, 职位不变, 归您保留, 报读 are KL usage; nothing that only a translation bureau would write", "result": "pass" },
+    { "check": "Audit — 周末 never used (four of five published cohorts run Fri–Sat); sessions rendered as 次指定研习课", "result": "pass" },
+    { "check": "Audit — no 3 个月 / 三个月 string; no 工商管理硕士 within 40 characters of Future Ready; no 无需承诺 / 无须承诺 / 看看你是否符合 / 准备好取得 / 同等的公信力 / 立即报名", "result": "pass" },
+    { "check": "Audit — 正规 not used near the certificate; 'regulated qualification' rendered 受官方监管的正式资格", "result": "pass" },
+    { "check": "Spec §13 — primary H1 从独扛决策，到带队落实 = 11 characters incl. comma (≤ 14, two beats, no pronoun, no trailing stop); A/B H1 带着决策来，带着方法走 = 11 characters", "result": "pass" },
+    { "check": "Spec §13 — hero sub ≤ 45 characters (counted with punctuation, without spaces, tokens rendered, before the appended positioning constant): primary lede 45; A/B lede 45", "result": "pass" },
+    { "check": "Task — lede ≤ 2 sentences ending with {PROGRAMME_POSITIONING_ZH}: primary = 1 transcreated sentence + the constant; A/B = 1 transcreated sentence + the constant", "result": "pass" },
+    { "check": "Spec §12.1 / §2 — H1 names no product, count or outcome; after-state is an act a graduate can read back as 'that is what I did' (带队落实); before-state honoured, not diagnosed (独扛 = carried alone, no verdict)", "result": "pass" },
+    { "check": "Spec §12.4 — where the certificate and CMI appear (supporting 2) the not-an-MQA-degree sentence renders in the same block; {CERTIFICATE_POSITIONING.professionalRelevance} has no zh constant and must be rendered adjacent by the component, as it is for English", "result": "pass with note" },
+    { "check": "Spec §12.14 / §9 — 免费 is not the lead word of the CTA and does not appear in the hero copy; 'Free PDF' moves to the fine print once as 免费 PDF (outside this shape)", "result": "pass" },
+    { "check": "Spec §12.15 — 'An enquiry does not commit you to enrol or pay.' present in supporting 3 as 咨询不构成报读或付款承诺。 (proposed CONTROLLED_SENTENCES zh mirror)", "result": "pass" },
+    { "check": "Owner vocabulary rules — none of the owner's terms (servant leadership, progress, hope, right thing / good thing, right job, five S) is used in the hero, so no Chinese-first-English-in-brackets gloss is required here; change of experience is expressed as what the reader does differently (独扛 → 带队落实; 职位不变), never as 体验改变", "result": "pass" }
+  ],
+  "notes": "1. CTA label follows spec §13 (索取 {PROGRAMME_YEAR} 年课程指南): 免费 is dropped as the lead word per §9 and §12.14 and moves to the fine print once as 免费 PDF. If the owner keeps 'free' inside the label, the only permitted form is 免费索取 {PROGRAMME_YEAR} 年课程指南, never 免费获取. 2. Primary title improves the judge's 从独自决策，到带队落实: 独扛 restores 'carrying' (memikul) and honours the before-state as a weight carried alone rather than a habit of deciding alone; 带队落实 keeps the after-state as an act performed during the six months. The judge's 独自决策 remains the neutral fallback if 扛 is judged too colloquial for the education-section register. A/B title is the spec §13 rendering unchanged. 3. Both ledes end with {PROGRAMME_POSITIONING_ZH} quoted as a token. That constant carries 颁授并背书, which both audits flag; the replacement (认可, never 认证; CMI awards the certificate, not the MBA) is made once at the source constant by ABC, not in copy. The constant also lacks the not-an-MQA-degree / not-a-regulated-qualification sentence that {ABC_PROFILE.programmePositioning} bundles in English, so supporting 2 carries that boundary in the same viewport; recommend hoisting it into content-zh.ts as the second sentence of a programmePositioning mirror so the hero renders it from one constant. The first on-page mention of 'Executive MBA' therefore sits inside the constant without the 课程 classifier the audit asks for; supporting 2 uses Executive MBA 课程. 4. No zh mirrors exist for {HRD_CORP_CLAIM.label}, {INCLUSIONS[5].s}, {CERTIFICATE_POSITIONING.professionalRelevance} or the controlled sentence 'An enquiry does not commit you to enrol or pay.'; the transcreations in supporting 2 and 3 are proposed source strings for content-zh.ts, to be added before the hero ships so the copy interpolates rather than retypes. 5. Counting convention: characters including punctuation and excluding pangu spaces, with tokens rendered (6, 2026), matching the spec's own count of 从独自决策，到带队落实 as 11. Primary lede 45, A/B lede 45, primary H1 11, A/B H1 11. 6. Sessions are rendered as 分 {FACTS.liveSessions} 次指定研习课完成 and 周末 is avoided throughout because Cohorts 18, 19 and Mandarin 2 and 3 run Friday to Saturday. 7. The purpose line uses 预约课程咨询 as the conversation noun; the audit recommends changing CTA_LABELS.zh.conversation from 预约课程沟通 to 预约课程咨询 at source. 8. Eyebrow keeps the spec §13 meaning key 决定影响的不只是自己 intact and names the group (管理者) rather than 人, per the register guide's headline habit and to keep the head noun unambiguous; 专为…而设 is the audit-confirmed Malaysian form. 9. Supporting 1 says 分内的课题 for 'an issue within your own responsibility' while the ledes say 手上 for 'live'; the two are deliberately different so the strip does not repeat the lede. 10. The hero image, fine print (免费 PDF · 无需付款 · 无需申请), and the adjacent professionalRelevance sentence are component-level and outside this JSON shape."
+}

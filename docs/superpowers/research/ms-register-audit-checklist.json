@@ -1,0 +1,311 @@
+{
+  "guide": "ms",
+  "scope": "checklist",
+  "auditedFile": "docs/superpowers/research/ms-register.md",
+  "auditDate": "2026-09-07",
+  "method": "Independent refutation pass over sections 6 and 7. Every external claim below cites a URL fetched on 2026-09-07 (DBP PRPM, HRD Corp, UM UMCCed, UNITAR, SG Academy, Sinar Bestari) or a line in src/lib/content-ms.ts, src/lib/content.ts, src/lib/nurture-email.ts or SEO-CONTENT-GOVERNANCE.md. Items without evidence were left as 'no issue' and are listed under confirmedStrong. Governance facts (RM10,000.00; selective scholarship confirmed individually in writing, no amounts; CMI Certificate of Recognition, not an MQA-accredited degree; 6 months, 6 training days, 3 sessions, applied project; employer-led HRD Corp grant) are untouched by every correction proposed here.",
+  "issues": [
+    {
+      "section": "6.1",
+      "rule": "'Pengurus Bekerja' is a calque; corrected to 'Pengurus yang Sedang Bekerja' (P) and 'Pengurus yang Bekerja' (N)",
+      "problem": "The calque rationale is overstated and the two corrections contradict each other. Noun + bare 'bekerja' is a productive Malaysian pattern (UM writes 'golongan dewasa bekerja'; SG Academy writes 'golongan bekerja'), so 'Pengurus Bekerja' is not un-Malay; the real defect is only that it is unusual as a title for managers. The audit then prescribes two different replacements for the same concept, so an agent applying section 6 literally will ship 'yang Sedang Bekerja' in the meta title and 'yang Bekerja' in the e-mail. 'sedang' adds a progressive nuance ('currently in the act of working', Kamus Dewan: 'tengah (ketika, masih) melakukan sesuatu') that the English 'working manager' does not carry.",
+      "evidence": "https://study.umcced.edu.my/executivediploma/bm/ — 'golongan dewasa bekerja', 'orang dewasa yang bekerja'; https://dkm.sgacademy.edu.my/ — 'golongan yang bekerja', 'golongan bekerja tanpa sijil formal', 'yang sedang bekerja'; https://www.unitar.my/programme/sarjana-pentadbiran-perniagaan-dalam-talian/ — 'profesional yang bekerja'; https://prpm.dbp.gov.my/Cari1?keyword=sedang — 'tengah (ketika, masih) melakukan sesuatu lagi, masih'",
+      "correction": "Pick one form and use it in P, N and the glossary row 45: 'Executive MBA 6 Bulan untuk Pengurus yang Bekerja' and 'Panduan untuk Pengurus yang Bekerja'. Drop 'sedang' (UNITAR/UM pattern). Reword the rationale from 'calque' to 'unusual collocation for a title; prefer the relative clause used by UM and UNITAR'.",
+      "confidence": "medium"
+    },
+    {
+      "section": "6.3 (also Do 19, Don't 27, checklist 6)",
+      "rule": "'disokong' means supported, not endorsed; 'diperakukan' is the official endorsement verb",
+      "problem": "DBP does not support this distinction. Kamus Dewan defines 'memperakukan' as 'memberikan sokongan (utk), menyetujui serta menyokong (atau menganjurkan)', i.e. through 'menyokong' itself, and PRPM's entry for English 'endorse' lists 'menyokong' first, then 'mengendors'. So the original 'disokong oleh CMI' was not a language error, and the guide's ban on 'disokong oleh CMI' (checklist 6) and Don't 27 rest on a false premise. There is also a governance risk in the replacement: MQA's own register uses 'perakuan' for accreditation paperwork ('sijil Perakuan Akreditasi', guide section 2.3 item 3.13), so 'diperakukan oleh CMI' can read to a Malaysian reader as 'certified/accredited by CMI', blurring the recognition-versus-accreditation line the governance file protects.",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=memperakukan — 'memberikan sokongan (utk), menyetujui serta menyokong (atau menganjurkan)'; https://prpm.dbp.gov.my/Cari1?keyword=endorse — Malay equivalents 'menyokong', 'menandatangani belakang', 'mengendors'; SEO-CONTENT-GOVERNANCE.md controlled terminology: 'Professional programme recognised against CMI Professional Standards' vs 'MQA-accredited degree, regulated qualification'",
+      "correction": "Treat 'disokong' and 'diperakukan' as both acceptable; choose one for consistency, preferring the DBP-listed 'dianugerahkan dan disokong oleh CMI', or restate to the governance wording 'dianugerahkan oleh CMI dan diiktiraf berdasarkan CMI Professional Standards'. Remove 'disokong oleh CMI' from the checklist-6 ban list and Don't 27; rewrite Do 19 as 'use one endorsement verb site-wide; keep diakreditasi strictly for MQA'. Keep the programme-name consistency fix (English name verbatim) — that part is sound.",
+      "confidence": "medium-high"
+    },
+    {
+      "section": "6.3 FAQ correction",
+      "rule": "FAQ answer opens 'Ini ialah program Executive MBA on Future Ready Business Leadership, dianugerahkan dan diperakukan oleh CMI.'",
+      "problem": "The corrected BM answer carries a nine-word English programme name with no bracketed gloss, although the guide's own Do 3 and glossary row 3 require an optional gloss on first mention. On the FAQ page this sentence is the first mention.",
+      "evidence": "ms-register.md Do 3 ('Gloss an English official term once per page in brackets'); glossary row 3 ('optional gloss in brackets on first mention')",
+      "correction": "'Ini ialah program Executive MBA on Future Ready Business Leadership (Executive MBA dalam Kepimpinan Perniagaan Sedia Masa Hadapan), dianugerahkan dan disokong oleh CMI.' — gloss once per page, in brackets, then the English name alone.",
+      "confidence": "low"
+    },
+    {
+      "section": "6.4 (also glossary 40, checklist 10, Section 3 FAQ model sentence)",
+      "rule": "Chartered Manager must be described as 'laluan pilihan CMI yang berasingan'",
+      "problem": "'pilihan' after a noun means 'chosen / of choice / the best', not 'optional'. Kamus Dewan: 'yg telah dipilih, hasil memilih; yg terbaik (terpilih, terkemuka, dll)'. To a KL reader 'laluan pilihan CMI' therefore reads as 'CMI's preferred/premier route' (cf. 'destinasi pilihan', 'jenama pilihan'), which is the prestige/upsell framing the governance file forbids ('Do not describe Chartered Manager as automatic or as a fixed second programme stage'). The intended meaning is 'optional' ('Separate optional Chartered Manager route controlled by CMI'). The guide mandates the ambiguous phrase in three places and the live site already uses it (content-ms.ts programme section, fees section, FAQ 1 and 6).",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=pilihan — 'yg telah dipilih, hasil memilih' and 'yg terbaik (terpilih, terkemuka, dll)'; SEO-CONTENT-GOVERNANCE.md controlled terminology row 'Separate optional Chartered Manager route controlled by CMI'; src/lib/content-ms.ts 'Chartered Manager ialah laluan pilihan CMI yang berasingan'",
+      "correction": "Use 'laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI' (or '…yang berasingan dan bersifat pilihan…' only if 'tidak wajib' is judged too blunt). Replace glossary 40, checklist 10 and the Section 3 FAQ model sentence accordingly, and add 'laluan pilihan' to the checklist-6 ban list.",
+      "confidence": "high"
+    },
+    {
+      "section": "6.5",
+      "rule": "Corrected sentence: 'Sebarang pemberian biasiswa dan yuran peserta yang berkenaan disahkan secara individu dan secara bertulis; biasiswa tidak diberikan secara automatik dan bukan kod diskaun.'",
+      "problem": "Three 'secara' adverbials in one sentence ('secara individu dan secara bertulis … secara automatik') is stiffer than any fetched official source, which uses a single adverbial ('kebenaran bertulis', 'dihantar oleh majikan'). The doubled 'secara' is the kind of translationese the guide is trying to remove. Facts are unchanged.",
+      "evidence": "ms-register.md section 2.3 quotes: MQA 3.9 'kebenaran bertulis'; HRD Corp 3.3 'haruslah dihantar oleh majikan sebelum tarikh latihan bermula' — one adverbial per clause",
+      "correction": "'Sebarang pemberian biasiswa dan yuran peserta yang berkenaan disahkan secara individu dan bertulis; biasiswa tidak diberikan secara automatik dan bukan kod diskaun.' or, warmer for the intro: 'Pemberian biasiswa dan yuran peserta disahkan secara bertulis kepada setiap pemohon; biasiswa tidak diberikan secara automatik dan bukan kod diskaun.'",
+      "confidence": "medium"
+    },
+    {
+      "section": "6.11 (also Do 20)",
+      "rule": "Corrected: 'projek amali perniagaan anda dijalankan dalam perniagaan anda sendiri di antara sesi'; 'Bimbingan bersama projek amali perniagaan ke atas perniagaan anda sendiri'",
+      "problem": "The correction fixes 'aplikasi' but leaves two calques in place and adds a third problem. (a) 'ke atas perniagaan anda' is English 'on your business'; DBP glosses 'ke atas' only directionally ('ke bahagian atas; ke sebelah atas'), and Malaysian usage reserves it for imposition ('dikenakan ke atas'). (b) 'di antara sesi' — 'di antara' is not a Kamus Dewan headword (PRPM: 'Carian kata tiada di dalam kamus terkini'); temporal 'between sessions' is 'antara sesi'. (c) Do 20 forces 'projek amali perniagaan' everywhere, producing 'projek amali perniagaan anda … dalam perniagaan anda sendiri' — 'perniagaan' twice in eight words.",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=ke%20atas — Kamus Pelajar 'ke bahagian atas; ke sebelah atas'; https://prpm.dbp.gov.my/Cari1?keyword=di%20antara — 'Carian kata tiada di dalam kamus terkini'; https://prpm.dbp.gov.my/Cari1?keyword=amali — 'latihan ~' (amali confirmed as the right word)",
+      "correction": "'projek amali anda dijalankan dalam perniagaan anda sendiri antara sesi'; format row: 'Bimbingan bersama projek amali berdasarkan perniagaan anda sendiri'. Amend Do 20 to: use 'projek amali perniagaan' on first mention per page; 'projek amali' thereafter.",
+      "confidence": "medium"
+    },
+    {
+      "section": "6.12",
+      "rule": "Corrected: 'Jadual terkini kohort 2026 yang masih dibuka … boleh dilihat di laman web.'",
+      "problem": "Changes a fact. The EN source says 'remaining 2026 cohorts' (cohorts not yet held). 'yang masih dibuka' asserts that registration is still open for those cohorts — an availability claim that the governance file says must be reviewed monthly and that content.ts tracks separately in the 'seats' field. A nurture e-mail sent weeks later would then carry a hard-coded availability statement.",
+      "evidence": "src/lib/nurture-email.ts line 65 (EN): 'The live calendar of remaining 2026 cohorts'; src/lib/content.ts INTAKES rows carry seats: 'Open' as a separate, changeable field; SEO-CONTENT-GOVERNANCE.md review cycle: 'Intake dates, fees, scholarships and availability: review monthly'",
+      "correction": "'Jadual terkini kohort 2026 yang belum bermula, dalam bahasa Inggeris dan Mandarin, boleh dilihat di laman web.' Availability wording must come from the seats field, never be typed into prose.",
+      "confidence": "high"
+    },
+    {
+      "section": "6.13",
+      "rule": "Corrected: 'kandungan panduan itu tetap sama untuk kohort akan datang'",
+      "problem": "Introduces a claim the EN does not make and the site cannot guarantee. EN: 'the guide will still be honest for the next cohort' (its candour holds). BM now promises the guide's content will be unchanged, but the guide contains dates and fees that the governance file schedules for monthly review, and item 15 of this very audit changes how those dates render.",
+      "evidence": "src/lib/nurture-email.ts line 186 (BM) and the EN step-3 source it mirrors; SEO-CONTENT-GOVERNANCE.md 'Intake dates, fees, scholarships and availability: review monthly and after every change'",
+      "correction": "'Jika masa ini kurang sesuai, itu keputusan yang wajar — panduan itu tetap relevan untuk kohort akan datang.' ('tetap relevan' keeps the EN meaning without asserting frozen content.)",
+      "confidence": "high"
+    },
+    {
+      "section": "6.15 (also Do 7, checklist 3)",
+      "rule": "Map months to 'Jan, Feb, Mac, Apr, Mei, Jun, Jul, Ogos, Sep, Okt, Nov, Dis' so rows read '19–20 Sep; 17–18 Okt'",
+      "problem": "Two defects. (a) 'Sep' is the English abbreviation; DBP's abbreviation for September is 'Sept' (PRPM headword 'Sept' = 'kep September'). The guide's list is therefore non-DBP at exactly the point it claims DBP authority. (b) The guide's own news evidence shows BM prose spelling months in full ('26 Ogos 2026', '29 Februari hingga 29 Mac 2024'); abbreviations belong in tables only, so the intake rows in running text should carry full names. (c) The correction only shows the Sat–Sun mapping; three of the five 2026 cohorts in content.ts are Fri–Sat and need 'Jumaat dan Sabtu'.",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=Sept — 'kep September'; ms-register.md section 2.1 and 2.2 quotes (1.9 '26 Ogos 2026'; 2.8 '29 Februari hingga 29 Mac 2024'); src/lib/content.ts INTAKES: Cohort 18, 19, Mandarin 2 and 3 are days: 'Fri–Sat'",
+      "correction": "Prose rows: 'Sesi pertama: 22–23 Ogos; sesi kedua: 19–20 September; sesi ketiga: 17–18 Oktober. Sabtu dan Ahad, 9 pagi hingga 6 petang.' and 'Jumaat dan Sabtu' for Fri–Sat cohorts. If a table must abbreviate, use DBP forms: Jan., Feb., Mac, Apr., Mei, Jun, Jul., Ogos, Sept., Okt., Nov., Dis. Fix Do 7 and checklist 3 to match.",
+      "confidence": "high"
+    },
+    {
+      "section": "6.15 (missed item)",
+      "rule": "Intake rows on the BM page",
+      "problem": "The audit fixes month names but misses that the same renderer prints the cohort label untranslated: content-ms.ts builds the heading as `${language} ${intake.co}`, and intake.co is 'Cohort 17', so the BM page shows 'Bahasa Inggeris Cohort 17'. 'Cohort' is English on a BM page.",
+      "evidence": "src/lib/content-ms.ts intakes.sections: `${intake.language === \"Mandarin\" ? \"Mandarin\" : \"Bahasa Inggeris\"} ${intake.co}`; src/lib/content.ts INTAKES co: 'Cohort 17'",
+      "correction": "Map 'Cohort N' to 'Kohort N' in the BM renderer: 'Kohort 17 (bahasa Inggeris)'. Add 'Cohort' to the checklist-6 ban list for BM output.",
+      "confidence": "high"
+    },
+    {
+      "section": "6 further items — H lede",
+      "rule": "'melangkah ke peringkat kepimpinan seterusnya' → 'dan memimpin langkah seterusnya'",
+      "problem": "The replacement is itself a calque of the EN 'lead what comes next'. Kamus Dewan attests 'memimpin' with hands, people, and bodies/organisations ('memegang tangan dan membawa berjalan'; 'mengepalai atau mengetuai … badan, pertubuhan, pergerakan, negara'); 'memimpin langkah' is not a Malay collocation. The diagnosis (the current BM implies promotion) is right; the cure is not idiomatic.",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=memimpin — senses 1–3 as quoted; src/components/site/FutureCommerceHome.tsx line 4 (EN lede 'lead what comes next') and line 61 (BM lede)",
+      "correction": "'… dan memimpin perubahan yang mendatang.' ('memimpin perubahan' is the established management collocation and keeps the EN meaning without a promotion claim.) Because EN and BM must be equivalent, confirm the EN 'lead what comes next' passes the same governance test.",
+      "confidence": "medium"
+    },
+    {
+      "section": "7.1",
+      "rule": "Search for `kamu|awak|korang|engkau|nak |tak |macam |-lah\\b`",
+      "problem": "Not objectively passable. 'tak ' matches every 'tidak ', 'letak ', 'kotak '; 'nak ' matches 'anak ', 'hendak '; 'macam ' matches the standard 'bermacam-macam '. Meanwhile '-lah\\b' never fires because the particle is written attached ('belilah', 'pilihlah'), so the pattern the guide most wants to catch is the one it cannot see. 'tapi' (Don't 21) is absent from the regex.",
+      "evidence": "ms-register.md section 2.5 quotes the attached forms 'Belilah', 'ibulah', 'pilihlah'; the regex as written has no word boundaries",
+      "correction": "Use `\\b(kamu|awak|korang|engkau|nak|tak|macam|tapi|dah|je|kan)\\b` for pronouns and colloquials, and for the particle `\\b\\w{3,}lah\\b` with a whitelist (sekolah, salah, masalah, adalah, ialah, telah, olah, hadiah, wilayah, jumlah, sejarah, kaedah, mudah, indah, arah, sudah, rendah, pindah, ubah, nikah). Any remaining hit outside a quoted testimonial fails.",
+      "confidence": "high"
+    },
+    {
+      "section": "7.2",
+      "rule": "Search for `akan [a-z]+kan\\b` where the verb lacks meN-",
+      "problem": "The regex matches every correct form too ('akan mengesahkan' ends in -kan), and the qualifying clause 'where the verb lacks meN-' is left to the agent's judgement, so the check cannot be passed or failed mechanically. It also ignores the second pattern the guide names, bare roots without -kan ('boleh anda guna'), and other auxiliaries (boleh, perlu, harus, mesti, dapat, telah, sudah).",
+      "evidence": "ms-register.md 6.8 (the target error 'akan sahkan') and Do 11 (the target correct form 'akan mengesahkan') both match `akan [a-z]+kan\\b`",
+      "correction": "`\\b(akan|boleh|perlu|harus|mesti|dapat|telah|sudah|sedang|untuk)\\s+(anda\\s+)?(?!me[nmrlwy]?[a-z]*|ber[a-z]+|ter[a-z]+|di[a-z]+|ke[a-z]+an\\b)[a-z]+\\b` — every hit is a bare root after an auxiliary; whitelist function words that legitimately follow (ada, jadi, tetap, terus, sama, lebih, kurang, wajar, layak, mula, hadir, bekerja, belajar).",
+      "confidence": "high"
+    },
+    {
+      "section": "7.3",
+      "rule": "Search for `Aug|Sep\\b|Oct|Dec|Jan\\b|Feb\\b|Mar\\b|May\\b|Jul\\b` in BM date strings; 'verify Sep is intended BM'",
+      "problem": "Jan, Feb and Jul are identical in BM and English, so those three alternatives can only produce false positives; 'Sep' is flagged then excused, but DBP's abbreviation is 'Sept', so 'Sep' should simply fail; full English month names (August, October, December, March, May, June, April, November) are not caught at all, although the EN source data uses them ('September' appears in UNITAR's own intake selector, showing how easily the English form leaks).",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=Sept — 'kep September'; https://www.unitar.my/programme/sarjana-pentadbiran-perniagaan-dalam-talian/ — intake dropdown lists 'September' in English",
+      "correction": "Fail on `\\b(January|February|March|April|May|June|July|August|September|October|November|December|Aug|Sep|Oct|Dec|Mar)\\b` inside BM strings. Pass only full BM names in prose (Januari, Februari, Mac, April, Mei, Jun, Julai, Ogos, September, Oktober, November, Disember) or DBP abbreviations in tables (Jan., Feb., Mac, Apr., Mei, Jun, Jul., Ogos, Sept., Okt., Nov., Dis.).",
+      "confidence": "high"
+    },
+    {
+      "section": "7.4",
+      "rule": "Search for `RM \\d|RM\\d{1,3}\\d{3}\\b(?!,)`",
+      "problem": "Catches the spaced and unseparated forms but not the other variants Don't 30 bans ('10,000 ringgit') or common shorthand ('RM10k', 'RM10 ribu'), and cannot enforce the governance form of the standard fee, which must be exactly 'RM10,000.00' (FEES.malaysia.standard.label). A page writing 'RM10,000' passes the regex and fails governance.",
+      "evidence": "src/lib/content.ts: `standard: { amount: 10000, label: \"RM10,000.00\" }`; SEO-CONTENT-GOVERNANCE.md 'Publish RM10,000.00 as the standard fee'",
+      "correction": "Add `\\b\\d[\\d,.]*\\s*ringgit\\b|RM\\s?\\d+\\s?(k|ribu|juta)\\b` to the fail list, and add an exact-string test: every occurrence of the standard fee equals FACTS.priceStd verbatim; any other 'RM' figure on fee pages must be traceable to content.ts.",
+      "confidence": "medium"
+    },
+    {
+      "section": "7.5",
+      "rule": "Search for `biasanya|kebiasaannya|selalunya|sering|kebanyakan|lebih kurang|kira-kira|hampir semua`",
+      "problem": "The list omits the qualifiers a BM writer reaches for most when softening a number or claim: mungkin, boleh jadi, lazimnya, secara amnya, pada umumnya, kerap, ramai, sesetengah, hampir, sekitar, dalam lingkungan, lebih daripada / kurang daripada before a figure, and 'antara … hingga' ranges. The governance file bans exactly this class ('roughly, approximately, typically, usually, commonly, often, most, about').",
+      "evidence": "SEO-CONTENT-GOVERNANCE.md clarity standard; src/lib/nurture-email.ts line 150 'Kebanyakan pembaca memberitahu kami' (caught) versus a hypothetical 'ramai pembaca' (not caught)",
+      "correction": "Extend to `\\b(biasanya|kebiasaannya|selalunya|sering|kerap|kebanyakan|ramai|sesetengah|mungkin|boleh jadi|lazimnya|secara amnya|pada umumnya|lebih kurang|kira-kira|hampir|sekitar|dalam lingkungan|(lebih|kurang) daripada \\d)\\b` and fail any hit that precedes a number or an outcome statement.",
+      "confidence": "medium"
+    },
+    {
+      "section": "7.6",
+      "rule": "Ban list `perbualan program|Pengurus Bekerja|projek aplikasi|laluan lanjutan|program awam|dan ke atas|dalam bentuk bertulis|dinilai untuk|disokong oleh CMI|atas talian|emel\\b|kepemimpinan`",
+      "problem": "Missing the English forms that actually leak from the shared data model ('Cohort', 'email', 'programme', 'Sat–Sun', 'Open'), the half-translated programme name ('Executive MBA dalam …'), 'kekosongan kohort' (fixed in 6.8 but not banned), 'MBA Eksekutif' (Don't 23 but not banned), and the ambiguous 'laluan pilihan' (see 6.4). It wrongly bans 'disokong oleh CMI' (see 6.3).",
+      "evidence": "src/lib/content-ms.ts intakes renderer prints intake.co ('Cohort 17') and maps days from 'Sat–Sun'; https://prpm.dbp.gov.my/Cari1?keyword=endorse — 'menyokong' is DBP's first equivalent",
+      "correction": "Ban list: `perbualan program|Pengurus Bekerja|projek aplikasi|laluan lanjutan|laluan pilihan|program awam|dan ke atas|dalam bentuk bertulis|dinilai untuk|atas talian|\\bemel\\b|\\bemail\\b|kepemimpinan|kekosongan kohort|MBA Eksekutif|Executive MBA (dalam|untuk|bagi)|\\bCohort\\b|\\bprogramme\\b|Sat–Sun|Fri–Sat|\\bOpen\\b`. Remove 'disokong oleh CMI'.",
+      "confidence": "medium"
+    },
+    {
+      "section": "7.10",
+      "rule": "Confirm Chartered Manager is described only as 'laluan pilihan CMI yang berasingan'",
+      "problem": "Forces the phrase that DBP shows to mean 'CMI's chosen/best route' (see 6.4). An agent passing this check would fail the governance rule against prestige framing.",
+      "evidence": "https://prpm.dbp.gov.my/Cari1?keyword=pilihan — 'yg terbaik (terpilih, terkemuka, dll)'",
+      "correction": "Confirm Chartered Manager is described as 'laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI' with 'kelayakan, penilaian, keahlian dan yuran ditentukan oleh CMI'; fail on 'laluan pilihan', 'laluan lanjutan', 'peringkat seterusnya', 'fasa kedua', 'automatik' without 'tidak'.",
+      "confidence": "high"
+    },
+    {
+      "section": "7.11",
+      "rule": "Confirm no sentence promises promotion, salary, ROI or 'berjaya' outcomes",
+      "problem": "Not precise enough to pass or fail. (a) No word list is given for promotion/salary/ROI, so two agents will judge differently. (b) A flat ban on 'berjaya' breaks legitimate completion language already on the site ('selepas berjaya menamatkan program', 'Peserta yang berjaya menerima sijil'), and will collide with the owner's 'Success' stage label ('Kejayaan') in the Survival/Safety/Social/Success/Service framework.",
+      "evidence": "src/lib/content-ms.ts FAQS_MS: 'Apakah yang diterima selepas berjaya menamatkan program?' and 'Peserta yang berjaya menerima sijil'",
+      "correction": "Fail on `\\b(naik pangkat|kenaikan pangkat|kenaikan gaji|gaji|pendapatan|pulangan pelaburan|ROI|dijamin|jaminan|pasti (akan|berjaya)|masa depan (cerah|gemilang)|kerjaya (cemerlang|gemilang)|melonjak|berbaloi)\\b` anywhere. Fail 'berjaya|kejayaan' only when the subject is the participant's career/business outcome; allow 'berjaya menamatkan/menyiapkan' (completion) and 'Kejayaan' capitalised inside the five-S gloss list.",
+      "confidence": "high"
+    },
+    {
+      "section": "7.16",
+      "rule": "Check that FAQ answers open with the direct answer word ('Boleh.', 'Tidak.', 'Bukan.')",
+      "problem": "Applies only to yes/no questions, but 7 of the 14 FAQs in content-ms.ts are wh-questions ('Bagaimana program ini disusun?', 'Apakah yang diterima…', 'Apakah terma bayaran balik?', 'Untuk siapa program ini?', 'Bagaimana CMI menentukan…', 'Bagaimana jika saya…', 'Bagaimana untuk mengetahui…'). As written, half the FAQ page fails a check it cannot satisfy.",
+      "evidence": "src/lib/content-ms.ts FAQS_MS (14 entries; 7 begin with Bagaimana/Apakah/Untuk siapa)",
+      "correction": "For questions beginning `^(Adakah|Bolehkah|Perlukah|Wajibkah|Mestikah)`, the answer must begin with one of `^(Boleh|Tidak|Bukan|Ya|Tidak termasuk|Tidak secara automatik)\\b`. For wh-questions, the first sentence must contain the answer noun or number (e.g. '6 bulan', 'CMI Certificate of Recognition') with no preamble.",
+      "confidence": "high"
+    },
+    {
+      "section": "7.19",
+      "rule": "Spot-check five random sentences for length",
+      "problem": "A random sample is not a pass/fail test and hides the 40-word sentences that translation produces (e.g. the current fees comparison row is 44 words). Word counting is also undefined for hyphenated tokens, numerals and 'RM10,000.00'.",
+      "evidence": "src/lib/content-ms.ts COMPARISON_MS 'Yuran program' row (44 words as rendered)",
+      "correction": "Split BM output on `[.!?]` and count whitespace-delimited tokens for every sentence; fail if any hero/e-mail sentence exceeds 20, programme/FAQ 25, fees 25, insights 30. Treat 'RM10,000.00', '6–12' and 'e-TRiS' as one token each. Report the offending sentences, not a sample.",
+      "confidence": "medium"
+    },
+    {
+      "section": "7.20",
+      "rule": "The test is whether it could appear unchanged on a UM/UNITAR programme page",
+      "problem": "Not an objective test, and the benchmark is contaminated: the guide itself documents a calque on the UNITAR page (4.5 'tanpa berputus asa'), and both UM UMCCed and HRD Corp write 'adalah' before nouns ('adalah Institut Pengajian Tinggi Awam'; 'RPEL adalah skim'), which the DBP-standard the guide claims would not accept. An agent comparing against UNITAR/UM copy will let translationese through.",
+      "evidence": "https://study.umcced.edu.my/executivediploma/bm/ — 'adalah Institut Pengajian Tinggi Awam'; https://hrdcorp.gov.my/ms/rakyat-bm/ — 'RPEL adalah skim yang dirangka'; ms-register.md 2.4 warning on 4.5 'tanpa berputus asa dengan pekerjaan semasa'",
+      "correction": "Replace with the mechanical pattern checks listed under missingRules (word order, relative-clause calques, dari/daripada, ke/kepada, adalah/ialah, tense-marker density, passive chains, article calques, abbreviation gloss). Keep the read-aloud test as an additional human step, benchmarked against BH/Sinar feature prose, not university marketing.",
+      "confidence": "medium"
+    },
+    {
+      "section": "7 (structure)",
+      "rule": "Checklist is run 'against the whole BM output before returning it'",
+      "problem": "Nothing in the 20 items checks the two most common non-native patterns in Malaysian translated web copy — 'adalah' before a noun (the corpus itself does this, so a corpus-trained agent will not notice) and English noun-phrase order — nor the three the brief names explicitly: passive 'di-' chains, 'anda' dropped where the subject is ambiguous, and English abbreviations without a gloss. The site already contains unglossed abbreviations in the BM module list ('JTBD', 'SBAP', 'BOLT').",
+      "evidence": "src/lib/content-ms.ts MODULES_MS: 'M02 JTBD', 'M06 SBAP', 'M10 Kepimpinan BOLT' with no gloss; https://prpm.dbp.gov.my/Cari1?keyword=adalah — sense 2 'ialah (utk menghubungkan sesuatu yg diperkatakan dgn huraian, penjelasan dsb)'",
+      "correction": "Add the rules listed in missingRules 1–9 as checklist items 21–29.",
+      "confidence": "high"
+    }
+  ],
+  "confirmedStrong": [
+    "6.2 — 'Tempah sesi perbincangan program' / 'Bincangkan kesesuaian program': Kamus Dewan attests 'menempah' for booking a service ('~ bidan'), 'sesi perbincangan' is a standard collocation, and the CTA form matches the governance rule 'name the action and its purpose'. (https://prpm.dbp.gov.my/Cari1?keyword=tempah)",
+    "6.5 core — 'pemberian biasiswa' instead of bare 'anugerah', and 'secara bertulis' instead of 'dalam bentuk bertulis': consistent with MQA 3.9 'kebenaran bertulis' and news usage of 'dianugerahkan' as a verb only.",
+    "6.6 — 'boleh dipertimbangkan untuk': matches the KPT media statement (3.14) and the governance wording 'may be considered for'. 'dianugerahkan secara terpilih' is acceptable; 'secara selektif' (Kamus Dewan 'selektif: berdasarkan pilihan, terpilih') is an equally valid alternative. (https://prpm.dbp.gov.my/Cari1?keyword=selektif)",
+    "6.7 — 'Ubah kerumitan menjadi keputusan': 'menjadi' is the transformation verb; the file already uses it.",
+    "6.8 — 'akan mengesahkan kekosongan tempat dalam kohort': meN- prefix restored; Kamus Dewan attests 'kekosongan' with positions to be filled ('memenuhi ~ beberapa jawatan'). (https://prpm.dbp.gov.my/Cari1?keyword=kekosongan)",
+    "6.9 — 'Maklumat program dan kohort yang jelas.' and 'Pilih kohort yang sesuai dengan jadual anda.': full noun phrase / imperative with object; 'kohort' restores the site's own term.",
+    "6.10 — 'Salam sejahtera, {Nama},' with fallback 'Tuan/Puan' and sign-off 'Salam hormat, Pasukan Program …': correct salutation order; 'anda' cannot be a vocative.",
+    "6.11 core — 'projek amali' for 'applied project': Kamus Dewan 'amali: bkn pelaksanaan prinsip atau teori … latihan ~'. (https://prpm.dbp.gov.my/Cari1?keyword=amali)",
+    "6.12 — removal of 'kalendar langsung', 'masih tinggal', 'satu-satu tarikh' and the qualifier 'biasanya'; 'Jika ada tarikh yang hampir sesuai' is natural.",
+    "6.13 — 'itu keputusan yang wajar' and 'anda terus bekerja sepenuh masa': both idiomatic; 'sah' (legally valid) and 'keluar dari kerja' (resign) were real mistranslations.",
+    "6.14 — 'program terbuka' for open-enrolment; 'peserta peringkat eksekutif ke atas' is idiomatic. No evidence was found that 'eksekutif dan ke atas' is wrong in Malaysian HR usage, so this is recorded as a stylistic preference, not an error.",
+    "6.15 fee sentence — 'pelan bayaran 4 bulan daripada ABC' (numeral consistency, 'daripada' for the giver: Kamus Dewan daripada sense 1 'menunjukkan orang yg memberi'). (https://prpm.dbp.gov.my/Cari1?keyword=daripada)",
+    "6 further — 'berbaloi' removed (deals vocabulary); 'Hantar pertanyaan untuk syarikat anda' (verb + object); 'melalui WhatsApp'; 'gunakan'; 'yang menerangkan langkah permohonan e-TRiS HRD Corp'; 'Bagaimana saya boleh mendapatkan maklumat lanjut?'; the tightened HRD Corp block matches HRD Corp 3.3/3.8 sequencing and keeps 'Pihak yang memohon ialah majikan' implicit via 'majikan … mengemukakan'.",
+    "6 governance flag — 'Kebanyakan pembaca memberitahu kami' correctly identified as an unevidenced 'most' claim.",
+    "7.7 — identifier list is verbatim-checkable and complete for the current site.",
+    "7.8 — fact list matches content.ts (durationMonths 6, trainingDays 6, liveSessions 3, moduleCount 12, priceStd RM10,000.00, cohorts 17, graduates 154).",
+    "7.9 — decision-maker rule mirrors the governance 'state the action, the decision-maker and the controlling document'.",
+    "7.12, 7.13, 7.14, 7.15 (no semicolons), 7.17, 7.18 — objective enough as written.",
+    "Section 3 model sentences for fees and FAQ — factually identical to content.ts and governance; only the 'laluan pilihan' wording in the FAQ model needs the 6.4 fix."
+  ],
+  "missingRules": [
+    {
+      "topic": "ialah vs adalah",
+      "rule": "Use 'ialah' before a noun phrase (identity: X ialah program/sijil/laluan) and 'adalah' only before an adjective or preposition phrase (adalah terhad, adalah untuk, adalah penting). Never 'adalah merupakan', never 'adalah' + verb, never sentence-initial 'Adalah' as a dummy subject. Regex fail: `\\badalah\\s+(program|sijil|laluan|satu|sebuah|seorang|pasukan|majikan|kaedah|ABC|CMI|HRD|LIFE)\\b`; `\\bialah\\s+(terhad|penting|untuk|di|pada|dalam|bagi|kerana)\\b`; `\\badalah merupakan\\b`; `^Adalah\\b`. Note: Kamus Dewan lists 'adalah' sense 2 as 'ialah', and HRD Corp, UM and Sinar Bestari all write 'adalah' before nouns, so this is a house-style (Tatabahasa Dewan) rule that the corpus will not teach an agent — enforce it mechanically.",
+      "example": "Pass: 'Chartered Manager ialah laluan CMI yang berasingan'; 'Biasiswa LIFE Innoversity adalah terhad'. Fail: 'Ini adalah program pembangunan profesional'; 'Adalah penting untuk menyemak tarikh' (Sinar Bestari pattern) → 'Semak tarikh yang diterbitkan sebelum mendaftar.'"
+    },
+    {
+      "topic": "Passive di- chains",
+      "rule": "On hero, campaign, FAQ and e-mail copy, no sentence may contain more than two 'di-' passive verbs, and a sentence that names the reader must be active ('anda' + meN- verb). On fee/HRD Corp/CMI sentences passives are allowed but the agent must appear once with 'oleh' or as the subject of the next clause. Count `\\bdi(?!\\s)[a-z]{3,}\\b` per sentence (excludes the preposition 'di ').",
+      "example": "Fail: 'Yuran akan disahkan, biasiswa dinilai dan tempat diberikan selepas permohonan diproses.' Pass: 'Pasukan program mengesahkan yuran secara bertulis; HRD Corp menentukan jumlah yang diluluskan.'"
+    },
+    {
+      "topic": "English noun-phrase order",
+      "rule": "Modifiers follow the head noun in BM. Fail on number/adjective/proper-name before the head: `\\b\\d+[\\s–-]+(bulan|hari|sesi|modul|minggu)\\s+(program|latihan|kursus)\\b`; `\\b(Executive|Future Ready|CMI|HRD Corp|MQA)\\s+(sijil|program|pengurus|pemimpin|geran|kohort)\\b` (allow the verbatim identifiers in checklist 7); `\\b(baharu|utama|kanan|percuma)\\s+(program|panduan|pengurus|sesi)\\b`.",
+      "example": "Fail: '6 bulan program', 'CMI sijil', 'percuma panduan'. Pass: 'program 6 bulan', 'sijil CMI', 'panduan percuma'."
+    },
+    {
+      "topic": "Relative-clause and conjunction calques",
+      "rule": "'di mana', 'yang mana', 'dalam mana' are question forms, not relatives; 'untuk memastikan bahawa', 'dalam usaha untuk', 'berdasarkan kepada', 'terdiri dari', 'bergantung pada … untuk' are calques. Fail on `\\b(di|yang|dalam) mana\\b` outside a question mark sentence; `\\bberdasarkan kepada\\b`; `\\bterdiri dari\\b`; `\\bdalam usaha untuk\\b`; `\\bbukan sahaja .* tetapi juga\\b` more than once per page.",
+      "example": "Fail: 'sesi di mana peserta membentangkan pelan'. Pass: 'sesi tempat peserta membentangkan pelan' or 'sesi pembentangan pelan'."
+    },
+    {
+      "topic": "dari/daripada and ke/kepada",
+      "rule": "'dari' only for place and time; 'daripada' for a giver, source, material or comparison (Kamus Dewan daripada sense 1: 'menunjukkan orang yg memberi'). 'ke' only for a destination; 'kepada' for a recipient or abstract target. Fail: `\\bdari\\s+(CMI|HRD Corp|ABC|majikan|pasukan|fasilitator|peserta|pemohon|kami|anda|pihak|institusi|pengamal)\\b`; `\\bke\\s+(anda|peserta|pemohon|majikan|pasukan|CMI|HRD Corp|keputusan|pelan|tindakan|peringkat)\\b`.",
+      "example": "Fail: 'maklum balas dari fasilitator', 'diterjemahkan ke tindakan'. Pass: 'maklum balas daripada fasilitator', 'diterjemahkan kepada tindakan'."
+    },
+    {
+      "topic": "Tense/aspect marker density",
+      "rule": "'telah', 'akan', 'sedang', 'sudah' are English tense calques when the time is already clear. Allow at most one per sentence and none in a sentence that already has a date or 'selepas/sebelum'. Kamus Dewan 'sedang' = 'tengah (ketika, masih) melakukan sesuatu' — progressive only, never a general present. Fail: two or more of `\\b(telah|akan|sedang|sudah)\\b` in one sentence; `\\byang sedang bekerja\\b` in titles.",
+      "example": "Fail: 'Peserta yang telah mendaftar akan menerima tarikh yang telah diterbitkan.' Pass: 'Peserta berdaftar menerima tarikh yang diterbitkan.'"
+    },
+    {
+      "topic": "Article calques",
+      "rule": "'sebuah', 'seorang', 'satu' are not the English article 'a'. Use them only when counting or contrasting. Fail: `\\b(adalah|ialah|merupakan)\\s+(sebuah|seorang|satu)\\b`; `\\bsebuah (program|sijil|laluan|panduan)\\b` where no count is intended.",
+      "example": "Fail: 'Ini ialah sebuah program pembangunan profesional.' Pass: 'Ini ialah program pembangunan profesional.' Allowed: 'satu projek amali' (deliberate count, Do 8)."
+    },
+    {
+      "topic": "'anda' presence where the subject is otherwise ambiguous",
+      "rule": "On hero, campaign and e-mail copy, a declarative sentence beginning with an auxiliary or a verb (`^(Terus|Boleh|Perlu|Dapat|Akan|Menerima|Mendapat)\\b`) with no explicit subject fails; add 'anda' (reader) or 'peserta' (fact). Imperative CTAs (`^(Dapatkan|Tempah|Hantar|Semak|Bincangkan|Hubungi|Baca|Pilih)`) may omit the pronoun. Keep checklist 17 (no 'anda' in fee/levy/accreditation/refund fact sentences).",
+      "example": "Fail: 'Terus bekerja sepenuh masa sepanjang program.' Pass: 'Anda terus bekerja sepenuh masa sepanjang program.' / 'Peserta terus bekerja sepenuh masa.'"
+    },
+    {
+      "topic": "English abbreviations and framework names without gloss",
+      "rule": "The first occurrence per page of any all-caps token `\\b[A-Z][A-Z.]{1,7}\\b` not on the whitelist (MQA, CMI, MBA, RM, UK, ABC, KPT, KWSP, PDF, MQF, MQR, fCMgr, CMgr, e-TRiS, HRD Corp, LIFE) must be followed by a bracketed full name or BM gloss; later occurrences may stand alone. Framework names the site keeps in English (F.A.S.T., Jobs-To-Be-Done (JTBD), SBAP, BOLT, and the owner's Servant Leadership and Survival/Safety/Social/Success/Service) count as abbreviations for this rule.",
+      "example": "Fail (current site): 'M02 JTBD — Inovasi dan pertumbuhan berpusatkan pelanggan'. Pass: 'M02 Jobs-To-Be-Done (JTBD, tugas sebenar yang perlu diselesaikan pelanggan) — …'."
+    },
+    {
+      "topic": "Owner vocabulary — progress",
+      "rule": "Render 'progress' as 'kemajuan' (Kamus Dewan: 'perihal maju (taraf hidup dll)'); never 'progres' (PRPM: 'Carian kata tiada di dalam kamus terkini'). 'kemajuan' must describe what the participant does or measures, never a promised result. Fail: `\\bprogres\\b`; `\\bkemajuan (kerjaya|gaji|pangkat)\\b`.",
+      "example": "Pass: 'Kemajuan diukur pada projek amali anda, sesi demi sesi.' Fail: 'progres kerjaya anda dijamin'."
+    },
+    {
+      "topic": "Owner vocabulary — hope",
+      "rule": "Render 'hope' as 'harapan' when it names a theme or stance, and as 'berharap' only with the team as subject ('kami berharap'). Never attach 'harapan' to a career/business outcome, and never use 'harapan' as a promise word ('membawa harapan kejayaan'). Fail: `\\bharapan (untuk|kepada) (naik|kenaikan|gaji|kejayaan|pulangan)\\b`; `\\bmemberi(kan)? harapan\\b` on programme/fee pages.",
+      "example": "Pass: 'Kepimpinan bermula dengan harapan yang jelas: keputusan yang lebih baik untuk pasukan anda.' Fail: 'Program ini memberi harapan kenaikan pangkat.'"
+    },
+    {
+      "topic": "Owner vocabulary — change of experience",
+      "rule": "Never the literal 'perubahan pengalaman' (reads as a change in one's CV/records). Until the owner defines the phrase in one sentence, render it as what the participant experiences differently: 'pengalaman yang berubah' or 'perubahan dalam cara anda mengalami kerja/kepimpinan'. Fail: `\\bperubahan pengalaman\\b`; `\\bpertukaran pengalaman\\b` (means an exchange of experiences).",
+      "example": "Pass: 'Yang berubah ialah pengalaman anda memimpin — cara anda melihat isu, memilih dan bertindak.' Fail: 'Program ini menawarkan perubahan pengalaman.'"
+    },
+    {
+      "topic": "Owner vocabulary — right thing vs good thing",
+      "rule": "Keep the contrast inside one sentence with 'betul' and 'baik': 'perkara yang betul, bukan sekadar perkara yang baik'. Never 'benda' (colloquial), never 'tepat' for 'right' (means precise), never 'benar' vs 'baik' (reads as true vs good). Fail: `\\bbenda yang (betul|baik)\\b`; `\\bperkara yang tepat\\b`; a sentence containing 'perkara yang betul' without 'baik' within the same sentence when the contrast is intended.",
+      "example": "Pass: 'Pemimpin memilih perkara yang betul untuk dilakukan, bukan sekadar perkara yang baik.' Fail: 'buat benda yang betul, bukan benda yang baik'."
+    },
+    {
+      "topic": "Owner vocabulary — the right job to be done",
+      "rule": "Tie it to the framework the curriculum already names: keep 'Jobs-To-Be-Done (JTBD)' in English on first mention with the gloss '(tugas sebenar yang perlu diselesaikan)', then 'tugas sebenar yang perlu diselesaikan' in prose. Never 'kerja yang betul' (reads as the right occupation), never 'tugas yang betul untuk dilakukan' (word-for-word calque). Fail: `\\bkerja yang betul\\b`; `\\btugas yang betul untuk (dilakukan|dibuat)\\b`.",
+      "example": "Pass: 'Mulakan dengan tugas sebenar yang perlu diselesaikan pelanggan anda (Jobs-To-Be-Done), bukan produk yang sedia ada.' Fail: 'cari kerja yang betul untuk dilakukan'."
+    },
+    {
+      "topic": "Owner vocabulary — servant leadership",
+      "rule": "No DBP headword exists (PRPM 'servan': 'Tiada maklumat'; 'servant leadership' not in Kamus). Keep 'servant leadership' in English on first mention, roman, with the gloss '(kepimpinan yang berkhidmat)'; thereafter 'kepimpinan yang berkhidmat'. Never 'kepimpinan hamba' on marketing pages (attested in Malaysian research but 'hamba' reads as slave/servant of God in KL corporate register); never the Indonesian 'kepemimpinan pelayan' / 'kepemimpinan yang melayani' / 'kepemimpinan' at all. Fail: `\\bkepimpinan hamba\\b`; `\\bkepemimpinan\\b`; `\\bpelayan\\b`; `\\bservan\\b`.",
+      "example": "Pass: 'Modul ini berpaksikan servant leadership (kepimpinan yang berkhidmat): pemimpin yang mengutamakan keperluan pasukan.' Fail: 'kepimpinan hamba', 'kepemimpinan pelayan'."
+    },
+    {
+      "topic": "Owner vocabulary — Survival / Safety / Social / Success / Service",
+      "rule": "Treat the five S's as a named framework like F.A.S.T.: keep the English labels on first mention, gloss once in brackets as 'Kelangsungan, Keselamatan, Sosial, Kejayaan, Khidmat', then use the BM words as capitalised stage names. 'Kelangsungan' (Kamus Dewan: 'perihal berterusan … kesinambungan') for survival, never 'survival' transliterated; 'Khidmat' for the serving stance, not 'Perkhidmatan' (the service sector); 'Keselamatan' is also 'security' — add 'rasa selamat' if the stage means psychological safety. 'Kejayaan' is exempt from the outcome ban (checklist 11) only as this capitalised stage label; in prose it stays banned. Fail: `\\bSurvival\\b|\\bSafety\\b|\\bSocial\\b|\\bService\\b` after the first glossed mention; lowercase `\\bkejayaan\\b` outside the gloss.",
+      "example": "Pass: 'Lima peringkat keperluan pemimpin — Survival, Safety, Social, Success, Service (Kelangsungan, Keselamatan, Sosial, Kejayaan, Khidmat).' Fail: 'program ini membawa anda ke peringkat kejayaan'."
+    },
+    {
+      "topic": "Language names and Title Case function words",
+      "rule": "In running prose write 'bahasa Inggeris', 'bahasa Mandarin' with lowercase 'bahasa' (Kamus Dewan headword form 'bahasa Inggeris'); capitalise only inside an official subject/course name. In Title Case headings and CTAs keep 'yang, dan, untuk, di, ke, dari, daripada, kepada, dengan, atau, bagi' lowercase unless first. Fail: `\\bBahasa (Inggeris|Mandarin|Melayu)\\b` in body sentences; `\\b(Yang|Dan|Untuk|Di|Ke|Dengan|Atau|Bagi)\\b` mid-title.",
+      "example": "Pass: 'Tarikh kohort 2026 — bahasa Inggeris dan Mandarin'; 'Executive MBA 6 Bulan untuk Pengurus yang Bekerja'. Fail: 'dalam Bahasa Inggeris dan Mandarin'; 'Maklumat Penting Yang Anda Perlu Tahu'."
+    },
+    {
+      "topic": "Availability and cohort labels must come from data, not prose",
+      "rule": "Any BM string asserting seats or status ('masih dibuka', 'tempat masih ada', 'kekosongan', 'penuh', 'ditutup') must be rendered from the INTAKES seats field with a BM map ('Open' → 'Dibuka'), never typed into copy or e-mails. Cohort labels must render 'Kohort N', days 'Sabtu dan Ahad' / 'Jumaat dan Sabtu', and times '9 pagi hingga 6 petang' via the same map. Fail: hard-coded `\\b(masih dibuka|tempat masih ada|kekosongan|penuh)\\b` in content-ms.ts or nurture-email.ts; any `\\bCohort\\b|\\bOpen\\b|Sat–Sun|Fri–Sat|9am` in rendered BM.",
+      "example": "Fail (current): 'Bahasa Inggeris Cohort 17'. Pass: 'Kohort 17 (bahasa Inggeris) — Sesi pertama: 22–23 Ogos; … Sabtu dan Ahad, 9 pagi hingga 6 petang.'"
+    },
+    {
+      "topic": "Dashes, ranges and reduplicated plurals",
+      "rule": "Use an en dash with no spaces for numeric ranges ('22–23 Ogos', '6–12 bulan'); a spaced em dash ' — ' for asides, consistently; never a hyphen for ranges. Do not double-mark plurals: fail `\\b(para|semua|ramai|beberapa|banyak)\\s+(\\w+)-\\2\\b`.",
+      "example": "Fail: '6-12 bulan', 'para peserta-peserta'. Pass: '6–12 bulan', 'para peserta' (speeches only) / 'peserta'."
+    }
+  ]
+}
