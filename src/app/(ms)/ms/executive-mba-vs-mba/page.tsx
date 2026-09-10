@@ -2,15 +2,15 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
-import { CTA_LABELS, FACTS } from "@/lib/content";
-import { FAQS_MS, REFUND_TERMS_MS } from "@/lib/content-ms";
+import { CTA_LABELS, FACTS, PROGRAMME_POSITIONING_MS } from "@/lib/content";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS, FAQS_MS, REFUND_TERMS_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/executive-mba-vs-mba", {
-  title: "Executive MBA vs MBA Akademik",
+  title: "Executive MBA atau MBA Akademik",
   description:
-    "Bandingkan Executive MBA profesional Future Ready dengan MBA akademik dari segi format, penilaian, kelayakan dan komitmen masa sebelum memilih laluan.",
+    "Pilih ikut tugas: MBA akademik untuk ijazah akademik, atau Executive MBA Future Ready untuk membawa satu isu perniagaan sebenar kepada pelan tindakan yang disemak fasilitator.",
 });
 
 const COMPARISON_SCOPE_MS =
@@ -18,7 +18,7 @@ const COMPARISON_SCOPE_MS =
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS_MS.filter(([q]) =>
-  ["Adakah ini ijazah terakreditasi MQA?", "Bagaimana program ini disusun?", "Untuk siapa program ini?"].includes(q)
+  ["Adakah ini ijazah terakreditasi MQA?", "Apakah yang berubah untuk saya sepanjang program?", "Untuk siapa program ini?"].includes(q)
 );
 
 const faqLd = {
@@ -40,21 +40,21 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA vs MBA akademik · perbandingan yang ditakrifkan</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA atau MBA akademik · perbandingan yang ditakrifkan</span></div>
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Executive MBA vs MBA akademik — pilih ikut hasil yang anda mahu capai.
+              Executive MBA atau MBA akademik: pilih ikut tugas.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Bandingkan kedua-dua laluan dari segi kelayakan, penilaian, format, masa dan yuran yang diterbitkan.{" "}
-              <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> ialah program
-              profesional yang dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik terakreditasi MQA
-              atau kelayakan yang dikawal selia. Pilih MBA akademik apabila matlamat anda menuntut
-              ijazah akademik. Pilih program ini apabila yang anda mahu ialah pembangunan pengurusan yang boleh terus dipakai
-              sambil anda terus bekerja.
+              Kedua-dua laluan ini dibina untuk tugas yang berbeza. MBA akademik ialah laluan yang betul
+              apabila tujuan anda menuntut ijazah akademik.{" "}
+              <Link href="/ms/executive-mba" className="acc">Future Ready Executive MBA</Link> pula dibina
+              untuk membawa satu isu perniagaan sebenar dalam tanggungjawab anda sendiri kepada pelan
+              tindakan bertulis yang disemak fasilitator, sepanjang {FACTS.durationMonths} bulan, sambil anda kekal
+              dalam jawatan anda. {PROGRAMME_POSITIONING_MS} {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -70,13 +70,13 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Perbandingan sebelah-menyebelah</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Banding lapan ciri sekali imbas.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Lapan perkara, ditakrifkan sebelah-menyebelah.</h2></Reveal>
           <Reveal className="mt-s">
             <ProgrammeComparison lang="ms" />
           </Reveal>
           <p className="fine mt-s">
             {COMPARISON_SCOPE_MS} Program Future Ready tidak setara dengan, dan bukan pengganti kepada,
-            ijazah akademik terakreditasi MQA. Lihat <Link href="/ms/fees" className="acc">pecahan pelaburan sepenuhnya</Link>.
+            ijazah akademik terakreditasi MQA. Lihat <Link href="/ms/fees" className="acc">halaman yuran penuh</Link>.
           </p>
         </div>
       </section>
@@ -84,37 +84,39 @@ export default function ExecutiveMbaVsMbaPage() {
       {/* WHO SHOULD CHOOSE WHICH */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Siapa patut pilih yang mana</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Pilih ikut kelayakan dan cara belajar yang anda perlukan.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Dibina untuk tugas yang berbeza</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Namakan tugas anda, kemudian pilih laluan yang dibina untuknya.</h2></Reveal>
           <div
             className="choose-grid mt-m"
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}
           >
             <Reveal>
               <div className="card" style={{ height: "100%" }}>
-                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>Pilih MBA akademik jika…</div>
+                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>MBA akademik dibina untuk…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12 }}>
-                  Langkah seterusnya anda menuntut ijazah akademik atau kelayakan yang dikawal selia.
+                  Memperoleh ijazah akademik melalui pengajian akademik.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  Jika matlamat anda menuntut kelayakan akademik atau terakreditasi MQA — untuk badan pelesenan,
-                  laluan PhD, kerjaya akademik, atau syarat kelayakan yang ditetapkan dalam sektor anda —
-                  MBA akademik ialah laluan yang betul. Bandingkan syarat kemasukan, kurikulum, tempoh, yuran
-                  dan pengiktirafan yang diterbitkan setiap institusi sebelum anda mendaftar.
+                  Apabila tujuan anda menuntut kelayakan akademik atau terakreditasi MQA — untuk badan
+                  pelesenan, laluan PhD, kerjaya akademik, atau syarat kelayakan yang ditetapkan dalam
+                  sektor anda — MBA akademik ialah laluan yang betul. Bandingkan syarat kemasukan,
+                  kurikulum, tempoh, yuran dan pengiktirafan yang diterbitkan setiap institusi sebelum
+                  anda mendaftar.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <div className="card" style={{ height: "100%", border: "1px solid var(--line-2)", background: "linear-gradient(180deg,var(--surface-2),var(--surface))" }}>
-                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>Pilih Executive MBA ini jika…</div>
+                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>Executive MBA ini dibina untuk…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "var(--ink)" }}>
-                  Anda mahukan program profesional yang boleh terus dipakai pada kerja sebenar, dengan format separuh masa.
+                  Membawa satu isu perniagaan sebenar kepada pelan yang boleh dilaksanakan pasukan anda.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  Laluan ini untuk anda yang memikul tanggungjawab strategik atau menyeluruh dalam
-                  perniagaan, dan mahukan cara membuat keputusan yang lebih tersusun, projek berteraskan cabaran perniagaan sebenar
-                  dan CMI Certificate of Recognition. Sepanjang {FACTS.durationMonths} bulan, program ini berjalan menerusi {FACTS.liveSessions} hujung minggu berjadual,
-                  sesi bimbingan dan projek yang anda terapkan pada kerja sendiri.
+                  Laluan ini dibina untuk peserta yang memikul tanggungjawab strategik atau menyeluruh
+                  dalam perniagaan: satu isu dalam tanggungjawab anda sendiri, dibawa daripada takrifan
+                  masalah kepada pelan tindakan bertulis dengan keputusan, tindakan, pemilik dan ukuran,
+                  dalam {FACTS.trainingDays} hari latihan merentasi {FACTS.liveSessions} sesi berjadual,
+                  dengan bimbingan individu dan satu projek amali perniagaan.
                 </p>
               </div>
             </Reveal>
@@ -126,23 +128,25 @@ export default function ExecutiveMbaVsMbaPage() {
       {/* IS IT WORTH IT */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap maxw-820">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Adakah executive MBA berbaloi?</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Pilih ikut hasil yang anda mahu capai.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Yuran dan terma, secara bertulis</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Namakan tugas dahulu, kemudian baca terma.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              Tetapkan dahulu hasil yang anda mahu capai sebelum membandingkan harga. Pilih MBA akademik terakreditasi MQA
-              apabila langkah seterusnya anda menuntut ijazah akademik. Pilih program ini apabila yang anda perlukan ialah
-              program enam bulan, projek berteraskan cabaran perniagaan sebenar, pengiktirafan terhadap CMI Professional Standard
-              dan kerjaya yang terus berjalan sepanjang pengajian. Yuran standard Malaysia 2026 yang diterbitkan
-              ialah {FACTS.priceStd}. Pemohon Malaysia yang layak berpeluang menerima{" "}
-              <Link href="/ms/fees" className="acc">penilaian biasiswa {FACTS.scholarshipProvider}</Link> — biasiswa yang terhad, diberikan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.
+              Namakan tugas anda sebelum membandingkan yuran. MBA akademik terakreditasi MQA ialah laluan
+              yang betul apabila langkah seterusnya anda menuntut ijazah akademik. Program ini pula dibina
+              untuk {FACTS.durationMonths} bulan kerja ke atas satu isu perniagaan sebenar: {FACTS.trainingDays} hari
+              latihan merentasi {FACTS.liveSessions} sesi berjadual, satu projek amali perniagaan dan semakan
+              fasilitator, sambil anda kekal dalam jawatan anda. Yuran standard yang diterbitkan ialah{" "}
+              {FACTS.priceStd}. Biasiswa {FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara
+              terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Biasiswa
+              tidak automatik.{" "}
+              <Link href="/ms/fees" className="acc">Lihat yuran dan terma biasiswa {FACTS.scholarshipProvider}</Link>.
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub mt-s">
-              Program ini tidak menjamin kenaikan gaji, kenaikan pangkat, pekerjaan atau hasil perniagaan.
-              Peserta terus bekerja sepanjang program dan menerapkan rangka kerja pada projek perniagaan
-              mereka sendiri. {REFUND_TERMS_MS}
+              {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS} Peserta kekal dalam jawatan mereka sepanjang
+              enam bulan dan menerapkan rangka kerja pada projek perniagaan mereka sendiri. {REFUND_TERMS_MS}
             </p>
           </Reveal>
           <Reveal className="center mt-m">
@@ -173,7 +177,7 @@ export default function ExecutiveMbaVsMbaPage() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Sudah pasti ia sesuai? Mari bincangkan kohort anda." sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang diterajui majikan. Perbualan ini tanpa sebarang ikatan untuk mendaftar atau membayar." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Sudah pasti ia sesuai? Mari bincangkan kohort anda." sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang diterajui majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." />
     </>
   );
 }

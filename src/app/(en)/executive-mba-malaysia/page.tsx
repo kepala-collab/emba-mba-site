@@ -2,28 +2,28 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
-import { CLIENTS, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { ABC_PROFILE, CERTIFICATE_POSITIONING, CLIENTS, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/executive-mba-malaysia", {
   title: "Executive MBA Malaysia for Working Leaders",
   description:
-    "Six-month executive education in Malaysia for working leaders, with applied management learning, CMI recognition and an employer-led HRD Corp funding route.",
+    "For Malaysian owners, directors and senior managers: take one live business issue to a faculty-reviewed plan across six months, with the standard fee, scholarship eligibility and employer-led HRD Corp funding confirmed in writing.",
 });
 
-const REASONS = [
+const TERMS = [
   {
     h: "Employer-led HRD Corp funding",
     p: `${HRD_CORP_CLAIM.short} The programme team supplies the quotation, schedule, course content and trainer documents.`,
   },
   {
     h: "Malaysian scholarship eligibility",
-    p: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing.`,
+    p: `The standard fee is ${FACTS.priceStd}. ${FACTS.scholarshipEligibility}`,
   },
   {
-    h: "A six-month programme for working leaders",
-    p: `The programme uses ${FACTS.liveSessions} scheduled weekends across the programme, 9am–6pm, across ${FACTS.durationMonths} months. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.`,
+    h: "Six months alongside your role",
+    p: `You complete ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions, 9am–6pm, across ${FACTS.durationLong}, while you continue in your role. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.`,
   },
   {
     h: "ASEAN-relevant faculty & cases",
@@ -37,7 +37,7 @@ const courseJsonLd = {
   "@id": `${SITE.url}/executive-mba-malaysia#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered in Malaysia and online; employer funding may be available to eligible HRD Corp-registered employers, subject to approval.",
+    "The Executive MBA on Future Ready Business Leadership takes one live business issue in a Malaysian participant's own responsibility to a written action plan reviewed by faculty across six months, while the participant continues working. It is awarded and endorsed by CMI, delivered in Malaysia and online; employer-led HRD Corp funding may be available to eligible registered employers, subject to approval.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -75,46 +75,53 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "24ch" }}>
-              An Executive MBA built for Malaysian leaders.
+              From your own live issue to a faculty-reviewed plan.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              The Future Ready Executive MBA is a six-month executive education and professional
-              development programme for Malaysian owners, directors and senior managers. It is
-              awarded and endorsed by CMI and delivered through focused live sessions. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>{" "}
-              The programme is priced in ringgit at {FACTS.priceStd}. Eligible Malaysian applicants may receive a{" "}
-              <b style={{ color: "var(--ink)" }}>{FACTS.scholarshipProvider} scholarship assessment</b>, subject to limited availability, a selective assessment and written approval.
-              Participants apply the programme frameworks to their own organisation, market and operating context.
+              Malaysian owners, directors and senior managers carry decisions the rest of the business is waiting on.
+              Across {FACTS.durationLong}, the applied business project takes one of those decisions — a pricing call, a
+              succession question, an operating issue in your own responsibility — from problem to a written plan with
+              decisions, actions, owners and measures, reviewed by faculty, while you continue in your role.{" "}
+              {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance}
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              You keep working while completing {FACTS.liveSessions} scheduled weekend sessions, coaching and an applied project. Chartered Manager is a separate optional CMI route and is not included in the published programme or fee. The programme is delivered across {FACTS.liveSessions} scheduled sessions while participants continue working.
+              You complete {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, one-to-one
+              coaching and the applied project, while you keep working. Chartered Manager is a separate optional CMI
+              route, decided by CMI, and is not included in the programme or its published fee.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="sec-sub">
+              {FACTS.priceStd} standard fee. {FACTS.scholarshipEligibility}{" "}
+              <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM.short}</b>
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} →</Link>
-              <Link href="/fees" className="btn">Fees &amp; scholarship</Link>
+              <Link href="/apply?intent=employer_sponsored" className="btn">{CTA_LABELS.company}</Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* WHY MALAYSIAN LEADERS CHOOSE IT */}
+      {/* TERMS CONFIRMED FOR MALAYSIA */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Why Malaysian leaders choose it</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Malaysian pricing, employer funding and published schedules.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Terms confirmed for Malaysia</span></div></Reveal>
+          <Reveal><h2 className="sec-h">The fee, the funding route and the schedule, confirmed in writing.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              The programme combines a CMI Certificate of Recognition with Malaysian scholarship eligibility,
-              an employer-led HRD Corp process and English or Mandarin cohort schedules.
+              Malaysian scholarship eligibility, an employer-led HRD Corp process and English or Mandarin cohort
+              schedules sit alongside the standard fee, each confirmed individually in writing.
             </p>
           </Reveal>
           <div className="mt-m" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 18 }}>
-            {REASONS.map((r, i) => (
+            {TERMS.map((r, i) => (
               <Reveal key={r.h} delay={i * 60}>
                 <div className="card" style={{ height: "100%" }}>
                   <div className="mono acc" style={{ fontSize: ".82rem", marginBottom: 12 }}>{String(i + 1).padStart(2, "0")}</div>
@@ -138,7 +145,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="stats">
-            <div><b>{FACTS.trainingDays}</b><span>Certificate-phase training days</span></div>
+            <div><b>{FACTS.trainingDays}</b><span>Training days across the six months</span></div>
             <div><b>{FACTS.cohorts}</b><span>Cohorts in ABC programme records</span></div>
             <div><b>Eligibility</b><span>scholarship assessment for Malaysian applicants</span></div>
             <div><b>Before training</b><span>Employer submits HRD Corp grant application</span></div>
@@ -191,9 +198,9 @@ export default function ExecutiveMbaMalaysiaPage() {
             <Link href="/intakes" className="btn btn-primary">See all 2026 intakes</Link>
           </p>
           <p className="fine center mt-s">
-            This professional programme is awarded and endorsed by CMI; it is not an
-            MQA-regulated academic degree. Eligible Malaysian employers may apply for HRD Corp
-            funding before training; HRD Corp decides approval and the approved amount. You can <Link href="/apply">arrange a programme conversation</Link> before deciding.
+            {CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance} Eligible Malaysian
+            employers may apply for HRD Corp funding before training; HRD Corp decides approval and the approved
+            amount. You can also <Link href="/apply">arrange a programme conversation</Link> before deciding.
           </p>
         </div>
       </section>

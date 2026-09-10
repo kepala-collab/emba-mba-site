@@ -2,29 +2,29 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
-import { CLIENTS, CTA_LABELS, FACTS, SITE } from "@/lib/content";
-import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
+import { CTA_LABELS, CLIENTS, FACTS, PROGRAMME_POSITIONING_MS, SITE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS, HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/executive-mba-malaysia", {
   title: "Executive MBA Malaysia untuk Pemimpin yang Bekerja",
   description:
-    "Program enam bulan di Malaysia untuk pemimpin yang terus bekerja — belajar pada kerja sebenar anda, dengan pengiktirafan CMI dan pembiayaan HRD Corp yang diterajui majikan.",
+    "Untuk pemilik perniagaan, pengarah dan pengurus kanan di Malaysia: bawa satu isu perniagaan sebenar kepada pelan disemak fasilitator sepanjang enam bulan, dengan yuran standard, kelayakan biasiswa dan pembiayaan HRD Corp yang diterajui majikan disahkan secara bertulis.",
 });
 
-const REASONS = [
+const TERMA = [
   {
     h: "Pembiayaan HRD Corp yang diterajui majikan",
     p: `${HRD_CORP_CLAIM_MS} Pasukan program menyediakan sebut harga, jadual, kandungan program dan dokumen jurulatih untuk membantu majikan memohon.`,
   },
   {
     h: "Kelayakan biasiswa untuk pemohon Malaysia",
-    p: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia bukan automatik — setiap anugerah dan yuran peserta disahkan satu per satu secara bertulis.`,
+    p: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta disahkan secara individu secara bertulis; biasiswa tidak automatik.`,
   },
   {
-    h: "Enam bulan yang seiring dengan kerjaya anda",
-    p: `Sepanjang ${FACTS.durationMonths} bulan ini, anda hadir ${FACTS.liveSessions} hujung minggu berjadual, dari 9 pagi hingga 6 petang, berserta sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat kelayakan, penilaian dan yuran tersendiri.`,
+    h: "Enam bulan seiring dengan jawatan anda",
+    p: `Anda melengkapkan ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berjadual, dari 9 pagi hingga 6 petang, sepanjang ${FACTS.durationMonths} bulan, sambil kekal dalam jawatan anda. Chartered Manager ialah laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI, dengan syarat kelayakan, penilaian dan yuran tersendiri.`,
   },
   {
     h: "Fasilitator dan kajian kes yang dekat dengan konteks ASEAN",
@@ -38,7 +38,7 @@ const courseJsonLd = {
   "@id": `${SITE.url}/ms/executive-mba-malaysia#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Ia dikendalikan di Malaysia dan dalam talian; majikan berdaftar HRD Corp yang layak boleh memohon pembiayaan bagi pihak peserta, tertakluk pada kelulusan.",
+    "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan membawa satu isu perniagaan sebenar dalam tanggungjawab peserta Malaysia kepada pelan tindakan bertulis yang disemak fasilitator, sepanjang enam bulan, sambil peserta terus bekerja. Program ini dianugerahkan dan disokong oleh CMI, dikendalikan di Malaysia dan dalam talian; majikan berdaftar HRD Corp yang layak boleh memohon pembiayaan diterajui majikan, tertakluk pada kelulusan.",
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -76,46 +76,59 @@ export default function ExecutiveMbaMalaysiaPage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "24ch" }}>
-              Executive MBA untuk pemimpin yang terus bekerja.
+              Daripada satu isu sebenar kepada pelan disemak fasilitator.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Future Ready Executive MBA ialah program pembangunan profesional selama enam bulan
-              untuk pemilik perniagaan, pengarah dan pengurus kanan di Malaysia. Program ini dianugerahkan
-              dan disokong oleh CMI, dan berjalan menerusi sesi langsung yang padat dan fokus. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_MS}</b>{" "}
-              Yuran program dalam ringgit, iaitu {FACTS.priceStd}. Pemohon Malaysia yang layak berpeluang menerima{" "}
-              <b style={{ color: "var(--ink)" }}>penilaian biasiswa {FACTS.scholarshipProvider}</b> — biasiswa yang terhad, diberikan secara terpilih dan hanya selepas penilaian serta kelulusan bertulis.
-              Setiap peserta membawa rangka kerja program ke organisasi, pasaran dan realiti operasi mereka sendiri.
+              Pemilik perniagaan, pengarah dan pengurus kanan di Malaysia memikul keputusan yang ditunggu oleh seluruh
+              perniagaan. Sepanjang {FACTS.durationMonths} bulan, projek amali perniagaan membawa satu keputusan itu —
+              soal harga, soal penggantian kepimpinan atau isu operasi dalam tanggungjawab anda sendiri — daripada
+              masalah kepada pelan bertulis yang mengandungi keputusan, tindakan, pemilik dan ukuran, disemak oleh
+              fasilitator, sambil anda kekal dalam jawatan anda. {PROGRAMME_POSITIONING_MS} Ia program pembangunan
+              profesional bukan akademik selama enam bulan; bukan ijazah akademik terakreditasi MQA atau kelayakan
+              yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Anda terus bekerja sepanjang tempoh ini sambil melengkapkan {FACTS.liveSessions} sesi hujung minggu berjadual, sesi bimbingan dan projek berteraskan cabaran perniagaan sebenar. Chartered Manager ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program mahupun yuran yang diterbitkan di sini.
+              Anda melengkapkan {FACTS.trainingDays} hari latihan merentasi {FACTS.liveSessions} sesi berjadual,
+              bimbingan satu-ke-satu dan projek amali, sambil terus bekerja. Chartered Manager ialah laluan
+              Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI, dan tidak termasuk dalam
+              program mahupun yuran yang diterbitkan.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="sec-sub">
+              Yuran standard ialah {FACTS.priceStd}. Biasiswa {FACTS.scholarshipProvider} adalah terhad dan
+              dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan
+              bertulis. Sebarang anugerah dan yuran peserta disahkan secara individu secara bertulis; biasiswa tidak
+              automatik. <b style={{ color: "var(--ink)" }}>{HRD_CORP_CLAIM_MS}</b>
             </p>
           </Reveal>
           <Reveal className="mt-s">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide} →</Link>
-              <Link href="/ms/fees" className="btn">Yuran &amp; biasiswa</Link>
+              <Link href="/ms/apply?intent=employer_sponsored" className="btn">{CTA_LABELS.ms.company}</Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* WHY MALAYSIAN LEADERS CHOOSE IT */}
+      {/* TERMA YANG DISAHKAN UNTUK MALAYSIA */}
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Mengapa pemimpin memilihnya</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Yuran dalam ringgit, pembiayaan diterajui majikan dan jadual yang jelas.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Terma yang disahkan untuk Malaysia</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Yuran, laluan pembiayaan dan jadual, disahkan secara bertulis.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              Dalam satu program, anda dapat CMI Certificate of Recognition, kelayakan biasiswa untuk pemohon Malaysia,
-              proses HRD Corp yang diterajui majikan, dan jadual kohort dalam Bahasa Inggeris dan Mandarin.
+              Kelayakan biasiswa untuk pemohon Malaysia, proses HRD Corp yang diterajui majikan, dan jadual kohort
+              dalam Bahasa Inggeris atau Mandarin, setiap satu disahkan secara individu secara bertulis, di samping
+              yuran standard.
             </p>
           </Reveal>
           <div className="mt-m" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 18 }}>
-            {REASONS.map((r, i) => (
+            {TERMA.map((r, i) => (
               <Reveal key={r.h} delay={i * 60}>
                 <div className="card" style={{ height: "100%" }}>
                   <div className="mono acc" style={{ fontSize: ".82rem", marginBottom: 12 }}>{String(i + 1).padStart(2, "0")}</div>
@@ -127,7 +140,7 @@ export default function ExecutiveMbaMalaysiaPage() {
           </div>
           <p className="fine mt-s">
             Permohonan geran dibuat oleh majikan, bukan peserta; dan HRD Corp — bukan penyedia program — yang memutuskan kelulusan serta jumlah yang diluluskan. Lihat{" "}
-            <Link href="/ms/hrd-corp-claimable">pembiayaan HRD Corp yang dipohon majikan</Link>. Butiran penuh program di halaman{" "}
+            <Link href="/ms/hrd-corp-claimable">pembiayaan HRD Corp yang diterajui majikan</Link>. Butiran penuh program di halaman{" "}
             <Link href="/ms/executive-mba">Executive MBA</Link>, atau semak{" "}
             <Link href="/ms/chartered-manager-malaysia">laluan Chartered Manager di Malaysia</Link>. Jika anda sedang membandingkan kategori program, baca{" "}
             <Link href="/ms/insights/executive-education-vs-executive-mba">pendidikan eksekutif vs Executive MBA</Link>.
@@ -139,7 +152,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="stats">
-            <div><b>{FACTS.trainingDays}</b><span>Hari latihan sepanjang program</span></div>
+            <div><b>{FACTS.trainingDays}</b><span>Hari latihan sepanjang enam bulan</span></div>
             <div><b>{FACTS.cohorts}</b><span>Kohort dalam rekod program ABC</span></div>
             <div><b>Kelayakan</b><span>penilaian biasiswa untuk pemohon Malaysia</span></div>
             <div><b>Sebelum latihan</b><span>Majikan memohon geran HRD Corp bagi pihak peserta</span></div>
@@ -192,14 +205,15 @@ export default function ExecutiveMbaMalaysiaPage() {
             <Link href="/ms/intakes" className="btn btn-primary">Lihat semua kohort 2026</Link>
           </p>
           <p className="fine center mt-s">
-            Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik yang
-            dikawal selia MQA. Majikan Malaysia yang layak boleh memohon pembiayaan HRD Corp sebelum latihan bermula;
-            HRD Corp yang memutuskan kelulusan serta jumlah yang diluluskan. Anda boleh <Link href="/ms/apply">mengaturkan perbualan kesesuaian</Link> sebelum membuat keputusan.
+            {PROGRAMME_POSITIONING_MS} Ia bukan ijazah akademik yang dikawal selia MQA.{" "}
+            {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS} Majikan Malaysia yang layak boleh memohon pembiayaan
+            HRD Corp sebelum latihan bermula; HRD Corp yang memutuskan kelulusan serta jumlah yang diluluskan. Anda
+            boleh juga <Link href="/ms/apply">jadualkan sesi perbincangan program</Link> sebelum membuat keputusan.
           </p>
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan jadual, yuran dan laluan pembiayaan di Malaysia." sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang diterajui majikan. Perbualan ini tanpa sebarang ikatan untuk mendaftar atau membayar." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan jadual, yuran dan laluan pembiayaan di Malaysia." sub="Pilih panggilan telefon, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang diterajui majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." />
     </>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "unit": "curriculum",
+  "language": "ms",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-ms.ts",
+      "line": "90-92 (CORE_PAGES_MS.curriculum.sections)",
+      "problem": "Stage headings were 'Peringkat 1: Mencipta nilai' / 'Peringkat 2: Menyampaikan nilai' / 'Peringkat 3: Membentuk pelan tindakan' — combined the plain stage label with a descriptive suffix, instead of the required plain 'Peringkat 1 / 2 / 3' labels (spec section 10 naming decision; EN STAGES array uses bare 'Stage 1' etc. as the lvl field, with approach/outcome kept separate).",
+      "fix": "Split the label from the description: headings changed to plain 'Peringkat 1', 'Peringkat 2', 'Peringkat 3'; the former suffix ('Mencipta nilai' etc.) moved to the start of the body sentence."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "COMPARISON_MS (src/lib/content-ms.ts line 50) still contains the banned calque 'dalam bentuk bertulis' ('...disahkan secara individu dalam bentuk bertulis'). This constant is out of this unit's edit scope (it renders on /mba-for-working-professionals via ProgrammeComparison, not on curriculum/how-it-works/faculty/mba-for-sme-owners) — flagging for whichever reviewer owns that constant/page to fix to 'secara bertulis'.",
+      "MODULES_MS and the curriculum sections list already read as a native BM curriculum page; no further changes needed on this pass."
+  ]
+}

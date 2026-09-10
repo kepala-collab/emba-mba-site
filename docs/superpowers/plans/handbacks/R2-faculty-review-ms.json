@@ -1,0 +1,11 @@
+{
+  "unit": "faculty",
+  "language": "ms",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "CORE_PAGES_MS.faculty names 'kepimpinan berkhidmat (servant leadership)' verbatim. Spec section 6 says the literal term is named once site-wide (on /how-it-works or in the guide's introduction), but the EN source (src/app/(en)/faculty/page.tsx line 49) also names it verbatim on /faculty, so this is EN's own duplication, not an MS-introduced error. Faithful to the EN source of meaning as instructed; flagging for the EN reviewer/owner to decide whether one of the two site-wide instances should drop to posture-only language, since the fix would need to happen in the EN file first.",
+    "content-ms.ts is a shared file being edited concurrently by other unit reviewers; re-read immediately before this pass to avoid clobbering their work. No further changes made to CORE_PAGES_MS.faculty — it already reads as native BM (correct meN- prefixes, no banned calques, 'anda' used only outside fact sentences, headline 8 words)."
+  ]
+}

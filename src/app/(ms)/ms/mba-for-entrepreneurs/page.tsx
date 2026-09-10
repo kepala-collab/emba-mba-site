@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS } from "@/lib/content-ms";
 import { CTA_LABELS, FACTS, THINKING_EDGE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
@@ -60,19 +61,21 @@ export default function MbaForEntrepreneursPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Kuasai setiap keputusan besar sambil anda <span className="acc">membina usaha.</span>
+              Daripada naluri <span className="acc">kepada pelan yang boleh diikuti rakan pengasas.</span>
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Setiap hari, seorang pengasas berdepan keputusan yang saling berkait — tentang pelanggan,
-            produk, harga, modal, keupayaan dan masa. Selama enam bulan, Future Ready Executive MBA
-            membawa rangka kerja prinsip asas, pemikiran sistem dan Job-To-Be-Done terus kepada
-            keputusan sebegini. Projek amalinya pula bermula daripada usaha atau organisasi
-            yang sedang anda bina sendiri.
+            Pengasas memikul keputusan tentang pelanggan, produk, harga, modal, keupayaan dan masa mengikut naluri.
+            Ia dipertahankan dalam perbualan, bukan ditunjukkan sebab munasabahnya. Sepanjang {FACTS.durationMonths} bulan, projek amali
+            perniagaan mengambil satu daripada keputusan itu daripada usaha anda sendiri. Rangka kerja prinsip asas,
+            pemikiran sistem dan Job-To-Be-Done membawanya kepada pelan bertulis: keputusan, tindakan, pemilik dan
+            ukuran, disemak oleh fasilitator. Pelan itu boleh anda kongsikan dengan rakan pengasas, lembaga atau
+            pelabur. Rangka kerja itu kekal bersama anda selepas itu.
           </p>
           <p className="mono sec-k mt-s">
             {FACTS.durationMonths} bulan · {FACTS.liveSessions} hujung minggu program berjadual · dianugerahkan dan disokong oleh CMI
           </p>
+          <p className="fine mt-s">{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}</p>
           <p className="sec-sub mt-s">
             Lihat keseluruhan{" "}
             <Link href="/ms/executive-mba" className="acc">program Executive MBA</Link>, atau fahami{" "}
@@ -132,7 +135,7 @@ export default function MbaForEntrepreneursPage() {
           <p className="fine mt-s">
             Tiada pembiayaan atau pertumbuhan yang dijanjikan — rangka kerja dan pelan itu milik anda
             sepenuhnya; hasilnya bergantung pada cara anda melaksanakannya. Lihat bagaimana{" "}
-            <Link href="/ms/how-it-works" className="acc">kaedah ini membina langkah demi langkah ke arah projek puncak</Link>.
+            <Link href="/ms/how-it-works" className="acc">kaedah ini membina langkah demi langkah ke arah projek amali perniagaan</Link>.
           </p>
         </div>
       </section>
@@ -149,8 +152,8 @@ export default function MbaForEntrepreneursPage() {
           </Reveal>
           <p className="sec-sub">
             Program ini berjalan menerusi {FACTS.liveSessions} sesi hujung minggu berjadual, bimbingan dan projek
-            aplikasi. Chartered Manager pula ialah laluan pilihan CMI yang berasingan, dengan syarat
-            kelayakan, penilaian dan yuran tersendiri.
+            amali perniagaan. Chartered Manager pula ialah laluan CMI yang berasingan dan tidak wajib,
+            ditentukan oleh CMI, dengan syarat kelayakan, penilaian dan yuran tersendiri.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {format.map((x) => (
@@ -169,10 +172,10 @@ export default function MbaForEntrepreneursPage() {
       <section className="section">
         <div className="wrap center">
           <Reveal>
-            <h2 className="sec-h">Uji program ini pada keputusan yang anda hadapi sekarang.</h2>
+            <h2 className="sec-h">Bincangkan keputusan yang sedang anda timbang untuk usaha anda.</h2>
           </Reveal>
           <p className="sec-sub">
-            Program ini berjalan selama enam bulan. Yuran standard ialah {FACTS.priceStd}. Biasiswa {FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia tidak automatik, dan bukan kod diskaun.
+            Program ini berjalan selama {FACTS.durationMonths} bulan. Yuran standard ialah {FACTS.priceStd}. Biasiswa {FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis; sebarang anugerah dan yuran peserta berkenaan disahkan secara individu, secara bertulis. Biasiswa tidak automatik.
           </p>
           <p className="mt-s">
             <Link href="/ms/apply" className="btn btn-primary">{CTA_LABELS.ms.guide}</Link>
@@ -180,7 +183,7 @@ export default function MbaForEntrepreneursPage() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan keputusan yang perlu anda susun rapi dalam usaha anda." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Dapatkan fakta untuk keputusan yang sedang anda timbang." />
     </>
   );
 }

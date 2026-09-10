@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CTA_LABELS, FACTS, THINKING_EDGE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, THINKING_EDGE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/mba-for-entrepreneurs", {
@@ -60,18 +60,21 @@ export default function MbaForEntrepreneursPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Frameworks for decisions made while <span className="acc">building the venture.</span>
+              From instinct <span className="acc">to a shareable plan.</span>
             </h1>
           </Reveal>
           <p className="sec-sub">
-            Founders make linked decisions about customers, product, pricing, capital, capability and timing.
-            The Future Ready Executive MBA applies first-principles, systems and Job-To-Be-Done frameworks
-            to those decisions across {FACTS.durationLong}. The applied project uses the venture or organisation
-            the participant is building.
+            Founders carry linked decisions about customers, product, pricing, capital, capability and timing
+            by instinct, defending them in conversation rather than showing the reasoning. Across {FACTS.durationLong},
+            the applied business project takes one of those decisions from your own venture through
+            first-principles, systems and Job-To-Be-Done frameworks to a written plan with decisions, actions,
+            owners and measures, reviewed by faculty — one you can walk co-founders, boards or investors through.
+            The frameworks stay with you afterward.
           </p>
           <p className="mono sec-k mt-s">
-            Six months · three scheduled programme weekends · awarded and endorsed by CMI
+            {FACTS.durationLong} · {FACTS.liveSessions} scheduled programme weekends · awarded and endorsed by CMI
           </p>
+          <p className="fine mt-s">{CERTIFICATE_POSITIONING.professionalRelevance}</p>
           <p className="sec-sub mt-s">
             See the full{" "}
             <Link href="/executive-mba" className="acc">Executive MBA programme</Link>, or how the{" "}
@@ -119,7 +122,7 @@ export default function MbaForEntrepreneursPage() {
             <span className="mono sec-k">Applied to your venture</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">The applied project addresses your own business challenge.</h2>
+            <h2 className="sec-h">The applied business project addresses your own business challenge.</h2>
           </Reveal>
           <p className="sec-sub">
             There is no traditional thesis or examination. Participants define a live challenge,
@@ -130,7 +133,7 @@ export default function MbaForEntrepreneursPage() {
           <p className="fine mt-s">
             No funding or growth is promised — the frameworks and the plan are yours; the outcomes
             depend on how you execute. See how the{" "}
-            <Link href="/how-it-works" className="acc">method builds toward the capstone</Link>.
+            <Link href="/how-it-works" className="acc">method builds toward the applied business project</Link>.
           </p>
         </div>
       </section>
@@ -146,7 +149,7 @@ export default function MbaForEntrepreneursPage() {
             <h2 className="sec-h">Continue operating while completing the programme.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme uses three scheduled weekend sessions, coaching and an applied project.
+            The programme uses {FACTS.liveSessions} scheduled weekend sessions, coaching and an applied business project.
             Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
@@ -166,10 +169,10 @@ export default function MbaForEntrepreneursPage() {
       <section className="section">
         <div className="wrap center">
           <Reveal>
-            <h2 className="sec-h">Review the programme against your venture&rsquo;s current decisions.</h2>
+            <h2 className="sec-h">Talk through the decision your venture is weighing.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme runs for {FACTS.durationLong}. The standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship, subject to limited availability, a selective assessment and written approval.
+            The programme runs for {FACTS.durationLong}. The standard fee is {FACTS.priceStd}. {FACTS.scholarshipEligibility} The scholarship is never automatic.
           </p>
           <p className="mt-s">
             <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide}</Link>
@@ -177,7 +180,7 @@ export default function MbaForEntrepreneursPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Discuss the decisions your venture needs to structure." />
+      <CtaSection programme="Executive MBA" heading="Get the facts for the decision your venture is carrying." />
     </>
   );
 }

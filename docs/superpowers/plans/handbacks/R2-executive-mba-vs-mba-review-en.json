@@ -1,0 +1,17 @@
+{
+  "unit": "executive-mba-vs-mba",
+  "language": "en",
+  "file_reviewed": "src/app/(en)/executive-mba-vs-mba/page.tsx",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(en)/executive-mba-vs-mba/page.tsx",
+      "line": 17,
+      "problem": "PAGE_FAQS filtered on the question string \"How is the programme structured?\", which does not exist in the FAQS constant in src/lib/content.ts (the writer's own hand-back flagged this and left it for the reviewer). Result: PAGE_FAQS silently drops to 2 of the intended 3 entries, so the FAQPage JSON-LD (mainEntity) and the visible FAQ list on the page both under-render — a governance risk (checklist item 3: facts/content must come from the canonical constant list, not a broken selection) and a real content gap on a trust/recognition page whose job is answering the reader's questions before they decide.",
+      "fix": "Replaced the non-existent filter string with \"Can I carry it alongside the job?\", which exists verbatim in FACTS-derived FAQS and is thematically appropriate for a page comparing two study formats. PAGE_FAQS now renders all 3 intended Q&As and the JSON-LD mainEntity carries 3 entries."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [],
+  "notes": "H1 'Executive MBA or academic MBA: choose by the job.' is the trust/recognition archetype (not audience-cluster from-to), 9 words, within cap; the transcreation judge's from-to phrase cap does not apply here. COMPARISON_SCOPE sits adjacent to the table (rule 4). CERTIFICATE_POSITIONING.professionalRelevance colocates with the CMI/certificate mention in both the hero and the fee section. No verdict-on-reader language in the 'who should choose which' cards ('built for a different job' framing throughout, no disparagement of the academic MBA). Audit script and npm run typecheck both pass after the fix."
+}

@@ -1,0 +1,18 @@
+{
+  "unit": "how-it-works",
+  "language": "en",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(en)/how-it-works/page.tsx",
+      "line": 62,
+      "problem": "H1 'Revenue is slowing. Costs are rising. Your team is waiting for a decision. Which problem do you solve first?' is 19 words, well over the spec's 9-word cap (section 8, governance checklist item 1). The writer's hand-back flagged this as intentional because it follows the spec's own verbatim example for this page (section 8). But section 8's per-page examples and the governance checklist's numeric cap are in tension, and the checklist is the operative rule a reviewer runs (section 12, item 1) — a spec example is not exempt from the checklist it sits above. Checked whether a shorter H1 keeps the meaning: the dropped clause ('Your team is waiting for a decision') is already carried by the lede ('while the people who must act on it wait'), so nothing is lost by cutting it from the H1.",
+      "fix": "Shortened H1 to 'Revenue slows, costs rise. Which do you solve first?' (9 words). Keeps both pressures, the question form, and 'solve first' near-verbatim from the original; the team-waiting clause remains in the lede immediately below."
+    }
+  ],
+  "notes": "Everything else on the page checked clean: narrative-spine SPINE array matches the from-carrying-to-leading structure without naming outcomes; CERTIFICATE_POSITIONING.distinction and .professionalRelevance render together in the same block (line ~201) wherever the certificate/CMI/assessment is named; assessment is stated presence-first ('Assessment is the written action plan reviewed by faculty; there is no traditional thesis or examination.'); servant leadership named exactly once on the page beside FLOW, worded 'measured by the people it serves' (not 'most'), matching the owner's banned-word constraint; no retyped facts (FACTS.durationLong/trainingDays/liveSessions tokens used throughout); no ladder/rung/climb language; CtaSection heading names the reader's own decision.",
+  "score_after": 9,
+  "owner_questions": [
+    "The spec's section 8 worked example gives this exact page a 19-word H1 while section 12's governance checklist caps every H1 at 9 words. I resolved the conflict in favour of the checklist and shortened the H1 (see fix above) since the meaning survives the cut. Owner should confirm this is the intended precedence, since it affects how future page-archetype examples in section 8 are read against the checklist."
+  ]
+}

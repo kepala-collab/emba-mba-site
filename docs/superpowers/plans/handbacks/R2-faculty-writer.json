@@ -1,0 +1,42 @@
+{
+  "unit": "faculty",
+  "files_changed": [
+    "src/app/(en)/faculty/page.tsx",
+    "src/app/(ms)/ms/faculty/page.tsx",
+    "src/app/(zh)/zh/faculty/page.tsx",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "People who review your reasoning, not only your result.",
+      "lede": "The faculty and one-to-one coaches bring experience across corporate leadership, consulting, manufacturing, finance, talent and transformation. They review the reasoning behind your plan, not only the plan itself. Real leadership is servant leadership: it is measured by the people it serves. That includes the team that will act on what you write."
+    },
+    "ms": {
+      "h1": "Mereka menyemak cara anda berfikir, bukan hasil semata-mata.",
+      "lede": "Fasilitator dan jurulatih program membawa pengalaman merentasi kepimpinan korporat, perundingan, pembuatan, kewangan, bakat dan transformasi. Mereka menyemak sebab di sebalik pelan anda, bukan sekadar pelan itu sendiri. Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya. Ini termasuk pasukan yang akan bertindak atas apa yang anda tulis."
+    },
+    "zh": {
+      "h1": "看重您的思路，不只看结果",
+      "lede": "课程导师来自企业领导、顾问、制造、财务、人才与转型领域，经验丰富。他们看重您的思路，不只看结果。真正的领导是仆人式领导（servant leadership）：以所服务的人来衡量，其中包括日后落实计划的团队。"
+    }
+  },
+  "constants_used": ["FACULTY", "SITE", "SITE.provider", "DELIVERY_CONTROL.faculty", "PROVIDER_ID", "CTA_LABELS.ms.guide", "CTA_LABELS.zh.guide"],
+  "audit_and_typecheck": {
+    "npm_run_typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "notes": "content-clarity-audit.mjs reports 29 pre-existing locale-register warnings (not blocking in Release 1); none originate from the faculty unit's files or blocks."
+  },
+  "self_checks": {
+    "ms_register_section7": "Passed for the faculty block: no kamu/awak/korang/-lah/nak/tak, anda used correctly, H1 is 8 words (<=9), no exclamation marks, servant-leadership owner pattern rendered verbatim per spec section 13 ('Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya.'), no banned calques (laluan pilihan, perbualan program, pengurus bekerja, projek aplikasi) present in the faculty block.",
+    "zh_register_section7": "Passed for the faculty block: fixed pre-existing banned term 班次 (transport-schedule cohort word) in both the heading ('班次导师' -> '该届导师安排') and body, replaced with 该届 per the glossary; no other banned mainland lexis (参与者, 渠道, 创始人, 首席执行官, 营销, 免费获取) present; full-width punctuation and brackets used; owner-pattern servant-leadership line rendered verbatim per spec section 13/owner decisions ('真正的领导是仆人式领导（servant leadership）：以所服务的人来衡量。')."
+  },
+  "notes_for_reviewer": [
+    "The Chinese H1 '看重您的思路，不只看结果' contains 您, which conflicts with the general zh headline limit in spec section 13 ('no 您 or 你 in any headline'). I followed the more specific, explicitly named Faculty example given in the same section 13 ('Faculty: ... / \"看重您的思路，不只看结果\"'), treating the named per-page example as authoritative over the general limit line for this one page. Flagging for reviewer confirmation.",
+    "Added ItemList/Person JSON-LD to the Malay and Chinese faculty pages (they previously had none while English did), using the same FACULTY constant, names and roles as the English page's JSON-LD, and the same PROVIDER_ID affiliation pattern (affiliation, not employment).",
+    "Fixed a pre-existing banned-term issue in content-zh.ts faculty block only (班次 -> 该届); did not touch the other ~15 occurrences of 班次 elsewhere in the codebase (out of unit scope).",
+    "Did not edit ChineseCorePage.tsx or any other shared component; JSON-LD for the zh page is rendered directly in src/app/(zh)/zh/faculty/page.tsx alongside <ChineseCorePage>.",
+    "Left the community/event-photo section and its figcaption on the English page unchanged (governance-controlled attributed content) and left the closing 'faculty are drawn from...' paragraph unchanged (already token-based).",
+    "Did not run npm run build or e2e per instructions; did not commit."
+  ]
+}

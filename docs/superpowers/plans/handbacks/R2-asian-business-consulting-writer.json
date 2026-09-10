@@ -1,0 +1,60 @@
+{
+  "unit": "asian-business-consulting",
+  "archetype": "Trust and recognition page (spec section 8)",
+  "files_changed": [
+    "src/app/(en)/asian-business-consulting/page.tsx",
+    "src/app/(ms)/ms/asian-business-consulting/page.tsx",
+    "src/app/(zh)/zh/asian-business-consulting/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "The firm that designed the Future Ready Executive MBA.",
+      "lede": "Asian Business Consulting (ABC), a Malaysian management consulting, corporate training and executive learning firm registered in 2020, has taken {PROGRAMME_PROOF.graduates} graduates through the programme across {PROGRAMME_PROOF.cohorts} cohorts. {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance}"
+    },
+    "ms": {
+      "h1": "Organisasi yang mereka bentuk Future Ready Executive MBA.",
+      "lede": "Asian Business Consulting (ABC), organisasi perundingan pengurusan, latihan korporat dan pembelajaran eksekutif yang didaftarkan di Malaysia pada 2020, telah membawa {PROGRAMME_PROOF.graduates} peserta menerima sijil program merentasi {PROGRAMME_PROOF.cohorts} kohort. {PROGRAMME_POSITIONING_MS} Ia program pembangunan profesional bukan akademik selama enam bulan; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}"
+    },
+    "zh": {
+      "h1": "打造 Future Ready Executive MBA 的机构。",
+      "lede": "Asian Business Consulting（ABC）2020 年在马来西亚注册，专注管理咨询、企业培训与高管学习，已带领 {PROGRAMME_PROOF.graduates} 位学员完成课程，横跨 {PROGRAMME_PROOF.cohorts} 个班次。{PROGRAMME_POSITIONING_ZH} 课程为期 {FACTS.durationMonths} 个月，属于非学术专业发展课程，并非 MQA 认证的学术学位或受监管资格。{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}"
+    }
+  },
+  "constants_used": [
+    "ABC_PROFILE.programmePositioning",
+    "CERTIFICATE_POSITIONING.professionalRelevance",
+    "CTA_LABELS.company",
+    "PROGRAMME_PROOF.{graduates,cohorts,englishCohorts,mandarinCohorts,graduationAttendance,inauguralGraduation}",
+    "OPERATOR.name",
+    "SITE.url",
+    "FACTS.durationMonths (zh only)",
+    "PROGRAMME_POSITIONING_MS (content.ts, imported into ms page)",
+    "PROGRAMME_POSITIONING_ZH (content.ts, imported into zh page)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (content-ms.ts)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (content-zh.ts)"
+  ],
+  "governance_fixes": [
+    "Removed banned 'the firm behind' framing from H1, metadata title and H2 ('The bodies behind the delivery' -> 'Who recognises and funds the programme.'); MS/ZH equivalents reworded to lead with what ABC designed, not provenance.",
+    "Removed the clarity-standard breach 'over almost three years of development with CMI' (EN) and its MS/ZH mirrors ('hampir tiga tahun pembangunan bersama CMI (UK)', '历经近三年，与 CMI（UK）共同打磨出'), which implied co-development/partnership with CMI.",
+    "Every block carrying 'awarded and endorsed by CMI' / CMI recognition (hero lede and the Recognition & funding CMI paragraph, all three languages) now also carries the not-an-MQA-degree boundary and CERTIFICATE_POSITIONING.professionalRelevance (or its ms/zh mirror) in the same block.",
+    "Graduation-film section: English keeps 'graduation'/'graduates' (unchanged, matches site-wide constant naming); Malay and Chinese now use certificate-presentation wording throughout ('majlis penyampaian sijil' / 'penerima sijil' instead of 'majlis graduasi' / 'graduan'; '证书颁发典礼' / '学员获颁证书' instead of '毕业典礼' / '毕业生') so neither language uses a degree-graduation word.",
+    "Partnership seal: removed 'strategic partnership' from the EN alt text and caption (now 'Asian Business Consulting and Right Dots Resources' / 'Asian Business Consulting × Right Dots Resources') to avoid implying endorsement or a formal partnership beyond the documented ABC-Right Dots Resources relationship; MS/ZH captions were already neutral ('Kerjasama' / '合作') and left as-is.",
+    "Faculty/leader bios left verbatim and attributed as staff roles (not client/associate endorsements) in all three languages; no page content here presents client or associate names as endorsements.",
+    "CtaSection heading/sub reworded to the trust-archetype pattern ({CTA_LABELS.company} for employers; 'See exactly what is awarded, what is separate and who decides.' and ms/zh equivalents), replacing the generic 'Talk to the programme team.' / '与课程团队聊聊。' closers.",
+    "Fixed a Chinese register violation introduced during drafting: no sentence-initial 这 (both new MQA-boundary sentences reworded to start with 课程/本课程 instead of 这是)."
+  ],
+  "self_checks": {
+    "ms_register": "No 'laluan pilihan', 'perbualan program', 'pengurus bekerja' calque, or 'projek aplikasi' introduced; 'anda' register not applicable (no second-person address on this page); RM/number formatting not applicable (no fees on this page); DBP spelling not applicable; headline 8 words (<=9); two short sentences used where possible.",
+    "zh_register": "No 背书, 班次 used only in pre-existing pattern (flagged non-blocking site-wide, not introduced by this unit alone), 参与者, 渠道, 创始人, 首席执行官, 营销 or 免费获取 introduced; 认可 used for CMI, no 认证 misuse; full-width punctuation and pangu spacing follow existing file conventions; fixed sentence-initial 这 (see governance_fixes); headline unchanged and within limits."
+  },
+  "typecheck_exit_code": 0,
+  "content_clarity_audit_exit_code": 0,
+  "notes_for_reviewer": [
+    "The archetype example H1 in spec section 8 is literally 'The firm that designed the programme.' — used 'The firm that designed the Future Ready Executive MBA.' instead to keep the programme name concrete on a page whose whole job is naming the provider; flag if the shorter form is preferred.",
+    "PROGRAMME_POSITIONING_MS/ZH are re-exported from src/lib/content.ts (not content-ms.ts/content-zh.ts) even though used on the ms/zh pages — imported directly from '@/lib/content' to match how content-ms.ts/content-zh.ts themselves import them.",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS/ZH mirror constants already existed in content-ms.ts/content-zh.ts before this unit started (added by another writer per owner decision #5); reused them rather than retyping the sentence.",
+    "Did not touch CtaSection.tsx, JsonLd.tsx, BreadcrumbJsonLd.tsx, Reveal.tsx or YouTubeFilm.tsx — only the text props/data passed into them from the three page files.",
+    "Did not run npm run build or e2e, and did not commit, per the unit brief.",
+    "e2e/site-smoke.spec.ts and fact-parity.test.ts reference this unit's routes/file paths but do not lock any exact copy string, so no test edits were needed."
+  ]
+}

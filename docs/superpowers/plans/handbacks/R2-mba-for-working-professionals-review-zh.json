@@ -1,0 +1,44 @@
+{
+  "unit": "mba-for-working-professionals",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/mba-for-working-professionals/page.tsx"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(zh)/zh/mba-for-working-professionals/page.tsx",
+      "line": "19, 46, 193",
+      "problem": "'{FACTS.liveSessions} 个指定周末' used generically for the session structure (metadata description, FIT card heading/body, intakes eyebrow) even though only one of the five published cohorts (Cohort 17) actually runs Sat–Sun; the other cohorts run Fri–Sat. This is the zh-register audit's top high-confidence finding for hero/FAQ/campaign model sentences: 周末 misstates the Fri–Sat cohorts and must be reserved for genuinely Sat–Sun cohorts.",
+      "fix": "replaced with session-count phrasing that does not claim a weekend: '{FACTS.liveSessions} 次指定研习课' / '{FACTS.liveSessions} 次导师带领的指定研习课' / 'p: 全程分 {FACTS.liveSessions} 次研习课进行，每次两天。' The existing correct per-cohort day breakdown further down the page (Cohort 17 周六至周日 vs the rest 周五至周六) is unchanged."
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-working-professionals/page.tsx",
+      "line": 74,
+      "problem": "H1 span ended with a trailing full stop, banned for headlines.",
+      "fix": "removed the trailing 。 from '职位不变，决策方式改变'"
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-working-professionals/page.tsx",
+      "line": "87, 180",
+      "problem": "Sentence-initial 这 standing for an abstract subject immediately after {PROGRAMME_POSITIONING_ZH} in two places ('...这是一门为期 X 个月的非学术性专业发展课程...' / '...这是一门非学术性专业发展课程...').",
+      "fix": "rewrote to '课程为期 X 个月，属非学术性专业发展课程...' and '本课程属非学术性专业发展课程...'"
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-working-professionals/page.tsx",
+      "line": 236,
+      "problem": "Scholarship sentence used '奖学金并非自动获得' instead of the site's controlled 'never automatic' rendering used everywhere else (并非自动授予); 获得 also reads closer to the banned award-verb calque family the audit corrects (提供/获得 for an award).",
+      "fix": "changed to '奖学金并非自动授予。'"
+    }
+  ],
+  "checked_and_passed": [
+    "no 班次 anywhere in the file",
+    "no cleft '...的是...' sentences",
+    "H1 10 characters (two beats), within the 14-character cap; meaning matches the EN source (keep the role, change how you decide)",
+    "certificate/CMI mentions in the hero and comparison fine print carry CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH and the not-an-MQA-degree boundary in the same block",
+    "HRD_CORP_CLAIM_ZH and scholarship sentence in the audience fine print keep 名额有限 bound to 须经评估/书面批准/个别书面确认",
+    "fact tokens (FACTS.*, PROGRAMME_POSITIONING_ZH, COMPARISON_ZH, PROGRAMME_AUDIENCE_ZH) interpolated, not retyped"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "No MS/ZH mirror constant exists yet for a combined ABC_PROFILE.programmePositioning-equivalent boundary sentence (flagged already by the writer) — worth adding at source per spec section 11's 'proposed constants' note so future pages do not hand-transcribe it."
+  ]
+}

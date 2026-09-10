@@ -1,0 +1,22 @@
+{
+  "unit": "mba-for-entrepreneurs",
+  "language": "ms",
+  "reviewer": "independent R2 unit reviewer (fresh context)",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(ms)/ms/mba-for-entrepreneurs/page.tsx",
+      "line": 69,
+      "problem": "{FACTS.durationLong} interpolated into Malay body copy. FACTS.durationLong is the English-only string \"6 months\" (no Malay mirror in content.ts), so the hero lede rendered '...Sepanjang 6 months, projek amali perniagaan...' — untranslated English inside Malay prose.",
+      "fix_applied": "Replaced with {FACTS.durationMonths} bulan (renders '6 bulan'), matching the correct convention used elsewhere on the page (line 76 already used FACTS.durationMonths + ' bulan' correctly)."
+    },
+    {
+      "file": "src/app/(ms)/ms/mba-for-entrepreneurs/page.tsx",
+      "line": 178,
+      "problem": "Same {FACTS.durationLong} English-leak bug in the CTA-nudge fee paragraph ('Program ini berjalan selama 6 months.').",
+      "fix_applied": "Replaced with {FACTS.durationMonths} bulan."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

@@ -1,0 +1,9 @@
+{
+  "unit": "curriculum",
+  "language": "en",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "notes": "src/app/(en)/curriculum/page.tsx matches the spec's own /curriculum archetype example (H1 tokenised via FACTS.moduleCount, 9 words), 'capstone' correctly renamed to 'The applied business project', assessment stated presence-first, Stage 1/2/3 labels used, no retyped facts, no card titled with a price/speed/credential cue, no CMI/certificate mention so no professionalRelevance pairing required on this page. Facts strip uses FACTS.durationLong/moduleCount tokens only.",
+  "score_after": 9,
+  "owner_questions": []
+}

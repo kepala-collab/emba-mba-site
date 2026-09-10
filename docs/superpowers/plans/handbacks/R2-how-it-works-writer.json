@@ -1,0 +1,51 @@
+{
+  "unit": "how-it-works",
+  "files_changed": [
+    "src/app/(en)/how-it-works/page.tsx",
+    "src/lib/content-ms.ts (CORE_PAGES_MS.method block only)",
+    "src/lib/content-zh.ts (CORE_PAGES_ZH.method block only)"
+  ],
+  "note": "src/app/(ms)/ms/how-it-works/page.tsx and src/app/(zh)/zh/how-it-works/page.tsx render CORE_PAGES_MS.method / CORE_PAGES_ZH.method and were not touched directly (components not edited).",
+  "h1_and_lede": {
+    "en": {
+      "h1": "Revenue is slowing. Costs are rising. Your team is waiting for a decision. Which problem do you solve first?",
+      "lede": "Instinct and experience carried you here. Right now the reasoning lives in your own head, defended in meetings rather than shown, while the people who must act on it wait — and the role does not pause so you can step out and learn how to lead it."
+    },
+    "ms": {
+      "h1": "Hasil jualan turun. Kos meningkat. Pasukan anda menanti keputusan.",
+      "lede": "Naluri dan pengalaman membawa anda ke sini. Keputusan itu kekal di kepala anda, dipertahankan dalam mesyuarat, sementara pasukan yang perlu bertindak menanti — dan jawatan anda tidak boleh berhenti supaya anda belajar memimpinnya."
+    },
+    "zh": {
+      "h1": "收入放缓，成本上升：您的团队在等一个决定",
+      "lede": "直觉与经验把您带到今天。这个决策目前只留在您脑中，在会议室里被反复解释，而必须据此行动的团队仍在等待——职务也不会暂停，让您抽身去学习如何带领它。"
+    }
+  },
+  "narrative_spine_section_7": "Added a dedicated 'What changes across the six months' section (EN) / equivalent sections array entries (MS/ZH) that honour the from-state, then walk Session 1 -> between sessions -> Session 2 -> between sessions -> Session 3 -> the written action plan submitted for faculty review -> what stays with the participant (frameworks and working templates). This is the target of the hero's secondary CTA 'See what changes across the six months' per spec section 7 and section 8 archetype.",
+  "constants_used": [
+    "FACTS.durationLong / FACTS.durationMonths",
+    "FACTS.trainingDays",
+    "FACTS.liveSessions",
+    "CERTIFICATE_POSITIONING.distinction",
+    "CERTIFICATE_POSITIONING.professionalRelevance",
+    "FAQS (catch-up rule, 'What if I miss a session?', referenced verbatim via FAQS.find in EN; MS/ZH render a faithful translation of the same rule since no MS/ZH mirror constant exists yet)",
+    "INCLUSIONS_CMI_CERTIFICATE_MS / CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (existing content-ms.ts mirrors)",
+    "INCLUSIONS_CMI_CERTIFICATE_ZH / CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (existing content-zh.ts mirrors)"
+  ],
+  "servant_leadership": "Named once in each language, beside FLOW/Right Questions, per spec section 6: EN 'real leadership is servant leadership: it is measured by the people it serves'; MS 'kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya'; ZH '真正的领导是仆人式领导 (servant leadership)：以所服务的人来衡量'.",
+  "metadata": "EN title/description rewritten to match the new narrative-spine framing; canonical/hreflang untouched (withSeo unchanged). MS/ZH page.tsx files were not touched, so their existing metadata (in the page files, not content-ms/zh.ts) is unchanged — flagged below for the reviewer.",
+  "audit_and_typecheck": {
+    "typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "audit_note": "178 public content files passed; 29 pre-existing locale warnings reported, none in my files (how-it-works EN/MS/ZH pages or the method blocks in content-ms.ts/content-zh.ts)."
+  },
+  "self_check_results": {
+    "ms_register_checklist_section_7": "Ran regex sweep over the CORE_PAGES_MS.method block for banned MS patterns (kamu/awak/korang, -lah, nak/tak/macam, perbualan program, pengurus bekerja, projek aplikasi, laluan lanjutan, program awam, dalam bentuk bertulis, disokong oleh CMI, atas talian, emel, kepemimpinan, undefined-norm qualifiers) — zero hits.",
+    "zh_register_checklist_section_7": "Ran regex sweep over the CORE_PAGES_ZH.method block for banned ZH patterns (约/大约/通常/一般/左右, urgency devices, prestige/guarantee words, banned lexis list including 班次/参与者/背书/身份, bare 你 outside gloss, sentence-initial 它/这) — zero hits. Full-width punctuation and pangu spacing around F.A.S.T. and (servant leadership) applied by hand."
+  },
+  "left_for_reviewer": [
+    "The MS and ZH how-it-works page.tsx files (metadata title/description) were not edited since the instruction was to touch only the content-ms.ts/content-zh.ts block their page renders; reviewer should confirm whether those metadata strings also need updating to match the new method-block framing, or whether that's out of scope for this unit's component-touch restriction.",
+    "No MS/ZH mirror constant exists yet for the 'What if I miss a session?' catch-up rule (FAQS in content.ts is EN-only); I wrote a faithful MS/ZH translation inline in the method sections rather than adding a new shared constant, to stay within the single-block edit restriction. Owner/governance may want this hoisted to a proper CONTROLLED_SENTENCES mirror per spec section 11 in a follow-up.",
+    "EN H1 exceeds the general 9-word cap but matches the owner's own verbatim example for /how-it-works in spec section 8 (\"E: ... /how-it-works ...\"), so it was kept as given.",
+    "MS/ZH H1s are original compositions honouring the same from-to structure (no locked owner example exists for this page in MS/ZH), within the 9-word / 14-character limits."
+  ]
+}

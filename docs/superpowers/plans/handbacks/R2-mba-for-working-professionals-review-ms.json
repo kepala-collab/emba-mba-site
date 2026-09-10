@@ -1,0 +1,28 @@
+{
+  "unit": "mba-for-working-professionals",
+  "language": "ms",
+  "reviewer": "independent R2 unit reviewer (fresh context)",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(ms)/ms/mba-for-working-professionals/page.tsx",
+      "line": 79,
+      "problem": "{FACTS.durationLong} interpolated into Malay body copy. FACTS.durationLong in content.ts is the English string \"6 months\" (there is no Malay mirror), so the rendered sentence read '...Sepanjang 6 months, anda bawa satu keputusan...' — English text leaking into the Malay page, a fact-fidelity fail (the English wording, not just the meaning, must never appear untranslated in running Malay prose).",
+      "fix_applied": "Replaced with {FACTS.durationMonths} bulan, which renders '6 bulan', matching the correct Malay convention used elsewhere on this and other Malay pages (FACTS.durationMonths + ' bulan')."
+    },
+    {
+      "file": "src/app/(ms)/ms/mba-for-working-professionals/page.tsx",
+      "line": 87,
+      "problem": "Same {FACTS.durationLong} English-leak bug in the mono fact line ('6 months · 3 sesi berjadual · dianugerahkan dan disokong oleh CMI').",
+      "fix_applied": "Replaced with {FACTS.durationMonths} bulan."
+    },
+    {
+      "file": "src/app/(ms)/ms/mba-for-working-professionals/page.tsx",
+      "line": 243,
+      "problem": "Banned calque 'dalam bentuk bertulis' (per dispatch watch list and ms-register.md Don't 24 / audit 6.5), flagged by content-clarity-audit.mjs --strict-locales as 'Malay retired preferred-route phrasing'-adjacent scholarship boundary text.",
+      "fix_applied": "Replaced with 'secara bertulis', matching the site-wide pattern (content-ms.ts FEES.malaysia.eligibility wording, other Malay pages)."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

@@ -1,0 +1,11 @@
+{
+  "unit": "executive-mba-malaysia",
+  "language": "en",
+  "file_reviewed": "src/app/(en)/executive-mba-malaysia/page.tsx",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "fixes_applied": [],
+  "notes": "Writer's hand-back claims verified against the file: H1 'From your own live issue to a faculty-reviewed plan.' is a compliant from-to headline (one short noun phrase per side: 'your own live issue' / 'a faculty-reviewed plan'), 9 words. Every fact (duration, training days, sessions, fee, scholarship eligibility, HRD Corp claim) renders from FACTS/HRD_CORP_CLAIM/CERTIFICATE_POSITIONING tokens, none retyped. CERTIFICATE_POSITIONING.professionalRelevance colocates with ABC_PROFILE.programmePositioning in the first-viewport paragraph where CMI is named (hero), satisfying the boundary rule. Chartered Manager stated only as a separate optional CMI route, never as an automatic or next-stage award. No banned patterns (audit script) hit in this file. Fee/scholarship/HRD Corp sentence sits below the change, not as its reason. No good-things panel, no card titled with price/speed/credential. 'across {FACTS.liveSessions} scheduled sessions' wording used correctly, never 'in'.",
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

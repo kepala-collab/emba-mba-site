@@ -1,0 +1,22 @@
+{
+  "unit": "mba-for-sme-owners",
+  "language": "en",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(en)/mba-for-sme-owners/page.tsx",
+      "line": 11,
+      "problem": "Page metadata description ended '...across 6 months. Awarded and endorsed by CMI.' with no boundary/not-an-MQA-degree sentence in the same text field. Spec section 12 checklist item 4 requires the professionalRelevance/not-an-MQA sentence wherever 'awarded' or 'CMI' appears; section 12 item 8 extends the same rule to metadata and JSON-LD text fields. A meta description is read on its own (search snippet) with no other copy alongside it, so the unqualified claim is exactly the case the rule guards against.",
+      "fix": "Replaced 'Awarded and endorsed by CMI.' with the controlled-terminology phrase 'Professional programme recognised against CMI Professional Standards, not an MQA-accredited academic degree.' (SEO-CONTENT-GOVERNANCE.md controlled terminology table)."
+    },
+    {
+      "file": "src/app/(en)/mba-for-sme-owners/page.tsx",
+      "line": 20,
+      "problem": "Course JSON-LD 'description' field had the same unqualified 'Awarded and endorsed by CMI.' ending with no boundary, for the same reason as the metadata description.",
+      "fix": "Replaced with the same controlled-terminology phrase used in the metadata fix, keeping the JSON-LD structure (id, provider, url, hasCourseInstance) untouched."
+    }
+  ],
+  "notes": "On-page body copy (H1 'From decisions in your head to decisions in writing.', hero lede, 5S-ordered 'What changes' section, 'Why it fits owners' section) already pairs CERTIFICATE_POSITIONING.distinction with .professionalRelevance correctly wherever the certificate is named. Capability disclaimer 'It develops management capability; growth and return depend on the decisions and execution that follow.' present verbatim twice, matching spec section 8's approved example. No retyped facts — FACTS.durationLong/trainingDays/liveSessions/priceStd/scholarshipEligibility and HRD_CORP_CLAIM tokens used throughout. Assessment stated presence-first ('a written plan for faculty review... no traditional thesis or examination'). Operating-indicators section carries the explicit 'not a verdict on how you run the business' line per governance checklist item 12. Employer/company CTA present alongside the guide CTA per the audience-cluster archetype.",
+  "score_after": 9,
+  "owner_questions": []
+}
