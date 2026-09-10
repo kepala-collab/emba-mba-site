@@ -83,7 +83,7 @@ const T = {
     cohortUnknown: "I have not selected a cohort",
     continue: "Continue to contact details →",
     campaignContinue: "Continue for the programme guide →",
-    campaignKicker: "Free PDF programme guide",
+    campaignKicker: "PDF programme guide",
     campaignTitle: `Get the ${PROGRAMME_YEAR} programme guide.`,
     campaignIntro: "Review the programme before deciding whether to speak with us.",
     campaignBenefits: [
@@ -167,7 +167,7 @@ const T = {
     cohortUnknown: "尚未选择届别",
     continue: "继续填写联系方式 →",
     campaignContinue: "继续索取课程指南 →",
-    campaignKicker: "免费 PDF 课程指南",
+    campaignKicker: "PDF 课程指南",
     campaignTitle: `索取 ${PROGRAMME_YEAR} 年课程指南。`,
     campaignIntro: "先了解课程内容，再决定是否与课程团队沟通。",
     campaignBenefits: [
@@ -251,7 +251,7 @@ const T = {
     cohortUnknown: "Saya belum memilih kohort",
     continue: "Teruskan ke maklumat hubungan →",
     campaignContinue: "Teruskan untuk panduan program →",
-    campaignKicker: "Panduan program PDF percuma",
+    campaignKicker: "Panduan program PDF",
     campaignTitle: `Dapatkan panduan program ${PROGRAMME_YEAR}.`,
     campaignIntro: "Semak program terlebih dahulu sebelum memutuskan sama ada mahu berbincang dengan kami.",
     campaignBenefits: [

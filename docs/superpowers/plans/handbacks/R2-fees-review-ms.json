@@ -1,0 +1,26 @@
+{
+  "unit": "fees",
+  "language": "ms",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-ms.ts",
+      "line": 27,
+      "problem": "INCLUSIONS_CMI_CERTIFICATE_MS (rendered into CORE_PAGES_MS.fees.sections[0], 'Apa yang termasuk dalam yuran program') read 'Chartered Manager ialah laluan pilihan CMI yang berasingan...'. 'laluan pilihan' is a banned phrase (ms-register-audit-rules.json high-confidence item and checklist item 1/9): 'pilihan' after a noun reads as 'preferred/premier', the prestige framing governance forbids for Chartered Manager.",
+      "fix_applied": "Reworded to 'Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI, dengan kelayakan, penilaian dan yuran tersendiri.' (matches spec §13 owner phrasing and the wording already used correctly elsewhere in the programme block)."
+    },
+    {
+      "file": "src/lib/content-ms.ts",
+      "line": 99,
+      "problem": "CORE_PAGES_MS.fees.sections[0] body also directly stated 'Chartered Manager ialah laluan pilihan CMI yang berasingan, ditentukan oleh CMI, dan tidak termasuk dalam yuran program yang diterbitkan.'",
+      "fix_applied": "Reworded to 'Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI, dan tidak termasuk dalam yuran program yang diterbitkan.'"
+    }
+  ],
+  "notes": [
+    "src/app/(ms)/ms/fees/page.tsx has no page-local Malay strings beyond metadata; metadata title/description checked clean (no calques, correct RM10,000.00 format, no unqualified HRD Corp claim).",
+    "REFUND_TERMS_MS, HRD_CORP_CLAIM_MS, ENQUIRY_COMMITMENT_MS, CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS all check out: facts token-sourced, decision-makers named, no 'dalam bentuk bertulis', no exclamation marks, 'anda' absent from fee/HRD Corp fact sentences.",
+    "Did not touch COMPARISON_MS (still carries 'dalam bentuk bertulis' at content-ms.ts:50) or the intakes block ('akan sahkan kekosongan kohort' at content-ms.ts:110) — both belong to other units (mba-for-working-professionals, intakes) and are out of this unit's scope per the fees writer's own handback note."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

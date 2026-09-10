@@ -1,0 +1,35 @@
+{
+  "unit": "faq",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/faq/page.tsx", "src/lib/content-zh.ts (FAQS_ZH)"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 135,
+      "problem": "FAQ 3 answer said '成功完成课程的学员获得 ... CMI Certificate of Recognition' with the calqued verb 获得 instead of 获颁 and no Chinese gloss for the certificate.",
+      "fix": "changed to '成功完成课程的学员将获颁 Executive MBA 课程的 CMI 认可证书（CMI Certificate of Recognition）'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 145,
+      "problem": "Last FAQ ('如何进一步了解？') used 收取资料 (means 'to collect/charge for', not 'to request') and 'the地点面谈' contract-clause phrasing — a zh-register-audit high-confidence finding on this exact sentence pattern.",
+      "fix": "rewrote to '您可预约电话交谈、参加线上说明会、约定地点面谈，或先索取课程资料。'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 19/139",
+      "problem": "HRD_CORP_CLAIM_ZH, rendered verbatim as the answer to FAQ 7 ('谁决定雇主资助？'), carried the shared register defects fixed at source for the fees unit (bare 'HRD Corp' with no Chinese name on first mention, 不会超过 calque, cleft-sentence close) — this FAQ inherits the fix.",
+      "fix": "no separate edit needed here; picked up automatically from the HRD_CORP_CLAIM_ZH source fix made while reviewing the fees unit"
+    }
+  ],
+  "checked_and_passed": [
+    "H1 '谁决定每一件事，先看清楚再决定' — two beats, 14 characters, no pronoun, no trailing full stop",
+    "no sentence-initial 它/这 in the 12 FAQS_ZH entries",
+    "认可 used for CMI, 认证 reserved for MQA (FAQ 4, 5)",
+    "scholarship sentence (FAQ 6) carries 名额有限/须经评估/书面批准/个别以书面确认/并非自动授予",
+    "您 used throughout, no 你, no pronoun in the H1"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

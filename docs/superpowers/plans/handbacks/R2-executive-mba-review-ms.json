@@ -1,0 +1,14 @@
+{
+  "unit": "executive-mba",
+  "language": "ms",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "notes": [
+    "Reviewed src/app/(ms)/ms/executive-mba/page.tsx and CORE_PAGES_MS.programme in src/lib/content-ms.ts (the only Malay source for this page). The writer's earlier fix from 'laluan lanjutan' to 'laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI' (content-ms.ts:74) already avoids the banned 'laluan pilihan' phrasing correctly.",
+    "The shared constant INCLUSIONS_CMI_CERTIFICATE_MS (content-ms.ts:26-27) did contain 'laluan pilihan CMI yang berasingan', but it is not referenced anywhere in the programme block or the executive-mba page; it is only interpolated into CORE_PAGES_MS.fees.sections[0]. Fixed it anyway as part of the fees unit review (see R2-fees-review-ms.json) since leaving a banned phrase live in a shared constant would still fail governance the moment any page renders it.",
+    "No calques, half-translated programme names, 'dalam bentuk bertulis', 'eksekutif dan ke atas', banned pronouns, exclamation marks, or malformed RM/date strings found in this unit's files.",
+    "Programme name rendered correctly as 'Executive MBA' short form and 'CMI Certificate of Recognition' verbatim; no half-translation."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

@@ -1,0 +1,63 @@
+{
+  "unit": "executive-mba-vs-mba",
+  "archetype": "Trust and recognition pages (spec section 8); comparison scope stated adjacent to the table (section 3 rule 4)",
+  "files_changed": [
+    "src/app/(en)/executive-mba-vs-mba/page.tsx",
+    "src/app/(ms)/ms/executive-mba-vs-mba/page.tsx",
+    "src/app/(zh)/zh/executive-mba-vs-mba/page.tsx"
+  ],
+  "files_not_touched": [
+    "src/lib/content.ts",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts",
+    "src/components/site/ProgrammeComparison.tsx"
+  ],
+  "new_h1_and_lede": {
+    "en": {
+      "h1": "Executive MBA or academic MBA: choose by the job.",
+      "lede": "These routes are built for different jobs. An academic MBA is the right route when your purpose needs an academic degree. The Future Ready Executive MBA is built for working one live business issue within your own responsibility to a written action plan reviewed by faculty, across {FACTS.durationLong}, while you stay in your role. {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance}"
+    },
+    "ms": {
+      "h1": "Executive MBA atau MBA akademik: pilih ikut tugas.",
+      "lede": "Kedua-dua laluan ini dibina untuk tugas yang berbeza. MBA akademik ialah laluan yang betul apabila tujuan anda menuntut ijazah akademik. Future Ready Executive MBA pula dibina untuk membawa satu isu perniagaan sebenar dalam tanggungjawab anda sendiri kepada pelan tindakan bertulis yang disemak fasilitator, sepanjang {FACTS.durationMonths} bulan, sambil anda kekal dalam jawatan anda. {PROGRAMME_POSITIONING_MS} {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}"
+    },
+    "zh": {
+      "h1": "Executive MBA 还是学术 MBA，按任务选。",
+      "lede": "这两条路线为不同任务而设。目标需要一纸学术学位，学术 MBA 就是对的路线；Future Ready Executive MBA 则专为把您自身负责的一项真实业务课题、在 {FACTS.durationMonths} 个月内带到经导师审阅的书面行动方案而设，全程不必离开原有职务。{PROGRAMME_POSITIONING_ZH}{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}"
+    }
+  },
+  "constants_used": [
+    "FACTS.durationLong / durationMonths",
+    "FACTS.trainingDays",
+    "FACTS.liveSessions",
+    "FACTS.priceStd",
+    "FACTS.scholarshipProvider",
+    "FACTS.scholarshipEligibility",
+    "ABC_PROFILE.programmePositioning / PROGRAMME_POSITIONING_MS / PROGRAMME_POSITIONING_ZH",
+    "CERTIFICATE_POSITIONING.professionalRelevance / CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS / _ZH",
+    "COMPARISON_SCOPE / COMPARISON_SCOPE_MS (page-local) / COMPARISON_SCOPE_ZH (page-local)",
+    "CTA_LABELS.guide / .ms.guide / .zh.guide",
+    "REFUND_TERMS.description / REFUND_TERMS_MS / REFUND_TERMS_ZH",
+    "FAQS / FAQS_MS / FAQS_ZH (unchanged, filtered subset; FAQ text is untouched constant content)"
+  ],
+  "changes_summary": [
+    "Rewrote eyebrow, H1, lede and fine print in the intro section for all three languages to the 'Built for' framing: other routes serve a different job; the academic MBA is named as the right route when the reader's purpose needs an academic degree.",
+    "Reworded the comparison-table subheading to 'terms defined side by side' language, kept COMPARISON_SCOPE constants and the ProgrammeComparison component (which already carries the reviewed 'Built for' row) untouched.",
+    "Rewrote the two-card 'who should choose which' section as 'built for a different job' framing on both sides, removed 'you require'/'designed for' verdict-on-reader phrasing, replaced facilitator-only detail with tokenised facts (training days, sessions, applied project).",
+    "Rewrote the fee/worth-it section to lead with naming the job before the fee, added the scholarship-never-automatic line and the professional-relevance sentence adjacent to the certificate/CMI mention (rule: wherever certificate or CMI appears the no-guarantee sentence renders in the same block).",
+    "Fixed a pre-existing banned word in the zh page's CtaSection heading (班次 -> 届) since it is part of this unit's Chinese file.",
+    "FAQPage JSON-LD structure (faqLd object, PAGE_FAQS filter, mainEntity mapping) left structurally unchanged in all three files; its text comes from unedited FAQS/FAQS_MS/FAQS_ZH constants."
+  ],
+  "typecheck_exit_code": 0,
+  "audit_exit_code": 0,
+  "audit_notes": "npm run typecheck: clean, no errors. node scripts/content-clarity-audit.mjs: 'Content clarity audit passed across 178 public content files.' The 49 non-blocking locale warnings printed are all in other units' files (mba-for-working-professionals, mba-for-entrepreneurs, executive-mba-malaysia, intakes, lp/google, lp/meta, asian-business-consulting, ai-executive-mba, content-zh.ts, content-ms.ts, insights pages, unsubscribed, resources/advancement-brief) — zero warnings in the three executive-mba-vs-mba files.",
+  "self_check_results": {
+    "malay": "anda-register, no exclamation marks, no -lah/nak/tak, RM10,000.00 (no space, comma thousands) via FACTS.priceStd, headlines <=9 words (H1 8 words; H2s <=9 words), no 'laluan pilihan'/'perbualan program'/'pengurus bekerja'/'projek aplikasi' introduced by this unit (pre-existing instances flagged by the audit live in other files/constants, not touched), two short sentences preferred over one long one in the intro lede.",
+    "chinese": "Malaysian simplified register kept; H1 'Executive MBA 还是学术 MBA，按任务选。' is well under the 14-character cap for the Chinese portion; no more than one four-character decorative phrase per heading (none used); numbers precede nouns via FACTS tokens; 学员/进修/令吉-style vocabulary avoided/used correctly (used 学员); 认可 used for CMI recognition, no 认证 misuse; banned words 背书/班次/参与者/免费获取 avoided in this unit's new copy (fixed one pre-existing 班次 in the CtaSection heading); full-width punctuation and pangu-style spacing follow the existing content-zh.ts constant conventions; no sentence-initial 它/这."
+  },
+  "left_for_reviewer": [
+    "The English/Malay/Chinese FAQ filter arrays (PAGE_FAQS) predate this unit and appear to mismatch some question strings across languages (e.g. EN filters for 'How is the programme structured?' which is not among the current FAQS entries, so only 2 of 3 questions render; ZH filters only 2 questions total). This is pre-existing selection logic, not copy text, and out of this unit's rewrite scope per the brief ('rewrite only its text fields') — flagging for reviewer/owner to confirm whether the filter lists should be corrected in a follow-up.",
+    "Chose 'terms defined side by side' / '八项条款，并排界定。' / 'Lapan perkara, ditakrifkan sebelah-menyebelah.' as the comparison-table H2 instead of literally translating 'attributes' since the spec vocabulary favours 'terms' (who decides, and in which document) over generic feature language; reviewer should confirm this reads naturally.",
+    "The zh choose-grid intro sentence order interpolates FACTS.trainingDays/liveSessions mid-sentence with Chinese punctuation on either side (per existing content-zh.ts conventions) — reviewer should re-check pangu spacing rendering visually."
+  ]
+}

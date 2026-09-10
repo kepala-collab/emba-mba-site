@@ -1,0 +1,51 @@
+{
+  "unit": "fees",
+  "files_changed": [
+    "src/app/(en)/fees/page.tsx",
+    "src/app/(ms)/ms/fees/page.tsx",
+    "src/app/(zh)/zh/fees/page.tsx",
+    "src/lib/content-ms.ts (CORE_PAGES_MS.fees only)",
+    "src/lib/content-zh.ts (CORE_PAGES_ZH.fees only)"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "RM10,000.00 standard fee. Every other condition confirmed in writing.",
+      "lede": "The fee funds 6 months of work on one live business issue: 6 training days across 3 scheduled sessions, one-to-one coaching and project review, the applied business project and the frameworks and working templates you keep. Scholarships are limited and awarded on a selective basis to eligible Malaysian applicants, following individual assessment and written approval. Any award and resulting participant fee are confirmed individually in writing. The scholarship is never automatic."
+    },
+    "ms": {
+      "h1": "RM10,000.00 yuran standard. Setiap syarat lain disahkan secara bertulis.",
+      "lede": "Yuran menampung kerja 6 bulan ke atas satu isu perniagaan sebenar: 6 hari latihan merentasi 3 sesi berjadual, bimbingan satu-ke-satu dan semakan projek, serta projek amali perniagaan dengan rangka kerja dan templat kerja yang disimpan peserta. Biasiswa LIFE Innoversity adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu, secara bertulis. Biasiswa tidak automatik."
+    },
+    "zh": {
+      "h1": "RM10,000.00 标准费用，其余条件书面确认。",
+      "lede": "学费用于支持 6 个月内针对一项真实业务课题的工作：6 个培训日、共 3 次导师带领的研习课、一对一辅导与项目评审，以及企业应用项目和您保留的框架与工作模板。符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金择优评估；名额有限，须经个别评估与书面批准，奖学金金额及应付费用个别以书面确认。奖学金并非自动授予。"
+    }
+  },
+  "constants_used": [
+    "FACTS.priceStd", "FACTS.durationMonths", "FACTS.trainingDays", "FACTS.liveSessions",
+    "FACTS.scholarshipProvider", "FACTS.scholarshipEligibility",
+    "HRD_CORP_CLAIM.short / .responsibility (en)", "HRD_CORP_CLAIM_MS", "HRD_CORP_CLAIM_ZH",
+    "INCLUSIONS", "INCLUSIONS_CMI_CERTIFICATE_MS", "INCLUSIONS_CMI_CERTIFICATE_ZH",
+    "REFUND_TERMS", "REFUND_TERMS_MS", "REFUND_TERMS_ZH",
+    "CERTIFICATE_POSITIONING.distinction / .professionalRelevance (en)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS", "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH",
+    "ENQUIRY_COMMITMENT_MS", "ENQUIRY_COMMITMENT_ZH"
+  ],
+  "exit_codes": {
+    "npm_run_typecheck": 0,
+    "content_clarity_audit": "1 overall, but zero failures/warnings attributable to fees files (all 5 reported failures are in src/app/(en|ms|zh)/hrd-corp-claimable/page.tsx, a different unit)"
+  },
+  "self_checks": {
+    "ms_register_self_check_section_7": "passed: no kamu/awak/nak/-lah/tak; no biasanya/kebanyakan/lebih kurang; RM10,000.00 format via FACTS.priceStd; no 'dalam bentuk bertulis', 'dinilai untuk', 'disokong oleh CMI', 'projek aplikasi', 'laluan lanjutan', 'perbualan program' in the fees section; identifiers verbatim (HRD Corp, e-TRiS, Allowable Cost Matrix, CMI Certificate of Recognition, Chartered Manager, LIFE Innoversity, MQA); decision-makers named (HRD Corp, CMI, program); Chartered Manager described only as separate CMI-determined route; no promotion/salary/ROI claims; zero exclamation marks; 'anda' removed from the two fee-fact sentences that originally carried it (replaced with 'peserta' / passive construction), 'anda' remains only inside the locked ENQUIRY_COMMITMENT_MS constant and the 'Sebelum anda bertanya' heading",
+    "zh_register_self_check_section_7": "passed: numbers/names verbatim; no 约/大约/通常; no urgency or prestige words; CMI wording uses 认可 (never 认证 for CMI), 认证 reserved for MQA; Chartered Manager framed as separate optional CMI route only; HRD Corp sentence names employer as applicant, HRD Corp as decision-maker, Allowable Cost Matrix, e-TRiS, levy ceiling; scholarship sentences carry 名额有限 / 须经评估 / 书面批准 / 个别以书面确认 / 并非自动授予 and no 折扣/折扣码; 您 used in body, no pronoun in H1; no 参与者/班次/免费获取/渠道/创始人/首席执行官/营销; full-width punctuation and pangu spacing preserved; no sentence-initial 这/它 (used 此 instead); decoration budget respected (no chengyu on fee/HRD Corp/recognition lines)"
+  },
+  "notes_for_reviewer": [
+    "content-ms.ts and content-zh.ts are shared files being edited concurrently by other unit writers; only the fees: {...} block in each CORE_PAGES_MS/CORE_PAGES_ZH object was touched — verified via targeted reads/greps before each edit, and the file changed on disk mid-session (another writer's edits to unrelated sections) without affecting the fees block.",
+    "EN fee/HRD Corp block now leads with 'The employer applies. HRD Corp decides.' (H2) plus HRD_CORP_CLAIM.responsibility then .short, matching the archetype's who-decides framing; MS/ZH HRD Corp sections were given a matching opening sentence.",
+    "Added CERTIFICATE_POSITIONING.distinction + .professionalRelevance (en) / their MS-ZH mirrors next to the CMI Certificate of Recognition inclusion, satisfying governance checklist rule 4 (not-an-MQA sentence + professionalRelevance in the same viewport as 'CMI'/'certificate').",
+    "Added a final fine-print section in all three languages covering 'no fee to request information or ask for an eligibility review' + the enquiry-commitment sentence (ENQUIRY_COMMITMENT_MS/ZH and its English equivalent), per the fees archetype's required fine print.",
+    "EN CTA text uses the archetype's literal string 'Discuss programme fit and the fee in writing →' rather than CTA_LABELS.conversation, per the fees-page archetype in spec section 8.",
+    "Did not touch COMPARISON_MS/COMPARISON_ZH 'Yuran program'/'课程费用' rows (line ~50 in each file) even though they still contain the older 'dalam bentuk bertulis' phrasing flagged by the MS audit — that row belongs to a shared constant used by other pages/units, out of scope for this unit; flagging for the reviewer or a later pass.",
+    "Did not commit; did not run npm run build or e2e."
+  ]
+}

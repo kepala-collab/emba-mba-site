@@ -1,0 +1,61 @@
+{
+  "unit": "faq",
+  "files_changed": [
+    "src/lib/content.ts",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts",
+    "src/app/(en)/faq/page.tsx",
+    "src/app/(ms)/ms/faq/page.tsx",
+    "src/app/(zh)/zh/faq/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "Who decides each thing, before you decide.",
+      "lede": "What changes for you, CMI recognition, the fee, employer-led HRD Corp funding and written refund terms — with who decides each one, and in which document."
+    },
+    "ms": {
+      "h1": "Siapa menentukan setiap perkara, sebelum anda membuat keputusan.",
+      "lede": "Apa yang berubah untuk anda, pengiktirafan CMI, yuran, pembiayaan HRD Corp yang diterajui majikan dan terma bayaran balik — dengan siapa yang menentukan setiap satu, dan dalam dokumen yang mana."
+    },
+    "zh": {
+      "h1": "谁决定每一件事，先看清楚再决定",
+      "lede": "课程带来的改变、CMI 认可、费用、由雇主主导的 HRD Corp 资助与退款条款——以及每一项由谁决定、写在哪一份文件里。"
+    }
+  },
+  "faq_order_change": "Reordered and rewrote FAQS/FAQS_MS/FAQS_ZH from feature-listing order to the spec section-8 trust-page order: what changes for the participant (new question, addresses the messaging-map finding '/faq has no question about what changes for the participant'), can I carry it alongside the job, what I will hold and not hold at the end, the MQA/academic-MBA boundary, cost in writing, who decides employer funding, company/founder enrolment, the CMI Chartered Manager route mechanics, missed session, refund terms, who it's for. All three languages carry the same 12 questions in the same order and the same underlying facts.",
+  "constants_used": [
+    "FACTS.durationLong/durationMonths/trainingDays/liveSessions/priceStd/scholarshipProvider/scholarshipEligibility",
+    "CERTIFICATE_POSITIONING.distinction / .professionalRelevance",
+    "PROGRAMME_POSITIONING_SENTENCE",
+    "HRD_CORP_CLAIM.short / .responsibility",
+    "COMPANY_ENROLMENT.eligibility / .hrdRoute",
+    "REFUND_TERMS.description",
+    "PROGRAMME_AUDIENCE",
+    "CTA_LABELS.conversation / .ms.guide / .zh.guide",
+    "ENQUIRY_COMMITMENT / ENQUIRY_COMMITMENT_MS / ENQUIRY_COMMITMENT_ZH",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS / _ZH",
+    "HRD_CORP_CLAIM_MS / _ZH",
+    "REFUND_TERMS_MS / _ZH",
+    "PROGRAMME_AUDIENCE_MS / _ZH"
+  ],
+  "governance_notes": [
+    "Wherever the certificate, CMI or 'awarded'/'dianugerahkan'/'颁发' appears, CERTIFICATE_POSITIONING.professionalRelevance (and its MS/ZH mirrors) now renders in the same answer block, across all three languages.",
+    "The Malay MQA-locked FAQ question 'Adakah ini ijazah terakreditasi MQA?' was left byte-identical in src/lib/content-ms.ts (only its position in the array changed, not the string); its answer text was also left unchanged. The fact-parity test was not modified because the locked string was never altered.",
+    "The ZH H1 was drafted once with a 您 pronoun, then corrected to remove it per the zh-register rule 'no 您 or 你 in any headline'; final ZH H1 is two beats, 14 characters, no pronoun.",
+    "Added the controlled ENQUIRY_COMMITMENT sentence (and MS/ZH mirrors) to the fine print under the FAQ list in all three languages, replacing hand-typed equivalents."
+  ],
+  "checks": {
+    "typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "fact_parity_vitest": "7 passed (7)"
+  },
+  "self_check_results": {
+    "ms_section7": "Ran regex sweeps for banned pronouns/qualifiers/calques (kamu/awak/-lah, biasanya/kebiasaannya/..., perbualan program/pengurus bekerja/projek aplikasi/laluan lanjutan/program awam/dalam bentuk bertulis/atas talian/emel) against the new FAQS_MS block: zero hits. No exclamation marks. Fee/HRD Corp/CMI sentences name the decision-maker and use 'tertakluk kepada'-style conditionality via the existing HRD_CORP_CLAIM_MS/REFUND_TERMS_MS mirrors.",
+    "zh_section7": "Ran regex sweeps against the new FAQS_ZH block: no 约/大约/通常/一般/左右/多数, no 参与者/创始人/首席执行官/营销/账户/背书, no 你 (only 您 in body copy, none in the H1). 名额有限 appears only inside the scholarship sentence, where the register guide requires it verbatim alongside 须经评估/书面批准/个别以书面确认/并非自动授予."
+  },
+  "left_for_reviewer": [
+    "One residual content-clarity warning in my own new text: src/lib/content-ms.ts FAQS_MS line 'Apakah yang akan saya perolehi pada akhir program, dan apakah yang tidak?' trips the non-blocking 'Malay retired preferred-route phrasing' regex on the substring 'laluan pilihan' inside the mandated phrase 'laluan pilihan CMI yang berasingan' (spec section 10 naming decision, glossary #40, and already used pre-existing at content-ms.ts:27 and :99, both outside this unit). This looks like an audit-script/glossary collision that predates this unit; flagging rather than deviating from the owner's Chartered Manager naming decision.",
+    "The old MS/ZH FAQ page also carried a closing 'how to learn more' / CTA-style FAQ entry ('Bagaimana untuk mengetahui lebih lanjut?' / no ZH equivalent). I dropped the MS one when reordering to the spec's 12-question trust-page set (duplicated the page's own CTA/enquiry section) — confirm that's acceptable or should be restored.",
+    "Did not touch CtaSection component, NAV, or any other page/unit; only the three FAQ page files and the FAQS/FAQS_MS/FAQS_ZH constants (plus their page-level H1/lede/metadata/fine print) were edited."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "unit": "fees",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/fees/page.tsx", "src/lib/content-zh.ts (CORE_PAGES_ZH.fees)"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 96,
+      "problem": "fees H1 ended with a full stop; the register guide's headline rule bans a trailing full stop.",
+      "fix": "removed the trailing 。 from the title string"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 102,
+      "problem": "'个人付款' section used 差旅 (mainland corporate-finance term), the calque 付款选项, and mixed numeral styles (Arabic '6–12' next to Chinese '四个月') in one sentence — all three are zh-register-audit high-confidence findings on this exact passage.",
+      "fix": "rewrote to '付款方式包括 RHB 信用卡 6 至 12 个月分期，以及 ABC 的 4 个月付款计划。交通与住宿费用不包括在课程费用内。'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 19,
+      "problem": "HRD_CORP_CLAIM_ZH (rendered in the fees HRD Corp section) gave the bare acronym 'HRD Corp' with no Chinese name on first mention, used the negative calque 不会超过 for the levy ceiling, and closed on a cleft sentence ('提出申请的是雇主，而非学员') copied from English emphasis — all three are high-confidence audit findings.",
+      "fix": "rewrote to name 人力资源发展机构（HRD Corp）on first use, changed '不会超过' to '...为上限', and replaced the cleft with the plain topic-first sentence '申请由雇主提出，而非学员。'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 27,
+      "problem": "shared INCLUSIONS_CMI_CERTIFICATE_ZH constant, rendered in the 'What's included' section, named the certificate only in English with no Chinese gloss.",
+      "fix": "changed to '获颁 CMI 认可证书（CMI Certificate of Recognition）'"
+    }
+  ],
+  "checked_and_passed": [
+    "名额有限 stays bound to 须经评估/书面批准/个别以书面确认/并非自动授予 in every scholarship sentence on this page (audit rule on the seats-vs-fact split)",
+    "RM10,000.00 rendered as the exact string via FACTS.priceStd, never a 万 paraphrase",
+    "CMI wording uses 认可 throughout; 认证 reserved for MQA",
+    "no urgency device outside the bound scholarship phrase"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

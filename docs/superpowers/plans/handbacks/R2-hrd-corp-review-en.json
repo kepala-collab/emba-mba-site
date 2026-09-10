@@ -1,0 +1,21 @@
+{
+  "unit": "hrd-corp-claimable",
+  "language": "en",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "checked_and_passed": [
+    "H1/lede match the spec's exact /hrd-corp-claimable example ('The employer applies. HRD Corp decides.'), opening on the manager being developed before HRD_CORP_CLAIM.short.",
+    "PROGRAMME_POSITIONING_SENTENCE and CERTIFICATE_POSITIONING.professionalRelevance render together in the hero, and CERTIFICATE_POSITIONING.distinction/.professionalRelevance render again beside the 'What's covered' CMI inclusion.",
+    "Every fee/levy/employer fact comes from FACTS/HRD_CORP_CLAIM/COMPANY_ENROLMENT tokens; no independently retyped numbers.",
+    "Scholarship-not-registered FAQ answer interpolates FACTS.scholarshipEligibility verbatim plus 'The scholarship is never automatic.'",
+    "No 'HRD Corp claimable' unqualified sentence; consistently framed as employer-led application, HRD Corp decision.",
+    "npm run typecheck: exit 0. node scripts/content-clarity-audit.mjs: passes; no warnings from this file."
+  ],
+  "native_reading_score_after_fixes": 9,
+  "owner_questions": [],
+  "shared_followups_cleared": [
+    "FOLLOWUPS.md item 1: ExecutiveDiagnostic.tsx guideBody in en/ms/zh renamed from 'Progression Guide'/'Panduan Kemajuan'/'{year} 在职经理进阶指南' to the canonical '{PROGRAMME_YEAR} programme guide' naming (en: src/components/site/ExecutiveDiagnostic.tsx:223; ms: :261; zh: :242).",
+    "FOLLOWUPS.md item 2: repeated 'Free' reduced to one fine-print mention per surface in GuideApplyPage.tsx (eyebrow, en/ms/zh) and LeadForm.tsx (campaignKicker, en/ms/zh); the fine-print 'Free PDF'/'PDF percuma'/'免费 PDF' reassurance/fine strings were left as the single remaining mention.",
+    "Both boxes ticked in docs/superpowers/plans/handbacks/FOLLOWUPS.md."
+  ]
+}

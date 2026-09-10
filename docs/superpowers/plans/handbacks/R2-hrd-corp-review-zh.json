@@ -1,0 +1,52 @@
+{
+  "unit": "hrd-corp-claimable",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/hrd-corp-claimable/page.tsx"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx",
+      "line": 83,
+      "problem": "H1 '雇主申请，HRD Corp 裁定。' ended with a full stop; the register guide bans a trailing full stop on headlines.",
+      "fix": "removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx",
+      "line": 26,
+      "problem": "STEPS[2] used the negative calque 不会超过 for the levy ceiling (zh-register-audit high-confidence finding).",
+      "fix": "changed to '批准金额以雇主的 levy 可用余额为上限。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx",
+      "line": 44,
+      "problem": "HRD_FAQS[0] answer closed with the cleft sentence '递交申请的是雇主，不是学员' copied from English emphasis.",
+      "fix": "changed to '申请由雇主递交，而非学员；...'"
+    },
+    {
+      "file": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx",
+      "line": 56,
+      "problem": "HRD_FAQS[3] scholarship sentence omitted 名额有限, which the register guide requires bound to 须经评估/书面批准 whenever the scholarship is mentioned.",
+      "fix": "inserted '；名额有限，' before '评估后个别以书面确认'"
+    },
+    {
+      "file": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx",
+      "line": 170-171,
+      "problem": "ELIGIBILITY NOTE paragraph repeated both defects: 不会超过 calque and a scholarship sentence missing 名额有限.",
+      "fix": "changed to '...批准金额以雇主的 levy 可用余额为上限...' and inserted '；名额有限，' into the scholarship sentence"
+    },
+    {
+      "file": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx",
+      "line": 175,
+      "problem": "Fine-print paragraph repeated the cleft sentence '递交申请的是雇主，不是学员'.",
+      "fix": "changed to '申请由雇主递交，而非学员；...'"
+    }
+  ],
+  "checked_and_passed": [
+    "首段已在正文中给出人力资源发展机构（HRD Corp）全称，随后各处使用简称属首次释义之后的合规用法",
+    "由 CMI 颁发并认可 matches owner decision 2026-09-10 #1 exactly (CMI positioning constant, imported unchanged)",
+    "no sentence-initial 它/这",
+    "no urgency device; CMI wording uses 认可 throughout"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

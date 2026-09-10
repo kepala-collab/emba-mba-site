@@ -10,7 +10,7 @@ type Locale = "en" | "ms" | "zh";
 
 const COPY = {
   en: {
-    eyebrow: `Free ${PROGRAMME_YEAR} programme guide`,
+    eyebrow: `${PROGRAMME_YEAR} programme guide`,
     title: `Get the ${PROGRAMME_YEAR} programme guide first.`,
     intro: `Review the ${FACTS.durationLong} structure, published dates, standard fee, scholarship assessment and CMI recognition in one document, then decide whether a conversation is worthwhile.`,
     points: [
@@ -23,7 +23,7 @@ const COPY = {
     contact: "Prefer a direct answer? Contact Future Ready EMBA on WhatsApp →",
   },
   ms: {
-    eyebrow: `Panduan program ${PROGRAMME_YEAR} percuma`,
+    eyebrow: `Panduan program ${PROGRAMME_YEAR}`,
     title: `Dapatkan panduan program ${PROGRAMME_YEAR} dahulu.`,
     intro: `Semak struktur ${FACTS.durationMonths} bulan, tarikh diterbitkan, yuran standard, penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen, kemudian tentukan sama ada perbualan diperlukan.`,
     points: [
@@ -36,7 +36,7 @@ const COPY = {
     contact: "Mahukan jawapan terus? Hubungi Future Ready EMBA melalui WhatsApp →",
   },
   zh: {
-    eyebrow: `免费 ${PROGRAMME_YEAR} 年课程指南`,
+    eyebrow: `${PROGRAMME_YEAR} 年课程指南`,
     title: `先索取 ${PROGRAMME_YEAR} 年课程指南。`,
     intro: `在一份文件中查看 ${FACTS.durationMonths} 个月课程结构、已公布日期、标准费用、奖学金择优评估方式及 CMI 认可，再决定是否需要进一步沟通。`,
     points: [

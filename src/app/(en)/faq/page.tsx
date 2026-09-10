@@ -1,14 +1,14 @@
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { FAQS } from "@/lib/content";
+import { CTA_LABELS, ENQUIRY_COMMITMENT, FAQS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/faq", {
   title: "Frequently Asked Questions",
   description:
-    "Exact answers on the Future Ready Executive MBA: duration, CMI recognition, MQA status, HRD Corp process, fees, scheduling and written refund terms.",
+    "Who decides each thing, before you decide: what changes for you, CMI recognition, the MQA boundary, the fee, employer-led HRD Corp funding and written refund terms.",
 });
 
 const faqJsonLd = {
@@ -36,12 +36,12 @@ export default function FaqPage() {
             </div>
           </Reveal>
           <Reveal>
-            <h1 className="sec-h">Questions to answer before you decide.</h1>
+            <h1 className="sec-h">Who decides each thing, before you decide.</h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Programme facts on duration, recognition, funding, fees, attendance and
-              written refund terms &mdash; with the responsible decision-maker named for each condition.
+              What changes for you, CMI recognition, the fee, employer-led HRD Corp funding and
+              written refund terms &mdash; with who decides each one, and in which document.
             </p>
           </Reveal>
 
@@ -55,8 +55,8 @@ export default function FaqPage() {
           </Reveal>
 
           <p className="fine center mt-s">
-            Need to discuss your situation? Arrange a programme conversation with the team.
-            A conversation request is not an admission or payment commitment.
+            Need to discuss your situation? {CTA_LABELS.conversation} with the team.
+            {" "}{ENQUIRY_COMMITMENT}
           </p>
         </div>
       </section>

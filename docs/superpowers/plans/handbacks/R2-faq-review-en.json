@@ -1,0 +1,16 @@
+{
+  "unit": "faq",
+  "language": "en",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "checked_and_passed": [
+    "H1/lede match the spec's exact /faq example ('Who decides each thing, before you decide.').",
+    "FAQS order matches spec section 8's named order: what changes for the participant, alongside the job, what will be held/not held (with the not-an-MQA sentence + professionalRelevance in the same answer), the MQA/academic-MBA boundary, cost in writing, who decides employer funding, company/founder enrolment, Chartered Manager mechanics, missed session, refund terms, who it's for.",
+    "Every fact interpolates FACTS/CERTIFICATE_POSITIONING/HRD_CORP_CLAIM/COMPANY_ENROLMENT/REFUND_TERMS/PROGRAMME_AUDIENCE tokens; no retyped numbers or dates.",
+    "ENQUIRY_COMMITMENT renders in the fine print under the FAQ list, matching the shared-enquiry-section rule.",
+    "No promotion/salary/title/growth claims in any answer; Chartered Manager consistently framed as a separate, CMI-decided, optional route.",
+    "npm run typecheck: exit 0. node scripts/content-clarity-audit.mjs: passes; no warnings from this file."
+  ],
+  "native_reading_score_after_fixes": 9,
+  "owner_questions": []
+}

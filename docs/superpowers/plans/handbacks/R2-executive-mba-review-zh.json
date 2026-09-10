@@ -1,0 +1,40 @@
+{
+  "unit": "executive-mba",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/executive-mba/page.tsx", "src/lib/content-zh.ts (CORE_PAGES_ZH.programme)"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 73,
+      "problem": "sections[0] said '学员取得 CMI Certificate of Recognition' — no Chinese gloss for the certificate and used the calqued verb 取得 instead of 获颁 (zh-register-audit high-confidence item on this exact string).",
+      "fix": "changed to '学员将获颁 CMI 认可证书（CMI Certificate of Recognition）'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 74,
+      "problem": "sections[1] Chartered Manager paragraph began with sentence-initial 它 standing for an abstract English subject (banned pattern).",
+      "fix": "replaced with '此路线不属于本课程，也不在已公布的课程费用之内；修毕本课程，并不等于自动取得 Chartered Manager。'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 75,
+      "problem": "sections[2] fCMgr paragraph had a subjectless opening clause ('...条款说明，完成课程的学员...') and used the banned calque 衔称 in its second sentence.",
+      "fix": "rewrote to 'CMI 公布的 CMI Recognised 课程条款，修毕课程的学员可取得 Foundation Chartered Manager（fCMgr）专业名衔。名衔的启用、会员续期及专业名衔的使用，均由 CMI 负责。'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 76,
+      "problem": "sections[3] '课程性质' had a second sentence starting with 它 (banned sentence-initial abstract pronoun).",
+      "fix": "merged into one sentence with a comma: '这是面向资深管理者的专业发展课程，并非 MQA 认证的学术学位或受监管资格。'"
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": 27,
+      "problem": "INCLUSIONS_CMI_CERTIFICATE_ZH (shared constant rendered on this page via CERTIFICATE_POSITIONING mirrors and reused on fees) said '获得 CMI Certificate of Recognition' with no Chinese gloss.",
+      "fix": "changed to '获颁 CMI 认可证书（CMI Certificate of Recognition）'"
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

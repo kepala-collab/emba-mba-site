@@ -1,4 +1,4 @@
-import { FACTS, FACULTY, INTAKES } from "@/lib/content";
+import { FACTS, FACULTY, INTAKES, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
 
 const MODULES_ZH = [
   { c: "M01", title: "未来前瞻", outcome: "洞察商业格局" },
@@ -16,7 +16,7 @@ const MODULES_ZH = [
 ] as const;
 
 export const HRD_CORP_CLAIM_ZH =
-  "已在 HRD Corp 注册的马来西亚雇主，须在开课前通过 e-TRiS 提交资助申请。HRD Corp 依据 Allowable Cost Matrix 审定资格与批准金额；资助额不会超过雇主可用的征费（levy）余额。提出申请的是雇主，而非学员。";
+  "已向人力资源发展机构（HRD Corp）注册的马来西亚雇主，须在开课前通过 e-TRiS 系统提交培训资助申请。资格与批准金额由 HRD Corp 依据其 Allowable Cost Matrix 审定；资助额以雇主可动用的征费（levy）余额为上限。申请由雇主提出，而非学员。";
 
 // Mirror of HRD_CORP_CLAIM.label in content.ts.
 export const HRD_CORP_CLAIM_LABEL_ZH =
@@ -24,11 +24,11 @@ export const HRD_CORP_CLAIM_LABEL_ZH =
 
 // Mirror of INCLUSIONS[5].s in content.ts.
 export const INCLUSIONS_CMI_CERTIFICATE_ZH =
-  "成功完成课程可获得 CMI Certificate of Recognition。Chartered Manager 是独立可选的 CMI 路线，具有独立资格、评估及费用。";
+  "成功完成课程可获颁 CMI 认可证书（CMI Certificate of Recognition）。Chartered Manager 是独立可选的 CMI 路线，具有独立资格、评估及费用。";
 
 // Mirror of CERTIFICATE_POSITIONING.professionalRelevance in content.ts.
 export const CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH =
-  "该证书记录了根据 CMI Professional Standard 获认可的管理与领导力发展成果，可列入专业档案。它不保证晋升、就业、加薪或任何其他职业结果。";
+  "该证书记录了根据 CMI Professional Standard 获认可的管理与领导力发展成果，可列入专业档案；证书不保证晋升、就业、加薪或任何其他职业结果。";
 
 // Mirror of ENQUIRY_COMMITMENT in content.ts.
 export const ENQUIRY_COMMITMENT_ZH =
@@ -67,40 +67,41 @@ export const CORE_PAGES_ZH = {
   },
   programme: {
     eyebrow: `${FACTS.durationMonths} 个月 Executive MBA · 英国 CMI 认可`,
-    title: "专为在职的资深管理者打造",
-    intro: `${FACTS.durationMonths} 个月内完成 ${FACTS.trainingDays} 个培训日、导师辅导与一个企业应用项目，全程无需离岗，边工作边学。符合条件的学员，可另行咨询 Chartered Manager 的后续发展路径。`,
+    title: "带着决策来，带着方法走",
+    intro: `${FACTS.durationMonths} 个月内，您把自身负责的一项当前课题，从问题界定推进为经导师审阅的书面行动方案：${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次指定研习课、一对一辅导及一个企业应用项目，全程不必离开原有职务。${PROGRAMME_POSITIONING_ZH}这是为期六个月的非学术专业发展课程，并非 MQA 认证的学术学位或受监管资格。`,
     sections: [
-      [`${FACTS.durationMonths} 个月课程安排`, `完成 ${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次导师带领的研习课、企业应用项目及辅导。达到课程要求后，学员取得获 CMI 认可的 Executive MBA 课程证书。`],
-      ["独立的 Chartered Manager 路线", "Chartered Manager 是 CMI 的独立可选路线，具有独立资格、评估及费用。它不包含在本课程或已公布费用内，也不会因完成课程而自动获得。"],
-      ["CMI 专业身份", "CMI 公布的 CMI Recognised programme 条款说明，完成课程的学员获得 Foundation Chartered Manager（fCMgr）身份。CMI 负责身份启用、会员续期及专业衔称使用。"],
-      ["课程性质", "这是面向资深管理者的专业发展课程。它并非 MQA 认证的学术学位或受监管资格。CMI 的 Chartered Manager 评估费及会员费由 CMI 独立收取，除非正式费用表明确列为已包含项目。"],
+      [`${FACTS.durationMonths} 个月课程安排`, `完成 ${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次导师带领的研习课、企业应用项目及辅导。达到课程要求后，学员将获颁 CMI 认可证书（CMI Certificate of Recognition）。${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}`],
+      ["独立的 Chartered Manager 路线", "Chartered Manager 是 CMI 的独立可选路线，具有独立资格、评估及费用，由 CMI 决定。此路线不属于本课程，也不在已公布的课程费用之内；修毕本课程，并不等于自动取得 Chartered Manager。"],
+      ["CMI 专业名衔", "根据 CMI 公布的 CMI Recognised 课程条款，修毕课程的学员可取得 Foundation Chartered Manager（fCMgr）专业名衔。名衔的启用、会员续期及专业名衔的使用，均由 CMI 负责。"],
+      ["课程性质", "这是面向资深管理者的专业发展课程，并非 MQA 认证的学术学位或受监管资格。CMI 的 Chartered Manager 评估费及会员费由 CMI 独立收取，除非正式费用表明确列为已包含项目。"],
       ["适合对象", PROGRAMME_AUDIENCE_ZH],
-      ["学习成果", "完成课程时，学员将提交一个针对自身企业问题的行动方案，并由课程导师及实践专家评审。"],
+      ["学习成果", "完成课程时，学员将针对自身企业课题，提交包含决策、行动、负责人及衡量指标的书面行动方案，由课程导师及实践专家评审，供需要据此行动的团队使用。"],
       ["资格说明", "这是由英国特许管理协会（CMI）认可的专业发展课程，并非经马来西亚学术资格鉴定机构（MQA）认证的学术学位。"],
     ],
   },
   curriculum: {
     eyebrow: `课程大纲 · ${FACTS.moduleCount} 个模块`,
-    title: `${FACTS.moduleCount} 个模块，一段完整连贯的领导力旅程`,
-    intro: `${FACTS.durationMonths} 个月高管课程，结合 F.A.S.T. 方法论、实践学习、辅导及企业驱动的结业项目——没有考试，没有论文。`,
+    title: `${FACTS.moduleCount} 个模块，一份团队能落实的方案`,
+    intro: `${FACTS.durationMonths} 个月内，您通过基于 F.A.S.T. 方法论的 ${FACTS.moduleCount} 个应用模块，处理一项真实业务课题。您界定问题、与教练一起检验，并将其写成包含决策、行动、负责人及衡量指标的行动方案，供导师评审。`,
     sections: [
       ["阶段一：创造价值", "通过 F.A.S.T.、Jobs-To-Be-Done、未来洞察、战略 DNA 与行动规划，重新定义客户价值和企业方向。"],
       ["阶段二：交付价值", "通过情境领导、团队介入、系统思维及转型管理，把战略转化为团队行为与执行机制。"],
-      ["阶段三：形成行动方案", "运用影响力设计、利益相关者关系及企业系统分析，完成供导师评审的企业行动方案。"],
+      ["阶段三：形成行动方案", "运用影响力设计、利益相关者关系及企业系统分析，完成供导师评审的企业行动方案。清楚的负责人与衡量指标，正是仆人式领导 (servant leadership) 落实的方式——方案因此成为团队能够执行的成果，而不只是您完成的任务。"],
       [`${FACTS.moduleCount} 个模块`, MODULES_ZH.map((module) => `${module.c} ${module.title}——${module.outcome}`).join("；")],
-      ["评估方式", "没有传统考试或论文。评估以课堂参与、辅导过程和一个与学员企业直接相关的项目为基础。"],
+      ["评估方式", "评估以课堂参与、辅导过程及一个与学员企业直接相关的应用项目为基础，不设传统考试或论文。"],
     ],
   },
   fees: {
     eyebrow: "学费 · 奖学金 · HRD Corp",
-    title: `标准费用 ${FACTS.priceStd}；奖学金须经择优评估`,
-    intro: "LIFE Innoversity 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准。任何奖学金金额及应付费用均会个别以书面确认；奖学金并非自动提供，也不是折扣码。",
+    title: `${FACTS.priceStd} 标准费用，其余条件书面确认`,
+    intro: `学费用于支持 ${FACTS.durationMonths} 个月内针对一项真实业务课题的工作：${FACTS.trainingDays} 个培训日、共 ${FACTS.liveSessions} 次导师带领的研习课、一对一辅导与项目评审，以及企业应用项目和您保留的框架与工作模板。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金择优评估；名额有限，须经个别评估与书面批准，奖学金金额及应付费用个别以书面确认。奖学金并非自动授予。`,
     sections: [
-      ["课程费用包含什么", `无论支付标准费用或获得奖学金，课程均包括 ${FACTS.durationMonths} 个月内的 ${FACTS.liveSessions} 次导师带领的研习课、个人领导力诊断、导师辅导、学习工具及企业应用项目评审。Chartered Manager 是独立可选路线，具有独立资格、评估及费用，不包含在已公布课程费用内。`],
-      ["HRD Corp", HRD_CORP_CLAIM_ZH],
-      ["马来西亚申请者费用", `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金择优评估。任何奖学金金额及应付费用会在评估后个别以书面确认；奖学金名额有限、须经择优评估，并非自动获得。`],
-      ["个人付款", "课程团队在付款前向个人学员提供书面分期表，列明每期金额及到期日。付款选项包括 RHB 信用卡 6–12 个月分期及 ABC 四个月付款计划。差旅与住宿费用不包含在学费内。"],
+      ["课程费用包含什么", `无论支付标准费用或获得奖学金，课程均包括 ${FACTS.durationMonths} 个月内 ${FACTS.trainingDays} 个培训日、共 ${FACTS.liveSessions} 次导师带领的研习课、一对一辅导与项目评审，以及企业应用项目和您保留的框架与工作模板。${INCLUSIONS_CMI_CERTIFICATE_ZH} ${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH} 此课程并非 MQA 认证的学术学位或受监管资格。Chartered Manager 是独立可选的 CMI 路线，由 CMI 认定，不包含在已公布课程费用内。`],
+      ["HRD Corp", `雇主提出申请，HRD Corp 决定。${HRD_CORP_CLAIM_ZH}`],
+      ["马来西亚申请者费用", `标准费用为 ${FACTS.priceStd}，由课程订定。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金择优评估；名额有限，须经个别评估与书面批准。任何奖学金金额及应付费用均会个别以书面确认；奖学金并非自动授予。`],
+      ["个人付款", "课程团队在付款前向个人学员提供书面分期表，列明每期金额及到期日。付款方式包括 RHB 信用卡 6 至 12 个月分期，以及 ABC 的 4 个月付款计划。交通与住宿费用不包括在课程费用内。"],
       ["退款安排", REFUND_TERMS_ZH],
+      ["咨询前须知", `索取信息或申请奖学金资格评估均不收取任何费用。${ENQUIRY_COMMITMENT_ZH}`],
     ],
   },
   intakes: {
@@ -129,18 +130,17 @@ export const CORE_PAGES_ZH = {
 } as const;
 
 export const FAQS_ZH = [
-  ["课程如何安排？", `课程为期 ${FACTS.durationMonths} 个月，包括 ${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次导师带领的研习课、辅导与企业应用项目。达到课程要求后，学员取得获 CMI 认可的 Executive MBA 课程证书。Chartered Manager 是具有独立资格、评估及费用的可选 CMI 路线，不包含在本课程或已公布费用内。`],
-  ["全职工作期间可以完成课程吗？", `可以。马来西亚公开课程分 ${FACTS.durationMonths} 个月进行，共 ${FACTS.trainingDays} 个指定培训日。参与者在职期间完成课程，并以当前业务问题为基础完成企业应用项目。报名前请查看所有已公布的上课日期。`],
-  ["这是高管教育课程还是学术 MBA 学位？", `这是面向未来商业领导力、由 CMI 颁发并认可的 Executive MBA。课程为期 ${FACTS.durationMonths} 个月，属于专业发展及高管教育课程，并非 MQA 认证的学术学位或受监管资格。`],
-  ["成功完成课程后会获得什么？", "成功完成课程的参与者将获得 Future Ready Executive MBA 课程的 CMI 认可证书。最终证书格式及措辞由 CMI 决定。Chartered Manager 属于独立的 CMI 路线，不会因完成本课程而自动授予。"],
-  ["完成课程后会自动成为 Chartered Manager 吗？", "不会。完成课程后可取得 CMI Certificate of Recognition；根据 CMI 公布的 CMI Recognised 方案，学员可取得 Foundation Chartered Manager 身份。完整 Chartered Manager（CMgr）属于独立专业评估；申请路线、资格、评估、会员与费用均由 CMI 决定。"],
-  ["Chartered Manager 是否包含在课程内？", "不包含。Chartered Manager 是独立可选的 CMI 路线；资格、评估、会员及费用均由 CMI 决定。课程团队不会判断申请资格或承诺结果。"],
+  ["课程期间，我的工作会有什么改变？", `您把自己职责范围内的一项真实业务课题，在 ${FACTS.durationMonths} 个月内转化为一份书面行动方案，当中列明决定、行动、负责人及衡量指标，并由导师评审。课程的框架与工作模板会留在您手上。`],
+  ["全职工作期间可以兼顾课程吗？", `可以。您按已公布日期完成 ${FACTS.trainingDays} 个培训日，分 ${FACTS.liveSessions} 次导师带领的研习课进行；企业应用项目在两次研习课之间、于您自己的机构内进行，您全程留任原有职务。`],
+  ["课程结束时我会拿到什么，又不会拿到什么？", `成功完成课程的学员将获颁 Executive MBA 课程的 CMI 认可证书（CMI Certificate of Recognition）。${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH} Chartered Manager 是独立可选的 CMI 路线，由 CMI 决定，不包含在本课程或已公布费用内。`],
+  ["这是高管教育课程还是学术 MBA 学位？", `这是面向未来商业领导力、由 CMI 颁发并认可的 Executive MBA。${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH} 课程为期 ${FACTS.durationMonths} 个月，属于专业发展及高管教育课程，并非 MQA 认证的学术学位或受监管资格。`],
   ["这是 MQA 认证的学位吗？", "不是。这是由英国 CMI 认可的专业发展课程，并非 MQA 认证的学术学位。"],
-  ["公司可以使用 HRD Corp levy 吗？", HRD_CORP_CLAIM_ZH],
+  ["课程费用是多少，如何以书面确认？", `标准费用为 ${FACTS.priceStd}。${FACTS.scholarshipProvider} 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准，任何奖学金金额及应付费用均会个别以书面确认；奖学金并非自动授予。`],
+  ["谁决定雇主资助？", HRD_CORP_CLAIM_ZH],
+  ["公司可以为创办人或高层团队报名吗？", "本课程面向高管及以上人员，包括高级经理、董事、企业主与创办人。若采用由雇主主导的 HRD Corp 资助，公司须已在 HRD Corp 注册、有可用征费（levy）余额，并在开课前提交申请。当公司确认该学员在其薪资名册内时，创办人或企业主亦可纳入。HRD Corp 决定资格与批准金额。"],
   ["CMI 如何确定 Chartered Manager 路线？", "CMI 目前公布 Full Assessment、CMI Fast Track 及 Apprenticeship 三条路线。Full Assessment 适用于持有管理、商业或领导力学位并具备三年管理经验，或在没有管理类资格的情况下具备至少五年管理经验的管理者。Fast Track 要求在五年内完成一项列明的 CMI 资格，并具备至少三年管理经验。本课程属于 CMI 认可（CMI Recognised），并非 CMI 资格，因此每位学员适用的路线须由 CMI 确认。"],
+  ["如果无法出席某次课程怎么办？", "请在课程开始前联系课程团队。ABC 将以书面方式确认指定视频或指定后续届别的补课安排。"],
   ["退款条款是什么？", REFUND_TERMS_ZH],
-  ["公司可以为创办人或高层团队报名吗？", "本课程面向高管及以上人员，包括高级经理、董事、企业主与创办人。若采用由雇主主导的 HRD Corp 资助，公司须已在 HRD Corp 注册、有可用征费（levy）余额，并在开课前提交申请。当公司确认参与者在其薪资名册内时，创办人或企业主亦可纳入。HRD Corp 决定资格与批准金额。"],
-  ["如果无法出席某次课程怎么办？", "请在课程开始前联系课程团队。ABC 将以书面方式确认指定视频或指定后续班次的补课安排。"],
   ["课程适合谁？", PROGRAMME_AUDIENCE_ZH],
-  ["如何进一步了解？", "您可选择简短通话、线上说明会、在双方同意的地点面谈，或先收取资料。课程团队会按您的选择联系；这不等于录取或付款承诺。"],
+  ["如何进一步了解？", "您可预约电话交谈、参加线上说明会、约定地点面谈，或先索取课程资料。课程团队会按您的选择联系；这不等于录取或付款承诺。"],
 ] as const;

@@ -10,7 +10,7 @@ const content = CORE_PAGES_MS.fees;
 
 export const metadata = withSeo(path, {
   title: "Yuran, Biasiswa dan HRD Corp",
-  description: `Yuran standard ${FACTS.priceStd}. Pemohon Malaysia yang layak boleh dinilai untuk biasiswa terhad dan terpilih; anugerah serta yuran peserta disahkan secara bertulis.`,
+  description: `${FACTS.priceStd} yuran standard. Biasiswa ${FACTS.scholarshipProvider} dinilai secara individu dan disahkan secara bertulis; biasiswa tidak automatik.`,
 });
 
 export default function Page() {
