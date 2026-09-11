@@ -1,0 +1,1113 @@
+{
+  "unit": 13,
+  "title": "Regeneration and proof",
+  "branch": "feat/r3-derived-artefacts (existing worktree branch; no new branch created per dispatch instructions)",
+  "documents": {
+    "working-managers-guide": {
+      "en": {
+        "title": "A clear guide to the six-month Future Ready Executive MBA.",
+        "kicker": "2026 WORKING MANAGER'S GUIDE",
+        "lead": "Everything to verify before you decide: programme structure, CMI recognition, published fees, scholarship assessment and employer funding.",
+        "intro": null,
+        "sections": [
+          {
+            "heading": "What you are evaluating",
+            "body": "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed for business owners, directors, general managers and senior managers who want to work on a live business issue while remaining in their roles."
+          },
+          {
+            "heading": "How the six months work",
+            "body": "Six facilitated training days are delivered across three scheduled sessions. Coaching and applied project work continue across the programme. You use the frameworks on a current business challenge and complete one applied business project. There are no traditional examinations or thesis."
+          },
+          {
+            "heading": "Recognition, stated precisely",
+            "body": "Successful participants receive the CMI Certificate of Recognition for the programme. This is a professional development programme, not an MQA-accredited academic degree or a regulated qualification. Chartered Manager is a separate optional CMI route with its own eligibility, assessment, membership and fees."
+          },
+          {
+            "heading": "Published Malaysian fee",
+            "body": "The standard programme fee is RM10,000.00. Eligible Malaysian applicants may be considered for a LIFE Innoversity scholarship, subject to availability, assessment and written approval. Any award and resulting participant fee are confirmed individually in writing."
+          },
+          {
+            "heading": "Employer funding",
+            "body": "An eligible HRD Corp-registered employer may submit a grant application before training begins. The programme team supplies the quotation, schedule, course content and trainer documents. HRD Corp decides eligibility and the approved amount; funding is not guaranteed by the programme provider."
+          }
+        ],
+        "checks": [
+          "You carry responsibility for business results, people or major decisions.",
+          "You can bring a current business issue into the applied work.",
+          "You can attend all published session dates and complete work across six months.",
+          "You understand the programme is professional development, not an academic MBA degree.",
+          "You want the exact fee, scholarship or employer-funding route confirmed in writing."
+        ],
+        "cover_h1": "Six months. One applied outcome.",
+        "cta": "Request the programme guide or arrange a conversation",
+        "notice": "No payment or enrolment commitment is required to request information."
+      },
+      "ms": {
+        "title": "Panduan jelas untuk Future Ready Executive MBA enam bulan.",
+        "kicker": "PANDUAN PROGRAM 2026 UNTUK PENGURUS YANG BEKERJA",
+        "lead": "Semak struktur program, pengiktirafan CMI, yuran diterbitkan, penilaian biasiswa dan pembiayaan majikan sebelum membuat keputusan.",
+        "intro": null,
+        "sections": [
+          {
+            "heading": "Apa yang anda sedang nilai",
+            "body": "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Program pembangunan profesional enam bulan ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang mahu menangani isu perniagaan sebenar sambil terus bekerja."
+          },
+          {
+            "heading": "Bagaimana enam bulan berjalan",
+            "body": "Enam hari latihan berfasilitator dilaksanakan dalam tiga sesi berjadual. Bimbingan dan projek aplikasi diteruskan sepanjang program. Anda menggunakan rangka kerja pada cabaran perniagaan semasa dan menyiapkan satu projek aplikasi perniagaan. Tiada peperiksaan tradisional atau tesis."
+          },
+          {
+            "heading": "Pengiktirafan yang dinyatakan dengan tepat",
+            "body": "Peserta yang berjaya menerima CMI Certificate of Recognition bagi program ini. Ini ialah program pembangunan profesional, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, dengan kelayakan, penilaian, keahlian dan yuran tersendiri."
+          },
+          {
+            "heading": "Yuran peserta Malaysia",
+            "body": "Yuran standard program ialah RM10,000.00. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity, tertakluk pada kekosongan, penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis."
+          },
+          {
+            "heading": "Pembiayaan majikan",
+            "body": "Majikan berdaftar HRD Corp yang layak boleh mengemukakan permohonan geran sebelum latihan bermula. Pasukan program membekalkan sebut harga, jadual, kandungan kursus dan dokumen jurulatih. HRD Corp menentukan kelayakan dan jumlah yang diluluskan; pembiayaan tidak dijamin oleh penyedia program."
+          }
+        ],
+        "checks": [
+          "Anda bertanggungjawab terhadap hasil perniagaan, pasukan atau keputusan penting.",
+          "Anda boleh membawa isu perniagaan semasa ke dalam projek aplikasi.",
+          "Anda boleh menghadiri semua tarikh sesi dan menyiapkan kerja sepanjang enam bulan.",
+          "Anda memahami bahawa ini program pembangunan profesional, bukan ijazah MBA akademik.",
+          "Anda mahu yuran, biasiswa atau pembiayaan majikan disahkan secara bertulis."
+        ],
+        "cover_h1": "Enam bulan. Satu hasil aplikasi.",
+        "cta": "Minta panduan program atau aturkan perbualan",
+        "notice": "Tiada bayaran atau komitmen pendaftaran diperlukan untuk meminta maklumat."
+      },
+      "zh": {
+        "title": "六个月 Future Ready Executive MBA 清晰指南。",
+        "kicker": "2026 在职经理课程指南",
+        "lead": "作出决定前，先核实课程结构、CMI 认可、已公布费用、奖学金评估及雇主资助方式。",
+        "intro": null,
+        "sections": [
+          {
+            "heading": "您正在评估什么",
+            "body": "面向未来商业领导力的 Executive MBA 由 CMI 颁发并认可。这项六个月专业发展课程专为企业主、董事、总经理及高级经理设计，让学员在继续工作的同时处理真实业务问题。"
+          },
+          {
+            "heading": "六个月如何进行",
+            "body": "六个导师引导培训日分三个指定课程进行。辅导及企业应用项目贯穿整个课程。学员把框架应用于当前业务挑战，并完成一项企业应用项目。课程不设传统考试或论文。"
+          },
+          {
+            "heading": "准确说明 CMI 认可",
+            "body": "达到课程要求的学员获颁本课程的 CMI Certificate of Recognition。这是专业发展课程，并非 MQA 认证的学术学位或受监管资格。Chartered Manager 是独立可选 CMI 路线，具有独立资格、评估、会员及费用。"
+          },
+          {
+            "heading": "马来西亚学员费用",
+            "body": "课程标准费用为 RM10,000.00。符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金评估，须视名额、评估及书面批准而定。任何奖学金金额及应付费用均会个别以书面确认。"
+          },
+          {
+            "heading": "雇主资助",
+            "body": "符合资格的 HRD Corp 注册雇主可在培训开始前提交 grant 申请。课程团队提供报价、时间表、课程内容及培训师文件。资格及批准金额由 HRD Corp 决定；课程提供方不保证资助获批。"
+          }
+        ],
+        "checks": [
+          "您负责业务成果、团队或重要决策。",
+          "您可把当前业务问题带入企业应用项目。",
+          "您可出席所有公布的课程日期，并在六个月内完成相关工作。",
+          "您理解这是一项专业发展课程，并非学术 MBA 学位。",
+          "您希望课程费用、奖学金或雇主资助方式获得书面确认。"
+        ],
+        "cover_h1": "六个月。一项企业应用成果。",
+        "cta": "索取课程指南或预约课程沟通",
+        "notice": "索取资料无需付款，也不代表承诺报名。"
+      }
+    },
+    "decision-guide": {
+      "en": {
+        "title": "Is this programme right for you?",
+        "kicker": "A PRIVATE DECISION GUIDE",
+        "lead": "A plain-English guide for Malaysian managers who want a better next move — without stepping away from work.",
+        "intro": "Use this to judge whether the programme fits the responsibility you already carry — not just the title you would like next.",
+        "sections": [
+          {
+            "heading": "What this programme actually is.",
+            "body": ""
+          },
+          {
+            "heading": "What this programme actually is.",
+            "body": "This is applied management development for experienced, working managers. You bring a live business challenge, use structured frameworks to test your assumptions and options, and complete a real project on your own work — not a case study."
+          },
+          {
+            "heading": "What this programme actually is. / Six-month shape",
+            "body": "Six training days across three scheduled sessions, coaching and an applied project, completed across the full six months while you keep working."
+          },
+          {
+            "heading": "What this programme actually is. / On completion",
+            "body": "Participants who meet the requirements receive the CMI-recognised Executive MBA programme certificate. Chartered Manager remains a separate, optional CMI route."
+          },
+          {
+            "heading": "What this programme actually is. / The method",
+            "body": "The F.A.S.T. approach and twelve management frameworks give you a repeatable way to define a problem, weigh options and turn a decision into an action plan."
+          },
+          {
+            "heading": "A good fit if you",
+            "body": ""
+          },
+          {
+            "heading": "A good fit if you",
+            "body": "•  already make decisions that affect people, operations or business performance | •  can bring a live business challenge into the learning | •  want applied development rather than a traditional academic MBA | •  can protect time for three scheduled sessions, coaching and project work across six months"
+          },
+          {
+            "heading": "(notice)",
+            "body": "What it is not: a university degree, an MQA-accredited academic MBA, a promise of promotion, or an automatic Chartered Manager award."
+          },
+          {
+            "heading": "This programme vs a traditional MBA.",
+            "body": ""
+          },
+          {
+            "heading": "This programme vs a traditional MBA. (table)",
+            "body": "{\"header\": [\"Aspect\", \"This programme\", \"A traditional academic MBA\"], \"rows\": [[\"Time\", \"Six months, alongside full-time work\", \"Typically 18–24 months\"], [\"What you build\", \"Judgment on your own live business issue, plus reusable frameworks\", \"Academic theory, research and case analysis\"], [\"Assessment\", \"One applied business project — no exams, no thesis\", \"Assignments or exams, plus a dissertation\"], [\"Who teaches\", \"Industry practitioners, consultants and executive coaches\", \"Academic faculty and research supervisors\"], [\"Format\", \"Three scheduled sessions across six months; keep working\", \"A set academic calendar\"], [\"Credential\", \"CMI (UK)-recognised programme certificate\", \"An academic MBA degree\"]]}"
+          },
+          {
+            "heading": "(notice)",
+            "body": "This table describes a reference academic MBA of 18–24 months built around academic modules and a dissertation. It does not describe every MBA programme."
+          },
+          {
+            "heading": "Four questions to ask before you enquire.",
+            "body": ""
+          },
+          {
+            "heading": "Four questions to ask before you enquire. / 1.  Is the work relevant?",
+            "body": "Pick a current decision, constraint or opportunity that genuinely matters to your role or business — that becomes your project."
+          },
+          {
+            "heading": "Four questions to ask before you enquire. / 2.  Is the schedule workable?",
+            "body": "The six months run across three scheduled sessions plus coaching and project work. Check the published cohort dates against your responsibilities."
+          },
+          {
+            "heading": "Four questions to ask before you enquire. / 3.  Do you need employer support?",
+            "body": "If funding or sponsorship matters, ask for the employer conversation and the HRD Corp briefing before your company applies."
+          },
+          {
+            "heading": "Four questions to ask before you enquire. / 4.  Are you exploring the scholarship?",
+            "body": "A limited number of LIFE Innoversity scholarships are awarded on a selective basis to eligible Malaysian applicants, after assessment and written approval. They are never automatic."
+          },
+          {
+            "heading": "Common questions.",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: Is this a real MBA?",
+            "body": "It is an Executive MBA programme recognised by CMI (UK) against CMI Professional Standards. It is professional development, not an MQA-accredited academic degree."
+          },
+          {
+            "heading": "FAQ: Will I become a Chartered Manager?",
+            "body": "Not automatically. On completion you receive the CMI certificate; Chartered Manager is a separate, optional CMI route with its own eligibility, assessment and fees, decided by CMI."
+          },
+          {
+            "heading": "FAQ: Can I do it while working full-time?",
+            "body": "Yes — it is built for working managers: three scheduled sessions across six months, with an applied project on your own work. No exams, no thesis."
+          },
+          {
+            "heading": "(cta)",
+            "body": "Request a no-obligation programme-fit conversation — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Published Malaysian standard fee: RM10,000.00. Any scholarship award and resulting participant fee are confirmed individually in writing. This guide is not an offer of admission, scholarship approval or payment commitment."
+          }
+        ],
+        "cover_cta": "Talk to the programme team — support@futurereadymba.com",
+        "cover_notice": "The Future Ready Executive MBA is a professional development programme recognised by CMI (UK). It is not an MQA-accredited academic degree or a regulated qualification."
+      },
+      "ms": {
+        "title": "Adakah program ini sesuai untuk anda?",
+        "kicker": "PANDUAN KEPUTUSAN PERIBADI",
+        "lead": "Panduan ringkas untuk pengurus di Malaysia yang mahu membuat langkah seterusnya yang lebih baik — tanpa berhenti bekerja.",
+        "intro": "Gunakan panduan ini untuk menilai sama ada program sesuai dengan tanggungjawab yang anda pikul sekarang — bukan sekadar jawatan yang anda inginkan.",
+        "sections": [
+          {
+            "heading": "Apa sebenarnya program ini.",
+            "body": ""
+          },
+          {
+            "heading": "Apa sebenarnya program ini.",
+            "body": "Ini ialah pembangunan pengurusan yang diguna pakai untuk pengurus berpengalaman yang sedang bekerja. Anda membawa cabaran perniagaan semasa, menggunakan rangka kerja berstruktur untuk menguji andaian dan pilihan, dan menyiapkan projek sebenar berdasarkan kerja anda sendiri — bukan kajian kes."
+          },
+          {
+            "heading": "Apa sebenarnya program ini. / Bentuk enam bulan",
+            "body": "Enam hari latihan dalam tiga sesi berjadual, bimbingan dan projek aplikasi, diselesaikan sepanjang enam bulan sambil anda terus bekerja."
+          },
+          {
+            "heading": "Apa sebenarnya program ini. / Selepas tamat",
+            "body": "Peserta yang memenuhi keperluan menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager kekal sebagai laluan CMI yang berasingan dan tidak wajib."
+          },
+          {
+            "heading": "Apa sebenarnya program ini. / Kaedahnya",
+            "body": "Pendekatan F.A.S.T. dan dua belas rangka kerja pengurusan memberi anda cara berulang untuk mentakrifkan masalah, menimbang pilihan dan menterjemahkan keputusan kepada pelan tindakan."
+          },
+          {
+            "heading": "Sesuai jika anda",
+            "body": ""
+          },
+          {
+            "heading": "Sesuai jika anda",
+            "body": "•  sudah membuat keputusan yang memberi kesan kepada orang, operasi atau prestasi perniagaan | •  boleh membawa cabaran perniagaan semasa ke dalam pembelajaran | •  mahukan pembangunan yang diguna pakai, bukan MBA akademik tradisional | •  boleh meluangkan masa untuk tiga sesi berjadual, bimbingan dan projek sepanjang enam bulan"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Apa yang ia bukan: ijazah universiti, MBA akademik terakreditasi MQA, janji kenaikan pangkat, atau anugerah Chartered Manager secara automatik."
+          },
+          {
+            "heading": "Program ini berbanding MBA tradisional.",
+            "body": ""
+          },
+          {
+            "heading": "Program ini berbanding MBA tradisional. (table)",
+            "body": "{\"header\": [\"Aspek\", \"Program ini\", \"MBA akademik tradisional\"], \"rows\": [[\"Tempoh\", \"Enam bulan, sambil bekerja sepenuh masa\", \"Biasanya 18–24 bulan\"], [\"Apa yang dibina\", \"Pertimbangan atas isu perniagaan sebenar anda, serta rangka kerja boleh guna semula\", \"Teori akademik, penyelidikan dan analisis kes\"], [\"Penilaian\", \"Satu projek aplikasi perniagaan — tiada peperiksaan atau tesis\", \"Tugasan atau peperiksaan, berserta tesis\"], [\"Siapa mengajar\", \"Pengamal industri, perunding dan jurulatih eksekutif\", \"Ahli akademik dan penyelia penyelidikan\"], [\"Bentuk\", \"Tiga sesi berjadual sepanjang enam bulan; terus bekerja\", \"Kalendar akademik yang ditetapkan\"], [\"Kelayakan\", \"Sijil program yang diiktiraf CMI (UK)\", \"Ijazah MBA akademik\"]]}"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Jadual ini merujuk MBA akademik 18–24 bulan yang dibina atas modul akademik dan tesis. Ia tidak menggambarkan setiap program MBA."
+          },
+          {
+            "heading": "Empat soalan sebelum anda bertanya.",
+            "body": ""
+          },
+          {
+            "heading": "Empat soalan sebelum anda bertanya. / 1.  Adakah kerja itu relevan?",
+            "body": "Pilih keputusan, kekangan atau peluang semasa yang benar-benar penting kepada peranan atau perniagaan anda — itu menjadi projek anda."
+          },
+          {
+            "heading": "Empat soalan sebelum anda bertanya. / 2.  Adakah jadual sesuai?",
+            "body": "Enam bulan berjalan dalam tiga sesi berjadual serta bimbingan dan projek. Semak tarikh kohort yang diterbitkan dengan tanggungjawab anda."
+          },
+          {
+            "heading": "Empat soalan sebelum anda bertanya. / 3.  Perlukah sokongan majikan?",
+            "body": "Jika pembiayaan atau penajaan penting, minta perbualan majikan dan taklimat HRD Corp sebelum syarikat anda memohon."
+          },
+          {
+            "heading": "Empat soalan sebelum anda bertanya. / 4.  Menilai biasiswa?",
+            "body": "Bilangan biasiswa LIFE Innoversity yang terhad dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak pernah automatik."
+          },
+          {
+            "heading": "Soalan lazim.",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: Adakah ini MBA sebenar?",
+            "body": "Ini ialah program Executive MBA yang diiktiraf oleh CMI (UK) menurut CMI Professional Standards. Ia pembangunan profesional, bukan ijazah akademik terakreditasi MQA."
+          },
+          {
+            "heading": "FAQ: Adakah saya menjadi Chartered Manager?",
+            "body": "Tidak secara automatik. Selepas tamat anda menerima sijil CMI; Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, dengan kelayakan, penilaian dan yuran tersendiri yang ditentukan CMI."
+          },
+          {
+            "heading": "FAQ: Boleh saya ikut sambil bekerja sepenuh masa?",
+            "body": "Boleh — ia direka untuk pengurus yang bekerja: tiga sesi berjadual sepanjang enam bulan, dengan projek aplikasi berdasarkan kerja anda sendiri. Tiada peperiksaan atau tesis."
+          },
+          {
+            "heading": "(cta)",
+            "body": "Minta perbualan kesesuaian program tanpa obligasi — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Yuran standard Malaysia yang diterbitkan: RM10,000.00. Sebarang anugerah biasiswa dan yuran peserta disahkan secara individu dalam bentuk bertulis. Panduan ini bukan tawaran kemasukan, kelulusan biasiswa atau komitmen bayaran."
+          }
+        ],
+        "cover_cta": "Hubungi pasukan program — support@futurereadymba.com",
+        "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."
+      },
+      "zh": {
+        "title": "这项课程适合您吗？",
+        "kicker": "个人课程决策指南",
+        "lead": "为希望在不离开工作岗位的情况下迈出更好一步的马来西亚经理人而写的简明指南。",
+        "intro": "用它来判断这项课程是否契合您现在所承担的责任——而不仅仅是您想要的职衔。",
+        "sections": [
+          {
+            "heading": "这项课程究竟是什么。",
+            "body": ""
+          },
+          {
+            "heading": "这项课程究竟是什么。",
+            "body": "这是为在职资深经理人设计的实战型管理发展课程。您带着当前的业务挑战，运用结构化框架检验假设与选项，并就自己的实际工作完成一个真实项目——而非案例研究。"
+          },
+          {
+            "heading": "这项课程究竟是什么。 / 六个月结构",
+            "body": "六个培训日分三个指定课程进行，辅导与企业应用项目贯穿整个六个月，学员在此期间继续工作。"
+          },
+          {
+            "heading": "这项课程究竟是什么。 / 完成课程后",
+            "body": "符合要求的学员获得由 CMI 认可的 Executive MBA 课程证书。Chartered Manager 仍为独立、可选的 CMI 路径。"
+          },
+          {
+            "heading": "这项课程究竟是什么。 / 方法论",
+            "body": "F.A.S.T. 方法与十二个管理框架，为您提供一套可反复运用的方式：界定问题、权衡选项，并将决定转化为行动计划。"
+          },
+          {
+            "heading": "如果您符合以下情况，将会很适合",
+            "body": ""
+          },
+          {
+            "heading": "如果您符合以下情况，将会很适合",
+            "body": "•  已在做出影响人员、运营或业务表现的决定 | •  能把当前的业务挑战带入学习 | •  想要实战型发展，而非传统学术型 MBA | •  能在六个月内为三个指定课程、辅导及项目预留时间"
+          },
+          {
+            "heading": "(notice)",
+            "body": "它不是：大学学位、MQA 认证的学术型 MBA、升职承诺，或自动授予的 Chartered Manager 资格。"
+          },
+          {
+            "heading": "本课程与传统 MBA 的比较。",
+            "body": ""
+          },
+          {
+            "heading": "本课程与传统 MBA 的比较。 (table)",
+            "body": "{\"header\": [\"方面\", \"本课程\", \"传统学术型 MBA\"], \"rows\": [[\"时长\", \"六个月，边工作边学习\", \"通常 18–24 个月\"], [\"所建立的\", \"针对您真实业务问题的判断力，以及可反复运用的框架\", \"学术理论、研究与案例分析\"], [\"评估方式\", \"一个企业应用项目——不设考试或论文\", \"作业或考试，加上论文\"], [\"授课者\", \"行业实践者、顾问及高管教练\", \"学术教师与研究导师\"], [\"形式\", \"六个月内三个指定课程；继续工作\", \"既定的学术日历\"], [\"资格\", \"获 CMI（英国）认可的课程证书\", \"学术型 MBA 学位\"]]}"
+          },
+          {
+            "heading": "(notice)",
+            "body": "此表以 18–24 个月、以学术模块与论文为核心的学术型 MBA 为参照。它并不代表每一项 MBA 课程。"
+          },
+          {
+            "heading": "咨询前值得询问的四个问题。",
+            "body": ""
+          },
+          {
+            "heading": "咨询前值得询问的四个问题。 / 1.  这项工作相关吗？",
+            "body": "选择一个对您的职责或业务真正重要的当前决定、限制或机会——它将成为您的项目。"
+          },
+          {
+            "heading": "咨询前值得询问的四个问题。 / 2.  时间安排可行吗？",
+            "body": "六个月分三个指定课程进行，另加辅导与项目。请将已公布的开课日期与您的职责对照。"
+          },
+          {
+            "heading": "咨询前值得询问的四个问题。 / 3.  需要雇主支持吗？",
+            "body": "若资助或赞助重要，请在公司提交申请前，要求进行雇主沟通与 HRD Corp 说明。"
+          },
+          {
+            "heading": "咨询前值得询问的四个问题。 / 4.  正在评估奖学金？",
+            "body": "LIFE Innoversity 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准，绝非自动。"
+          },
+          {
+            "heading": "常见问题。",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: 这是真正的 MBA 吗？",
+            "body": "这是一项获 CMI（英国）依据 CMI Professional Standards 认可的 Executive MBA 课程。它属于专业发展，而非 MQA 认证的学术学位。"
+          },
+          {
+            "heading": "FAQ: 我会自动成为 Chartered Manager 吗？",
+            "body": "不会自动获得。完成后您获得 CMI 证书；Chartered Manager 是独立、可选的 CMI 路径，其资格、评估与费用由 CMI 决定。"
+          },
+          {
+            "heading": "FAQ: 我能边全职工作边完成吗？",
+            "body": "可以——它专为在职经理人设计：六个月内三个指定课程，并就您自己的工作完成应用项目。不设考试或论文。"
+          },
+          {
+            "heading": "(cta)",
+            "body": "预约无义务的课程契合度沟通 — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "已公布的马来西亚标准费用：RM10,000.00。任何奖学金金额及由此产生的学员费用均会个别以书面确认。本指南不构成录取、奖学金批准或付款承诺。"
+          }
+        ],
+        "cover_cta": "联系课程团队 — support@futurereadymba.com",
+        "cover_notice": "Future Ready Executive MBA 是一项获 CMI（英国）认可的专业发展课程。它并非 MQA 认证的学术学位或受监管资格。"
+      }
+    },
+    "employer-funding-brief": {
+      "en": {
+        "title": "Employer sponsorship & HRD Corp funding.",
+        "kicker": "EMPLOYER DECISION BRIEF",
+        "lead": "A concise internal briefing for a manager, HR team or learning leader evaluating practical management development.",
+        "intro": "This is a structured programme built around a live business issue and an applied project — so the organisation sees capability strengthened on its own work, not a generic attendance record.",
+        "sections": [
+          {
+            "heading": "What an employer is evaluating.",
+            "body": ""
+          },
+          {
+            "heading": "What an employer is evaluating.",
+            "body": "A practical management-development decision connects three things: the participant's responsibility, the business issue they will work on, and the capability the organisation needs strengthened."
+          },
+          {
+            "heading": "What an employer is evaluating. / Applied work",
+            "body": "Participants bring a current business challenge, use management frameworks to test assumptions and options, and complete an applied business project."
+          },
+          {
+            "heading": "What an employer is evaluating. / Defined commitment",
+            "body": "Six months across six training days, three scheduled sessions, coaching and applied project work."
+          },
+          {
+            "heading": "What an employer is evaluating. / Professional recognition",
+            "body": "Successful participants receive the CMI Certificate of Recognition for the programme — not an academic MBA degree or regulated qualification."
+          },
+          {
+            "heading": "The employer-led HRD Corp process",
+            "body": ""
+          },
+          {
+            "heading": "The employer-led HRD Corp process",
+            "body": "1.  Employer confirms its current eligibility and levy position. | 2.  Programme team supplies the quotation, schedule, course content and trainer documents. | 3.  Employer submits the application before training begins. HRD Corp decides eligibility and the approved amount."
+          },
+          {
+            "heading": "(notice)",
+            "body": "Funding is not automatic. The employer and HRD Corp control eligibility, timing and the approved amount."
+          },
+          {
+            "heading": "A short internal conversation starter.",
+            "body": ""
+          },
+          {
+            "heading": "A short internal conversation starter. / The capability need",
+            "body": "The manager is responsible for [team / business unit / project] and needs a more structured method for evaluating complex decisions and leading implementation."
+          },
+          {
+            "heading": "A short internal conversation starter. / The applied outcome",
+            "body": "The participant will work on [current business challenge] and produce an applied business project that can be discussed with the organisation."
+          },
+          {
+            "heading": "A short internal conversation starter. / The format",
+            "body": "Six facilitated training days across three scheduled sessions, coaching and applied work across the six-month programme."
+          },
+          {
+            "heading": "A short internal conversation starter. / The funding question",
+            "body": "Should sponsorship, or an employer-led HRD Corp application, be explored before the selected intake?"
+          },
+          {
+            "heading": "Common employer questions.",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: Does the levy cover the full fee?",
+            "body": "Not necessarily. HRD Corp decides the approved amount under its Allowable Cost Matrix, and funding cannot exceed the employer's available levy balance. The programme team supplies the documents needed to apply."
+          },
+          {
+            "heading": "FAQ: Who applies — the company or the participant?",
+            "body": "The employer applies, in e-TRiS, before training begins. The participant does not submit the grant. HRD Corp — not the programme provider — decides approval."
+          },
+          {
+            "heading": "FAQ: What does the company get back?",
+            "body": "An applied project on a real business issue the manager already owns, plus a CMI-recognised programme certificate on successful completion."
+          },
+          {
+            "heading": "(cta)",
+            "body": "Request the employer document pack — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Right Dots Resources is the authorised programme partner for marketing, enquiries, pricing and enrolment coordination. The applicable written proposal controls delivery, pricing and terms."
+          }
+        ],
+        "cover_cta": "Request the employer document pack — support@futurereadymba.com",
+        "cover_notice": "The Future Ready Executive MBA is a professional development programme recognised by CMI (UK). It is not an MQA-accredited academic degree or a regulated qualification."
+      },
+      "ms": {
+        "title": "Penajaan majikan & pembiayaan HRD Corp.",
+        "kicker": "RINGKASAN KEPUTUSAN MAJIKAN",
+        "lead": "Ringkasan dalaman yang padat untuk pengurus, pasukan HR atau pemimpin pembelajaran yang menilai pembangunan pengurusan yang praktikal.",
+        "intro": "Ini program berstruktur yang dibina atas isu perniagaan sebenar dan projek aplikasi — supaya organisasi melihat keupayaan diperkukuh pada kerjanya sendiri, bukan sekadar rekod kehadiran.",
+        "sections": [
+          {
+            "heading": "Apa yang dinilai oleh majikan.",
+            "body": ""
+          },
+          {
+            "heading": "Apa yang dinilai oleh majikan.",
+            "body": "Keputusan pembangunan pengurusan yang praktikal menghubungkan tiga perkara: tanggungjawab peserta, isu perniagaan yang akan ditanganinya, dan keupayaan yang perlu diperkukuh oleh organisasi."
+          },
+          {
+            "heading": "Apa yang dinilai oleh majikan. / Kerja aplikasi",
+            "body": "Peserta membawa cabaran perniagaan semasa, menggunakan rangka kerja pengurusan untuk menguji andaian dan pilihan, dan menyiapkan projek aplikasi perniagaan."
+          },
+          {
+            "heading": "Apa yang dinilai oleh majikan. / Komitmen yang jelas",
+            "body": "Enam bulan merentasi enam hari latihan, tiga sesi berjadual, bimbingan dan projek aplikasi."
+          },
+          {
+            "heading": "Apa yang dinilai oleh majikan. / Pengiktirafan profesional",
+            "body": "Peserta yang berjaya menerima CMI Certificate of Recognition bagi program ini — bukan ijazah MBA akademik atau kelayakan yang dikawal selia."
+          },
+          {
+            "heading": "Proses HRD Corp yang diterajui majikan",
+            "body": ""
+          },
+          {
+            "heading": "Proses HRD Corp yang diterajui majikan",
+            "body": "1.  Majikan mengesahkan kelayakan dan baki levi semasa. | 2.  Pasukan program membekalkan sebut harga, jadual, kandungan kursus dan dokumen jurulatih. | 3.  Majikan mengemukakan permohonan sebelum latihan bermula. HRD Corp menentukan kelayakan dan jumlah yang diluluskan."
+          },
+          {
+            "heading": "(notice)",
+            "body": "Pembiayaan tidak automatik. Majikan dan HRD Corp mengawal kelayakan, masa dan jumlah yang diluluskan."
+          },
+          {
+            "heading": "Pencetus perbualan dalaman yang ringkas.",
+            "body": ""
+          },
+          {
+            "heading": "Pencetus perbualan dalaman yang ringkas. / Keperluan keupayaan",
+            "body": "Pengurus bertanggungjawab terhadap [pasukan / unit perniagaan / projek] dan memerlukan kaedah yang lebih berstruktur untuk menilai keputusan kompleks dan menerajui pelaksanaan."
+          },
+          {
+            "heading": "Pencetus perbualan dalaman yang ringkas. / Hasil aplikasi",
+            "body": "Peserta akan menangani [cabaran perniagaan semasa] dan menghasilkan projek aplikasi perniagaan yang boleh dibincangkan dengan organisasi."
+          },
+          {
+            "heading": "Pencetus perbualan dalaman yang ringkas. / Format",
+            "body": "Enam hari latihan berfasilitator dalam tiga sesi berjadual, bimbingan dan kerja aplikasi sepanjang program enam bulan."
+          },
+          {
+            "heading": "Pencetus perbualan dalaman yang ringkas. / Soalan pembiayaan",
+            "body": "Perlukah penajaan, atau permohonan HRD Corp yang diterajui majikan, diteroka sebelum kohort yang dipilih?"
+          },
+          {
+            "heading": "Soalan lazim majikan.",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: Adakah levi menampung keseluruhan yuran?",
+            "body": "Belum tentu. HRD Corp menentukan jumlah yang diluluskan mengikut Allowable Cost Matrix, dan pembiayaan tidak boleh melebihi baki levi majikan. Pasukan program membekalkan dokumen yang diperlukan untuk memohon."
+          },
+          {
+            "heading": "FAQ: Siapa memohon — syarikat atau peserta?",
+            "body": "Majikan memohon, melalui e-TRiS, sebelum latihan bermula. Peserta tidak mengemukakan geran. HRD Corp — bukan penyedia program — menentukan kelulusan."
+          },
+          {
+            "heading": "FAQ: Apa yang diperoleh syarikat?",
+            "body": "Projek aplikasi atas isu perniagaan sebenar yang telah dipikul pengurus, serta sijil program yang diiktiraf CMI apabila berjaya menamatkannya."
+          },
+          {
+            "heading": "(cta)",
+            "body": "Minta pek dokumen majikan — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Right Dots Resources ialah rakan kongsi program yang diberi kuasa untuk pemasaran, pertanyaan, harga dan penyelarasan pendaftaran. Cadangan bertulis yang berkenaan mengawal penyampaian, harga dan terma."
+          }
+        ],
+        "cover_cta": "Minta pek dokumen majikan — support@futurereadymba.com",
+        "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."
+      },
+      "zh": {
+        "title": "雇主赞助与 HRD Corp 资助。",
+        "kicker": "雇主决策简报",
+        "lead": "为正在评估实用型管理发展的经理、HR 团队或学习负责人而写的简明内部简报。",
+        "intro": "这是一项围绕真实业务问题与应用项目而设计的结构化课程——让组织看到能力在自身工作上得到提升，而非一份普通的出席记录。",
+        "sections": [
+          {
+            "heading": "雇主在评估什么。",
+            "body": ""
+          },
+          {
+            "heading": "雇主在评估什么。",
+            "body": "一项务实的管理发展决定连接三件事：学员的职责、他将处理的业务问题，以及组织需要强化的能力。"
+          },
+          {
+            "heading": "雇主在评估什么。 / 应用型工作",
+            "body": "学员带着当前的业务挑战，运用管理框架检验假设与选项，并完成一个企业应用项目。"
+          },
+          {
+            "heading": "雇主在评估什么。 / 明确的投入",
+            "body": "六个月，涵盖六个培训日、三个指定课程、辅导及企业应用项目。"
+          },
+          {
+            "heading": "雇主在评估什么。 / 专业认可",
+            "body": "成功的学员获得该课程的 CMI Certificate of Recognition——而非学术型 MBA 学位或受监管资格。"
+          },
+          {
+            "heading": "雇主主导的 HRD Corp 流程",
+            "body": ""
+          },
+          {
+            "heading": "雇主主导的 HRD Corp 流程",
+            "body": "1.  雇主确认当前的资格与可用 levy 余额。 | 2.  课程团队提供报价、日程、课程内容及讲师文件。 | 3.  雇主在培训开始前提交申请。HRD Corp 决定资格与获批金额。"
+          },
+          {
+            "heading": "(notice)",
+            "body": "资助并非自动。雇主与 HRD Corp 掌控资格、时间与获批金额。"
+          },
+          {
+            "heading": "一段简短的内部沟通引子。",
+            "body": ""
+          },
+          {
+            "heading": "一段简短的内部沟通引子。 / 能力需求",
+            "body": "该经理负责 [团队／业务单位／项目]，需要一套更有结构的方法来评估复杂决策并领导执行。"
+          },
+          {
+            "heading": "一段简短的内部沟通引子。 / 应用成果",
+            "body": "学员将处理 [当前业务挑战]，并产出一个可与组织讨论的企业应用项目。"
+          },
+          {
+            "heading": "一段简短的内部沟通引子。 / 形式",
+            "body": "六个培训日分三个指定课程进行，辅导及应用工作贯穿六个月课程。"
+          },
+          {
+            "heading": "一段简短的内部沟通引子。 / 资助问题",
+            "body": "是否应在所选届别之前，先探讨赞助或由雇主主导的 HRD Corp 申请？"
+          },
+          {
+            "heading": "雇主常见问题。",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: levy 能涵盖全部费用吗？",
+            "body": "未必。HRD Corp 依据其 Allowable Cost Matrix 决定获批金额，且资助不得超过雇主的可用 levy 余额。课程团队会提供申请所需文件。"
+          },
+          {
+            "heading": "FAQ: 由谁申请——公司还是学员？",
+            "body": "由雇主在培训开始前通过 e-TRiS 申请。学员不提交该津贴。由 HRD Corp（而非课程提供方）决定批准。"
+          },
+          {
+            "heading": "FAQ: 公司能获得什么回报？",
+            "body": "一个针对经理已在负责的真实业务问题的应用项目，以及成功完成后获 CMI 认可的课程证书。"
+          },
+          {
+            "heading": "(cta)",
+            "body": "索取雇主文件包 — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Right Dots Resources 是获授权处理营销、咨询、定价与报名协调的课程合作伙伴。适用的书面提案对交付、定价与条款具约束力。"
+          }
+        ],
+        "cover_cta": "索取雇主文件包 — support@futurereadymba.com",
+        "cover_notice": "Future Ready Executive MBA 是一项获 CMI（英国）认可的专业发展课程。它并非 MQA 认证的学术学位或受监管资格。"
+      }
+    },
+    "scholarship-eligibility": {
+      "en": {
+        "title": "Scholarship & eligibility self-check.",
+        "kicker": "ELIGIBILITY INFORMATION",
+        "lead": "Use this before you ask about the scholarship. It helps you prepare the right questions — it is not an application or approval form.",
+        "intro": "Scholarships are limited and awarded on a selective basis. Eligibility is assessed, and an award exists only once it has been confirmed in writing. Knowing that up front makes your conversation with the programme team faster and clearer.",
+        "sections": [
+          {
+            "heading": "The published Malaysian fee.",
+            "body": ""
+          },
+          {
+            "heading": "The published Malaysian fee. / Standard programme fee",
+            "body": "RM10,000.00"
+          },
+          {
+            "heading": "The published Malaysian fee. / LIFE Innoversity scholarship",
+            "body": "A limited number are awarded on a selective basis to eligible Malaysian applicants, after assessment and written approval."
+          },
+          {
+            "heading": "The published Malaysian fee. / Award & participant fee",
+            "body": "Confirmed individually in writing after assessment. Installment schedules are provided in writing before payment."
+          },
+          {
+            "heading": "The scholarship is not",
+            "body": ""
+          },
+          {
+            "heading": "The scholarship is not",
+            "body": "•  automatic for every Malaysian participant | •  a discount code or a guarantee | •  a replacement for a written fee schedule | •  an HRD Corp decision"
+          },
+          {
+            "heading": "(notice)",
+            "body": "There is no fee to request information or to ask the programme team about the assessment process."
+          },
+          {
+            "heading": "Prepare for an eligibility conversation.",
+            "body": ""
+          },
+          {
+            "heading": "Prepare for an eligibility conversation.",
+            "body": "Use these prompts to organise the facts you want to discuss. They are not selection criteria and do not predict an outcome."
+          },
+          {
+            "heading": "Prepare for an eligibility conversation. / Your programme goal",
+            "body": "What responsibility, business issue or management capability are you looking to strengthen?"
+          },
+          {
+            "heading": "Prepare for an eligibility conversation. / Your intended cohort",
+            "body": "Which published English or Mandarin cohort works with your commitments?"
+          },
+          {
+            "heading": "Prepare for an eligibility conversation. / Your funding route",
+            "body": "Self-funding, employer sponsorship, or asking your employer to explore HRD Corp funding?"
+          },
+          {
+            "heading": "Prepare for an eligibility conversation. / Your next question",
+            "body": "What would you need clarified about fit, dates, fee, scholarship conditions or the separate Chartered Manager route before deciding?"
+          },
+          {
+            "heading": "Common questions.",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: Do all Malaysians get the scholarship?",
+            "body": "No. A limited number are awarded on a selective basis to eligible Malaysian applicants, after assessment and written approval. It is not automatic and is not a discount code."
+          },
+          {
+            "heading": "FAQ: Is the scholarship the same as HRD Corp funding?",
+            "body": "No. The scholarship is assessed by the programme's scholarship provider; HRD Corp funding is a separate, employer-led route decided by HRD Corp."
+          },
+          {
+            "heading": "FAQ: When is my fee confirmed?",
+            "body": "Your award, if any, and the resulting participant fee are confirmed individually in writing after assessment, with an installment schedule before payment."
+          },
+          {
+            "heading": "(cta)",
+            "body": "Request an eligibility conversation — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Chartered Manager assessment, membership, fees and awards are controlled separately by CMI."
+          }
+        ],
+        "cover_cta": "Ask about the scholarship assessment — support@futurereadymba.com",
+        "cover_notice": "The Future Ready Executive MBA is a professional development programme recognised by CMI (UK). It is not an MQA-accredited academic degree or a regulated qualification."
+      },
+      "ms": {
+        "title": "Semakan kendiri biasiswa & kelayakan.",
+        "kicker": "MAKLUMAT KELAYAKAN",
+        "lead": "Gunakan ini sebelum anda bertanya tentang biasiswa. Ia membantu anda menyediakan soalan yang tepat — ia bukan borang permohonan atau kelulusan.",
+        "intro": "Biasiswa adalah terhad dan dianugerahkan secara terpilih. Kelayakan dinilai, dan sesuatu anugerah wujud hanya setelah disahkan secara bertulis. Mengetahui perkara ini lebih awal menjadikan perbualan anda dengan pasukan program lebih pantas dan jelas.",
+        "sections": [
+          {
+            "heading": "Yuran Malaysia yang diterbitkan.",
+            "body": ""
+          },
+          {
+            "heading": "Yuran Malaysia yang diterbitkan. / Yuran standard program",
+            "body": "RM10,000.00"
+          },
+          {
+            "heading": "Yuran Malaysia yang diterbitkan. / Biasiswa LIFE Innoversity",
+            "body": "Bilangan yang terhad dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis."
+          },
+          {
+            "heading": "Yuran Malaysia yang diterbitkan. / Anugerah & yuran peserta",
+            "body": "Disahkan secara individu dalam bentuk bertulis selepas penilaian. Jadual ansuran diberikan secara bertulis sebelum bayaran."
+          },
+          {
+            "heading": "Biasiswa ini bukan",
+            "body": ""
+          },
+          {
+            "heading": "Biasiswa ini bukan",
+            "body": "•  automatik untuk setiap peserta Malaysia | •  kod diskaun atau jaminan | •  pengganti jadual yuran bertulis | •  keputusan HRD Corp"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Tiada bayaran untuk meminta maklumat atau bertanya kepada pasukan program tentang proses penilaian."
+          },
+          {
+            "heading": "Bersedia untuk perbualan kelayakan.",
+            "body": ""
+          },
+          {
+            "heading": "Bersedia untuk perbualan kelayakan.",
+            "body": "Gunakan panduan ini untuk menyusun fakta yang ingin anda bincangkan. Ia bukan kriteria pemilihan dan tidak meramalkan keputusan."
+          },
+          {
+            "heading": "Bersedia untuk perbualan kelayakan. / Matlamat program anda",
+            "body": "Tanggungjawab, isu perniagaan atau keupayaan pengurusan apa yang ingin anda perkukuh?"
+          },
+          {
+            "heading": "Bersedia untuk perbualan kelayakan. / Kohort pilihan anda",
+            "body": "Kohort Bahasa Inggeris atau Mandarin yang diterbitkan mana yang sesuai dengan komitmen anda?"
+          },
+          {
+            "heading": "Bersedia untuk perbualan kelayakan. / Laluan pembiayaan anda",
+            "body": "Membiayai sendiri, penajaan majikan, atau meminta majikan meneroka pembiayaan HRD Corp?"
+          },
+          {
+            "heading": "Bersedia untuk perbualan kelayakan. / Soalan seterusnya",
+            "body": "Apa yang perlu dijelaskan tentang kesesuaian, tarikh, yuran, syarat biasiswa atau laluan Chartered Manager yang berasingan sebelum memutuskan?"
+          },
+          {
+            "heading": "Soalan lazim.",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: Adakah semua rakyat Malaysia mendapat biasiswa?",
+            "body": "Tidak. Bilangan yang terhad dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak automatik dan bukan kod diskaun."
+          },
+          {
+            "heading": "FAQ: Adakah biasiswa sama dengan pembiayaan HRD Corp?",
+            "body": "Tidak. Biasiswa dinilai oleh penyedia biasiswa program; pembiayaan HRD Corp ialah laluan berasingan yang diterajui majikan dan diputuskan oleh HRD Corp."
+          },
+          {
+            "heading": "FAQ: Bila yuran saya disahkan?",
+            "body": "Anugerah anda (jika ada) dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis selepas penilaian, dengan jadual ansuran sebelum bayaran."
+          },
+          {
+            "heading": "(cta)",
+            "body": "Minta perbualan kelayakan — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Penilaian Chartered Manager, keahlian, yuran dan anugerah dikawal secara berasingan oleh CMI."
+          }
+        ],
+        "cover_cta": "Tanya tentang penilaian biasiswa — support@futurereadymba.com",
+        "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."
+      },
+      "zh": {
+        "title": "奖学金与资格自查。",
+        "kicker": "奖学金资格资料",
+        "lead": "在您咨询奖学金之前使用它。它帮助您准备恰当的问题——它并非申请或批准表格。",
+        "intro": "奖学金名额有限，仅择优授予。资格需经评估，且只有在书面确认后才存在奖学金。事先了解这一点，能让您与课程团队的沟通更快、更清晰。",
+        "sections": [
+          {
+            "heading": "已公布的马来西亚费用。",
+            "body": ""
+          },
+          {
+            "heading": "已公布的马来西亚费用。 / 标准课程费用",
+            "body": "RM10,000.00"
+          },
+          {
+            "heading": "已公布的马来西亚费用。 / LIFE Innoversity 奖学金",
+            "body": "名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准。"
+          },
+          {
+            "heading": "已公布的马来西亚费用。 / 奖学金与学员费用",
+            "body": "经评估后个别以书面确认。分期付款时间表在付款前以书面提供。"
+          },
+          {
+            "heading": "这项奖学金不是",
+            "body": ""
+          },
+          {
+            "heading": "这项奖学金不是",
+            "body": "•  每位马来西亚学员自动获得 | •  折扣码或保证 | •  书面费用表的替代品 | •  HRD Corp 的决定"
+          },
+          {
+            "heading": "(notice)",
+            "body": "索取资料或向课程团队询问评估流程均不收取费用。"
+          },
+          {
+            "heading": "为资格沟通做准备。",
+            "body": ""
+          },
+          {
+            "heading": "为资格沟通做准备。",
+            "body": "用以下提示整理您想讨论的事实。它们并非甄选标准，也不预示结果。"
+          },
+          {
+            "heading": "为资格沟通做准备。 / 您的课程目标",
+            "body": "您想强化哪项职责、业务问题或管理能力？"
+          },
+          {
+            "heading": "为资格沟通做准备。 / 您意向的届别",
+            "body": "已公布的英语或华语届别中，哪一个符合您的时间安排？"
+          },
+          {
+            "heading": "为资格沟通做准备。 / 您的资助途径",
+            "body": "自费、雇主赞助，还是请雇主探讨 HRD Corp 资助？"
+          },
+          {
+            "heading": "为资格沟通做准备。 / 您的下一个问题",
+            "body": "在做决定前，您需要就课程契合度、日期、费用、奖学金条件或独立的 Chartered Manager 路径厘清什么？"
+          },
+          {
+            "heading": "常见问题。",
+            "body": ""
+          },
+          {
+            "heading": "FAQ: 所有马来西亚人都能获得奖学金吗？",
+            "body": "不是。名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准。它并非自动，也不是折扣码。"
+          },
+          {
+            "heading": "FAQ: 奖学金与 HRD Corp 资助相同吗？",
+            "body": "不同。奖学金由课程的奖学金提供方评估；HRD Corp 资助是由雇主主导、并由 HRD Corp 决定的独立途径。"
+          },
+          {
+            "heading": "FAQ: 我的费用何时确认？",
+            "body": "您的奖学金（如有）及由此产生的学员费用，会在评估后个别以书面确认，并在付款前提供分期时间表。"
+          },
+          {
+            "heading": "(cta)",
+            "body": "预约资格沟通 — support@futurereadymba.com"
+          },
+          {
+            "heading": "(notice)",
+            "body": "面向未来商业领导力的 Executive MBA 由 CMI 颁发并认可。Chartered Manager 的评估、会员资格、费用及授予由 CMI 独立掌控。"
+          }
+        ],
+        "cover_cta": "咨询奖学金择优评估 — support@futurereadymba.com",
+        "cover_notice": "Future Ready Executive MBA 是一项获 CMI（英国）认可的专业发展课程。它并非 MQA 认证的学术学位或受监管资格。"
+      }
+    }
+  },
+  "twelve_files": [
+    {
+      "filename": "working-managers-guide-2026.pdf",
+      "sha256": "cf95a2acec617ca8de7b6e64563c7c084608f030c49febcdb4ba9b53db4ee57f",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "panduan-pengurus-bekerja-2026.pdf",
+      "sha256": "d91147407c0142091bdf5fe16b8e6a3ae6699e2ec34378ae3e6ebbcaccd374ac",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "zaizhi-jingli-zhinan-2026.pdf",
+      "sha256": "53189ed74e0a49851b09ef239541894f42967a4bd4853c59970e2a729e490406",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-decision-guide.pdf",
+      "sha256": "8ccab88908d381dd257898cf7c8982feba5143cec5b5178dfba9e4b19474844b",
+      "page_count": 4,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-decision-guide-ms.pdf",
+      "sha256": "edd91bb3f89b97fd3c772560a759197fb862f90a454aefc8e1cce3558f5496b8",
+      "page_count": 4,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-decision-guide-zh.pdf",
+      "sha256": "574cc1c876a45a236f464206e96f715c73dd10b2e7e8ea0ea3f0116902f9d485",
+      "page_count": 4,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-employer-funding-brief.pdf",
+      "sha256": "dd10f9466077882a2795bff1b1204068ddb333c4d75a2629936fac07066c4a3c",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-employer-funding-brief-ms.pdf",
+      "sha256": "c90f0ebcf85c41b864c0f43006c562973fef7c2b3d2b8b3a2ee6cf952016a85a",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-employer-funding-brief-zh.pdf",
+      "sha256": "96cd80a2e4723235387d4385fc3b96d0a8962d8aa52bf53c1a2cf34503f31236",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-scholarship-eligibility.pdf",
+      "sha256": "0edf8c2e009d734feb00c055e53cd664516b94a9416180f25b15b1b1d76385ff",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-scholarship-eligibility-ms.pdf",
+      "sha256": "ad750be228e225ffb3dcd728ce48b157d7ec816f907770a2d19ffef3dc30c290",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    },
+    {
+      "filename": "future-ready-scholarship-eligibility-zh.pdf",
+      "sha256": "b809c089aa1663cb5546cf687844e0ed287c5ff3f7a09973c8c92957dfb73eb5",
+      "page_count": 3,
+      "page_count_baseline_unchanged": true
+    }
+  ],
+  "commands": {
+    "npm run pdfs:build (1st)": "exit 0 - all 12 PDFs built",
+    "npm run pdfs:build (2nd)": "exit 0 - all 12 PDFs rebuilt",
+    "npm run pdfs:check": "exit 0 - pdfs:check OK [semantic: page count / page text / embedded fonts] - 12 files match public/downloads.",
+    "npm run pdfs:check -- --bytes (after 3rd build following 2nd)": "exit 0 - pdfs:check OK [byte-identical] - 12 files match public/downloads.",
+    "py -3 scripts/render-lead-magnet-pdfs.py": "exit 0 - 39 proof PNGs rendered to tmp/pdfs/render (3+4+3+3 pages x 3 languages)"
+  },
+  "determinism_note": "First rebuild after JSON edits produced 5 differing files (the exact 5 files whose copy JSON text changed: future-ready-decision-guide-ms.pdf, future-ready-employer-funding-brief-zh.pdf, future-ready-scholarship-eligibility-zh.pdf, panduan-pengurus-bekerja-2026.pdf, zaizhi-jingli-zhinan-2026.pdf); a second consecutive rebuild after that produced byte-identical output (confirmed via sha256 and npm run pdfs:check -- --bytes exit 0). The other 7 untouched-copy PDFs were byte-identical across every rebuild from the start. git diff --exit-code public/downloads against the pre-existing HEAD commit still reports the 5 changed files as different, which is expected since those changes are uncommitted per instructions (no commit was made this session).",
+  "register_fixes_applied": [
+    {
+      "lang": "ms",
+      "file": "scripts/pdf/copy/ms.json",
+      "location": "decision-guide.blocks card 'Selepas tamat'",
+      "before": "Chartered Manager kekal sebagai laluan CMI pilihan yang berasingan.",
+      "after": "Chartered Manager kekal sebagai laluan CMI yang berasingan dan tidak wajib.",
+      "reason": "ms-register-audit-checklist.json 6.4/7.10 (high confidence): laluan ... pilihan reads as CMI's chosen/best route, a banned prestige framing. User instruction: no laluan pilihan."
+    },
+    {
+      "lang": "ms",
+      "file": "scripts/pdf/copy/ms.json",
+      "location": "decision-guide FAQ Adakah saya menjadi Chartered Manager?",
+      "before": "Chartered Manager ialah laluan CMI pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri yang ditentukan CMI.",
+      "after": "Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, dengan kelayakan, penilaian dan yuran tersendiri yang ditentukan CMI.",
+      "reason": "same as above"
+    },
+    {
+      "lang": "ms",
+      "file": "scripts/pdf/copy/ms.json",
+      "location": "working-managers-guide.sections[2] Pengiktirafan yang dinyatakan dengan tepat",
+      "before": "Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan, penilaian, keahlian dan yuran tersendiri.",
+      "after": "Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, dengan kelayakan, penilaian, keahlian dan yuran tersendiri.",
+      "reason": "same as above"
+    },
+    {
+      "lang": "ms",
+      "file": "scripts/pdf/copy/ms.json",
+      "location": "working-managers-guide.kicker",
+      "before": "PANDUAN PENGURUS BEKERJA 2026",
+      "after": "PANDUAN PROGRAM 2026 UNTUK PENGURUS YANG BEKERJA",
+      "reason": "R2.1 displayed-title rule: Pengurus Bekerja is a calque; filename panduan-pengurus-bekerja-2026.pdf is unchanged."
+    },
+    {
+      "lang": "zh",
+      "file": "scripts/pdf/copy/zh.json",
+      "location": "scholarship-eligibility notice back-page CMI line",
+      "before": "面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书。",
+      "after": "面向未来商业领导力的 Executive MBA 由 CMI 颁发并认可。",
+      "reason": "User instruction: CMI line must read 由 CMI 颁发并认可; 背书 is banned. Matches src/lib/content-zh.ts line 151 wording exactly."
+    },
+    {
+      "lang": "zh",
+      "file": "scripts/pdf/copy/zh.json",
+      "location": "working-managers-guide.sections[0] 您正在评估什么",
+      "before": "面向未来商业领导力的 Executive MBA 由 CMI 颁授并背书。",
+      "after": "面向未来商业领导力的 Executive MBA 由 CMI 颁发并认可。",
+      "reason": "same as above"
+    },
+    {
+      "lang": "zh",
+      "file": "scripts/pdf/copy/zh.json",
+      "location": "employer-funding-brief card The funding question",
+      "before": "是否应在所选班次之前，先探讨赞助或由雇主主导的 HRD Corp 申请？",
+      "after": "是否应在所选届别之前，先探讨赞助或由雇主主导的 HRD Corp 申请？",
+      "reason": "User instruction: no 班次; content-zh.ts uses 届别 for cohort."
+    },
+    {
+      "lang": "zh",
+      "file": "scripts/pdf/copy/zh.json",
+      "location": "scholarship-eligibility card title Your intended cohort",
+      "before": "您意向的班次",
+      "after": "您意向的届别",
+      "reason": "same as above"
+    },
+    {
+      "lang": "zh",
+      "file": "scripts/pdf/copy/zh.json",
+      "location": "scholarship-eligibility card body Your intended cohort",
+      "before": "已公布的英语或华语班次中，哪一个符合您的时间安排？",
+      "after": "已公布的英语或华语届别中，哪一个符合您的时间安排？",
+      "reason": "same as above"
+    }
+  ],
+  "ms_title_change": {
+    "old_kicker": "PANDUAN PENGURUS BEKERJA 2026",
+    "new_kicker": "PANDUAN PROGRAM 2026 UNTUK PENGURUS YANG BEKERJA",
+    "filename_unchanged": "panduan-pengurus-bekerja-2026.pdf",
+    "grep_check": "grep -rn Pengurus Bekerja scripts/pdf/copy/ms.json returns nothing (case-sensitive exact phrase)"
+  },
+  "facts_verified_against_content_ts": {
+    "fee": "RM10,000.00 (src/lib/content.ts FEES.malaysia.standard) - present verbatim in all three languages",
+    "duration_months": 6,
+    "training_days": 6,
+    "scheduled_sessions": 3,
+    "applied_projects": 1,
+    "scholarship_provider": "LIFE Innoversity",
+    "hrd_corp": "employer-led, e-TRiS application, Allowable Cost Matrix - matches content.ts / content-ms.ts / content-zh.ts",
+    "cmi_not_mqa_boundary": "present beside every CMI mention in all languages (cover_notice + inline)"
+  },
+  "loop_count": 1,
+  "pipeline_touched": "none - only scripts/pdf/copy/{en,ms,zh}.json edited; build.py, documents/*.py, fonts and run.mjs untouched"
+}
