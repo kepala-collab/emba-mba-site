@@ -106,7 +106,7 @@ export default function MbaForSmeOwnersZhPage() {
       </section>
 
       {/* 2 · 企业依赖您的地方 */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
@@ -192,7 +192,7 @@ export default function MbaForSmeOwnersZhPage() {
       </section>
 
       {/* 4 · 为何适合企业主 */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />

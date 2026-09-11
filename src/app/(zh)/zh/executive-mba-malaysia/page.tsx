@@ -109,7 +109,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       </section>
 
       {/* TERMS CONFIRMED FOR MALAYSIA */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">马来西亚的确认条款</span></div></Reveal>
           <Reveal><h2 className="sec-h">费用、资助途径与时间表，均以书面确认。</h2></Reveal>
@@ -152,7 +152,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       </section>
 
       {/* TRUSTED BY */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">ABC 公司简介</span></div></Reveal>
           <Reveal><h2 className="sec-h">课程机构服务过的部分组织。</h2></Reveal>

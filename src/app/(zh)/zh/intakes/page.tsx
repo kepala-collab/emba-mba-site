@@ -27,7 +27,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">完整排期</span></div></Reveal>
           <Reveal><h2 className="sec-h">报名前，先确认三次上课日期</h2></Reveal>

@@ -391,6 +391,60 @@ test("priority content pages reflow without horizontal overflow", async ({ page 
   }
 });
 
+test("Malay priority pages reflow without horizontal overflow at every brief breakpoint", async ({ page }) => {
+  test.setTimeout(120_000);
+  const routes = ["/ms", "/ms/executive-mba", "/ms/fees", "/ms/apply", "/ms/intakes", "/ms/faq", "/ms/chartered-manager-malaysia", "/ms/curriculum", "/ms/resources/advancement-brief", "/ms/insights/executive-education-vs-executive-mba", "/ms/lp/google"];
+  for (const width of [320, 375, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
+    for (const route of routes) {
+      await goto(page, route);
+      const dimensions = await page.evaluate(() => ({
+        client: document.documentElement.clientWidth,
+        scroll: document.documentElement.scrollWidth,
+      }));
+      expect(dimensions.scroll, `${route} at ${width}px`).toBeLessThanOrEqual(dimensions.client);
+    }
+  }
+});
+
+test("Chinese headings never wrap to a single orphaned character on priority pages", async ({ page }) => {
+  test.setTimeout(60_000);
+  const routes = ["/zh", "/zh/executive-mba", "/zh/fees", "/zh/chartered-manager-malaysia", "/zh/curriculum", "/zh/lp/google"];
+  for (const width of [320, 375, 768]) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
+    for (const route of routes) {
+      await goto(page, route);
+      const orphaned = await page.locator("h1, h2, h3").evaluateAll((headings) =>
+        headings
+          .filter((heading) => (heading.textContent || "").trim().length > 1)
+          .map((heading) => {
+            const range = document.createRange();
+            range.selectNodeContents(heading);
+            const rects = Array.from(range.getClientRects()).filter((rect) => rect.width > 0 && rect.height > 0);
+            const lastLineWidth = rects.length ? rects[rects.length - 1].width : 0;
+            const charWidth = heading.getBoundingClientRect().height * 0.6;
+            return { text: heading.textContent, lastLineWidth, isMultiline: rects.length > 1, orphan: rects.length > 1 && lastLineWidth <= charWidth };
+          })
+          .filter((entry) => entry.orphan),
+      );
+      expect(orphaned, `${route} at ${width}px orphaned headings: ${JSON.stringify(orphaned)}`).toHaveLength(0);
+    }
+  }
+});
+
+test("Malay and Chinese priority pages have no automated accessibility violations", async ({ page }) => {
+  test.setTimeout(90_000);
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
+    for (const route of ["/ms", "/ms/executive-mba", "/ms/fees", "/ms/chartered-manager-malaysia", "/ms/curriculum", "/ms/resources/advancement-brief", "/ms/lp/google", "/zh/curriculum", "/zh/resources/advancement-brief", "/zh/intakes", "/zh/faq", "/ms/intakes", "/ms/faq"]) {
+      await goto(page, route);
+      await page.waitForTimeout(400);
+      const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
+      expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
+    }
+  }
+});
+
 test("fee calculation remains contained across desktop breakpoints", async ({ page }) => {
   for (const width of [1024, 1223, 1280, 1440]) {
     await page.setViewportSize({ width, height: 850 });

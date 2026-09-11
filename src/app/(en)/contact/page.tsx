@@ -16,7 +16,7 @@ export default function ContactPage() {
   return (
     <section className="section">
       <div className="wrap">
-        <style>{`.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}@media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:34px}}`}</style>
+        
         <div className="contact-grid">
           <div>
             <Reveal>

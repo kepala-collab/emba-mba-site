@@ -113,7 +113,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
       </section>
 
       {/* 2 · How it fits your week */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
@@ -186,7 +186,7 @@ export default function MbaForWorkingProfessionalsZhPage() {
       </section>
 
       {/* 4 · 2026 intakes teaser */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />

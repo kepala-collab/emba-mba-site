@@ -120,7 +120,7 @@ export default function MsGoogleLP() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Perbandingan program yang jelas skopnya</span></div></Reveal>
           <Reveal><h2 className="sec-h">Bandingkan tujuan, format, penilaian dan sifat sijil program.</h2></Reveal>
@@ -157,7 +157,7 @@ export default function MsGoogleLP() {
         </div>
       </section>
 
-      <style>{`@media(max-width:900px){.lpg-grid{grid-template-columns:1fr!important;gap:30px!important}.lpg-cmp{grid-template-columns:1fr!important}}`}</style>
+      
     </div>
   );
 }

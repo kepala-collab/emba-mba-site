@@ -116,7 +116,7 @@ export default function AiExecutiveMbaPage() {
       </section>
 
       {/* 4 · SAME-PROGRAMME FACTS STRIP */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Programme facts</span></div></Reveal>
           <Reveal><h2 className="sec-h">The AI focus does not change the programme&rsquo;s formal status.</h2></Reveal>

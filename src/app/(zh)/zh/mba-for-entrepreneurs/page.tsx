@@ -81,7 +81,7 @@ export default function MbaForEntrepreneursZhPage() {
       </section>
 
       {/* 2 · Built for founders */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
@@ -135,7 +135,7 @@ export default function MbaForEntrepreneursZhPage() {
       </section>
 
       {/* 4 · Why the format works */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />

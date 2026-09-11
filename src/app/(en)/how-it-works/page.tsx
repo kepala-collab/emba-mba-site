@@ -90,7 +90,7 @@ export default function HowItWorks() {
       </section>
 
       {/* WHAT CHANGES ACROSS THE SIX MONTHS — narrative spine */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What changes across {FACTS.durationLong}</span></div></Reveal>
           <Reveal><h2 className="sec-h">From carrying the decision alone to leading it.</h2></Reveal>
@@ -137,7 +137,7 @@ export default function HowItWorks() {
       </section>
 
       {/* THE FLOW — visual chain */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">The thinking flow</span></div></Reveal>
           <Reveal><h2 className="sec-h">From a well-framed question to measurable value.</h2></Reveal>
@@ -180,7 +180,7 @@ export default function HowItWorks() {
       </section>
 
       {/* HOW IT'S DELIVERED */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How it&rsquo;s delivered</span></div></Reveal>
           <Reveal><h2 className="sec-h">Learned by doing, across {FACTS.durationLong}.</h2></Reveal>

@@ -85,7 +85,7 @@ export default function MbaForEntrepreneursPage() {
       </section>
 
       {/* 2 · Built for how founders move */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
@@ -141,7 +141,7 @@ export default function MbaForEntrepreneursPage() {
       </section>
 
       {/* 4 · Why the format works for founders */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />

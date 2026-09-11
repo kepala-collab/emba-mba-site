@@ -89,7 +89,7 @@ export default function ZhMetaLP() {
         </div>
       </div>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">您将完成的工作</span></div></Reveal>
           <Reveal><h2 className="sec-h">一项课题进来，一份方案出去</h2></Reveal>

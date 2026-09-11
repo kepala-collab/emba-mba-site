@@ -108,7 +108,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* HOW THE CLAIM WORKS */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Bagaimana tuntutan berjalan</span></div></Reveal>
           <Reveal><h2 className="sec-h">Kenali empat tanggungjawab, dari permohonan hingga tuntutan.</h2></Reveal>
@@ -165,7 +165,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* ELIGIBILITY NOTE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Siapa yang boleh menuntut</span></div></Reveal>
           <Reveal><h2 className="sec-h">Siapa memohon, dan siapa memutuskan.</h2></Reveal>

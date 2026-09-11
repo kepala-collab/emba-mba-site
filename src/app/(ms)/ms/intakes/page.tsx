@@ -28,7 +28,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Jadual penuh</span></div></Reveal>
           <Reveal><h2 className="sec-h">Pastikan anda dapat hadir pada ketiga-tiga hujung minggu.</h2></Reveal>

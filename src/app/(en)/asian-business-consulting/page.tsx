@@ -136,7 +136,7 @@ export default function AsianBusinessConsultingPage() {
         </div>
       </section>
 
-      <section id="abc-film" className="section" style={{ background: "var(--bg-2)" }}>
+      <section id="abc-film" className="section section--alt">
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>

@@ -132,7 +132,7 @@ export default function AbcPageZh() {
         </div>
       </section>
 
-      <section id="abc-film" className="section" style={{ background: "var(--bg-2)" }}>
+      <section id="abc-film" className="section section--alt">
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">首届证书颁发典礼 · 2026 年 8 月</span></div>

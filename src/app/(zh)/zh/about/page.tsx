@@ -70,7 +70,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap about-story-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <Reveal>
             <div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
         </div>
       </section>
       <CtaSection lang="zh" programme="Executive MBA" heading="就 Future Ready Executive MBA，与课程团队聊聊" sub={`可选通话、线上会议、面谈或电邮。课程团队会解答关于适配度、日期、费用、认可，以及由雇主主导的 HRD Corp 资助等问题。${ENQUIRY_COMMITMENT_ZH}`} />
-      <style>{`@media(max-width:760px){.about-affandi-grid,.about-story-grid{grid-template-columns:1fr!important}}`}</style>
+      
     </>
   );
 }

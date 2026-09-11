@@ -105,7 +105,7 @@ export default function FacultyPage() {
       </section>
 
       <CtaSection programme="Executive MBA" heading="Discuss how faculty and coaches will review your plan." />
-      <style>{`@media(max-width:760px){.faculty-grid .card{flex-direction:column!important}}`}</style>
+      
     </>
   );
 }

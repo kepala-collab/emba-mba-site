@@ -72,7 +72,7 @@ export default function CtaSection({
   const resolvedSub = sub ?? d.sub;
   const checklist = steps || d.checklist;
   return (
-    <section id={sectionId} className="section" style={{ background: "var(--bg-2)" }}>
+    <section id={sectionId} className="section section--alt">
       <div className="wrap">
         <div className="cta-grid">
           <Reveal>

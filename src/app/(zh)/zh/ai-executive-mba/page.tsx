@@ -121,7 +121,7 @@ export default function AiExecutiveMbaPage() {
       </section>
 
       {/* 4 · SAME-PROGRAMME FACTS STRIP */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">课程事实</span></div></Reveal>
           <Reveal><h2 className="sec-h">加入 AI 主题，课程的正式属性不变</h2></Reveal>

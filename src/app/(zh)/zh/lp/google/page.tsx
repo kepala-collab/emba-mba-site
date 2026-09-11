@@ -101,7 +101,7 @@ export default function ZhGoogleLP() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">范围清晰的课程比较</span></div></Reveal>
           <Reveal><h2 className="sec-h">课程目的不同，逐项比较</h2></Reveal>
@@ -132,7 +132,7 @@ export default function ZhGoogleLP() {
         </div>
       </section>
 
-      <style>{`@media(max-width:900px){.lpg-grid{grid-template-columns:1fr!important;gap:30px!important}.lpg-cmp{grid-template-columns:1fr!important}}`}</style>
+      
     </div>
   );
 }

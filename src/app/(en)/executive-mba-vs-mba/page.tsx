@@ -63,7 +63,7 @@ export default function ExecutiveMbaVsMbaPage() {
       </section>
 
       {/* COMPARISON TABLE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Side by side</span></div></Reveal>
           <Reveal><h2 className="sec-h">Eight terms, defined side by side.</h2></Reveal>
@@ -117,11 +117,11 @@ export default function ExecutiveMbaVsMbaPage() {
             </Reveal>
           </div>
         </div>
-        <style>{`@media(max-width:760px){.choose-grid{grid-template-columns:1fr!important}}`}</style>
+        
       </section>
 
       {/* IS IT WORTH IT */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Fee and terms, in writing</span></div></Reveal>
           <Reveal><h2 className="sec-h">Name the job first, then read the terms.</h2></Reveal>

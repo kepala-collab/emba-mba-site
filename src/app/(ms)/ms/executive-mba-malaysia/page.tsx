@@ -116,7 +116,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       </section>
 
       {/* TERMA YANG DISAHKAN UNTUK MALAYSIA */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Terma yang disahkan untuk Malaysia</span></div></Reveal>
           <Reveal><h2 className="sec-h">Yuran, laluan pembiayaan dan jadual, disahkan secara bertulis.</h2></Reveal>
@@ -161,7 +161,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       </section>
 
       {/* TRUSTED BY */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Profil syarikat ABC</span></div></Reveal>
           <Reveal><h2 className="sec-h">Lihat organisasi dalam profil penyedia program.</h2></Reveal>

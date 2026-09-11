@@ -110,7 +110,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       </section>
 
       {/* TERMS CONFIRMED FOR MALAYSIA */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Terms confirmed for Malaysia</span></div></Reveal>
           <Reveal><h2 className="sec-h">The fee, the funding route and the schedule, confirmed in writing.</h2></Reveal>
@@ -154,7 +154,7 @@ export default function ExecutiveMbaMalaysiaPage() {
       </section>
 
       {/* TRUSTED BY */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">ABC company profile</span></div></Reveal>
           <Reveal><h2 className="sec-h">Organisations listed by the programme provider.</h2></Reveal>

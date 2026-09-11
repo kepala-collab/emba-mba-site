@@ -99,7 +99,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* HOW THE CLAIM WORKS */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How the claim works</span></div></Reveal>
           <Reveal><h2 className="sec-h">Four defined responsibilities from application to claim.</h2></Reveal>
@@ -155,7 +155,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* ELIGIBILITY NOTE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Who can claim</span></div></Reveal>
           <Reveal><h2 className="sec-h">Who applies, and who decides.</h2></Reveal>

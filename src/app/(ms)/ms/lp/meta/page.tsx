@@ -89,7 +89,7 @@ export default function MsMetaLP() {
         </div>
       </div>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang anda akan lakukan</span></div></Reveal>
           <Reveal><h2 className="sec-h">Satu isu perniagaan masuk. Satu pelan tindakan bertulis keluar.</h2></Reveal>

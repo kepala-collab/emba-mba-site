@@ -73,7 +73,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap about-story-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <Reveal>
             <div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
         </div>
       </section>
       <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan Future Ready Executive MBA." sub="Pilih panggilan, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." />
-      <style>{`@media(max-width:760px){.about-affandi-grid,.about-story-grid{grid-template-columns:1fr!important}}`}</style>
+      
     </>
   );
 }

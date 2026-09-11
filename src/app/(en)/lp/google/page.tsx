@@ -109,7 +109,7 @@ export default function GoogleLandingPage() {
       </section>
 
       {/* WHY THIS VS A REFERENCE ACADEMIC MBA */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Defined programme comparison</span></div></Reveal>
           <Reveal><h2 className="sec-h">Compare purpose, format, assessment and credential.</h2></Reveal>
@@ -141,13 +141,6 @@ export default function GoogleLandingPage() {
           <p className="fine" style={{ maxWidth: "70ch" }}>{COMPLIANCE} Programme delivered by {SITE.provider}. This page is operated by {OPERATOR.name}, the authorised {OPERATOR.role}.</p>
         </div>
       </section>
-
-      <style>{`
-        @media(max-width:900px){
-          .lpg-grid{grid-template-columns:1fr!important;gap:30px!important}
-          .lpg-cmp{grid-template-columns:1fr!important}
-        }
-      `}</style>
     </>
   );
 }

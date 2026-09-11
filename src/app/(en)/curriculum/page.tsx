@@ -65,7 +65,7 @@ export default function CurriculumPage() {
       </section>
 
       {/* THE 3 VALUE STAGES */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Three stages of value</span></div></Reveal>
           <Reveal><h2 className="sec-h">Creating, delivering and capturing value — in that order.</h2></Reveal>
@@ -83,7 +83,7 @@ export default function CurriculumPage() {
             </div>
           </Reveal>
         </div>
-        <style>{`@media(max-width:820px){.stage-grid{grid-template-columns:1fr!important}}`}</style>
+        
       </section>
 
       {/* THE 12 MODULES */}
@@ -108,7 +108,7 @@ export default function CurriculumPage() {
       </section>
 
       {/* THE APPLIED BUSINESS PROJECT */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap curriculum-capstone-grid">
           <Reveal>
             <figure className="editorial-visual editorial-visual-portrait">
@@ -152,7 +152,7 @@ export default function CurriculumPage() {
             </Reveal>
           </div>
         </div>
-        <style>{`@media(max-width:640px){.cap-grid{grid-template-columns:1fr!important}}`}</style>
+        
       </section>
 
       <CtaSection programme="Executive MBA" />

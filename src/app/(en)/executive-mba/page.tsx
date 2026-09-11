@@ -168,7 +168,7 @@ export default function ExecutiveMbaPage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap programme-learning-grid">
           <Reveal>
             <div className="reading-section-head">

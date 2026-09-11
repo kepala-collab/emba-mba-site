@@ -69,7 +69,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap about-story-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <Reveal>
             <div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
       <CtaSection programme="Executive MBA" heading="Discuss the Future Ready Executive MBA." />
-      <style>{`@media(max-width:760px){.about-affandi-grid,.about-story-grid{grid-template-columns:1fr!important}}`}</style>
+      
     </>
   );
 }
