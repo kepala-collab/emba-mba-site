@@ -1,0 +1,51 @@
+{
+  "unit": "hrd-corp-claimable",
+  "files_changed": [
+    "src/app/(en)/hrd-corp-claimable/page.tsx",
+    "src/app/(ms)/ms/hrd-corp-claimable/page.tsx",
+    "src/app/(zh)/zh/hrd-corp-claimable/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "The employer applies. HRD Corp decides.",
+      "lede": "Asian Business Consulting is an HRD Corp (HRDC) Approved Training Provider. The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. The certificate documents completion of management and leadership development recognised against CMI's Professional Standard and can be listed on a professional profile. It does not guarantee promotion, employment, salary progression or any other career outcome. HRD Corp funding for this programme starts with a decision made inside the company: to develop a manager responsible for a team. An HRD Corp-registered Malaysian employer submits the grant application in e-TRiS before training. HRD Corp determines eligibility and the approved amount under its Allowable Cost Matrix; funding cannot exceed the employer's available levy balance."
+    },
+    "ms": {
+      "h1": "Majikan memohon. HRD Corp memutuskan.",
+      "lede": "Asian Business Consulting ialah Penyedia Latihan HRD Corp (HRDC) yang diluluskan. Program ini layak untuk pembiayaan HRD Corp yang diterajui majikan (Employer-Led HRD Corp Funding). Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI. Sijil ini merekodkan penyempurnaan pembangunan pengurusan dan kepimpinan yang diiktiraf berdasarkan Professional Standard CMI, dan boleh disenaraikan dalam profil profesional. Ia tidak menjamin kenaikan pangkat, pekerjaan, kenaikan gaji atau sebarang hasil kerjaya lain. Pembiayaan HRD Corp bagi program ini bermula dengan satu keputusan di dalam syarikat: untuk membangunkan seorang pengurus yang bertanggungjawab ke atas satu pasukan. Majikan Malaysia yang berdaftar dengan HRD Corp perlu mengemukakan permohonan geran melalui e-TRiS sebelum program bermula."
+    },
+    "zh": {
+      "h1": "雇主申请，HRD Corp 裁定。",
+      "lede": "Asian Business Consulting 是人力资源发展机构（HRD Corp）核准的培训机构。本课程可申请由雇主主导的 HRD Corp 资助（Employer-Led HRD Corp Funding）。面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可。该证书记录了根据 CMI Professional Standard 获认可的管理与领导力发展成果，可列入专业档案。它不保证晋升、就业、加薪或任何其他职业结果。本课程的 HRD Corp 资助，始于公司内部的一个决定：培养一位对团队负责的管理者。已在 HRD Corp 注册的马来西亚雇主，须在开课前通过 e-TRiS 提交资助申请。"
+    }
+  },
+  "constants_used": [
+    "HRD_CORP_CLAIM.short / .responsibility (en)", "HRD_CORP_CLAIM_MS", "HRD_CORP_CLAIM_ZH",
+    "COMPANY_ENROLMENT.eligibility / .hrdRoute",
+    "FACTS.priceStd", "FACTS.durationLong (en)", "FACTS.durationMonths (ms/zh)",
+    "FACTS.scholarshipProvider", "FACTS.scholarshipEligibility (en; ms/zh use the site's established scholarship sentence carried in content-ms.ts/content-zh.ts since no exported MS/ZH mirror constant exists)",
+    "INCLUSIONS (en, slice 0-4)",
+    "PROGRAMME_POSITIONING_SENTENCE (en)", "PROGRAMME_POSITIONING_MS", "PROGRAMME_POSITIONING_ZH",
+    "CERTIFICATE_POSITIONING.distinction / .professionalRelevance (en)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS", "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH",
+    "CTA_LABELS.company / .ms.company / .zh.company",
+    "SITE.provider / .director / .phone / .email"
+  ],
+  "exit_codes": {
+    "npm_run_typecheck": 0,
+    "content_clarity_audit": 0
+  },
+  "self_checks": {
+    "ms_register_self_check_section_7": "passed: no kamu/awak/korang/engkau/-lah/nak/tak; no meN- dropped on '-kan' verbs; no stray Aug/Sep/Oct/Dec month abbreviations; RM10,000.00 style via FACTS.priceStd; no biasanya/kebiasaannya/selalunya/kebanyakan/lebih kurang/kira-kira; no perbualan program / Pengurus Bekerja / projek aplikasi / laluan lanjutan / program awam / dinilai untuk / disokong oleh CMI / atas talian / emel / kepemimpinan; identifiers kept verbatim in English (HRD Corp, e-TRiS, Allowable Cost Matrix, CMI Certificate of Recognition, Chartered Manager, Executive MBA on Future Ready Business Leadership); every fact traces to FACTS/HRD_CORP_CLAIM_MS/CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS; Chartered Manager not mentioned on this page (out of scope, not forced in); no promotion/salary/ROI claim; zero exclamation marks; 'anda' kept out of the fee/levy/HRD Corp fact sentences; H1 is 4 words",
+    "zh_register_self_check_section_7": "passed: numbers, dates, fee string and names unchanged from source; no 约/大约/通常/一般/左右/多数; no urgency device (名额有限/先到先得/立即/马上); no prestige/guarantee word; CMI uses 认可 (never 认证 for CMI); scholarship sentence carries 名额有限/须经...评估/书面批准/个别以书面确认/并非自动授予, never 折扣; CTAs use 索取/预约/查看-style verbs, none reads as 报名/录取; 您 used throughout body, no pronoun in any H1/H2; removed the one '班次' hit found in STEPS (transport-schedule cohort word, banned) so the file now carries zero locale-register warnings under both plain and --strict-locales runs; full-width punctuation and pangu spacing preserved; no sentence-initial 它/这; decoration budget respected (no chengyu on the HRD Corp / scholarship / recognition lines); H1 6 Chinese characters + Latin abbreviation, two beats"
+  },
+  "notes_for_reviewer": [
+    "H1/lede follow the trust-and-recognition archetype's own worked example verbatim in structure (spec section 8): 'The employer applies. HRD Corp decides.' with the lede opening on the manager the employer is developing, then HRD_CORP_CLAIM.short — this replaces the prior paperwork/process-first H1 ('Understand the HRD Corp grant process...'), addressing the messaging-map-digest note that this page was 'process/paperwork-framed with no employer progress.'",
+    "The content-clarity-audit.mjs script hard-fails on any 'HRD Corp claimable' + programme/training/course/period phrase (its 'unqualified HRD Corp claim sentence' rule), which collided with the unit brief's instruction to render the official term 'HRD Corp Claimable Course' in English with a gloss. I treated the audit as authoritative per the writing-brief's own precedence rule and replaced every instance with 'employer-led HRD Corp funding' / 'Employer-Led HRD Corp Funding' framing instead (still glossed once per non-English page), which is also the exact wording already used for HRD_CORP_CLAIM.label in content.ts. Flagging for the reviewer in case the owner specifically wants the retired 'HRD Corp Claimable Course' string reinstated with an audit-rule exception.",
+    "Added CERTIFICATE_POSITIONING.professionalRelevance (and its MS/ZH mirrors) into the hero/first-viewport block and again in the 'What's covered' fine print, since both blocks name CMI or the certificate (owner decision 2026-09-10 #2 and governance checklist #4).",
+    "Reordered HRD_FAQS / HRD_FAQS(ms/zh) so the funding-decision question ('Who decides whether we get HRD Corp funding?') leads and stays the open-by-default FAQPage JSON-LD entry, matching the page's new who-decides framing; JSON-LD structure itself (FAQPage / Question / acceptedAnswer) is untouched, only its text fields changed.",
+    "Fixed two spots that previously retyped the scholarship-eligibility fact by hand (EN eligibility note + EN FAQ 'not registered' answer) to interpolate FACTS.scholarshipEligibility verbatim plus the governance-required 'The scholarship is never automatic.' sentence; MS/ZH mirrors given the equivalent already-established sentence used elsewhere in content-ms.ts/content-zh.ts, since content.ts currently has no exported per-language mirror constant for FACTS.scholarshipEligibility itself.",
+    "Did not touch STEPS/INCLUSIONS_MS/INCLUSIONS_ZH structural shape beyond the one '班次' -> removed wording fix; did not touch CtaSection component or shared LeadForm.",
+    "Did not commit; did not run npm run build or e2e."
+  ]
+}

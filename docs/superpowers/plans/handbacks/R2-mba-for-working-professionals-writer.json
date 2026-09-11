@@ -1,0 +1,58 @@
+{
+  "unit": "mba-for-working-professionals",
+  "files_changed": [
+    "src/app/(en)/mba-for-working-professionals/page.tsx",
+    "src/app/(ms)/ms/mba-for-working-professionals/page.tsx",
+    "src/app/(zh)/zh/mba-for-working-professionals/page.tsx"
+  ],
+  "archetype": "Audience cluster page (spec section 8) — keep/change pair headline",
+  "new_h1_and_lede": {
+    "en": {
+      "h1": "Keep the role. Change how you decide in it.",
+      "lede": "You keep the title and the responsibilities. Across {FACTS.durationLong}, you take one decision you already carry and work it — through {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, one-to-one coaching and an applied business project — into a written action plan reviewed by faculty. The frameworks and working templates stay with you. The method develops decision capabilities; business outcomes depend on the participant's evidence, choices and execution."
+    },
+    "ms": {
+      "h1": "Kekalkan jawatan. Ubah cara anda membuat keputusan.",
+      "lede": "Anda kekalkan jawatan dan tanggungjawab sedia ada. Sepanjang {FACTS.durationLong}, anda bawa satu keputusan yang sudah di tangan anda dan usahakannya — menerusi {FACTS.trainingDays} hari latihan dalam {FACTS.liveSessions} sesi berjadual, bimbingan satu-lawan-satu dan projek amali perniagaan — menjadi pelan tindakan bertulis yang disemak oleh fakulti. Rangka kerja dan templat kerja itu kekal milik anda. Kaedah ini membina keupayaan membuat keputusan; hasil perniagaan bergantung pada bukti, pilihan dan pelaksanaan peserta sendiri.",
+      "note": "H1 taken verbatim from spec section 13's own worked example for this exact keep/change pair (7 words, within the 9-word Malay headline limit)."
+    },
+    "zh": {
+      "h1": "职位不变，决策方式改变。",
+      "lede": "您留在现有岗位与职责。{FACTS.durationLong}内，您把一项已在手上的决策，通过 {FACTS.trainingDays} 个培训日、分 {FACTS.liveSessions} 次研习课，加上一对一辅导与企业应用项目，做成一份经导师审阅的书面行动方案。课程框架与工作模板由您留用。这套方法培养决策能力；业务成果则取决于学员本身的证据、选择与执行。",
+      "note": "H1 taken verbatim from spec section 13's own worked example (10 characters, within the 14-character limit; no 您/你 in the headline)."
+    }
+  },
+  "constants_used": [
+    "FACTS.durationLong / durationMonths / trainingDays / liveSessions / scholarshipProvider / scholarshipEligibility (MS/ZH kept as free transcreation since no MS/ZH mirror constant of scholarshipEligibility exists yet)",
+    "ABC_PROFILE.programmePositioning (en) / PROGRAMME_POSITIONING_MS + PROGRAMME_POSITIONING_ZH with hand-mirrored boundary clause (no combined MS/ZH equivalent of ABC_PROFILE.programmePositioning exists)",
+    "CERTIFICATE_POSITIONING.professionalRelevance / CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS / _ZH",
+    "PROGRAMME_POSITIONING_SENTENCE (en JSON-LD)",
+    "PROGRAMME_AUDIENCE / PROGRAMME_AUDIENCE_MS / PROGRAMME_AUDIENCE_ZH",
+    "HRD_CORP_CLAIM.short / HRD_CORP_CLAIM_MS / HRD_CORP_CLAIM_ZH",
+    "COMPARISON / COMPARISON_MS / COMPARISON_ZH, COMPARISON_SCOPE (table itself untouched, only surrounding prose rewritten)",
+    "CTA_LABELS.guide / CTA_LABELS.ms.guide / CTA_LABELS.zh.guide (already at owner-approved 2026 value; not renamed further)"
+  ],
+  "audit_and_typecheck": {
+    "npm_run_typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "content_clarity_audit_findings_for_this_unit_before_fix": [
+      "Chinese transport-schedule cohort word (班次) in the ZH catch-up card and 2026-intakes lede — replaced with 课程/已公布日期 wording",
+      "Malay retired preferred-route phrasing (laluan pilihan) in the MS hero boundary sentence — replaced with the spec's 'laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI'"
+    ],
+    "content_clarity_audit_findings_after_fix": "none for this unit; full-repo audit also exits 0"
+  },
+  "self_checks": {
+    "en_h1_word_count": 7,
+    "ms_h1_word_count": 7,
+    "zh_h1_char_count": 10,
+    "cmi_certificate_boundary_colocation": "CMI/certificate claims in hero and comparison fine print are followed in the same block by the not-an-MQA-degree boundary and CERTIFICATE_POSITIONING.professionalRelevance (all three languages)",
+    "no_banned_calques": "checked ms-register/zh-register 'high' confidence audit items for terms used on this page (pengurus bekerja avoided per dispatch instruction — used 'profesional yang bekerja' throughout; 班次 removed from ZH copy)",
+    "scholarship_wording": "renders as scholarship provider + selective/individual-written-confirmation language + explicit 'never automatic' sentence in all three languages, per governance checklist item 6",
+    "no_disparagement_no_scarcity": "comparison section keeps COMPARISON_SCOPE framing and avoids verdict language; 'Open for enquiries' wording is untouched (owned by the IntakeSchedule component, not edited)"
+  },
+  "left_for_reviewer": [
+    "No MS/ZH mirror constant exists yet for FACTS.scholarshipEligibility or for a combined ABC_PROFILE.programmePositioning-equivalent (positioning + not-an-MQA-degree boundary in one string) in content-ms.ts/content-zh.ts. I hand-transcreated matching prose instead of retyping the English token; reviewer should confirm this transcreation against ms-register.md/zh-register.md section 5/7 register limits, and flag to the owner/spec-holder that these constants are worth adding at source per spec section 11's 'proposed constants' note.",
+    "IntakeSchedule and CtaSection are shared components and were not touched, per the dispatch instruction to leave components alone; their English/Malay/Chinese strings ('Open for enquiries', CTA labels, etc.) were only referenced, not edited.",
+    "Pre-existing 班次 usage remains on other pages (e.g. /zh/intakes, /zh/executive-mba-malaysia) — out of scope for this unit but the same banned pattern will need the same fix there."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "unit": "faculty",
+  "language": "en",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "notes": "src/app/(en)/faculty/page.tsx: H1 'People who review your reasoning, not only your result.' is 9 words. Servant leadership named once, worded 'measured by the people it serves' (matches the owner-banned 'most' wording avoided). CMI is named only inside the attributed event-photo figcaption identifying named individuals' affiliations (Regional Board Chairman of CMI Malaysia, CMI (UK) members) — this is biographical attribution of real people, not a credential claim about the programme's certificate, so the professionalRelevance pairing rule (checklist item 4) does not apply to it; left unchanged, matching the writer's own note. No card titled with a price/speed/credential cue. No retyped facts.",
+  "score_after": 9,
+  "owner_questions": [
+    "Confirm the read that CMI appearing only in the attributed faculty-photo caption (naming a person's CMI Malaysia board role) does not trigger the professionalRelevance pairing rule, since that rule is aimed at credential claims about the programme's own certificate, not third-party biographical affiliation."
+  ]
+}

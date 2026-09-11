@@ -1,0 +1,59 @@
+{
+  "unit": "about",
+  "filesChanged": [
+    "src/app/(en)/about/page.tsx",
+    "src/app/(ms)/ms/about/page.tsx",
+    "src/app/(zh)/zh/about/page.tsx"
+  ],
+  "newH1": {
+    "en": "Roy Affandi. The person who answers your questions.",
+    "ms": "Roy Affandi. Orang yang menjawab soalan anda.",
+    "zh": "Roy Affandi。负责解答问题的人。"
+  },
+  "newLede": {
+    "en": "Roy Affandi's role is to serve the decision you are weighing before anything else: honest answers on fit, dates, fees, recognition and funding, including when the programme is not the right route for you. Real leadership is servant leadership: it is measured by the people it serves.",
+    "ms": "Tugas Roy Affandi ialah melayani keputusan yang sedang anda pertimbangkan, dahulu daripada segalanya: jawapan yang jujur tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan, termasuk apabila program ini bukan laluan yang tepat untuk anda. Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya.",
+    "zh": "Roy Affandi 的角色，是先服务您正在权衡的决定：诚实解答适配度、日期、费用、认可与资助方面的问题，包括在课程并非合适选择时如实相告。真正的领导是仆人式领导（servant leadership）：以所服务的人来衡量。"
+  },
+  "constantsUsed": [
+    "SITE.director, SITE.url",
+    "ABC_PROFILE.name, ABC_PROFILE.hrdStatus, ABC_PROFILE.description",
+    "ORGANISATIONAL_STATEMENT (EN); inline ORGANISATIONAL_STATEMENT_MS local const (unchanged); ZH organisational sentence inline (unchanged, uses PROGRAMME_POSITIONING already correct per owner decision #1 '由 CMI 颁发并认可')",
+    "CERTIFICATE_POSITIONING.professionalRelevance (EN, newly added)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (newly imported from content-ms.ts)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (newly imported from content-zh.ts)",
+    "ENQUIRY_COMMITMENT_ZH (newly imported, replaced hand-typed ZH commitment sentence in the CTA sub with the exact constant)",
+    "FACTS.durationMonths (ZH, unchanged pre-existing use)",
+    "editorialTeamSchema(), OPERATOR_ID (added to ms and zh; already present in en)"
+  ],
+  "jsonLd": {
+    "en": "Person + editorialTeamSchema unchanged (already present).",
+    "ms": "Added Person (@id {SITE.url}/about#roy-affandi, name SITE.director, jobTitle 'Penyelaras Program') + editorialTeamSchema(), rendered via new JsonLd import; was missing before.",
+    "zh": "Added Person (@id {SITE.url}/about#roy-affandi, name SITE.director, jobTitle '课程协调人') + editorialTeamSchema(), rendered via new JsonLd import; was missing before. Same @id and SITE.director name used across all three languages per instruction."
+  },
+  "governanceNotes": [
+    "Wherever 'awarded and endorsed by CMI' / 'dianugerahkan dan disokong oleh CMI' / '由 CMI 颁发并认可' appears in the editorial-team block, CERTIFICATE_POSITIONING.professionalRelevance (and its ms/zh mirrors) now renders in the same viewport, satisfying governance checklist item 4.",
+    "Removed outcome-adjacent phrasing flagged in messaging-map-digest.json for /about: EN 'move forward in their careers' -> 'serve the decision you are weighing' / 'deciding with confidence'; MS 'melangkah maju' -> 'membuat keputusan dengan jelas'; ZH '往前走' -> '决策更清晰'. These are read as activities/acts, not career-outcome promises.",
+    "Owner pattern used once per language on first use: EN 'Real leadership is servant leadership: it is measured by the people it serves.' (spec section 6 wording, audit-safe); MS 'Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya.' (spec section 13 exact wording); ZH '真正的领导是仆人式领导（servant leadership）：以所服务的人来衡量。' (spec section 13 exact wording, full-width brackets per site convention).",
+    "Servant-leadership posture includes the honest no in all three languages ('including when the programme is not the right route for you' / 'apabila program ini bukan laluan yang tepat untuk anda' / '在课程并非合适选择时如实相告').",
+    "ABC is named as the provider and holder of the track record throughout (ABC_PROFILE.description, ABC HRD Corp status); Right Dots Resources appears only as marketing agency / operator (ORGANISATIONAL_STATEMENT, partnership seal caption) — ABC's track record is never attributed to RDR.",
+    "MS H1/H2 headline word counts checked at or under 9 words (H1 7 words, editorial-team H2 7 words, Malaysian-perspective H2 8 words).",
+    "ZH H1/H2 kept under 14 characters and free of 您/你 and sentence-initial 这/它; removed the pre-existing sentence-initial '这门' in the editorial-standards paragraph.",
+    "Fixed ZH CTA sub to interpolate the exact ENQUIRY_COMMITMENT_ZH constant ('咨询不构成报读或付款承诺。') instead of a hand-typed near-duplicate ('咨询不代表报名或付款承诺'), for fact/wording parity with content-zh.ts.",
+    "Person and editorialTeamSchema JSON-LD structure kept identical to the English page's shape and added to ms/zh (was missing on both), using the same @id values and SITE.director as the source of truth for the name."
+  ],
+  "auditAndTypecheck": {
+    "typecheckExitCode": 0,
+    "contentClarityAuditExitCode": 0,
+    "auditNotes": "npm run typecheck: clean. node scripts/content-clarity-audit.mjs: 'Content clarity audit passed across 178 public content files.' No warnings or failures attributed to any of the three about/page.tsx files; the 29 pre-existing locale warnings are all in other files untouched by this unit."
+  },
+  "selfChecks": {
+    "malay": "Checked against owner-vocabulary-rules.md and spec section 13/14: 'anda' used throughout for the reader, no exclamation marks, no -lah/nak/tak, 'kepimpinan berkhidmat (servant leadership)' local-term-first pattern on first use, avoided 'laluan pilihan', 'perbualan program', 'pengurus bekerja', 'projek aplikasi' (none of these terms appear on this page). RM/dates not present on this page so no formatting risk. Two short sentences used in the H1-adjacent lede rather than one long sentence.",
+    "chinese": "Checked against owner-vocabulary-rules.md and spec section 13/14: Malaysian Simplified Chinese register kept; 仆人式领导（servant leadership）on first use with full-width brackets matching site convention; avoided 背书, 班次, 参与者, 渠道, 创始人, 首席执行官, 营销, 免费获取 (none appear); used 市场推广 instead of 营销 for Right Dots Resources' role (pre-existing, unchanged); 认可 used for CMI (via existing PROGRAMME_POSITIONING_ZH constant, unchanged); pangu-style spacing preserved around 'Roy Affandi' and other Latin/CMI tokens; no sentence begins with 它 or 这 (removed the one pre-existing '这门' instance); headlines kept at or under 14 characters with no 您/你."
+  },
+  "leftForReviewer": [
+    "The English/Malay/Chinese bios for Roy Affandi (career history, education) were left unchanged verbatim per the messaging-map-digest.json 'protect' list, since they are already factual, activity-based and synced with the Person JSON-LD description in each language — reviewer may want to double check the ZH Person JSON-LD description wording against the ZH body prose for exact phrase parity (they are equivalent in meaning but not word-for-word, since the JSON-LD description is a compressed summary).",
+    "The EN CtaSection call on this page still uses a custom heading ('Discuss the Future Ready Executive MBA.') rather than one of the exact CTA_LABELS strings; this was pre-existing and out of scope (CtaSection.tsx is a shared component, not one of this unit's files) but the reviewer may want to confirm it against whatever CTA-heading convention other units land on.",
+    "Did not touch CtaSection.tsx, content.ts, content-ms.ts, or content-zh.ts beyond importing already-existing constants — no shared/component files were edited, per the dispatch instruction to touch only this unit's three page files."
+  ]
+}

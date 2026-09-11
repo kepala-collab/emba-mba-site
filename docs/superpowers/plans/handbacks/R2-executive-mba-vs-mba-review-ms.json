@@ -1,0 +1,30 @@
+{
+  "unit": "executive-mba-vs-mba",
+  "language": "ms",
+  "reviewer": "independent R2 unit reviewer (fresh context)",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(ms)/ms/executive-mba-vs-mba/page.tsx",
+      "line": 79,
+      "problem": "Fees link labelled 'pecahan pelaburan sepenuhnya' (full investment breakdown) — 'pelaburan' (investment) frames the fee as a return-on-investment proposition, which the dispatch brief bans for this link and which the governance file's ban on value/return language for fees also covers.",
+      "fix_applied": "Changed link text to 'halaman yuran penuh' (per dispatch instruction: fees link label must be 'halaman yuran', not 'halaman pelaburan')."
+    },
+    {
+      "file": "src/app/(ms)/ms/executive-mba-vs-mba/page.tsx",
+      "line": 175,
+      "problem": "PAGE_FAQS filter selected the question 'Bagaimana program ini disusun?', which does not exist in FAQS_MS (content-ms.ts), so only 2 of the intended 3 FAQ entries rendered on the page and in the FAQPage JSON-LD.",
+      "fix_applied": "Replaced the non-existent question string with 'Apakah yang berubah untuk saya sepanjang program?', an existing FAQS_MS entry that answers the same 'how does the programme work' intent, so all 3 FAQs render correctly."
+    },
+    {
+      "file": "src/app/(ms)/ms/executive-mba-vs-mba/page.tsx",
+      "line": 180,
+      "problem": "CtaSection sub used a paraphrase 'Perbualan ini tanpa sebarang ikatan untuk mendaftar atau membayar.' instead of the controlled enquiry-commitment sentence used verbatim everywhere else on the site (ENQUIRY_COMMITMENT_MS / 'Pertanyaan tidak mengikat anda untuk mendaftar atau membayar.'). Spec section 11 treats this as a controlled sentence that must not be retyped.",
+      "fix_applied": "Replaced the paraphrase with the verbatim controlled sentence, matching every other CtaSection sub on the site (about, executive-mba-malaysia, hrd-corp-claimable, mba-for-sme-owners)."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "Confirm the FAQ selection fix (swapping the non-existent 'Bagaimana program ini disusun?' for 'Apakah yang berubah untuk saya sepanjang program?') matches intent; the English and Chinese versions of this page reportedly have the same FAQ-filter mismatch bug per the writer's own hand-back note, but those files are out of scope for this Malay-only review."
+  ]
+}

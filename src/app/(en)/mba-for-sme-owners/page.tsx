@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { BOUNDARY_COMPACT, CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-sme-owners", {
   title: "Executive MBA for SME Owners & Founders",
   description:
-    `The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. Built for SME owners across ${FACTS.liveSessions} scheduled sessions.`,
+    `Decisions in your head become decisions in writing: one operating issue to a plan across ${FACTS.durationLong}, ${BOUNDARY_COMPACT}.`,
 });
 
 const jsonLd = {
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": `${SITE.url}/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered for SME owners and founders across ${FACTS.liveSessions} scheduled sessions.`,
+    `Owners take one operating issue, pricing, succession or a client dependency, from problem to a written plan with owners and measures, reviewed by faculty, across ${FACTS.durationLong} and ${FACTS.liveSessions} scheduled sessions. Professional programme, ${BOUNDARY_COMPACT}.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -36,25 +36,25 @@ const jsonLd = {
 
 export default function MbaForSmeOwnersPage() {
   const challenges = [
-    { h: "Operational dependence", p: "Pricing, approvals, client decisions and problem resolution still depend on the owner." },
-    { h: "Limited decision capacity", p: "Business growth increases the number of decisions faster than one person can process them." },
-    { h: "Strategy without protected time", p: "Immediate operational work repeatedly takes priority over market, capability and investment decisions." },
-    { h: "Unclear succession", p: "Roles, decision rights and operating knowledge are not documented well enough for leadership transfer." },
-    { h: "Reactive management", p: "Teams address urgent symptoms without changing the process or incentive that produces them." },
+    { h: "Pricing and approvals", p: "Pricing calls, approvals and client decisions still route through you." },
+    { h: "Decision volume", p: "Growth adds decisions faster than one person can work through them." },
+    { h: "Protected time for strategy", p: "Operational work takes the time that market, capability and investment decisions need." },
+    { h: "Succession not yet written down", p: "Roles, decision rights and operating knowledge are not yet documented for someone else to carry." },
+    { h: "The same problem, addressed again", p: "The team responds to the symptom without changing the process or incentive that produces it." },
   ];
 
   const fit = [
-    { h: `${FACTS.liveSessions} scheduled weekends across the programme`, p: `The ${FACTS.liveSessions} scheduled sessions run once a month. The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort.` },
-    { h: "Your business is the applied project", p: "There is no traditional thesis or examination. Participants use the frameworks to develop a transformation plan for their own organisation." },
+    { h: `${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions`, p: "The published intake table states the Friday–Saturday or Saturday–Sunday schedule for each cohort." },
+    { h: "Your own business is the applied project", p: "The applied business project is a written plan for faculty review, built on your own organisation — no traditional thesis or examination." },
     { h: "Employer-applied HRD Corp funding", p: HRD_CORP_CLAIM.short },
-    { h: "Scholarship eligibility for Malaysians", p: `Eligible Malaysian applicants may be considered, on a selective basis, for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing; instalment options are listed on the Fees page.` },
+    { h: "Scholarship eligibility for Malaysians", p: `${FACTS.scholarshipEligibility} The scholarship is never automatic; instalment options are listed on the Fees page.` },
   ];
 
   return (
     <>
       <JsonLd data={jsonLd} />
 
-      {/* 1 · Intro — name the real pain */}
+      {/* 1 · Intro — name the change of experience */}
       <section className="section geo-section">
         <div className="wrap">
           <div className="eyebrow">
@@ -63,17 +63,34 @@ export default function MbaForSmeOwnersPage() {
           </div>
           <Reveal>
             <h1 className="sec-h">
-              Build the systems that reduce <span className="acc">owner dependence</span>.
+              From decisions in your head to <span className="acc">decisions in writing</span>.
             </h1>
           </Reveal>
           <p className="sec-sub">
-            The Future Ready Executive MBA helps SME owners examine where decisions, client knowledge
-            and operating control remain concentrated in one person. The programme applies systems,
-            strategy and leadership frameworks to delegation, capability building, succession and growth.
+            Owners carry client knowledge, pricing calls and operating control in their own heads.
+            Across {FACTS.durationLong} the applied business project takes one operating issue — pricing,
+            succession or a client dependency — from problem to a written plan with owners and measures,
+            reviewed by faculty. It develops management capability; growth and return depend on the
+            decisions and execution that follow.
+          </p>
+          <p className="sec-sub mt-s">
+            {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, one-to-one
+            coaching and an applied business project on an issue within your own responsibility. The
+            frameworks and working templates stay with you.
+          </p>
+          <p className="sec-sub mt-s">
+            {CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance}
           </p>
           <p className="mono sec-k mt-s">
-            Six months · three scheduled programme weekends · awarded and endorsed by CMI
+            {FACTS.priceStd} standard fee · {HRD_CORP_CLAIM.label}. {FACTS.scholarshipEligibility} The
+            scholarship is never automatic. An enquiry does not commit you to enrol or pay.
           </p>
+          <Reveal className="mt-s">
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide}</Link>
+              <Link href="/apply?intent=employer_sponsored" className="btn">{CTA_LABELS.company}</Link>
+            </div>
+          </Reveal>
           <p className="sec-sub mt-s">
             See the full{" "}
             <Link href="/executive-mba" className="acc">Executive MBA programme</Link>, or explore
@@ -82,18 +99,19 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      {/* 2 · Sound familiar? */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      {/* 2 · Where the business depends on you */}
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
             <span className="mono sec-k">Operating indicators</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Where owner dependence appears in the business.</h2>
+            <h2 className="sec-h">Where the business depends on you.</h2>
           </Reveal>
           <p className="sec-sub">
-            Use these indicators to identify which operating constraint the applied project should address.
+            These are the operating conditions the applied project can work on — not a verdict on how
+            you run the business.
           </p>
           <div className="mt-m grid-forces">
             {challenges.map((x) => (
@@ -108,7 +126,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      {/* 3 · What changes */}
+      {/* 3 · What changes, in 5S order */}
       <section className="section">
         <div className="wrap">
           <div className="eyebrow">
@@ -116,47 +134,47 @@ export default function MbaForSmeOwnersPage() {
             <span className="mono sec-k">What changes</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">Move recurring decisions into defined operating systems.</h2>
+            <h2 className="sec-h">One operating issue becomes a written plan.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme focuses on the operating system around the owner: decision rights, processes,
-            information flows, leadership capability and measures. It develops management capability;
-            growth and return depend on the decisions and execution that follow.
+            The applied business project works on the operating system around you: decision rights,
+            processes, information flows, leadership capability and measures. It develops management
+            capability; growth and return depend on the decisions and execution that follow.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">See the whole board</h3>
+                <h3 className="mono sec-k">The business runs without you in the room</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Systems and first-principles thinking trace how a decision affects customers,
-                  people, cash, capacity and execution before resources are committed.
+                  Decision criteria and escalation rules are written down, so operations continue while
+                  you are in a session.
                 </p>
               </div>
             </Reveal>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Build systems, not dependencies</h3>
+                <h3 className="mono sec-k">Succession has a written plan</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Convert owner-held knowledge into documented processes, decision criteria and
-                  escalation rules that other leaders can use.
+                  Roles, decision rights and operating knowledge move from your memory into a document
+                  faculty can review.
                 </p>
               </div>
             </Reveal>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Delegate with a framework</h3>
+                <h3 className="mono sec-k">The team acts on decisions, not only tasks</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  Use situational leadership and facilitation frameworks to assign outcomes,
-                  decision authority, support and review points—not only tasks.
+                  Situational leadership and facilitation frameworks assign outcomes, decision authority,
+                  support and review points to the people who carry them.
                 </p>
               </div>
             </Reveal>
             <Reveal>
               <div className="card">
-                <h3 className="mono sec-k">Plan to scale or exit</h3>
+                <h3 className="mono sec-k">Other leaders are built, not only delegated to</h3>
                 <p className="sec-sub" style={{ marginTop: 10 }}>
-                  A structured strategy gives you a defensible view of where the business goes next
-                  — the groundwork for a defined scale, succession or exit plan.
+                  The plan is for the people who depend on your decisions: the team that carries it, the
+                  customers it is meant for, and whoever leads the business after you.
                 </p>
               </div>
             </Reveal>
@@ -169,18 +187,18 @@ export default function MbaForSmeOwnersPage() {
       </section>
 
       {/* 4 · Why it fits owners */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
             <span className="mono sec-k">Why it fits owners</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">A format that allows owners to remain in the business.</h2>
+            <h2 className="sec-h">A format that keeps you in the business.</h2>
           </Reveal>
           <p className="sec-sub">
-            The six-month programme uses scheduled weekend sessions, and the applied project is based
-            on the participant&rsquo;s own organisation. Funding and payment routes are explained separately.
+            Across {FACTS.durationLong} you stay in your role, and the applied project is worked on your
+            own organisation. Funding and payment routes are explained separately.
           </p>
           <div className="mt-m grid-forces">
             {fit.map((x) => (
@@ -193,8 +211,8 @@ export default function MbaForSmeOwnersPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
-            academic degree. <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>{" "}
+            {CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance}{" "}
+            <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>{" "}
             before choosing an intake.
           </p>
         </div>
@@ -204,11 +222,12 @@ export default function MbaForSmeOwnersPage() {
       <section className="section center">
         <div className="wrap">
           <Reveal>
-            <h2 className="sec-h">Decide which owner dependency the programme should address.</h2>
+            <h2 className="sec-h">Decide which operating issue the applied project should take on.</h2>
           </Reveal>
           <p className="sec-sub" style={{ maxWidth: 640, margin: "0 auto" }}>
-            Discuss your operating challenge with the programme team and confirm whether the applied
-            project, schedule and participant profile fit your objectives.
+            The plan you build is for the people who depend on your decisions. Discuss the issue you
+            are weighing with the programme team and confirm whether the applied project, schedule and
+            participant profile fit. An enquiry does not commit you to enrol or pay.
           </p>
           <p className="mt-s">
             <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide}</Link>
@@ -216,7 +235,7 @@ export default function MbaForSmeOwnersPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Discuss the systems your business needs beyond the owner." />
+      <CtaSection programme="Executive MBA" heading="Get the facts for the operating issue in front of you." />
     </>
   );
 }

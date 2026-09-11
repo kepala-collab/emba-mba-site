@@ -1,0 +1,28 @@
+{
+  "unit": "conversion-pages",
+  "language": "en",
+  "filesReviewed": [
+    "src/app/(en)/apply/page.tsx",
+    "src/app/(en)/contact/page.tsx",
+    "src/app/(en)/intakes/page.tsx",
+    "src/app/(en)/diagnostic/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/intakes/page.tsx",
+      "line": 113,
+      "problem": "Source-code comment read '{/* 4 — URGENCY + CTA */}'. Governance checklist item 13 explicitly bans urgency devices 'including source-code comments', even though the rendered copy in that section ('Discuss the calendar before you decide.') was itself clean.",
+      "fixApplied": "Changed the comment to '{/* 4 — SCHEDULE DECISION + CTA */}'. No visible copy changed."
+    }
+  ],
+  "notes": [
+    "apply/page.tsx and diagnostic/page.tsx are metadata-only wrappers around already-reviewed components (GuideApplyPage, ExecutiveDiagnostic); metadata title/description match spec verbatim (ENQUIRY_COMMITMENT, PROGRAMME_FIT_CHECK.en) with no in-page copy to check.",
+    "contact/page.tsx: H1 'Talk to the programme team.' (5 words); lede carries ENQUIRY_COMMITMENT verbatim; single enquiry destination (/apply) named consistently.",
+    "intakes/page.tsx: H1 'Choose when your six months start.' (6 words, no product/count/outcome noun); lede uses DELIVERY_CONTROL.schedule; 'Open for enquiries.' is the only availability wording (no seat counts or countdowns in rendered copy); CTA uses CTA_LABELS.conversation.",
+    "No banned vocabulary found on a manual grep of all four files for ladder/rung/climb/deserve/still open/last chance/limited seats/countdown/promotion/salary/fast-track/shortcut/etc.",
+    "npm run typecheck: 0. node scripts/content-clarity-audit.mjs: passed after the comment fix (comment text is not audited by the script's regexes; fixed to satisfy the spec's manual checklist item 13 directly)."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

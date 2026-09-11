@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import LeadForm from "@/components/site/LeadForm";
-import { CTA_LABELS, FACTS, PROGRAMME_YEAR } from "@/lib/content";
+import { CTA_LABELS, FACTS, PROGRAMME_FIT_CHECK, PROGRAMME_YEAR } from "@/lib/content";
 
 const QUESTIONS = [
   {
@@ -13,6 +13,7 @@ const QUESTIONS = [
       "I am facing an important business decision or operating change.",
       "I want structured professional development without leaving work.",
       "I need clearer evidence before choosing any programme.",
+      "A team, a company or a family business depends on the decisions I make.",
     ],
   },
   {
@@ -28,7 +29,7 @@ const QUESTIONS = [
     question: "Which learning arrangement fits your responsibilities?",
     options: [
       "A published schedule that fits around full-time work.",
-      "Applying the learning to my own business context.",
+      "A written action plan on my own business, reviewed by faculty.",
       "Practitioner guidance instead of a traditional thesis route.",
       "Clear information about fees, recognition and employer funding.",
     ],
@@ -75,10 +76,11 @@ const QUESTIONS_ZH = [
   {
     question: "哪一种情况最能说明您现在寻找课程的原因？",
     options: [
-      "我的职责范围已经超出现有的管理工具。",
+      "我的职责范围正逐渐超出现有的管理工具。",
       "我正面对一项影响重大的商业决策或转型。",
       "我希望在继续工作的同时接受有结构的专业发展。",
       "我需要更清晰的资料，才会选择任何课程。",
+      "一个团队、一家公司或一个家族企业，取决于我作出的决定。",
     ],
   },
   {
@@ -94,7 +96,7 @@ const QUESTIONS_ZH = [
     question: "什么学习安排最符合您的实际情况？",
     options: [
       "已公布并适合全职工作的上课时间。",
-      "把学习应用到自己的商业情境。",
+      "针对自身企业撰写的书面行动方案，经导师评审。",
       "以实践者指导取代传统论文模式。",
       "清楚列明费用、认可与雇主资助边界。",
     ],
@@ -103,7 +105,7 @@ const QUESTIONS_ZH = [
     question: "采取下一步之前，您最需要哪项资料？",
     options: [
       "教学方法、模块及企业应用项目要求。",
-      "完整时间投入与已公布班次日期。",
+      "完整时间投入与已公布开课日期。",
       "CMI 认可及 Chartered Manager 的明确边界。",
       "马来西亚学员费用、奖学金与 HRD Corp 流程。",
     ],
@@ -112,13 +114,13 @@ const QUESTIONS_ZH = [
 
 const RESULT_COPY_ZH = [
   {
-    title: "扩展管理能力",
+    title: "管理能力方法",
     body: "先了解七套 F.A.S.T. 思维方法，以及它们如何把经验转化为可重复使用的决策流程。",
     href: "/zh/executive-mba",
     action: "了解课程",
   },
   {
-    title: "应用商业判断",
+    title: "企业应用项目",
     body: "查看课程大纲与企业应用项目。关键问题是：这项学习能否用于一个真实的组织议题。",
     href: "/zh/curriculum",
     action: "查看课程大纲",
@@ -141,10 +143,11 @@ const QUESTIONS_MS = [
   {
     question: "Situasi mana yang paling menggambarkan sebab anda mencari program sekarang?",
     options: [
-      "Peranan saya sudah melangkaui kelengkapan pengurusan yang saya ada.",
+      "Peranan saya semakin meluas berbanding kelengkapan pengurusan yang saya ada.",
       "Saya berdepan keputusan perniagaan atau perubahan operasi yang penting.",
       "Saya mahu pembangunan profesional berstruktur sambil terus bekerja.",
       "Saya perlukan bukti yang lebih jelas sebelum memilih mana-mana program.",
+      "Sebuah pasukan, sebuah syarikat atau perniagaan keluarga bergantung pada keputusan yang saya buat.",
     ],
   },
   {
@@ -160,7 +163,7 @@ const QUESTIONS_MS = [
     question: "Susunan pembelajaran mana yang sesuai dengan tanggungjawab anda?",
     options: [
       "Jadual yang diterbitkan dan sesuai dengan kerja sepenuh masa.",
-      "Menerapkan pembelajaran kepada konteks perniagaan saya sendiri.",
+      "Pelan tindakan bertulis untuk perniagaan saya sendiri, disemak oleh fakulti.",
       "Bimbingan pengamal industri, bukan laluan tesis tradisional.",
       "Maklumat jelas tentang yuran, pengiktirafan dan pembiayaan majikan.",
     ],
@@ -169,7 +172,7 @@ const QUESTIONS_MS = [
     question: "Bukti apa yang anda perlukan sebelum mengambil langkah seterusnya?",
     options: [
       "Kaedah pembelajaran, modul dan keperluan projek amali.",
-      "Komitmen masa yang tepat serta tarikh kemasukan yang diterbitkan.",
+      "Komitmen masa yang tepat serta tarikh pengambilan yang diterbitkan.",
       "Maksud pengiktirafan CMI dan cara penilaian Chartered Manager dijalankan.",
       "Yuran di Malaysia, biasiswa dan proses HRD Corp.",
     ],
@@ -193,7 +196,7 @@ const RESULT_COPY_MS = [
     title: "Jadual dan komitmen masa",
     body: `Bandingkan struktur enam bulan dengan tarikh ${PROGRAMME_YEAR} yang diterbitkan sebelum memutuskan sama ada jadualnya sesuai dengan tanggungjawab anda.`,
     href: "/ms/intakes",
-    action: "Lihat tarikh kemasukan",
+    action: "Lihat tarikh pengambilan",
   },
   {
     title: "Yuran dan pengiktirafan",
@@ -205,54 +208,57 @@ const RESULT_COPY_MS = [
 
 const UI_COPY = {
   en: {
-    eyebrow: "Working manager progression check / no data sent",
-    title: "Where has your role outgrown your management toolkit?",
+    eyebrow: `${PROGRAMME_FIT_CHECK.en} / no data sent`,
+    title: "Which decision is your role now asking you to make differently?",
     intro: "Answer four private questions to identify what you should evaluate next. Your selections stay in this browser and are not transmitted or stored. This is not an admission test or a prediction of career outcomes.",
     resultEyebrow: "Your private review checklist",
-    resultTitle: "Here is what to evaluate next.",
+    resultTitle: "Here is a starting point, not a verdict.",
+    resultReflect: (answer: string) => `You said: ${answer}. Here are the four facts that tell you whether that change is realistic for you now.`,
     resultBody: "These are the priorities you selected. Review them against the published programme information before deciding whether the format fits your work.",
     selected: "Your selected priorities",
     next: "Check these four programme facts",
     talk: CTA_LABELS.conversation,
     guideKicker: "Your next step",
     guideTitle: "Keep the result and review the full guide.",
-    guideBody: `The Working Manager’s ${PROGRAMME_YEAR} Progression Guide brings the programme structure, dates, fee, the scholarship assessment process and CMI recognition into one place.`,
+    guideBody: `The ${PROGRAMME_YEAR} programme guide brings the programme structure, dates, fee, the scholarship assessment process and CMI recognition into one place.`,
     restart: "Start again",
     back: "Back",
     result: "See a starting point",
     continue: "Continue",
   },
   zh: {
-    eyebrow: "课程匹配检查 / 不会传送资料",
-    title: "哪些课程资料对您最重要？",
+    eyebrow: `${PROGRAMME_FIT_CHECK.zh} / 不会传送资料`,
+    title: "现在，哪个决策需要不同的做法？",
     intro: "回答四道问题，建立一份私人审阅清单。您的选择只保留在当前浏览器页面，不会被传送或储存。这不是入学测试，也不会预测职业结果。",
     resultEyebrow: "您的私人审阅清单",
-    resultTitle: "根据您的选择，逐项检查课程是否合适。",
+    resultTitle: "这是起点，不是结论。",
+    resultReflect: (answer: string) => `您选择：${answer}。以下四项事实，能帮助您判断这项改变现在是否切实可行。`,
     resultBody: "以下是您选择的重点。请先与已公布的课程资料逐项核对，再决定是否联系课程团队。",
     selected: "您选择的重点",
     next: "核对四项课程事实",
     talk: CTA_LABELS.zh.conversation,
     guideKicker: "下一步",
     guideTitle: "保留结果，并查看完整课程指南。",
-    guideBody: `《${PROGRAMME_YEAR} 在职经理进阶指南》把课程安排、日期、费用、奖学金择优评估方式及 CMI 认可集中在一份资料中。`,
+    guideBody: `《${PROGRAMME_YEAR} 年课程指南》把课程安排、日期、费用、奖学金择优评估方式及 CMI 认可集中在一份资料中。`,
     restart: "重新开始",
     back: "返回",
     result: "查看建议起点",
     continue: "继续",
   },
   ms: {
-    eyebrow: "Semakan kemajuan pengurus bekerja / tiada data dihantar",
-    title: "Di mana peranan anda sudah melangkaui kelengkapan pengurusan anda?",
+    eyebrow: `${PROGRAMME_FIT_CHECK.ms} / tiada data dihantar`,
+    title: "Keputusan mana yang kini perlu anda buat secara berbeza?",
     intro: "Jawab empat soalan peribadi untuk mengenal pasti perkara yang wajar anda nilai seterusnya. Pilihan anda kekal dalam pelayar ini dan tidak dihantar atau disimpan. Ini bukan ujian kemasukan dan bukan ramalan hasil kerjaya.",
     resultEyebrow: "Senarai semakan peribadi anda",
-    resultTitle: "Inilah perkara yang wajar dinilai seterusnya.",
+    resultTitle: "Ini titik permulaan, bukan penilaian muktamad.",
+    resultReflect: (answer: string) => `Anda memilih: ${answer}. Berikut empat fakta yang menentukan sama ada perubahan itu realistik untuk anda sekarang.`,
     resultBody: "Ini keutamaan yang anda pilih. Semak setiap satu terhadap maklumat program yang diterbitkan sebelum memutuskan sama ada formatnya sesuai dengan kerja anda.",
     selected: "Keutamaan pilihan anda",
     next: "Semak empat fakta program ini",
     talk: CTA_LABELS.ms.conversation,
     guideKicker: "Langkah anda seterusnya",
     guideTitle: "Simpan keputusan ini dan semak panduan penuh.",
-    guideBody: `Panduan Kemajuan Pengurus Bekerja ${PROGRAMME_YEAR} menghimpunkan struktur program, tarikh, yuran, proses penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen.`,
+    guideBody: `Panduan program ${PROGRAMME_YEAR} menghimpunkan struktur program, tarikh, yuran, proses penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen.`,
     restart: "Mula semula",
     back: "Kembali",
     result: "Lihat titik permulaan",
@@ -308,6 +314,7 @@ export default function ExecutiveDiagnostic({ lang = "en" }: { lang?: "en" | "zh
         <div ref={resultRef} className="diagnostic-result">
           <p className="mono sec-k">{copy.resultEyebrow}</p>
           <h2 tabIndex={-1}>{copy.resultTitle}</h2>
+          <p>{copy.resultReflect(questions[0].options[answers[0] ?? 0])}</p>
           <p>{copy.resultBody}</p>
           <h3 className="diagnostic-result-label">{copy.selected}</h3>
           <ol className="diagnostic-answer-list">

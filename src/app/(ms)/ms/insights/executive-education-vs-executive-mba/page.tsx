@@ -4,15 +4,19 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS } from "@/lib/content-ms";
 import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 
 const PUBLISHED = "2026-08-21";
 
+const COMPARISON_SCOPE_MS =
+  "Jadual ini mentakrifkan MBA akademik rujukannya sebagai program 18–24 bulan yang dibina di sekitar modul akademik, tugasan atau peperiksaan, serta disertasi atau tesis. Ia tidak mewakili setiap program MBA.";
+
 export const metadata = withSeo("/ms/insights/executive-education-vs-executive-mba", {
   title: "Pendidikan Eksekutif lawan Executive MBA | Malaysia",
   description:
-    "Bandingkan pendidikan eksekutif dengan Executive MBA berdasarkan status akademik, kredensial, tempoh, penilaian, jadual dan aplikasi di tempat kerja.",
+    "Pendidikan eksekutif dan Executive MBA direka untuk tugas berbeza. Bandingkan status akademik, kredensial, penilaian, jadual dan yuran sebelum membuat keputusan.",
   openGraph: {
     type: "article",
     publishedTime: `${PUBLISHED}T16:00:00+08:00`,
@@ -23,7 +27,7 @@ export const metadata = withSeo("/ms/insights/executive-education-vs-executive-m
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Pendidikan Eksekutif lawan Executive MBA: Apa yang Perlu Dibandingkan Pemimpin Bekerja",
+  headline: "Pendidikan Eksekutif lawan Executive MBA: Tugas Mana Diselesaikan oleh Setiap Satu?",
   mainEntityOfPage: `${SITE.url}/ms/insights/executive-education-vs-executive-mba`,
   image: `${SITE.url}/opengraph-image`,
   datePublished: `${PUBLISHED}T16:00:00+08:00`,
@@ -37,11 +41,11 @@ const articleSchema = {
 };
 
 const COMPARISON = [
-  ["Tujuan utama", "Membangunkan keupayaan kepimpinan, pengurusan atau kepakaran tertentu secara tertumpu.", "Berbeza mengikut penyedia. EMBA akademik lazimnya membawa kepada ijazah; program yang diposisikan sebagai pembangunan profesional pula wajib menyatakan kredensialnya sendiri dengan jelas."],
-  ["Tempoh", "Boleh disampaikan dalam format yang lebih pendek atau bermodul; setiap penyedia wajib menerbitkan jadualnya.", `Program ini berjalan selama ${FACTS.durationMonths} bulan, merangkumi ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berpandu.`],
-  ["Penilaian", "Boleh menggunakan bengkel, projek, kajian kes atau sijil penyelesaian.", "Program ini menggunakan bimbingan dan projek berteraskan cabaran perniagaan sebenar, tanpa peperiksaan atau tesis konvensional."],
-  ["Status akademik", "Mungkin merupakan pembangunan profesional bukan ijazah; sahkan status yang dinyatakan oleh penyedia.", "Future Ready Executive MBA ini bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
-  ["Aplikasi di tempat kerja", "Direka untuk membina keupayaan yang boleh terus digunakan dalam peranan semasa.", "Peserta menerapkan rangka kerja pada isu perniagaan sebenar dalam konteks organisasi mereka sendiri."],
+  ["Direka untuk", "Satu kemahiran khusus, dibina mengikut jadual yang ditetapkan penyedia.", `Satu isu perniagaan sebenar dalam tanggungjawab anda sendiri, dibawa daripada takrifan masalah kepada pelan tindakan bertulis yang disemak fakulti, sepanjang ${FACTS.durationMonths} bulan.`],
+  ["Tempoh", "Bergantung pada jadual yang ditetapkan penyedia; format dan tempoh berbeza-beza.", `Program ini berjalan selama ${FACTS.durationMonths} bulan, merangkumi ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berjadual.`],
+  ["Penilaian", "Boleh menggunakan bengkel, projek, kajian kes atau sijil penyelesaian.", "Program ini menggunakan bimbingan dan projek amali perniagaan, tanpa peperiksaan atau tesis konvensional."],
+  ["Status akademik", "Mungkin ijazah akademik atau mungkin tidak; penyedia menyatakan status itu sendiri.", "Future Ready Executive MBA ini bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."],
+  ["Aplikasi di tempat kerja", "Direka untuk membina satu keupayaan yang boleh terus digunakan dalam peranan semasa.", "Peserta menerapkan rangka kerja pada isu perniagaan sebenar di dalam organisasi mereka sendiri."],
 ] as const;
 
 export default function ExecutiveEducationVsExecutiveMbaPage() {
@@ -59,13 +63,13 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
           <div className="wrap maxw-820">
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Panduan keputusan · Malaysia</span></div>
-              <h1 className="sec-h">Pendidikan eksekutif lawan Executive MBA: timbang kredensialnya, bukan namanya.</h1>
+              <h1 className="sec-h">Pendidikan eksekutif atau Executive MBA: pilih ikut tugasnya.</h1>
               <p className="mono fine" style={{ margin: "16px 0" }}>
                 Oleh pasukan editorial Asian Business Consulting · <time dateTime={PUBLISHED}>Diterbitkan dan disemak 21 Ogos 2026</time> ·{" "}
                 <Link href="/ms/about#editorial-standards">Piawaian editorial</Link>
               </p>
               <p className="sec-sub">
-                Pendidikan eksekutif merujuk pembelajaran profesional untuk mereka yang sudah bekerja. Executive MBA pula boleh bermaksud ijazah akademik, atau — apabila dinyatakan dengan jelas — sebuah program pembangunan profesional. Jadi perbandingan yang boleh dipercayai tidak terletak pada label: semak status akademik, kredensial, penilaian, jadual, aplikasi di tempat kerja dan yuran penuhnya.
+                Kedua-dua nama ini sering disebut dalam nafas yang sama, tetapi tugasnya berbeza. Pendidikan eksekutif membina satu kemahiran khusus, mengikut jadual yang ditetapkan penyedia. Executive MBA pula boleh bermaksud ijazah akademik, atau — apabila dinyatakan dengan jelas — program profesional dengan kredensialnya sendiri. Sebelum membandingkan perkara lain, sahkan dahulu status akademik, kredensial, penilaian, jadual dan yuran penuhnya.
               </p>
             </Reveal>
           </div>
@@ -75,13 +79,14 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
           <div className="wrap maxw-820 prose">
             <h2>Jawapan ringkas</h2>
             <p>
-              Pilih MBA atau EMBA akademik apabila langkah seterusnya anda menuntut ijazah akademik yang diiktiraf. Pertimbangkan pendidikan eksekutif apabila yang anda perlukan ialah pembangunan profesional yang tertumpu dan padan dengan waktu kerja. Selepas itu, pastikan dengan tepat apa sebenarnya yang program itu anugerahkan, kerana kredensial dan status akademik memang berbeza antara satu penyedia dengan yang lain.
+              Ijazah akademik ialah laluan yang betul apabila langkah seterusnya anda dikawal selia atau memerlukan akreditasi MQA: pilih MBA atau EMBA akademik untuk tugas itu. Pendidikan eksekutif, termasuk Executive MBA yang diposisikan secara profesional, ialah laluan yang betul apabila anda memerlukan pembangunan tertumpu yang muat dalam minggu bekerja anda. Setelah anda tahu tugas mana yang anda mahu program itu selesaikan, sahkan dengan tepat apa yang program berkenaan anugerahkan — kredensial dan status akademik berbeza antara penyedia.
             </p>
             <p>
-              <Link href="/ms/executive-mba">Executive MBA dalam Future Ready Business Leadership</Link> dianugerahkan dan disokong oleh CMI. Ia sebuah program pembangunan profesional selama enam bulan. Peserta yang berjaya akan menerima CMI Certificate of Recognition bagi program ini. Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.
+              <Link href="/ms/executive-mba">Executive MBA dalam Future Ready Business Leadership</Link> dianugerahkan dan disokong oleh CMI. Ia sebuah program pembangunan profesional selama {FACTS.durationMonths} bulan; peserta yang berjaya menerima CMI Certificate of Recognition (sijil pengiktirafan CMI) bagi program ini. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS} Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.
             </p>
 
             <h2>Bandingkan fakta yang diterbitkan</h2>
+            <p className="mono fine">{COMPARISON_SCOPE_MS}</p>
             <ScrollableTableRegion kind="comparison" label="Perbandingan pendidikan eksekutif dan Executive MBA" hint="Leret untuk lihat semua lajur →">
               <table className="cmp">
                 <thead><tr><th>Keputusan</th><th>Pendidikan eksekutif</th><th>Future Ready Executive MBA ini</th></tr></thead>
@@ -104,10 +109,10 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
 
             <h2>Untuk siapa program ini sesuai</h2>
             <p>
-              Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang mahukan pembangunan kepimpinan berstruktur, terarah pada isu perniagaan semasa. Ia menyatukan bengkel berasaskan kohort, bimbingan, rangka kerja keputusan strategik dan projek amali sepanjang enam bulan. Peserta terus kekal dalam peranan masing-masing sambil menyiapkan kerja itu.
+              Program ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang memikul satu isu perniagaan semasa dan mahukan pembangunan kepimpinan berstruktur di sekelilingnya. Ia menyatukan bengkel berasaskan kohort, bimbingan, rangka kerja keputusan strategik dan projek amali perniagaan sepanjang {FACTS.durationMonths} bulan. Peserta terus kekal dalam peranan masing-masing sepanjang tempoh itu.
             </p>
             <p>
-              Chartered Manager ialah laluan pilihan CMI yang berasingan. CMI yang menentukan kelayakan, penilaian, keahlian dan yurannya; ia tidak termasuk dalam program mahupun yuran yang diterbitkan. Semak <Link href="/ms/chartered-manager-malaysia">laluan CMI</Link>, <Link href="/ms/fees">yuran penuh dan terma biasiswa</Link>, serta <Link href="/ms/intakes">tarikh sesi yang diterbitkan</Link> sebelum membuat keputusan.
+              Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI; ia tidak termasuk dalam program ini mahupun yuran yang diterbitkan. Satu sesi perbincangan program dapat mengesahkan yuran semasa, tarikh sesi dan pengiktirafan CMI secara bertulis.
             </p>
 
             <h2>Sumber kajian</h2>
@@ -120,7 +125,7 @@ export default function ExecutiveEducationVsExecutiveMbaPage() {
         </section>
       </article>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Bandingkan fakta yang diterbitkan sebelum anda membuat keputusan." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Bincangkan tugas yang perlu diselesaikan oleh langkah seterusnya anda." />
     </>
   );
 }

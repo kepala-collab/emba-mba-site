@@ -4,12 +4,13 @@ import CtaSection from "@/components/site/CtaSection";
 import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/components/site/ArticleAttribution";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/insights/first-principles-thinking", {
-  title: "First-Principles Thinking for Business Leaders",
+  title: "From Inherited Answers to Decisions You Can Verify",
   description:
-    "A practical guide to first-principles thinking for business strategy: uncover assumptions, identify fundamental truths and rebuild better options.",
+    "A method for testing whether a business decision rests on a verified fact or a borrowed answer: separate what you actually know from what you were told, then rebuild from there.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,18 +21,18 @@ export const metadata = withSeo("/insights/first-principles-thinking", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "First-Principles Thinking for Business Leaders",
+  headline: "From inherited answers to decisions you can verify",
   mainEntityOfPage: "https://futurereadymba.com/insights/first-principles-thinking",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "en-MY",
   description:
-    "A practical guide to uncovering assumptions, identifying fundamental truths and rebuilding better strategic options from first principles.",
+    "A practical method for testing whether a business decision rests on a verified fact or an inherited answer, and for rebuilding it from what you actually know.",
   author: { "@type": "Organization", "@id": EDITORIAL_TEAM_ID, name: "Asian Business Consulting Editorial Team" },
   publisher: { "@type": "Organization", "@id": PROVIDER_ID, name: "Asian Business Consulting" },
   articleSection: "Insights",
-  about: "First-principles thinking for business strategy",
+  about: "First-principles thinking as a method for testing inherited business decisions",
 };
 
 export default function FirstPrinciplesThinkingPage() {
@@ -57,15 +58,16 @@ export default function FirstPrinciplesThinkingPage() {
                 maxWidth: "16ch",
               }}
             >
-              First-principles thinking for business leaders
+              From inherited answers to decisions you can verify
             </h1>
             <ArticleAttribution />
             <p className="sec-sub" style={{ maxWidth: "62ch" }}>
-              First-principles thinking starts by separating verified facts from
-              inherited conventions, then builds a decision from the verified facts.
-              Here is what first-principles
-              thinking is, why leaders drift away from it, and a method you can use
-              on Monday.
+              A pricing call, a hiring freeze, a make-or-buy decision — it can
+              arrive already dressed as &quot;the way it&apos;s done.&quot;
+              First-principles thinking is how you test whether that answer still
+              holds, or whether it was only ever borrowed from someone else&apos;s
+              problem. None of this is innate; it is practised, and here is the
+              method.
             </p>
           </Reveal>
 
@@ -88,15 +90,15 @@ export default function FirstPrinciplesThinkingPage() {
               before accepting it.
             </p>
 
-            <h2>Why leaders default to copying</h2>
+            <h2>Why leaders reach for the nearest comparison</h2>
             <p>
               &quot;Best practice&quot; and competitive benchmarking feel like rigor.
               They are defensible in a board meeting, they require less invention, and
               they carry the reassurance that someone else went first. The problem is
-              structural: if your strategy is assembled from everyone else&apos;s
-              answers, the very best you can do is arrive slightly faster at the same
-              place. Analogy caps you at incremental gains. It is well suited to
-              optimising a known game and poorly suited to changing the game.
+              structural: if a strategy is assembled from everyone else&apos;s
+              answers, the best it can do is arrive slightly ahead at the same
+              place. Analogy caps the outcome at incremental gains. It is well suited
+              to optimising a known game and poorly suited to changing the game.
             </p>
 
             <blockquote>
@@ -145,9 +147,9 @@ export default function FirstPrinciplesThinkingPage() {
               requires it, not because the client values it; that overhead is spread
               evenly across clients who consume it very unevenly; this input is priced
               by a supplier we chose years ago and never revisited. Rebuild the cost
-              structure from the genuine inputs and you frequently find that the
-              &quot;industry margin&quot; was a shared assumption, not a fixed ceiling
-              — and a materially different offer becomes possible.
+              structure from the genuine inputs and you find that the &quot;industry
+              margin&quot; was a shared assumption, not a fixed ceiling — and a
+              materially different offer becomes possible.
             </p>
 
             <h2>Common traps</h2>
@@ -166,15 +168,11 @@ export default function FirstPrinciplesThinkingPage() {
 
             <h2>A trainable discipline</h2>
             <p>
-              The encouraging part is that none of this is innate talent. Reasoning
-              from fundamentals is a skill that sharpens with structure and practice,
-              the same way financial judgement or negotiation does. It is one of the
-              seven thinking disciplines at the core of the{" "}
-              <Link href="/executive-mba">Future Ready Executive MBA</Link>, taught
-              through the programme&apos;s{" "}
-              <Link href="/how-it-works">F.A.S.T. method</Link> so that decomposing
-              problems and rebuilding strategy from first principles becomes an
-              instinct you bring to real decisions rather than a concept you admire.
+              None of this is innate talent. Reasoning from fundamentals is a skill
+              that sharpens with structure and practice, the same way financial
+              judgement or negotiation does — decomposing a problem and rebuilding the
+              answer from verified truths, on the decision in front of you, until it
+              becomes the way you decide rather than a method you admire.
             </p>
 
             <h2>Further reading</h2>
@@ -183,8 +181,9 @@ export default function FirstPrinciplesThinkingPage() {
               <li><a href="https://ocw.mit.edu/courses/15-351-managing-innovation-and-entrepreneurship-spring-2008/" target="_blank" rel="noopener noreferrer">MIT OpenCourseWare: Managing Innovation and Entrepreneurship</a> — complementary material on challenging assumptions and building new approaches.</li>
             </ul>
             <p>
-              <Link href="/executive-mba" className="btn btn-primary">
-                Explore the programme
+              Apply it to the decision you are carrying now.{" "}
+              <Link className="text-action" href="/diagnostic">
+                Open the {PROGRAMME_FIT_CHECK.en} <span aria-hidden="true">↗</span>
               </Link>
             </p>
           </div>
@@ -193,7 +192,7 @@ export default function FirstPrinciplesThinkingPage() {
 
       <CtaSection
         programme="Executive MBA"
-        heading="Learn to think from first principles."
+        heading="Apply it to the decision you are carrying now."
       />
     </>
   );

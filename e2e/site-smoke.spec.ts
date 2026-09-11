@@ -308,22 +308,22 @@ test("page navigation starts at the top while intentional anchors still work", a
 test("CMI recognition pages keep technical terms legible and the offer unambiguous", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await goto(page, "/chartered-manager-malaysia");
-  await expect(page.getByRole("heading", { name: "Professional recognition for work you can use." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Recognition for work you can show." })).toBeVisible();
   await page.locator("details").filter({ hasText: "Does the programme automatically award Chartered Manager status?" }).locator("summary").click();
-  await expect(page.getByText(/Chartered Manager is a separate optional CMI route/i).first()).toBeVisible();
+  await expect(page.getByText(/Chartered Manager is a separate CMI route/i).first()).toBeVisible();
   await expect(page.getByText(/£|USD 2,500/)).toHaveCount(0);
 
   await goto(page, "/zh/chartered-manager-malaysia");
-  await expect(page.getByRole("heading", { name: "让真实的管理成果，获得专业认可。" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "看得见的成果，拿得到的认可" })).toBeVisible();
   await page.locator("details").filter({ hasText: "结业后会自动成为 Chartered Manager 吗？" }).locator("summary").click();
-  await expect(page.getByText(/Chartered Manager 是一条独立可选的 CMI 路线/).first()).toBeVisible();
+  await expect(page.getByText(/Chartered Manager 是独立可选的 CMI 路线/).first()).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.fonts.status)).toBe("loaded");
 });
 
 test("indexed content routes expose visible breadcrumb orientation", async ({ page }) => {
   for (const [route, current] of [
     ["/mba-for-sme-owners", "For SME owners"],
-    ["/resources/advancement-brief", "Advancement brief"],
+    ["/resources/advancement-brief", "The 2026 programme guide"],
     ["/zh/faculty", "师资与导师"],
   ] as const) {
     await goto(page, route);
@@ -337,7 +337,7 @@ test("indexed content routes expose visible breadcrumb orientation", async ({ pa
 test("desktop hero exposes a primary conversion action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/home");
-  const box = await page.locator(".navbar").getByRole("link", { name: /Get the guide/i }).boundingBox();
+  const box = await page.locator(".navbar").getByRole("link", { name: /Get the .*programme guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
   const primaryAction = await page.locator('.commerce-actions a[href="#programme-guide"]').boundingBox();
@@ -387,6 +387,65 @@ test("priority content pages reflow without horizontal overflow", async ({ page 
       }));
       expect(dimensions.scroll, `${route} at ${width}px`).toBeLessThanOrEqual(dimensions.client);
       await expect(page.locator("main h1")).toHaveCount(1);
+    }
+  }
+});
+
+test("Malay priority pages reflow without horizontal overflow at every brief breakpoint", async ({ page }) => {
+  test.setTimeout(120_000);
+  const routes = ["/ms", "/ms/executive-mba", "/ms/fees", "/ms/apply", "/ms/intakes", "/ms/faq", "/ms/chartered-manager-malaysia", "/ms/curriculum", "/ms/resources/advancement-brief", "/ms/insights/executive-education-vs-executive-mba", "/ms/lp/google"];
+  for (const width of [320, 375, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
+    for (const route of routes) {
+      await goto(page, route);
+      const dimensions = await page.evaluate(() => ({
+        client: document.documentElement.clientWidth,
+        scroll: document.documentElement.scrollWidth,
+      }));
+      expect(dimensions.scroll, `${route} at ${width}px`).toBeLessThanOrEqual(dimensions.client);
+    }
+  }
+});
+
+test("Chinese headings never wrap to a single orphaned character on priority pages", async ({ page }) => {
+  test.setTimeout(60_000);
+  const routes = ["/zh", "/zh/executive-mba", "/zh/fees", "/zh/chartered-manager-malaysia", "/zh/curriculum", "/zh/lp/google"];
+  for (const width of [320, 375, 768]) {
+    await page.setViewportSize({ width, height: width < 1000 ? 844 : 900 });
+    for (const route of routes) {
+      await goto(page, route);
+      const orphaned = await page.locator("h1, h2, h3").evaluateAll((headings) =>
+        headings
+          .filter((heading) => (heading.textContent || "").trim().length > 1)
+          .map((heading) => {
+            const range = document.createRange();
+            range.selectNodeContents(heading);
+            const rects = Array.from(range.getClientRects()).filter((rect) => rect.width > 0 && rect.height > 0);
+            const lastLineWidth = rects.length ? rects[rects.length - 1].width : 0;
+            // A CJK glyph is roughly one em wide; derive the em from the computed font size, not
+            // from the block height (which spans every wrapped line and inflates the threshold).
+            // Tolerate font metric differences across platforms (CI uses different CJK fonts than
+            // local dev): only flag a genuine widow, i.e. two characters or fewer on the last line.
+            const charWidth = parseFloat(getComputedStyle(heading).fontSize) || 16;
+            const maxOrphanWidth = charWidth * 2;
+            return { text: heading.textContent, lastLineWidth, isMultiline: rects.length > 1, orphan: rects.length > 1 && lastLineWidth <= maxOrphanWidth };
+          })
+          .filter((entry) => entry.orphan),
+      );
+      expect(orphaned, `${route} at ${width}px orphaned headings: ${JSON.stringify(orphaned)}`).toHaveLength(0);
+    }
+  }
+});
+
+test("Malay and Chinese priority pages have no automated accessibility violations", async ({ page }) => {
+  test.setTimeout(90_000);
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
+    for (const route of ["/ms", "/ms/executive-mba", "/ms/fees", "/ms/chartered-manager-malaysia", "/ms/curriculum", "/ms/resources/advancement-brief", "/ms/lp/google", "/zh/curriculum", "/zh/resources/advancement-brief", "/zh/intakes", "/zh/faq", "/ms/intakes", "/ms/faq"]) {
+      await goto(page, route);
+      await page.waitForTimeout(400);
+      const results = await new AxeBuilder({ page }).exclude("iframe").analyze();
+      expect(results.violations, `${route} at ${width}px: ${results.violations.map((item) => item.id).join(", ")}`).toEqual([]);
     }
   }
 });
@@ -466,7 +525,7 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   const heroGrid = page.locator(".commerce-decision-layout");
   const heroForm = heroGrid.locator("form[data-form-id]");
   await expect(heroForm).toBeVisible();
-  await expect(heroForm.getByRole("heading", { name: "Get the 2026 Future Ready EMBA guide." })).toBeVisible();
+  await expect(heroForm.getByRole("heading", { name: "Get the 2026 programme guide." })).toBeVisible();
   await expect(heroForm.getByLabel("Email")).toBeVisible();
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
@@ -497,7 +556,7 @@ test("home hero presents a still image beside a visible text caption", async ({ 
   await expect(image).toHaveAttribute("fetchpriority", "high");
   await expect(media.locator("video")).toHaveCount(0);
   await expect(page.locator(".commerce-media-control")).toHaveCount(0);
-  await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
+  await expect(media.locator("figcaption")).toContainText("One issue. One plan you can lead.");
 });
 
 test("mobile programme fit check returns to its factual result", async ({ page }) => {
@@ -508,7 +567,7 @@ test("mobile programme fit check returns to its factual result", async ({ page }
     await page.locator(".diagnostic-option").first().click();
     await page.getByRole("button", { name: question === 3 ? /See a starting point/i : /Continue/i }).click();
   }
-  await expect(page.getByRole("heading", { name: "Here is what to evaluate next." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Check these four programme facts" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Your selected priorities" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Keep the result and review the full guide." })).toBeVisible();
   const result = await page.locator(".diagnostic-result").boundingBox();
@@ -636,6 +695,29 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
   )).toBe(1);
 });
 
+test("Malay assistant explicitly executes Turnstile and returns a Malay answer", async ({ page }) => {
+  await mockTurnstile(page);
+  await page.route("**/api/chat", async (route) => {
+    const request = route.request().postDataJSON() as { turnstile_token?: string; lang?: string };
+    expect(request.turnstile_token).toBe("chat-test-token");
+    expect(request.lang).toBe("ms");
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ answer: "Jawapan ujian ini tersedia dalam Bahasa Melayu." }),
+    });
+  });
+  await goto(page, "/ms/intakes");
+  await dismissConsent(page);
+  await page.getByRole("button", { name: /Tanya pembantu program/i }).click();
+  await expect(page.getByRole("link", { name: "Hubungi Future Ready EMBA di WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/60129818533/);
+  await page.getByRole("button", { name: /Berapakah yuran program/i }).click();
+  await expect(page.getByText("Jawapan ujian ini tersedia dalam Bahasa Melayu.")).toBeVisible();
+  await expect.poll(() => page.evaluate(() =>
+    (window as typeof window & { __turnstileResetCount?: number }).__turnstileResetCount || 0,
+  )).toBe(1);
+});
+
 test("content pages defer assistant Turnstile until the assistant is opened", async ({ page }) => {
   await goto(page, "/curriculum");
   await dismissConsent(page);
@@ -714,7 +796,7 @@ test("English, Malay and Chinese guide forms submit through the guarded contract
 
   const locales = [
     { route: "/apply", language: "en", name: "Parity Test", result: "Request received" },
-    { route: "/ms/apply", language: "ms", name: "Ujian Kesetaraan", result: "Permohonan diterima" },
+    { route: "/ms/apply", language: "ms", name: "Ujian Kesetaraan", result: "Pertanyaan diterima" },
     { route: "/zh/apply", language: "zh", name: "语言测试", result: "沟通请求已收到" },
   ] as const;
 

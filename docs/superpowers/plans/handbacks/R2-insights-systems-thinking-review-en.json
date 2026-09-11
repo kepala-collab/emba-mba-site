@@ -1,0 +1,25 @@
+{
+  "unit": "insights-systems-thinking",
+  "language": "en",
+  "filesReviewed": ["src/app/(en)/insights/systems-thinking-for-leaders/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/insights/systems-thinking-for-leaders/page.tsx",
+      "line": 111,
+      "problem": "The 'why it matters' section named the literal term 'servant leadership' ('That second question is servant leadership as posture...'). Spec section 6 states the term 'may be named once on the site, on /how-it-works beside {FLOW} or in the guide's introduction' — this article is neither location, so naming it here is a real violation, not a judgment call. (This is the same issue the design-thinking writer correctly avoided and flagged for confirmation; the systems-thinking writer's own hand-back independently asked the reviewer to confirm this addition read as posture rather than a competing framework — on inspection it is an outright naming-site violation, not just a tone question.)",
+      "fixApplied": "Removed the literal term while keeping the posture idea intact: 'The second produces durable change: a leader who takes responsibility for the structure is serving the people who have to work inside it, not just directing them.'"
+    }
+  ],
+  "crossUnitChecks": {
+    "compareProgrammesTitleMatch": "N/A — different article.",
+    "bannedLabels": "Pass.",
+    "programmePointerViaConstant": "Pass — already used PROGRAMME_FIT_CHECK.en correctly (line 208), the only internal programme link on the page. No fix needed.",
+    "servantLeadershipNaming": "Fixed — see above. Cross-checked design-thinking's page again after this fix: it does not name the term either, so the site-wide naming budget (one location, /how-it-works or the guide intro) is intact across the units reviewed in this dispatch."
+  },
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "Confirm /how-it-works or the guide introduction is where the owner wants the one on-site naming of 'servant leadership' to live — neither of those pages was in this dispatch's file list, so I could not verify the term is actually named there at least once; if it is named nowhere on the site, the maxim in spec section 6 has no home yet."
+  ],
+  "auditAfterFixes": { "typecheckExitCode": 0, "contentClarityAuditExitCode": 0 }
+}

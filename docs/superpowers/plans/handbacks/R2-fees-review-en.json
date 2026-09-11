@@ -1,0 +1,18 @@
+{
+  "unit": "fees",
+  "language": "en",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "checked_and_passed": [
+    "H1/lede match the spec section 8 fees archetype example exactly; fee stated first, then the change (certainty in writing).",
+    "Scholarship sentence uses FACTS.scholarshipEligibility verbatim plus 'The scholarship is never automatic.' in both the hero lede and the summary aside; no amounts, criteria or headline fragment invented.",
+    "HRD Corp block leads with 'The employer applies. HRD Corp decides.' and HRD_CORP_CLAIM.responsibility/.short, matching the who-decides framing required by the archetype.",
+    "CTA is the archetype's literal string 'Discuss programme fit and the fee in writing'; ghost link 'See what the fee includes'.",
+    "Fine print covers 'no fee to request information or ask for an eligibility review' and 'An enquiry does not commit you to enrol or pay.'",
+    "CERTIFICATE_POSITIONING.distinction + .professionalRelevance render beside the CMI Certificate of Recognition inclusion (checklist item 4).",
+    "No value/return/discount/deserving language found.",
+    "npm run typecheck: exit 0. node scripts/content-clarity-audit.mjs: passes; no warnings from this file."
+  ],
+  "native_reading_score_after_fixes": 9,
+  "owner_questions": []
+}

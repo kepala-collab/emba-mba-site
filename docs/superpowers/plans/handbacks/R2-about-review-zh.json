@@ -1,0 +1,35 @@
+{
+  "unit": "about",
+  "language": "zh",
+  "file": "src/app/(zh)/zh/about/page.tsx",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "line": 48,
+      "problem": "H1 ended with a trailing 。 ('Roy Affandi。负责解答问题的人。'), banned by zh-register.md rule 27 and the dispatch watch list.",
+      "fix": "Removed the trailing full stop; kept the mid-string 。 that separates the name from the descriptor."
+    },
+    {
+      "line": 61,
+      "problem": "H2 '从课程设计，到答疑的人。' ended with a trailing 。.",
+      "fix": "Removed the trailing full stop."
+    },
+    {
+      "line": 78,
+      "problem": "H2 '更多马来西亚人，决策更清晰。' ended with a trailing 。.",
+      "fix": "Removed the trailing full stop."
+    },
+    {
+      "line": 63,
+      "problem": "The CMI positioning sentence was hand-typed ('面向未来商业领导力的 Executive MBA 由 CMI 颁发并认可') instead of reusing PROGRAMME_POSITIONING_ZH, and the HRD Corp sentence was a hand-typed paraphrase that left the English word 'grant' untranslated inside Chinese prose ('须在开课前经 e-TRiS 递交 grant 申请') — a retyped fact and an untranslated loanword, both governance failures (checklist item 3; SEO-CONTENT-GOVERNANCE.md 'reuse those facts instead of introducing independent versions').",
+      "fix": "Imported PROGRAMME_POSITIONING_ZH from content.ts and HRD_CORP_CLAIM_ZH from content-zh.ts and interpolated both constants verbatim, removing the hand-typed duplicates and the stray English word."
+    },
+    {
+      "line": 92,
+      "problem": "CtaSection heading prop '就 Future Ready Executive MBA，与课程团队聊聊。' (renders as h2) ended with a trailing 。.",
+      "fix": "Removed the trailing full stop."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": []
+}

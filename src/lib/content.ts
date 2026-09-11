@@ -24,29 +24,48 @@ export const PROGRAMME_POSITIONING_SENTENCE =
   "The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI.";
 
 export const PROGRAMME_POSITIONING_ZH =
-  "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。";
+  "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可。";
 
 export const PROGRAMME_POSITIONING_MS =
-  "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.";
+  "Executive MBA on Future Ready Business Leadership, dianugerahkan dan disokong oleh CMI.";
+
+// Compact boundary for short metadata descriptions: pair with any CMI/certificate mention.
+export const BOUNDARY_COMPACT =
+  "recognised against CMI Professional Standards, not an MQA-accredited degree";
 
 export const CTA_LABELS = {
-  guide: `Get the free ${PROGRAMME_YEAR} programme guide`,
+  guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",
   company: "Enquire for your company",
   whatsapp: "Contact Future Ready EMBA on WhatsApp",
+  submit: "Send my programme enquiry →",
   zh: {
-    guide: `免费获取 ${PROGRAMME_YEAR} 课程指南`,
-    conversation: "预约课程沟通",
+    guide: `索取 ${PROGRAMME_YEAR} 年课程指南`,
+    conversation: "预约课程咨询",
     company: "企业课程咨询",
     whatsapp: "通过 WhatsApp 联系 Future Ready Executive MBA",
+    submit: "提交课程咨询 →",
   },
   ms: {
-    guide: `Dapatkan panduan program ${PROGRAMME_YEAR} percuma`,
-    conversation: "Aturkan perbualan program",
+    guide: `Dapatkan panduan program ${PROGRAMME_YEAR}`,
+    conversation: "Jadualkan sesi perbincangan program",
     company: "Pertanyaan untuk syarikat anda",
     whatsapp: "Hubungi Future Ready EMBA di WhatsApp",
+    submit: "Hantar pertanyaan program saya →",
   },
 } as const;
+
+// Single approved name for the fit-check tool, referenced across NAV, title,
+// eyebrow, result, resources card, insights links and llms.txt.
+export const PROGRAMME_FIT_CHECK = {
+  en: "Programme fit check",
+  ms: "Semakan kesesuaian program",
+  zh: "课程适配检查",
+} as const;
+
+// The controlled enquiry-commitment sentence: present in every enquiry variant.
+export const ENQUIRY_COMMITMENT =
+  "An enquiry does not commit you to enrol or pay.";
 
 export const PROGRAMME_PROOF = {
   graduates: 154,
@@ -311,17 +330,17 @@ export const COMPARISON = [
 ];
 
 export const FAQS = [
-  { q: "How is the programme structured?", a: `The Executive MBA runs for ${FACTS.durationLong}. Participants complete ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions, receive coaching and complete an applied business project leading to the CMI-recognised Executive MBA programme certificate. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees; it is not included in the published Executive MBA programme or fee.` },
-  { q: "Can I complete the programme while working full time?", a: `Yes. The Malaysian public programme runs across ${FACTS.liveSessions} scheduled sessions, with ${FACTS.trainingDays} scheduled training days in total. Participants remain in their professional roles and complete an applied project based on a current business issue. Review every published session date before enrolling.` },
-  { q: "Is this executive education or an academic MBA degree?", a: `${PROGRAMME_POSITIONING_SENTENCE} It is a six-month professional development and executive education programme, not an MQA-accredited academic degree or a regulated qualification.` },
-  { q: "What do successful participants receive?", a: "Successful participants receive the CMI Certificate of Recognition for the Future Ready Executive MBA programme. CMI controls the final certificate format and wording. Chartered Manager is a separate CMI route and is not automatically awarded through programme completion." },
-  { q: "Does completing the programme make me a Chartered Manager?", a: "No. Successful programme completion leads to the CMI Certificate of Recognition and, under CMI's published CMI Recognised offer, Foundation Chartered Manager status. Full Chartered Manager status is separate. CMI determines the participant's route and eligibility, assesses the application and professional evidence, and controls the award, membership and fees." },
-  { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
-  { q: "Is it MQA-recognised?", a: `${PROGRAMME_POSITIONING_SENTENCE} It is a professional development programme, not an MQA-accredited academic degree or a regulated qualification.` },
-  { q: "What happens if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
-  { q: "What are the refund terms?", a: REFUND_TERMS.description },
-  { q: "Can my company use its HRD Corp levy?", a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}` },
+  { q: "What changes for me during the programme?", a: `You take one live business issue from your own responsibility and work it, across ${FACTS.durationLong}, into a written action plan with decisions, actions, owners and measures, reviewed by faculty. The frameworks and working templates stay with you.` },
+  { q: "Can I carry it alongside the job?", a: `Yes. You complete ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions on the published dates, and the applied business project happens inside your own organisation between sessions, while you stay in your role.` },
+  { q: "What will I hold at the end, and what will I not?", a: `${CERTIFICATE_POSITIONING.distinction} ${CERTIFICATE_POSITIONING.professionalRelevance} Chartered Manager is a separate optional CMI route, decided by CMI, and is not included in the programme or its published fee.` },
+  { q: "Is this executive education or an academic MBA degree?", a: `${PROGRAMME_POSITIONING_SENTENCE} ${CERTIFICATE_POSITIONING.professionalRelevance} It is a ${FACTS.durationLong} professional development and executive education programme, not an MQA-accredited academic degree or a regulated qualification.` },
+  { q: "Is it MQA-recognised?", a: `${PROGRAMME_POSITIONING_SENTENCE} ${CERTIFICATE_POSITIONING.professionalRelevance} It is a professional development programme, not an MQA-accredited academic degree or a regulated qualification.` },
+  { q: "What will it cost, in writing?", a: `The standard fee is ${FACTS.priceStd}. ${FACTS.scholarshipEligibility} The scholarship is never automatic.` },
+  { q: "Who decides employer funding?", a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}` },
   { q: "Can a company enrol its founder or senior team?", a: `${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}` },
+  { q: "How does CMI determine the Chartered Manager route?", a: "CMI currently publishes Full Assessment, CMI Fast Track and Apprenticeship routes. Full Assessment is available to managers with a management, business or leadership degree plus three years' management experience, or at least five years' management experience without a management-specific qualification. Fast Track requires a listed CMI qualification completed within five years plus at least three years' management experience. This programme is CMI Recognised, not a CMI qualification, so CMI must confirm the applicable route for each participant." },
+  { q: "What if I miss a session?", a: "Contact the programme team before the session. ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
+  { q: "What are the refund terms?", a: REFUND_TERMS.description },
   { q: "Who is the programme for?", a: PROGRAMME_AUDIENCE },
 ];
 
@@ -395,7 +414,7 @@ export const NAV: NavItem[] = [
       { href: "/insights", label: "Insights" },
       { href: "/executive-mba-vs-mba", label: "Executive MBA vs MBA" },
       { href: "/faq", label: "Frequently asked questions" },
-      { href: "/diagnostic", label: "Programme fit check" },
+      { href: "/diagnostic", label: PROGRAMME_FIT_CHECK.en },
     ],
   },
 ];

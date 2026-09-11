@@ -1,0 +1,41 @@
+{
+  "unit": "insights-advancement-question",
+  "filesChanged": [
+    "src/app/(en)/insights/advancement-question/page.tsx",
+    "src/app/(ms)/ms/insights/advancement-question/page.tsx",
+    "src/app/(zh)/zh/insights/advancement-question/page.tsx"
+  ],
+  "archetype": "Insights (spec section 8): helps the reader make one decision better; shortcut critique aimed only at methods; no verdict on the reader; one factual programme pointer at most.",
+  "namingCompliance": "Removed 'advancement'/'progression' (and Kemajuan kerjaya / 晋升 equivalents) from all visible title, breadcrumb and label text. Route path left unchanged at /insights/advancement-question (and ms/zh mirrors) per instruction. Diagnostic link now uses the owner-approved label 'Programme fit check' / 'Semakan Kesesuaian Program' / '课程适配检查' in each language. Reduced from two CTA links to one factual programme pointer (the diagnostic) to satisfy the archetype's 'one pointer at most' rule; dropped the second link to /resources/advancement-brief.",
+  "newHeadlineAndLede": {
+    "en": {
+      "h1": "How to compare leadership programmes.",
+      "lede": "Start with the decision you need to make better, then compare the learning, the schedule, the recognition and the complete cost."
+    },
+    "ms": {
+      "h1": "Cara membandingkan program kepimpinan dengan tepat.",
+      "lede": "Kenal pasti dahulu keputusan yang perlu anda buat dengan lebih baik. Kemudian bandingkan pembelajaran, jadual, pengiktirafan dan jumlah kos sepenuhnya."
+    },
+    "zh": {
+      "h1": "先想清能力，再比课程",
+      "lede": "先想清楚您要补强的决策能力，再比较教学方式、时间安排、认可范围与全部费用。"
+    }
+  },
+  "constantsUsed": "None. This unit does not interpolate src/lib/content.ts / content-ms.ts / content-zh.ts constants: the article is a generic comparison framework for leadership programmes in general and does not restate this programme's own fee, duration, session count or certificate claim, so no fact tokens, and no professionalRelevance block, are triggered.",
+  "auditAndTypecheck": {
+    "typecheck": { "exitCode": 0 },
+    "contentClarityAudit": {
+      "note": "node scripts/content-clarity-audit.mjs exits 1 for the repo as a whole (pre-existing failures in src/app/(en)/resources/page.tsx and src/app/(en)/resources/advancement-brief/page.tsx, both outside this unit and not touched here). Zero warnings/failures reference this unit's three files after the fix (initial run flagged this unit's own meta description for the banned phrase 'recognition boundary'; reworded and re-verified clean)."
+    }
+  },
+  "selfChecks": {
+    "governanceChecklistSection12": "No promotion/salary/title/outcome claims; no verdict on reader; no ladder/rung/climb language; no urgency/scarcity; shortcut critique aimed only at the reader's own comparison method, never at another provider; H1s 9 words or fewer in EN/MS, ZH H1 within 14-char two-beat limit.",
+    "msRegisterSelfCheck": "Sections 3/5/7 applied: 'anda' used, no kamu/awak/-lah/nak/tak, no banned calques (pengurus bekerja, projek aplikasi, perbualan program, laluan pilihan, program awam, laluan lanjutan, Tempah sesi all absent), no exclamation marks, headline <=9 words, two short sentences in the lede.",
+    "zhRegisterSelfCheck": "Sections 3/5/7 and the high-confidence audit corrections applied: no bannedZh terms (班次/参与者/颁授并背书/身份启用/折扣码/免费获取/渠道/创始人/首席执行官/营销) present; no sentence-initial 它/这; pangu-style spacing not needed (no Latin/digit tokens in body); full-width punctuation used throughout; at most one CTA/programme pointer."
+  },
+  "leftForReviewer": [
+    "This unit intentionally carries zero fact tokens/constants since the article stays generic (comparing leadership programmes in general, not making a claim about this programme's own CMI recognition, fee or duration). Reviewer should confirm that is the right call for this page versus tying it more explicitly to FACTS/CERTIFICATE_POSITIONING.",
+    "The pre-existing content-clarity-audit failures in src/app/(en)/resources/page.tsx and src/app/(en)/resources/advancement-brief/page.tsx (both flag 'decision brief'/'recognition boundary') are outside this unit's file list and were left untouched; whichever unit owns those files will need to fix them before the full audit passes.",
+    "Malay and Chinese copy is a fresh transcreation from the new English (not a re-edit of the prior MS/ZH text), per the process rule to transcreate from the new English rather than patch the old translation."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "unit": "insights-systems-thinking",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/insights/systems-thinking-for-leaders/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/insights/systems-thinking-for-leaders/page.tsx",
+      "line": "67-68",
+      "problem": "Named the term 'kepimpinan berkhidmat (servant leadership)' in the lede, but the English source page never names the literal term 'servant leadership' anywhere (it only uses the verb 'serves'/'serving'). Spec section 2026-09-04-messaging-architecture.md line 75 reserves naming the term to once site-wide, on /how-it-works beside {FLOW} or in the guide's introduction — not on an insights article. The writer flagged this exact uncertainty in their handback and it resolves against keeping the named term here.",
+      "fixApplied": "Removed the '— inilah kepimpinan berkhidmat (servant leadership)' clause from the lede; kept the verb-only construction 'sedang berkhidmat kepada orang di dalamnya.', matching the English source's posture without naming the term."
+    },
+    {
+      "file": "src/app/(ms)/ms/insights/systems-thinking-for-leaders/page.tsx",
+      "line": 117,
+      "problem": "Body copy repeated the named term as 'kepimpinan berkhidmat sebagai pendirian', the same site-wide naming-budget violation as above.",
+      "fixApplied": "Reworded to 'pendirian seorang pemimpin yang berkhidmat' — keeps the posture (a leader who serves) without naming 'kepimpinan berkhidmat' as a term."
+    }
+  ],
+  "checksRun": [
+    "Watchlist scan: zero hits on selalunya/biasanya/kebanyakan/laluan pilihan/Tempah/kamu/awak/-lah/nak/tak/ke atas/di antara.",
+    "H1 'Masalah sama sentiasa berulang. Pemikiran sistem untuk pemimpin.' = 8 words, within limit.",
+    "One factual programme pointer only (PROGRAMME_FIT_CHECK.ms), matching the /how-it-works and /executive-mba links removed by the writer.",
+    "'adalah' usage ('Menyalahkan adalah jawapan pantas') checked and confirmed a legitimate copula use, not the banned filler-adalah calque.",
+    "node scripts/content-clarity-audit.mjs and npm run typecheck: clean after fixes, zero warnings on this file."
+  ],
+  "fixesApplied": [
+    "src/app/(ms)/ms/insights/systems-thinking-for-leaders/page.tsx:67-68 and :117 — removed both instances naming 'kepimpinan berkhidmat (servant leadership)'/'kepimpinan berkhidmat' as a term, keeping the serving-leader posture in verb form only."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "Confirm the term-naming-budget reading (spec line 75: name it once, on /how-it-works or the guide introduction) — if the owner wants servant leadership named on this article too, the fix above should be reverted and the same term should also be added to the English source first, since Malay follows English as the source of meaning."
+  ]
+}

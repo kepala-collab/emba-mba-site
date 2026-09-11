@@ -1,15 +1,15 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
-import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
+import { PROGRAMME_POSITIONING_ZH, CTA_LABELS, FACTS, SITE } from "@/lib/content";
+import { HRD_CORP_CLAIM_ZH, CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/hrd-corp-claimable", {
-  title: "Executive MBA 的 HRD Corp 资助途径｜马来西亚",
+  title: "由雇主主导的 HRD Corp 资助：雇主申请，HRD Corp 裁定",
   description:
-    "已注册的马来西亚雇主如何在开课前经 e-TRiS 递交申请、要备齐哪些文件，以及 HRD Corp 如何裁定资格与批准金额。",
+    "HRD Corp 资助始于雇主自身的决定：培养一位对团队负责的管理者。雇主在开课前递交申请，资格与批准金额由 HRD Corp 裁定。",
 });
 
 const STEPS = [
@@ -19,11 +19,11 @@ const STEPS = [
   },
   {
     h: "由雇主在开课前递交申请",
-    p: "由雇主授权的 HRD Corp 用户在班次开课前经 e-TRiS 递交 grant 申请，这一步不由学员经手。",
+    p: "由雇主授权的 HRD Corp 用户在开课前经 e-TRiS 递交 grant 申请，这一步不由学员经手。",
   },
   {
     h: "HRD Corp 裁定",
-    p: "HRD Corp 依据 Allowable Cost Matrix 裁定资格与批准金额，金额不会超过雇主的 levy 可用余额。",
+    p: "HRD Corp 依据 Allowable Cost Matrix 裁定资格与批准金额；批准金额以雇主的 levy 可用余额为上限。",
   },
   {
     h: "双方各自报销",
@@ -40,12 +40,12 @@ const INCLUSIONS_ZH = [
 
 const HRD_FAQS = [
   {
-    q: "公司能替创办人或高管团队报名吗？",
-    a: "课程面向 executive 级别及以上开放，涵盖资深管理者、董事、企业主与创办人。若走由雇主主导的 HRD Corp 资助途径，公司须已注册 HRD Corp、有可用 levy，并在开课前递交申请。只要公司确认学员在其薪资册上，创办人或企业主本人同样可纳入。资格与批准金额由 HRD Corp 裁定。",
+    q: "公司能否获得 HRD Corp 资助，由谁裁定？",
+    a: `${HRD_CORP_CLAIM_ZH} 申请由雇主递交，而非学员；批准与批准金额由 HRD Corp 裁定，而非课程机构。`,
   },
   {
-    q: "我的雇主能申请 HRD Corp 资助吗？",
-    a: HRD_CORP_CLAIM_ZH,
+    q: "公司能替创办人或高管团队报名吗？",
+    a: "课程面向 executive 级别及以上开放，涵盖资深管理者、董事、企业主与创办人。若走由雇主主导的 HRD Corp 资助途径，公司须已注册 HRD Corp、有可用 levy，并在开课前递交申请。只要公司确认学员在其薪资册上，创办人或企业主本人同样可纳入。资格与批准金额由 HRD Corp 裁定。",
   },
   {
     q: "文件工作谁来做？",
@@ -53,7 +53,7 @@ const HRD_FAQS = [
   },
   {
     q: "公司没注册 HRD Corp 怎么办？",
-    a: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者可申请 ${FACTS.scholarshipProvider} 奖学金评估，择优授予；任何奖学金金额与应付费用，都会逐一以书面确认。个人付款方式列在学费页面。`,
+    a: `标准费用为 ${FACTS.priceStd}。符合资格的马来西亚申请者可接受 ${FACTS.scholarshipProvider} 奖学金择优评估；名额有限，评估后个别以书面确认奖学金金额及应付费用。奖学金并非自动授予。个人付款方式列在学费页面。`,
   },
 ];
 
@@ -80,12 +80,18 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              开课之前，先把 HRD Corp grant 流程理顺。
+              雇主申请，HRD Corp 裁定
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              {SITE.provider} 是 HRD Corp（HRDC）核准的培训机构，Future Ready Business Leadership 由英国特许管理协会（CMI）颁授并背书。
+              {SITE.provider} 是人力资源发展机构（HRD Corp）核准的培训机构。本课程可申请由雇主主导的 HRD Corp 资助（Employer-Led HRD Corp Funding）。{PROGRAMME_POSITIONING_ZH}
+              {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="sec-sub">
+              本课程的 HRD Corp 资助，始于公司内部的一个决定：培养一位对团队负责的管理者。
               <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM_ZH}</b> 配套的课程文件由课程团队备妥。
             </p>
           </Reveal>
@@ -99,7 +105,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* HOW THE CLAIM WORKS */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">申请流程如何运作</span></div></Reveal>
           <Reveal><h2 className="sec-h">从申请到报销，四段责任各归各。</h2></Reveal>
@@ -126,10 +132,10 @@ export default function HrdCorpClaimablePage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">涵盖内容</span></div></Reveal>
-          <Reveal><h2 className="sec-h">批准金额对应的课程内容。</h2></Reveal>
+          <Reveal><h2 className="sec-h">批准金额，涵盖哪些内容。</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              批准金额以 HRD Corp 的 grant 裁定为准。Executive MBA 为期 {FACTS.durationMonths} 个月，通向课程证书，内容包括：
+              批准金额以 HRD Corp 的 grant 裁定为准。{FACTS.durationMonths} 个月内，雇主培养的这位管理者会完成：
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -146,26 +152,27 @@ export default function HrdCorpClaimablePage() {
             </ul>
           </Reveal>
           <p className="fine mt-s">
-            完整课程详情见<Link href="/zh/executive-mba">Executive MBA</Link> 页面。这是一门由 CMI 颁授并背书的专业发展课程，并非 MQA 监管的学术学位。
+            完整课程详情见<Link href="/zh/executive-mba">Executive MBA</Link> 页面。{PROGRAMME_POSITIONING_ZH}
+            这是一门专业发展课程，并非 MQA 监管的学术学位。{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}
           </p>
         </div>
       </section>
 
       {/* ELIGIBILITY NOTE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">谁可以申请</span></div></Reveal>
-          <Reveal><h2 className="sec-h">雇主资助与个人付款，两条路径。</h2></Reveal>
+          <Reveal><h2 className="sec-h">谁申请，谁裁定。</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               HRD Corp 报销走的是<b style={{ color: "var(--ink)" }}>由公司付款的 B2B</b> 路径：
-              已注册 HRD Corp 的马来西亚雇主在开课前递交申请，资格与批准金额由 HRD Corp 裁定，
-              金额不会超过雇主的 levy 可用余额。公司未注册 levy，或您以个人身份报读？
-              符合资格的马来西亚申请者可申请 {FACTS.scholarshipProvider} 奖学金评估、择优授予，也可选择分期付款。任何奖学金金额与应付费用，都会逐一以书面确认。
+              已注册 HRD Corp 的马来西亚雇主在开课前递交申请，资格与批准金额由 HRD Corp 裁定；
+              批准金额以雇主的 levy 可用余额为上限。公司未注册 levy，或您以个人身份咨询？
+              符合资格的马来西亚申请者可接受 {FACTS.scholarshipProvider} 奖学金择优评估；名额有限，评估后个别以书面确认奖学金金额及应付费用。奖学金并非自动授予；也可选择分期付款。
             </p>
           </Reveal>
           <p className="fine mt-s">
-            递交申请的是雇主，不是学员；批准与批准金额由 HRD Corp 裁定，而非课程机构。课程文件由课程团队备妥：
+            申请由雇主递交，而非学员；批准与批准金额由 HRD Corp 裁定，而非课程机构。课程文件由课程团队备妥：
             {" "}{SITE.director}，{SITE.phone} · {SITE.email}。要商谈资格与文件事宜，请提交{" "}
             <Link href="/zh/apply">课程咨询</Link>。
           </p>

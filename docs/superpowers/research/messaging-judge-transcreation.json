@@ -1,0 +1,229 @@
+{
+  "lens": "Malaysian transcreation lead: will the architecture survive into natural Kuala Lumpur Bahasa Melayu and Malaysian Simplified Chinese (zh-Hans-MY) under the Malay 9-word and Chinese 14-character headline limits, the ms/zh register guides as corrected by their audits, and the owner's local-term-first vocabulary rules",
+  "scores": [
+    {
+      "proposal": "progress-first",
+      "fidelityToFramework": 9,
+      "governanceSafety": 8,
+      "conversionClarity": 7,
+      "localisability": 8,
+      "distinctiveness": 7,
+      "total": 39,
+      "notes": "The spine is the owner's own definition of progress (a change in what the reader can do), and its before-to-after shape has a native headline form in both target languages: BM 'Daripada ... kepada ...' is an established feature-headline pattern and ZH '从...到...' is a standard two-beat form, neither needs a second-person pronoun in the ZH H1 (register rule 5), and the number-first lede matches the hero model sentence in both register guides. The hero fits the limits (7 BM words, 11 ZH characters). Weaknesses: the audience-page from-to headlines run 14 to 19 English words and will systematically break the 9-word BM cap unless each side is capped at one short phrase; 'carrying' and 'leading' a decision must be re-verbed (memikul, memimpin pelaksanaan; 独自决策, 带队落实) because 'memimpin keputusan' is not a Kamus Dewan collocation; 'waiting on the call' and 'can be met' are English-only. Its localisation section is the only one of the three that is fully consistent with both audits (correct from-to forms, correct ZH and MS ban lists, flags the 'perbualan program' CTA)."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "fidelityToFramework": 8,
+      "governanceSafety": 8,
+      "conversionClarity": 7,
+      "localisability": 7,
+      "distinctiveness": 8,
+      "total": 38,
+      "notes": "Its headline shapes (imperative pairs, the reader's own question) are the most naturally portable of the three and compress into ZH 对仗 with no loss ('Kekalkan jawatan. Ubah cara anda membuat keputusan.' / '职位不变，决策方式改变'); the hero title is excellent in both languages (7 BM words, 11 ZH characters, the 来/走 pair). It loses on three architecture-level points: the hero lede opens with meta-commentary ('fair questions, and they come second') that exceeds the ZH 45-character sub limit and the BM 20-word hero sentence and is off-register before the offer; the 'good thing' panel is a rhetorical device rather than copy (noun fragments that BM cannot head, 'A faster route' lands on 捷径 in ZH and on 'laluan' which the site reserves for the CMI route, and 'good thing' must be 好的事 never 好事); and 'answers for your decision' shifts meaning in ZH (为...负责 = takes responsibility for your decision, a governance problem as well). Its own multilingualNotes carry two forms the MS audit rejects ('laluan pilihan CMI yang berasingan', 'pengurus yang sedang bekerja')."
+    },
+    {
+      "proposal": "service-first",
+      "fidelityToFramework": 8,
+      "governanceSafety": 7,
+      "conversionClarity": 8,
+      "localisability": 5,
+      "distinctiveness": 8,
+      "total": 36,
+      "notes": "The servant posture and the 5S map directly onto the owner's glossed labels (Kelangsungan, Keselamatan, Sosial, Kejayaan, Khidmat / 生存、安全、社交、成功、服务), and the five-questions section is the most Malaysian-sounding block in any proposal because it is FAQ register. But the organising metaphor (ladder, rung, climb, 'the programme is how you climb') is exactly the career-climbing idiom in both languages ('tangga kejayaan', 步步高升) that reads as promotion, which governance bans; the proposal's own avoid-list admits it, and the EN/ZH equivalence rule means it cannot stay on the English page either. The hero needs a second-person pronoun in the ZH H1 (banned by register rule 5), 'decide well' lands on 'baik' against the owner's betul/baik contrast, and the imperative can read as a verdict on the reader. Three of its own register notes contradict the audits (服务型领导 is the mainland academic form, 你 in a headline, and a ban on 'disokong' that the MS audit overturned)."
+    }
+  ],
+  "winner": "progress-first",
+  "graftIdeas": [
+    {
+      "from": "rjtbd-first",
+      "idea": "Keep its hero as the A/B alternative to the winner's: 'Bawa satu keputusan sebenar. Pulang dengan kaedahnya.' (7 words) / '带着决策来，带着方法走' (11 characters). Two imperatives and the 来/走 pair are native in both languages; use it if the from-to hero tests as abstract with KL readers."
+    },
+    {
+      "from": "rjtbd-first",
+      "idea": "'Keep the role. Change how you decide in it.' for /mba-for-working-professionals. It renders as the owner's own model sentence for change of experience, 'Kekalkan jawatan. Ubah cara anda membuat keputusan.', and as a ZH 对仗 '职位不变，决策方式改变' (11 characters)."
+    },
+    {
+      "from": "rjtbd-first",
+      "idea": "The 'carry' to 'in hand' key: 'the decision you already carry' becomes 'keputusan yang sudah di tangan anda' / '您手上的决策'. Apply it to every 'carry' line in the winner so the metaphor never has to be translated literally."
+    },
+    {
+      "from": "rjtbd-first",
+      "idea": "The honour-the-base line 'Instinct and experience carried you here.' becomes 'Naluri dan pengalaman membawa anda ke sini.' / '直觉与经验把您带到今天'. Natural in both languages; place it as a hero supporting line so no before-state can read as shaming."
+    },
+    {
+      "from": "rjtbd-first",
+      "idea": "Render right-versus-good for meaning as one lede sentence, never as a panel: 'Sijil, yuran dan jadual soalan yang wajar, tetapi bukan yang pertama.' / '证书、费用、时间表都该问，但不是第一个问题。' Reserve the owner's full contrast 'perkara yang betul, bukan sekadar perkara yang baik' / '对的事，而不只是好的事' for the /how-it-works FLOW framing line."
+    },
+    {
+      "from": "rjtbd-first",
+      "idea": "Faculty H1 'People who review your reasoning, not only your result.' becomes 'Mereka menyemak cara anda berfikir, bukan hasil semata-mata.' / '看重您的思路，不只看结果' (10 characters)."
+    },
+    {
+      "from": "rjtbd-first",
+      "idea": "AI page H1 'Start with the business problem, not the model.' becomes 'Mulakan dengan masalah perniagaan, bukan model AI.' / '先看业务问题，再选工具' (11 characters). Cleaner than the winner's 'owning the decision process'."
+    },
+    {
+      "from": "service-first",
+      "idea": "The 5S section as five questions in the reader's voice, stripped of ladder, rung and climb, rendered exactly per the owner's rule: first mention 'Survival, Safety, Social, Success, Service (Kelangsungan, Keselamatan, Sosial, Kejayaan, Khidmat)', then 'Kelangsungan: Bolehkah perniagaan terus berjalan sementara saya belajar?'; ZH '生存（Survival）：我进修期间，生意能照常运转吗？'. This is FAQ register in both guides and the only place the 5S can appear on the page without becoming a ladder."
+    },
+    {
+      "from": "service-first",
+      "idea": "FORCES restated as 'a leader can still ...' becomes a five-line 排比 / parallel list: 'pemimpin tetap boleh ...' / '领导者仍可...'. It carries the Survival rung as hope without diagnosing the reader, and parallel structure is the register both guides reward."
+    },
+    {
+      "from": "service-first",
+      "idea": "'Your team is waiting for a decision.' replaces the winner's 'Your team is waiting on the call.' in the /how-it-works H1 ('pasukan anda menunggu keputusan' / '团队在等您的决定')."
+    },
+    {
+      "from": "service-first",
+      "idea": "Its paraphrase of the owner's maxim, 'Real leadership is servant leadership: it is measured by the people it serves.', is the sentence that satisfies the local-term-first rule: 'Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya.' / '真正的领导是仆人式领导（servant leadership）：以所服务的人来衡量。' It avoids 'most' and 'kebanyakan' and uses 'ialah' before a noun as the MS audit requires."
+    },
+    {
+      "from": "service-first",
+      "idea": "Design-thinking H1 'Begin with the person you are trying to serve.' becomes 'Mulakan dengan orang yang ingin anda layani.' / '从您要服务的人开始'. It is the only line in any proposal where 'serve' translates without a register problem."
+    }
+  ],
+  "rejectLines": [
+    {
+      "proposal": "progress-first",
+      "line": "Revenue is slowing. Costs are rising. Your team is waiting on the call. Which problem do you solve first?",
+      "why": "'Waiting on the call' is a phone call in both languages ('menunggu panggilan', 等电话). Use service-first's 'Your team is waiting for a decision.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From every decision routing through you to a business that runs on documented decisions.",
+      "why": "14 English words become 16 or more in BM, well over the 9-word cap, and the after-state is an organisational outcome. The from-to archetype must cap each side at one short phrase (roughly 4 BM words, 5 ZH characters) on audience pages."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From a decision you carry inside your own organisation to a faculty-reviewed plan, while you keep leading in Malaysia.",
+      "why": "19 words with a trailing clause; no BM or ZH headline can hold it. Same fix as above; the 'while you keep leading in Malaysia' clause moves to the lede."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From deciding under pressure by instinct to a structure you can explain to co-founders and investors.",
+      "why": "16 words; 'structure' as the after-state has no natural BM headline noun ('struktur' reads as organisational structure). Cap and re-noun as 'pelan' / '方案'."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From sensing the business landscape to earning stakeholder trust: twelve modules, one plan for your own organisation.",
+      "why": "17 words plus a colon clause; the colon construction is not a BM headline form and the ZH version would be three beats."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The work is recognised. The people who did it can be met.",
+      "why": "Two passives in a row and 'can be met' has no natural BM or ZH form; the MS audit's passive-chain rule fails it. Rewrite active: 'Kerja itu diiktiraf. Graduannya boleh anda temui.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From being asked to decide on AI to owning the decision process.",
+      "why": "'Owning' a process is English; 'memiliki proses' is a calque and ZH 拥有流程 is wrong. Use rjtbd-first's 'Start with the business problem, not the model.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Where has your role outgrown the way you decide?",
+      "why": "'Outgrown' has no single BM or ZH verb and the role is personified; the transcreation becomes a 12-word sentence. Use rjtbd-first's diagnostic H1 pattern instead ('Keputusan mana yang kini perlu anda buat secara berbeza?')."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "A business issue enters. A structured action plan leaves.",
+      "why": "Reject the personification, keep the meaning. BM 'Isu masuk. Pelan keluar.' reads like a door; the native shape is 'Datang dengan isu perniagaan, pulang dengan pelan tindakan.' / '带着课题来，带着方案走'. Applies to the same line in service-first."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "For people whose decisions affect more than their own desk (eyebrow and audience line; also used by rjtbd-first and service-first)",
+      "why": "'Desk' as a metonym is English; 'lebih daripada meja sendiri' is a calque. Transcreate for meaning: 'Untuk mereka yang keputusannya memberi kesan kepada orang lain' / '决定影响的不只是自己'."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "the person who answers for your decision / will answer for that decision / answers for the decision you named",
+      "why": "'Answer for' means 'be accountable for'. ZH 为您的决定负责 says the team takes responsibility for the reader's decision, which is both wrong and a governance problem; BM 'menjawab untuk keputusan anda' reads as answering on the reader's behalf. Rewrite as 'menjawab soalan tentang keputusan yang anda timbang' / '针对您正在权衡的决定作答'."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "The same problem keeps coming back. Who is responsible, or what is?",
+      "why": "Who/what wordplay; ZH '是谁的责任，还是什么的责任' is unnatural and BM needs a full restructure. Use the meaning: 'Siapa yang salah, atau struktur yang salah?' / '是人的问题，还是结构的问题？'"
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Running a business or a unit in Malaysia, with more decisions than there used to be.",
+      "why": "A verbless fragment; a BM H1 needs a predicate ('Anda mengurus perniagaan di Malaysia, dan keputusannya semakin banyak.') and the ZH version needs a subject-first restructure."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Credential, fee and schedule are fair questions, and they come second; the first is how your next consequential decision gets made, and who depends on it. (hero lede sentence 1)",
+      "why": "Exceeds the ZH hero sub (45 characters) and the BM hero sentence (20 words), and meta-commentary before the offer is off-register for a hero in both guides, which want number-first facts. Keep the idea as one short sentence lower on the page."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "A credential to add / A fee to minimise / A faster route (good-thing panel headings)",
+      "why": "Noun-phrase fragments that BM cannot head (needs verb phrases: 'Menambah sijil'); 'A faster route' lands on 捷径 in ZH and on 'laluan' in BM, which the site reserves for the Chartered Manager route; 'good thing' must be 好的事, never 好事 (a good deed)."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "multilingualNotes.ms: 'laluan pilihan CMI yang berasingan' and 'pengurus yang sedang bekerja'",
+      "why": "The MS audit (6.4, high confidence) shows 'laluan pilihan' reads as 'CMI's preferred route' (prestige framing governance forbids); use 'laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI'. Audit 6.1 drops 'sedang': 'pengurus yang bekerja'."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Here is a starting point, not a verdict.",
+      "why": "In BM 'verdict' and 'decision' are both 'keputusan', so the line collapses. Render 'Ini titik permulaan, bukan penilaian muktamad.' / '这是起点，不是结论'."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "The firm that has served 154 graduates across 17 cohorts, as listed by ABC.",
+      "why": "An H1 carrying an attribution clause runs past 12 BM words; the attribution ('seperti yang disenaraikan oleh ABC') must move to the lede, where governance still requires it."
+    },
+    {
+      "proposal": "service-first",
+      "line": "The ladder you climb for others / Fifth rung / the point of climbing is the people at each rung / You climb for the people who depend on you; the programme is how you climb, never why",
+      "why": "Ladder, rung and climb are the career-climbing idiom in both languages ('tangga kejayaan', 攀登, 步步高升), which reads as promotion, an outcome governance bans; 'anak tangga' for rung is nonsense in copy. The proposal's own avoid-list concedes this, and the EN/ZH equivalence rule means the English page cannot keep it while the translations drop it."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Decide well for the people who depend on you. (hero H1)",
+      "why": "The ZH H1 needs 您 ('为依靠您的人做好决策'), which register rule 5 bans in headlines; the pronoun-free form '为团队做好每个决定' narrows the meaning. In BM 'buat keputusan yang baik' lands on 'baik', the wrong half of the owner's 'betul, bukan sekadar baik' contrast, and the imperative can read as a verdict on the reader. Usable only as a section H2."
+    },
+    {
+      "proposal": "service-first",
+      "line": "For Malaysian owners and directors whose decisions carry other people.",
+      "why": "'Decisions carry people' is English only: BM 'keputusannya membawa orang lain' means the decision takes people along; ZH 决定带着人 is nonsense. Use 'keputusannya melibatkan orang lain' / '决定关系到其他人'."
+    },
+    {
+      "proposal": "service-first",
+      "line": "When the same problem keeps coming back, lead the structure, not the blame.",
+      "why": "'Lead the structure' is wordplay; Kamus Dewan gives 'memimpin' only people, organisations and hands (MS audit), and ZH 领导结构 is broken. Say the meaning: 'perbaiki strukturnya, bukan cari siapa yang salah' / '修正结构，而不是追究谁的错'."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Borrowed answers feel safe. Owned decisions are the work.",
+      "why": "'Owned decisions' and 'are the work' are English idioms; the BM rendering ('Keputusan sendiri itulah kerjanya') is stilted and the ZH loses the antithesis."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Which of your decisions have grown faster than the way you make them?",
+      "why": "An abstract comparison (decisions growing faster than a method) has no natural BM or ZH shape; both renderings become 12-plus words. Use rjtbd-first's diagnostic H1."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Start with the question you have been sitting on.",
+      "why": "'Sitting on' is an English idiom; BM 'duduk atas soalan' is a calque. Transcreate as 'soalan yang anda pendam' / '您一直放在心里的问题'."
+    },
+    {
+      "proposal": "service-first",
+      "line": "vocabulary.use: '为依赖你的人做出更好的决定; 服务型领导 / 仆人式领导' and 'avoid the disokong ... CMI construction'",
+      "why": "The ZH audit fixes 仆人式领导 only (服务型领导 is mainland academic) and bans 你 in headlines; 更好 (better) implies a before-state deficit. The MS audit (6.3) overturns the 'disokong' ban: it is DBP's first equivalent of 'endorse'; pick one verb site-wide and do not treat 'diperakukan' as safer, since MQA uses 'perakuan' for accreditation."
+    },
+    {
+      "proposal": "service-first",
+      "line": "The firm that designed the programme, in service of the managers who brought their own issues to it.",
+      "why": "18-word H1; 'in service of' has no BM headline equivalent shorter than a clause. Move the serving idea to the lede."
+    }
+  ],
+  "heroPreference": {
+    "proposal": "progress-first",
+    "why": "The from-to shape is a native headline form in both languages and needs no pronoun in the ZH H1, and the owner's rule for 'change of experience' (express it as what the reader can do differently) is exactly what a before-to-after title does. Feasibility check: the BM title is 7 words (a 9-word variant adds 'bersama pasukan' to make 'leading it' explicitly serve the team); the ZH title is 11 characters in two beats. 'Carrying' becomes 'memikul', the established burden verb ('memikul tanggungjawab'); 'leading it' becomes 'memimpin pelaksanaannya' because 'memimpin' takes people, organisations or an implementation as its object and 'memimpin keputusan' is not a collocation. In ZH, 独自决策 (deciding alone) to 带队落实 (leading the team to implement) keeps the two beats; the fuller '从独自扛起决策，到带领团队落实' is 15 characters and over the limit, and 扛 is a shade too colloquial for a hero in the Sin Chew education-section register. Both renderings keep the after-state as an act, not a status, so the governance no-outcome rule holds.",
+    "msTitle": "Daripada memikul keputusan sendirian kepada memimpin pelaksanaannya.",
+    "zhTitle": "从独自决策，到带队落实"
+  }
+}

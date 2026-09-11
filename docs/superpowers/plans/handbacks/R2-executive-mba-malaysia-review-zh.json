@@ -1,0 +1,38 @@
+{
+  "unit": "executive-mba-malaysia",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/executive-mba-malaysia/page.tsx"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(zh)/zh/executive-mba-malaysia/page.tsx",
+      "line": 79,
+      "problem": "H1 ended with a trailing full stop, banned for headlines.",
+      "fix": "removed the trailing 。 from '从自己的课题，到审阅的方案'"
+    },
+    {
+      "file": "src/app/(zh)/zh/executive-mba-malaysia/page.tsx",
+      "line": 86,
+      "problem": "Sentence-initial 这 standing for an abstract subject immediately after {PROGRAMME_POSITIONING_ZH} ('...这是为期六个月的非学术专业发展课程...') — the most recognisable translationese pattern per the zh-register audit.",
+      "fix": "rewrote to '课程为期六个月，属非学术专业发展课程，并非 MQA 认证的学术学位或受监管资格。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/executive-mba-malaysia/page.tsx",
+      "line": 133,
+      "problem": "Cleft sentence '提出申请的是雇主，而非学员' copied from English emphasis structure — a zh-register-audit high-confidence finding on this exact HRD Corp sentence.",
+      "fix": "rewrote to the plain topic-first '申请由雇主提出，而非学员；...'"
+    }
+  ],
+  "checked_and_passed": [
+    "届/届数/届别 used throughout for cohorts; no 班次",
+    "no urgency device outside the bound scholarship sentence; 名额有限 stays bound to 须经评估/书面批准/个别以书面确认/并非自动授予",
+    "CMI wording uses 认可/颁发并认可 (owner decision 2026-09-10); no 背书, no 认证 misuse",
+    "certificate/CMI mentions in the hero and intakes fine print carry CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH and the not-an-MQA-degree boundary in the same block",
+    "HRD_CORP_CLAIM_ZH constant already carries 以...为上限 (no 不会超过 calque) and names 人力资源发展机构（HRD Corp）on first mention",
+    "no sentence-initial 它 elsewhere in the file",
+    "H1 two beats, 13 characters, within the 14-character cap; meaning matches the EN source (from own live issue to a faculty-reviewed plan)",
+    "fact tokens (FACTS.*, HRD_CORP_CLAIM_ZH, PROGRAMME_POSITIONING_ZH) interpolated, not retyped"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

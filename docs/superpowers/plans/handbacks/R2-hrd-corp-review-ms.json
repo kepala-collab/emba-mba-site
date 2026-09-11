@@ -1,0 +1,36 @@
+{
+  "unit": "hrd-corp-claimable",
+  "language": "ms",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(ms)/ms/hrd-corp-claimable/page.tsx",
+      "line": 48,
+      "problem": "HRD_FAQS answer to 'Bolehkah syarikat saya mendaftarkan pengasas atau ahli pasukan kanan?' opened with 'Program ini terbuka kepada eksekutif dan ke atas' — calque of 'executives and above' (ms-register.md Do/Don't 25, audit item 14). Same issue as the FAQ unit's parallel question.",
+      "fix_applied": "Reworded to 'Program ini terbuka kepada peserta peringkat eksekutif ke atas, termasuk pengurus kanan, pengarah, pemilik perniagaan dan pengasas.'"
+    },
+    {
+      "file": "src/app/(ms)/ms/hrd-corp-claimable/page.tsx",
+      "line": 56,
+      "problem": "HRD_FAQS answer to 'Bagaimana jika kami tidak berdaftar dengan HRDC?' used 'disahkan secara individu dalam bentuk bertulis' — 'dalam bentuk bertulis' is a banned calque (ms-register.md Do/Don't 24, audit item 5); official BM is 'secara bertulis'.",
+      "fix_applied": "Reworded to 'disahkan secara individu, secara bertulis.'"
+    },
+    {
+      "file": "src/app/(ms)/ms/hrd-corp-claimable/page.tsx",
+      "line": 180,
+      "problem": "Eligibility-note paragraph repeated the same 'dalam bentuk bertulis' calque: 'Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis.'",
+      "fix_applied": "Reworded to 'disahkan secara individu, secara bertulis.'"
+    }
+  ],
+  "notes": [
+    "Hero H1/lede ('Majikan memohon. HRD Corp memutuskan.', PROGRAMME_POSITIONING_MS + CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS in the same viewport) checked clean against governance checklist rule 4 and rule 7 (no unqualified HRD Corp claim; employer named as applicant, HRD Corp as decider throughout STEPS, HRD_FAQS and the eligibility section).",
+    "Chartered Manager is correctly not mentioned anywhere on this page (writer's own note; out of scope, not forced in) — no 'laluan pilihan' risk here.",
+    "Metadata title/description checked clean: no calques, correct decision-maker framing ('Majikan memohon sebelum latihan; HRD Corp memutuskan...').",
+    "Scholarship sentences (lines 178-181, 56) verified against FACTS.scholarshipEligibility-equivalent wording plus 'Biasiswa tidak automatik.' in every instance; no amounts, odds or headline fragments beyond the governed sentence.",
+    "Did not touch the link label 'pelaburan' at line 206 (points to /ms/fees, labelled 'Lanjut tentang kos dan pembiayaan di halaman pelaburan.') — not on the banned-phrase or calque list and not visibly wrong (pelaburan = investment framing of the fee, consistent with the page's own B2B/tuntutan register); flagging for the owner only if a stricter 'yuran' label is preferred."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "src/app/(ms)/ms/hrd-corp-claimable/page.tsx:206 links to /ms/fees with the label 'halaman pelaburan' (investment page) rather than 'halaman yuran' (fees page) — confirm 'pelaburan' is the intended framing or should be swapped to match the fees page's own naming."
+  ]
+}

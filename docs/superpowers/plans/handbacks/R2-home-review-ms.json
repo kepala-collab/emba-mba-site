@@ -1,0 +1,17 @@
+{
+  "unit": "home",
+  "language": "ms",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    { "file": "src/components/site/FutureCommerceHome.tsx", "line": 93, "problem": "mediaTitle 'Satu pelan yang boleh dilaksanakan pasukan anda.' dropped the agent marker 'oleh' present in the hero lede's parallel construction — passive without an explicit agent preposition.", "fix": "Added 'oleh': 'Satu pelan yang boleh dilaksanakan oleh pasukan anda.'" },
+    { "file": "src/components/site/FutureCommerceHome.tsx", "line": 101, "problem": "'kohort Bahasa Inggeris' capitalises 'Bahasa' mid-sentence; ms-register-audit-checklist.json missingRule 'Language names and Title Case function words' requires lowercase 'bahasa' in running prose.", "fix": "Lowercased to 'kohort bahasa Inggeris' (also fixed the duplicate at englishCohorts, line 115, and the languageName() helper, line 192)." },
+    { "file": "src/components/site/FutureCommerceHome.tsx", "line": 105, "problem": "factProject used 'dalam tanggungjawab anda' — hero-review-ms.json flagged this exact 'dalam tanggungjawab' collocation as calque-adjacent and prescribed 'di bawah tanggungjawab' for the parallel Supporting-1 sentence.", "fix": "Changed to 'di bawah tanggungjawab anda'." },
+    { "file": "src/components/site/FutureCommerceHome.tsx", "line": 290, "problem": "'Tertakluk pada permohonan majikan...' — ms-register-audit-rules.json confirmedStrong row 19 fixes the preposition as 'tertakluk kepada', not 'pada'.", "fix": "Changed 'pada' to 'kepada'." },
+    { "file": "src/components/site/FutureCommerceHome.tsx", "lines": "236-240", "problem": "The intake rail rendered the shared INTAKES fact fields raw for every locale: intake.co is English ('Cohort 17') and intake.s1 carries an English month abbreviation ('22–23 Aug'), so the ms hero showed 'bahasa Inggeris · Cohort 17' and '22–23 Aug' — exactly the fail example named in ms-register-audit-checklist.json's 'Availability and cohort labels must come from data, not prose' missingRule.", "fix": "Reused the existing, already-tested src/lib/intakes.ts formatIntakeDateRange() helper (already used correctly by IntakeSchedule.tsx in this same unit set) for the date, and added a local cohortLabel() mapping 'Cohort N' → 'Kohort N' for ms only. No JSX structure or en/zh output changed." }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "PROGRAMME_POSITIONING_MS in src/lib/content.ts (out of scope for this unit) still renders 'Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan' — a half-translated programme name per ms-register-audit-rules.json's 'Programme name, credential names and CMI terms mid-sentence' missingRule. hero-review-ms.json already flagged this as a source-constant defect for the owner to fix once, upstream, rather than patched per page; I did not touch content.ts.",
+    "content.ts CTA_LABELS.ms.company ('Pertanyaan untuk syarikat anda') is a noun-phrase CTA, not verb+object; ms-register.md's own 'further items' section already recommends 'Hantar pertanyaan untuk syarikat anda'. Out of scope for this unit (content.ts is not in the home unit's file list)."
+  ]
+}

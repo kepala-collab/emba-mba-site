@@ -1,0 +1,23 @@
+{
+  "unit": "campaign-pages",
+  "language": "en",
+  "filesReviewed": [
+    "src/app/(en)/lp/google/page.tsx",
+    "src/app/(en)/lp/meta/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "notes": [
+    "H1s within the 9-word cap: /lp/google 'Bring a business issue. Leave with an action plan.' (9 words); /lp/meta 'From informal decisions to a method you can show.' (9 words).",
+    "CERTIFICATE_POSITIONING.professionalRelevance renders adjacent to every certificate/CMI mention in the first viewport on both pages, per owner decision 14.2.",
+    "Scholarship rendered only as FACTS.scholarshipEligibility plus 'The scholarship is never automatic.'; no amounts, criteria or discount framing.",
+    "COMPARISON_SCOPE used verbatim beside the comparison table on /lp/google; academic MBA named as a different-purpose reference, not disparaged.",
+    "No banned vocabulary hit on a manual grep for ladder/rung/climb/deserve/still open/last chance/limited seats/countdown/promotion/salary/fast-track/shortcut/etc.",
+    "'Free' does not appear on either page (zero occurrences, not a violation).",
+    "Counts (FACTS.cohorts) attributed to ABC ('Cohorts completed, reported by ABC').",
+    "npm run typecheck: 0. node scripts/content-clarity-audit.mjs: passed, 0 warnings attributable to these two files."
+  ],
+  "fixesApplied": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

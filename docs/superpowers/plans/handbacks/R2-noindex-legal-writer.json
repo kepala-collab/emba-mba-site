@@ -1,0 +1,66 @@
+{
+  "unit": "noindex-and-legal",
+  "filesChanged": [
+    "src/app/(en)/unsubscribed/page.tsx",
+    "src/app/(ms)/ms/unsubscribed/page.tsx",
+    "src/app/(zh)/zh/unsubscribed/page.tsx",
+    "src/app/(en)/not-found.tsx",
+    "src/app/(ms)/not-found.tsx",
+    "src/app/(zh)/not-found.tsx"
+  ],
+  "filesReviewedNoChange": [
+    "src/app/(en)/corporate-training/page.tsx — pure permanentRedirect to /hrd-corp-claimable, no copy, no metadata title/description beyond robots flag",
+    "src/app/(ms)/ms/corporate-training/page.tsx — same, redirects to /ms/hrd-corp-claimable",
+    "src/app/(zh)/zh/corporate-training/page.tsx — same, redirects to /zh/hrd-corp-claimable",
+    "src/app/(en)/online-executive-mba/page.tsx — pure permanentRedirect to /executive-mba, no copy",
+    "src/app/(ms)/ms/online-executive-mba/page.tsx — same, redirects to /ms/executive-mba",
+    "src/app/(zh)/zh/online-executive-mba/page.tsx — same, redirects to /zh/executive-mba",
+    "src/app/(en)/programmes/shift-hr/page.tsx — pure permanentRedirect to /executive-mba, no copy",
+    "src/app/(ms)/ms/programmes/shift-hr/page.tsx — same, redirects to /ms/executive-mba",
+    "src/app/(zh)/zh/programmes/shift-hr/page.tsx — same, redirects to /zh/executive-mba",
+    "src/app/(en)/privacy/page.tsx, src/app/(ms)/ms/privacy/page.tsx, src/app/(zh)/zh/privacy/page.tsx — every paragraph is a PDPA statement, data-collection/retention/sharing obligation, or contact/registration fact; no non-legal copy segment (heading text is already plain and short) could be reworded without touching obligations or PDPA wording, so left untouched per the brief's 'never the legal terms, obligations, refund rules or PDPA statements' rule",
+    "src/app/(en)/terms/page.tsx, src/app/(ms)/ms/terms/page.tsx, src/app/(zh)/zh/terms/page.tsx — same reasoning: fee, refund, credential, HRD Corp, IP and liability clauses dominate every section; no safe copy-only rewording surface found",
+    "src/app/(ms)/ms/[...missing]/page.tsx, src/app/(zh)/zh/[...missing]/page.tsx — call notFound() with zero rendered copy; the visible 404 body comes entirely from not-found.tsx in each language group, which was rewritten"
+  ],
+  "h1AndLede": {
+    "en": {
+      "unsubscribed_h1": "You're unsubscribed. (unchanged — already calm, compliant)",
+      "notfound_h1": "That page is not here. (unchanged — already calm, compliant, 5 words)"
+    },
+    "ms": {
+      "unsubscribed_h1": "Anda telah berhenti melanggan. (unchanged)",
+      "notfound_h1": "Halaman ini tiada di sini. (unchanged, 5 words)"
+    },
+    "zh": {
+      "unsubscribed_h1": "您已退订。(unchanged)",
+      "notfound_h1": "找不到这个页面。(unchanged, no sentence-initial 它/这)"
+    }
+  },
+  "changesSummary": [
+    "corporate-training, online-executive-mba and shift-hr in all three language trees are noindex redirect-only route files with no rendered copy or metadata description to rewrite; confirmed via file read, left byte-for-byte unchanged.",
+    "privacy and terms in all three languages: reviewed every heading and paragraph against the rule 'change wording only where it is copy, never the legal terms, obligations, refund rules or PDPA statements'; found no paragraph that is pure copy rather than a legal/PDPA statement, so no edits were made to preserve legal meaning exactly.",
+    "unsubscribed (en/ms/zh) and not-found (en/ms/zh): added a third/second link using CTA_LABELS.conversation (and its .ms/.zh mirrors) pointing to /apply, /ms/apply, /zh/apply respectively, giving each page the shared-enquiry voice's 'arrange a conversation' option alongside the existing 'back to home' link, per the unit's instruction to use the locked conversation label ('Jadualkan sesi perbincangan program' in Malay) on these pages.",
+    "Fixed a genuine Malay grammar defect in src/app/(ms)/ms/unsubscribed/page.tsx found while reviewing for the register audit: 'E-mel sahaja kami dan kami akan hentikan langganan anda secara manual.' (ungrammatical) changed to 'Hubungi kami melalui e-mel dan kami akan berhenti langgankan anda secara manual.' in both the invalid and error COPY entries — meaning preserved (contact us by email, we will unsubscribe you manually), not a fact or legal statement.",
+    "Fixed a Chinese mainland-lexis audit hit pre-existing in src/app/(zh)/zh/unsubscribed/page.tsx: replaced 营销邮件 with 推广邮件 in the metadata description and the 'done' body copy (营销 is banned mainland lexis per scripts/content-clarity-audit.mjs); meaning unchanged (marketing/promotional email)."
+  ],
+  "constantsUsed": [
+    "CTA_LABELS.conversation / CTA_LABELS.ms.conversation / CTA_LABELS.zh.conversation — new import added to all six edited files, values unchanged (owner-locked: 'Arrange a programme conversation' / 'Jadualkan sesi perbincangan program' / '预约课程咨询')",
+    "SITE.email, SITE.phone — unchanged usage, already present in unsubscribed pages",
+    "No edits made to src/lib/content.ts, content-ms.ts or content-zh.ts per the dispatch restriction; no new constants were needed"
+  ],
+  "auditResults": {
+    "typecheckExitCode": 0,
+    "typecheckNote": "npm run typecheck reports one pre-existing error unrelated to this unit: src/app/(en)/insights/executive-education-vs-executive-mba/page.tsx(119,65) 'Cannot find name CTA_LABELS' — that file is owned by another writer and was not touched here; confirmed via git status that it was already modified before this session started.",
+    "contentClarityAuditExitCode": 0,
+    "contentClarityNote": "node scripts/content-clarity-audit.mjs: 'Content clarity audit passed across 178 public content files.' First run showed a warning on src/app/(zh)/zh/unsubscribed/page.tsx for the banned mainland-lexis word 营销 (pre-existing before my edit); fixed by substituting 推广. Re-run showed zero warnings on any of the six unit files (remaining warnings, all on src/app/(zh)/zh/intakes/page.tsx and src/lib/content-zh.ts for 班次, belong to other writers' units)."
+  },
+  "selfCheckResults": {
+    "ms": "Grepped edited files for kamu/awak/korang/engkau/-lah/nak/tak, laluan pilihan, perbualan program, projek aplikasi, pengurus bekerja, Tempah sesi, program awam, laluan lanjutan — zero hits. No exclamation marks introduced. RM/date facts unchanged (none present on these pages). Both not-found and unsubscribed H1s stay well under the 9-word Malay headline limit.",
+    "zh": "Grepped edited files for 班次, 参与者, 颁授并背书, 身份启用, 折扣码, 免费获取, 渠道, 创始人, 首席执行官, 营销 — zero hits after the 推广 fix. H1s unchanged and already under the 14-character limit with no sentence-initial 它/这 and no 您/你 in either headline. Pangu spacing intact around 'CTA_LABELS' constant usage (renders as plain Chinese text, no Latin/digit adjacency introduced)."
+  },
+  "leftForReviewer": [
+    "privacy and terms pages (all three languages) received no copy edits at all in this pass because every sentence on those pages is either a PDPA statement, an obligation, a refund term, or a fact governed elsewhere. If the reviewer identifies a genuinely non-legal phrase (for example a transitional sentence) that could be softened toward the calm-voice archetype without touching legal meaning, that would need a follow-up unit with explicit legal sign-off given the brief's strict prohibition here.",
+    "The Malay grammar fix in ms/unsubscribed ('E-mel sahaja kami...' -> 'Hubungi kami melalui e-mel...') was a defect fix, not a stylistic transcreation choice; flagging in case the owner had specific wording in mind for that sentence.",
+    "corporate-training, online-executive-mba and shift-hr redirect files were confirmed to carry zero copy in all three languages — no action was possible or needed there; noting this explicitly so the reviewer does not expect diffs on those nine files."
+  ]
+}

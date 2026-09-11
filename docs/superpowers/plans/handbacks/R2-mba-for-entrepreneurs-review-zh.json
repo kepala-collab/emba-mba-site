@@ -1,0 +1,42 @@
+{
+  "unit": "mba-for-entrepreneurs",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/mba-for-entrepreneurs/page.tsx"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(zh)/zh/mba-for-entrepreneurs/page.tsx",
+      "line": "42 (x2), 71, 148",
+      "problem": "'{FACTS.liveSessions} 个指定周末' used generically for the session structure (FORMAT card heading/body, hero mono line, section-4 intro) even though most published cohorts run Fri–Sat, not Sat–Sun — the same zh-register-audit high-confidence finding as the other units in this dispatch.",
+      "fix": "replaced with '{FACTS.liveSessions} 次导师带领的指定研习课' / '{FACTS.liveSessions} 次指定研习课' throughout, and the FORMAT body sentence to '课程集中在 {FACTS.liveSessions} 次指定研习课进行；选择线上班则无需到场。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-entrepreneurs/page.tsx",
+      "line": 44,
+      "problem": "'指定的后续班次' used the hard-banned transport-schedule word 班次 (glossary rule 18 / audit script) for a cohort.",
+      "fix": "changed to '指定的后续届别'"
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-entrepreneurs/page.tsx",
+      "line": "10, 41",
+      "problem": "Certificate award verb rendered as '取得/获 CMI 认可的课程证书' rather than the controlled 获颁 verb (certificate gloss 认可 pairs with 获颁 for the award, per the review brief and matching the site's other CMI Certificate of Recognition sentences).",
+      "fix": "metadata description changed to '结业即获颁 CMI 认可证书。'; FORMAT[0].p changed to '...一边获颁 CMI 认可证书。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-entrepreneurs/page.tsx",
+      "line": "147-150",
+      "problem": "Section 4 ('Why the format works') names the certificate and Chartered Manager as a CMI route in its own viewport without CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH or the not-an-MQA-degree boundary anywhere in that block — the boundary only appeared once, in the hero further up the page (governance checklist item 4: wherever 'awarded'/CMI/certificate appears, the no-guarantee sentence renders in the same viewport).",
+      "fix": "added '结业即获颁 CMI 认可证书' to the section intro sentence and appended {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH} to the same paragraph, alongside the existing Chartered Manager separate-route sentence"
+    }
+  ],
+  "checked_and_passed": [
+    "H1 has no trailing full stop, 9 characters, within the 14-character cap; meaning matches the EN source (from instinct to a plan co-founders can follow)",
+    "no cleft '...的是...' sentences; no sentence-initial 它/这",
+    "scholarship sentence in the CTA-nudge section keeps 名额有限 bound to 须经个别评估/书面批准/个别以书面确认/并非自动授予",
+    "fact tokens (FACTS.*, CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH) interpolated, not retyped"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "Confirm whether an HRD Corp / employer-funding mention should ever appear on this page for founder/owner readers who are on their company's payroll (the writer's handback raised this and left it out; this review pass did not add one either, since it is a scope decision for the owner rather than a register or governance defect)."
+  ]
+}

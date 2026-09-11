@@ -1,0 +1,68 @@
+{
+  "unit": "mba-for-entrepreneurs",
+  "archetype": "Audience cluster page (spec section 8)",
+  "files_changed": [
+    "src/app/(en)/mba-for-entrepreneurs/page.tsx",
+    "src/app/(ms)/ms/mba-for-entrepreneurs/page.tsx",
+    "src/app/(zh)/zh/mba-for-entrepreneurs/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "From instinct to a plan your co-founders can follow.",
+      "lede": "Founders carry linked decisions about customers, product, pricing, capital, capability and timing by instinct, defending them in conversation rather than showing the reasoning. Across {FACTS.durationLong}, the applied business project takes one of those decisions from your own venture through first-principles, systems and Job-To-Be-Done frameworks to a written plan with decisions, actions, owners and measures, reviewed by faculty — one you can walk co-founders, boards or investors through. The frameworks stay with you afterward."
+    },
+    "ms": {
+      "h1": "Daripada naluri kepada pelan yang boleh diikuti rakan pengasas.",
+      "lede": "Pengasas memikul keputusan tentang pelanggan, produk, harga, modal, keupayaan dan masa mengikut naluri. Ia dipertahankan dalam perbualan, bukan ditunjukkan sebab munasabahnya. Sepanjang {FACTS.durationLong}, projek amali perniagaan mengambil satu daripada keputusan itu daripada usaha anda sendiri. Rangka kerja prinsip asas, pemikiran sistem dan Job-To-Be-Done membawanya kepada pelan bertulis: keputusan, tindakan, pemilik dan ukuran, disemak oleh fasilitator. Pelan itu boleh anda kongsikan dengan rakan pengasas, lembaga atau pelabur. Rangka kerja itu kekal bersama anda selepas itu."
+    },
+    "zh": {
+      "h1": "从凭直觉，到写成方案",
+      "lede": "创办人日常凭直觉，对客户、产品、定价、资金、能力与时机作出彼此牵动的决定，靠反复申辩撑住，而不是摊开推理过程。{FACTS.durationMonths} 个月内，企业应用项目会把其中一项决定，从您自己的创业项目出发，经第一性原理、系统思维与 Jobs-To-Be-Done 框架推进，写成一份决策、行动、负责人与衡量指标齐备的书面方案，交由导师评审——足以带去与联合创办人、董事会或投资者讨论。课程结束后，框架仍留在您手上。"
+    }
+  },
+  "constants_used": [
+    "FACTS.durationLong",
+    "FACTS.durationMonths",
+    "FACTS.liveSessions",
+    "FACTS.priceStd",
+    "FACTS.scholarshipProvider",
+    "FACTS.scholarshipEligibility",
+    "CTA_LABELS.guide / CTA_LABELS.ms.guide / CTA_LABELS.zh.guide",
+    "CERTIFICATE_POSITIONING.professionalRelevance",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (content-ms.ts)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (content-zh.ts)"
+  ],
+  "changes_summary": [
+    "H1 rewritten to the archetype's before-to-after form (one short phrase per side, EN 9 words, MS 9 words, ZH 9 characters in two beats), replacing the feature-framed original headline.",
+    "Hero lede rewritten as the change of experience: from-state (decisions carried by instinct, defended not shown) to to-state (defined, tested against frameworks, written as a plan, reviewed by faculty, explained to co-founders/boards/investors), method-stays line included.",
+    "Added CERTIFICATE_POSITIONING.professionalRelevance (and MS/ZH mirrors) to the hero block in all three languages because CMI/the certificate is named in the first viewport (spec section 14 rule 2).",
+    "Replaced 'capstone' with 'applied business project' in EN and 'projek puncak' / '最终项目' with 'projek amali perniagaan' / '企业应用项目' in MS/ZH (vocabulary ban).",
+    "Removed scarcity phrasing 'subject to limited availability' in EN CTA section; replaced with the verbatim FACTS.scholarshipEligibility token plus 'The scholarship is never automatic.'",
+    "Fixed banned MS calques: 'projek aplikasi' -> 'projek amali perniagaan'; 'laluan pilihan CMI' -> 'laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI'.",
+    "Reworded CTA nudge headings and CtaSection heading in all three languages to name the reader's own decision rather than a generic programme review, consistent with the RJTBD/servant-leadership framing.",
+    "Tokenised remaining hardcoded duration/session counts (EN 'three scheduled weekend sessions' -> FACTS.liveSessions; ZH mixed-language 'FACTS.durationLong' inside Chinese sentences -> FACTS.durationMonths + 个月, matching the pattern already used elsewhere on the page).",
+    "Fixed a ZH sentence-initial 这 (banned) in the hero lede by rephrasing the final sentence.",
+    "Metadata (title/description) left unchanged in all three languages: EN title/description already matched the spec's protect list verbatim; MS/ZH metadata already used FACTS.durationMonths tokens and needed no further change."
+  ],
+  "left_unchanged_by_design": [
+    "EN protected sentence 'There is no traditional thesis or examination. Participants define a live challenge, apply the programme frameworks and produce a sequenced transformation plan for faculty review.' kept verbatim per spec protect list.",
+    "EN protected fine-print sentence 'No funding or growth is promised — the frameworks and the plan are yours; the outcomes depend on how you execute.' kept verbatim per spec protect list.",
+    "Section 2 and section 4 card body copy (the six 'built' framework cards and the four 'format' cards) left mostly as-is where no banned terms or governance issues were found; only cross-checked for banned vocabulary.",
+    "No HRD Corp / employer-led funding content added to this page — the unit brief notes founder/owner inclusion for employer-led HRD Corp funding only where the employer confirms payroll, but the page as written does not carry an HRD Corp section, so none was introduced (avoiding scope creep beyond the existing page structure)."
+  ],
+  "audit_and_typecheck": {
+    "npm_run_typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "notes": "node scripts/content-clarity-audit.mjs reports 178 public content files passed; the locale-register warning list (non-blocking) contains zero entries for any of the three mba-for-entrepreneurs page files."
+  },
+  "self_checks": {
+    "ms_register": "anda used throughout; no exclamation marks; no -lah/nak/tak; RM figures come only from FACTS.priceStd token; headline is 9 words; 'projek aplikasi' and 'laluan pilihan' banned phrases removed from this unit's files; 'kepimpinan berkhidmat' not invoked on this page (not applicable to this unit's content).",
+    "zh_register": "Malaysian Simplified Chinese register maintained; no decorative four-character idiom used; numbers appear as tokens; 认可 used for CMI (not 认证); banned terms (背书/班次/参与者/渠道/创始人/首席执行官/营销/免费获取) not present in this unit's new copy; full-width punctuation used; pangu spacing applied around FACTS tokens and the Jobs-To-Be-Done term; headline is 9 characters (under the 14-character cap) with no sentence-initial 它/这 in body copy after the fix."
+  },
+  "left_for_reviewer": [
+    "Confirm the ZH H1 '从凭直觉，到写成方案' reads naturally to a Malaysian Simplified Chinese ear in the register guide's sense (the reviewer's register-audit pass is the authority here, per the unit brief).",
+    "Confirm the reworded CtaSection headings (EN 'Get the facts for the decision your venture is carrying.', MS 'Dapatkan fakta untuk keputusan yang sedang anda timbang.', ZH '获取您正在权衡的那个决策所需的事实。') read well against the shared CtaSection component's default sub-copy, since only the heading prop was changed and the component itself was not touched.",
+    "The pre-existing MS/ZH card copy in sections 2 and 4 (framework and format cards) was checked against the banned-vocabulary list but not fully re-transcreated line-by-line from the new English; flag if a fuller pass is wanted.",
+    "Confirm whether this audience page should ever carry an HRD Corp / employer-funding mention per the unit brief's founder-owner caveat; none was added in this pass."
+  ]
+}

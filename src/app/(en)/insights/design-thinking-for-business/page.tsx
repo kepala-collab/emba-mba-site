@@ -5,11 +5,12 @@ import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/compo
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 
 export const metadata = withSeo("/insights/design-thinking-for-business", {
-  title: "Design Thinking for Business",
+  title: "Begin With the Person You Are Trying to Serve",
   description:
-    "A practical design-thinking guide for leaders: understand customers, define the problem, prototype and balance desirability, feasibility and viability.",
+    "Design thinking for leaders: find the right problem before you build, test ideas with the people they are for, and weigh desirability, feasibility and viability together.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,14 +21,14 @@ export const metadata = withSeo("/insights/design-thinking-for-business", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Design Thinking for Business: A Practical Guide for Leaders",
+  headline: "Begin With the Person You Are Trying to Serve",
   mainEntityOfPage: "https://futurereadymba.com/insights/design-thinking-for-business",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "en-MY",
   description:
-    "A practical guide to understanding customers, defining the right problem, prototyping quickly and balancing desirability, feasibility and viability.",
+    "Design thinking for leaders: find the right problem before you build, test ideas with the people they are for, and weigh desirability, feasibility and viability together.",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,
@@ -39,7 +40,7 @@ const jsonLd = {
     name: "Asian Business Consulting",
   },
   articleSection: "Insights",
-  about: "Design thinking for business leaders and strategy",
+  about: "Design thinking as a way to find the right problem before you build",
 };
 
 export default function Page() {
@@ -56,16 +57,17 @@ export default function Page() {
               <span className="mono sec-k">Insights · Thinking</span>
             </div>
             <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "18ch" }}>
-              Design thinking for business
+              Begin with the person you are trying to serve.
             </h1>
             <ArticleAttribution />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              A well-built product still fails when it solves the wrong customer
-              problem. Design thinking addresses that risk through a human-centred,
-              iterative way of solving problems
-              that starts from real needs rather than internal assumptions, and
-              that treats every idea as a hypothesis to be tested, not a decision
-              to be defended.
+              A product can be built well and still fail, because it answers
+              the wrong question for the wrong person. Design thinking is the
+              discipline of finding the right problem first: start with the
+              person you are trying to serve, test what you learn before you
+              commit, and treat every idea as something to be proven, not
+              defended. None of this is innate; it is practised, on a real
+              decision, not a hypothetical one.
             </p>
           </Reveal>
 
@@ -77,13 +79,14 @@ export default function Page() {
               Its central move is deceptively simple: begin with the person you
               are trying to serve, observe their reality closely, and let what
               you learn shape the solution — instead of starting from a solution
-              you already like and hunting for a market to justify it.
+              you already like and hunting for evidence to justify it.
             </p>
             <p>
-              It is deliberately iterative rather than linear. Teams test assumptions
-              with low-cost prototypes before committing to a full launch, then revise
-              the solution using observed evidence. That posture — curiosity before conviction — is
-              what separates it from conventional planning.
+              It is deliberately iterative rather than linear. Teams test
+              assumptions with low-cost prototypes before committing to a full
+              launch, then revise the solution using what they observed.
+              Curiosity before conviction is what separates it from
+              conventional planning.
             </p>
 
             <blockquote>
@@ -163,7 +166,7 @@ export default function Page() {
               of the others.
             </p>
 
-            <h3>Reframing around the real &ldquo;job to be done&rdquo;</h3>
+            <h3>The real job to be done</h3>
             <p>
               Consider a mid-market bank losing younger customers to fintech
               apps. The instinctive response is a feature race: add budgeting
@@ -183,7 +186,10 @@ export default function Page() {
               produced a more precise definition of the customer&rsquo;s job.
             </p>
 
-            <h2>Common traps</h2>
+            <h2>Where the shortcut cuts</h2>
+            <p>
+              The shortcut cuts in three places:
+            </p>
             <ul>
               <li>
                 <strong>Skipping customer research.</strong> Moving directly to
@@ -197,26 +203,29 @@ export default function Page() {
                 <strong>Treating it as a workshop gimmick.</strong> Sticky notes
                 and an off-site do not make a discipline. Design thinking only
                 pays off when the insights change what gets funded, shipped and
-                killed.
+                stopped.
               </li>
             </ul>
 
-            <h2>From method to mastery</h2>
+            <h2>Where this sits in the method</h2>
             <p>
-              Design-integrative thinking is one of the seven disciplines in the{" "}
-              <Link href="/how-it-works">Future Ready Executive MBA&rsquo;s</Link>{" "}
-              F.A.S.T. method, where it sits alongside the Jobs-To-Be-Done and
-              Desirable-Feasible-Viable frameworks introduced above — taught not
-              as theory but as tools you apply to your own strategic problems. If
-              you want to lead innovation that survives contact with real
-              customers, the{" "}
-              <Link href="/executive-mba">Executive MBA</Link> builds the habit
-              until it becomes instinct.
+              Design-integrative thinking is one of the seven disciplines in
+              the Future Ready Executive MBA&rsquo;s F.A.S.T. method, where it
+              sits alongside the Jobs-To-Be-Done and
+              Desirable-Feasible-Viable frameworks introduced above — taught
+              not as theory but as something practised on your own decisions
+              across the six months.
             </p>
             <h2>Source and further reading</h2>
             <p>
               For the established desirability, feasibility and viability framing—and IDEO&rsquo;s current explanation of the iterative practice—see{" "}
               <a href="https://designthinking.ideo.com/introduction" target="_blank" rel="noopener noreferrer">IDEO&rsquo;s introduction to design thinking</a>.
+            </p>
+            <p>
+              Apply it to the decision you are carrying now.{" "}
+              <Link className="text-action" href="/diagnostic">
+                Open the {PROGRAMME_FIT_CHECK.en} <span aria-hidden="true">↗</span>
+              </Link>
             </p>
           </div>
         </div>
@@ -224,7 +233,7 @@ export default function Page() {
 
       <CtaSection
         programme="Executive MBA"
-        heading="Test what customers value before committing resources."
+        heading="Test what the people you serve actually value, before you build."
       />
     </>
   );

@@ -1,77 +1,77 @@
 import Reveal from "@/components/site/Reveal";
 import LeadForm from "@/components/site/LeadForm";
 import ProgrammeMarks from "@/components/site/ProgrammeMarks";
-import { SITE, FACTS } from "@/lib/content";
-import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
+import { SITE, FACTS, PROGRAMME_POSITIONING_ZH, CTA_LABELS } from "@/lib/content";
+import { HRD_CORP_CLAIM_ZH, CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH, INCLUSIONS_CMI_CERTIFICATE_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
+const PROGRAMME_POSITIONING_ZH_FULL =
+  `${PROGRAMME_POSITIONING_ZH} 这是一门为期六个月、非学术性质的专业发展课程，并非 MQA 认证的学术学位或受监管的资格。`;
+
 export const metadata = withSeo("/zh/lp/meta", {
-  title: "为在职领导者而设的 Executive MBA | Future Ready",
+  title: `从随性决策，到可展示的方法 — Executive MBA ${FACTS.durationMonths} 个月课程`,
   description:
-    `为在职管理者打造的 ${FACTS.durationMonths} 个月 Future Ready Executive MBA：${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次导师带领的研习课，以及真实企业应用项目。`,
+    `${FACTS.durationMonths} 个月内，通过 ${FACTS.trainingDays} 个培训日、${FACTS.liveSessions} 次导师带领的研习课、教练与应用项目，把您所在机构的一项现有课题变成书面行动方案，照常在职工作。`,
   robots: { index: false, follow: false },
   alternates: { canonical: "/zh/lp/meta" },
 });
 
 const SOURCE = "lp-meta-zh";
 
-const EDGE = [
-  ["看清整体系统", "决策之前，先厘清成因、彼此牵动的环节与潜在后果。"],
-  ["验证基本假设", "分清事实、限制与假设，再以证据为据设计方案。"],
-  ["兼顾分析与创新", "在战略逻辑、用户需求与现实限制之间取得平衡。"],
-  ["梳理复杂信息", "把繁杂信息梳理成说得清、行得通的决策。"],
-  ["五个视角审视", "从五个明确的商业视角，权衡每一个决定。"],
-  ["贯通人才与业务", "把人才能力、创新与商业需求通盘考量。"],
-];
+const PRESSURES = [
+  ["职责范围扩大了", "您所肩负的决策，成为企业应用项目的素材。"],
+  ["决策的对错不再一目了然", "您要先厘清决策，再用一套方法检验证据、摊开取舍。"],
+  ["事业不能按下暂停键", `${FACTS.trainingDays} 个培训日，分 ${FACTS.liveSessions} 次研习课完成；应用工作在研习课之间，于您所在机构进行。`],
+] as const;
 
-const WALK = [
-  `${FACTS.trainingDays} 个培训日全程由课程团队确认的导师带领`,
-  "个人领导力诊断，厘清决策模式与重点发展方向",
-  "一对一高管教练，直接落地到学员自身的企业情境",
-  "结课之后依然保留的框架与工具库（LMS）",
-  "一份由导师评审的企业转型项目",
-  "课程由 CMI（英国）认可；CMgr 须另行申请",
-];
+const PROCESS = [
+  ["01", "带来一项现有课题", "从您在所在机构里必须负责的一项决策开始。"],
+  ["02", "运用管理框架", "以结构化流程厘清问题、检验假设、比较可行方案。"],
+  ["03", "完成行动方案", "把分析整理成一份由导师评审的书面行动方案。"],
+] as const;
 
 export default function ZhMetaLP() {
   return (
     <div lang="zh-Hans">
       <section className="section" style={{ paddingTop: "clamp(44px,6vw,80px)", borderBottom: "none" }}>
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
-          <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">为肩负跨部门决策责任的在职领导者而设</span></div></Reveal>
+          <Reveal><div className="eyebrow" style={{ justifyContent: "center" }}><span className="l" /><span className="mono sec-k">专为在人事、营运与战略上都要决策的管理者而设</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.1rem,4.8vw,3.4rem)", letterSpacing: "-.01em", lineHeight: 1.18, margin: "10px auto 0", maxWidth: "20ch" }}>
-              {FACTS.durationMonths} 个月，锤炼面向未来的商业领导力——<em style={{ color: "var(--crimson)", fontStyle: "normal" }}>由 CMI 颁授并背书的 Executive MBA。</em>
+              从随性决策，到可展示的方法
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ color: "var(--ink-2)", fontSize: "1.14rem", maxWidth: "46ch", margin: "24px auto 30px", lineHeight: 1.9 }}>
-              照常在职工作的同时，{FACTS.durationMonths} 个月内完成 {FACTS.trainingDays} 个培训日、教练辅导与企业应用项目。Chartered Manager 属独立可选的 CMI 路线，另有独立的资格、评估与费用。
+              照常在职工作的同时，{FACTS.durationMonths} 个月内通过 {FACTS.trainingDays} 个培训日、{FACTS.liveSessions} 次研习课、教练与应用项目，把您所在机构的一项现有课题变成书面行动方案。{PROGRAMME_POSITIONING_ZH_FULL}
             </p>
           </Reveal>
           <Reveal delay={160}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 26 }}>
-              <a href="#apply" className="btn btn-primary">索取 2026 课程资料 →</a>
+              <a href="#apply" className="btn btn-primary">{CTA_LABELS.zh.guide} →</a>
             </div>
           </Reveal>
           <Reveal delay={200}>
             <div style={{ display: "flex", gap: 14, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
               <ProgrammeMarks lang="zh" centered labelled />
-              <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次研习课 · ABC 已开办 {FACTS.cohorts} 个班次</span>
+              <span className="mono" style={{ color: "var(--muted)", letterSpacing: ".06em", fontSize: ".76rem" }}>{FACTS.trainingDays} 个培训日 · {FACTS.liveSessions} 次研习课 · ABC 已开办 {FACTS.cohorts} 届</span>
             </div>
+          </Reveal>
+          <Reveal delay={220}>
+            <p className="fine" style={{ margin: "16px auto 0", maxWidth: "48ch" }}>{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}</p>
           </Reveal>
         </div>
       </section>
 
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">培养的能力</span></div></Reveal>
-          <Reveal><h2 className="sec-h">六种彼此配合的决策方法。</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">管理者为何开始寻找方法</span></div></Reveal>
+          <Reveal><h2 className="sec-h">在职期间，仍可精进决策</h2></Reveal>
           <div className="insight-grid mt-m">
-            {EDGE.map(([h, p], i) => (
+            {PRESSURES.map(([h, p], i) => (
               <Reveal key={h} delay={(i % 3) * 60}>
                 <div className="card" style={{ height: "100%" }}>
-                  <div className="mono acc" style={{ fontSize: ".7rem", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                  <div className="mono acc" style={{ fontSize: ".7rem", marginBottom: 10 }}>0{i + 1}</div>
                   <h3 style={{ fontSize: "1.1rem", marginBottom: 8 }}>{h}</h3>
                   <p style={{ margin: 0, color: "var(--muted)", fontSize: ".9rem", lineHeight: 1.8 }}>{p}</p>
                 </div>
@@ -83,34 +83,34 @@ export default function ZhMetaLP() {
 
       <div className="campaign-fact-band">
         <div className="wrap campaign-fact-grid">
-          {[["CMI", "由 CMI（英国）颁授并背书"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次进行的培训日`], ["1", "以真实企业课题为核心的企业应用项目"], ["资格评估", "马来西亚申请者择优评估奖学金"]].map(([value, label]) => (
+          {[["CMI", "由 CMI（英国）颁发并认可"], [FACTS.trainingDays, `分 ${FACTS.liveSessions} 次研习课进行的培训日`], [FACTS.cohorts, "届已完成，由 ABC 公布"], ["择优评估", "马来西亚合资格申请者的奖学金评估"]].map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
       </div>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">课程包含</span></div></Reveal>
-          <Reveal><h2 className="sec-h">教学、辅导、工具与考核，一次看清。</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">您将完成的工作</span></div></Reveal>
+          <Reveal><h2 className="sec-h">一项课题进来，一份方案出去</h2></Reveal>
           <div role="list" style={{ padding: 0, margin: "26px 0 0", display: "grid", gap: 14 }}>
-            {WALK.map((w) => (
-              <Reveal key={w}>
+            {PROCESS.map(([number, title, body]) => (
+              <Reveal key={number}>
                 <div role="listitem" style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                  <span className="acc" style={{ marginTop: 3, fontWeight: 700 }}>→</span>
-                  <span style={{ color: "var(--ink-2)", fontSize: "1.02rem" }}>{w}</span>
+                  <span className="acc mono" style={{ marginTop: 3, fontWeight: 700 }}>{number}</span>
+                  <span style={{ color: "var(--ink-2)", fontSize: "1.02rem" }}><b style={{ color: "var(--ink)" }}>{title}。</b>{body}</span>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>标准费用为 {FACTS.priceStd}。奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经 LIFE Innoversity 评估与书面批准；并非自动获得，也不是折扣码。奖学金金额与最终应付费用均以书面个别确认。{HRD_CORP_CLAIM_ZH} 分期付款方案详见费用页面。</p></Reveal>
+          <Reveal className="mt-s"><p className="fine" style={{ marginTop: 26 }}>{INCLUSIONS_CMI_CERTIFICATE_ZH} 标准费用为 {FACTS.priceStd}。符合资格的马来西亚申请者可申请 LIFE Innoversity 奖学金；奖学金名额有限，须经择优评估及书面批准，并非自动授予。{HRD_CORP_CLAIM_ZH} 分期付款方案详见费用页面。</p></Reveal>
         </div>
       </section>
 
       <section id="apply" className="section">
         <div className="wrap maxw-820" style={{ textAlign: "center" }}>
-          <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>索取 2026 年开课班次与奖学金资料。</h2></Reveal>
-          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>先拿到简明资料，再选择电邮、WhatsApp 或一通简短的适配沟通。课程团队会为您说明已公布的开课日期、马来西亚学员费用，以及雇主申请 HRD Corp 的流程。</p></Reveal>
+          <Reveal><h2 className="sec-h" style={{ marginInline: "auto" }}>{CTA_LABELS.zh.guide}</h2></Reveal>
+          <Reveal><p className="sec-sub" style={{ margin: "16px auto 0", maxWidth: "44ch", lineHeight: 1.9 }}>先拿到简明资料，再选择电邮、WhatsApp 或{CTA_LABELS.zh.conversation}。课程团队会为您说明已公布的开课日期、标准费用，以及雇主申请 HRD Corp 的流程。</p></Reveal>
           <Reveal delay={80}>
             <div style={{ maxWidth: 560, margin: "26px auto 0", textAlign: "left" }}>
               <LeadForm programme="Executive MBA" source={SOURCE} lang="zh" variant="campaign" defaultIntent="details_first" />

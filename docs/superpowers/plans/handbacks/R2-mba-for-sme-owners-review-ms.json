@@ -1,0 +1,29 @@
+{
+  "unit": "mba-for-sme-owners",
+  "language": "ms",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(ms)/ms/mba-for-sme-owners/page.tsx",
+      "line": 88,
+      "problem": "'Executive MBA dalam Future Ready Business Leadership dianugerahkan dan disokong oleh CMI.' — a half-translated programme name. Owner decision 14.1 and the ms-register audit fail pattern (Executive MBA (dalam|untuk|bagi) ...) both require the full title to stay in English: 'Executive MBA on Future Ready Business Leadership'.",
+      "fix": "Replaced 'Executive MBA dalam Future Ready Business Leadership' with 'Executive MBA on Future Ready Business Leadership'."
+    },
+    {
+      "file": "src/app/(ms)/ms/mba-for-sme-owners/page.tsx",
+      "line": 17,
+      "problem": "Metadata description names the CMI award ('Dianugerahkan dan disokong oleh CMI.') without the not-an-MQA-degree boundary in the same field, unlike the EN source metadata ('Professional programme recognised against CMI Professional Standards, not an MQA-accredited academic degree.'). Spec section 12 checklist item 4 and item 20 ('Metadata and JSON-LD text fields follow the same rules') require the boundary wherever the certificate/CMI is named.",
+      "fix": "Appended '; bukan ijazah akademik terakreditasi MQA.' to the metadata description."
+    },
+    {
+      "file": "src/app/(ms)/ms/mba-for-sme-owners/page.tsx",
+      "line": 26,
+      "problem": "Same missing boundary in the Course JSON-LD 'description' field.",
+      "fix": "Appended '; bukan ijazah akademik terakreditasi MQA.' to the JSON-LD description."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "None. The body copy, fee/scholarship/HRD Corp sentences and 5S-ordered section 3 already carry the facts correctly and read as native BM; only the three items above needed fixing."
+  ]
+}

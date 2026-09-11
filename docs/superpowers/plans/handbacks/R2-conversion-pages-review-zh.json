@@ -1,0 +1,65 @@
+{
+  "unit": "conversion-pages",
+  "language": "zh",
+  "filesReviewed": [
+    "src/app/(zh)/zh/apply/page.tsx",
+    "src/app/(zh)/zh/contact/page.tsx",
+    "src/app/(zh)/zh/intakes/page.tsx",
+    "src/app/(zh)/zh/diagnostic/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/contact/page.tsx",
+      "line": 22,
+      "problem": "H1 '与课程团队对话。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/contact/page.tsx",
+      "line": 12,
+      "problem": "Metadata description used '届次' for cohorts; the glossary's Do/Don't rule 18 specifies 届 or 班, and 届次 is an unlisted variant risking drift toward the banned 班次/批次 pattern.",
+      "fix": "Changed to '届别' for consistency with the rest of the site."
+    },
+    {
+      "file": "src/app/(zh)/zh/intakes/page.tsx",
+      "line": 23,
+      "problem": "H1 '选择起点，六个月由此开始。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/intakes/page.tsx",
+      "line": 33,
+      "problem": "H2 '报名前，先确认三次上课日期您都能出席。' was 17 characters (over the 14-character cap), contained 您 in a headline (banned), and had a trailing full stop.",
+      "fix": "Rewrote as '报名前，先确认三次上课日期' (12 chars, no pronoun, no trailing punctuation)."
+    },
+    {
+      "file": "src/app/(zh)/zh/intakes/page.tsx",
+      "line": 42,
+      "problem": "H2 '做决定之前，先确认日期与出席安排。' was 15 characters (over cap) and had a trailing full stop.",
+      "fix": "Rewrote as '决定之前，先确认日期' (10 chars, no trailing punctuation)."
+    },
+    {
+      "file": "src/app/(zh)/zh/intakes/page.tsx",
+      "line": 35,
+      "problem": "'届次' used for the non-Sat–Sun cohorts, same drift risk as the contact-page description.",
+      "fix": "Changed to '届别'."
+    }
+  ],
+  "checksPassed": [
+    "Metadata description on intakes.page.tsx already uses the exact locked availability wording '开放咨询'; and the on-page fine print already reads '开放咨询。' verbatim (body text, not a headline, so the trailing 。 there is correct Chinese sentence punctuation, not a violation).",
+    "ENQUIRY_COMMITMENT_ZH rendered verbatim (not paraphrased) on apply and contact.",
+    "PROGRAMME_FIT_CHECK.zh = '课程适配检查' used verbatim as the diagnostic metadata title — matches the locked fit-check name.",
+    "No 您/你 remaining in any H1/H2 after fixes.",
+    "No sentence-initial 它/这.",
+    "No cleft sentences.",
+    "No amount or discount language attached to the scholarship on any of these four pages (none of them state a scholarship sentence directly; fee/scholarship facts stay in shared constants).",
+    "No 免费 as a lead word.",
+    "Pangu spacing intact."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "apply/page.tsx and diagnostic/page.tsx are metadata-only wrappers around shared components (GuideApplyPage, ExecutiveDiagnostic) per the writer hand-back; confirmed no in-page Chinese H1 exists there to review beyond metadata, which was already compliant.",
+    "content-zh.ts's own intakes constants (title: '选择最适合您工作日程的班次', line 118-119) still contain the banned 班次 word and 您 in a title string — this is a pre-existing, audit-flagged issue in a shared constants file outside this unit's file list; flagging for the owner/writer who owns content-zh.ts."
+  ]
+}

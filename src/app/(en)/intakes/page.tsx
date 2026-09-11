@@ -3,14 +3,13 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
-import { DELIVERY_CONTROL, FACTS, INTAKES, SITE } from "@/lib/content";
+import { CTA_LABELS, DELIVERY_CONTROL, FACTS, INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/intakes", {
-  title: "2026 Intakes & Class Schedule",
-  description:
-    "English Cohorts 17–19 and Mandarin Cohorts 2–3 for the Future Ready Executive MBA. Three weekend sessions, 9am–6pm.",
+  title: `${PROGRAMME_YEAR} Intakes & Class Schedule`,
+  description: `Open for enquiries: English Cohorts 17–19 and Mandarin Cohorts 2–3 for the Future Ready Executive MBA, ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions.`,
 });
 
 const courseJsonLd = {
@@ -45,18 +44,18 @@ export default function IntakesPage() {
       {/* 1 — INTRO */}
       <section className="section geo-section">
         <span className="eyebrow">
-          <span className="l" /> 2026 Intakes
+          <span className="l" /> {PROGRAMME_YEAR} Intakes
         </span>
         <Reveal>
           <h1 className="sec-h">
-            Five published schedules for <span className="acc">2026</span>.
+            Choose when your <span className="acc">six months</span> start.
           </h1>
         </Reveal>
         <p className="sec-sub">
-          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The listed weekends cover the six-month Executive MBA programme.
+          English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. {DELIVERY_CONTROL.schedule}
         </p>
         <p className="fine mt-s">
-          Cohort capacity and availability are confirmed by the programme team when it responds to an enquiry.
+          Open for enquiries.
         </p>
       </section>
 
@@ -111,7 +110,7 @@ export default function IntakesPage() {
         </div>
       </section>
 
-      {/* 4 — URGENCY + CTA */}
+      {/* 4 — SCHEDULE DECISION + CTA */}
       <section className="section center">
         <Reveal><h2 className="sec-h">Discuss the calendar before you decide.</h2></Reveal>
         <p className="sec-sub">
@@ -120,7 +119,7 @@ export default function IntakesPage() {
         </p>
         <div className="mt-m">
           <Link href="/apply" className="btn btn-primary">
-            Arrange a programme conversation
+            {CTA_LABELS.conversation}
           </Link>
         </div>
         <p className="fine mt-s">

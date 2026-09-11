@@ -1,6 +1,7 @@
 import LeadForm from "@/components/site/LeadForm";
 import Reveal from "@/components/site/Reveal";
-import { SITE } from "@/lib/content";
+import { PROGRAMME_YEAR, SITE } from "@/lib/content";
+import { ENQUIRY_COMMITMENT_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
 const path = "/ms/contact";
@@ -8,7 +9,7 @@ const waText = encodeURIComponent("Hai, saya ingin bertanya tentang Future Ready
 
 export const metadata = withSeo(path, {
   title: "Hubungi Future Ready Executive MBA",
-  description: "Hubungi pasukan program Future Ready Executive MBA melalui WhatsApp, telefon, e-mel atau borang dalam talian untuk pertanyaan tentang kesesuaian, kohort, yuran dan HRD Corp.",
+  description: `Hubungi kami melalui WhatsApp, telefon, e-mel atau borang untuk soalan kesesuaian, kohort, yuran dan HRD Corp. ${ENQUIRY_COMMITMENT_MS}`,
 });
 
 export default function Page() {
@@ -18,8 +19,8 @@ export default function Page() {
         <div className="contact-grid">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Hubungi</span></div>
-            <h1 className="sec-h">Hubungi Future Ready Executive MBA</h1>
-            <p className="sec-sub">Tanya kami tentang kesesuaian program, tarikh mula, biasiswa atau permohonan HRD Corp. Menghantar borang tidak bermakna kemasukan automatik atau apa-apa komitmen bayaran.</p>
+            <h1 className="sec-h">Bercakap dengan pasukan program.</h1>
+            <p className="sec-sub">Tanya kami tentang kesesuaian program, tarikh mula, yuran, biasiswa atau permohonan HRD Corp — atau minta panduan program {PROGRAMME_YEAR} dahulu. {ENQUIRY_COMMITMENT_MS}</p>
             <div className="mt-m" style={{ display: "grid", gap: 10 }}>
               <p style={{ margin: 0 }}><strong>{SITE.director}</strong> · Penyelaras Program</p>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a>
@@ -32,7 +33,7 @@ export default function Page() {
           </Reveal>
         </div>
       </div>
-      <style>{`.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}@media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:34px}}`}</style>
+      
     </section>
   );
 }

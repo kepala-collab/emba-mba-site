@@ -1,0 +1,36 @@
+{
+  "unit": "ai-executive-mba",
+  "language": "zh",
+  "file": "src/app/(zh)/zh/ai-executive-mba/page.tsx",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "line": 53,
+      "problem": "Sentence-initial 这 immediately after the interpolated PROGRAMME_POSITIONING_ZH constant ('...行动方案。{PROGRAMME_POSITIONING_ZH}这是为期六个月的非学术专业发展课程...') — a translationese pattern banned by the dispatch watch list and zh-register.md rule 7/checklist 17. The duration was also hand-typed as literal '六个月' instead of the FACTS.durationMonths token already used elsewhere on the same page (governance checklist item 3, retyped fact).",
+      "fix": "Reworded to '课程为期 {FACTS.durationMonths} 个月，属于非学术专业发展课程...', removing the sentence-initial 这 and interpolating the duration from the FACTS token."
+    },
+    {
+      "line": 130,
+      "problem": "The not-an-MQA-degree boundary sentence was altered to '并非 MQA 监管的学术学位' (missing 认证 and the 'or a regulated qualification' clause), which changes the meaning from 'not an MQA-accredited academic degree or a regulated qualification' to a narrower/different claim, and is inconsistent with the canonical wording used at line 53 of the same file and across content.ts/content-zh.ts. This is a retyped, drifted fact (governance checklist item 3 and 4).",
+      "fix": "Corrected to the canonical form: '并非 MQA 认证的学术学位或受监管资格。'"
+    },
+    {
+      "lines": [45, 75, 106, 127, 152],
+      "problem": "Five headings (H1 and four H2s) ended with a trailing 。, banned by zh-register.md rule 27 and the watch list.",
+      "fix": "Removed the trailing full stop from each: the hero H1, and the H2s '商业理据与领导担当，缺一不可', '先定决策，再选模型', '加入 AI 主题，课程的正式属性不变', '挑开课日期之前，先把课程本身看清楚'."
+    },
+    {
+      "line": 164,
+      "problem": "CtaSection heading prop '聊聊您正在权衡的 AI 决策。' (renders as h2) both used 您 in a headline (banned: 'no 您 in headlines') and ended with a trailing 。.",
+      "fix": "Reworded to '聊聊正在权衡的 AI 决策', removing 您 and the trailing full stop."
+    }
+  ],
+  "checksPassed": [
+    "认可 used correctly for CMI; no 认证 misuse elsewhere on the page.",
+    "No 班次/届 issue (no cohort references on this page).",
+    "No sentence-initial 它 found; no cleft sentences; no urgency/prestige/outcome-promise language in the pillar lists or fact-strip cards.",
+    "Capability disclaimer present near the fact strip ('商业成果取决于学员自身的证据、选择与执行') matching the spec's 'designed to' boundary pattern."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": []
+}

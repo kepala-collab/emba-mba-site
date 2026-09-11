@@ -1,0 +1,9 @@
+{
+  "unit": "chrome",
+  "language": "en",
+  "verdictBeforeFixes": "pass",
+  "problems": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "note": "Header.tsx, Footer.tsx, CtaSection.tsx, RouteBreadcrumbs.tsx, ProgrammeMarks.tsx, WhatsAppFloat.tsx reviewed against spec sections 2/3/4/8/10/12/13/14 and the clarity audit. English strings correctly source CTA_LABELS/PROGRAMME_FIT_CHECK/ENQUIRY_COMMITMENT constants per the writer's handback; no retyped facts, no banned outcome/scarcity language, one primary CTA per view maintained. ProgrammeMarks.tsx itself carries only a short badge label ('Awarded and endorsed by CMI') and is correctly left as a page-owner responsibility for pairing with professionalRelevance in a given viewport (see home and components review handbacks, which fixed the one place in this unit's scope — GuideApplyPage.tsx, a components-unit file — where the badge appears in a first viewport without the no-guarantee sentence). No changes made to chrome-unit files."
+}

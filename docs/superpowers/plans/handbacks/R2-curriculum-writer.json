@@ -1,0 +1,56 @@
+{
+  "unit": "curriculum",
+  "files_changed": [
+    "src/app/(en)/curriculum/page.tsx",
+    "src/app/(ms)/ms/curriculum/page.tsx",
+    "src/app/(zh)/zh/curriculum/page.tsx",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "12 modules. One plan your team can act on.",
+      "lede": "Across 6 months, you take one live business issue through 12 applied modules built on the F.A.S.T. method — defining the problem, testing it with a coach, and writing it into an action plan with decisions, actions, owners and measures for faculty review."
+    },
+    "ms": {
+      "h1": "12 modul. Satu pelan pasukan anda boleh laksanakan.",
+      "lede": "Sepanjang 6 bulan, anda membawa satu isu perniagaan sebenar melalui 12 modul aplikasi berasaskan kaedah F.A.S.T. Anda mentakrifkan masalah, mengujinya bersama jurulatih, dan menulisnya menjadi pelan tindakan dengan keputusan, tindakan, pemilik dan ukuran untuk semakan fasilitator."
+    },
+    "zh": {
+      "h1": "12 个模块，一份团队能落实的方案",
+      "lede": "6 个月内，您通过基于 F.A.S.T. 方法论的 12 个应用模块，处理一项真实业务课题。您界定问题、与教练一起检验，并将其写成包含决策、行动、负责人及衡量指标的行动方案，供导师评审。"
+    }
+  },
+  "notes": [
+    "H1 follows spec section 8's exact programme-core example for /curriculum: '{FACTS.moduleCount} modules. One plan your team can act on.' (stage labels renamed Stage 1/2/3), interpolated via FACTS.moduleCount rather than retyping '12'.",
+    "Renamed the EN page's 'capstone' section (banned term per spec section 10) to 'The applied business project'; the h2 and body now state the presence of assessment (a written plan for faculty review with decisions, actions, owners, measures) before naming what is absent, instead of leading with 'no exam, no thesis'.",
+    "STAGES array 'lvl' labels changed from Level 1/2/3 to Stage 1/2/3 (spec section 10 naming decision), other stage fields (approach/outcome) unchanged; stage 3's 'p' text changed from 'A transformation project...' (generic) to explicitly name the applied business project and owners/measures.",
+    "Malay and Chinese CORE_PAGES_MS/ZH.curriculum blocks (only the fenced 'curriculum' object, per instructions) rewritten to match: new title/intro in the from-carry-work-to-plan shape, stage 3 body extended with an owners-and-measures sentence, and the 'Kaedah penilaian'/'评估方式' rows reordered to state the presence of assessment (session participation, coaching, applied project) before the absence of a traditional exam/thesis, replacing the old absence-first framing ('Tiada peperiksaan...' / '没有传统考试...').",
+    "Did NOT name the literal owner-pattern phrase 'kepimpinan berkhidmat (servant leadership)' / 仆人式领导 (servant leadership) on this page: while my dispatch brief said servant leadership lives here as posture with that pattern, I found the literal term already named on two other units sharing these same files — content-ms.ts CORE_PAGES_MS.method (line ~66, /how-it-works) and content-zh.ts CORE_PAGES_ZH.method/.faculty (lines ~66 and ~125) — before I started. Spec section 6 restricts the literal term to one naming site-wide, so I carried only the posture (owners and measures make the plan something the team can act on, not just something you completed) without repeating the named term, in all three languages, matching spec section 6's own description of what /curriculum should carry ('owners and measures are how a leader makes the plan usable by others').",
+    "MODULES / MODULES_MS / MODULES_ZH constants (names, order, outcomes) were not touched; src/lib/__tests__/modules.test.ts still passes against the unmodified EN MODULES constant.",
+    "Metadata (title/description) rewritten for all three language pages, tokenizing FACTS.moduleCount where previously retyped as a literal '12', and reordering assessment language to presence-before-absence.",
+    "CtaSection programme=\"Executive MBA\" prop and the CtaSection/BreadcrumbJsonLd/ChineseCorePage components themselves were left untouched, per instructions not to edit components."
+  ],
+  "constants_used": [
+    "FACTS.moduleCount",
+    "FACTS.durationLong",
+    "FACTS.durationMonths",
+    "MODULES / MODULES_MS / MODULES_ZH (read only, not modified)",
+    "DELIVERY_CONTROL.modules",
+    "CTA_LABELS.guide / CTA_LABELS.ms.guide"
+  ],
+  "checks": {
+    "typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "content_clarity_audit_warnings_in_my_files": 0
+  },
+  "self_check_results": {
+    "ms_section7": "Regex sweep of the new CORE_PAGES_MS.curriculum block for kamu/awak/-lah/nak/tak/biasanya/kebiasaannya/perbualan program/pengurus bekerja/projek aplikasi/laluan lanjutan/program awam/exclamation marks: zero hits. Uses 'anda' throughout, no exclamation marks, title is 8 words (at most 9).",
+    "zh_section7": "Regex sweep of the new CORE_PAGES_ZH.curriculum block for 约/大约/通常/一般/左右/参与者/创始人/首席执行官/营销/背书/班次/免费获取/你: zero hits (only 您 in body copy, matching the register rule of 您 in body / no pronoun in headlines — confirmed the H1 and eyebrow carry no pronoun). Title is 13 Chinese characters plus a full-width comma, under the 14-character cap."
+  },
+  "left_for_reviewer": [
+    "The 'servant leadership' posture decision above (present as concept, not as the named owner-pattern phrase, because the phrase is already named twice elsewhere in content-ms.ts/content-zh.ts by other units sharing this checkout) — flagging in case the owner wants it consolidated to exactly one naming site and the /how-it-works or /faculty instance removed instead.",
+    "Did not touch src/app/(en)/curriculum/page.tsx's <CtaSection programme=\"Executive MBA\" /> line or any shared component (CtaSection, BreadcrumbJsonLd, ChineseCorePage, Reveal) — only the three page files and the content-ms.ts/content-zh.ts curriculum blocks were edited.",
+    "content-ms.ts and content-zh.ts changed on disk mid-task from other writers' concurrent edits (e.g. CORE_PAGES_MS.method/programme and CORE_PAGES_ZH.method/faculty already carried new copy before I started); I re-read both files immediately before each edit to avoid clobbering their work, and only ever touched the 'curriculum' key."
+  ]
+}

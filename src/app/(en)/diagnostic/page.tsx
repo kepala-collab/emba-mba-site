@@ -1,9 +1,11 @@
 import ExecutiveDiagnostic from "@/components/site/ExecutiveDiagnostic";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/diagnostic", {
-  title: "Working Manager Progression Check",
-  description: "Answer four private questions to identify the programme information that matters to your responsibilities, schedule, fees and professional progression.",
+  title: PROGRAMME_FIT_CHECK.en,
+  description:
+    "Answer four private questions to see the facts for your responsibilities, schedule, fee and CMI recognition. Not an admission test or a career-outcome prediction.",
 });
 
 export default function DiagnosticPage() {

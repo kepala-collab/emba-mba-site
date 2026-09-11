@@ -111,6 +111,7 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,'Times New Roman',serif;fon
 .eyebrow .l{height:1px;width:40px;background:var(--crimson);flex:none}
 
 .section{padding:clamp(56px,6vw,88px) 0;position:relative;border-bottom:1px solid var(--line)}
+.section--alt{background:var(--bg-2)}
 .sec-h{font-family:var(--font-fraunces),Georgia,serif;font-size:clamp(1.9rem,3.9vw,2.9rem);
   margin:16px 0 16px;max-width:25ch;line-height:1.12;letter-spacing:0}
 .sec-sub{color:var(--ink-2);max-width:68ch;font-size:1.05rem;line-height:1.72}
@@ -330,12 +331,14 @@ h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,'Times New Roman',serif;fon
   .brand-link{gap:8px}
   .brand-title{font-size:.8rem}
 }
-@media(max-width:340px){
-  .brand-title{font-size:.68rem}
-  .brand-product{font-size:.86rem}
+@media(max-width:400px){
   .mobile-navcta{width:58px;padding-inline:0;font-size:0}
   .mobile-navcta::after{content:"Guide";font-size:.72rem}
   html[lang^="zh-Hans"] .mobile-navcta::after{content:"指南"}
+}
+@media(max-width:340px){
+  .brand-title{font-size:.68rem}
+  .brand-product{font-size:.86rem}
   .brief-document header h1,.diagnostic-head h1{font-size:2.25rem}
 }
 
@@ -799,6 +802,7 @@ html[lang^="zh-Hans"]{--font-noto-sans-sc:"Noto Sans SC"}
 html[lang^="zh-Hans"] body{font-family:var(--font-noto-sans-sc),"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif}
 html[lang^="zh-Hans"] h1,html[lang^="zh-Hans"] h2,html[lang^="zh-Hans"] h3,html[lang^="zh-Hans"] h4{font-family:"Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;font-weight:600;letter-spacing:0}
 html[lang^="zh-Hans"] .technical-term{font-family:var(--font-archivo),ui-sans-serif,"Microsoft YaHei",sans-serif}
+html[lang^="zh-Hans"] h1,html[lang^="zh-Hans"] h2,html[lang^="zh-Hans"] h3{text-wrap:balance}
 
 @media(max-width:1023px){
   .programme-film{max-width:650px}
@@ -982,7 +986,7 @@ body::before{opacity:.7;background:radial-gradient(860px 500px at 88% -10%,rgba(
 .commerce-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(110,174,255,.085) 1px,transparent 1px),linear-gradient(90deg,rgba(110,174,255,.085) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.24) 72%,transparent)}
 .commerce-hero{position:relative;isolation:isolate;overflow:hidden;padding-bottom:122px;color:#fff;background:radial-gradient(circle at 83% 12%,rgba(44,111,255,.34),transparent 29%),radial-gradient(circle at 38% 88%,rgba(78,55,186,.22),transparent 32%),linear-gradient(112deg,#020d1d 8%,#071d40 58%,#091a3d)}
 .commerce-hero::after{position:absolute;right:22%;bottom:-330px;width:650px;height:650px;border:1px solid rgba(121,190,255,.13);border-radius:50%;box-shadow:0 0 0 80px rgba(65,128,245,.035),0 0 0 160px rgba(118,86,210,.03);content:"";pointer-events:none}
-.commerce-hero-layout{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(420px,.97fr);gap:clamp(46px,6vw,90px);align-items:center;min-height:calc(100svh - var(--header-h));padding-block:clamp(76px,8vw,118px) clamp(108px,10vw,154px)}
+.commerce-hero-layout{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(420px,.97fr);gap:clamp(46px,6vw,90px);align-items:start;min-height:calc(100svh - var(--header-h));padding-block:clamp(76px,8vw,118px) clamp(108px,10vw,154px)}
 .commerce-hero-copy{position:relative;z-index:2;min-width:0;padding-left:20px}
 .commerce-hero-copy::before{position:absolute;top:52px;bottom:32px;left:0;width:2px;background:linear-gradient(180deg,#57e3ff,#287bff 60%,transparent);box-shadow:0 0 16px rgba(40,123,255,.5);content:""}
 .commerce-status{display:flex;align-items:center;gap:10px;margin:0 0 22px;color:#a9bdd5;font-size:.74rem;font-weight:650;letter-spacing:.05em;text-transform:uppercase}
@@ -990,6 +994,7 @@ body::before{opacity:.7;background:radial-gradient(860px 500px at 88% -10%,rgba(
 .commerce-product{margin:0 0 20px;color:#94c5ff}
 .commerce-hero h1{max-width:14ch;color:#fff;font-size:clamp(3.25rem,5.8vw,6.1rem);font-weight:450;line-height:.94;letter-spacing:-.025em;text-wrap:balance}
 .commerce-hero-lede{max-width:62ch;margin:27px 0 0;color:#cbd8e7;font-size:clamp(1.02rem,1.35vw,1.16rem);line-height:1.72;text-wrap:pretty}
+.commerce-hero-support{max-width:62ch;margin:12px 0 0;color:#9fb2c8;font-size:.86rem;line-height:1.58;text-wrap:pretty}
 .commerce-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:32px}
 .commerce-text-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:inherit;font-size:.92rem;font-weight:700}
 .commerce-text-link span{color:#72b6ff;transition:transform .2s ease}
@@ -1147,7 +1152,7 @@ html[lang^="zh-Hans"] .commerce-home h1,html[lang^="zh-Hans"] .commerce-home h2,
 /* Preserve the editorial two-column hero on compact laptops and landscape
    tablets instead of creating a sparse, mobile-like first viewport. */
 @media(min-width:960px) and (max-width:1080px){
-  .commerce-hero-layout{grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:32px;align-items:center;padding-block:56px 94px}
+  .commerce-hero-layout{grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:32px;align-items:start;padding-block:56px 94px}
   .commerce-hero-copy{max-width:none;padding-left:18px}
   .commerce-hero h1{max-width:14ch;font-size:clamp(3rem,5.4vw,3.7rem)}
   .commerce-hero-lede{margin-top:20px;font-size:.98rem;line-height:1.58}
@@ -1228,4 +1233,24 @@ html[lang^="zh-Hans"] .commerce-home h1,html[lang^="zh-Hans"] .commerce-home h2,
 @media(prefers-reduced-motion:reduce){
   .commerce-text-link span,.commerce-experience-grid img,.commerce-intake-card,.commerce-intake-card small span{transition:none}
   .commerce-text-link:hover span,.commerce-experience-grid figure:hover img,.commerce-intake-card:hover,.commerce-intake-card:hover small span{transform:none}
+}
+
+/* R2.5: consolidated locale-page grid collapses (were duplicated inline <style> blocks
+   per en/ms/zh page; long Malay and dense Chinese headings need the same collapse). */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+@media(max-width:820px){
+  .contact-grid{grid-template-columns:1fr;gap:34px}
+  .stage-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:760px){
+  .about-affandi-grid,.about-story-grid{grid-template-columns:1fr!important}
+  .choose-grid{grid-template-columns:1fr!important}
+  .faculty-grid .card{flex-direction:column!important}
+}
+@media(max-width:900px){
+  .lpg-grid{grid-template-columns:1fr!important;gap:30px!important}
+  .lpg-cmp{grid-template-columns:1fr!important}
+}
+@media(max-width:640px){
+  .cap-grid{grid-template-columns:1fr!important}
 }

@@ -1,0 +1,23 @@
+{
+  "unit": "insights-design-thinking",
+  "language": "en",
+  "filesReviewed": ["src/app/(en)/insights/design-thinking-for-business/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/insights/design-thinking-for-business/page.tsx",
+      "line": 225,
+      "problem": "Closing programme pointer used hand-typed text ('Open the Programme fit check') instead of the PROGRAMME_FIT_CHECK constant.",
+      "fixApplied": "Imported PROGRAMME_FIT_CHECK from @/lib/content and changed the link text to `Open the {PROGRAMME_FIT_CHECK.en}`."
+    }
+  ],
+  "crossUnitChecks": {
+    "compareProgrammesTitleMatch": "N/A — this is not the compare-programmes article.",
+    "bannedLabels": "Pass — no 'advancement'/'progression'/'capstone' anywhere.",
+    "programmePointerViaConstant": "Fixed — now uses PROGRAMME_FIT_CHECK.en; exactly one programme pointer (the diagnostic), confirmed no other /how-it-works, /executive-mba, /fees or /chartered-manager-malaysia links remain in the body.",
+    "servantLeadershipNaming": "Resolved. The writer's own hand-back explicitly asked whether 'servant leadership' should be named on this page. I confirm the writer's decision to NOT name the literal term here is correct: spec section 6 states the term 'may be named once on the site, on /how-it-works beside {FLOW} or in the guide's introduction' — this article is neither, so naming it here would violate the single-naming-site rule. The page correctly carries servant-leadership as posture ('Begin with the person you are trying to serve', the JTBD framing) without using the labelled term. No fix needed; the omission stands as written."
+  },
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "auditAfterFixes": { "typecheckExitCode": 0, "contentClarityAuditExitCode": 0 }
+}

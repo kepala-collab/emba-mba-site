@@ -3,7 +3,7 @@ import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import CtaSection from "@/components/site/CtaSection";
 import Reveal from "@/components/site/Reveal";
 import {
-  CTA_LABELS,
+  CERTIFICATE_POSITIONING,
   FACTS,
   HRD_CORP_CLAIM,
   INCLUSIONS,
@@ -13,7 +13,7 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/fees", {
   title: "Executive MBA Fees, Scholarship & HRD Corp",
-  description: `Standard fee ${FACTS.priceStd}. Eligible Malaysian applicants may be considered for a limited, selective scholarship; approved awards and participant fees are confirmed in writing.`,
+  description: `${FACTS.priceStd} standard fee, with selective scholarship assessment; never automatic.`,
 });
 
 export default function FeesPage() {
@@ -27,20 +27,20 @@ export default function FeesPage() {
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Fees for Malaysian participants</span></div>
             </Reveal>
-            <Reveal delay={40}><h1>{FACTS.priceStd} standard fee. Scholarships assessed individually.</h1></Reveal>
+            <Reveal delay={40}><h1>{FACTS.priceStd} standard fee. Every other condition confirmed in writing.</h1></Reveal>
             <Reveal delay={80}>
               <p className="fees-hero-lede">
-                Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship. Availability and eligibility are assessed, and any award and resulting participant fee are confirmed individually in writing. The scholarship is never automatic.
+                The fee funds {FACTS.durationLong} of work on one live business issue: {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, one-to-one coaching and project review, the applied business project and the frameworks and working templates you keep. {FACTS.scholarshipEligibility} The scholarship is never automatic.
               </p>
             </Reveal>
             <Reveal delay={110}>
               <div className="fees-hero-actions">
-                <Link href="/apply" className="btn btn-primary">{CTA_LABELS.conversation} <span aria-hidden="true">→</span></Link>
+                <Link href="/apply" className="btn btn-primary">Discuss programme fit and the fee in writing <span aria-hidden="true">→</span></Link>
                 <Link href="#included" className="btn btn-ghost">See what the fee includes</Link>
               </div>
             </Reveal>
             <Reveal delay={140}>
-              <p className="programme-overview-note">CMI&rsquo;s separate Chartered Manager assessment, application and continuing membership fees are not included unless the written fee schedule expressly states otherwise.</p>
+              <p className="programme-overview-note">There is no fee to request information or ask for an eligibility review. An enquiry does not commit you to enrol or pay. CMI&rsquo;s separate Chartered Manager assessment, application and continuing membership fees are not included unless the written fee schedule expressly states otherwise.</p>
             </Reveal>
           </div>
 
@@ -52,7 +52,7 @@ export default function FeesPage() {
                 <div><dt>Eligibility review</dt><dd>Individual</dd></div>
                 <div className="fee-equation-total"><dt>Award and participant fee</dt><dd>Confirmed in writing</dd></div>
               </dl>
-              <p>{FACTS.scholarshipEligibility} There is no fee to request information or ask for an eligibility review.</p>
+              <p>{FACTS.scholarshipEligibility} The scholarship is never automatic.</p>
             </aside>
           </Reveal>
         </div>
@@ -63,7 +63,7 @@ export default function FeesPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">Included in the programme fee</p>
-              <h2 className="sec-h">What your programme fee covers.</h2>
+              <h2 className="sec-h">What the fee funds.</h2>
               <p>The same programme components apply whether you pay the standard fee or receive an approved scholarship.</p>
             </div>
           </Reveal>
@@ -74,7 +74,7 @@ export default function FeesPage() {
               </Reveal>
             ))}
           </div>
-          <p className="fine fee-section-note">The six-month programme has no traditional examination or thesis. Travel and accommodation, where required, are not included.</p>
+          <p className="fine fee-section-note">{CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance} Travel and accommodation, where required, are not included.</p>
         </div>
       </section>
 
@@ -83,8 +83,8 @@ export default function FeesPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">Employer-led HRD Corp funding</p>
-              <h2 className="sec-h">Your employer applies before training begins.</h2>
-              <p>{HRD_CORP_CLAIM.short}</p>
+              <h2 className="sec-h">The employer applies. HRD Corp decides.</h2>
+              <p>{HRD_CORP_CLAIM.responsibility} {HRD_CORP_CLAIM.short}</p>
               <Link href="/hrd-corp-claimable" className="btn btn-ghost">See the employer application process</Link>
             </div>
           </Reveal>
@@ -122,7 +122,7 @@ export default function FeesPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Confirm your fee before you decide." sub={`Ask about the ${FACTS.priceStd} standard fee, scholarship eligibility, payment options or the employer-led HRD Corp process. Any scholarship award and resulting participant fee are confirmed individually in writing. An enquiry does not commit you to enrol or pay.`} />
+      <CtaSection programme="Executive MBA" heading="Confirm the fee in writing before you decide." sub={`Ask about the ${FACTS.priceStd} standard fee, scholarship eligibility, payment options or employer-led HRD Corp funding. ${FACTS.scholarshipEligibility} The scholarship is never automatic. An enquiry does not commit you to enrol or pay.`} />
     </>
   );
 }

@@ -1,0 +1,23 @@
+{
+  "unit": "insights-advancement-question",
+  "language": "en",
+  "filesReviewed": ["src/app/(en)/insights/advancement-question/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/insights/advancement-question/page.tsx",
+      "line": 37,
+      "problem": "Closing programme pointer named the Programme fit check as hand-typed text ('Open the Programme fit check') instead of the PROGRAMME_FIT_CHECK constant (cross-unit rule: each article names the check via the constant, matching the pattern used on the other insight articles and preventing drift from the locked name).",
+      "fixApplied": "Imported PROGRAMME_FIT_CHECK from @/lib/content and changed the link text to `Open the {PROGRAMME_FIT_CHECK.en}`."
+    }
+  ],
+  "crossUnitChecks": {
+    "compareProgrammesTitleMatch": "Pass after no change needed — this article's <title> ('How to Compare Leadership Programmes'), H1 ('How to compare leadership programmes.'), and breadcrumb label all use the same title, and it matches the resources index and insights index cards verbatim.",
+    "bannedLabels": "Pass — no 'advancement'/'progression'/'capstone' visible; only the route path and function name (AdvancementQuestionPage) retain the retired word, which is out of scope per the dispatch (route paths left unchanged).",
+    "programmePointerViaConstant": "Fixed — now uses PROGRAMME_FIT_CHECK.en; exactly one programme pointer on the page.",
+    "servantLeadershipNaming": "N/A — term not used on this page."
+  },
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "auditAfterFixes": { "typecheckExitCode": 0, "contentClarityAuditExitCode": 0 }
+}

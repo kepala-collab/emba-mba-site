@@ -1,0 +1,11 @@
+{
+  "unit": "mba-for-working-professionals",
+  "language": "en",
+  "file_reviewed": "src/app/(en)/mba-for-working-professionals/page.tsx",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "fixes_applied": [],
+  "notes": "H1 'Keep the role. Change how you decide in it.' is the keep/change pair the archetype explicitly allows as an alternative to from-to, and matches the spec's own worked example (section 13) verbatim; 9 words total. Every fact renders from FACTS/HRD_CORP_CLAIM/CERTIFICATE_POSITIONING/COMPARISON tokens. CERTIFICATE_POSITIONING.professionalRelevance colocates with the CMI mention in the hero stat line. COMPARISON_SCOPE sits adjacent to the comparison table together with the positioning/professional-relevance sentences (rule 4). Outcomes correctly hedged: 'business outcomes depend on the participant's evidence, choices and execution' — no promotion, salary, growth or title claim anywhere on the page. 'across {FACTS.liveSessions} scheduled sessions' used correctly. No banned patterns hit by the audit script for this file.",
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

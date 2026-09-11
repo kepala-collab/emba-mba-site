@@ -1,0 +1,23 @@
+{
+  "unit": "ai-executive-mba",
+  "language": "en",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/ai-executive-mba/page.tsx",
+      "line": 125,
+      "problem": "The programme-facts card grid titled one card 'Awarded and endorsed by CMI', a credential cue used as a card title — banned by spec section 3 rule 2 ('no card may be titled with a price, speed or credential cue') and checklist item 10. The neighbouring 'Investment' and 'Format' card titles are pre-existing neutral category labels that already match the site's own COMPARISON table row keys (src/lib/content.ts), so only the CMI card needed retitling.",
+      "fixApplied": "Renamed the card title from 'Awarded and endorsed by CMI' to 'Credential', matching the existing neutral row label used in COMPARISON (content.ts line 325). The card body (CERTIFICATE_POSITIONING.distinction + professionalRelevance) was already compliant and unchanged."
+    },
+    {
+      "file": "src/app/(en)/ai-executive-mba/page.tsx",
+      "line": 144,
+      "problem": "Source-code comment read '5 · URGENCY + CTA'. Checklist item 13 explicitly bans urgency devices 'including source-code comments.'",
+      "fixApplied": "Renamed the comment to '5 · CLOSING CTA'."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "This unit's writer hand-back notes the copy was substantially inherited from a prior cut-off pass and flagged for extra scrutiny; beyond the two fixes above, the prose was found compliant with the spec archetype, facts tokens and banned-pattern list."
+  ]
+}

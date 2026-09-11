@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS } from "@/lib/content";
+import { CTA_LABELS, FACTS } from "@/lib/content";
 import { CORE_PAGES_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
@@ -9,9 +9,9 @@ const path = "/ms/how-it-works";
 const content = CORE_PAGES_MS.method;
 
 export const metadata = withSeo(path, {
-  title: "Kaedah Keputusan Pengurusan F.A.S.T.",
+  title: "Apa yang Berubah Sepanjang Enam Bulan",
   description:
-    "Lihat cara F.A.S.T. membantu pengurus menajamkan masalah perniagaan, menguji andaian, menimbang pilihan dan membina pelan tindakan yang boleh terus dilaksanakan.",
+    `Lihat apa yang berubah sepanjang ${FACTS.durationMonths} bulan: apa yang anda lakukan pada setiap sesi, pelan tindakan bertulis disemak fasilitator, dan apa yang kekal selepas itu.`,
 });
 
 export default function Page() {

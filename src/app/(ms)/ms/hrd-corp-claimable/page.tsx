@@ -1,15 +1,15 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
-import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
+import { PROGRAMME_POSITIONING_MS, CTA_LABELS, FACTS, SITE } from "@/lib/content";
+import { HRD_CORP_CLAIM_MS, CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/hrd-corp-claimable", {
-  title: "Executive MBA & Geran HRD Corp untuk Majikan",
+  title: "Pembiayaan HRD Corp Diterajui Majikan: Majikan Memohon",
   description:
-    "Bagaimana majikan Malaysia yang berdaftar memohon melalui e-TRiS sebelum latihan, dokumen yang dibekalkan, dan bagaimana HRD Corp memutuskan kelayakan serta pembiayaan.",
+    "Pembiayaan HRD Corp bermula dengan keputusan majikan membangunkan seorang pengurus. Majikan memohon sebelum latihan; HRD Corp memutuskan kelayakan dan jumlah.",
 });
 
 const STEPS = [
@@ -40,12 +40,12 @@ const INCLUSIONS_MS = [
 
 const HRD_FAQS = [
   {
-    q: "Bolehkah syarikat saya mendaftarkan pengasas atau ahli pasukan kanan?",
-    a: "Program ini terbuka kepada eksekutif dan ke atas, termasuk pengurus kanan, pengarah, pemilik perniagaan dan pengasas. Bagi pembiayaan HRD Corp yang dipohon majikan, syarikat mesti berdaftar dengan HRD Corp, mempunyai baki levi dan mengemukakan permohonan sebelum latihan. Pengasas atau pemilik boleh disertakan apabila syarikat mengesahkan peserta berada dalam senarai gajinya. HRD Corp memutuskan kelayakan dan jumlah yang diluluskan.",
+    q: "Siapa yang memutuskan sama ada syarikat kami mendapat pembiayaan HRD Corp?",
+    a: `${HRD_CORP_CLAIM_MS} Pihak yang memohon geran ialah majikan, bukan peserta; HRD Corp, bukan penyedia program, memutuskan kelulusan dan jumlah yang diluluskan.`,
   },
   {
-    q: "Bolehkah majikan saya memohon pembiayaan HRD Corp?",
-    a: HRD_CORP_CLAIM_MS,
+    q: "Bolehkah syarikat saya mendaftarkan pengasas atau ahli pasukan kanan?",
+    a: "Program ini terbuka kepada peserta peringkat eksekutif ke atas, termasuk pengurus kanan, pengarah, pemilik perniagaan dan pengasas. Bagi pembiayaan HRD Corp yang dipohon majikan, syarikat mesti berdaftar dengan HRD Corp, mempunyai baki levi dan mengemukakan permohonan sebelum latihan. Pengasas atau pemilik boleh disertakan apabila syarikat mengesahkan peserta berada dalam senarai gajinya. HRD Corp memutuskan kelayakan dan jumlah yang diluluskan.",
   },
   {
     q: "Adakah anda menguruskan dokumen?",
@@ -53,7 +53,7 @@ const HRD_FAQS = [
   },
   {
     q: "Bagaimana jika kami tidak berdaftar dengan HRDC?",
-    a: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis — ia bukan automatik. Setiap anugerah dan yuran peserta disahkan satu per satu secara bertulis. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
+    a: `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu, secara bertulis. Biasiswa tidak automatik. Pilihan bayaran individu disenaraikan di halaman Yuran.`,
   },
 ];
 
@@ -80,13 +80,20 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Fahami proses geran HRD Corp sebelum latihan bermula.
+              Majikan memohon. HRD Corp memutuskan.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              {SITE.provider} ialah Penyedia Latihan HRD Corp (HRDC) yang diluluskan. Future
-              Ready Business Leadership dianugerahkan dan disokong oleh Chartered Management Institute (CMI).
+              {SITE.provider} ialah Penyedia Latihan HRD Corp (HRDC) yang diluluskan. Program ini layak untuk
+              pembiayaan HRD Corp yang diterajui majikan (Employer-Led HRD Corp Funding). {PROGRAMME_POSITIONING_MS}
+              {" "}{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="sec-sub">
+              Pembiayaan HRD Corp bagi program ini bermula dengan satu keputusan di dalam syarikat: untuk
+              membangunkan seorang pengurus yang bertanggungjawab ke atas satu pasukan.
               <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM_MS}</b> Pasukan program menyediakan
               dokumen sokongan program.
             </p>
@@ -101,7 +108,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* HOW THE CLAIM WORKS */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Bagaimana tuntutan berjalan</span></div></Reveal>
           <Reveal><h2 className="sec-h">Kenali empat tanggungjawab, dari permohonan hingga tuntutan.</h2></Reveal>
@@ -129,11 +136,11 @@ export default function HrdCorpClaimablePage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Apa yang dirangkumi</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Lihat komponen program yang termasuk dalam geran yang diluluskan.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Apa yang dirangkumi oleh jumlah geran yang diluluskan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              HRD Corp menyatakan jumlah yang diluluskan dalam keputusan gerannya. Executive MBA ialah
-              program enam bulan yang berakhir dengan sijil program. Program ini merangkumi:
+              HRD Corp menyatakan jumlah yang diluluskan dalam keputusan gerannya. Sepanjang {FACTS.durationMonths} bulan,
+              program yang membangunkan pengurus ini merangkumi:
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -151,25 +158,27 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <p className="fine mt-s">
             Butiran penuh program di halaman <Link href="/ms/executive-mba">Executive MBA</Link>.
-            Program profesional ini dianugerahkan dan disokong oleh CMI; ia bukan ijazah akademik yang
-            dikawal selia MQA.
+            {" "}{PROGRAMME_POSITIONING_MS} Program profesional ini bukan ijazah akademik yang
+            dikawal selia MQA. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}
           </p>
         </div>
       </section>
 
       {/* ELIGIBILITY NOTE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Siapa yang boleh menuntut</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Pilih laluan pembiayaan majikan atau bayaran individu.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Siapa memohon, dan siapa memutuskan.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               Tuntutan HRD Corp ialah laluan <b style={{ color: "var(--ink)" }}>B2B yang dibayar syarikat</b>:
               majikan Malaysia yang berdaftar dengan HRD Corp mengemukakan permohonan sebelum latihan.
               HRD Corp memutuskan kelayakan dan jumlah yang diluluskan, yang tidak boleh melebihi baki levi
-              majikan yang ada. Belum berdaftar levi, atau menyertai secara
-              individu? Biasiswa {FACTS.scholarshipProvider} terhad dan diberikan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis —
-              atau anda boleh memilih pelan ansuran.
+              majikan yang ada. Belum berdaftar levi, atau membuat pertanyaan secara
+              individu? Biasiswa {FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih
+              kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis.
+              Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu, secara bertulis.
+              Biasiswa tidak automatik. Pelan ansuran juga disediakan.
             </p>
           </Reveal>
           <p className="fine mt-s">

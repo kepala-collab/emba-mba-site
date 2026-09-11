@@ -1,0 +1,28 @@
+{
+  "unit": "insights-advancement-question",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/insights/advancement-question/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass (contingent on the sibling insights-index fix)",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/insights/advancement-question/page.tsx",
+      "line": 7,
+      "problem": "Title itself was correct ('Cara Membandingkan Program Kepimpinan') but the insights index card title pointed at this article did not match it (see R2-insights-index-review-ms.json). No change needed in this file — the index file was the one carrying the drift."
+    }
+  ],
+  "checksRun": [
+    "Naming: no 'advancement'/'progression'/'Kemajuan kerjaya' anywhere in visible text; route path left unchanged per instruction.",
+    "Watchlist scan: zero hits on selalunya/biasanya/kebanyakan/laluan pilihan/Tempah/kamu/awak/-lah/nak/tak.",
+    "One factual programme pointer only: single link to /ms/diagnostic labelled 'Buka Semakan Kesesuaian Program', matching PROGRAMME_FIT_CHECK naming used elsewhere.",
+    "H1 'Cara membandingkan program kepimpinan dengan tepat.' = 6 words, within limit.",
+    "No verdict on the reader, no outcome/salary/promotion claims; shortcut critique aimed only at the comparison method.",
+    "node scripts/content-clarity-audit.mjs and npm run typecheck: clean, zero warnings on this file."
+  ],
+  "fixesApplied": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "This unit deliberately carries no FACTS/CERTIFICATE_POSITIONING tokens (generic comparison framework, not a claim about this programme). Confirm that reading is correct, per the writer's own note."
+  ]
+}

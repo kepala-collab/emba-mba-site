@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS } from "@/lib/content";
+import { CTA_LABELS, FACTS } from "@/lib/content";
 import { CORE_PAGES_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
@@ -9,9 +9,9 @@ const path = "/ms/curriculum";
 const content = CORE_PAGES_MS.curriculum;
 
 export const metadata = withSeo(path, {
-  title: "Kurikulum dan 12 Modul Kepimpinan",
+  title: `Kurikulum — ${FACTS.moduleCount} Modul`,
   description:
-    "Terokai 12 modul Executive MBA, tiga peringkat pembelajaran, projek berteraskan cabaran perniagaan sebenar serta penilaian tanpa tesis dan tanpa peperiksaan tradisional.",
+    `Terokai ${FACTS.moduleCount} modul Executive MBA, tiga peringkat pembelajaran dan satu projek amali perniagaan, dinilai melalui penyertaan, bimbingan dan projek — tanpa peperiksaan atau tesis.`,
 });
 
 export default function Page() {

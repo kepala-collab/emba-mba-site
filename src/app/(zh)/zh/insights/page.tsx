@@ -6,12 +6,19 @@ import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/insights", {
-  title: "洞察 — 领导者的思维框架",
+  title: "洞察 — 练在自己决策上的方法",
   description:
-    "写给商业决策的第一性原理、系统思维与设计思维实用入门，外加一份课程对比指南。",
+    "课程比较指南，加上写给商业决策的第一性原理、系统思维与设计思维实用入门，全部练在您手上的决策上。",
 });
 
 const ARTICLES = [
+  {
+    kicker: "决策指南",
+    title: "如何比较领导力课程",
+    slug: "/zh/insights/advancement-question",
+    blurb:
+      "在承诺任何课程之前，怎样把能力、应用、证据、时间与认可清晰度一一比清楚。",
+  },
   {
     kicker: "决策指南",
     title: "高管教育 vs Executive MBA",
@@ -24,7 +31,7 @@ const ARTICLES = [
     title: "商业领导者的第一性原理思维",
     slug: "/zh/insights/first-principles-thinking",
     blurb:
-      "怎样把经过验证的约束和假设区分开，再从根本事实出发搭出可选方案。",
+      "怎样把经过验证的约束和假设区分开，再从决策背后的事实出发搭出可选方案。",
   },
   {
     kicker: "思维方法",
@@ -45,9 +52,9 @@ const ARTICLES = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "洞察 — 领导者的思维框架",
+  name: "洞察 — 练在自己决策上的方法",
   description:
-    "课程决策指南，外加写给商业决策的第一性原理、系统思维与设计思维实用入门。",
+    "课程比较指南，加上写给商业决策的第一性原理、系统思维与设计思维实用入门，全部练在您手上的决策上。",
   hasPart: {
     "@type": "ItemList",
     itemListElement: ARTICLES.map((a, i) => ({
@@ -70,11 +77,12 @@ export default function InsightsPage() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">洞察 · 思维</span>
+              <span className="mono sec-k">洞察 · 思维方法</span>
             </div>
-            <h1 className="sec-h">领导者的思维框架</h1>
+            <h1 className="sec-h">方法，练在自己的决策上</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              一份决策指南，加上课程所用推理方法的实用入门。
+              下面每篇指南都取一种思维方法——比较课程、拆解系统、检验假设、服务客户——练在您手上的决策上。
+              并非天赋，而是练出来的。
             </p>
           </Reveal>
 
@@ -137,7 +145,7 @@ export default function InsightsPage() {
       <CtaSection
         lang="zh"
         programme="Executive MBA"
-        heading="把这些思维方法，用到您自己的商业决策上。"
+        heading="把这些方法，用在您手上的决策上"
         sub="通话、线上会议、面谈或电邮，任您选择。课程团队会解答关于适配度、开课日期、费用、认可，以及由雇主主导的 HRD Corp 资助等疑问；咨询不构成任何报名或付款承诺。"
       />
     </>

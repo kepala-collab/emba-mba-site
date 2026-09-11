@@ -9,7 +9,7 @@ import { PROVIDER_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/faculty", {
   title: "Faculty & Coaches",
   description:
-    "Meet the Future Ready Executive MBA practitioners and coaches across strategy, operations, finance, talent and transformation.",
+    "Meet the practitioners and coaches who review the reasoning behind your plan, not only the plan itself, across strategy, operations, finance, talent and transformation.",
 });
 
 export default function FacultyPage() {
@@ -41,11 +41,13 @@ export default function FacultyPage() {
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Faculty &amp; Project Coaches</span></div>
             <h1 className="sec-h" style={{ fontSize: "clamp(2.1rem,4.4vw,3.2rem)" }}>
-              Practitioners and coaches with cross-functional business experience.
+              People who review your reasoning, not only your result.
             </h1>
             <p className="sec-sub">
               The faculty and one-to-one coaches bring experience across corporate leadership, consulting,
-              manufacturing, finance, talent and transformation. They teach through applied business work.
+              manufacturing, finance, talent and transformation. They review the reasoning behind your plan,
+              not only the plan itself. Real leadership is servant leadership: it is measured by the people
+              it serves. That includes the team that will act on what you write.
             </p>
           </Reveal>
 
@@ -53,7 +55,7 @@ export default function FacultyPage() {
             <dl className="faculty-authority-grid">
               <div><dt>Published panel</dt><dd>{FACULTY.length} named practitioners and coaches with individual biographies</dd></div>
               <div><dt>Cohort assignment</dt><dd>ABC confirms the assigned faculty in the briefing issued before Session 1</dd></div>
-              <div><dt>Applied role</dt><dd>Teaching, project feedback and coaching connected to participant business contexts</dd></div>
+              <div><dt>Applied role</dt><dd>Faculty review the reasoning behind your plan, not only whether you followed the steps</dd></div>
             </dl>
           </Reveal>
 
@@ -102,8 +104,8 @@ export default function FacultyPage() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Discuss the faculty, coaching and programme format." />
-      <style>{`@media(max-width:760px){.faculty-grid .card{flex-direction:column!important}}`}</style>
+      <CtaSection programme="Executive MBA" heading="Discuss how faculty and coaches will review your plan." />
+      
     </>
   );
 }

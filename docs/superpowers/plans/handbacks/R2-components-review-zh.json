@@ -1,0 +1,74 @@
+{
+  "unit": "components",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/components/site/LeadForm.tsx",
+      "line": 169,
+      "problem": "campaignContinue (the actual submit-step button in the campaign lead form) read '继续获取课程指南 →' -- 获取 is the banned app-store CTA verb (rule 9), inconsistent with the same file's own compactTitle/campaignTitle which already correctly use 索取.",
+      "fix": "Changed to '继续索取课程指南 →'."
+    },
+    {
+      "file": "src/components/site/ExecutiveDiagnostic.tsx",
+      "line": 79,
+      "problem": "Q1 option 1 read '我的职责范围已经超出现有的管理工具。' (my role has already exceeded/outgrown my current management tools). The English source deliberately uses the progressive 'is becoming broader than' -- an honouring, ongoing framing -- while the zh used the completed-aspect 已经超出, which reads as the banned verdict 'outgrown' (spec section 2: before-state honoured, never diagnosed; 'outgrown' explicitly banned).",
+      "fix": "Changed to '我的职责范围正逐渐超出现有的管理工具。', restoring the ongoing/progressive framing that matches the English original."
+    },
+    {
+      "file": "src/components/site/ExecutiveDiagnostic.tsx",
+      "line": 117,
+      "problem": "Result card title '扩展管理能力' ('expand management capability') is a capability/outcome claim as a card title; the English original is the neutral topic label 'Management capability'. Governance checklist item 2 bans growth/capability claims anywhere including cards.",
+      "fix": "Changed to '管理能力方法' (names the F.A.S.T. method topic, not a capability outcome)."
+    },
+    {
+      "file": "src/components/site/ExecutiveDiagnostic.tsx",
+      "line": 123,
+      "problem": "Result card title '应用商业判断' ('apply business judgement') reworded the English topic label 'Applied business project' into a skill/judgement claim rather than naming the artefact.",
+      "fix": "Changed to '企业应用项目', the site's standard term for the applied business project, matching the English topic label."
+    },
+    {
+      "file": "src/components/site/CmiProgressionChart.tsx",
+      "line": 43,
+      "problem": "PROGRAMME_ZH row 01 label read 'CMI（英国）认可', dropping 颁发 (awarded) from the owner-locked phrase and reproducing the pattern the chrome unit had already flagged elsewhere as the superseded '(英国) 颁发及认可' wording. The English row is the exact locked claim 'Awarded and endorsed by CMI'.",
+      "fix": "Changed to '由 CMI 颁发并认可', matching the owner-locked phrase (decision 14.1) used in ProgrammeMarks.tsx and FutureCommerceHome.tsx."
+    },
+    {
+      "file": "src/components/site/ProgrammeComparison.tsx",
+      "line": 30,
+      "problem": "COMPARISON_SCOPE_ZH (a prose sentence, not a table cell) used an en dash inside a Chinese number range: '18–24 个月'. zh-register.md rule 24 reserves the en dash for table cells and requires 至 for ranges in running prose.",
+      "fix": "Changed to '18 至 24 个月'. The table-cell instance of the same range in content-zh.ts COMPARISON_ZH (correctly using the en dash) was left unchanged."
+    },
+    {
+      "file": "src/components/site/ProgrammeIntroduction.tsx",
+      "line": 79,
+      "problem": "transcriptP1Strong read '本课程专为资深在职经理设计。' -- 为…设计 is the exact 'designed for' calque flagged as the #1 problem in zh-register.md's audit of the current site (item 1, home <title>).",
+      "fix": "Changed to '本课程专为资深在职经理而设。'"
+    },
+    {
+      "file": "src/components/site/ProgrammeIntroduction.tsx",
+      "line": 80,
+      "problem": "transcriptP1Rest read '它以您真实的业务职责作为学习情境。' -- sentence-initial 它 standing for the abstract subject 'It' (referring back to 'this programme'), the translationese pattern banned by rule 7 / checklist item 17.",
+      "fix": "Changed to '课程以您真实的业务职责作为学习情境。', repeating the noun instead of the pronoun."
+    },
+    {
+      "file": "src/components/site/ProgrammeAssistant.tsx",
+      "line": 42,
+      "problem": "intro listed '申请条件' (application conditions) as one of the topics the assistant can answer, using 申请 where the English source says 'eligibility conditions' -- close to the vocabulary avoid-list's ban on 'apply/application' language for anything other than an enquiry, and a mistranslation of 'eligibility'.",
+      "fix": "Changed to '资格条件', matching the English 'eligibility conditions' precisely and avoiding the 申请 term."
+    }
+  ],
+  "checked_and_passed": [
+    "IntakeSchedule.tsx zh block: 届别/咨询/开放咨询/华语/英语, no 班次, no pronoun in headings.",
+    "GuideApplyPage.tsx: 免费 appears in eyebrow and reassurance fine print in all three languages identically (shared pattern with EN/MS, not a zh-specific defect -- flagged below rather than fixed unilaterally).",
+    "LeadForm.tsx intent labels ('国际学员: 我从马来西亚以外地区咨询' not 申请) and MS submit-label style fixes from the writer's pass verified still in place; okPlan '下载 PDF 课程指南' is a genuine post-submission file download, not a soft CTA, so 下载 is contextually correct there.",
+    "CmiProgressionChart.tsx boundaryP correctly interpolates CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH; caption/link strings clean.",
+    "ProgrammeComparison.tsx BUILT_FOR_ROW.zh describes the reference academic MBA neutrally, no disparagement; COMPARISON_SCOPE rendered adjacent to the table per governance checklist item 11.",
+    "npm run typecheck and node scripts/content-clarity-audit.mjs pass with zero warnings across all eight components-unit files after the fixes."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "GuideApplyPage.tsx and LeadForm.tsx's campaign kicker both lead with 免费 once in an eyebrow/kicker and again in the fine print, on all three languages identically (English also leads 'Free {year} programme guide' as an eyebrow plus 'Free PDF' in the fine print). This is a shared EN/MS/ZH pattern, not a zh-only defect -- flagging for the owner/English reviewer to decide whether the eyebrow should drop 'Free' per governance checklist item 14 ('Free' appears once per surface and never as a CTA lead word), since fixing it in zh alone would create a mismatch with the other two languages.",
+    "ExecutiveDiagnostic.tsx guideBody names the diagnostic result PDF '《{year} 在职经理进阶指南》' (mirroring the English 'The Working Manager's {year} Progression Guide' and Malay 'Panduan Kemajuan {year} untuk Pengurus Berpengalaman'). Spec section 10 requires 'the {PROGRAMME_YEAR} programme guide' as the one retired-proof name on every surface. This looks like a distinct, intentionally-named document rather than a mistranslation, but it is a naming violation shared across all three languages -- flagging for the owner rather than renaming zh alone."
+  ]
+}

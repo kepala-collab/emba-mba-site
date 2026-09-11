@@ -5,11 +5,12 @@ import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/compo
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 
 export const metadata = withSeo("/ms/insights/systems-thinking-for-leaders", {
   title: "Pemikiran Sistem untuk Pemimpin",
   description:
-    "Panduan praktikal pemikiran sistem untuk perniagaan: gelung maklum balas, kelewatan, titik pengaruh dan menjangka akibat peringkat kedua dan ketiga.",
+    "Mengapa masalah sama sentiasa berulang, dan soalan perlahan pemikiran sistem berbanding menyalahkan seseorang: struktur apakah yang menjadikan kegagalan ini semula jadi?",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,14 +21,14 @@ export const metadata = withSeo("/ms/insights/systems-thinking-for-leaders", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Pemikiran Sistem untuk Pemimpin",
+  headline: "Masalah sama sentiasa berulang. Pemikiran sistem untuk pemimpin.",
   mainEntityOfPage: "https://futurereadymba.com/ms/insights/systems-thinking-for-leaders",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "ms-MY",
   description:
-    "Panduan praktikal pemikiran sistem untuk perniagaan — gelung maklum balas, kelewatan, titik pengaruh, dan cara menjangka akibat peringkat kedua dan ketiga sebelum anda bertindak.",
+    "Menyalahkan adalah jawapan pantas. Pemikiran sistem menanyakan soalan yang lebih perlahan — struktur apakah yang menjadikan kegagalan ini hasil semula jadi — dan pemimpin berkhidmat kepada struktur itu, bukan menghukum individu.",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,
@@ -54,15 +55,18 @@ export default function SystemsThinkingForLeaders() {
               <span className="l" />
               <span className="mono sec-k">Wawasan · Pemikiran</span>
             </div>
-            <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "16ch" }}>
-              Pemikiran Sistem untuk Pemimpin
+            <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "20ch" }}>
+              Masalah sama sentiasa berulang. Pemikiran sistem untuk pemimpin.
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Pemikiran sistem membantu pemimpin melihat struktur tersembunyi yang
-              berulang kali melahirkan sesuatu masalah. Fokusnya beralih daripada
-              peristiwa yang terpencil kepada hubungan, gelung maklum balas dan
-              kelewatan yang sebenarnya membentuk hasil akhir.
+              Menyalahkan adalah jawapan pantas yang terasa seperti tindakan.
+              Pemikiran sistem menanyakan soalan yang lebih perlahan: struktur
+              apakah yang menjadikan kegagalan ini seolah-olah hasil semula
+              jadi? Pemimpin yang bertanggungjawab terhadap struktur itu
+              sedang berkhidmat kepada orang di dalamnya. Tiada satu pun daripada ini
+              bakat semula jadi; ia diasah melalui latihan. Ia salah satu
+              daripada tujuh disiplin dalam kaedah F.A.S.T.
             </p>
           </Reveal>
 
@@ -81,7 +85,7 @@ export default function SystemsThinkingForLeaders() {
               Cara itu memang berkesan untuk mesin, kerana setiap komponennya agak
               bebas antara satu sama lain. Tetapi ia gagal apabila berdepan dengan
               organisasi, pasaran dan pasukan — tempat segala-galanya saling terjalin.
-              Dalam sesebuah sistem, gelagat yang anda lihat sering terhasil daripada
+              Dalam sesebuah sistem, gelagat yang anda lihat terhasil daripada
               hubungan antara bahagian, bukan daripada mana-mana satu bahagian sahaja.
             </p>
 
@@ -108,7 +112,11 @@ export default function SystemsThinkingForLeaders() {
               tetapi <strong>&ldquo;struktur apakah yang menjadikan kegagalan ini
               seolah-olah hasil yang semula jadi?&rdquo;</strong> Soalan pertama hanya
               melahirkan budaya salah-menyalah dan pusing ganti. Soalan kedua membuka
-              jalan kepada perubahan yang benar-benar kekal.
+              jalan kepada perubahan yang benar-benar kekal. Soalan kedua itulah
+              pendirian seorang pemimpin yang berkhidmat: pemimpin yang
+              bertanggungjawab terhadap struktur sedang berkhidmat kepada
+              orang yang perlu bekerja di dalamnya, bukan sekadar mengarahkan
+              mereka.
             </p>
 
             <h2>Konsep teras, dijelaskan dengan mudah</h2>
@@ -202,20 +210,18 @@ export default function SystemsThinkingForLeaders() {
 
             <h2>Asah disiplin ini</h2>
             <p>
-              Tiada satu pun daripada semua ini bakat semula jadi. Pemikiran sistem
-              ialah kemahiran yang semakin tajam melalui latihan berstruktur, refleksi
-              yang bersengaja dan bahasa untuk menamakan apa yang anda lihat. Ia salah
-              satu daripada tujuh disiplin teras{" "}
-              <Link href="/ms/how-it-works">kaedah F.A.S.T.</Link> yang membentuk {" "}
-              <Link href="/ms/executive-mba">Future Ready Executive MBA</Link> — program
-              yang direka untuk menganjakkan pemimpin daripada sekadar bertindak balas
-              terhadap peristiwa kepada mereka bentuk semula sistem yang melahirkan
-              peristiwa itu.
+              Tiada satu pun daripada semua ini bakat semula jadi; ia diasah
+              melalui latihan berstruktur, refleksi yang bersengaja dan bahasa
+              untuk menamakan apa yang anda lihat. Ia salah satu daripada tujuh
+              disiplin dalam kaedah F.A.S.T.{" "}
+              <Link href="/ms/diagnostic">{PROGRAMME_FIT_CHECK.ms}</Link>{" "}
+              mengubah soalan ini menjadi keputusan yang sedang anda hadapi
+              sekarang.
             </p>
             <p>
               Apabila anda belajar melihat keseluruhan papan, anda berhenti mengulangi
-              langkah yang sama berkali-kali. Anda mula mengubah cara permainan itu
-              dimainkan.
+              langkah yang sama berkali-kali. Anda mula mereka bentuk semula
+              permainan itu.
             </p>
             <h2>Sumber dan bacaan lanjut</h2>
             <p>
@@ -227,7 +233,7 @@ export default function SystemsThinkingForLeaders() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Lihat keseluruhan sistem. Terajui ia." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Gunakannya pada keputusan yang sedang anda hadapi sekarang." />
     </>
   );
 }

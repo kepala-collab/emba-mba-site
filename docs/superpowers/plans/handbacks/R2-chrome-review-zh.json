@@ -1,0 +1,24 @@
+{
+  "unit": "chrome",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/components/site/CtaSection.tsx",
+      "line": 23,
+      "problem": "Shared enquiry-section H2 'DEFAULTS.zh.heading' read '获取眼前这项决定所需的事实。' -- 获取 is the app-store/download verb zh-register.md rule 9 explicitly bans for CTAs and action headings (Malaysian institutions use 索取/看清 for this kind of framing). It was also inconsistent with the home page's own translation of the same archetype line ('先看清眼前这项决定的事实。' in FutureCommerceHome.tsx), so the same English source sentence read two different ways on the site.",
+      "fix": "Changed to '看清眼前这项决定所需的事实。', dropping the app-store verb and aligning register with the home page's rendering of the identical spec line."
+    }
+  ],
+  "checked_and_passed": [
+    "Header.tsx / Footer.tsx nav, footer and legal zh strings: no 参与者/渠道/创始人/首席执行官/营销/班次/它 as abstract-subject opener; PROGRAMME_FIT_CHECK.zh and CTA_LABELS.zh rendered from source, not retyped; PROGRAMME_POSITIONING_ZH + MQA boundary present together in the footer legal notice.",
+    "ProgrammeMarks.tsx cmi label already reads the owner-locked '由 CMI 颁发并认可' (no 背书, no superseded '(英国) 颁发及认可' phrasing).",
+    "RouteBreadcrumbs.tsx zh labels: no pronoun, no banned vocabulary; consistent 届/课程咨询/认可 usage.",
+    "WhatsAppFloat.tsx aria-label and prefill message render CTA_LABELS.zh.whatsapp verbatim; no banned terms in the freehand prefill sentence.",
+    "npm run typecheck and node scripts/content-clarity-audit.mjs pass with zero warnings across all six chrome-unit files after the fix."
+  ],
+  "native_reading_score_after_fixes": 9,
+  "owner_questions": [
+    "RouteBreadcrumbs.tsx '/zh/resources/advancement-brief' label '管理晋升决策简报' uses 晋升 (promotion), which is on the English avoid-list as a label word. The English ('Advancement brief') and Malay ('Ringkasan keputusan kemajuan kerjaya') breadcrumbs for the same page carry the identical concept, so this looks like a page-naming decision made outside the chrome unit rather than a chrome-introduced defect. Left unchanged to avoid a three-way naming mismatch; flagging for the page-owning unit/owner to confirm whether the page name itself should change in all three languages."
+  ]
+}

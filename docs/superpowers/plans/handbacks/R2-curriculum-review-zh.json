@@ -1,0 +1,22 @@
+{
+  "unit": "curriculum",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": "curriculum.title (was line 87)",
+      "problem": "H1 \"12 个模块，一份团队能落实的方案\" was 16 characters, over the 14-character / two-beat zh headline cap (zh-register.md §5 rule 27, spec §13).",
+      "fix_applied": "Tightened to \"{FACTS.moduleCount} 个模块，团队可落实的方案\" — 14 characters exactly, two beats, same meaning."
+    },
+    {
+      "file": "src/lib/content-zh.ts",
+      "line": "curriculum.sections[0..2] (was 阶段一/阶段二/阶段三)",
+      "problem": "Stage labels used Chinese numerals (阶段一/二/三) instead of the dispatched Arabic-numeral convention \"阶段 1/2/3\", inconsistent with the English STAGES rename to Stage 1/2/3 and the explicit brief instruction.",
+      "fix_applied": "Changed to 阶段 1 / 阶段 2 / 阶段 3 with pangu spacing, matching the site's numeral convention."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [],
+  "notes": "MODULES_ZH, assessment-presence-before-absence framing, and fact tokens were already correct; no changes needed there. npm run typecheck and node scripts/content-clarity-audit.mjs both pass with zero warnings in this file's curriculum block."
+}

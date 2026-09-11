@@ -1,0 +1,33 @@
+{
+  "unit": "executive-mba-vs-mba",
+  "language": "zh",
+  "files_reviewed": ["src/app/(zh)/zh/executive-mba-vs-mba/page.tsx"],
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(zh)/zh/executive-mba-vs-mba/page.tsx",
+      "line": 47,
+      "problem": "H1 ended with a trailing full stop, banned for headlines.",
+      "fix": "removed the trailing 。 from 'Executive MBA 还是学术 MBA，按任务选'"
+    },
+    {
+      "file": "src/app/(zh)/zh/executive-mba-vs-mba/page.tsx",
+      "line": 20-21,
+      "problem": "PAGE_FAQS filtered on the question string '课程如何安排？', which does not exist anywhere in FAQS_ZH, so the filter silently dropped to a single rendered FAQ (and a single JSON-LD Question) against the EN source's three ('Is it MQA-recognised?', 'Can I carry it alongside the job?', 'What are the refund terms?'). A real content-completeness bug, not a copy-quality issue.",
+      "fix": "changed the filter to the three FAQS_ZH question strings that match the EN set: '这是 MQA 认证的学位吗？', '全职工作期间可以兼顾课程吗？', '退款条款是什么？'"
+    }
+  ],
+  "checked_and_passed": [
+    "no 班次 anywhere in the file; cohort reference in the CtaSection heading uses 届",
+    "no cleft '...的是...' sentences",
+    "no sentence-initial 它/这 (attributive '这门/这条' uses are not the banned bare-subject pattern)",
+    "certificate/CMI mentions in the hero and the fee section carry CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH and the not-an-MQA-degree boundary in the same block",
+    "scholarship sentence keeps 名额有限 bound to 须经个别评估/书面批准/并非自动授予",
+    "COMPARISON_SCOPE_ZH and the comparison table sit adjacent, per spec section 3 rule 4",
+    "fact tokens (FACTS.*, PROGRAMME_POSITIONING_ZH, REFUND_TERMS_ZH) interpolated, not retyped"
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "PAGE_FAQS in the (en) and (ms) versions of this page also predate this rewrite pass and were not touched — worth a follow-up pass to confirm their filter lists render the intended question sets (the writer's handback already flagged the EN filter list drifting from FAQS)."
+  ]
+}

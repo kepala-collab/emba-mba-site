@@ -6,6 +6,7 @@ import IntakeSchedule from "@/components/site/IntakeSchedule";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import {
+  ABC_PROFILE,
   CERTIFICATE_POSITIONING,
   COMPANY_ENROLMENT,
   COMPLIANCE,
@@ -23,9 +24,9 @@ import {
 import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/executive-mba", {
-  title: "Six-Month Executive MBA Programme Malaysia",
+  title: "Executive MBA Programme Malaysia | Structure, Fee and CMI Recognition",
   description:
-    `${PROGRAMME_POSITIONING_SENTENCE} Includes coaching and a live business project over six months.`,
+    `${PROGRAMME_POSITIONING_SENTENCE} ${FACTS.trainingDays} training days, ${FACTS.liveSessions} sessions, coaching and an applied project across ${FACTS.durationLong}.`,
 });
 
 const courseSchema = {
@@ -66,22 +67,22 @@ export default function ExecutiveMbaPage() {
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Future Ready Executive MBA</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>Lead with certainty in chaos. Build decisions that move the business forward.</h1>
+              <h1>Bring one live business issue. Leave with a plan your team can act on.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="programme-overview-lede">
-                A focused {FACTS.durationMonths}-month programme for working leaders: {FACTS.trainingDays} training days, coaching and an applied business project built around a live business issue.
+                Across {FACTS.durationLong}, in {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, with one-to-one coaching and an applied business project, you take a current issue from your own responsibility from problem definition to a written action plan reviewed by faculty, while you continue in your role. {ABC_PROFILE.programmePositioning}
               </p>
             </Reveal>
             <Reveal delay={120}>
               <div className="programme-overview-actions">
                 <Link href="/apply" className="btn btn-primary">{CTA_LABELS.guide} <span aria-hidden="true">→</span></Link>
-                <Link href="#structure" className="btn btn-ghost">See how the programme works</Link>
+                <Link href="#structure" className="btn btn-ghost">See how the six months work</Link>
               </div>
             </Reveal>
             <Reveal delay={150}>
               <p className="programme-overview-note">
-                {PROGRAMME_POSITIONING_SENTENCE} It is not an MQA-accredited academic degree or a regulated qualification.
+                {CERTIFICATE_POSITIONING.professionalRelevance}
               </p>
             </Reveal>
           </div>
@@ -90,13 +91,13 @@ export default function ExecutiveMbaPage() {
             <aside className="programme-summary-card" aria-label="Programme summary">
               <div className="programme-summary-brand">
                 <Image src="/brand/cmi-logo-official.svg" alt="Chartered Management Institute compact logo" width={96} height={66} />
-                <span>Awarded and endorsed by CMI</span>
+                <span>{CERTIFICATE_POSITIONING.headline}</span>
               </div>
               <dl>
                 <div><dt>Designed for</dt><dd>Owners, directors, general managers and senior managers</dd></div>
                 <div><dt>Schedule</dt><dd>{FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions</dd></div>
-                <div><dt>Assessment</dt><dd>Applied business project; no traditional examination or thesis</dd></div>
-                <div><dt>Scholarship</dt><dd>Eligibility-based assessment for Malaysian applicants</dd></div>
+                <div><dt>Assessment</dt><dd>A written action plan on your own business, reviewed by faculty</dd></div>
+                <div><dt>Scholarship</dt><dd>{FACTS.scholarshipProvider} assesses eligible Malaysian applicants individually</dd></div>
               </dl>
               <Link href="/fees" className="text-action">See the complete fee <span aria-hidden="true">↗</span></Link>
             </aside>
@@ -109,8 +110,8 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">How the six months work</p>
-              <h2 className="sec-h">{FACTS.trainingDays} intensive days. One real business challenge. A practical way forward.</h2>
-              <p>Complete the programme in {FACTS.liveSessions} scheduled sessions while continuing to work. There are no traditional examinations or thesis.</p>
+              <h2 className="sec-h">Work your issue beside managers carrying similar decisions.</h2>
+              <p>{FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, while you continue in your role. The applied business project becomes a written action plan reviewed by faculty.</p>
             </div>
           </Reveal>
           <Reveal delay={40}>
@@ -129,16 +130,16 @@ export default function ExecutiveMbaPage() {
             <Reveal>
               <article className="programme-stage-card">
                 <span className="programme-stage-number" aria-hidden="true">01</span>
-                <p className="mono sec-k">Six months</p>
-                <h3>Executive MBA programme and certificate</h3>
-                <p>Attend {FACTS.trainingDays} training days, receive coaching and complete an applied project. Successful participants receive the CMI Certificate of Recognition for the programme.</p>
+                <p className="mono sec-k">Across the six months</p>
+                <h3>A written action plan for your own business</h3>
+                <p>Complete {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions, one-to-one coaching and an applied business project on a current issue within your own responsibility. Successful completion is recognised with the {CERTIFICATE_POSITIONING.credential}. {CERTIFICATE_POSITIONING.professionalRelevance}</p>
                 <Link href="/curriculum" className="text-action">Review the curriculum <span aria-hidden="true">↗</span></Link>
               </article>
             </Reveal>
             <Reveal delay={60}>
               <article className="programme-stage-card programme-stage-card-dark">
                 <span className="programme-stage-number" aria-hidden="true">02</span>
-                <p className="mono">Optional next step</p>
+                <p className="mono">Separate CMI route</p>
                 <h3>Chartered Manager route</h3>
                 <p>Chartered Manager is a separate CMI route. CMI decides eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.</p>
                 <Link href="/chartered-manager-malaysia" className="text-action">Understand the CMI routes <span aria-hidden="true">↗</span></Link>
@@ -153,7 +154,7 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">Who it is for</p>
-              <h2 className="sec-h">For people already responsible for business results.</h2>
+              <h2 className="sec-h">For people whose decisions affect more than their own desk.</h2>
               <p>{PROGRAMME_AUDIENCE}</p>
             </div>
           </Reveal>
@@ -167,7 +168,7 @@ export default function ExecutiveMbaPage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap programme-learning-grid">
           <Reveal>
             <div className="reading-section-head">
@@ -191,8 +192,8 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">What you learn to do</p>
-              <h2 className="sec-h">Build leadership capability through one practical decision process.</h2>
-              <p>This applied leadership development programme combines seven disciplines for strategic thinking, decision-making and workplace application. Together they help you move from a vague problem to a reasoned action plan.</p>
+              <h2 className="sec-h">Seven disciplines, applied to the decision you already carry.</h2>
+              <p>Practise each discipline on your own business issue, not a case study, moving it from a vague problem to a written action plan the people who act on it can follow.</p>
               <Link href="/how-it-works" className="btn btn-ghost">See how the F.A.S.T. method works</Link>
             </div>
           </Reveal>
@@ -211,8 +212,8 @@ export default function ExecutiveMbaPage() {
           <Reveal>
             <div className="reading-section-head">
               <p className="mono sec-k">Curriculum</p>
-              <h2 className="sec-h">Twelve modules. One integrated leadership journey.</h2>
-              <p>Move from future foresight and customer-centred innovation to transformation, influence and stakeholder trust.</p>
+              <h2 className="sec-h">{FACTS.moduleCount} modules. One plan your team can act on.</h2>
+              <p>Each module builds toward the same output: reasoning the people who depend on your decision can follow, from future foresight and customer-centred innovation to transformation and stakeholder trust.</p>
             </div>
           </Reveal>
           <Reveal className="mt-m"><div className="mods programme-module-grid">
@@ -258,7 +259,7 @@ export default function ExecutiveMbaPage() {
             <div className="credential-copy">
               <p className="mono sec-k">What the recognition means</p>
               <h2 className="sec-h">A recognised programme certificate, followed by an optional route to Chartered Manager.</h2>
-              <p>{CERTIFICATE_POSITIONING.distinction}</p>
+              <p>{CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance}</p>
               <ol>
                 <li><strong>{STAGES[0].h}:</strong> {STAGES[0].d}</li>
                 <li><strong>{STAGES[1].h}:</strong> {STAGES[1].d}</li>
@@ -277,7 +278,7 @@ export default function ExecutiveMbaPage() {
             <div className="reading-section-head">
               <p className="mono sec-k">Published 2026 dates</p>
               <h2 className="sec-h">Choose an English or Mandarin cohort.</h2>
-              <p>The six-month programme uses three scheduled weekend sessions across the programme. Review every published date before choosing a cohort.</p>
+              <p>{FACTS.trainingDays} training days run across {FACTS.liveSessions} scheduled weekend sessions. Review every published date before choosing a cohort.</p>
             </div>
           </Reveal>
           <Reveal className="mt-s"><IntakeSchedule label="2026 Executive MBA intake schedule" /></Reveal>

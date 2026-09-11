@@ -195,7 +195,8 @@ export async function POST(req: Request) {
     if (!body || typeof body !== "object") return json({ error: "Invalid request" }, 400);
     const messages = parseMessages(Reflect.get(body, "messages"));
     const langValue = Reflect.get(body, "lang");
-    const language: ChatLanguage = langValue === "zh" ? "zh" : "en";
+    const language: ChatLanguage =
+      langValue === "zh" || langValue === "ms" ? langValue : "en";
     const turnstileToken = Reflect.get(body, "turnstile_token");
     if (!messages || typeof turnstileToken !== "string" || !turnstileToken.trim()) {
       return json({ error: "Invalid request" }, 400);

@@ -4,7 +4,18 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ScrollableTableRegion from "@/components/site/ScrollableTableRegion";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
-import { COMPARISON, COMPARISON_SCOPE, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import {
+  ABC_PROFILE,
+  CERTIFICATE_POSITIONING,
+  COMPARISON,
+  COMPARISON_SCOPE,
+  CTA_LABELS,
+  FACTS,
+  HRD_CORP_CLAIM,
+  PROGRAMME_AUDIENCE,
+  PROGRAMME_POSITIONING_SENTENCE,
+  SITE,
+} from "@/lib/content";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
@@ -20,7 +31,7 @@ const jsonLd = {
   "@id": `${SITE.url}/mba-for-working-professionals#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is delivered across ${FACTS.durationMonths} months through ${FACTS.liveSessions} scheduled weekends, with an online delivery option.`,
+    `${PROGRAMME_POSITIONING_SENTENCE} It is delivered across ${FACTS.durationMonths} months through ${FACTS.liveSessions} scheduled sessions, with an online delivery option.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,
@@ -39,17 +50,17 @@ const jsonLd = {
 
 export default function MbaForWorkingProfessionalsPage() {
   const fit = [
-    { h: `${FACTS.liveSessions} scheduled weekends across the programme`, p: `The programme comprises ${FACTS.liveSessions} scheduled sessions, each running over one weekend.` },
+    { h: `${FACTS.liveSessions} scheduled weekends across the programme`, p: `The programme comprises ${FACTS.liveSessions} scheduled sessions, each running over one weekend, while you stay in your role.` },
     { h: "Or fully online", p: "The programme is also available through live online sessions, with the same coaching and frameworks as the in-person track." },
     { h: "Written catch-up route", p: "If you miss a session, ABC records the approved catch-up method in writing: video access or attendance in a named later cohort." },
-    { h: "Apply it to current work", p: "There is no traditional thesis or examination. Participants apply the frameworks to a business challenge they currently own." },
+    { h: "The decision stays yours to apply", p: "There is no traditional thesis or examination. You work the frameworks into a decision from your own responsibility, between sessions, inside your own organisation." },
   ];
 
   const audience = [
-    { h: "Owners & entrepreneurs", p: "Founders scaling past what instinct alone can carry." },
+    { h: "Owners & entrepreneurs", p: "Owners whose decisions already affect more than their own desk." },
     { h: "Directors & GMs", p: "Leaders accountable for business-unit strategy, performance and delivery." },
-    { h: "Senior managers", p: "Managers moving from functional delivery into cross-functional decision responsibility." },
-    { h: "Established professionals", p: "Professionals accountable for strategy, transformation, innovation or growth." },
+    { h: "Senior managers", p: "Managers moving from a single function into cross-functional decisions." },
+    { h: "Established professionals", p: "Professionals responsible for strategy, transformation, innovation or growth." },
   ];
 
   return (
@@ -66,17 +77,23 @@ export default function MbaForWorkingProfessionalsPage() {
             </div>
             <Reveal>
               <h1 className="sec-h">
-                A part-time Executive MBA schedule for professionals who remain <span className="acc">in their roles</span>.
+                Keep the role. <span className="acc">Change how you decide in it.</span>
               </h1>
             </Reveal>
             <p className="sec-sub">
-              The Future Ready Executive MBA is designed for participants who want to study while working full time.
-              The programme runs across {FACTS.durationLong}, using {FACTS.liveSessions} scheduled weekends across the programme.
-              Chartered Manager is a separate optional CMI route with its own eligibility, assessment
-              and fees; it is not included in the published programme or fee.
+              You keep the title and the responsibilities. Across {FACTS.durationLong}, you take one decision
+              you already carry and work it — through {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled
+              sessions, one-to-one coaching and an applied business project — into a written action plan reviewed
+              by faculty. The frameworks and working templates stay with you. The method develops decision
+              capabilities; business outcomes depend on the participant&rsquo;s evidence, choices and execution.
             </p>
             <p className="mono sec-k mt-s">
-              Six months · three scheduled programme weekends · awarded and endorsed by CMI
+              {FACTS.durationLong} · {FACTS.liveSessions} scheduled sessions · awarded and endorsed by CMI
+            </p>
+            <p className="sec-sub mt-s">
+              {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance} Chartered Manager
+              is a separate optional CMI route with its own eligibility, assessment and fees; it is not included
+              in the published programme or fee.
             </p>
             <p className="sec-sub mt-s">
               Explore the full{" "}
@@ -101,18 +118,18 @@ export default function MbaForWorkingProfessionalsPage() {
       </section>
 
       {/* 2 · How it fits your week */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
             <span className="mono sec-k">How it fits your week</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">A published schedule for participants who remain at work.</h2>
+            <h2 className="sec-h">A published schedule while you stay in the role.</h2>
           </Reveal>
           <p className="sec-sub">
-            Review the three session dates before enrolling. The applied project connects the programme
-            to a business challenge within the participant&rsquo;s current role.
+            Review the {FACTS.liveSessions} session dates before you enquire. The applied business project takes
+            a decision from your own responsibility and works it between sessions, inside your own organisation.
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {fit.map((x) => (
@@ -164,23 +181,22 @@ export default function MbaForWorkingProfessionalsPage() {
             </ScrollableTableRegion>
           </Reveal>
           <p className="fine mt-s">
-            {COMPARISON_SCOPE}{" "}
-            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
-            academic degree. Choose according to the credential and learning format you require. See the full{" "}
+            {COMPARISON_SCOPE} {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance}{" "}
+            Choose according to the credential and learning format you require. See the full{" "}
             <Link href="/fees" className="acc">fees &amp; inclusions</Link>.
           </p>
         </div>
       </section>
 
       {/* 4 · 2026 intakes teaser */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <div className="eyebrow">
             <span className="l" />
             <span className="mono sec-k">2026 intakes · {FACTS.liveSessions} scheduled weekends across the programme</span>
           </div>
           <Reveal>
-            <h2 className="sec-h">English and Mandarin schedules for 2026.</h2>
+            <h2 className="sec-h">Choose when your six months start.</h2>
           </Reveal>
           <p className="sec-sub">
             Current Malaysian public cohorts run 9am&ndash;6pm; Cohort 17 uses Saturday&ndash;Sunday and the other published cohorts use Friday&ndash;Saturday. A fully online option is also available.
@@ -205,8 +221,7 @@ export default function MbaForWorkingProfessionalsPage() {
             <h2 className="sec-h">For professionals with strategic or business-wide responsibility.</h2>
           </Reveal>
           <p className="sec-sub">
-            The programme is designed for owners, directors, general managers and senior managers
-            responsible for strategy, transformation, innovation or growth.
+            {PROGRAMME_AUDIENCE}
           </p>
           <div className="mt-m mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {audience.map((x) => (
@@ -219,13 +234,13 @@ export default function MbaForWorkingProfessionalsPage() {
             ))}
           </div>
           <p className="fine mt-s">
-            {HRD_CORP_CLAIM.short} Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing.{" "}
+            {HRD_CORP_CLAIM.short} {FACTS.scholarshipEligibility} The scholarship is never automatic.{" "}
             <Link href="/apply" className="acc">{CTA_LABELS.guide}</Link>.
           </p>
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Review the schedule against your current role." />
+      <CtaSection programme="Executive MBA" heading="Test this schedule against the decision you're carrying now." />
     </>
   );
 }

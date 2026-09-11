@@ -1,0 +1,46 @@
+{
+  "unit": "insights-first-principles",
+  "files_changed": [
+    "src/app/(en)/insights/first-principles-thinking/page.tsx",
+    "src/app/(ms)/ms/insights/first-principles-thinking/page.tsx",
+    "src/app/(zh)/zh/insights/first-principles-thinking/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "From inherited answers to decisions you can verify",
+      "lede": "A pricing call, a hiring freeze, a make-or-buy decision — it can arrive already dressed as \"the way it's done.\" First-principles thinking is how you test whether that answer still holds, or whether it was only ever borrowed from someone else's problem. None of this is innate; it is practised, and here is the method."
+    },
+    "ms": {
+      "h1": "Daripada jawapan yang diwarisi kepada keputusan yang boleh disahkan",
+      "lede": "Panggilan harga, pembekuan pengambilan pekerja, keputusan buat-atau-beli — ia boleh datang dalam pakaian \"memang beginilah caranya.\" Pemikiran prinsip pertama ialah cara anda menguji sama ada jawapan itu masih berpijak pada fakta, atau ia sekadar dipinjam daripada masalah orang lain. Tiada satu pun daripada ini bakat semula jadi; ia dilatih, dan inilah kaedahnya."
+    },
+    "zh": {
+      "h1": "从沿袭的答案，到可验证的决策",
+      "lede": "一次定价、一次冻结招聘、一个自制还是外购的决定——它常常一来就已经披上\"向来都是这么办\"的外衣。第一性原理思维，就是用来检验这个答案是否仍站得住脚，还是只是从别人的问题里借来的。这些都不是天赋；是练出来的，方法就在下面。"
+    }
+  },
+  "archetype_applied": "Insights (spec section 8): opens on the decision the reader is weighing (pricing, hiring, make-or-buy), then presents first-principles thinking as the method to examine it. 'The shortcut cuts' language (benchmarking passage, blockquote) is aimed only at the method of benchmarking/copying a competitor, never at the reader or at other programmes. No verdict on the reader anywhere in the copy. Exactly one factual programme pointer: a link to the Programme fit check (via the PROGRAMME_FIT_CHECK constant, /diagnostic route per language), replacing the prior double pointer (Future Ready Executive MBA + F.A.S.T. method links + a separate 'Explore the programme' button). CtaSection heading changed to the archetype's enquiry-heading pattern naming the reader's decision: 'Apply it to the decision you are carrying now.' / 'Gunakan ini untuk keputusan yang sedang anda pikul sekarang.' / '把它用在您现在正扛着的那项决策上。' (matching the precedent already shipped on /insights/advancement-question).",
+  "undefined_norm_removals": {
+    "en": "Removed 'frequently' from 'you frequently find that the industry margin...' -> 'you find that the industry margin...'",
+    "ms": "Removed the audit-flagged 'selalunya' from 'dan selalunya anda akan dapati \"margin industri\"...' -> 'dan anda akan dapati \"margin industri\"...' (scripts/content-clarity-audit.mjs bannedMs 'Malay undefined norm' regex and ms-register.md Don't 32 / checklist item 5).",
+    "zh": "Removed '往往' from '往往会发现' -> '会发现' in the same example passage (zh-register-audit.json flags 往往 alongside 可能/通常/多数/大约 as an ambiguous qualifier, even though the current audit-script regex does not yet include it)."
+  },
+  "constants_used": [
+    "PROGRAMME_FIT_CHECK (src/lib/content.ts) — .en / .ms / .zh, imported read-only, not modified"
+  ],
+  "constants_not_modified": "src/lib/content.ts, src/lib/content-ms.ts, src/lib/content-zh.ts were read only, per instructions; no facts/tokens needed for this unit beyond PROGRAMME_FIT_CHECK.",
+  "metadata_and_jsonld": "Title, description, JSON-LD headline/description/about rewritten in all three languages to match the new decision-first framing; Article JSON-LD structure (@context/@type/mainEntityOfPage/image/datePublished/dateModified/inLanguage/author/publisher/articleSection) left untouched; canonical and hreflang untouched (withSeo handles those and was not edited).",
+  "exit_codes": {
+    "typecheck": 0,
+    "content_clarity_audit": "1 overall (pre-existing failure unrelated to this unit: src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx:74 'ambiguous Chinese qualifier' — a different unit's file). Zero warnings/failures attributable to this unit's three files."
+  },
+  "self_check_results": {
+    "ms_register_section7": "Checks 1 (kamu/awak/nak/tak/-lah), 2 (banned undefined-norm words), 3 (English month abbreviations), 4 (RM formatting), 6 (perbualan program / Pengurus Bekerja / projek aplikasi / laluan lanjutan / program awam / disokong oleh CMI / etc.) all zero hits. Checks 7-10 (facts, fee/scholarship/HRD Corp/CMI wording, Chartered Manager phrasing) not applicable — this unit carries no such facts.",
+    "zh_register_section7": "Checks 2 (约/大约/通常/一般/左右/多数), 3 (urgency devices), 4 (prestige/guarantee labels), 10 (你 outside quotes), 11 (banned vocabulary sweep: 参与者/渠道/创始人/首席执行官/营销/班次/身份/背书/面向未来/etc.) all zero hits. Checks 1, 5-9 (facts, CMI/HRD Corp/scholarship/Chartered Manager wording) not applicable — no such facts on this page."
+  },
+  "left_for_reviewer": [
+    "The pre-existing content-clarity-audit failure in src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx:74 is NOT part of this unit and was left untouched, per the instruction to touch only this unit's three files; flagging in case the reviewer runs the audit at the repo level and sees a non-zero exit.",
+    "The Programme fit check pointer paragraph and CtaSection heading follow the exact pattern already shipped on /insights/advancement-question (and its ms/zh siblings); reviewer may want to confirm that precedent is itself considered a passing model, since this unit's brief did not name that page explicitly.",
+    "Body copy otherwise kept close to the original (facts about first-principles method are not sourced from src/lib/content*.ts and are treated as generic editorial content, consistent with the archetype's example for this exact page in spec section 8: 'first principles \"From inherited answers to decisions you can verify.\"')."
+  ]
+}

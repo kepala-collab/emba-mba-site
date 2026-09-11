@@ -1,0 +1,48 @@
+{
+  "unit": "insights-systems-thinking",
+  "files_changed": [
+    "src/app/(en)/insights/systems-thinking-for-leaders/page.tsx",
+    "src/app/(ms)/ms/insights/systems-thinking-for-leaders/page.tsx",
+    "src/app/(zh)/zh/insights/systems-thinking-for-leaders/page.tsx"
+  ],
+  "archetype": "Insights (spec section 8): opens on the decision the reader is weighing; method serves the people who act on the decision (servant leadership as posture, owner pattern on first use); shortcut-cuts framing kept aimed only at methods (treating symptoms, not structure); no verdict on the reader; one factual programme pointer only, the Programme fit check by its PROGRAMME_FIT_CHECK constant.",
+  "h1_and_lede": {
+    "en": {
+      "h1": "The same problem keeps returning. Systems thinking for leaders.",
+      "lede": "Blame is the quick answer and it feels like action. Systems thinking asks the slower question: what structure makes this failure the natural result? A leader who takes responsibility for the structure serves the people inside it. None of this is innate; it is practised, and it is one of the seven disciplines in the F.A.S.T. method."
+    },
+    "ms": {
+      "h1": "Masalah sama sentiasa berulang. Pemikiran sistem untuk pemimpin.",
+      "lede": "Menyalahkan adalah jawapan pantas yang terasa seperti tindakan. Pemikiran sistem menanyakan soalan yang lebih perlahan: struktur apakah yang menjadikan kegagalan ini seolah-olah hasil semula jadi? Pemimpin yang bertanggungjawab terhadap struktur itu sedang berkhidmat kepada orang di dalamnya — inilah kepimpinan berkhidmat (servant leadership). Tiada satu pun daripada ini bakat semula jadi; ia diasah melalui latihan. Ia salah satu daripada tujuh disiplin dalam kaedah F.A.S.T."
+    },
+    "zh": {
+      "h1": "问题反复出现。领导者的系统思维。",
+      "lede": "追责是最快的答案，感觉像是在做事。系统思维问的是更慢的一个问题：是什么样的结构，让这次失败几乎成了必然？领导者对结构负责，就是在服务身处其中的人，此为仆人式领导（servant leadership）的姿态。此事并非天生，靠的是练习，也是 F.A.S.T. 方法七个学科之一。"
+    }
+  },
+  "constants_used": [
+    "PROGRAMME_FIT_CHECK (src/lib/content.ts, .en/.ms/.zh) — the single factual programme pointer, linked to /diagnostic, /ms/diagnostic, /zh/diagnostic"
+  ],
+  "notes_on_changes": [
+    "Removed the two prior programme links (/how-it-works and /executive-mba, and their MS/ZH equivalents) at the article's close, replacing them with a single link naming the Programme fit check, per the archetype's 'one factual programme pointer at most' rule.",
+    "Added an explicit servant-leadership posture sentence in the 'why it matters' section (English plain term; Malay 'kepimpinan berkhidmat (servant leadership)' bracketed on first use in the lede, then 'kepimpinan berkhidmat' alone in body; Chinese '仆人式领导（servant leadership）' bracketed on first use in the lede, then '仆人式领导' alone in body).",
+    "Removed outcome-adjacent programme claims ('a programme built to move leaders...', '这门课要把领导者从疲于应付...') that named the programme's effect on the reader rather than an activity during the article.",
+    "Updated the CtaSection enquiry heading in all three languages to the archetype's approved pattern (English exact per spec section 8 example: 'Apply it to the decision you are carrying now.'; MS/ZH transcreated).",
+    "Fixed one pre-existing MS hedge word ('sering terhasil' -> 'terhasil') and one pre-existing ZH sentence-initial 它-calque ('它与线性...' -> '此法与线性...') found while running the section-7 self-checks against this unit's files; both were in body prose carried over from the prior version, not newly introduced.",
+    "Metadata title/description and JSON-LD headline/description/about rewritten in the same pass in all three languages; canonical/hreflang untouched; Article JSON-LD structure (author, publisher, datePublished/dateModified via ARTICLE_PUBLISHED/ARTICLE_REVIEWED) unchanged.",
+    "No test file locks strings on this unit; none changed."
+  ],
+  "typecheck_exit_code": 0,
+  "content_clarity_audit_exit_code": 1,
+  "content_clarity_audit_note": "Audit fails at repo level due to pre-existing warnings in two other insights units (executive-education-vs-executive-mba, design-thinking-for-business) — zero warnings against this unit's three files, confirmed by grepping the audit output for 'systems-thinking'.",
+  "self_check_results": {
+    "ms_section7": "Ran items 1-6 (banned pronouns/verbs/months/RM spacing/hedge words/banned collocations) and the exclamation-mark count against the full MS file. One hedge word found and fixed ('sering'). Zero hits on kamu/awak/-lah family (one grep hit was a false positive on the substring 'tak' inside 'kotak'), zero banned collocations, zero exclamation marks, zero bad RM/date formatting introduced.",
+    "zh_section7": "Ran hedge-word, urgency, prestige/guarantee, banned-vocabulary and sentence-initial 它/这 checks against the full ZH file. One sentence-initial 它-calque found and fixed ('它与线性...' -> '此法与线性...'). One hedge-word grep hit was a false positive (合约 contains 约 as a substring, not the qualifier 约/大约). Zero banned vocabulary, zero urgency devices, zero prestige/guarantee claims."
+  },
+  "left_for_reviewer": [
+    "Confirm the servant-leadership posture sentence (added in 'why it matters', both languages) reads as posture rather than a new named framework element competing with the F.A.S.T. seven disciplines.",
+    "Confirm the MS/ZH CtaSection heading transcreations ('Gunakannya pada keputusan yang sedang anda hadapi sekarang.' / '把它用在您现在正权衡的决定上。') carry the same register as the English 'Apply it to the decision you are carrying now.' from the approved spec example.",
+    "The shared byline note in the messaging-map digest flags that ARTICLE_REVIEWED is a shared constant across all four insights articles and a substantive rewrite should move it; I did not touch ARTICLE_REVIEWED or ARTICLE_PUBLISHED (both live in a shared component, out of scope for a single-unit writer) — flagging so the programme lead can decide whether to bump it once all insights units are rewritten.",
+    "I did not change the /how-it-works or /executive-mba anchor text elsewhere on the site; only this article's own two now-removed links."
+  ]
+}

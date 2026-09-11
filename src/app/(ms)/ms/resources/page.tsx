@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import { FACTS } from "@/lib/content";
+import { FACTS, PROGRAMME_FIT_CHECK, PROGRAMME_YEAR } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms/resources", {
@@ -9,10 +9,10 @@ export const metadata = withSeo("/ms/resources", {
 });
 
 const RESOURCES = [
-  ["01", "Semakan padanan program", "Jawab empat soalan untuk membina senarai semak peribadi bagi matlamat, masa, yuran dan pengiktirafan anda. Tiada markah, tiada rekod disimpan, dan pilihan anda tidak dihantar ke mana-mana.", "/ms/diagnostic", "Mulakan semakan"],
-  ["02", "Panduan program Executive MBA", "Baca atau cetak struktur program, yuran penuh untuk peserta Malaysia, pengiktirafan CMI dan soalan yang wajar disahkan sebelum memilih program.", "/ms/resources/advancement-brief", "Buka panduan program"],
+  ["01", PROGRAMME_FIT_CHECK.ms, "Jawab empat soalan untuk membina senarai semak peribadi bagi matlamat, masa, yuran dan pengiktirafan anda. Tiada markah, tiada rekod disimpan, dan pilihan anda tidak dihantar ke mana-mana.", "/ms/diagnostic", "Mulakan semakan"],
+  ["02", `Panduan program ${PROGRAMME_YEAR}`, "Baca atau cetak struktur program, projek amali perniagaan, yuran penuh untuk peserta Malaysia dan sempadan pengiktirafan CMI.", "/ms/resources/advancement-brief", "Buka panduan program"],
   ["03", "Cara membandingkan program pengurusan", "Bandingkan program pengurusan profesional dari lima sudut: kandungan pengajaran, aplikasi praktikal, masa, sijil dan yuran.", "/ms/insights/advancement-question", "Baca panduan perbandingan"],
-  ["04", "Chartered Manager di Malaysia", "Fahami laluan permohonan CMI semasa, kelayakan, yuran penilaian, fCMgr, CMgr MCMI dan rangkaian profesional di Malaysia.", "/ms/chartered-manager-malaysia", "Fahami laluan profesional"],
+  ["04", "Chartered Manager di Malaysia", "Fahami laluan permohonan CMI semasa, kelayakan, yuran penilaian, fCMgr, CMgr MCMI dan rangkaian profesional di Malaysia.", "/ms/chartered-manager-malaysia", "Lihat laluan CMI berasingan"],
 ] as const;
 
 export default function ResourcesPage() {

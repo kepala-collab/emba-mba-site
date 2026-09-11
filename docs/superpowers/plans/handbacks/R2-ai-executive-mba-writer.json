@@ -1,0 +1,63 @@
+{
+  "unit": "ai-executive-mba",
+  "files_changed": [
+    "src/app/(en)/ai-executive-mba/page.tsx",
+    "src/app/(ms)/ms/ai-executive-mba/page.tsx",
+    "src/app/(zh)/zh/ai-executive-mba/page.tsx"
+  ],
+  "status": "completed_prior_draft",
+  "note": "A previous writer had already rewritten all three files nearly to the brief before being cut off. I reviewed the git diff against HEAD and the current file contents, verified the archetype and section-3/8/13/14 rules were satisfied, and finished the remaining gaps rather than redoing the work: confirmed the from-to headline stays one short phrase per side in all three languages, confirmed the AI-means-start-with-the-business-problem framing runs through hero, section 2 and section 3, confirmed no capability/outcome claims, no vendor disparagement, no scarcity, and that facts (CMI/HRD Corp/scholarship/duration/training days/live sessions) are all interpolated from src/lib/content.ts, content-ms.ts and content-zh.ts constants rather than retyped. No component or content*.ts files were edited.",
+  "headline_and_lede": {
+    "en": {
+      "h1": "Start with the business problem, not the model.",
+      "lede": "Being asked to decide on AI is now part of the role. The business question comes before the tool. Bring a live AI-adoption decision into the same six-month Future Ready Executive MBA. Work it into a written action plan reviewed by faculty."
+    },
+    "ms": {
+      "h1": "Mulakan dengan masalah perniagaan, bukan model AI.",
+      "lede": "Membuat keputusan tentang AI kini sebahagian daripada tugas anda. Soalan perniagaan didahulukan sebelum alat itu dipilih. Bawa satu keputusan sebenar berkaitan AI ke dalam Future Ready Executive MBA enam bulan yang sama. Ubah ia menjadi pelan tindakan bertulis yang disemak fasilitator."
+    },
+    "zh": {
+      "h1": "先看业务问题，再选工具。",
+      "lede": "被要求为 AI 拿主意，现在已是职责的一部分。业务问题先问，工具后选。把一项真实的 AI 应用决策，带进同一门六个月的 Future Ready Executive MBA，写成一份经导师团队审阅的行动方案。"
+    }
+  },
+  "constants_used": [
+    "FACTS.durationLong / FACTS.durationMonths",
+    "FACTS.trainingDays",
+    "FACTS.liveSessions",
+    "FACTS.priceStd",
+    "FACTS.scholarshipEligibility",
+    "FACTS.scholarshipProvider",
+    "CTA_LABELS (guide, company, ms.*, zh.*)",
+    "ABC_PROFILE.programmePositioning",
+    "PROGRAMME_POSITIONING_MS",
+    "PROGRAMME_POSITIONING_ZH",
+    "CERTIFICATE_POSITIONING (distinction, professionalRelevance)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH",
+    "HRD_CORP_CLAIM / HRD_CORP_CLAIM_MS / HRD_CORP_CLAIM_ZH",
+    "INCLUSIONS[4].s",
+    "ENQUIRY_COMMITMENT_MS",
+    "ENQUIRY_COMMITMENT_ZH",
+    "THINKING_EDGE (EN)"
+  ],
+  "metadata_rewritten": {
+    "en": { "title": "Start With the Business Problem, Not the Model", "description": "Bring an AI-adoption decision and work it, across the six months of the Future Ready Executive MBA, into a written plan reviewed by faculty." },
+    "ms": { "title": "Mulakan Dengan Masalah Perniagaan, Bukan Model AI", "description": "Bawa satu keputusan penggunaan AI dan ubahnya, sepanjang enam bulan Future Ready Executive MBA, menjadi pelan bertulis yang disemak fasilitator." },
+    "zh": { "title": "先看业务问题，再选工具", "description": "把一项 AI 应用决策带进 Future Ready Executive MBA，六个月内写成一份经导师团队审阅的行动方案。" }
+  },
+  "json_ld": "This route has no page-local JSON-LD text fields to rewrite; withSeo() handles structured data centrally and was not touched.",
+  "audit_and_typecheck": {
+    "typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "content_clarity_audit_note": "Audit passed across 178 public content files; the 27 locale-register warnings printed are all in other, unrelated routes (lp/meta, lp/google, intakes, asian-business-consulting, unsubscribed, insights, resources) and content-zh.ts — none reference the ai-executive-mba unit."
+  },
+  "self_checks": {
+    "ms_register": "anda used throughout; no exclamation marks; no -lah/nak/tak; RM figures come only from FACTS.priceStd (no space, comma thousands, per constant); headline 7 words (under 9-word cap); none of the banned phrases (laluan pilihan, perbualan program, pengurus bekerja, projek aplikasi) present; 'kemajuan' not used (no 'progres' either); servant-leadership pattern not needed on this page.",
+    "zh_register": "headline is 10 characters (under 14-char cap); no more than one decorative four-character phrase per heading and none on the fee/recognition lines; numbers precede units/adjectives (e.g. 六个月, 学员); 学员/进修/令吉 vocabulary via constants; 认可 used for CMI, no MQA 认证 claim made directly; none of the banned terms (背书, 班次, 参与者, 渠道, 创始人, 首席执行官, 营销, 免费获取) appear in this unit's three files; full-width punctuation and pangu spacing consistent with surrounding constants."
+  },
+  "left_for_reviewer": [
+    "This unit's prose was substantially written by a prior (cut-off) pass; I reviewed it against the spec/vocabulary/register rules and found it compliant, but flag it for extra reviewer scrutiny since I did not originate the sentences from scratch.",
+    "The three 'card' fact-strip arrays (BUSINESS_PILLARS/CAREER_PILLARS in EN/MS/ZH) were not part of the messaging-spec-driven rewrite scope (they are functional/skills descriptions, not claims), so I left the prior writer's copy as-is after confirming no banned/claim language."
+  ]
+}

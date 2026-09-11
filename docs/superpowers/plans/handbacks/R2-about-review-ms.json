@@ -1,0 +1,9 @@
+{
+  "unit": "about",
+  "language": "ms",
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "notes": "Reviewed src/app/(ms)/ms/about/page.tsx against the EN source of meaning, messaging-architecture.md sections 2-4, 8, 10, 12-14, owner-vocabulary-rules.md, and ms-register.md sections 5/7. Owner decision 14.1 explicitly keeps Malay 'dianugerahkan dan disokong oleh CMI' unchanged, so the ORGANISATIONAL_STATEMENT_MS constant's 'disokong' is correct as-is (not the register audit's 'diperakukan' fix, which the owner decision overrides). Servant-leadership local-term pattern is correctly rendered once: 'Kepimpinan sebenar ialah kepimpinan berkhidmat (servant leadership): ia diukur pada orang yang dilayaninya.' The not-an-MQA-degree boundary and CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS render in the same block as the CMI/certificate mention (editorial-standards card). H1 and H2 headlines are all at or under 9 words. No banned terms found (kamu/awak/-lah, laluan pilihan, perbualan program, pengurus bekerja, projek aplikasi, dalam bentuk bertulis, Tempah). No facts retyped outside tokens on this page (no RM/dates/counts present). No fix required.",
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": []
+}

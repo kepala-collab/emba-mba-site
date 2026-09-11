@@ -1,0 +1,27 @@
+{
+  "unit": "asian-business-consulting",
+  "language": "en",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/asian-business-consulting/page.tsx",
+      "line": 21,
+      "problem": "The MILESTONES fact band renders the bare tag 'Awarded and endorsed by CMI' with no not-an-MQA-degree boundary or CERTIFICATE_POSITIONING.professionalRelevance anywhere in that section/viewport (governance checklist item 4 and the dispatch instruction: every 'awarded and endorsed by CMI' block must carry both alongside it). The only compliant CMI block on the page is the later 'Recognition & funding' section, which is a separate viewport a reader can miss.",
+      "fixApplied": "Added a fine-print line directly under the fact band: 'It is a non-academic programme, not an MQA-accredited academic degree or a regulated qualification. {CERTIFICATE_POSITIONING.professionalRelevance}', so the boundary and the no-guarantee sentence render in the same viewport as the milestone claim."
+    },
+    {
+      "file": "src/app/(en)/asian-business-consulting/page.tsx",
+      "line": 62,
+      "problem": "The Organization JSON-LD description field states '...a non-academic professional development programme awarded and endorsed by CMI.' with no not-an-MQA-degree sentence or professionalRelevance text. Spec section 8/12 item 8 requires metadata and JSON-LD text fields to follow the same rules as on-page copy.",
+      "fixApplied": "Appended 'It is not an MQA-accredited academic degree or a regulated qualification.' and the CERTIFICATE_POSITIONING.professionalRelevance constant to the description string."
+    }
+  ],
+  "identityStringsVerifiedVerbatim": [
+    "Chief Programme Director, Asian Business Consulting · Co-Founder, LIFE Innoversity (line 41, unchanged)",
+    "Chief Business Methodologist, Asian Business Consulting · Founder, LIFE University (line 29, unchanged)"
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "The fact-band caption now added under MILESTONES duplicates language already present in the 'Recognition & funding' section further down the same page; confirm the owner is comfortable with the boundary sentence appearing twice on the page (once per CMI mention) versus consolidating the milestone strip to omit the bare CMI tag entirely."
+  ]
+}

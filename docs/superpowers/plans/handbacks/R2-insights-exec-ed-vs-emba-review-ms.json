@@ -1,0 +1,24 @@
+{
+  "unit": "insights-exec-ed-vs-emba",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/insights/executive-education-vs-executive-mba/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "checksRun": [
+    "Boundaries: CMI Certificate of Recognition claim and the 'Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia' sentence sit in the same paragraph (line 85).",
+    "Facts: FACTS.durationMonths/.trainingDays/.liveSessions used via constants in the comparison table and body; CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS and COMPARISON_SCOPE_MS used correctly.",
+    "Naming: 'Executive MBA' kept in English; 'kepimpinan' spelling consistent.",
+    "Watchlist scan: zero hits on selalunya/biasanya/kebanyakan/laluan pilihan/Tempah/kamu/awak/-lah/nak/tak. 'dan ke atas' calque and 'dalam bentuk bertulis' were not present.",
+    "Owner exception verified: 'dianugerahkan dan disokong oleh CMI' kept verbatim per spec section 14.1 override, not flagged as an error.",
+    "Chartered Manager described as a separate, optional, CMI-decided route.",
+    "H1 'Pendidikan eksekutif atau Executive MBA: pilih ikut tugasnya.' = 8 words, within limit.",
+    "node scripts/content-clarity-audit.mjs and npm run typecheck: clean, zero warnings on this file."
+  ],
+  "fixesApplied": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "Writer asks whether ARTICLE_REVIEWED/PUBLISHED date (2026-08-21, a local const on this page) should bump since this counts as a substantive rewrite — no Malay-specific reason to override either way; forwarding the writer's question."
+  ]
+}

@@ -24,8 +24,7 @@ export default function CommerceHeroMedia({
         fill
         priority
         fetchPriority="high"
-        quality={82}
-        sizes="(max-width: 1080px) 100vw, 46vw"
+        unoptimized
       />
       <div className="commerce-hero-shade" />
 

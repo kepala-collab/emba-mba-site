@@ -1,0 +1,29 @@
+{
+  "unit": "insights-index",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/insights/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/insights/page.tsx",
+      "line": 17,
+      "problem": "Article and index titles for the compare-programmes piece were not identical, as required. Index card/JSON-LD title read 'Cara Membandingkan Program Pengurusan Profesional' while the article's own metadata title (src/app/(ms)/ms/insights/advancement-question/page.tsx:7) reads 'Cara Membandingkan Program Kepimpinan'. English source (both en files) uses the same title in both places ('How to Compare Leadership Programmes'), so the mismatch is a Malay-only drift.",
+      "fix": "Changed the index card title (which also feeds the ItemList JSON-LD name via the ARTICLES map) to 'Cara Membandingkan Program Kepimpinan', matching the article's own title exactly."
+    }
+  ],
+  "checksRun": [
+    "Watchlist scan: zero hits on selalunya/biasanya/kebanyakan, laluan pilihan, Tempah, kamu/awak/-lah/nak/tak.",
+    "H1 word count: 'Kaedah yang anda amalkan pada keputusan anda sendiri' = 8 words, within the 9-word limit.",
+    "No facts/fees/dates on this page, so no fact-fidelity or boundary checks apply.",
+    "node scripts/content-clarity-audit.mjs and npm run typecheck: both clean after the fix, zero warnings on this file."
+  ],
+  "fixesApplied": [
+    "src/app/(ms)/ms/insights/page.tsx:17 — title corrected to match the advancement-question article's own title."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "The equivalent Chinese-language mismatch also exists (index '如何比较专业管理课程' vs article '如何比较领导力课程' at src/app/(zh)/zh/insights/page.tsx:17 and src/app/(zh)/zh/insights/advancement-question/page.tsx:7). Out of scope for this Malay review — flagging for the Chinese reviewer/owner since it is the same bug pattern."
+  ]
+}

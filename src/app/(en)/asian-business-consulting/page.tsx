@@ -5,15 +5,15 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import YouTubeFilm from "@/components/site/YouTubeFilm";
-import { OPERATOR, PROGRAMME_PROOF, SITE } from "@/lib/content";
+import { ABC_PROFILE, CERTIFICATE_POSITIONING, CTA_LABELS, OPERATOR, PROGRAMME_PROOF, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
 
 export const metadata = withSeo("/asian-business-consulting", {
-  title: "Asian Business Consulting — the firm behind the programme",
+  title: "Asian Business Consulting — the firm that designed the programme",
   description:
-    "Asian Business Consulting (ABC) designed and delivers the Future Ready Executive MBA. Meet the Malaysian training firm, its leaders and partners.",
+    "Asian Business Consulting (ABC) designed and delivers the Future Ready Executive MBA. Meet the Malaysian training firm and the people who lead it.",
 });
 
 const MILESTONES = [
@@ -59,7 +59,7 @@ const abcSchema = {
   foundingDate: "2020",
   areaServed: "MY",
   description:
-    "A Malaysian management consulting, corporate training and executive learning firm. ABC designed and delivers the Executive MBA on Future Ready Business Leadership. The programme is awarded and endorsed by CMI.",
+    `A Malaysian management consulting, corporate training and executive learning firm. ABC designed and delivers the Executive MBA on Future Ready Business Leadership, a non-academic professional development programme awarded and endorsed by CMI. It is not an MQA-accredited academic degree or a regulated qualification. ${CERTIFICATE_POSITIONING.professionalRelevance}`,
   founder: { "@type": "Person", name: "Dr. Xavier Johnson" },
   member: LEADERS.map((leader) => ({ "@type": "Person", name: leader.n, jobTitle: leader.role })),
   sameAs: [ABC_URL],
@@ -78,12 +78,12 @@ export default function AsianBusinessConsultingPage() {
           </Reveal>
           <Reveal delay={40}>
             <h1 className="sec-h" style={{ maxWidth: "20ch" }}>
-              The firm behind the <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Future Ready Executive MBA</em>.
+              The firm that designed the <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Future Ready Executive MBA</em>.
             </h1>
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "64ch" }}>
-              Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the six-month Executive MBA on Future Ready Business Leadership over almost three years of development with CMI and delivers it today as a CMI Recognised centre.
+              Asian Business Consulting (ABC), a Malaysian management consulting, corporate training and executive learning firm registered in 2020, has taken {PROGRAMME_PROOF.graduates} graduates through the programme across {PROGRAMME_PROOF.cohorts} cohorts. {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance}
             </p>
           </Reveal>
           <Reveal delay={110}>
@@ -103,6 +103,9 @@ export default function AsianBusinessConsultingPage() {
             <div key={m.n}><strong>{m.n}</strong><span>{m.s}</span></div>
           ))}
         </div>
+        <p className="fine wrap" style={{ maxWidth: "72ch", marginTop: 14 }}>
+          It is a non-academic programme, not an MQA-accredited academic degree or a regulated qualification. {CERTIFICATE_POSITIONING.professionalRelevance}
+        </p>
       </section>
 
       <section className="section">
@@ -133,7 +136,7 @@ export default function AsianBusinessConsultingPage() {
         </div>
       </section>
 
-      <section id="abc-film" className="section" style={{ background: "var(--bg-2)" }}>
+      <section id="abc-film" className="section section--alt">
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">The inaugural graduation · August 2026</span></div>
@@ -155,12 +158,12 @@ export default function AsianBusinessConsultingPage() {
         <div className="wrap">
           <Reveal>
             <div className="eyebrow"><span className="l" /><span className="mono sec-k">Recognition &amp; funding</span></div>
-            <h2 className="sec-h">The bodies behind the delivery.</h2>
+            <h2 className="sec-h">Who recognises and funds the programme.</h2>
           </Reveal>
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Chartered Management Institute (UK)</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI is the external quality body. The programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre. It is a non-academic programme, not an MQA-accredited academic degree or a regulated qualification. {CERTIFICATE_POSITIONING.professionalRelevance}</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>Verify on CMI&rsquo;s register <span aria-hidden="true">↗</span></a>
             </div>
             <div>
@@ -175,13 +178,13 @@ export default function AsianBusinessConsultingPage() {
             </div>
           </div>
           <figure className="partnership-seal">
-            <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting and Right Dots Resources in collaboration — strategic partnership" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
-            <figcaption className="mono sec-k">Asian Business Consulting × {OPERATOR.name} · in collaboration</figcaption>
+            <Image src="/brand/partnership-seal.webp" alt="Asian Business Consulting and Right Dots Resources" width={1000} height={1000} sizes="(max-width: 640px) 68vw, 320px" />
+            <figcaption className="mono sec-k">Asian Business Consulting × {OPERATOR.name}</figcaption>
           </figure>
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="Talk to the programme team." sub={`Ask about the Future Ready Executive MBA, or visit ${ABC_URL.replace("https://www.", "")} to learn more about Asian Business Consulting.`} />
+      <CtaSection programme="Executive MBA" heading="See exactly what is awarded, what is separate and who decides." sub={`${CTA_LABELS.company}, or visit ${ABC_URL.replace("https://www.", "")} to learn more about Asian Business Consulting.`} />
     </>
   );
 }

@@ -2,15 +2,15 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
-import { CTA_LABELS, FACTS } from "@/lib/content";
-import { FAQS_ZH, REFUND_TERMS_ZH } from "@/lib/content-zh";
+import { CTA_LABELS, FACTS, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH, FAQS_ZH, REFUND_TERMS_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/executive-mba-vs-mba", {
-  title: "Executive MBA 与学术 MBA，差别在哪？",
+  title: "Executive MBA 还是学术 MBA",
   description:
-    "从修读形式、评估方式、资格性质到时间投入，逐项比较 Future Ready 专业 Executive MBA 与学术 MBA。",
+    "按任务选择：学术 MBA 用于攻读学术学位；Future Ready Executive MBA 用于把一项真实业务课题带到经导师审阅的行动方案。",
 });
 
 const COMPARISON_SCOPE_ZH =
@@ -18,7 +18,7 @@ const COMPARISON_SCOPE_ZH =
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS_ZH.filter(([q]) =>
-  ["这是 MQA 认证的学位吗？", "课程如何安排？"].includes(q)
+  ["这是 MQA 认证的学位吗？", "全职工作期间可以兼顾课程吗？", "退款条款是什么？"].includes(q)
 );
 
 const faqLd = {
@@ -40,19 +40,19 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA vs 学术 MBA · 明确界定的比较</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA 还是学术 MBA · 明确界定的比较</span></div>
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Executive MBA 还是学术 MBA，看您要的是什么结果。
+              Executive MBA 还是学术 MBA，按任务选
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              从资格性质、评估方式、修读形式、所需时间到已公布费用，把两条路线逐项摆在一起看。{" "}
+              这两条路线为不同任务而设。目标需要一纸学术学位，学术 MBA 就是对的路线；{" "}
               <Link href="/zh/executive-mba" className="acc">Future Ready Executive MBA</Link>{" "}
-              是由 CMI 颁授并背书的专业课程，并非 MQA 认证的学术学位或受监管资格。
-              目标需要一纸学术学位，就选学术 MBA；想在不离开岗位的前提下把管理能力真正落地，就选这门课程。
+              则专为把您自身负责的一项真实业务课题、在 {FACTS.durationMonths} 个月内带到经导师审阅的书面行动方案而设，全程不必离开原有职务。
+              {PROGRAMME_POSITIONING_ZH}{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -65,10 +65,10 @@ export default function ExecutiveMbaVsMbaPage() {
       </section>
 
       {/* COMPARISON TABLE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">并排比较</span></div></Reveal>
-          <Reveal><h2 className="sec-h">八个维度，一页看清。</h2></Reveal>
+          <Reveal><h2 className="sec-h">八项条款，并排界定。</h2></Reveal>
           <Reveal className="mt-s">
             <ProgrammeComparison lang="zh" />
           </Reveal>
@@ -82,58 +82,59 @@ export default function ExecutiveMbaVsMbaPage() {
       {/* WHO SHOULD CHOOSE WHICH */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">哪类人选哪条路线</span></div></Reveal>
-          <Reveal><h2 className="sec-h">从您需要的资格与学习方式倒推选择。</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">为不同任务而设</span></div></Reveal>
+          <Reveal><h2 className="sec-h">先说清任务，再选为它而设的路线。</h2></Reveal>
           <div
             className="choose-grid mt-m"
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}
           >
             <Reveal>
               <div className="card" style={{ height: "100%" }}>
-                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>这些情况，请选学术 MBA</div>
+                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>学术 MBA 专为…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12 }}>
-                  下一步需要一纸学术或受监管的学位。
+                  通过学术研习，攻读一纸学术学位。
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
                   若您的目标离不开 MQA 认证或学术资格——比如执照机构的硬性要求、攻读博士的升学路径、走学术这条路，或行业明文规定的资格门槛——学术
-                  MBA 才是对的选择。报读前，不妨把各院校公布的入学要求、课程大纲、修读年期、学费与认可情况一一比对。
+                  MBA 便是对的路线。报读前，不妨把各院校公布的入学要求、课程大纲、修读年期、学费与认可情况一一比对。
                 </p>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <div className="card" style={{ height: "100%", border: "1px solid var(--line-2)", background: "linear-gradient(180deg,var(--surface-2),var(--surface))" }}>
-                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>这些情况，请选这门 Executive MBA</div>
+                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>这门 Executive MBA 专为…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "var(--ink)" }}>
-                  您要的是带企业应用项目、又能兼顾工作的专业课程。
+                  把一项真实业务课题带到团队可执行的方案。
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  这条路线为肩负战略或全局业务责任的学员而设：一套结构化的决策框架、一个企业应用项目，外加一张 CMI
-                  课程认可证书。{FACTS.durationMonths} 个月里，每月只占用一个排定好的周末。
+                  这条路线为肩负战略或全局业务责任的学员而设：您自身负责的一项课题，从界定问题推进为有决策、行动、责任人与衡量指标的书面行动方案，
+                  在 {FACTS.trainingDays} 个培训日、{FACTS.liveSessions} 次指定研习课内完成，并配有一对一辅导和一个企业应用项目。
                 </p>
               </div>
             </Reveal>
           </div>
         </div>
-        <style>{`@media(max-width:760px){.choose-grid{grid-template-columns:1fr!important}}`}</style>
+        
       </section>
 
       {/* IS IT WORTH IT */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA 值得吗？</span></div></Reveal>
-          <Reveal><h2 className="sec-h">先想清楚要什么结果，再谈值不值。</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">费用与条款，书面为凭</span></div></Reveal>
+          <Reveal><h2 className="sec-h">先说清任务，再看条款。</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              别急着比价格，先弄清楚自己要的是什么。下一步需要学术学位，就选 MQA 认证的学术 MBA；
-              若您要的是 {FACTS.durationMonths} 个月的课程、一个企业应用项目、对照 CMI Professional Standard 的专业认可，
-              而且希望修读期间照常工作，那就选这门课程。2026 年马来西亚已公布的标准费用为 {FACTS.priceStd}。
-              奖学金名额有限，符合资格的马来西亚申请者须经择优评估与书面批准，方可获{" "}
-              <Link href="/zh/fees" className="acc">{FACTS.scholarshipProvider} 奖学金资格</Link>。
+              比价格之前，先说清您要完成的任务。下一步需要学术学位，MQA 认证的学术 MBA 便是对的路线；
+              这门课程则专为 {FACTS.durationMonths} 个月内的一项真实业务课题而设：{FACTS.trainingDays} 个培训日、
+              {FACTS.liveSessions} 次指定研习课、一个企业应用项目及导师审阅，全程不必离开原有职务。
+              已公布的标准费用为 {FACTS.priceStd}。奖学金名额有限，符合资格的马来西亚申请者须经个别评估与书面批准，
+              方可获{" "}
+              <Link href="/zh/fees" className="acc">{FACTS.scholarshipProvider} 奖学金资格</Link>；奖学金并非自动授予。
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub mt-s">
-              课程不保证加薪、晋升、就业或任何商业成果。学员边工作边学习，把框架用在自己的企业应用项目上。{REFUND_TERMS_ZH}
+              {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}学员在六个月内照常工作，把框架用在自己的企业应用项目上。{REFUND_TERMS_ZH}
             </p>
           </Reveal>
           <Reveal className="center mt-m">
@@ -164,7 +165,7 @@ export default function ExecutiveMbaVsMbaPage() {
         </div>
       </section>
 
-      <CtaSection lang="zh" programme="Executive MBA" heading="觉得合适了？聊聊适合您的班次。" sub="通话、线上会议、面谈或电邮，方式由您选。课程团队会解答关于适配度、日期、费用、认可，以及由雇主主导的 HRD Corp 资助等问题；咨询不构成任何报名或付款承诺。" />
+      <CtaSection lang="zh" programme="Executive MBA" heading="觉得合适了？聊聊适合您的一届。" sub="通话、线上会议、面谈或电邮，方式由您选。课程团队会解答关于适配度、日期、费用、认可，以及由雇主主导的 HRD Corp 资助等问题；咨询不构成任何报名或付款承诺。" />
     </>
   );
 }

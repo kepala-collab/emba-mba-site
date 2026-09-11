@@ -1,18 +1,18 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import { FACTS } from "@/lib/content";
+import { FACTS, PROGRAMME_FIT_CHECK, PROGRAMME_YEAR } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/resources", {
-  title: "Executive MBA Programme Guides",
-  description: "Practical guides for reviewing programme fit, structure, recognition, fees, scholarship and the employer-led HRD Corp process.",
+  title: "Programme Guides and Fit Check",
+  description: "Review programme fit, structure, the exact fee, the scholarship terms, CMI recognition and the employer-led HRD Corp process before you enquire.",
 });
 
 const DOSSIERS = [
-  ["01", "Working Manager Progression Check", "Answer four private questions to identify which capability, schedule, fee and recognition details matter to your next step. No score or data submission is required for the result.", "/diagnostic", "Start the check"],
-  ["02", "Working Manager’s 2026 Progression Guide", "Read or print the programme fit, applied outcome, six-month structure, exact Malaysian fee and CMI recognition.", "/resources/advancement-brief", "Open the guide"],
+  ["01", PROGRAMME_FIT_CHECK.en, "Answer four private questions to identify which capability, schedule, fee and recognition details matter to your next step. No score or data submission is required for the result.", "/diagnostic", "Start the check"],
+  ["02", `The ${PROGRAMME_YEAR} programme guide`, "Read or print the programme structure, the applied business project, the exact Malaysian fee and what the CMI certificate does not cover.", "/resources/advancement-brief", "Open the guide"],
   ["03", "How to Compare Leadership Programmes", "A short guide to comparing capability, application, schedule, recognition and fees.", "/insights/advancement-question", "Read the guide"],
-  ["04", "Chartered Manager Malaysia", "Understand CMI's current routes, eligibility, assessment costs, fCMgr, CMgr MCMI and the Malaysia professional network.", "/chartered-manager-malaysia", "Understand the pathway"],
+  ["04", "Chartered Manager Malaysia", "Understand CMI's current routes, eligibility, assessment costs, fCMgr, CMgr MCMI and the Malaysia professional network.", "/chartered-manager-malaysia", "See the separate CMI route"],
 ] as const;
 
 export default function ResourcesPage() {
@@ -50,8 +50,8 @@ export default function ResourcesPage() {
               <ol>
                 <li>Define the business decision, capability gap or transformation question.</li>
                 <li>Identify how the applied project can address that context.</li>
-                <li>Review the {FACTS.trainingDays} training days and {FACTS.liveSessions}-session certificate-phase schedule.</li>
-                <li>State the {FACTS.priceStd} standard fee and explain that scholarships are limited to eligible Malaysian applicants after assessment and written approval; any award and resulting participant fee are confirmed individually.</li>
+                <li>Review the {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions.</li>
+                <li>State the {FACTS.priceStd} standard fee. {FACTS.scholarshipEligibility} The scholarship is never automatic.</li>
                 <li>Ask the employer to determine whether it will pursue HRD Corp funding. The employer submits before training; HRD Corp decides eligibility and the approved amount.</li>
               </ol>
             </article>

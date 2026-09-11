@@ -1,0 +1,61 @@
+{
+  "unit": "chartered-manager-malaysia",
+  "language": "zh",
+  "filesReviewed": [
+    "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+      "line": 36,
+      "problem": "H1 '看得见的成果，拿得到的认可。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+      "line": 44,
+      "problem": "H2 '对标 CMI Professional Standard，由您自己的企业应用项目佐证。' contained 您 in a headline (banned), was far over the 14-character cap, and had a trailing full stop.",
+      "fix": "Rewrote as '对标 CMI 标准，佐证来自企业项目' (no pronoun, no trailing punctuation, within cap)."
+    },
+    {
+      "file": "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+      "line": 54,
+      "problem": "H2 '带一个真实决定进来，带一份能交给董事会的依据出去。' was 23 characters (far over the 14-character cap) and had a trailing full stop.",
+      "fix": "Rewrote as '带来决定，带出董事会依据' (11 chars, no trailing punctuation), keeping the board-evidence meaning."
+    },
+    {
+      "file": "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+      "line": 58,
+      "problem": "H2 '先弄清楚谁决定什么，再做决定。' had a trailing full stop (length, 13 chars, was within cap).",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+      "line": 59,
+      "problem": "CtaSection heading prop '聊聊哪条路线更契合您的目的。' contained 您 in a headline and had a trailing full stop.",
+      "fix": "Rewrote as '哪条路线更适合，聊一聊' (no pronoun, no trailing punctuation)."
+    },
+    {
+      "file": "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+      "line": 48,
+      "problem": "h3 'Chartered Manager：一条独立路线' used a colon for a non-attribution title, against zh-register.md rule 27 (colon reserved for attribution, e.g. '王培荣：…').",
+      "fix": "Changed the colon to an em-dash pair: 'Chartered Manager——一条独立路线'."
+    }
+  ],
+  "checksPassed": [
+    "Owner decision 1 rendering '由 CMI 颁发并认可' present verbatim in the eyebrow — never 背书.",
+    "认可 used correctly for CMI throughout (获颁 ... CMI 认可证书); 认证 reserved for MQA ('也不是 MQA 认证的学术学位').",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (the no-guarantee sentence) renders in the same viewport as every CMI/certificate mention: hero, the 'value' section head, the outcome-grid card, and the preparation section head — satisfies governance checklist item 4.",
+    "Chartered Manager consistently framed as a separate, optional CMI route decided by CMI, not a next stage; CHARTERED_MANAGER_BOUNDARY_ZH matches the required wording pattern.",
+    "No sentence-initial 它/这.",
+    "No cleft sentences.",
+    "No 免费 anywhere.",
+    "届/班 not applicable on this page (no cohort references); no scholarship amount/discount language (page does not discuss the scholarship).",
+    "Pangu spacing intact around Latin tokens (CMI, MBA, Professional Standard)."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "The writer's hand-back flagged that STAGES[2].d (the Chartered Manager boundary sentence) has no hoisted content-zh.ts mirror and was composed locally as CHARTERED_MANAGER_BOUNDARY_ZH in this page file — confirming this reviewer independently checked the wording against the zh-register-audit high-confidence items and found no violation, but the hoisting-to-a-shared-constant suggestion from the writer stands for a later pass."
+  ]
+}

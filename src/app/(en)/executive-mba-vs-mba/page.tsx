@@ -2,19 +2,19 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ProgrammeComparison from "@/components/site/ProgrammeComparison";
-import { COMPARISON_SCOPE, CTA_LABELS, FACTS, FAQS, REFUND_TERMS } from "@/lib/content";
+import { ABC_PROFILE, CERTIFICATE_POSITIONING, COMPARISON_SCOPE, CTA_LABELS, FACTS, FAQS, REFUND_TERMS } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/executive-mba-vs-mba", {
-  title: "Executive MBA vs Academic MBA",
+  title: "Executive MBA or Academic MBA",
   description:
-    "Compare the Future Ready professional Executive MBA with an academic MBA across format, assessment, credential and time commitment.",
+    "Choose by the job: an academic MBA for an academic degree, or the Future Ready Executive MBA to work one live business issue to a faculty-reviewed action plan.",
 });
 
 // FAQs surfaced on this page (subset used for both the visible list and JSON-LD)
 const PAGE_FAQS = FAQS.filter((f) =>
-  ["Is it MQA-recognised?", "How is the programme structured?", "What are the refund terms?"].includes(f.q)
+  ["Is it MQA-recognised?", "Can I carry it alongside the job?", "What are the refund terms?"].includes(f.q)
 );
 
 const faqLd = {
@@ -36,21 +36,21 @@ export default function ExecutiveMbaVsMbaPage() {
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA vs academic MBA · defined comparison</span></div>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Executive MBA or academic MBA · defined comparison</span></div>
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Executive MBA vs an academic MBA — choose by the outcome you require.
+              Executive MBA or academic MBA: choose by the job.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              Compare the routes by credential, assessment, format, time and published price. The{" "}
-              <Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link> is a
-              professional programme awarded and endorsed by CMI; it is not an MQA-accredited academic
-              degree or a regulated qualification. Choose an academic MBA when your objective requires
-              an academic degree. Choose this programme when your objective is applied management
-              development while continuing to work.
+              These routes are built for different jobs. An academic MBA is the right route when your
+              purpose needs an academic degree. The{" "}
+              <Link href="/executive-mba" className="acc">Future Ready Executive MBA</Link> is built for
+              working one live business issue within your own responsibility to a written action plan
+              reviewed by faculty, across {FACTS.durationLong}, while you stay in your role.{" "}
+              {ABC_PROFILE.programmePositioning} {CERTIFICATE_POSITIONING.professionalRelevance}
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -63,10 +63,10 @@ export default function ExecutiveMbaVsMbaPage() {
       </section>
 
       {/* COMPARISON TABLE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Side by side</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Eight attributes compared on the same page.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Eight terms, defined side by side.</h2></Reveal>
           <Reveal className="mt-s">
             <ProgrammeComparison />
           </Reveal>
@@ -80,64 +80,66 @@ export default function ExecutiveMbaVsMbaPage() {
       {/* WHO SHOULD CHOOSE WHICH */}
       <section className="section">
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Who should choose which</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Choose according to the credential and learning format required.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Built for a different job</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Name the job, then choose the route built for it.</h2></Reveal>
           <div
             className="choose-grid mt-m"
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}
           >
             <Reveal>
               <div className="card" style={{ height: "100%" }}>
-                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>Choose an academic MBA if…</div>
+                <div className="mono sec-k" style={{ fontSize: ".72rem", marginBottom: 12 }}>An academic MBA is built for…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12 }}>
-                  Your next step requires an academic or regulated degree.
+                  Earning an academic degree through academic study.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  If your goal requires an MQA-accredited or academic qualification — for a licensing
+                  When your purpose needs an MQA-accredited or academic qualification — a licensing
                   body, a PhD pathway, an academic career, or a stated qualification requirement in your sector —
-                  an academic MBA is the correct route. Compare each institution&rsquo;s published entry
+                  an academic MBA is the right route. Compare each institution&rsquo;s published entry
                   requirements, curriculum, duration, fees and recognition before enrolling.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <div className="card" style={{ height: "100%", border: "1px solid var(--line-2)", background: "linear-gradient(180deg,var(--surface-2),var(--surface))" }}>
-                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>Choose this Executive MBA if…</div>
+                <div className="mono sec-k acc" style={{ fontSize: ".72rem", marginBottom: 12 }}>This Executive MBA is built for…</div>
                 <h3 style={{ fontFamily: "var(--font-fraunces)", fontSize: "1.35rem", lineHeight: 1.15, marginBottom: 12, color: "var(--ink)" }}>
-                  You require a professional programme with applied business work and a part-time format.
+                  Working one live business issue to a plan your team can act on.
                 </h3>
                 <p style={{ color: "var(--ink-2)", fontSize: ".97rem" }}>
-                  This route is designed for participants with strategic or business-wide responsibility who want
-                  structured decision frameworks, an applied project and a CMI Certificate of Recognition. The
-                  {FACTS.durationMonths}-month programme uses {FACTS.liveSessions} scheduled weekends across the programme.
+                  This route is built for participants with strategic or business-wide responsibility: a
+                  live issue within your own responsibility, taken from problem to a written action plan
+                  with decisions, actions, owners and measures, in {FACTS.trainingDays} training days
+                  across {FACTS.liveSessions} scheduled sessions, with one-to-one coaching and an applied
+                  business project.
                 </p>
               </div>
             </Reveal>
           </div>
         </div>
-        <style>{`@media(max-width:760px){.choose-grid{grid-template-columns:1fr!important}}`}</style>
+        
       </section>
 
       {/* IS IT WORTH IT */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Is an executive MBA worth it?</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Choose according to the result you require.</h2></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Fee and terms, in writing</span></div></Reveal>
+          <Reveal><h2 className="sec-h">Name the job first, then read the terms.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              Define the result you need before comparing price. Choose an MQA-accredited academic MBA
-              when your next step requires an academic degree. Choose this programme when you need a
-              six-month programme, an applied business project, CMI recognition against its
-              Professional Standard and continued employment during study. The published 2026 Malaysian
-              standard fee is {FACTS.priceStd}. Eligible Malaysian applicants may receive the{" "}
-              <Link href="/fees" className="acc">{FACTS.scholarshipProvider} scholarship eligibility</Link>, subject to limited availability, a selective assessment and written approval.
+              Name your job before you compare the fee. An MQA-accredited academic MBA is the right
+              route when your next step requires an academic degree. This programme is built for
+              {" "}{FACTS.durationLong} of work on one live business issue: {FACTS.trainingDays} training
+              days across {FACTS.liveSessions} scheduled sessions, an applied business project and
+              faculty review, while you stay in your role. The published standard fee is {FACTS.priceStd}.
+              {" "}{FACTS.scholarshipEligibility} The scholarship is never automatic.{" "}
+              <Link href="/fees" className="acc">See the fee and the {FACTS.scholarshipProvider} scholarship terms</Link>.
             </p>
           </Reveal>
           <Reveal>
             <p className="sec-sub mt-s">
-              The programme does not guarantee a raise, promotion, employment or business result.
-              Participants continue working during the programme and apply the frameworks to their own
-              business project. {REFUND_TERMS.description}
+              {CERTIFICATE_POSITIONING.professionalRelevance} Participants stay in their role during the
+              six months and apply the frameworks to their own business project. {REFUND_TERMS.description}
             </p>
           </Reveal>
           <Reveal className="center mt-m">

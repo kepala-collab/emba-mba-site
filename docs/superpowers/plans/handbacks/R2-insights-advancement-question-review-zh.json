@@ -1,0 +1,36 @@
+{
+  "unit": "insights-advancement-question",
+  "language": "zh",
+  "filesReviewed": ["src/app/(zh)/zh/insights/advancement-question/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/insights/advancement-question/page.tsx",
+      "line": 8,
+      "problem": "Meta description used sentence-internal '它' standing in for '框架' (the just-named noun) immediately after a colon, the recognisable translationese pattern the register guide bans (stand-in pronoun for an abstract subject).",
+      "fix": "Rewrote to avoid the pronoun: '比较领导力课程的框架：先看服务于哪项决策，再看怎么教、认可的边界在哪里，以及全部费用是多少。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/advancement-question/page.tsx",
+      "line": 20,
+      "problem": "Quoted phrase used half-width ASCII double quotes (\"...\") instead of the house full-width “ ” marks, a typography violation (zh-register.md rule 22).",
+      "fix": "Replaced with full-width “ ” quotation marks."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/advancement-question/page.tsx",
+      "line": 19,
+      "problem": "Body sentence used the hedge word '往往' ('often/frequently') before an unsupported generalisation, an undefined-norm violation.",
+      "fix": "Removed '往往' from the sentence."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/advancement-question/page.tsx",
+      "line": 24,
+      "problem": "H2 '确认时间和费用您扛得起' contained the pronoun 您 in a headline, banned under the no-pronoun-in-H1/H2 rule.",
+      "fix": "Reworded to '确认时间和费用扛得起', removing the pronoun."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "The compare-programmes title is now unified to '如何比较领导力课程' across this article's metadata title, the insights-index card and the resources card (see companion review handbacks for those two units) — confirm this is the preferred wording versus '如何比较专业管理课程' or '如何比较管理课程', which were the two other variants found in the repository before this review."
+  ]
+}

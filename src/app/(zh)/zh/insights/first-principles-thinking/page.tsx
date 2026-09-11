@@ -4,12 +4,13 @@ import CtaSection from "@/components/site/CtaSection";
 import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/components/site/ArticleAttribution";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/insights/first-principles-thinking", {
-  title: "商业领导者的第一性原理思维",
+  title: "从沿袭的答案，到可验证的决策",
   description:
-    "写给商业战略的第一性原理思维实战指南：拆穿假设、看清根本事实，再从事实出发重建更好的方案。",
+    "一套用来检验商业决策的方法：先分清哪些是经过验证的事实、哪些只是被沿袭下来的答案，再从事实出发重建方案。",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,18 +21,18 @@ export const metadata = withSeo("/zh/insights/first-principles-thinking", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "商业领导者的第一性原理思维",
+  headline: "从沿袭的答案，到可验证的决策",
   mainEntityOfPage: "https://futurereadymba.com/zh/insights/first-principles-thinking",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "zh-Hans-MY",
   description:
-    "拆穿假设、看清根本事实，再从第一性原理出发重建更好战略方案的实战指南。",
+    "一套实战方法：先分清商业决策是站得住脚的事实，还是沿袭下来的答案，再从您真正确知的事实出发重建方案。",
   author: { "@type": "Organization", "@id": EDITORIAL_TEAM_ID, name: "Asian Business Consulting Editorial Team" },
   publisher: { "@type": "Organization", "@id": PROVIDER_ID, name: "Asian Business Consulting" },
   articleSection: "Insights",
-  about: "面向商业战略的第一性原理思维",
+  about: "把第一性原理思维作为检验沿袭商业决策的方法",
 };
 
 export default function FirstPrinciplesThinkingPage() {
@@ -57,13 +58,14 @@ export default function FirstPrinciplesThinkingPage() {
                 maxWidth: "16ch",
               }}
             >
-              商业领导者的第一性原理思维
+              从沿袭的答案，到可验证的决策
             </h1>
             <ArticleAttribution lang="zh" />
             <p className="sec-sub" style={{ maxWidth: "62ch" }}>
-              第一性原理思维，是先把经得起验证的事实从沿袭下来的惯例里剥离出来，
-              再单靠这些事实来做判断。本文讲清三件事：它究竟是什么、
-              领导者为何会不知不觉偏离它，以及一套下周一就能上手的方法。
+              一次定价、一次冻结招聘、一个自制还是外购的决定——它常常一来
+              就已经披上“向来都是这么办”的外衣。第一性原理思维，就是用来检验
+              这个答案是否仍站得住脚，还是只是从别人的问题里借来的。这些都不
+              是天赋；是练出来的，方法就在下面。
             </p>
           </Reveal>
 
@@ -73,21 +75,21 @@ export default function FirstPrinciplesThinkingPage() {
               所谓第一性原理，是再也无法往下拆的根本事实——
               亚里士多德说，那是我们认识一件事物的最初依据。
               第一性原理思维，就是把问题一层层拆到这些根本事实，再从事实往上重新推理，
-              而不是照搬别人做过的事。它不肯直接沿用任何一个还没针对眼前问题验证过的结论。
+              而不是照搬别人做过的事。此法不肯直接沿用任何一个还没针对眼前问题验证过的结论。
             </p>
             <p>
               类比式推理的逻辑是：<strong>这跟那件事很像，那件事当年管用，所以我们照做。</strong>{" "}
-              可它在搬来旧解法的同时，也把旧解法背后的一整套假设一并搬了过来。
+              可这套逻辑在搬来旧解法的同时，也把旧解法背后的一整套假设一并搬了过来。
               第一性原理则不同：任何一项被搬来的假设，都要先放到当下的情境里逐条检验，才谈得上接受。
             </p>
 
-            <h2>领导者为何总是习惯照搬</h2>
+            <h2>领导者为何总是找最近的参照物</h2>
             <p>
               “最佳实践”和同业对标听起来很稳妥。它们在董事会上好交代，
               省去从零琢磨的力气，还附送一份“别人早就这么干”的安全感。
-              问题恰恰出在这里：如果您的战略只是把别人的答案拼在一起，
+              问题恰恰出在这里：如果战略只是把别人的答案拼在一起，
               那么最好的结果，也不过是比对手快一点抵达同一个终点。
-              类比只会把您困在小修小补里——它擅长把一场既定的比赛打得更漂亮，
+              类比只会把结果困在小修小补里——它擅长把一场既定的比赛打得更漂亮，
               却改变不了比赛本身。
             </p>
 
@@ -131,7 +133,7 @@ export default function FirstPrinciplesThinkingPage() {
               再逐条质疑：这道工序还在，是因为一个老流程要求它，而不是客户真在乎它；
               那笔间接费用被一刀切地摊给了消耗天差地别的客户；
               这项投入的定价，来自一家几年前选定、此后再没回头审视过的供应商。
-              当您从真实投入重新搭起成本结构，往往会发现，
+              当您从真实投入重新搭起成本结构，会发现，
               所谓“行业利润率”只是一条大家默认的假设，而非动不了的天花板——
               于是一份完全不同的报价，便能真正落地。
             </p>
@@ -150,14 +152,10 @@ export default function FirstPrinciplesThinkingPage() {
 
             <h2>这是一项练得出来的能力</h2>
             <p>
-              说句让人踏实的话：这些都不靠天赋。从根本事实出发去推理，
-              是一项靠方法和练习就能越练越精的能力，
-              就跟财务判断力、谈判能力一样。它正是{" "}
-              <Link href="/zh/executive-mba">Future Ready Executive MBA</Link>{" "}
-              所锤炼的七项核心思维之一，通过课程的{" "}
-              <Link href="/zh/how-it-works">F.A.S.T. 方法</Link>{" "}
-              加以训练——让“拆解问题、从第一性原理重建战略”
-              在您面对真实决策时成为本能反应，而不只是一个听着不错的概念。
+              这些都不靠天赋。从根本事实出发去推理，
+              是一项靠方法和练习就能越练越精的能力，跟财务判断力、谈判能力一样——
+              拆解问题、从经过验证的事实重建答案，用在您眼前这个决定上，
+              直到它成为您做决定的方式，而不只是一个听着不错的方法。
             </p>
 
             <h2>延伸阅读</h2>
@@ -166,8 +164,9 @@ export default function FirstPrinciplesThinkingPage() {
               <li><a href="https://ocw.mit.edu/courses/15-351-managing-innovation-and-entrepreneurship-spring-2008/" target="_blank" rel="noopener noreferrer">MIT 开放课程：创新与创业管理（英文）</a>——如何质疑假设、另辟新路的延伸材料。</li>
             </ul>
             <p>
-              <Link href="/zh/executive-mba" className="btn btn-primary">
-                探索课程详情
+              把它用在您现在正扛着的那项决策上。{" "}
+              <Link className="text-action" href="/zh/diagnostic">
+                打开{PROGRAMME_FIT_CHECK.zh} <span aria-hidden="true">↗</span>
               </Link>
             </p>
           </div>
@@ -177,7 +176,7 @@ export default function FirstPrinciplesThinkingPage() {
       <CtaSection
         lang="zh"
         programme="Executive MBA"
-        heading="学会从第一性原理出发去思考。"
+        heading="用在眼下扛着的决策上"
       />
     </>
   );

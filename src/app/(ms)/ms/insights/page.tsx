@@ -6,48 +6,55 @@ import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/insights", {
-  title: "Wawasan — Rangka Kerja Pemikiran untuk Pemimpin",
+  title: "Wawasan — Kaedah Menaakul untuk Keputusan Anda",
   description:
-    "Pengenalan praktikal kepada pemikiran prinsip pertama, pemikiran sistem dan pemikiran reka bentuk untuk menajamkan keputusan perniagaan.",
+    "Panduan praktikal untuk membandingkan program, serta pemikiran prinsip pertama, pemikiran sistem dan pemikiran reka bentuk, diterapkan pada keputusan yang sudah di tangan anda.",
 });
 
 const ARTICLES = [
   {
     kicker: "Panduan keputusan",
+    title: "Cara Membandingkan Program Kepimpinan",
+    slug: "/ms/insights/advancement-question",
+    blurb:
+      "Cara menimbang keupayaan, aplikasi, bukti, masa dan kejelasan pengiktirafan sebelum anda komited kepada mana-mana program.",
+  },
+  {
+    kicker: "Panduan keputusan",
     title: "Pendidikan Eksekutif vs Executive MBA",
     slug: "/ms/insights/executive-education-vs-executive-mba",
     blurb:
-      "Cara menimbang kredensial, tempoh, penilaian, penggunaan di pejabat dan status akademik sebelum anda pilih program yang betul.",
+      "Cara menimbang kredensial, tempoh, penilaian, penggunaan di tempat kerja dan status akademik sebelum anda pilih program.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Prinsip Pertama untuk Pemimpin Perniagaan",
     slug: "/ms/insights/first-principles-thinking",
     blurb:
-      "Cara membezakan halangan yang betul-betul wujud daripada sekadar andaian, lalu membina pilihan bermula daripada fakta asas.",
+      "Cara membezakan halangan yang betul-betul wujud daripada sekadar andaian, lalu membina pilihan daripada fakta di sebalik sesuatu keputusan.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Sistem untuk Pemimpin",
     slug: "/ms/insights/systems-thinking-for-leaders",
     blurb:
-      "Cara membaca hubungan, gelung maklum balas dan kesan susulan yang tersembunyi sebelum anda buat keputusan.",
+      "Cara meneliti hubungan, gelung maklum balas dan kesan susulan sebelum anda membuat keputusan.",
   },
   {
     kicker: "Pemikiran",
     title: "Pemikiran Reka Bentuk untuk Perniagaan",
     slug: "/ms/insights/design-thinking-for-business",
     blurb:
-      "Cara menyatukan bukti daripada pelanggan, prototaip dan realiti komersial sebelum anda melabur sumber.",
+      "Cara menimbang bukti daripada pelanggan, prototaip dan realiti komersial sebelum anda melabur sumber.",
   },
 ];
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Wawasan — Rangka Kerja Pemikiran untuk Pemimpin",
+  name: "Wawasan — Kaedah Menaakul untuk Keputusan Anda",
   description:
-    "Panduan keputusan program dan pengenalan praktikal kepada pemikiran prinsip pertama, sistem dan reka bentuk untuk menajamkan keputusan perniagaan.",
+    "Panduan perbandingan program serta pengenalan praktikal kepada pemikiran prinsip pertama, sistem dan reka bentuk, diterapkan pada keputusan yang sudah di tangan anda.",
   inLanguage: "ms-MY",
   hasPart: {
     "@type": "ItemList",
@@ -71,11 +78,13 @@ export default function InsightsPage() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">Wawasan · Pemikiran</span>
+              <span className="mono sec-k">Wawasan · Kaedah menaakul</span>
             </div>
-            <h1 className="sec-h">Tajamkan cara anda berfikir</h1>
+            <h1 className="sec-h">Kaedah yang anda amalkan pada keputusan anda sendiri</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              Panduan keputusan dan pengenalan ringkas kepada cara berfikir yang kami guna sepanjang program.
+              Setiap panduan di bawah mengambil satu kaedah menaakul — membandingkan program, meneliti sistem,
+              menguji andaian, melayani pelanggan — lalu menerapkannya pada keputusan yang sudah di tangan anda.
+              Ini bukan bakat semula jadi; ia dibina melalui latihan.
             </p>
           </Reveal>
 
@@ -138,7 +147,7 @@ export default function InsightsPage() {
       <CtaSection
         lang="ms"
         programme="Executive MBA"
-        heading="Terapkan cara berfikir ini pada keputusan perniagaan anda sendiri."
+        heading="Terapkan kaedah ini pada keputusan yang sudah di tangan anda."
         sub="Pilih panggilan telefon, pertemuan dalam talian, jumpa bersemuka atau e-mel. Pasukan program akan menjawab soalan anda tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon oleh majikan. Anda tidak terikat untuk mendaftar atau membayar."
       />
     </>

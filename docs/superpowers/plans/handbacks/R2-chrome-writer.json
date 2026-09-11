@@ -1,0 +1,63 @@
+{
+  "unit": "chrome",
+  "files_changed": [
+    "src/components/site/Header.tsx",
+    "src/components/site/Footer.tsx",
+    "src/components/site/CtaSection.tsx",
+    "src/components/site/RouteBreadcrumbs.tsx",
+    "src/components/site/ProgrammeMarks.tsx",
+    "src/components/site/WhatsAppFloat.tsx"
+  ],
+  "files_reviewed_no_change_needed": [
+    "src/components/site/ArticleAttribution.tsx",
+    "src/components/site/YouTubeFilm.tsx",
+    "src/lib/content.ts",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts"
+  ],
+  "note_on_lib_content_files": "CTA_LABELS, PROGRAMME_FIT_CHECK, ENQUIRY_COMMITMENT (and its MS/ZH mirrors) already carried the owner's 2026-09-10 naming decisions before this unit started, so content.ts/content-ms.ts/content-zh.ts needed no direct edits from chrome; work here was pulling components onto those constants instead of parallel hardcoded strings.",
+  "primary_heading_and_lede_by_file": {
+    "CtaSection.tsx (shared enquiry section, archetype section 8)": {
+      "en": { "heading": "Get the facts for the decision in front of you.", "lede": "Tell the team the decision or business issue you are weighing, and choose a call, online meeting, in-person meeting or email. The programme team will answer questions about suitability, dates, fees, recognition and employer-led HRD Corp funding. An enquiry does not commit you to enrol or pay." },
+      "ms": { "heading": "Dapatkan fakta untuk keputusan yang anda hadapi sekarang.", "lede": "Beritahu pasukan keputusan atau isu perniagaan yang sedang anda pertimbangkan, dan pilih panggilan, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." },
+      "zh": { "heading": "获取眼前这项决定所需的事实。", "lede": "请告诉团队您正在权衡的决定或业务课题，并选择通话、线上会议、面谈或电邮。课程团队将解答关于适合度、日期、费用、认可及雇主主导 HRD Corp 资助的问题。咨询不构成报读或付款承诺。" }
+    },
+    "Header.tsx": {
+      "note": "No H1/lede; most prominent strings are the primary nav CTA. Now renders CTA_LABELS.guide / .zh.guide / .ms.guide directly (e.g. 'Get the 2026 programme guide') instead of the previous shortened 'Get the guide' / 'Get guide' text, per spec section 10 naming decision (one name for the guide on every surface). Diagnostic nav items now render PROGRAMME_FIT_CHECK.zh / .ms instead of mismatched local strings."
+    },
+    "Footer.tsx": {
+      "note": "No H1/lede; contact/footer nav labels for Programme fit check (zh, ms) now render PROGRAMME_FIT_CHECK constant; conversation CTA links (zh, ms) now render CTA_LABELS.zh.conversation / .ms.conversation instead of duplicated literals."
+    },
+    "RouteBreadcrumbs.tsx": {
+      "note": "No H1/lede; the /diagnostic breadcrumb trail across en/zh/ms now sources its label from PROGRAMME_FIT_CHECK instead of locally retyped strings (fixes a zh mismatch: '课程适合度检查' vs the constant's '课程适配检查')."
+    },
+    "ProgrammeMarks.tsx": {
+      "note": "No H1/lede; zh CMI mark label corrected from '(英国) 颁发及认可' to the owner-locked '由 CMI 颁发并认可' per spec section 14 decision 1. English/Malay marks were already correct and left unchanged."
+    },
+    "WhatsAppFloat.tsx": {
+      "note": "No H1/lede; aria-label/link text now reads directly from CTA_LABELS.whatsapp / .zh.whatsapp / .ms.whatsapp (audit-required, never paraphrased) instead of a parallel hardcoded copy that happened to match."
+    }
+  },
+  "constants_used": [
+    "CTA_LABELS (guide, conversation, whatsapp, and their .zh/.ms mirrors)",
+    "PROGRAMME_FIT_CHECK (en/ms/zh)",
+    "ENQUIRY_COMMITMENT",
+    "ENQUIRY_COMMITMENT_MS (content-ms.ts)",
+    "ENQUIRY_COMMITMENT_ZH (content-zh.ts)"
+  ],
+  "typecheck_exit_code": 0,
+  "audit_exit_code": 0,
+  "audit_warnings_in_unit_files": 0,
+  "audit_warnings_total_repo": 81,
+  "audit_note": "All 81 locale-register warnings from the full run are in files outside this unit's scope (FutureCommerceHome.tsx, LeadForm.tsx, IntakeSchedule.tsx, ExecutiveDiagnostic.tsx, page.tsx files, content-ms.ts/content-zh.ts FAQ/intake strings not owned by chrome) — zero warnings trace to Header.tsx, Footer.tsx, CtaSection.tsx, RouteBreadcrumbs.tsx, ProgrammeMarks.tsx or WhatsAppFloat.tsx.",
+  "self_check_results": {
+    "ms_register_section_7": "Pass. No kamu/awak/korang/engkau/nak /tak /-lah; no banned collocations (perbualan program, Pengurus Bekerja, projek aplikasi, laluan lanjutan, program awam, atas talian, emel); RM/date/fact strings untouched (chrome introduces no new fee/date facts); new CtaSection body sentence is under the 25-word body cap (hero cap not applicable, this is not a hero); checklist items are verb+object; ENQUIRY_COMMITMENT_MS rendered verbatim from the constant.",
+    "zh_register_section_7": "Pass after one fix: initial CtaSection zh H2 used '您' which violates 'no pronoun in any H1/H2' (item 10) — removed pronoun from the heading ('获取眼前这项决定所需的事实。'). No banned vocabulary (参与者/渠道/创始人/首席执行官/营销/班次/身份/背书 etc.) in unit files; 您 used in body only; CMI wording follows 认可 (never 认证) per glossary; ENQUIRY_COMMITMENT_ZH rendered verbatim from the constant; pangu spacing preserved around 'HRD Corp'."
+  },
+  "left_for_reviewer": [
+    "ProgrammeMarks.tsx is a small recognition badge, not a hero/first-viewport block; wherever a page renders it alongside a first-viewport CMI/certificate mention, the page author (not this chrome unit) is responsible for placing CERTIFICATE_POSITIONING.professionalRelevance in the same viewport per governance checklist item 4 — chrome only fixed the locked CMI phrase wording itself.",
+    "Header.tsx desktop and mobile-compact CTAs now both render the full 'Get the 2026 programme guide' / zh / ms text instead of a shortened variant, per the section 10 'one name for the guide on every surface' rule. This may need a CSS/layout check on narrow viewports since the mobile-compact button previously used a shorter label for space reasons; that is a layout concern outside this unit's remit (no CSS was touched).",
+    "PROGRAMME_MARKS zh label change ('由 CMI 颁发并认可') should be spot-checked by the zh reviewer against any other components/pages that independently hardcode the old '(英国) 颁发及认可' phrasing outside the chrome unit's files, since the audit only flags an explicit banned-word list, not this specific superseded phrasing.",
+    "content.ts NAV array's English 'Recognition & Team' group and similarly-named groups already existed pre-unit and were left unchanged; they do not violate any rule in scope 2/3/4/8/10/11/12/13/14 checked here."
+  ]
+}

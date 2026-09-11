@@ -1,0 +1,60 @@
+{
+  "unit": "executive-mba",
+  "archetype": "Programme core page (spec section 8)",
+  "files_changed": [
+    "src/app/(en)/executive-mba/page.tsx",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts"
+  ],
+  "note_on_ms_zh_files": "The Malay and Chinese pages (src/app/(ms)/ms/executive-mba/page.tsx and src/app/(zh)/zh/executive-mba/page.tsx) render CORE_PAGES_MS.programme and CORE_PAGES_ZH.programme directly with no page-local copy, so the rewrite lives entirely in content-ms.ts and content-zh.ts's `programme` object. Neither page.tsx needed a text edit; metadata title/description on both were already compliant and were left unchanged. Neither page renders ProgrammeIntroduction, so no lang prop was needed.",
+  "new_h1_and_lede": {
+    "en": {
+      "h1": "Bring one live business issue. Leave with a plan your team can act on.",
+      "lede": "Across 6 months, in 6 training days across 3 scheduled sessions, with one-to-one coaching and an applied business project, you take a current issue from your own responsibility from problem definition to a written action plan reviewed by faculty, while you continue in your role. [ABC_PROFILE.programmePositioning]"
+    },
+    "ms": {
+      "h1": "Bawa satu keputusan sebenar. Pulang dengan kaedahnya.",
+      "lede": "Sepanjang 6 bulan, anda mengambil satu isu semasa dalam tanggungjawab anda sendiri dan membawanya daripada takrifan masalah kepada pelan tindakan bertulis yang disemak fasilitator. Ini berlaku dalam 6 hari latihan merentasi 3 sesi berjadual, dengan bimbingan individu dan satu projek amali perniagaan, sambil anda kekal dalam jawatan anda. [PROGRAMME_POSITIONING_MS] Ia program pembangunan profesional bukan akademik selama enam bulan; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia."
+    },
+    "zh": {
+      "h1": "带着决策来，带着方法走",
+      "lede": "6 个月内，您把自身负责的一项当前课题，从问题界定推进为经导师审阅的书面行动方案：6 个培训日、3 次指定研习课、一对一辅导及一个企业应用项目，全程不必离开原有职务。[PROGRAMME_POSITIONING_ZH]这是为期六个月的非学术专业发展课程，并非 MQA 认证的学术学位或受监管资格。"
+    }
+  },
+  "source": "Hero titles for /executive-mba are the exact §8 and §13 examples in docs/superpowers/specs/2026-09-04-messaging-architecture.md (bring/leave pattern): EN from §8's real example verbatim; MS/ZH from §13's named bring/leave transcreation for this exact page.",
+  "constants_used": [
+    "FACTS.durationLong / durationMonths / trainingDays / liveSessions / moduleCount",
+    "ABC_PROFILE.programmePositioning (EN)",
+    "PROGRAMME_POSITIONING_MS / PROGRAMME_POSITIONING_ZH",
+    "CERTIFICATE_POSITIONING.headline / .credential / .distinction / .professionalRelevance (EN)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS / _ZH (existing mirrors)",
+    "PROGRAMME_AUDIENCE / PROGRAMME_AUDIENCE_MS / PROGRAMME_AUDIENCE_ZH",
+    "COMPANY_ENROLMENT.eligibility / .hrdRoute",
+    "HRD_CORP_CLAIM.responsibility, COMPLIANCE"
+  ],
+  "key_changes": [
+    "EN: replaced H1 'Lead with certainty in chaos...' (implied guarantee, no product-second-clause) with the archetype H1/lede; secondary CTA relabelled 'See how the six months work'; hero note now carries CERTIFICATE_POSITIONING.professionalRelevance (certificate/CMI is named in the summary card in the same viewport).",
+    "EN: assessment fact tile changed from absence framing ('no traditional examination or thesis') to presence framing ('A written action plan on your own business, reviewed by faculty') per spec section 3 rule 3.",
+    "EN: summary-card CMI badge now interpolates CERTIFICATE_POSITIONING.headline instead of a hardcoded CMI claim string.",
+    "EN: structure/curriculum/who-it-is-for/what-you-learn/schedule H2s and body copy reworded to open on the participant's activity and to stop leading with duration/count novelty; removed remaining 'no exam'/'no thesis' hook language.",
+    "EN: metadata title/description no longer leads with 'Six-Month'; description now built from FACTS tokens instead of a retyped 'six months' phrase.",
+    "MS: title/intro rewritten to the bring/leave hero pair; fixed pre-existing 'laluan lanjutan' (banned: Chartered Manager as next stage) in the old intro; Chartered Manager section reworded to 'laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI' (owner-decision wording, avoids the audit-banned 'laluan pilihan' string introduced by my new text — the pre-existing constant INCLUSIONS_CMI_CERTIFICATE_MS still contains 'laluan pilihan' but that constant was not part of this unit's edit).",
+    "MS: assessment/learning-outcome section rewritten to written-action-plan-for-the-team framing; certificate section now appends CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS per the same-viewport rule.",
+    "ZH: title/intro rewritten to the 带着决策来，带着方法走 hero pair; removed banned '离岗' and '身份'/'身份启用' (fCMgr now rendered as 名衔 per zh-register glossary item 10 and self-check item 11); Chartered Manager sentence no longer uses '自动' near the CMI-route claim (self-check item 6); learning-outcome section rewritten to name the team the plan serves (Service rung)."
+  ],
+  "typecheck_exit_code": 0,
+  "content_clarity_audit": {
+    "default_run_exit_code": 1,
+    "default_run_failures": "5 failures, all in src/app/(en|ms|zh)/hrd-corp-claimable/page.tsx (unqualified HRD Corp claim sentence) — a different unit's files, not touched by this session.",
+    "strict_locales_run_on_my_files": "Zero new warnings introduced by this unit's edits. content-ms.ts and content-zh.ts do show pre-existing MS/ZH warnings ('laluan pilihan', 班次, 参与者, 'Program awam') in the fees/FAQ/intakes/faculty/executive-mba-malaysia/executive-education-vs-executive-mba sections of those shared files and other pages — none inside the `programme` object this unit rewrote, and none were touched by this session."
+  },
+  "self_check_results": {
+    "ms_register_self_check_section_7": "Passed on the rewritten programme object: no kamu/awak/-lah; 'laluan pilihan' avoided in new text (used 'laluan CMI yang berasingan dan tidak wajib' instead); fixed the pre-existing 'laluan lanjutan' hit in the old intro; RM/date/count values unchanged from constants; Chartered Manager described only as CMI's separate route; no promotion/salary/ROI claims; 'anda' kept out of the fee/CMI fact sentences.",
+    "zh_register_self_check_section_7": "Passed on the rewritten programme object: all facts unchanged from constants; no 约/大约/通常 qualifiers; no urgency device; CMI wording uses 认可 (never 认证 except for MQA); Chartered Manager described as separate/optional, decided by CMI, without '自动'; fCMgr rendered as 名衔 not 身份; 您 used, no pronoun in H1; decoration budget respected (plain, no 四字词 stacking); removed '离岗' calque."
+  },
+  "left_for_reviewer": [
+    "content-ms.ts and content-zh.ts carry pre-existing audit warnings ('laluan pilihan', 班次, 参与者, 'Program awam') outside the programme object, in sections belonging to other pages/units (fees, FAQ, intakes, faculty, executive-mba-malaysia, executive-education-vs-executive-mba). These were not part of this unit's scope and were left untouched to avoid colliding with other writers editing the same shared file; flagging for a follow-up pass or the owning unit's writer.",
+    "The EN summary-card 'Scholarship' fact tile was reworded from 'Eligibility-based assessment for Malaysian applicants' to 'FACTS.scholarshipProvider assesses eligible Malaysian applicants individually' to name the decision-maker per section 3 rule 3 ('who decides it') — please confirm this reads correctly beside the full FACTS.scholarshipEligibility sentence used elsewhere on the page.",
+    "Course/Syllabus JSON-LD structure in the EN page was left structurally unchanged; only metadata.description (interpolated) flows into the schema description field, per the brief's instruction to rewrite only JSON-LD text fields."
+  ]
+}

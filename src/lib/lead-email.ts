@@ -166,7 +166,7 @@ function whatsAppUrl(language: Language): string {
   const message = language === "zh"
     ? "您好，我已提交 Future Ready Executive MBA 课程沟通请求，希望进一步了解课程。"
     : language === "ms"
-      ? "Salam Pasukan Future Ready EMBA, saya telah memohon perbualan program dan ingin mengetahui lebih lanjut."
+      ? "Salam Pasukan Future Ready EMBA, saya telah memohon perbincangan program dan ingin mengetahui lebih lanjut."
       : "Hello Future Ready EMBA team, I requested a programme conversation and would like to learn more.";
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
 }
@@ -244,7 +244,7 @@ export function buildApplicationReceivedEmail(input: {
   }
 
   if (language === "ms") {
-    const subject = "Permintaan perbualan program anda telah kami terima";
+    const subject = "Permintaan perbincangan program anda telah kami terima";
     const text = [
       `${personName}, salam sejahtera,`,
       "",
@@ -266,7 +266,7 @@ export function buildApplicationReceivedEmail(input: {
       text,
       html: emailHtml({
         language,
-        preheader: "Permintaan perbualan program anda telah selamat diterima.",
+        preheader: "Permintaan perbincangan program anda telah selamat diterima.",
         greeting: `${escapedName}, salam sejahtera,`,
         introduction: "Terima kasih kerana menghubungi kami. Permintaan anda telah kami terima; Panduan Program 2026 disertakan bersama e-mel ini, dan rangka kerja program turut tersedia melalui pautan di bawah.",
         nextHeading: "Langkah seterusnya",

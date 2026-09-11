@@ -1,0 +1,200 @@
+{
+  "lens": "Compliance editor: enforces SEO-CONTENT-GOVERNANCE.md, owner-vocabulary-rules.md and the content-clarity-audit.mjs regexes; hunts implied career, salary, promotion, funding and organisational-outcome promises. Method: all six inputs read in full; the audit's 42 banned patterns were run mechanically over every line of the three proposals (result: zero reader-facing hits in any proposal; every hit is inside an avoid-list, fix note or risk description), then every reader-facing string was read for the non-regex rules (implied outcomes, hope-as-promise, disparagement, scarcity, scholarship and HRD Corp leakage, retyped facts, the not-an-MQA-degree boundary wherever the credential or 'awarded and endorsed by CMI' appears). Scores are 1-10; total is the plain sum of the five; governanceSafety is the heaviest-weighted criterion and decides ties and the winner from this lens.",
+  "scores": [
+    {
+      "proposal": "progress-first",
+      "fidelityToFramework": 9,
+      "governanceSafety": 7,
+      "conversionClarity": 8,
+      "localisability": 7,
+      "distinctiveness": 6,
+      "total": 37,
+      "notes": "Fidelity: the thesis walks the owner's sentence in order (progress -> hope -> change of experience -> not the product -> not the shortcut -> right vs good -> RJTBD -> 5S -> servant leadership) and maps each term to a site device; 'the shortcut cuts' is confined to the site's own claims and to methods; deserving is limited to the programme deserving the reader's time. Governance: no regex hits in reader copy; boundary present in the hero, /executive-mba, /executive-mba-malaysia, /lp pages and the day-3 email; every money sentence names the decision-maker. Deductions: (1) the hero CTA purpose line puts 'deserves a conversation' in the same sentence as 'RM10,000.00 standard fee, scholarship assessment' (twice: hero and sampleHero), colliding with the owner rule that deserving never touches scholarship or fees and with the proposal's own avoid list; (2) /chartered-manager-malaysia lede names the CMI Certificate of Recognition without the MQA boundary; (3) /asian-business-consulting lede has 'awarded and endorsed by CMI' without the boundary; (4) every example retypes the constants as literals (and re-phrases 'across 3 scheduled sessions' as 'in 3 scheduled sessions') while its own vocabulary says 'never retyped'; (5) SME H1 promises a business state ('a business that runs on documented decisions'); (6) 'commit without putting the role at risk' is an employment-safety reassurance; (7) 'The people who did it can be met' asserts access to graduates. Conversion: the CTA purpose lines are the best conversion device of the three and it keeps CTA_LABELS.guide unchanged, but audience and curriculum H1s run 15-20 words. Localisability: from -> to maps to 'Daripada ... kepada ...' / '从...到...' and matches the owner's 'cara anda membuat keputusan berubah' pattern, and it catches the banned 'Aturkan perbualan program' constant, but long H1s balloon in Malay and the localisation section is one paragraph. Distinctiveness: before/after is the standard copywriting formula and becomes formulaic across ten pages."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "fidelityToFramework": 8,
+      "governanceSafety": 8,
+      "conversionClarity": 7,
+      "localisability": 7,
+      "distinctiveness": 8,
+      "total": 38,
+      "notes": "Fidelity: organises the site around the owner's 'it must be RIGHT instead of the good thing; the right is the RJTBD'; hope, change of experience, 5S and servant leadership are all present; the one fidelity cost is that the device deliberately puts the good thing on the page first (hero lede sentence one, a good-thing panel on home and audience pages), which is the thing the owner says gets in the way. Governance: the only proposal with zero retyped facts (factTokens table, every number a content.ts token, rendered values quoted for review only); explicit forbiddenUses for deserving on /fees, the self-check, scholarship FAQs and HRD Corp sentences in any language; the day-14 'No commitment.' subject and the ZH 无需承诺 mirror are removed; the international intent drops 'applying'; 'the good thing' is banned as a label for any provider. Deductions: (1) the home good-thing panel renders 'A faster route' and 'A fee to minimise' as card titles, which are the speed and price hooks the site refuses; (2) reader-voice line 'Six months, no thesis: that sounds like the quick one' contradicts its own no-exam-no-thesis rule if rendered; (3) day-7 subject 'The 2026 dates still open' is availability wording other than 'Open for enquiries'; (4) malaysia_lede renders PROGRAMME_POSITIONING_SENTENCE with fee, scholarship and HRD Corp tokens but no MQA boundary; (5) abc_lede has 'awarded and endorsed by CMI' without the boundary; (6) keeps 'The outcome is applied, not just attendance.' Conversion: 'Bring one real decision. Leave with the method.' is crisp but 'the method' is undefined in the H1; the hero lede opens by listing 'Credential, fee and schedule', so a skimming reader sees the three product attributes first; the panel reads as a benefits row with confusing titles; the fees H1 ('Every other condition confirmed in writing') and the audience H1s ('Keep the role. Change how you decide in it.') are the clearest of the three. Localisability: short imperatives translate cleanly; the owner supplies 'perkara yang betul, bukan sekadar perkara yang baik' and '对的事，而不只是好的事' so the device is renderable; multilingualNotes align with the MS and ZH banned lists (sesi perbincangan program, projek amali perniagaan, 名额有限 / 须经评估 / 书面批准); 'fair questions, and they come second' is an English rhetorical turn that must be translated for meaning. Distinctiveness: honouring the reader's temptation before putting it second is a voice no competing EMBA site uses."
+    },
+    {
+      "proposal": "service-first",
+      "fidelityToFramework": 8,
+      "governanceSafety": 6,
+      "conversionClarity": 8,
+      "localisability": 8,
+      "distinctiveness": 8,
+      "total": 38,
+      "notes": "Fidelity: the most complete rendering of the second half of the framework (5S as the reader's ladder climbed for others, servant leadership as posture in two directions, 'deserving comes out of serving' shown not claimed); progress and hope are present as practice inside the six months but the buying motive the owner names first (progress) sits behind Service. Governance strengths: replaces the gown-and-cap hero image; keeps the 5S section away from STAGES and bars 'next rung' / 'second stage'; gates 'Roy answers, including not this route' on operational truth; FORCES restated as 'a leader can still ...' removes fear; the recognition section carries distinction plus professionalRelevance in full. Deductions: (1) /fees H1 'RM10,000.00 standard fee. Scholarships assessed individually.' puts the scholarship in a headline as a non-verbatim fragment that drops 'limited', 'selective' and 'eligible Malaysian applicants'; (2) AI lede 'You are being asked to decide on AI without a method for deciding' diagnoses the reader; (3) SME lede promises that in six months you 'build the systems, and the managers, that carry it' and the AI H1 promises 'a decision your team and customers can trust' (outcomes for the people served, which its own rule forbids); (4) /chartered-manager-malaysia lede, /asian-business-consulting lede and the shared email footer all carry the credential or 'awarded and endorsed by CMI' without the MQA boundary; (5) the comparison row extends the reference academic MBA beyond COMPARISON_SCOPE by calling it 'MQA-accredited'; (6) literals retyped throughout, including the phone number; (7) keeps 'The outcome is applied, not just attendance.'; (8) the H1 'Decide well for the people who depend on you' carries a self-flagged shaming reading and needs the A/B alternative ready. Conversion: the five-questions section is a buyer's FAQ in the order a buyer asks it and the CTA 'Get the 2026 programme guide to check the fit' is action plus purpose in one string; the 'Survival:' ... 'Service:' labels expose the owner's internal framework to the reader. Localisability: the owner has pre-approved the 5S glosses (Kelangsungan, Keselamatan, Sosial, Kejayaan, Khidmat / 生存、安全、社交、成功、服务), 'kepimpinan berkhidmat' and '仆人式领导', so its hardest terms are already settled; 'a leader can still' translates directly; it correctly says to translate 'ladder' and 'climb' as meaning; it offers '服务型领导' which the owner rule does not allow and '更好的决定' adds a comparative the English lacks. Distinctiveness: 'the ladder you climb for others' is a positioning no competing EMBA site uses."
+    }
+  ],
+  "winner": "rjtbd-first",
+  "winnerRationale": "rjtbd-first and service-first tie at 38 and progress-first sits at 37; governance safety, the heaviest-weighted criterion from this lens, orders them rjtbd-first (8) > progress-first (7) > service-first (6). rjtbd-first is the only proposal an executor can implement without converting a single literal to a constant, it is the only one with explicit forbidden-uses for deserving in every language, and its lapses are concentrated in one device (the good-thing panel) and two missing boundary sentences, all listed in rejectLines with fixes. service-first's structure is the strongest conversion device but it needs the most compliance rework before it could pass review; progress-first's hero is the safest H1 of the three and is grafted below.",
+  "graftIdeas": [
+    { "from": "progress-first", "idea": "Hero H1 'From carrying the decision alone to leading it.' with the three supporting lines (live issue; 6 days / 3 sessions / coaching / faculty review / templates retained; CMI Certificate of Recognition + not-an-MQA-degree + separate optional Chartered Manager route + 'An enquiry does not commit you to enrol or pay.') as the home hero, replacing rjtbd-first's 'Credential, fee and schedule ...' lede and good-thing panel; the purpose line must drop 'deserves a conversation' (see rejectLines)." },
+    { "from": "progress-first", "idea": "A CTA purpose line under every primary CTA naming what the guide lets the reader decide ('Review the six-month structure, published dates, RM10,000.00 standard fee, scholarship assessment and CMI recognition, then decide whether to arrange a conversation'), rendered from constants." },
+    { "from": "progress-first", "idea": "Keep CTA_LABELS.guide unchanged ('Get the free 2026 programme guide') rather than adding rjtbd-first's new 'Get the 2026 programme guide and check fit' label; one fewer constant change, no retired-CTA regression risk, 'free' stays once and inside the constant." },
+    { "from": "progress-first", "idea": "Rename curriculum stage labels 'Level 1 / 2 / 3' to 'Stage 1 / 2 / 3' so no stage label can trip or invite the Level 7 misreading." },
+    { "from": "progress-first", "idea": "Day-7 nurture subject 'The published 2026 dates, in one view' (replaces rjtbd-first's 'still open')." },
+    { "from": "progress-first", "idea": "Branch the acknowledgement subject and the first clause of the protected notice on the reader's preference ('programme guide request' vs 'conversation request') and keep the second sentence verbatim; flagged for owner sign-off because the string is protected." },
+    { "from": "progress-first", "idea": "The editorial test for every progress sentence: could a graduate read it back and say 'that is what I did' rather than 'that is what I was promised'. Adopt as the copy-review gate." },
+    { "from": "progress-first", "idea": "The flag that CTA_LABELS.ms.conversation ('Aturkan perbualan program') is a banned MS non-collocation sitting outside the MS scan; resolve with the owner before any Malay rewrite reuses it, using rjtbd-first's 'sesi perbincangan program'." },
+    { "from": "service-first", "idea": "Replace the gown-and-cap hero image with a working-room photograph (strategy workshop or project review); if it stays, the boundary sentence sits in the same viewport and the alt text is plainly descriptive." },
+    { "from": "service-first", "idea": "Two-ladder separation rule: the 5S ordering is never rendered next to STAGES; STAGES is introduced as 'what CMI controls after the programme'; 'next rung', 'second stage' and 'fast-track' (except CMI's own named route) are barred." },
+    { "from": "service-first", "idea": "FORCES restated as 'pressure; a leader can still + activity' ('AI is rewriting how work gets done; a leader can still decide what the work is for'), submitted to ABC for approval of the constant." },
+    { "from": "service-first", "idea": "The five buyer questions in buying order (can the business keep running while I learn; what am I committing to and who decides; who will I work this through with; what will I have made; who is it for) as a home section, rendered as questions without exposing the 'Survival/Safety/Social/Success/Service' labels in English copy; in Malay and Chinese use the owner's glosses once if the labels are shown." },
+    { "from": "service-first", "idea": "Operational-truth gate: 'the team will say plainly if the programme is not the right route' and 'Roy Affandi answers for your decision' are published only if true on every channel (form, email, WhatsApp, assistant); otherwise fall back to the current controlled suitability sentence." },
+    { "from": "service-first", "idea": "Replace 'Decided it fits? Let's talk about your intake.' with 'Discuss which route fits your purpose.' on the comparison page." },
+    { "from": "service-first", "idea": "Day-3 email that answers all three fit questions inline with the boundary sentence and the verbatim fee and scholarship sentences present, so the email is complete without a click." }
+  ],
+  "rejectLines": [
+    {
+      "proposal": "progress-first",
+      "line": "Review the six-month structure, published dates, RM10,000.00 standard fee, scholarship assessment and CMI recognition, then decide whether the programme deserves a conversation.",
+      "rule": "owner-vocabulary-rules.md 'Governance interactions': 'deserving comes out of serving' is posture, never a claim about the scholarship, fees or HRD Corp; the proposal's own vocabulary.avoid 'deserve / deserving anywhere near scholarship, fee or HRD Corp'. Occurs twice (hero ctaPurposeLine and sampleHero.cta.purposeLine). Fix: '... then decide whether to arrange a conversation.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The Future Ready Executive MBA helps experienced managers turn a live business issue into a defensible action plan. Successful completion is recognised with a CMI Certificate of Recognition: the programme has been benchmarked against CMI's Professional Standard. Any Chartered Manager application is separate and optional. [...] It does not guarantee promotion, employment, salary progression or any other career outcome.",
+      "rule": "SEO-CONTENT-GOVERNANCE.md evidence register 'CMI recognition: match the certificate wording; retain the not-regulated notice' and Controlled terminology: the credential is named on /chartered-manager-malaysia without 'not an MQA-accredited academic degree or a regulated qualification' anywhere in the lede. Fix: insert CERTIFICATE_POSITIONING.distinction before professionalRelevance."
+    },
+    {
+      "proposal": "service-first",
+      "line": "The Future Ready Executive MBA helps experienced managers turn a live business issue into a defensible action plan; successful completion is recognised with a CMI Certificate of Recognition, benchmarked against CMI's Professional Standard. Any Chartered Manager application is separate and optional. CMI determines eligibility, assessment, membership and fees; the programme does not promise or include that award.",
+      "rule": "Same rule: /chartered-manager-malaysia lede and evidenceLine name the credential with no MQA boundary; the evidenceLine also introduces a second, non-verbatim no-guarantee sentence ('salary growth ... business results') beside the controlled one. Fix: CERTIFICATE_POSITIONING.distinction + professionalRelevance verbatim, one no-guarantee sentence."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre; CMI is the external quality body. ABC lists 154 graduates across 17 cohorts (16 English, 1 Mandarin), each of whom completed an applied business project on their own organisation.",
+      "rule": "Evidence register 'retain the not-regulated notice' wherever CMI recognition is claimed, and the proposal's own rule that PROGRAMME_POSITIONING_SENTENCE is 'always paired with what the certificate documents and what it is not': /asian-business-consulting lede carries 'awarded and endorsed by CMI' with no MQA boundary. Fix: append CERTIFICATE_POSITIONING.distinction."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Asian Business Consulting designed the six-month Executive MBA on Future Ready Business Leadership so that a working manager's real decision could be worked to a plan inside six months. PROGRAMME_POSITIONING_SENTENCE CMI is the external quality body; the programme has been awarded and endorsed by CMI since July 2024. Numbers are attributed to ABC's company profile and dated on every update.",
+      "rule": "Same rule and the proposal's own theSiteOwnShortcuts item 5 ('Awarded and endorsed by CMI never renders without the not-an-academic-degree sentence in the same viewport'): abc_lede renders the positioning sentence twice with no boundary. Fix: append CERTIFICATE_POSITIONING.distinction."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Asian Business Consulting (ABC) is a Malaysian management consulting, corporate training and executive learning firm, registered in 2020. It designed the six-month Executive MBA on Future Ready Business Leadership for a working manager's real decision; the programme has been awarded and endorsed by CMI since July 2024, and ABC is listed as a Recognised international centre. 154 graduates across 17 cohorts, as listed by ABC, have completed an applied project on their own organisation.",
+      "rule": "Same rule and the proposal's own rightVsGood rendering 3 ('Wherever the CMI mark or the word awarded appears, the professionalRelevance sentence and the not-an-MQA-degree sentence sit in the same viewport'): /asian-business-consulting lede has neither. Fix: append CERTIFICATE_POSITIONING.distinction and professionalRelevance."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Across FACTS.durationLong a live issue in your own organisation becomes a faculty-reviewed plan and a method you keep. PROGRAMME_POSITIONING_SENTENCE The standard fee is FEES.standard.label. FACTS.scholarshipEligibility HRD_CORP_CLAIM.short HRD_CORP_CLAIM.responsibility",
+      "rule": "Evidence register 'retain the not-regulated notice' and the proposal's own theSiteOwnShortcuts item 5: malaysia_lede renders 'awarded and endorsed by CMI' beside the fee, scholarship and HRD Corp tokens with no MQA boundary. Fix: insert 'It is not an MQA-accredited academic degree or a regulated qualification.' directly after PROGRAMME_POSITIONING_SENTENCE (as executiveMba_lede already does)."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Contact Future Ready EMBA on WhatsApp · The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI. It is a six-month professional development programme designed and delivered by Asian Business Consulting. Right Dots Resources is its marketing agency for programme enquiries and enrolment coordination. Employer funding may be available to eligible HRD Corp-registered employers, subject to HRD Corp approval and the approved amount.",
+      "rule": "Same rule: the shared email footer carries the positioning sentence with no MQA boundary and the proposal writes it as new copy. Fix: import ORGANISATIONAL_STATEMENT from content.ts (as progress-first specifies) and confirm it carries the boundary; if not, append CERTIFICATE_POSITIONING.distinction."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The outcome is applied, not just attendance.",
+      "rule": "Voice and tone: 'Do not ... disparage other institutions or describe competing programmes as inferior' and the proposal's own retirement of 'not another attendance certificate': 'not just attendance' is a contrast with unnamed attendance-based training, and 'outcome' is the word rjtbd-first itself replaces with 'job' so it cannot read as a result. Employer funding brief subhead. Fix: 'Built around a live business issue and an applied project.'"
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "The outcome is applied, not just attendance.",
+      "rule": "Same rule (employerBrief_subhead); the proposal's vocabulary.avoid bans 'not another attendance certificate' and its comparison rule says 'never rank'. Fix as above."
+    },
+    {
+      "proposal": "service-first",
+      "line": "The outcome is applied, not just attendance.",
+      "rule": "Same rule (employerFundingGuide subhead); the proposal's own vocabulary.avoid bans 'any contrast with unnamed providers' and its llms.txt fix says 'never characterise attendance-only training as worthless'. Fix as above."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "A faster route — FACTS.durationLong is sized to the job, not to the calendar.",
+      "rule": "Owner framework 'the shortcut cuts in the long run even if it is cute' and the proposal's own vocabulary.avoid 'shortcut, faster, easier, lighter, quicker (as selling points)': as a rendered card title on the home hero, 'A faster route' beside '6 months' is the speed hook the site refuses; the body's denial does not survive a skim. Fix: render the reader's motive as a question ('Is six months the quick option?') or drop the panel from the hero and keep the argument in the fees and comparison copy."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "A fee to minimise — Decide fit first; the standard fee is FEES.standard.label and any scholarship award is confirmed individually in writing.",
+      "rule": "Controlled terminology 'Individually confirmed scholarship award and participant fee' vs 'Discounted price, promotional price or approximate fee' and the evidence register scholarship row: a card titled 'A fee to minimise' in the first viewport invites a lower-fee reading and pairs it with a fragment of FACTS.scholarshipEligibility that drops 'limited', 'selective', 'eligible Malaysian applicants' and 'following individual assessment and written approval'. Fix: title 'What does it cost, and who decides?' and render FACTS.scholarshipEligibility verbatim or not at all in the hero."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "Six months, no thesis: that sounds like the quick one.",
+      "rule": "The proposal's own rightVsGood.theSiteOwnShortcuts ('No exam, no thesis is replaced by the presence it hides') and vocabulary.avoid ('no exam, no thesis as a headline or benefit'); Voice and tone: present the assessment that exists. Reject wherever the readerVoice lines are rendered; keep only the whyItComesSecond sentence ('Assessment is a written action plan for your own business, reviewed by faculty')."
+    },
+    {
+      "proposal": "rjtbd-first",
+      "line": "The 2026 dates still open, in one view",
+      "rule": "Voice and tone 'Avoid ... urgency devices' and the shared rule in all three proposals that 'Open for enquiries' is the only availability wording: 'still open' implies dates are closing. Fix: progress-first's 'The published 2026 dates, in one view'."
+    },
+    {
+      "proposal": "service-first",
+      "line": "RM10,000.00 standard fee. Scholarships assessed individually.",
+      "rule": "Clarity standard 'Keep programme facts in src/lib/content.ts ... reuse those facts instead of introducing independent versions' and the evidence register scholarship row (limited; eligible Malaysian applicants; subject to availability, assessment and written approval; not automatic): the /fees H1 is a non-verbatim fragment that drops 'limited', 'selective' and 'eligible Malaysian applicants' and makes the scholarship a headline, which also becomes the SERP title. Fix: 'RM10,000.00 standard fee. Every other condition confirmed in writing.' with FACTS.scholarshipEligibility verbatim in the lede."
+    },
+    {
+      "proposal": "service-first",
+      "line": "You are being asked to decide on AI without a method for deciding.",
+      "rule": "Voice and tone 'Do not shame the reader' and the proposal's own vocabulary.avoid 'any line that diagnoses the reader': the sentence states a deficit in the reader. Fix: 'Being asked to decide on AI is now part of the role; the business question comes before the tool.'"
+    },
+    {
+      "proposal": "service-first",
+      "line": "If every decision, client relationship and operating control routes through you, that is what the applied project can work on: across six months you document where control sits with one person and build the systems, and the managers, that carry it.",
+      "rule": "Voice and tone 'Describe capabilities, learning activities and decision processes. Do not promise personal, commercial, employment ... outcomes' and the proposal's own Service rule ('never what happens to the people served'): building the managers who carry the business within six months is an organisational outcome. Fix: '... and write the plan for the systems and the managers that will carry it, with faculty review.'"
+    },
+    {
+      "proposal": "service-first",
+      "line": "Lead AI adoption as a decision your team and customers can trust.",
+      "rule": "Same rule: trust from the team and customers is an outcome for the people served, which the proposal's own Service rule forbids. Fix: 'Decide on AI with a method your team and customers can follow.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "From every decision routing through you to a business that runs on documented decisions.",
+      "rule": "Voice and tone 'Do not promise ... commercial ... outcomes' and the proposal's own hopeWithoutPromises rule 1 ('the after-state is an artefact or an act that occurs during the six months, never a status'): the after-state is a business state, and the card 'the business runs without the owner' repeats it. Fix: 'From every decision routing through you to decisions your team can make from a written plan.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The published dates and the written catch-up rule (video access or attendance in a named later cohort, recorded by ABC) let you commit without putting the role at risk.",
+      "rule": "Voice and tone 'Avoid prestige labels, urgency devices and implied guarantees': 'without putting the role at risk' is an employment-safety reassurance the programme does not control. Fix: '... let you choose the published dates you can give full attention.'"
+    },
+    {
+      "proposal": "progress-first",
+      "line": "The work is recognised. The people who did it can be met.",
+      "rule": "Evidence standard 'Keep written approval or source documentation for ... participant counts and testimonials' and 'inclusion must not imply endorsement': 'can be met' asserts access to graduates the site does not operationally offer and functions as an endorsement device. Fix: 'The work is recognised. The count is ABC's, and dated.'"
+    },
+    {
+      "proposal": "service-first",
+      "line": "Built to do — Reference academic MBA: Provide an MQA-accredited academic degree through 18–24 months of academic study.",
+      "rule": "Clarity standard 'Define comparison groups before comparing them. The reference academic MBA on this site is the 18–24 month model described in COMPARISON_SCOPE': COMPARISON_SCOPE does not define the reference MBA as MQA-accredited (foreign academic MBAs are not), so the row extends the comparison group beyond its definition. Fix: rjtbd-first's row 'earning an academic degree through academic study, assessment and research'."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Pattern: every example renders the constants as literals (RM10,000.00; 6 / 3 / 12; 154 / 17 / 86; 'registered in 2020'; '+60 12-981 8533') and re-phrases the canonical 'across 3 scheduled sessions' as '6 training days in 3 scheduled sessions' in the hero, /executive-mba and sampleHero, while its own vocabulary says '(quoted from FACTS, never retyped)'.",
+      "rule": "Clarity standard 'Keep programme facts in src/lib/content.ts ... Pages, metadata, structured data, llms.txt and the chatbot must reuse those facts instead of introducing independent versions'; the audit's required canonical strings (trainingDays: \"6\", liveSessions: \"3\"). Reject as a pattern: the executor must interpolate FACTS, FEES, PROGRAMME_PROOF and SITE constants and use the canonical 'across 3 scheduled sessions' wording; adopt rjtbd-first's factTokens convention."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Pattern: every example renders the constants as literals (RM10,000.00; 6 / 3 / 12; 154 / 17 / 86; 'registered in 2020'; '+60 12-981 8533' in the assistant handoff line) while its own vocabulary says '(from FACTS, never retyped)'.",
+      "rule": "Same Clarity-standard rule. Reject as a pattern; interpolate constants and adopt rjtbd-first's factTokens convention."
+    },
+    {
+      "proposal": "progress-first",
+      "line": "Eligible Malaysian applicants may be considered, on a selective basis, for the LIFE Innoversity scholarship. Any award and resulting participant fee are confirmed individually in writing.",
+      "rule": "Clarity standard 'reuse those facts instead of introducing independent versions': /executive-mba-malaysia carries a paraphrase of FACTS.scholarshipEligibility that drops 'limited' and 'following individual assessment and written approval'. Fix: FACTS.scholarshipEligibility verbatim."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Eligible Malaysian applicants may be considered, on a selective basis, for the LIFE Innoversity scholarship. Any award and resulting participant fee are confirmed individually in writing.",
+      "rule": "Same rule (malaysia lede). Fix: FACTS.scholarshipEligibility verbatim."
+    },
+    {
+      "proposal": "service-first",
+      "line": "Chinese register: 为依赖你的人做出更好的决定; 服务型领导 / 仆人式领导",
+      "rule": "owner-vocabulary-rules.md Chinese renderings: 'servant leadership: 仆人式领导 (servant leadership)'; '服务型领导' is not an approved rendering and must be dropped. '更好的决定' adds a comparative ('better') that the English H1 does not carry and edges toward the shaming reading the proposal already flags; render as what the reader can do differently per the owner's change-of-experience rule."
+    }
+  ],
+  "heroPreference": {
+    "proposal": "progress-first",
+    "why": "From a compliance lens the home hero is the highest-exposure surface, and progress-first's is the safest of the three once one word is fixed. The H1 'From carrying the decision alone to leading it.' is an act the participant performs during the six months, names no product, count or outcome, and could be read back by a graduate as 'that is what I did'. Its three supporting lines carry the live-issue activity, the structure facts, the CMI Certificate of Recognition with the not-an-MQA-degree boundary, the separate optional Chartered Manager route and 'An enquiry does not commit you to enrol or pay.' in the same viewport, so the gown-and-cap image, 'awarded' and 'graduates' never render without the boundary. It keeps CTA_LABELS.guide unchanged and adds a purpose line, which is the best conversion device of the three. Required fix before use: the purpose line must end 'then decide whether to arrange a conversation', removing 'deserves' from the sentence that names the fee and the scholarship; all literals interpolate constants and 'in 3 scheduled sessions' becomes 'across 3 scheduled sessions'. rjtbd-first's hero is rejected for the good-thing panel ('A faster route', 'A fee to minimise') and a lede whose first nouns are 'Credential, fee and schedule'; service-first's 'Decide well for the people who depend on you.' carries a shaming reading the proposal itself flags and needs an A/B before it can lead the site."
+  }
+}

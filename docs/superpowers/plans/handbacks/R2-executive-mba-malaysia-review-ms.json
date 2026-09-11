@@ -1,0 +1,10 @@
+{
+  "unit": "executive-mba-malaysia",
+  "language": "ms",
+  "reviewer": "independent R2 unit reviewer (fresh context)",
+  "verdict_before_fixes": "pass",
+  "problems_found": [],
+  "notes": "File src/app/(ms)/ms/executive-mba-malaysia/page.tsx already conformed to the spec, owner-vocabulary-rules.md, ms-register.md sections 5/7 and the high-confidence audit corrections: no 'laluan pilihan', no 'dalam bentuk bertulis', correct 'jadualkan sesi perbincangan program' CTA, H1 8 words, CERTIFICATE_POSITIONING.professionalRelevance co-located with every CMI/certificate mention, facts rendered from FACTS/HRD_CORP_CLAIM_MS tokens only. No changes made.",
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

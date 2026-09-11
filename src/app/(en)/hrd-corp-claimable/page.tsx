@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { COMPANY_ENROLMENT, CTA_LABELS, FACTS, HRD_CORP_CLAIM, INCLUSIONS, SITE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, COMPANY_ENROLMENT, CTA_LABELS, FACTS, HRD_CORP_CLAIM, INCLUSIONS, PROGRAMME_POSITIONING_SENTENCE, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/hrd-corp-claimable", {
-  title: "HRD Corp Claimable Executive MBA",
+  title: "Employer-Led HRD Corp Funding: The Employer Applies",
   description:
-    "How registered Malaysian employers apply before training, which documents are supplied, and how HRD Corp decides eligibility and funding.",
+    "HRD Corp funding starts with the employer's decision to develop a manager. The employer applies before training; HRD Corp decides eligibility and amount.",
 });
 
 const STEPS = [
@@ -32,12 +32,12 @@ const STEPS = [
 
 const HRD_FAQS = [
   {
-    q: "Can my company enrol a founder or senior team member?",
-    a: `${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}`,
+    q: "Who decides whether we get HRD Corp funding?",
+    a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}`,
   },
   {
-    q: "Can my employer apply for HRD Corp funding?",
-    a: `${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}`,
+    q: "Can my company enrol a founder or senior team member?",
+    a: `${COMPANY_ENROLMENT.eligibility} ${COMPANY_ENROLMENT.hrdRoute}`,
   },
   {
     q: "Do you handle the paperwork?",
@@ -45,7 +45,7 @@ const HRD_FAQS = [
   },
   {
     q: "What if we're not HRD Corp-registered?",
-    a: `The standard fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for the ${FACTS.scholarshipProvider} scholarship. Any award and resulting participant fee are confirmed individually in writing. Individual payment options are listed on the Fees page.`,
+    a: `The standard fee is ${FACTS.priceStd}. ${FACTS.scholarshipEligibility} The scholarship is never automatic. Individual payment options are listed on the Fees page.`,
   },
 ];
 
@@ -72,13 +72,19 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <Reveal>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Understand the HRD Corp grant process before training begins.
+              The employer applies. HRD Corp decides.
             </h1>
           </Reveal>
           <Reveal>
             <p className="sec-sub">
-              {SITE.provider} is an HRD Corp (HRDC) Approved Training Provider. The Executive MBA on Future
-              Ready Business Leadership is awarded and endorsed by the Chartered Management Institute (CMI).
+              {SITE.provider} is an HRD Corp (HRDC) Approved Training Provider. {PROGRAMME_POSITIONING_SENTENCE}{" "}
+              {CERTIFICATE_POSITIONING.professionalRelevance}
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="sec-sub">
+              HRD Corp funding for this programme starts with a decision made inside the company: to develop
+              a manager responsible for a team.
               <b style={{ color: "var(--ink)" }}> {HRD_CORP_CLAIM.short}</b> The programme team supplies
               the supporting programme documents.
             </p>
@@ -93,7 +99,7 @@ export default function HrdCorpClaimablePage() {
       </section>
 
       {/* HOW THE CLAIM WORKS */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">How the claim works</span></div></Reveal>
           <Reveal><h2 className="sec-h">Four defined responsibilities from application to claim.</h2></Reveal>
@@ -121,11 +127,11 @@ export default function HrdCorpClaimablePage() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">What&rsquo;s covered</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Programme components covered by the approved grant amount.</h2></Reveal>
+          <Reveal><h2 className="sec-h">What the approved grant amount covers.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
-              HRD Corp states the approved amount in its grant decision. The Executive MBA is a
-              six-month programme leading to the programme certificate. The programme includes:
+              HRD Corp states the approved amount in its grant decision. Across {FACTS.durationLong}, the
+              manager the employer develops works through:
             </p>
           </Reveal>
           <Reveal className="mt-s">
@@ -143,24 +149,24 @@ export default function HrdCorpClaimablePage() {
           </Reveal>
           <p className="fine mt-s">
             Full programme detail on the <Link href="/executive-mba">Executive MBA</Link> page.
-            This professional programme is awarded and endorsed by CMI; it is not an MQA-regulated
-            academic degree.
+            {" "}{CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance}
           </p>
         </div>
       </section>
 
       {/* ELIGIBILITY NOTE */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap maxw-820">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Who can claim</span></div></Reveal>
-          <Reveal><h2 className="sec-h">Employer-funded and individual payment routes.</h2></Reveal>
+          <Reveal><h2 className="sec-h">Who applies, and who decides.</h2></Reveal>
           <Reveal>
             <p className="sec-sub">
               HRD Corp claims are a <b style={{ color: "var(--ink)" }}>B2B, company-paid</b> route:
               the HRD Corp-registered Malaysian employer submits the application before training.
               HRD Corp decides eligibility and the approved amount, which cannot exceed the employer&rsquo;s
-              available levy balance. Not levy-registered, or joining as an
-              individual? Eligible Malaysian applicants may be considered, on a selective basis, for the {FACTS.scholarshipProvider} scholarship after assessment and written approval; instalment plans are also available.
+              available levy balance. Not levy-registered, or enquiring as an
+              individual? {FACTS.scholarshipEligibility} The scholarship is never automatic. Instalment
+              plans are also available.
             </p>
           </Reveal>
           <p className="fine mt-s">

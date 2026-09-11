@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CTA_LABELS, FACTS } from "@/lib/content";
-import { HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
+import { CTA_LABELS, FACTS, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH, ENQUIRY_COMMITMENT_ZH, HRD_CORP_CLAIM_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/ai-executive-mba", {
-  title: "AI 时代的 Executive MBA · 领导力课程",
+  title: "先看业务问题，再选工具",
   description:
-    "看 Future Ready Executive MBA 如何把决策框架用在 AI 落地、数据研判、流程重构与负责任的执行上。",
+    "把一项 AI 应用决策带进 Future Ready Executive MBA，六个月内写成一份经导师团队审阅的行动方案。",
 });
 
 const BUSINESS_PILLARS = [
@@ -39,28 +39,30 @@ export default function AiExecutiveMbaPage() {
       {/* 1 · HERO INTRO */}
       <section className="section geo-section" style={{ paddingTop: "clamp(52px,7vw,84px)" }}>
         <div className="wrap">
-          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">AI 时代领导力 · CMI 认可课程</span></div></Reveal>
+          <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">写给要为 AI 拿主意的管理者 · 马来西亚</span></div></Reveal>
           <Reveal delay={60}>
             <h1 style={{ fontSize: "clamp(2.4rem,5.4vw,4rem)", letterSpacing: "-.02em", lineHeight: 1.05, maxWidth: "20ch" }}>
-              把 AI 落地，当成一项<em style={{ color: "var(--crimson)", fontStyle: "italic" }}>商业决策</em>来领导。
+              先看业务问题，<em style={{ color: "var(--crimson)", fontStyle: "italic" }}>再选工具</em>
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p className="sec-sub" style={{ maxWidth: "58ch" }}>
-              本页讲清楚：获 CMI 认可的 <Link href="/zh/executive-mba" className="acc">Future Ready Executive MBA</Link>{" "}
-              如何把决策框架用在 AI 战略、数据、自动化、治理与执行上。
-              它就是那门<b style={{ color: "var(--ink)" }}>{FACTS.durationMonths} 个月</b>的课程，而非另设的软件或技术认证。
+              被要求为 AI 拿主意，现在已是职责的一部分。业务问题先问，工具后选。
+              把一项真实的 AI 应用决策，带进同一门<b style={{ color: "var(--ink)" }}>{FACTS.durationMonths} 个月</b>的{" "}
+              <Link href="/zh/executive-mba" className="acc">Future Ready Executive MBA</Link>，
+              写成一份经导师团队审阅的行动方案。{PROGRAMME_POSITIONING_ZH}课程为期 {FACTS.durationMonths} 个月，属于非学术专业发展课程，并非 MQA 认证的学术学位或受监管资格。
             </p>
           </Reveal>
           <Reveal delay={160}>
             <p style={{ fontFamily: "var(--font-fraunces)", fontSize: "clamp(1.3rem,3vw,1.9rem)", lineHeight: 1.3, margin: "26px 0 30px", maxWidth: "24ch" }}>
-              从筛选场景，到<em style={{ color: "var(--crimson)", fontStyle: "italic" }}>受治理的执行</em>。
+              从一个 AI 应用场景，到<em style={{ color: "var(--crimson)", fontStyle: "italic" }}>团队可以把关的方案</em>。
             </p>
           </Reveal>
           <Reveal delay={200}>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} →</Link>
-              <Link href="/zh/how-it-works" className="btn btn-ghost">看看课程怎么运作</Link>
+              <Link href="/zh/how-it-works" className="btn btn-ghost">看看这六个月怎么运作</Link>
+              <Link href="/zh/apply?intent=employer_sponsored" className="btn">{CTA_LABELS.zh.company}</Link>
             </div>
           </Reveal>
         </div>
@@ -70,9 +72,9 @@ export default function AiExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">AI 视角涵盖什么</span></div></Reveal>
-          <Reveal><h2 className="sec-h">商业设计与领导担当，缺一不可。</h2></Reveal>
+          <Reveal><h2 className="sec-h">商业理据与领导担当，缺一不可</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "56ch" }}>
-            AI 要用得好，两样东西缺一不可：站得住脚的商业理据，以及清晰的人为问责。课程带您审视企业本身、决策的过程，以及领导者在执行中扮演的角色。
+            一项拟议的 AI 应用场景，需要两样东西缺一不可：站得住脚的商业理据，以及清晰的人为问责。课程带您审视自己的企业、决策的过程，以及您在执行中的角色。
           </p></Reveal>
 
           <Reveal className="mt-m"><div className="mono sec-k" style={{ fontSize: ".72rem" }}>商业 · 优先次序 · 数据 · 流程 · 治理 · 衡量</div></Reveal>
@@ -101,10 +103,10 @@ export default function AiExecutiveMbaPage() {
       <section className="section">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">先问问题，再选工具</span></div></Reveal>
-          <Reveal><h2 className="sec-h">从商业问题出发，而不是从模型出发。</h2></Reveal>
+          <Reveal><h2 className="sec-h">先定决策，再选模型</h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "58ch" }}>
             <Link href="/zh/how-it-works" className="acc">F.A.S.T. 方法</Link>先把预期结果、相关证据、约束与风险界定清楚，
-            领导者再据此判断 AI 是否合适、其输出又该如何把关。
+            您再据此判断 AI 是否合适、其输出又该如何把关。
           </p></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {THINKING_ZH.map(([i, h, p]) => (
@@ -119,17 +121,17 @@ export default function AiExecutiveMbaPage() {
       </section>
 
       {/* 4 · SAME-PROGRAMME FACTS STRIP */}
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">课程事实</span></div></Reveal>
-          <Reveal><h2 className="sec-h">加入 AI 主题，课程的正式属性不变。</h2></Reveal>
+          <Reveal><h2 className="sec-h">加入 AI 主题，课程的正式属性不变</h2></Reveal>
           <Reveal className="mt-m"><div className="grid-forces">
             {[
-              ["由 CMI 颁授并背书", "面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书，并非 MQA 监管的学术学位。"],
+              ["由 CMI 颁发并认可", `${PROGRAMME_POSITIONING_ZH}并非 MQA 认证的学术学位或受监管资格。${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH}`],
               ["HRD Corp", HRD_CORP_CLAIM_ZH],
-              ["修读形式", `${FACTS.durationMonths} 个月的课程：${FACTS.liveSessions} 次指定的研习课，加上辅导与企业应用项目。`],
-              ["课程费用", "标准费用 " + FACTS.priceStd + "。LIFE Innoversity 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准；最终金额与应付费用均以书面个别确认。"],
-              ["企业应用项目", "学员为自己的企业交出一份转型方案，没有传统的考试或论文。"],
+              ["修读形式", `${FACTS.durationMonths} 个月的课程：${FACTS.trainingDays} 个培训日，分 ${FACTS.liveSessions} 次指定研习课进行，另有一对一辅导与企业应用项目。`],
+              ["课程费用", `标准费用 ${FACTS.priceStd}。${FACTS.scholarshipProvider} 奖学金名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准；并非自动授予，最终金额与应付费用均以书面个别确认。`],
+              ["企业应用项目", "学员为自己的企业交出一份书面行动方案，经导师团队审阅；没有传统的考试或论文。"],
             ].map(([h, p]) => (
               <div key={h} className="card">
                 <h3 style={{ fontSize: "1.1rem", margin: "0 0 8px" }}>{h}</h3>
@@ -138,7 +140,7 @@ export default function AiExecutiveMbaPage() {
             ))}
           </div></Reveal>
           <Reveal className="mt-s"><p className="fine" style={{ maxWidth: "72ch" }}>
-            本专业课程由 CMI 颁授并背书，并非 MQA 认证的学术学位或受监管资格。课程不保证收入、晋升或任何商业成果。
+            该方法旨在培养与 AI 相关工作的决策能力；商业成果取决于学员自身的证据、选择与执行。
           </p></Reveal>
         </div>
       </section>
@@ -147,10 +149,10 @@ export default function AiExecutiveMbaPage() {
       <section className="section">
         <div className="wrap center">
           <Reveal><h2 className="sec-h" style={{ maxWidth: "22ch", marginInline: "auto" }}>
-            挑班次之前，先把课程本身看清楚。
+            挑开课日期之前，先把课程本身看清楚
           </h2></Reveal>
           <Reveal><p className="sec-sub" style={{ maxWidth: "54ch", marginInline: "auto" }}>
-            浏览已公布的开课班次，挑一个日期与您职责安排相配的。课程团队会为您说明课程大纲、修读形式与申请要求。
+            浏览已公布的开课日期，挑一个与您职责安排相配的。课程团队会为您解答课程结构、费用、认可与由雇主主导的 HRD Corp 资助等问题。
           </p></Reveal>
           <Reveal className="mt-m"><div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
             <Link href="/zh/apply" className="btn btn-primary">{CTA_LABELS.zh.guide} →</Link>
@@ -159,7 +161,7 @@ export default function AiExecutiveMbaPage() {
         </div>
       </section>
 
-      <CtaSection lang="zh" programme="AI Executive MBA" heading="聊聊这门课程如何对接您的 AI 优先事项。" sub="通话、线上会议、面谈或电邮，方式由您选。课程团队会解答关于适配度、日期、费用、认可，以及由雇主主导的 HRD Corp 资助等问题；咨询不构成任何报名或付款承诺。" />
+      <CtaSection lang="zh" programme="AI Executive MBA" heading="聊聊正在权衡的 AI 决策" sub={`通话、线上会议、面谈或电邮，方式由您选。课程团队会解答关于适配度、日期、费用、认可，以及由雇主主导的 HRD Corp 资助等问题。${ENQUIRY_COMMITMENT_ZH}`} />
     </>
   );
 }

@@ -1,0 +1,31 @@
+{
+  "unit": "asian-business-consulting",
+  "language": "zh",
+  "file": "src/app/(zh)/zh/asian-business-consulting/page.tsx",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "lines": [23, 50, 85, 112, 139, 140],
+      "problem": "班次 used repeatedly for cohorts (milestone strip, a leader bio, the hero lede, the team intro and the film section) — explicitly banned by the dispatch watch list ('届 not 班次') and by the audit script's hard-banned zh list; 班次 in Malaysian Chinese reads as a bus/flight schedule, not a course cohort.",
+      "fix": "Replaced every instance with 届 (or 各届 / 开课通知 where the sentence needed a different noun): milestone '个已开办班次' -> '届已开办课程'; leader bio '班次招生' -> '各届招生'; hero lede '个班次' -> '届'; team intro '班次说明里确认该班的导师' -> '开课通知里确认该届的导师'; film H2/lede '个班次' -> '届' (three occurrences)."
+    },
+    {
+      "lines": [79, 81, 111, 139, 157],
+      "problem": "Five headings (the hero H1 and four H2s) ended with a trailing 。, banned by zh-register.md rule 27 and the watch list.",
+      "fix": "Removed the trailing full stop from the H1 ('...的机构。' -> '...的机构') and each H2 ('设计并交付课程的团队。', the film H2, '支撑课程交付的机构。')."
+    },
+    {
+      "line": 183,
+      "problem": "CtaSection heading prop '清楚了解颁发内容、独立事项与决定方。' (renders as h2) ended with a trailing 。.",
+      "fix": "Removed the trailing full stop."
+    }
+  ],
+  "checksPassed": [
+    "认可 used for CMI, 认证 reserved for MQA throughout (lines 17, 22, 85, 156, 162).",
+    "获颁 used correctly as the award verb for graduates (milestone strip and film section).",
+    "No 毕业/graduation-as-degree wording; film section uses 证书颁发典礼 / 获颁证书 throughout.",
+    "No sentence-initial 它/这; no 您 in headlines (page carries no second-person address); no cleft sentences found."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": []
+}

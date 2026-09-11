@@ -1,0 +1,78 @@
+{
+  "unit": "chartered-manager-malaysia",
+  "archetype": "trust and recognition page (spec section 8)",
+  "files_changed": [
+    "src/app/(en)/chartered-manager-malaysia/page.tsx",
+    "src/app/(ms)/ms/chartered-manager-malaysia/page.tsx",
+    "src/app/(zh)/zh/chartered-manager-malaysia/page.tsx",
+    "docs/superpowers/plans/handbacks/R2-chartered-manager-writer.json"
+  ],
+  "not_touched": [
+    "src/lib/content.ts",
+    "src/lib/content-ms.ts",
+    "src/lib/content-zh.ts",
+    "CmiProgressionChart component (already rewritten and reviewed by others)"
+  ],
+  "new_h1_and_lede": {
+    "en": {
+      "h1": "Recognition for work you can show.",
+      "lede": "{CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance} {STAGES[2].d}"
+    },
+    "ms": {
+      "h1": "Pengiktirafan untuk kerja yang anda boleh tunjukkan.",
+      "lede": "{PROGRAMME_POSITIONING_MS} Peserta yang berjaya dianugerahkan {CERTIFICATE_POSITIONING.credential}. Ia bukan akademik, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS} {CHARTERED_MANAGER_BOUNDARY_MS (local sentence, see below)}"
+    },
+    "zh": {
+      "h1": "看得见的成果，拿得到的认可。",
+      "lede": "{PROGRAMME_POSITIONING_ZH}学员顺利结业将获颁 CMI 认可证书（{CERTIFICATE_POSITIONING.credential}）。这并非学术课程，也不是 MQA 认证的学术学位或受监管资格。{CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH} {CHARTERED_MANAGER_BOUNDARY_ZH (local sentence, see below)}"
+    }
+  },
+  "constants_used": [
+    "CERTIFICATE_POSITIONING.headline",
+    "CERTIFICATE_POSITIONING.distinction",
+    "CERTIFICATE_POSITIONING.professionalRelevance",
+    "CERTIFICATE_POSITIONING.credential",
+    "CERTIFICATE_POSITIONING.cmiRecognitionSource",
+    "STAGES[2].d (Chartered Manager separate-route boundary, EN)",
+    "CTA_LABELS.guide / CTA_LABELS.ms.guide / CTA_LABELS.zh.guide",
+    "PROGRAMME_POSITIONING_MS",
+    "PROGRAMME_POSITIONING_ZH",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (content-ms.ts)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (content-zh.ts)",
+    "FACTS.durationMonths (zh page, unchanged usage)"
+  ],
+  "local_sentences_not_yet_hoisted_to_constants": {
+    "note": "content-ms.ts and content-zh.ts have no exported mirror of STAGES[2].d (the Chartered Manager separate-route boundary sentence). I composed CHARTERED_MANAGER_BOUNDARY_MS and CHARTERED_MANAGER_BOUNDARY_ZH as local consts in each page file, following the exact wording pattern already used verbatim (inline, un-hoisted) elsewhere in content-ms.ts line 102/138 and content-zh.ts line 102/138. Facts inside them (CMI decides eligibility/assessment/membership/fees; not included in the published programme or fee) are unchanged from the existing site-wide phrasing, no new numbers or claims introduced.",
+    "suggestion_for_reviewer_or_owner": "Consider hoisting STAGES[2].d equivalents into content-ms.ts/content-zh.ts as named exports (e.g. STAGES_MS[2].d, STAGES_ZH[2].d) in a later pass so this sentence has one source across all three languages, matching how CERTIFICATE_POSITIONING.professionalRelevance is already mirrored."
+  },
+  "exit_codes": {
+    "npm_run_typecheck": 0,
+    "content_clarity_audit": 0,
+    "content_clarity_audit_notes": "Passed across 178 public content files. 2 pre-existing non-blocking locale warnings reported (src/lib/content-zh.ts:112-113, '班次' word) — unrelated to this unit, not introduced by this change."
+  },
+  "self_checks": {
+    "ms_banned_terms_scan": "grep for 'perbualan program', 'pengurus bekerja', 'projek aplikasi', 'laluan pilihan', 'Tempah sesi' against the MS page: no matches.",
+    "ms_high_confidence_audit_items_applied": [
+      "diakreditasi reserved strictly for MQA usage ('ijazah akademik terakreditasi MQA')",
+      "Chartered Manager boundary uses 'ditentukan oleh CMI' pattern; avoids 'laluan pilihan', 'laluan lanjutan', 'peringkat seterusnya', 'fasa kedua'; 'automatik' only appears preceded by 'Tidak' ('Tidak automatik.')"
+    ],
+    "zh_banned_terms_scan": "grep for '背书', '班次', '参与者', '渠道', '创始人', '首席执行官', '营销', '免费获取' against the ZH page: no matches.",
+    "zh_high_confidence_audit_items_applied": [
+      "'由 CMI 颁发并认可' used verbatim per owner decision 1 (via PROGRAMME_POSITIONING_ZH), never 背书",
+      "学位 reserved for the MQA/academic-degree contrast only, never applied to the programme's own credential",
+      "no career-outcome guarantee collocations (保证成功/成功晋升/加薪) — professionalRelevance constant used instead",
+      "full-width brackets （） around the English credential name; no sentence-initial 它/这; no pronoun in the H1"
+    ],
+    "h1_word_and_character_counts": {
+      "en": "6 words (limit 9)",
+      "ms": "7 words (limit 9)",
+      "zh": "12 characters, two beats, no pronoun (limit 14)"
+    },
+    "professional_relevance_adjacency": "CERTIFICATE_POSITIONING.professionalRelevance (and its ms/zh mirrors) renders in the hero block and again in both body sections that mention CMI/the certificate, per governance checklist item 4 and the archetype example, to keep the boundary in the same viewport as every CMI claim including the two outcome-grid cards."
+  },
+  "left_for_reviewer": [
+    "Confirm CHARTERED_MANAGER_BOUNDARY_MS / CHARTERED_MANAGER_BOUNDARY_ZH wording (composed locally, not yet a shared constant) reads correctly against the ms-register-audit and zh-register-audit high-confidence items for this exact page, since these two local sentences were not present verbatim anywhere else in the codebase.",
+    "Verify metadata title/description in all three languages meet SEO length limits (not checked against SEO-CONTENT-GOVERNANCE.md length rules specifically, only against the banned-pattern audit).",
+    "FAQPage JSON-LD structure (array shape, mainEntity mapping) is unchanged from the original file in all three languages — only the q/a text fields were rewritten."
+  ]
+}

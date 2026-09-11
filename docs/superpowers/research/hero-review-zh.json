@@ -1,0 +1,70 @@
+{
+  "language": "zh",
+  "verdict": "fail",
+  "problems": [
+    {
+      "where": "primary.lede (closing token) and alternative.lede (closing token)",
+      "problem": "Both ledes end with {PROGRAMME_POSITIONING_ZH}, which literally renders '面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书。' This states CMI awards ('颁授') and endorses ('背书') the Executive MBA itself. SEO-CONTENT-GOVERNANCE.md line 90 explicitly says 'do not imply that CMI awards an academic MBA degree,' and the site's controlled-term table (line 71) bans 'CMI qualification, CMI degree or academic MBA award' opposite 'CMI Certificate of Recognition.' zh-register.md's self-validation checklist item 11 bans 背书 outright with no carve-out for 'inside a quoted constant,' and the zh-register-audit.json flags this exact string twice at high confidence, one entry stating plainly: 'Keep 背书 out of credential sentences (it implies endorsement rather than recognition), which is the real defect.' The draft's own self-check marks this 'pass (背书 is in the constant, not in copy)' -- that is a rationalization, not a pass: the rendered hero will carry banned language regardless of where the string is defined. This is inherited from the shared EN/MS/ZH constant (PROGRAMME_POSITIONING_SENTENCE also says 'awarded and endorsed by CMI' in English), so it is not a transcreation error unique to this draft, but it blocks shipping this hero as-is in any language.",
+      "fix": "Before this hero ships, replace PROGRAMME_POSITIONING_ZH at the source (src/lib/content.ts) with a recognition-only rendering, e.g. '面向未来商业领导力的 Executive MBA，获 CMI 专业标准认可（CMI Professional Standards）。' -- drop 颁授 and 背书 entirely; use 认可, never 认证 or 颁授, for anything CMI does to the programme. The equivalent EN/MS constants (PROGRAMME_POSITIONING, PROGRAMME_POSITIONING_SENTENCE, PROGRAMME_POSITIONING_MS) carry the same 'awarded and endorsed' defect and need the same one-time fix so all three languages stay equivalent per governance line 64-65."
+    },
+    {
+      "where": "primary.title",
+      "problem": "The draft changes the spec-approved title 从独自决策，到带队落实 (spec §9/§13) to 从独扛决策，到带队落实. 扛 is a physical carrying verb that in Malaysian/Sin Chew press usage collocates with concrete burden nouns (扛责任, 扛重担, 一肩扛起) -- pairing it directly with the abstract process noun 决策 ('decision-making') is a strained collocation that a copy desk would query, and 独扛 in general reads as spoken/internet register (一个人扛, 独自扛下) rather than education-section press register. It is not a mainland term and would not fail the register guide's 'Beijing or translation bureau' test, but it fails the guide's own do/don't rule 1 (match the press's restrained rhythm) and reads as workshopped rather than organic. Changing an already-approved spec title also needs explicit owner sign-off, which the notes flag as an open question rather than a settled decision.",
+      "fix": "Revert to the spec-approved 从独自决策，到带队落实 (11 characters, safe, already vetted) unless the owner explicitly wants the 'carrying' metaphor restored. If the owner does want it, use a natural burden-noun collocation instead of decision-noun: 从独自扛责，到带队落实 (11 characters, 扛责 = 'shoulder the responsibility,' an attested collocation) rather than 独扛决策."
+    },
+    {
+      "where": "primary.purposeLine ('预约课程咨询') vs live constant CTA_LABELS.zh.conversation ('预约课程沟通') in src/lib/content.ts line 39",
+      "problem": "The hero's purpose line uses 预约课程咨询 for the arrange-a-conversation action, but the live CTA_LABELS.zh.conversation constant elsewhere on the same page still reads 预约课程沟通. If the actual conversation button renders the constant while the purpose line renders this freehand string, the same action will carry two different Chinese labels in the same viewport -- exactly the inconsistency the CTA family rule (报读/索取/预约/查看/咨询) exists to prevent. The zh-register-audit.json flags this exact drift at low confidence and recommends standardising on 咨询.",
+      "fix": "Update CTA_LABELS.zh.conversation from 预约课程沟通 to 预约课程咨询 at the source so the purpose line and the rendered CTA button agree. Do the opposite (revert the hero to 沟通) only if the button copy cannot be changed before ship."
+    },
+    {
+      "where": "primary.cta ('索取 {PROGRAMME_YEAR} 年课程指南') vs live constant CTA_LABELS.zh.guide ('免费获取 {PROGRAMME_YEAR} 课程指南') in src/lib/content.ts line 38",
+      "problem": "The hero's CTA is written freehand rather than interpolating CTA_LABELS.zh.guide, and for good reason -- the live constant leads with 免费 (banned as the CTA's lead word by governance checklist item 14) and uses the app-store verb 获取 (banned by zh-register.md rule 9). But because the hero bypasses the constant instead of fixing it, the button that actually renders elsewhere on the page (wherever it reads CTA_LABELS.zh.guide directly) will not match this hero copy.",
+      "fix": "Update CTA_LABELS.zh.guide at the source to 索取 {PROGRAMME_YEAR} 年课程指南 (dropping 免费 and 获取, matching the approved English pattern in spec §9 which also drops 'free' from the CTA value). Keep a single 免费 PDF mention in the fine print only, per spec."
+    },
+    {
+      "where": "primary.supporting[1] and factTokens note re {ABC_PROFILE.programmePositioning}",
+      "problem": "The approved English lede (spec §9) ends with {ABC_PROFILE.programmePositioning}, a two-sentence constant that already bundles the not-an-MQA-degree/not-a-regulated-qualification boundary inline with the positioning claim. The zh lede instead ends with the shorter {PROGRAMME_POSITIONING_ZH}, which has no zh mirror of that second sentence, so the boundary is moved to supporting 2 instead of sitting in the lede itself. This is defensible only if supporting 2 genuinely renders in the same viewport/fold as the lede at every breakpoint (spec §12.4's requirement) -- a component/CSS fact this JSON cannot verify. The draft's own self-check correctly marks this 'pass with note' rather than a clean pass.",
+      "fix": "Confirm in the actual hero component (desktop and mobile) that supporting 2 is visible without scrolling wherever the lede and CMI/certificate language appear. If it is not, either hoist the not-an-MQA-degree sentence into the lede's closing constant (requires the PROGRAMME_POSITIONING_ZH fix above to also add this second sentence, mirroring ABC_PROFILE.programmePositioning) or restructure the hero so supporting 2 cannot be scrolled out of view independently of the lede."
+    },
+    {
+      "where": "primary.supporting[2] and primary.supporting[3] (freehand transcreations of {INCLUSIONS[5].s} and {HRD_CORP_CLAIM.label})",
+      "problem": "No zh constants exist yet for INCLUSIONS[5].s or HRD_CORP_CLAIM.label, so the hero types out the facts by hand instead of interpolating a token. The content is currently accurate, but it bypasses the constant-of-truth requirement (spec §12.3): a future change to HRD Corp mechanics or the certificate/Chartered Manager positioning in content.ts would not automatically propagate here, and npm run audit:content cannot catch drift in a hand-typed sentence the way it catches a stale token.",
+      "fix": "Before ship, add zh mirrors of INCLUSIONS[5].s and HRD_CORP_CLAIM.label to content-zh.ts using the drafted wording (they read correctly), then switch supporting 2 and supporting 3 to interpolate the new constants instead of hardcoding the sentences, exactly as the draft's own notes 4 already recommend."
+    },
+    {
+      "where": "primary.eyebrow ('专为决定影响的不只是自己的管理者而设')",
+      "problem": "Grammatically valid but dense: it stacks two 的-clauses into one attributive noun phrase ('[决定影响的不只是自己]的管理者'), which is heavier than a typical Sin Chew eyebrow tag. This is a minor style note, not a rule violation -- the phrase deliberately preserves the spec §13 meaning key '决定影响的不只是自己' verbatim, which is the right call.",
+      "fix": "No change required if preserving the exact meaning key is the priority. If a lighter eyebrow is wanted: 专为决定影响不止一人的管理者而设 (removes one 的-embedding) -- optional, not blocking."
+    }
+  ],
+  "revised": {
+    "primary": {
+      "eyebrow": "专为决定影响的不只是自己的管理者而设 · 马来西亚 · {PROGRAMME_YEAR} 年开课日期",
+      "title": "从独自决策，到带队落实",
+      "lede": "带一个手上的企业课题来，{FACTS.durationMonths} 个月内写成团队可落实的行动方案；导师与教练检视思路，方法留给您。{PROGRAMME_POSITIONING_ZH}",
+      "cta": "索取 {PROGRAMME_YEAR} 年课程指南",
+      "purposeLine": "先看清课程安排、已公布的 {PROGRAMME_YEAR} 年开课日期、费用、奖学金评估与 CMI 认可，再决定是否预约课程咨询。",
+      "secondaryCta": "查看这 {FACTS.durationMonths} 个月会改变什么 →",
+      "supporting": [
+        "{FACTS.trainingDays} 个培训日，分 {FACTS.liveSessions} 次指定研习课完成；另有一对一辅导，以及一个以您分内的课题为题的企业应用项目。课程框架与工作模板归您保留。",
+        "达到课程要求的学员，将获颁 Executive MBA 课程的 CMI 认可证书（{CERTIFICATE_POSITIONING.credential}）；本课程属非学术性的专业发展课程，并非马来西亚学术资格鉴定机构（MQA）认证的学术学位或受官方监管的正式资格。Chartered Manager 是 CMI 另设的独立可选路线，另有独立的资格、评估及费用，均由 CMI 审定。",
+        "标准费用 {FEES.standard.label} · {PROGRAMME_YEAR} 年开课日期已公布 · 由雇主申请的人力资源发展机构（HRD Corp）资助，须经 HRD Corp 批准。咨询不构成报读或付款承诺。"
+      ]
+    },
+    "alternative": {
+      "title": "带着决策来，带着方法走",
+      "lede": "手上一个企业课题，{FACTS.durationMonths} 个月内从界定问题写到他人可循的行动方案；导师与教练检视思路，职位不变。{PROGRAMME_POSITIONING_ZH}",
+      "supporting1": "{FACTS.trainingDays} 个培训日，分 {FACTS.liveSessions} 次指定研习课完成；另有一对一辅导，以及一个以您分内的课题为题的企业应用项目。带走的方法，就是归您保留的课程框架与工作模板。"
+    }
+  },
+  "sourceConstantNotes": [
+    "PROGRAMME_POSITIONING_ZH (src/lib/content.ts line 26-27) must be rewritten to remove 颁授并背书 before this hero, or any other page that quotes the constant, can ship; both zh-register-audit.json passes flag it at high confidence and SEO-CONTENT-GOVERNANCE.md line 90 bans the underlying claim directly. Suggested replacement: '面向未来商业领导力的 Executive MBA，获 CMI 专业标准认可（CMI Professional Standards）。' The parallel EN constant PROGRAMME_POSITIONING_SENTENCE ('awarded and endorsed by CMI') and PROGRAMME_POSITIONING_MS ('dianugerahkan dan disokong oleh CMI') carry the identical defect and should be fixed in the same pass so all languages stay equivalent.",
+    "CTA_LABELS.zh.guide (line 38) currently reads 免费获取 {PROGRAMME_YEAR} 课程指南 -- leads with 免费 (banned by governance checklist item 14) and uses the app-store verb 获取 (banned by zh-register.md rule 9). The hero draft correctly avoids this constant and writes 索取 {PROGRAMME_YEAR} 年课程指南 instead, but the constant itself needs the same fix so the rendered button matches the hero copy.",
+    "CTA_LABELS.zh.conversation (line 39) currently reads 预约课程沟通; the hero's purpose line uses 预约课程咨询. Standardise on 咨询 (matches the CTA family 报读/索取/预约/查看/咨询) by updating the constant, per the register audit's low-confidence recommendation.",
+    "INCLUSIONS[5].s and HRD_CORP_CLAIM.label have no zh mirrors yet. The hero's supporting 2 and supporting 3 hand-type the equivalent Chinese (accurately, on current review), but these should be promoted to real content-zh.ts constants before ship so future fact changes propagate automatically and the content audit can check them.",
+    "Consider whether ABC_PROFILE.programmePositioning needs a zh mirror (proposed by the draft's own notes) so the zh lede can carry the not-an-MQA-degree boundary inline the way the English lede does via {ABC_PROFILE.programmePositioning}, rather than relying on supporting 2 being in the same viewport."
+  ],
+  "nativeReadingScore": 7,
+  "notes": "Most of the draft is careful, disciplined Malaysian Chinese: it correctly avoids the Fri-Sat 周末 factual error the audit flags elsewhere on the site, keeps 认可/认证 correctly separated for CMI/MQA, avoids every banned urgency/prestige word, keeps pangu spacing and full-width punctuation consistent, hits the character caps exactly (11/11 for both titles, 45/45 for both ledes), and correctly folds the not-an-MQA-degree boundary into supporting 2 per spec 12.4. It reads as edited copy, not machine translation. But two things keep it from a clean pass: it ships a lede (in both variants) that literally states CMI awards and endorses the MBA -- a claim governance explicitly bans and the register guide explicitly sweeps for with no exception for 'it's inside a constant' -- and it silently diverges from two live CTA/label constants (预约课程沟通, 免费获取...课程指南) that will visibly disagree with this copy wherever they render on the same page. The primary title's swap from 独自 to 独扛 is a judgment call, not a rule violation, but it trades a vetted, clean spec title for a colloquial one with an awkward collocation, without visible owner sign-off. Fix the constant, align the two CTA-family terms, and the copy is ready."
+}

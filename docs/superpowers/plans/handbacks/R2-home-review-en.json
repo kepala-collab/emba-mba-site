@@ -1,0 +1,28 @@
+{
+  "unit": "home",
+  "language": "en",
+  "verdictBeforeFixes": "pass with one gap",
+  "problems": [
+    {
+      "file": "src/components/site/FutureCommerceHome.tsx",
+      "line": "hero copy block (h1/lede) + JSX around commerce-hero-lede",
+      "problem": "Owner decision §14.2: wherever the certificate/CMI is named in the hero or first viewport, CERTIFICATE_POSITIONING.professionalRelevance must render in the same block (home hero, supporting line 2). Writer's handback flagged no slot existed and escalated instead of resolving.",
+      "fix": "Added copy.heroSupport = CERTIFICATE_POSITIONING.professionalRelevance (and MS/ZH mirrors) and rendered it as a new <p className=\"commerce-hero-support\"> immediately after .commerce-hero-lede, inside the existing hero copy block. Added matching CSS rule next to .commerce-hero-lede in src/app/globals.css. Did not touch h1#commerce-hero-title, .commerce-hero-media, or .commerce-decision-layout — e2e hero assertions remain valid."
+    },
+    {
+      "file": "src/components/site/GuideApplyPage.tsx",
+      "line": "guide-apply-marks block",
+      "problem": "Governance checklist item 4: wherever 'awarded', 'CMI', certificate or 'graduates' appears, the no-guarantee sentence must render in the same viewport. This page's first viewport names CMI recognition in the lede and renders a labelled 'Awarded and endorsed by CMI' ProgrammeMarks badge, but nowhere carried CERTIFICATE_POSITIONING.professionalRelevance.",
+      "fix": "Added copy.marksNote = CERTIFICATE_POSITIONING.professionalRelevance (+ MS/ZH mirrors) and rendered it as a <p className=\"fine\"> directly under the ProgrammeMarks badge. Also passed the missing lang={locale} prop to <ProgrammeMarks> (it was always defaulting to English labels on ms/zh pages)."
+    },
+    {
+      "file": "src/components/site/CmiProgressionChart.tsx",
+      "line": "boundaryP (COPY.en/ms/zh)",
+      "problem": "This component is a full 'CMI progression' section (headline, panels, 'Awarded and endorsed by CMI', certificate/fCMgr rows) but its boundary block only carried the not-an-MQA-degree sentence, not the no-guarantee professionalRelevance sentence, in the same viewport.",
+      "fix": "Appended CERTIFICATE_POSITIONING.professionalRelevance (+ MS/ZH mirrors) to boundaryP in all three locales."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "note": "FutureCommerceHome.tsx currently shows a concurrent edit from the Malay reviewer (lede line 93 wording); left untouched, not my scope."
+}

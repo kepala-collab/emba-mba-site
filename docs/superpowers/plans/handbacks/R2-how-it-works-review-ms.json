@@ -1,0 +1,18 @@
+{
+  "unit": "how-it-works",
+  "language": "ms",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(ms)/ms/how-it-works/page.tsx",
+      "line": "11-15 (metadata)",
+      "problem": "The writer left the page metadata untouched from the pre-rewrite version: title 'Kaedah Keputusan Pengurusan F.A.S.T.' and a description about the F.A.S.T. sequence sharpening problems/testing assumptions/weighing options — none of this matches the new EN source of meaning ('What Changes Across the Six Months' / 'See what changes across 6 months: what you do in each scheduled session and between them, the written action plan reviewed by faculty, and what stays with you afterwards.') or the CORE_PAGES_MS.method content this page now renders (the six-session narrative spine).",
+      "fix": "Rewrote title to 'Apa yang Berubah Sepanjang Enam Bulan' and description to a faithful BM rendering of the new EN metadata, tokenising FACTS.durationMonths instead of retyping the number."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "CORE_PAGES_MS.method already names 'kepimpinan berkhidmat (servant leadership)' verbatim per owner decision, matching the EN source (src/app/(en)/how-it-works/page.tsx also names it). Confirmed correct as-is.",
+    "No MS mirror constant exists yet for the 'What if I miss a session?' catch-up rule; CORE_PAGES_MS.method inlines the equivalent BM sentence directly (as the writer flagged) rather than a shared constant — that is a content.ts architecture question for the owner, not a language fix, and was left unchanged."
+  ]
+}

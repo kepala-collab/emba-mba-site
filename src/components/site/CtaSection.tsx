@@ -1,14 +1,17 @@
 import LeadForm from "./LeadForm";
 import Reveal from "./Reveal";
-import { SITE } from "@/lib/content";
+import { SITE, ENQUIRY_COMMITMENT } from "@/lib/content";
+import { ENQUIRY_COMMITMENT_ZH } from "@/lib/content-zh";
+import { ENQUIRY_COMMITMENT_MS } from "@/lib/content-ms";
 import type { LeadIntent } from "@/lib/conversion-contract";
 
 const DEFAULTS = {
   en: {
     eyebrow: "Programme enquiry",
-    heading: "Get the facts you need to decide.",
-    sub: "Choose a call, online meeting, in-person meeting or email. The programme team will answer questions about suitability, dates, fees, recognition and employer-led HRD Corp funding. An enquiry does not commit you to enrol or pay.",
+    heading: "Get the facts for the decision in front of you.",
+    sub: `Tell the team the decision or business issue you are weighing, and choose a call, online meeting, in-person meeting or email. The programme team will answer questions about suitability, dates, fees, recognition and employer-led HRD Corp funding. ${ENQUIRY_COMMITMENT}`,
     checklist: [
+      "Say what you are trying to change at work",
       "Choose how the team should contact you",
       "Confirm programme fit, available dates and the exact fee",
       "Decide your next step after receiving the information",
@@ -17,9 +20,10 @@ const DEFAULTS = {
   },
   zh: {
     eyebrow: "课程咨询",
-    heading: "获取您做决定所需的资料。",
-    sub: "选择通话、线上会议、面谈或电邮。课程团队会回答关于适合度、日期、费用、认可及雇主主导 HRD Corp 资助的问题；咨询不构成报名或付款承诺。",
+    heading: "看清眼前这项决定所需的事实。",
+    sub: `请告诉团队您正在权衡的决定或业务课题，并选择通话、线上会议、面谈或电邮。课程团队将解答关于适合度、日期、费用、认可及雇主主导 HRD Corp 资助的问题。${ENQUIRY_COMMITMENT_ZH}`,
     checklist: [
+      "说明您想在工作中改变的事项",
       "选择您希望团队联系您的方式",
       "确认课程是否适合、可选日期及实际费用",
       "收到资料后，决定您的下一步",
@@ -28,9 +32,10 @@ const DEFAULTS = {
   },
   ms: {
     eyebrow: "Pertanyaan program",
-    heading: "Dapatkan fakta yang anda perlukan untuk membuat keputusan.",
-    sub: "Pilih panggilan, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon majikan. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar.",
+    heading: "Dapatkan fakta untuk keputusan yang anda hadapi sekarang.",
+    sub: `Beritahu pasukan keputusan atau isu perniagaan yang sedang anda pertimbangkan, dan pilih panggilan, pertemuan dalam talian, pertemuan bersemuka atau e-mel. Pasukan program akan menjawab soalan tentang kesesuaian, tarikh, yuran, pengiktirafan dan pembiayaan HRD Corp yang dipohon majikan. ${ENQUIRY_COMMITMENT_MS}`,
     checklist: [
+      "Nyatakan perkara yang anda ingin ubah di tempat kerja",
       "Pilih bagaimana pasukan patut menghubungi anda",
       "Sahkan kesesuaian program, tarikh yang tersedia dan yuran sebenar",
       "Tentukan langkah seterusnya selepas menerima maklumat",
@@ -67,7 +72,7 @@ export default function CtaSection({
   const resolvedSub = sub ?? d.sub;
   const checklist = steps || d.checklist;
   return (
-    <section id={sectionId} className="section" style={{ background: "var(--bg-2)" }}>
+    <section id={sectionId} className="section section--alt">
       <div className="wrap">
         <div className="cta-grid">
           <Reveal>

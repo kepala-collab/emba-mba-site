@@ -1,0 +1,31 @@
+{
+  "unit": "noindex-and-legal",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/unsubscribed/page.tsx",
+    "src/app/(ms)/not-found.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/unsubscribed/page.tsx",
+      "line": 18,
+      "problem": "'kami akan berhenti langgankan anda secara manual' is ungrammatical — 'langgankan' is the causative form of 'melanggan' ('to make someone subscribe'), so 'berhenti langgankan' does not parse as 'unsubscribe you'.",
+      "fixApplied": "Changed to 'kami akan membatalkan langganan anda secara manual' (invalid-link copy)."
+    },
+    {
+      "file": "src/app/(ms)/ms/unsubscribed/page.tsx",
+      "line": 22,
+      "problem": "Same defect repeated in the error-state copy.",
+      "fixApplied": "Same fix applied (error copy)."
+    }
+  ],
+  "checksPassed": [
+    "not-found.tsx: H1 'Halaman ini tiada di sini.' = 5 words; CTA_LABELS.ms.conversation used verbatim for the conversation link; no banned patterns.",
+    "unsubscribed/page.tsx: no 'laluan pilihan', 'Tempah', or 'dalam bentuk bertulis'; CTA_LABELS.ms.conversation used verbatim; both files match the writer hand-back's structure (added conversation link alongside the home link)."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "Out of my assigned scope but worth flagging: src/app/(ms)/ms/terms/page.tsx:33 and src/components/site/Footer.tsx:150 both still contain the banned phrase 'dalam bentuk bertulis' (should be 'secara bertulis' per the owner's watch list); these files are not among my nine assigned Malay files and were left untouched, but the audit script flags them as locale warnings and they should go to whichever unit/reviewer owns terms.tsx and Footer.tsx."
+  ]
+}

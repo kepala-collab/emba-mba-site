@@ -1,0 +1,38 @@
+{
+  "unit": "asian-business-consulting",
+  "language": "ms",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/asian-business-consulting/page.tsx",
+      "line": 85,
+      "problem": "Hero lede retyped the programme duration as the literal word 'enam bulan' instead of interpolating the FACTS.durationMonths token, breaking governance checklist item 3 ('every digit, currency, count, date and name is a token from src/lib/content.ts'). The EN source page does not carry this boundary sentence in the hero at all, so the MS addition is an extra fact-bearing sentence that must still be token-sourced.",
+      "fixApplied": "Imported FACTS from '@/lib/content' and changed 'selama enam bulan' to 'selama {FACTS.durationMonths} bulan'."
+    },
+    {
+      "file": "src/app/(ms)/ms/asian-business-consulting/page.tsx",
+      "line": 162,
+      "problem": "Same 'selama enam bulan' pattern also exists verbatim in content-ms.ts (line 74, EXECUTIVE_MBA_MS.intro) and is out of scope for this unit (shared constants file, not one of the three page files this reviewer may edit). Flagging for the owner/content.ts maintainer.",
+      "fixApplied": "None (out of scope) — flagged as owner question below."
+    },
+    {
+      "file": "src/app/(ms)/ms/asian-business-consulting/page.tsx",
+      "line": 85,
+      "problem": "'telah membawa {graduates} peserta menerima sijil program merentasi {cohorts} kohort' read as an ungrammatical run-on (verb 'membawa' directly followed by a second finite clause with no connective).",
+      "fixApplied": "Reworded to 'telah membawa {graduates} peserta hingga menerima sijil program, merentasi {cohorts} kohort.' for a native reading while keeping the certificate-recipient framing (not 'graduan'/'graduasi')."
+    }
+  ],
+  "confirmedCompliant": [
+    "Certificate-presentation wording used throughout instead of a degree-graduation word: 'majlis penyampaian sijil' / 'penerima sijil', never 'graduasi' or 'konvokesyen'.",
+    "Malay keeps 'dianugerahkan dan disokong oleh CMI' per owner decision 14.1 (both in MILESTONES and the CMI recognition block); this is correct, not a bug.",
+    "'laluan pilihan' does not appear anywhere on this page (confirmed by grep and by node scripts/content-clarity-audit.mjs, which flags that exact retired phrasing elsewhere on the site but not in this unit's files).",
+    "CTA_LABELS.ms.conversation ('Jadualkan sesi perbincangan program') pattern is available and 'Tempah' is not used anywhere on this page.",
+    "'dalam bentuk bertulis' does not appear; the fee/scholarship sentence in the CMI block uses no such calque.",
+    "H1 ('Organisasi yang mereka bentuk Future Ready Executive MBA.') and section H2s are within the 9-word cap.",
+    "Boundary + CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS render in the same block wherever CMI/the certificate is named (hero lede and the CMI recognition card)."
+  ],
+  "nativeReadingScoreAfterFixes": 7,
+  "ownerQuestions": [
+    "content-ms.ts line 74 (EXECUTIVE_MBA_MS.intro) retypes 'enam bulan' as a literal word instead of using FACTS.durationMonths, identical to the bug fixed on this page. This is a shared constants file outside this unit's edit scope (only the three ms page files were touched); the owner or a components/content.ts-scoped reviewer should apply the same fix at the source constant so every page importing it inherits the token."
+  ]
+}

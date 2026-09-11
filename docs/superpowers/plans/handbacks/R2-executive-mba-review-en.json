@@ -1,0 +1,25 @@
+{
+  "unit": "executive-mba",
+  "language": "en",
+  "verdict_before_fixes": "pass (one minor governance-checklist issue)",
+  "problems_found": [
+    {
+      "file": "src/app/(en)/executive-mba/page.tsx",
+      "line": 142,
+      "problem": "Chartered Manager stage card's mono kicker read 'Optional next step' paired with a '02' stage number directly after the '01' six-month card, reading as a sequential second stage despite the body text correctly describing Chartered Manager as a separate route. Spec section 12 rule 5 bans 'second stage'-style framing for the CMI route.",
+      "fix": "Changed the kicker to 'Separate CMI route', matching the body copy and the owner's 'separate, optional, CMI-decided' framing."
+    }
+  ],
+  "checked_and_passed": [
+    "H1/lede are the exact spec section 8 approved example (bring/leave pattern).",
+    "Assessment framed as presence ('A written action plan on your own business, reviewed by faculty'), not absence.",
+    "CERTIFICATE_POSITIONING.professionalRelevance renders beside every CMI/certificate mention (hero note, stage card, recognition section).",
+    "All counts/durations/fees come from FACTS/CERTIFICATE_POSITIONING/COMPANY_ENROLMENT tokens; no retyped facts.",
+    "No promotion/salary/title/growth/funding claims found; 'Trust and influence networks' is the MODULES constant's factual outcome label, not a page-authored promise.",
+    "Curriculum H2 matches the spec's exact approved example.",
+    "No urgency/scarcity wording; no good-things panel; CTAs use CTA_LABELS and named-purpose ghost links.",
+    "npm run typecheck: exit 0. node scripts/content-clarity-audit.mjs: passes (178 files); no new warnings from this file."
+  ],
+  "native_reading_score_after_fixes": 9,
+  "owner_questions": []
+}

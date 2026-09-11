@@ -1,0 +1,19 @@
+{
+  "unit": "mba-for-entrepreneurs",
+  "language": "en",
+  "file_reviewed": "src/app/(en)/mba-for-entrepreneurs/page.tsx",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(en)/mba-for-entrepreneurs/page.tsx",
+      "line": 63,
+      "problem": "H1 'From instinct to a plan your co-founders can follow.' is an audience-cluster from-to headline whose 'to' side is a full relative clause ('a plan your co-founders can follow'), not a short phrase — it fails the transcreation judge's audience-page rule that from-to headlines are capped at one short phrase per side. Contrast the other from-to headlines reviewed in this batch (executive-mba-malaysia: 'your own live issue' / 'a faculty-reviewed plan'), which are both short noun phrases with no embedded clause. This exact wording is the spec's own worked example (section 8), but the judge's rule (repeated as the explicit review instruction for this batch) overrides it as a localisability/consistency constraint, especially since the co-founders detail is unnecessary in the headline — it is already carried in the lede ('one you can walk co-founders, boards or investors through').",
+      "fix": "Shortened the 'to' side to a short noun phrase: H1 is now 'From instinct to a shareable plan.' (6 words). Both sides are now short phrases with no embedded clause. The co-founders/boards/investors detail remains intact in the lede immediately below, so no meaning is lost."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [
+    "Confirm the shortened H1 'From instinct to a shareable plan.' is acceptable, or supply an alternative short phrase, given the original wording came directly from the messaging-architecture spec's own worked example for this page."
+  ],
+  "notes": "Rest of the page checked clean: CERTIFICATE_POSITIONING.professionalRelevance colocates with the CMI mention in the hero; fee/scholarship sentence in the CTA nudge section renders entirely from FACTS tokens with the 'never automatic' sentence; Chartered Manager stated only as a separate optional CMI route; 'No funding or growth is promised' correctly hedges the applied-project outcome; no good-things panel or price/speed/credential card titles; no banned patterns hit by the audit script. npm run typecheck and node scripts/content-clarity-audit.mjs both pass after the fix."
+}

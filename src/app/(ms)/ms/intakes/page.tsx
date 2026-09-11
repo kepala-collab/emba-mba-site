@@ -2,15 +2,15 @@ import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS, FACTS } from "@/lib/content";
+import { CTA_LABELS, FACTS, PROGRAMME_YEAR } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const path = "/ms/intakes";
 
 export const metadata = withSeo(path, {
-  title: "Tarikh Kohort Executive MBA 2026 — Bahasa Inggeris dan Mandarin",
+  title: `Tarikh Kohort Executive MBA ${PROGRAMME_YEAR} — Bahasa Inggeris dan Mandarin`,
   description:
-    `Semak tarikh dan waktu ${FACTS.liveSessions} sesi hujung minggu bagi Kohort 17–19 (Bahasa Inggeris) dan Kohort 2–3 (Mandarin) untuk tahun 2026.`,
+    `Dibuka untuk pertanyaan: semak tarikh dan waktu ${FACTS.liveSessions} sesi berjadual bagi Kohort 17–19 (Bahasa Inggeris) dan Kohort 2–3 (Mandarin) untuk tahun ${PROGRAMME_YEAR}.`,
 });
 
 export default function Page() {
@@ -20,15 +20,15 @@ export default function Page() {
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Kohort Bahasa Inggeris dan Mandarin 2026</span></div>
-            <h1 className="sec-h">Pilih kohort yang sesuai dengan jadual kerja anda.</h1>
-            <p className="sec-sub">Setiap kohort yang diterbitkan selesai dalam {FACTS.durationMonths} bulan menerusi {FACTS.liveSessions} sesi hujung minggu. Chartered Manager pula ialah laluan pilihan CMI yang berasingan — ia tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
-            <p className="fine mt-s">Pasukan program mengesahkan kekosongan kohort semasa membalas pertanyaan anda.</p>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Kohort Bahasa Inggeris dan Mandarin {PROGRAMME_YEAR}</span></div>
+            <h1 className="sec-h">Pilih bila enam bulan anda bermula.</h1>
+            <p className="sec-sub">Setiap kohort yang diterbitkan selesai dalam {FACTS.durationMonths} bulan menerusi {FACTS.liveSessions} sesi berjadual. Tarikh yang ditunjukkan ialah jadual {PROGRAMME_YEAR} yang diterbitkan; jika ABC mengubah sesuatu tarikh, peserta berdaftar menerima tarikh gantian secara bertulis. Chartered Manager pula ialah laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI — ia tidak termasuk dalam program ini atau yuran yang diterbitkan.</p>
+            <p className="fine mt-s">Dibuka untuk pertanyaan.</p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section className="section section--alt">
         <div className="wrap">
           <Reveal><div className="eyebrow"><span className="l" /><span className="mono sec-k">Jadual penuh</span></div></Reveal>
           <Reveal><h2 className="sec-h">Pastikan anda dapat hadir pada ketiga-tiga hujung minggu.</h2></Reveal>

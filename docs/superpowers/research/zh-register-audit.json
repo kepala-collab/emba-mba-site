@@ -1,0 +1,364 @@
+[
+ {
+  "guide": "C:\\Users\\Acer\\Documents\\FutureReadyEMBA\\web\\docs\\superpowers\\research\\zh-register.md",
+  "issues": [
+   {
+    "section": "4 Glossary #2, #3 (and rule 13)",
+    "rule": "Executive MBA: gloss on first explanatory mention as 高级工商管理硕士（EMBA）; MBA: gloss 工商管理硕士（MBA） once.",
+    "problem": "硕士 means a master's degree. Glossing the programme's Executive MBA as 高级工商管理硕士 tells a Malaysian reader it is an academic master's, which is exactly what governance says it is not (not an MQA-accredited degree, not an academic MBA). On this site nearly every 'Executive MBA' mention is the programme, so the 'generic' carve-out will leak. The gloss is also the Chinese form of the banned expansion 'Master of Business Administration'.",
+    "evidence": "SEO-CONTENT-GOVERNANCE.md line 71-72 (do not substitute 'academic MBA award') and line 90 ('do not imply that CMI awards an academic MBA degree'); scripts/content-clarity-audit.mjs line 49 already hard-fails /Future Ready.{0,40}工商管理硕士|工商管理硕士.{0,40}Future Ready/ as 'Future Ready EMBA Chinese name expansion'; N4's 中文高级工商管理硕士（EMBA） was an academic EMBA at a Singapore university, not a comparable product. The site's zh source currently contains zero occurrences of 工商管理硕士 (grep of src).",
+    "correction": "Delete the 硕士 glosses from #2 and #3. Render 'Executive MBA' unglossed; on first mention per page append the programme-type noun: 'Future Ready Executive MBA 专业发展课程（并非学术硕士学位）'. Reserve 工商管理硕士学位 for glossary #4 only, inside the COMPARISON_SCOPE definition of the academic MBA comparison group ('本表用作参照的学术 MBA（工商管理硕士学位）……').",
+    "confidence": "high"
+   },
+   {
+    "section": "3 Register mix (Hero, FAQ and Campaign model sentences) and 4 Glossary #52",
+    "rule": "Model sentences hard-code '3 个指定周末' / '分 3 个指定周末进行' / '三个周末'; glossary #52 only provides 星期六至星期日 for the session days.",
+    "problem": "Four of the five published cohorts run Friday–Saturday, not on a weekend. In Kuala Lumpur the weekend is Saturday–Sunday, so '指定周末' misstates the schedule for Cohorts 18, 19, Mandarin 2 and Mandarin 3 and the guide entrenches an existing inaccuracy in the site copy. The governed fact is 'six training days across three sessions'.",
+    "evidence": "src/lib/content.ts lines 286-290: Cohort 17 days 'Sat–Sun'; Cohorts 18, 19, Mandarin 2, Mandarin 3 days 'Fri–Sat'. src/lib/content-zh.ts line 97 already branches to 星期五至星期六 for those cohorts. Governance fact list: six training days across three sessions. Audit script line 130 requires liveSessions: \"3\" (sessions, not weekends).",
+    "correction": "Render the structure as '3 次指定研习课（每次两天，共 6 个培训日）' or '6 个月内完成 3 次两天的研习课'. Use 周末 only in a sentence about a Sat–Sun cohort. When a cohort is named, spell the days out: 星期五至星期六 / 星期六至星期日. Add 星期五至星期六 to glossary #52 and change the hero sub, FAQ answer and campaign line accordingly.",
+    "confidence": "high"
+   },
+   {
+    "section": "3 Fees & scholarship model sentence; 5 rule 10; 7 checklist items 3 and 8",
+    "rule": "Rule 10 and checklist 3 ban 名额有限 outright as an urgency device; the fees model sentence and checklist 8 require 名额有限 in scholarship sentences.",
+    "problem": "Internal contradiction that a rewriting agent cannot resolve. 'Limited' is a governed scholarship fact, so it cannot be banned; but 名额有限 applied to seats or a CTA is the pressure device governance forbids. The guide never separates the two uses.",
+    "evidence": "SEO-CONTENT-GOVERNANCE.md line 89: 'Eligible Malaysian applicants may be considered for a limited LIFE Innoversity scholarship subject to availability, assessment and written approval'. src/lib/content-zh.ts lines 34, 81, 85 and src/lib/nurture-email.ts line 104 already publish 奖学金名额有限. Guide line 326 (rule 10) and line 452 (checklist 3) ban the phrase; line 457 (checklist 8) requires it.",
+    "correction": "Split the rule. (a) 奖学金名额有限 is a fact and must appear bound in the same sentence to 须经评估 and 书面批准 / 个别以书面确认. (b) 名额有限 / 名额不多 / 仅剩 / 先到先得 about seats, cohorts or in any CTA is banned; seat availability is stated as '名额以课程团队书面确认为准'. Rewrite checklist 3 as 'no urgency device about seats or deadlines' and keep checklist 8 as is.",
+    "confidence": "high"
+   },
+   {
+    "section": "3 Insights articles model sentence",
+    "rule": "Model sentence: 商业环境瞬息万变，身居高位的管理者同样不能停止学习。问题不在于要不要进修……",
+    "problem": "This is a near-verbatim lift of the Sin Chew S1 lede the guide itself quotes (商业环境瞬息万变……也不能停止学习), reusing S1's 身居高位 as well. Publishing it on the site reproduces a newspaper's copy and breaks the guide's own 15-word quotation rule; it also models the wrong behaviour for the rewriting agent (copy the corpus rather than learn its rhythm).",
+    "evidence": "Guide line 129 quotes S1 (https://www.sinchew.com.my/news/20260819/星洲人/7758407) '商业环境瞬息万变……也不能停止学习' and line 130 lists 身居高位 as an S1 四字词; guide line 241 repeats both. Guide line 13 sets the quote rule.",
+    "correction": "Replace with original copy that keeps the pattern (situational clause + one 四字词 + plain statement), e.g. '生意不会停下来等人，管理者的学习也停不得。要问的不是要不要进修，而是怎样进修，才不必放下手上的生意。' Add a note under section 3: model sentences are patterns, never source text; no clause longer than four characters may be copied from a corpus page.",
+    "confidence": "high"
+   },
+   {
+    "section": "3 Hero / home model H1 (also section 6 item 2)",
+    "rule": "H1 '工作照常，进修同行'",
+    "problem": "同行 has two readings. In Kuala Lumpur speech the first reading is tóngháng (peer, same trade), so 进修同行 is heard as 'study peers' rather than 'study alongside'. The slogan is ambiguous in exactly the headline position where the guide wants a clean two-beat 对仗.",
+    "evidence": "Wiktionary 同行 (fetched, https://en.wiktionary.org/wiki/同行): tóngháng 'person of the same trade or occupation'; tóngxíng 'to travel together; to walk together'.",
+    "correction": "'工作照常，进修并行' (并行 has one reading) or '一边工作，一边进修'. Keep the two-beat form.",
+    "confidence": "medium"
+   },
+   {
+    "section": "3 Campaign landing pages model sentence",
+    "rule": "'三个周末，六个培训日，一份以您自己企业为题的行动方案。'",
+    "problem": "Chinese numerals contradict rule 24 and checklist 16 (Arabic throughout one passage; the guide itself faults 四个月 next to 6–12), and 行动方案 introduces a third name for the applied project alongside the controlled 企业应用项目 / 转型方案. The weekend count is also wrong for Fri–Sat cohorts (see the sessions issue).",
+    "evidence": "Guide line 344 (rule 24) and line 465 (checklist 16); SEO-CONTENT-GOVERNANCE.md line 76 controlled term 'Applied business project or transformation plan'; src/app/(zh)/zh/ai-executive-mba/page.tsx line 132 uses 转型方案 and src/lib/content-zh.ts uses 企业应用项目.",
+    "correction": "'3 次研习课、6 个培训日，一份以您自己企业为题的企业应用项目。' If Chinese numerals are wanted for a rhetorical 排比, write that exception into rule 24 explicitly (and only for numbers 一 to 十 in non-fact slogans).",
+    "confidence": "medium"
+   },
+   {
+    "section": "3 PDF guides model sentence",
+    "rule": "'……以课程团队在您报读时提供的最新书面资料为准。'",
+    "problem": "报读 is defined by the guide's own glossary as applying to / enrolling on a course. A reader of the PDF has only requested a guide; the wording presumes enrolment, which governance says an enquiry must never imply.",
+    "evidence": "Guide glossary #50 (报读 = apply to study); SEO-CONTENT-GOVERNANCE.md lines 61-63 ('An enquiry is not an application approval, enrolment or payment commitment') and controlled term line 77.",
+    "correction": "'本指南所载日期、费用及奖学金安排，以课程团队提供的最新书面资料为准。' (or 在您查询时).",
+    "confidence": "medium"
+   },
+   {
+    "section": "3 Fees & scholarship model sentence",
+    "rule": "'符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金评估'",
+    "problem": "可接受……评估 is a passive calque ('may be considered for') that Malaysian readers do not say; press and the site's own newer pages use 申请 for scholarships. The sentence also puts 名额有限 after a semicolon, detached from the condition it qualifies.",
+    "evidence": "src/app/(zh)/zh/hrd-corp-claimable/page.tsx line 56: '可申请 LIFE Innoversity 奖学金评估，择优授予'; guide's own C2 (https://www.chinapress.com.my/20230428/丝绸之路中国政府奖学金-报读华侨大学可申请/) and O2 use 申请 for scholarships.",
+    "correction": "'标准费用为 RM10,000.00。符合资格的马来西亚申请者可申请 LIFE Innoversity 奖学金；奖学金名额有限，须经择优评估及书面批准，任何奖学金金额及应付费用均以书面个别确认为准。'",
+    "confidence": "medium"
+   },
+   {
+    "section": "4 Glossary #26 and 5 rule 24",
+    "rule": "#26 allows '1万令吉 (prose form only if governance allows)'; rule 24 gives 52万 / 1万令吉 as prose examples.",
+    "problem": "The fee is a governed exact string reused from FACTS.priceStd; a prose 万 form is an independent version of the fact, drops the .00 and evades the audit's fee regexes. Rule 24's unspaced 52万 examples also contradict rule 25's pangu convention for the site.",
+    "evidence": "SEO-CONTENT-GOVERNANCE.md lines 46-48 (pages must reuse facts, not introduce independent versions) and line 89 (publish RM10,000.00); scripts/content-clarity-audit.mjs lines 42-44 pattern-match RM strings only.",
+    "correction": "#26: the fee is always the exact string RM10,000.00, in prose as well as tables, via FACTS.priceStd; never 1万令吉 / 一万令吉. Rule 24: 万 applies only to non-governed figures (press-quoted sums, cohort totals) and is written with the site's spacing (52 万令吉).",
+    "confidence": "high"
+   },
+   {
+    "section": "4 Glossary #15 (also section 6 secondary item '受监管的正规资格')",
+    "rule": "Regulated qualification = 受监管的正规资格",
+    "problem": "正规 carries 'legitimate / proper'. The term appears on the site only inside a negative ('并非……受监管的正规资格'), which reads as 'not a legitimate qualification' and disparages the CMI certificate the site is selling; it also over-translates 'regulated' (government/Ofqual-regulated) into a value judgement.",
+    "evidence": "Wiktionary 正规 (fetched, https://en.wiktionary.org/wiki/正规): 'regular; standard; normal; formal; legitimate; real'. src/lib/content.ts line 70 English canonical: 'not an MQA-accredited academic degree or a regulated qualification'.",
+    "correction": "'并非受官方监管的正式资格' (or '并非受政府监管的资格'). Ban 正规 / 不正规 anywhere near the certificate.",
+    "confidence": "medium"
+   },
+   {
+    "section": "4 Glossary #49; 5 rule 19; 7 checklist 11",
+    "rule": "在线 is mainland; use 线上 only; checklist flags 在线 as a vocabulary error.",
+    "problem": "在线 and 网上 are ordinary Malaysian usage in exactly the notice register the guide holds up as a model (Kwong Wah K1) and on a Chinese-medium institution's admission page (New Era). Flagging them as foreign will make the rewriting agent 'correct' natural Malaysian copy and read the corpus wrongly.",
+    "evidence": "Kwong Wah K1 (fetched, https://www.kwongwah.com.my/20260622/2026年留华行前援助金-即起接受申请/): '欢迎符合资格者即日起在线提交申请。' New Era admission page I2 (fetched, https://www.newera.edu.my/enrolment_cn.php?id=3847): CTA '网上报名' and '填写报名表格'.",
+    "correction": "Keep 线上 as the house form for consistency (线上说明会, 线上班), but state that 网上 and 在线 are Malaysian and are not errors; remove 在线 from checklist 11 and from the #49 avoid column.",
+    "confidence": "high"
+   },
+   {
+    "section": "5 rule 19 and 4 Glossary #44",
+    "rule": "Don't use 线下 (mainland).",
+    "problem": "The guide bans 线下 but supplies no Malaysian word for in-person delivery, so the site is left with 面授班 and 到场. The Malaysian press form is 实体课 / 实体班; 线下 also occurs in Sin Chew, usually paired with 线上, so it is not foreign, merely not preferred.",
+    "evidence": "Sin Chew Sarawak 2021-10-06 (fetched, https://sarawak.sinchew.com.my/20211006/3334407/): '相比实体课，上网课缺乏学习的氛围' and '从线下转向线上'. Sin Chew Metro 2026-01-08 (fetched, https://metro.sinchew.com.my/news/20260108/metro/7171180): '开办线下实体课（中四中五合班）' and '推动线上……课程'. Site: src/app/(zh)/zh/mba-for-working-professionals/page.tsx line 42 uses 面授班.",
+    "correction": "Add to #44: in-person = 实体课 / 实体班 (preferred), 面授 acceptable; 线下 permitted only in the pair 线上／线下, never alone as the noun for the classroom format. Rewrite rule 19 as a preference, not a foreignness claim.",
+    "confidence": "medium"
+   },
+   {
+    "section": "4 Glossary #53; 5 rule 16; 7 checklist 11",
+    "rule": "营销 is mainland; use 行销 / 市场推广 only.",
+    "problem": "营销 is standard in Malaysian Chinese press, including in Sin Chew's own rendering of a UK chartered body's name. The genuine mainland marker is 数字 (数字营销 / 数字化), not 营销. Banning 营销 as foreign will produce false 'corrections' and contradicts the guide's evidence standard (Malaysian lexis is what the dailies share).",
+    "evidence": "Oriental Daily 2020-01-29 教育 feature (fetched, https://www.orientaldaily.com.my/news/education/2020/01/29/324364): headline '数码营销时代', 营销 used throughout, 行销 absent. Sin Chew 2023-02-22 (fetched, https://www.sinchew.com.my/news/20230222/nation/4489488): '英国特许营销协会（CIM）'. scripts/content-clarity-audit.mjs line 75 currently warns on 营销.",
+    "correction": "Keep 市场推广机构 as the fixed rendering of Right Dots Resources' role (matches the audit). In #53 and rule 16 replace '营销 (mainland)' with '数字营销 / 数字化 (mainland); 营销, 行销 and 市场推广 are all Malaysian'. If the team keeps the script's 营销 warning, label it a house preference in the guide, not a register fact, or narrow the regex to 数字营销|数字化.",
+    "confidence": "medium"
+   },
+   {
+    "section": "4 Glossary #46",
+    "rule": "Programme guide = 课程指南 / 课程简介; avoid 宣传册, 手册.",
+    "problem": "手册 is what a Chinese-medium Malaysian institution calls its own prospectus; only 宣传册 is off-register. Listing 手册 under avoid over-generalises and would flag correct Malaysian copy.",
+    "evidence": "New Era admission page (fetched, https://www.newera.edu.my/enrolment_cn.php?id=3847): link labels '学术招新手册' and '研究生院招新手册'.",
+    "correction": "Keep 课程指南 as the house term; move 手册 out of the avoid column (acceptable synonym in tables and link labels); keep 宣传册 as avoid.",
+    "confidence": "medium"
+   },
+   {
+    "section": "5 rule 28 (and checklist 15)",
+    "rule": "Never let a traditional glyph into simplified copy (豐, 優, 著 as in B1/I8/O4).",
+    "problem": "著 is a standard simplified character for zhù (著名、显著、著作、编著). Only the zhe / zháo / zhuó senses simplify to 着 (跟着、着手、睡着). A blanket 著 ban will make the agent 'fix' 显著 to 显着, which is a real error and the mark of a machine-converted text.",
+    "evidence": "Wiktionary 著名 (fetched, https://en.wiktionary.org/wiki/著名): header shows trad. 著名 / simp. 著名, identical. Wiktionary 著 (fetched, https://en.wiktionary.org/wiki/著): 着 is the simplified form only for the zhuó/zháo/zhe pronunciations.",
+    "correction": "Rule 28: 'Never 豐 / 優 / 學 etc. 著 is correct for zhù (著名、显著、著作); it is wrong only where 着 (zhe/zháo/zhuó) is meant. Check O4's 著 against its reading before flagging.'",
+    "confidence": "high"
+   },
+   {
+    "section": "4 Glossary #49 versus 6 item 13 and 3 CTA column",
+    "rule": "Book a call = 预约通话; section 6 corrects the intakes page to 预约电话交谈; section 3 secondary CTA is 预约课程咨询.",
+    "problem": "Three renderings for one action. 通话 is a telecom noun (a call as an event), 电话交谈 is a description, and neither matches the site's CTA family (咨询). The agent will pick inconsistently.",
+    "evidence": "Guide line 304 (#49) vs line 420 (item 13) vs line 237 (section 3); src/lib/content.ts lines 38-41 CTA_LABELS.zh uses 预约课程沟通 / 企业课程咨询.",
+    "correction": "Standardise: 预约电话咨询 for a call, 预约课程咨询 for the general conversation CTA (and change CTA_LABELS.zh.conversation from 预约课程沟通 to 预约课程咨询 at the source constant).",
+    "confidence": "low"
+   }
+  ],
+  "confirmedStrong": [
+   "Glossary #5 英国特许管理协会（Chartered Management Institute, CMI）: no Malaysian daily has a settled Chinese name for CMI (search across Sin Chew, Nanyang, China Press, Oriental, Kwong Wah returned only Latin 'CMI Accredited' on Sin Chew efair), and Sin Chew renders the parallel body CIM as 英国特许营销协会 (fetched https://www.sinchew.com.my/news/20230222/nation/4489488), so 协会 plus Latin in brackets is the right pattern; the site already uses it (src/lib/content-zh.ts line 63).",
+   "Glossary #10 名衔 for a designation: live Malaysian usage — Kwong Wah '获颁\"人文科学荣誉博士\"名衔' (https://www.kwongwah.com.my/20231116/…) and the dailies' 拿督勋衔 / 名衔 for state honours; 身份 for 'status' is correctly rejected and the audit already bans 身份启用.",
+   "Glossary #13 马来西亚学术资格鉴定机构（MQA）: confirmed as the form used by e南洋, Sin Chew and China Press education pages; 鉴定 stays inside the name and 认证 is the accreditation verb.",
+   "Glossary #11/#12 认可 (CMI recognition) vs 认证 (MQA accreditation): consistent with press usage and with governance's controlled-term table; the site's FAQ already draws the line.",
+   "Glossary #36 and rule 18 (届 / 班, never 班次): the audit script hard-warns on 班次 (line 68) and the site still has it in src/app/(zh)/zh/asian-business-consulting/page.tsx line 139 and src/lib/content-zh.ts line 93, so the rule is needed and correct.",
+   "Glossary #40/#41 创办人, 首席执行员, 董事经理: matches Malaysian press and the audit's approved identity strings (联合创办人 / 创办人, script lines 142-143).",
+   "Glossary #25 and rule 15 (令吉 in prose, RM in tables and exact fee strings; never 马币 / 林吉特): universal across the corpus and consistent with governance's RM10,000.00 string.",
+   "Glossary #48 索取 and the ban on 免费获取 / 获取 / 领取 as CTA verbs: New Era's own CTAs are 网上报名 / 课程咨询 / 联络本校市场与行销部 (fetched), and the audit script already bans 免费获取 (line 74). 免费索取 2026 年课程指南 correctly mirrors the English canonical 'Get the free 2026 programme guide' (content.ts line 33), which is not a retired CTA.",
+   "Rule 3 (attribute judgements to a named person or body; never assert quality in the site's voice) and rule 8 (close every fee / scholarship / HRD Corp / CMI paragraph with the decision-maker or controlling document): both restate governance lines 39-43 and 57-58 precisely.",
+   "Rules 10-13 (no press urgency, no hedged numbers, no 资格认证 / 国际认证文凭, ABC is not a 学院 / 大学 and the programme is not a 学位课程): governance-aligned and correctly sourced to S12/S11/O4.",
+   "Rule 6 and glossary address rules (您 on institutional pages, 你 only inside quoted speech, no pronoun in H1/H2): consistent with the Maxis / Public Bank / New Era samples and with the audit's ban on 看看你是否符合.",
+   "Rule 7 (no sentence-initial 它 / 这 for an abstract English subject) and the 取得获 / cleft-sentence checks in checklist 17: accurate diagnosis of the site's translationese.",
+   "Typography rules 21-23 and 27 (full-width punctuation, \"\" quotes, full-width brackets around Latin glosses, no trailing 。 in headlines, no ！ on programme/fee/recognition pages): match the Sin Chew main-site convention and Malaysian institutional pages.",
+   "Section 3 FAQ pattern (question in the reader's voice, answer opens with the verdict 可以 / 不会 / 不是): natural Malaysian FAQ register and consistent with the site's existing FAQS_ZH.",
+   "Glossary #16-#23 HRD Corp cluster (人力资源发展机构（HRD Corp）, 征费（levy）, 可动用的征费余额, e-TRiS 系统, Allowable Cost Matrix in Latin, 申请由雇主提出): matches S11/N3 naming and the governance evidence-register rule for HRD Corp sentences."
+  ],
+  "missingRules": [
+   "Session naming and Fri–Sat cohorts: define 研习课 as the unit ('3 次指定研习课，每次两天'), the ordinal form for sessions (site IntakeSchedule.tsx uses 第一次 / 第二次 / 第三次 in Chinese numerals — decide whether that is the sanctioned exception to rule 24), and the day rendering per cohort: 星期五至星期六 (Cohorts 18, 19, Mandarin 2, 3) vs 星期六至星期日 (Cohort 17); reserve 周末 for Sat–Sun cohorts only.",
+   "Programme name mid-sentence: 'Future Ready Executive MBA' is never split, never translated, never abbreviated to EMBA / FREMBA in Chinese; on first mention per page append the type noun 课程 ('Future Ready Executive MBA 课程' / '……专业发展课程'), thereafter 本课程 or 'Executive MBA 课程'; possessive with 的 ('Future Ready Executive MBA 的企业应用项目'); no line break inside the name (nowrap / U+00A0 between the Latin words); measure words 一项 / 一门 for the programme, 一份 for the certificate.",
+   "The canonical positioning string PROGRAMME_POSITIONING_ZH ('面向未来商业领导力的 Executive MBA，由 CMI 颁授并背书', src/lib/content.ts line 26) is reused in Footer, about, chartered-manager-malaysia, hrd-corp-claimable, executive-education-vs-executive-mba and nurture-email; the guide only fixes FAQ 3 (item 11). It needs one approved rendering, agreed with ABC because the English canonical still says 'awarded and endorsed by CMI' while governance line 90 forbids implying CMI awards the MBA and governance line 64-65 requires EN/ZH equivalence; the fix must be made once at the source constant, not page by page.",
+   "CMI terms mid-sentence: first mention per page '英国特许管理协会（Chartered Management Institute，CMI）', then CMI; 'CMI 认可证书（CMI Certificate of Recognition）' once, then CMI 认可证书; '获 CMI 认可（CMI Recognised）'; 'Chartered Manager（CMgr，特许经理）' once, then Chartered Manager; 'CMI 专业标准（CMI Professional Standards）'; enumeration comma 、 between Latin items (CMI、MQA、HRD Corp) and full-width ？ after a question that ends in Latin.",
+   "Honorifics and personal names: Malaysian titles precede the name in the order 丹斯里 / 拿督斯里 / 拿督 + name, then role; 博士 only for an earned doctorate, 教授 only when verified (glossary #42 already), 医生 for a medical Dr; Latin personal names stay Latin (add the Chinese name in brackets only if the person uses one); no 先生 / 女士 after a titled name; the certificate signatory 'Ann Francke OBE, Chief Executive of CMI' renders as 'CMI 首席执行员 Ann Francke（OBE）' with OBE glossed once as 大英帝国官佐勋章 (context in content.ts lines 205-208).",
+   "Number edge cases: thousands separators only inside official strings (RM10,000.00, USD 2,500); the governed global price 'USD 2,500 per person irrespective of country' (governance line 90) needs a fixed rendering, e.g. 'USD 2,500（每人，不分国家或地区）' with 美元 only in unpriced prose; percentages half-width '8% SST' with no space; ranges 6 至 12 个月 in prose, 6–12 in tables; ordinals 第 17 届, 12 个模块; phone numbers as +60 12-345 6789; dates with weekday '2026 年 9 月 4 日（星期五）至 5 日（星期六）'; and a hard warning that 三个月 / 3 个月 in any zh file fails the audit (script line 46 'retired Chinese three-month programme'), so write 每季 / 每三个月 as 每 3 个月 is also caught — avoid the quantity altogether.",
+   "Headline punctuation beyond rule 27: whether sentence-style H2s with a full stop are allowed (site has '报名前，先确认三个周末都能出席。'); 【】 category tags are press furniture and not permitted; '——' allowed once in an H1 as a subtitle joiner (item 2 uses it); full-width ？ permitted in FAQ H3 only; no 、 or ， inside a two-beat H1 unless it is the 对仗 comma.",
+   "大马 vs 马来西亚: 马来西亚 everywhere on the site (formal, and it is the word in MQA's and HRD Corp's Chinese names); 大马 only inside a quoted press headline. Similarly 华语 (spoken, 华语班) / 中文 (中文授课 acceptable) / 华文 (written) — never 普通话 / 汉语 / 中文班.",
+   "Employer-facing address and self-reference: on HRD Corp and corporate pages the reader is 您 and the employer is 贵公司; the provider is 课程团队 / Asian Business Consulting, never 本校 / 本院 (rule 13 bans 学院 but gives no positive form); 我们 sparingly and only in emails; no 学员们 (plural 们) and no 他 / 她 — repeat 学员.",
+   "Controlled role renderings still missing from the glossary: 'Registered HRD Corp Training Provider' (ABC_PROFILE.hrdStatus), 'Global and Local Programme Partner' (governance line 90 for Right Dots Resources), 'in-house MDP' and 'proposal-based pricing' — each needs one Chinese form, or an instruction to keep the Latin phrase with a bracket gloss.",
+   "Owner's new vocabulary — proposed renderings, to be confirmed with the owner and kept English-in-brackets on first mention: progress → 进步 (growth of a person or business; 进展 only for project status; never 前进 as a noun); hope → 希望 (not 盼望 / 期望, which read religious or transactional); change of experience → ambiguous in Chinese between 经历的改变 (lived episodes), 体验的改变 (what people feel) and 经验的更新 (accumulated know-how) — do not translate until the owner defines it, then fix one form; the right thing vs the good thing → 对的事 vs 好的事, written in full ('做对的事，而不只是做好的事') because bare 好事 means a charitable deed and 正确的事情 is stiff; servant leadership → 仆人式领导 (established term: zh.wikipedia opening line '仆人式领导（英语：Servant leadership）是一种领导理念', fetched https://zh.wikipedia.org/zh-hans/仆人式领导), not 服务型领导 (mainland academic) or 公仆领导 (political); survival / safety / social / success / service → 生存、安全、社交、成功、服务 in that fixed order, 社交 (not 社会) to match the standard Maslow rendering 社交需求, first mention as 生存（Survival）、安全（Safety）、社交（Social）、成功（Success）、服务（Service）, no '5S' abbreviation.",
+   "In-person / online delivery vocabulary: 实体班 / 实体课 for the classroom format, 线上班 for the live-online format, 面授 acceptable, 到场 for attendance; the site's mba-for-entrepreneurs and mba-for-working-professionals pages currently use three different forms.",
+   "Email conventions beyond greeting and sign-off: subject-line length and punctuation (no ！, no 【】), how the programme name appears in a subject, the reply-line wording ('直接回复本邮件'), and whether 敬上 or 谨启 is the house sign-off (both are Malaysian; the guide should pick one and note that 此致／敬礼 is mainland).",
+   "Wrapping and rendering: which strings must never break across lines (RM10,000.00, e-TRiS, fCMgr, CMgr, Cohort 17, the programme name), and that JSON-LD, meta descriptions and llms.txt follow the same spacing and glossary as page copy (the audit script scans them)."
+  ]
+ },
+ {
+  "guide": "C:\\Users\\Acer\\Documents\\FutureReadyEMBA\\web\\docs\\superpowers\\research\\zh-register.md",
+  "issues": [
+   {
+    "section": "3 (hero, FAQ, campaign model sentences); 7 item 1",
+    "rule": "Model copy hard-codes \"6 个月、6 个培训日、3 个指定周末\" / \"三个周末，六个培训日\" and the FAQ answer \"分 3 个指定周末进行\".",
+    "problem": "Factual over-generalisation. Only English Cohort 17 runs Sat–Sun; English Cohorts 18 and 19 and Mandarin Cohorts 2 and 3 all run Fri–Sat. In Kuala Lumpur usage 周末 means Saturday–Sunday, so a Fri–Sat cohort is not 周末. Governance requires exact dates/durations, and the current zh intakes intro (\"每个班次均在 3 个指定周末完成\") and content.ts \"3 scheduled weekend sessions\" already carry the same error; the guide propagates it into every page-type template.",
+    "evidence": "C:\\Users\\Acer\\Documents\\FutureReadyEMBA\\web\\src\\lib\\content.ts lines 286–290 (days: \"Sat–Sun\" for Cohort 17 only; \"Fri–Sat\" for Cohorts 18, 19, Mandarin 2 and 3); content-zh.ts line 93 and content.ts line 308 repeat \"weekend\". SEO-CONTENT-GOVERNANCE.md clarity standard (\"Publish exact quantities, dates…\").",
+    "correction": "Replace 周末 with a neutral session noun everywhere in the templates: hero sub \"6 个月、6 个培训日、3 次指定课次（每次两天）\"; FAQ \"课程在 6 个月内分 3 次指定课次进行，每次两天，共 6 个培训日\"; campaign \"三次课次，六个培训日，一份以您自己企业为题的行动方案\". Use 周末 only on the intake card of a Sat–Sun cohort. Add to checklist item 1: 周末 may appear only where the cohort's days field is Sat–Sun.",
+    "confidence": "high"
+   },
+   {
+    "section": "7 items 3 and 8; 3 fees model sentence",
+    "rule": "Item 3 bans 名额有限 as an urgency device; item 8 requires 名额有限 in every scholarship sentence; the fees model sentence uses it.",
+    "problem": "Direct internal contradiction: a rewrite containing the governance-mandated scholarship phrase automatically fails checklist item 3. Governance does call the scholarship \"limited\" (a fact), but bans urgency devices (seats/CTA).",
+    "evidence": "zh-register.md lines 239, 452, 457; SEO-CONTENT-GOVERNANCE.md line 89 (\"a limited LIFE Innoversity scholarship\") and line 58 (\"Avoid … urgency devices\"). S12 fetched (https://scba.sinchew.com.my/agenticai-utar/) shows the actual urgency idiom the site must avoid: \"名额有限，先到先得！现在就即刻报名，万勿错失良机！\".",
+    "correction": "Item 3: ban 名额有限 when it refers to seats, cohorts or a CTA (班/届/座位 + 先到先得 / 报名). Item 8: require the fuller noun phrase 奖学金名额有限 inside the conditions sentence only, never in an H1/H2, eyebrow, button or preheader. Add an explicit line: \"The word 名额 may only ever follow 奖学金 on this site.\"",
+    "confidence": "high"
+   },
+   {
+    "section": "6 item 2 vs 3 (hero row) and 5 rule 27",
+    "rule": "Section 3 sets \"H1 ≤ 14 chars, two beats\"; rule 27 says two beats separated by a space; item 2 then prescribes the H1 \"工作照常，进修同行——专为在职资深管理者而设\".",
+    "problem": "The prescribed H1 is 20 characters plus an em dash, three beats, and uses —— which rule 26 reserves for a break/subtitle. The guide breaks its own headline rule in its flagship correction.",
+    "evidence": "zh-register.md lines 237, 347, 365 (internal contradiction).",
+    "correction": "H1 \"工作照常，进修同行\" (8 chars); move \"专为在职资深管理者而设\" to the eyebrow or the first sentence of the intro. State in section 7 that the H1 length and beat rule applies to every correction in section 6.",
+    "confidence": "high"
+   },
+   {
+    "section": "6 item 2 (rationale)",
+    "rule": "\"专为在职的资深管理者打造 … is a bare 'built for X' tagline; flat marketing.\"",
+    "problem": "Over-generalised. 专为…打造 / 专为…而量身打造 is exactly how Sin Chew's own commercial and advertorial copy writes it; it is local idiom, not translationese. The rewrite is defensible only as a decoration choice, not as a register error, so writers should not be told 打造 is wrong.",
+    "evidence": "S11 fetched (https://www.sinchew.com.my/advertorial/20250818/不花钱也能培训员工？善用hrdf打造企业竞争力): \"专为企业领袖、高层管理者与决策者打造的年度重磅盛会\". S10 fetched (https://www.sinchew.com.my/advertorial/20230216/学习新技能永不嫌晚-在职人士进修不再是难事): \"专为无法长时间上课以及生活步调紧凑的人士而量身打造的奈米学习内容\".",
+    "correction": "Rewrite the 'Why' as: \"a single-beat tagline; adding a second beat gives it the education-section rhythm\". Do not list 打造 as off-register; list 专为…打造 and 专为…而设 as interchangeable Malaysian forms.",
+    "confidence": "high"
+   },
+   {
+    "section": "6 item 1 (rationale)",
+    "rule": "\"为…设计 is a word-for-word calque of 'designed for'; Malaysian marketing uses 专为…而设 rather than 设计.\"",
+    "problem": "The 而设 half is attested, but the guide cites no source for the claim that 设计 is a calque, and none of the fetched corpus pages support it. The correction is fine; the rationale should not create a banned word.",
+    "evidence": "S12 fetched (https://scba.sinchew.com.my/agenticai-utar/): \"推出专为企业决策者而设……\" supports 而设. No fetched page shows 为…设计 being avoided; the guide gives no citation on line 359.",
+    "correction": "Keep the corrected title \"专为在职管理者而设的 6 个月 Executive MBA\" but state the reason as house preference for 而设 (matches Sin Chew Business Academy copy), not as a calque. Do not add 设计 to any sweep.",
+    "confidence": "medium"
+   },
+   {
+    "section": "5 rule 19; 4 glossary #49; 7 item 11",
+    "rule": "\"Don't use 在线 (mainland)\"; checklist sweeps for 在线 (for 线上).",
+    "problem": "在线 is used in Malaysian press notices; the guide's own K1 source contains it. Labelling it foreign will make writers avoid a perfectly local form and flag legitimate quotes.",
+    "evidence": "K1 fetched (https://www.kwongwah.com.my/20260622/2026年留华行前援助金-即起接受申请/): \"欢迎符合资格者即日起在线提交申请\"; the same page uses 线上 in \"光华线上教育展\".",
+    "correction": "Reword as a house-style preference: \"Use 线上 for 线上说明会 / 线上课程; 在线 is acceptable Malaysian usage (在线提交申请) and must not be marked as mainland.\" Remove 在线 from checklist item 11.",
+    "confidence": "high"
+   },
+   {
+    "section": "6 item 11 (rationale); 7 item 11",
+    "rule": "\"面向 + abstract noun is a mainland framing ('面向未来')\"; checklist bans 面向未来.",
+    "problem": "面向未来 is standard in Sin Chew national education reporting (Ministry blueprint coverage). The FAQ sentence should be rewritten for the governance reason (CMI does not confer or 背书 the MBA; it issues a Certificate of Recognition), not for register.",
+    "evidence": "Sin Chew fetched (https://www.sinchew.com.my/news/20260120/nation/7203625): \"教育工作者须具备高能力并面向未来\" and \"培育具转型能力、高水平并面向未来的教育领导者\".",
+    "correction": "Keep the corrected FAQ answer, change the 'Why' to the governance reason only, and delete 面向未来 from checklist item 11. Keep 背书 out of credential sentences (it implies endorsement rather than recognition), which is the real defect.",
+    "confidence": "high"
+   },
+   {
+    "section": "6 item 9 (rationale); 7 item 11",
+    "rule": "\"差旅 is mainland corporate finance vocabulary; Malaysian press says 交通 / 旅费 与住宿\"; checklist bans 差旅.",
+    "problem": "Sin Chew's own finance desk writes 差旅费. The plainer 交通与住宿费用 is still a good choice for a fees page, but 差旅 must not be labelled mainland or swept.",
+    "evidence": "Sin Chew fetched (https://www.sinchew.com.my/content/content_2101498.html): \"……包括各种杂费和雇员差旅费等。\"",
+    "correction": "Keep \"交通与住宿费用不包括在课程费用内\" as the preferred plain form; remove 差旅 from the mainland list and from checklist item 11 (keep the mixed-numeral and 付款选项 points, which stand).",
+    "confidence": "medium"
+   },
+   {
+    "section": "4 glossary #41; 5 rule 16; 7 item 12",
+    "rule": "CEO = 首席执行员 only; 首席执行官 avoid.",
+    "problem": "首席执行员 is Sin Chew house style; China Press (and Nanyang) use 总执行长 as their standard form. Presenting one paper's style as 'the Malaysian form' is over-generalised, and a faculty bio quoting a China Press profile would fail checklist item 12.",
+    "evidence": "China Press fetched (https://www.chinapress.com.my/20260415/人才机构换帅-新ceo是她！/): \"碧伦达受委为新任总执行长，任期即日起生效\"; \"原任总执行长林谢明\".",
+    "correction": "Glossary #41: \"CEO → 首席执行员 (Sin Chew) or 总执行长 (China Press / Nanyang); both Malaysian. House form: 首席执行员; keep the other in quotations. Avoid 首席执行官 and CEO 总裁.\" Update checklist item 12 accordingly.",
+    "confidence": "high"
+   },
+   {
+    "section": "6 item 5; 4 glossary #10; 7 item 11",
+    "rule": "Replace 身份 with 名衔 for Foundation Chartered Manager; heading \"CMI 专业名衔\"; body \"名衔的启用……\".",
+    "problem": "CMI's own term is 'Foundation Chartered Manager (fCMgr) status'; 身份 (as in 会员身份) is the faithful and ordinary Malaysian rendering of a membership status, whereas 名衔 shifts the category to an honorific/designation and blurs the line with the post-nominal letters. The correction also keeps the real calque (\"名衔的启用\" = status activation) under a new noun. Only 身份启用 is the defect, which is what the audit script bans.",
+    "evidence": "Third-party CMI partner page fetched (https://www.ascend-cm.co.uk/news/award-chartered-management-institute-cmi-foundation-chartered-manager-fcmgr-status/): \"…as well as Foundation Chartered Manager (fCMgr) status.\" scripts/content-clarity-audit.mjs line 72 bans /身份启用/ only.",
+    "correction": "Heading \"CMI 专业身份（fCMgr）\"; body \"根据 CMI 公布的 CMI Recognised 课程条款，修毕课程的学员可取得 Foundation Chartered Manager（fCMgr）身份。该身份的生效、会员续期以及 fCMgr 后缀名衔的使用，均由 CMI 负责。\" Checklist item 11: ban 身份启用 and 衔称, not 身份.",
+    "confidence": "medium"
+   },
+   {
+    "section": "6 secondary items (nurture email 2 headline) vs 7 item 17",
+    "rule": "Correction \"决定您能否报读的，不是课程简介，而是上课日期。\"",
+    "problem": "(a) It is a pseudo-cleft (…的，不是…而是…), the construction checklist item 17 bans; (b) 能否报读 turns a fit question into an admission gate decided by dates, which conflicts with governance (enquiry is not admission; the site does not decide eligibility).",
+    "evidence": "zh-register.md line 435 vs line 466; SEO-CONTENT-GOVERNANCE.md lines 61–63 and controlled term \"Programme enquiry … not admission\". Current source: nurture-email.ts line 114.",
+    "correction": "Headline \"报不报读，先看上课日期，再看课程简介。\" CTA \"查看 2026 年开课日期\". Also rewrite line 112 preheader (\"每个班次三个周末\") which carries both 班次 and the weekend error.",
+    "confidence": "high"
+   },
+   {
+    "section": "3 campaign row; 6 item 3; 5 rule 24; 7 item 16",
+    "rule": "Arabic numerals for all counts; \"Numerals Arabic throughout one passage\".",
+    "problem": "The guide's own campaign model sentence uses Chinese numerals (\"三个周末，六个培训日，一份…\") and item 3 uses \"一个企业应用项目\" beside \"6 个培训日\". The rule as written fails the guide's own examples and gives writers no way to use 一 as an indefinite article or Chinese numerals in a rhetorical 排比 headline.",
+    "evidence": "zh-register.md lines 242, 370, 344, 465 (internal contradiction).",
+    "correction": "Rule 24 / item 16: \"Arabic for factual counts, dates, money, ranges. Exceptions: 一 as an indefinite article (一个企业应用项目, 一份行动方案); Chinese numerals allowed inside a decorative headline 排比 (三次课次，六个培训日) provided the same paragraph does not mix them with Arabic counts.\"",
+    "confidence": "medium"
+   },
+   {
+    "section": "6 item 7",
+    "rule": "Fees H1 \"标准费用 RM10,000.00　奖学金择优评估、书面确认\" using a full-width ideographic space (U+3000) between beats.",
+    "problem": "The U+3000 separator is an Oriental Daily print/CMS convention. In a web H1 it is an invisible character that wraps unpredictably, is stripped or normalised by many CMS/SEO tools, cannot be seen by the next editor, and clashes with the site's own established eyebrow separator \" · \".",
+    "evidence": "Site convention: content-zh.ts line 79 (\"学费 · 奖学金 · HRD Corp\") and line 53; guide rule 26 itself designates · as the separator.",
+    "correction": "\"标准费用 RM10,000.00 · 奖学金择优评估、书面确认\", or H1 \"标准费用 RM10,000.00\" with sub \"奖学金择优评估，书面个别确认\". Add to rule 27: never use U+3000 in HTML headings.",
+    "confidence": "medium"
+   },
+   {
+    "section": "7 item 4",
+    "rule": "\"No prestige label or guarantee: 顶尖、卓越、保证、必定、晋升、加薪、成功.\"",
+    "problem": "Banning the bare word 成功 (and 晋升) is over-broad: the current FAQ heading \"成功完成课程后会获得什么？\" mirrors the governance-approved English \"Successful participants are awarded…\", and the owner's new 5-S vocabulary (survival / safety / social / success / service) needs 成功 as a named concept. Governance bans promised outcomes, not the vocabulary.",
+    "evidence": "content-zh.ts line 119; content.ts line 153; SEO-CONTENT-GOVERNANCE.md lines 55–56 (\"Do not promise … promotion outcomes\").",
+    "correction": "Item 4: ban outcome-promise collocations — 保证成功 / 助您成功 / 成功晋升 / 加薪 / 必定 / 顶尖 / 卓越 — and any sentence whose subject is the reader's career outcome. Permit 成功完成课程 and 成功 as a defined term in the owner's framework.",
+    "confidence": "high"
+   },
+   {
+    "section": "7 item 2; 6 (omission)",
+    "rule": "Hedge sweep lists 约 / 大约 / 通常 / 一般 / 左右 / 多数.",
+    "problem": "The release-blocking audit regex also fails on 可能, 全球认可 and 须视…而定, none of which the checklist mentions; and section 6 missed a live 通常 in nurture email 2 (line 117 \"关于日历的沟通通常是最短的一次\"), a file the audit script does not scan at all.",
+    "evidence": "scripts/content-clarity-audit.mjs line 53: /(?:可能|通常|多数|大约|最高\\s*100%|全球认可|须视.+而定)/ and files list lines 7–19 (nurture-email.ts absent); nurture-email.ts line 117.",
+    "correction": "Item 2: add 可能, 往往, 全球认可 and the pattern 须视…而定 (write 视…而定 without 须, as glossary #31 does). Section 6: add nurture email 2 body line 117 → \"若某个日期只差一点就合适，请先告诉课程团队再做决定；这类只谈日期的交谈，用不了多少时间。\" Note that nurture-email.ts must be checked by hand because it is outside the audit's file list.",
+    "confidence": "high"
+   },
+   {
+    "section": "5 rule 22; 7 item 15",
+    "rule": "\"『』 only for a term inside a quotation\" (inner quotes).",
+    "problem": "『』 are the vertical-text / traditional-script inner quotation marks. In horizontal Simplified Chinese the inner quote is ‘’; mixing \"\" with 『』 mixes two systems and will look Taiwanese/HK to a KL reader. Sin Chew's main site uses \"\" and ‘’.",
+    "evidence": "GB/T 15834—2011《标点符号用法》§4.8 (引号): 双引号 \"\" with 单引号 ‘’ inside in horizontal text; 「」『』 specified for vertical text. Guide's own observation on line 152 that 『』 appears only on the S12 sub-site.",
+    "correction": "Rule 22: outer \"\" (U+201C/D), inner ‘’ (U+2018/9); never 「」『』 in site copy.",
+    "confidence": "medium"
+   },
+   {
+    "section": "7 item 11",
+    "rule": "Sweep bans 获取 outright.",
+    "problem": "获取 is ordinary in Malaysian prose (获取资讯 / 获取资格); only the CTA label 免费获取 is app-store register, which is exactly what the audit script bans. A blanket ban forces awkward rewrites of body copy.",
+    "evidence": "scripts/content-clarity-audit.mjs line 74 bans /免费获取/ only.",
+    "correction": "Item 11: \"免费获取 / 获取 in button or CTA labels\" instead of bare 获取.",
+    "confidence": "medium"
+   },
+   {
+    "section": "3 fees model sentence",
+    "rule": "\"符合资格的马来西亚申请者可接受 LIFE Innoversity 奖学金评估\".",
+    "problem": "可接受…评估 reads as 'may accept assessment'; governance's meaning is 'may be considered for'. It is copied from the current site (fees section 3) rather than corrected.",
+    "evidence": "SEO-CONTENT-GOVERNANCE.md line 89 (\"may be considered for a limited LIFE Innoversity scholarship subject to availability, assessment and written approval\"); content-zh.ts line 85 shows the same wording on the live site.",
+    "correction": "\"符合资格的马来西亚申请者，可获考虑颁予 LIFE Innoversity 奖学金；奖学金名额有限，须经评估及书面批准，任何奖学金金额及应付费用均以书面个别确认为准，并非自动授予。\"",
+    "confidence": "medium"
+   },
+   {
+    "section": "6 item 13",
+    "rule": "Correction \"您可预约电话交谈、参加线上说明会、约定地点面谈，或先索取课程资料。\"",
+    "problem": "电话交谈 is not a service noun in Malaysian usage; the site's existing 预约通话 and institutional 课程咨询 are the natural forms.",
+    "evidence": "content-zh.ts line 99 (existing \"预约通话\"); guide's own I1 evidence for 课程咨询 (line 200).",
+    "correction": "\"您可预约通话或线上说明会、约定地点面谈，或先索取课程资料。\"",
+    "confidence": "low"
+   },
+   {
+    "section": "6 item 15",
+    "rule": "Preheader correction \"……以及一项必须坦白说明的界限。\"",
+    "problem": "一项 + 界限 mis-collocates (界限 takes 一条/一道), and 界限 alone still reads as an abstraction; a reader will not know a boundary of what.",
+    "evidence": "Internal: guide's own principle (line 429) that the phrase must mean something concrete in Chinese.",
+    "correction": "\"最值得重读的三个部分，以及一点我们必须坦白交代的限制。\" (limits = what the certificate is and is not).",
+    "confidence": "low"
+   }
+  ],
+  "confirmedStrong": [
+   "班次 avoidance (glossary #36, rule 18, item 12): Sin Chew search hits for 班次 are flight frequencies and shift work only; no course usage found — and the audit script already bans it.",
+   "HRD Corp naming: 人力资源发展机构（HRD Corp）, 人力资源发展基金（HRDF）, 人力资源发展税（HRD levy）, 培训津贴, 户口 all verbatim in S11 fetched (https://www.sinchew.com.my/advertorial/20250818/不花钱也能培训员工？善用hrdf打造企业竞争力). HRD Corp's own site (https://hrdcorp.gov.my/) gives only Malay/English forms (PEMBANGUNAN SUMBER MANUSIA BERHAD; Matriks Kos Yang Dibenarkan (ACM)), so keeping Allowable Cost Matrix in Latin is right.",
+   "e-TRiS as the official string: HRD Corp support centre fetched (https://supportcentre.hrdcorp.gov.my/portal/en/kb/articles/how-to-submit-training-provider-registration-application) titles it \"e-TRiS\"; HRD Corp itself is inconsistent (E-TRIS, Etris, eTRiS), so the site fixing one form is correct.",
+   "MQA name and the 认证/认可 split (glossary #11–#14): N1 fetched (https://www.enanyang.my/news/20250121/时事/638852) \"皆获得马来西亚学术资格鉴定机构（MQA）的认证\"; Sin Chew fetched (https://www.sinchew.com.my/20180902/大马学术资格鉴定机构‧取消马大药剂系认证/) \"大马学术资格鉴定机构（MQA）取消……认证\". 大马… is an acceptable headline short form.",
+   "Ringgit and SST style, time and date formats (rule 24, glossary #25, #52): S12 fetched (https://scba.sinchew.com.my/agenticai-utar/) \"早鸟优惠1600令吉（含8%SST）\", \"2026年5月20日（星期三）\", \"上午9时至下午5时\".",
+   "Urgency-device ban (rule 10, item 3): S12 fetched shows the exact idiom to refuse: \"名额有限，先到先得！现在就即刻报名，万勿错失良机！\".",
+   "专为…而设 as a local form (item 1 correction): S12 fetched \"推出专为企业决策者而设……\".",
+   "在职人士 / 在职进修 / 忙碌人士 vocabulary (glossary #38, rule 17): S10 fetched (https://www.sinchew.com.my/advertorial/20230216/学习新技能永不嫌晚-在职人士进修不再是难事) \"越来越多在职人士认同在职进修\", \"为忙碌人士提供灵活的进修方式\".",
+   "即日起 and 方属有效 as reusable official markers (2.4): K1 fetched \"即日起接受申请\", \"须经推荐人或校方签证，方属有效\".",
+   "Honorific placement model for the missing rule: China Press fetched \"人力资源部长拿督斯里拉马南\" (post → honorific → name).",
+   "Section 6 'Current' strings are accurate: verified page.tsx lines 6/7/11, content-zh.ts lines 19, 55, 57–60, 80, 81, 86, 92, 96, 99, 105, 110, 117–119, content.ts line 38, nurture-email.ts lines 94, 99, 114, 124, 134.",
+   "Section 6 items 4, 5 (身份启用), 8, 11 (颁授并背书), 14, 15 and the 参与者 sweep align one-to-one with the audit script's bannedZh list (lines 67–76).",
+   "Servant leadership rendering for the owner's vocabulary: zh-my Wikipedia fetched (https://zh.wikipedia.org/zh-my/仆人式领导) titles the concept 仆人式领导; Nanyang column fetched (https://www.enanyang.my/news/20170924/Supplement/120950) uses the 仆人 framing in Malaysian Chinese, so 仆人式领导 will be understood by a KL reader.",
+   "Rule 8 / item 7 (name the decision-maker, levy-balance ceiling, 以…为上限) and item 10's HRD Corp rewrite match governance lines 39–41 and 84 exactly.",
+   "Glossary #1 and the audit's 'Future Ready … 工商管理硕士' ban agree: the programme name stays Latin and is never expanded."
+  ],
+  "missingRules": [
+   "Session-day precision: never write 周末 for a Fri–Sat cohort; describe sessions as 指定课次（每次两天）and give the days per cohort as 星期五至星期六 / 星期六至星期日 exactly as content.ts records them (Cohorts 18, 19, Mandarin 2 and 3 are Fri–Sat).",
+   "Audit-script alignment traps writers must know: 可能 / 通常 / 多数 / 大约 / 全球认可 / 须视…而定 fail the build; any \"3 个月\" or \"三个月\" string fails (retired-programme regex) — write 开课前三个月 as 开课前 90 天 or restructure; \"Future Ready\" within 40 characters of 工商管理硕士 fails, so the generic EMBA gloss 高级工商管理硕士（EMBA） may never sit in the same sentence as the programme name; 无需承诺 / 无须承诺 / 看看你是否符合 / 准备好取得 / 同等的公信力 / 立即报名 fail. Note nurture-email.ts is outside the audit file list and needs a manual pass.",
+   "Number formatting edge cases: RM10,000.00 (no space, two decimals) is the only fee form; USD 2,500 stays Latin with the governance spacing; percentages attach (8% SST, 1%); ranges 6 至 12 个月 in prose, 6–12 in tables; 万 from 1万 in prose but never inside a fee string; ordinals 第 17 届 with site spacing; never mix 一万 and 10,000 in one passage; never write 令吉 after an RM figure.",
+   "Date and weekday format: 2026 年 9 月 4 日（星期五）— weekday in full-width brackets after the date as Sin Chew does (2026年5月20日（星期三）); day ranges 9 月 4 日至 5 日; never 9/4 or 4 Sep inside Chinese; times 上午 9 时至下午 6 时; emails and JSON-LD text follow the same convention.",
+   "Honorifics: order is post/title → honorific → name (人力资源部长拿督斯里拉马南); 拿督 / 拿督斯里 / 丹斯里 / 潘斯里 before the name, 博士 / 教授 after the name, never both 博士 and 先生; use 博士 only when the doctorate is verified under the governance evidence standard; Malay and English names (Roy Affandi) stay Latin unless the person has a registered Chinese name; never transliterate.",
+   "Programme name mid-sentence: full \"Future Ready Executive MBA\" on first mention per page followed by the classifier 课程 (Future Ready Executive MBA 课程), then 本课程 / 这项课程 / Executive MBA 课程; never 一个 / 该 before it, never split, never abbreviate to EMBA in Chinese body copy (WhatsApp label excepted), never begin a Chinese sentence with the Latin name when 本课程 can lead; keep pangu spaces on both sides.",
+   "CMI terms mid-sentence: 英国特许管理协会（Chartered Management Institute, CMI） first mention then CMI; CMI 认可证书（CMI Certificate of Recognition） first mention then 认可证书; adjective use as CMI 认可课程（CMI Recognised）; Chartered Manager（CMgr） then Chartered Manager; Foundation Chartered Manager（fCMgr）身份; classifier pattern 这项 CMI 认可的专业课程; never insert 的 between CMI and the Latin term; Chartered Manager sentences always carry 另设 / 独立 / 由 CMI 审定.",
+   "Owner's new vocabulary: progress → 进步 (personal or organisational; JTBD sense), reserve 进展 for project status; hope → 希望 (noun) / 盼望 (verb); change of experience → 体验的改变 (lived experience; 经验 = accumulated experience); the right thing vs the good thing → \"对的事\"与\"好的事\" with a one-line gloss on first use (做对的事，而不只是做讨喜的事) and never 好事 (= good deed); servant leadership → 仆人式领导（Servant Leadership）, not 服务型领导 or bare 仆人领导; survival / safety / social / success / service → 生存、安全、社交、成功、服务, with the five English words in brackets on first mention because the S-alliteration is lost, and with 成功 exempted from checklist item 4 in this framework.",
+   "Headline punctuation set: ？ appears only on FAQ H2s; 、 may join two verb beats in an H1 (圆梦升学、投身教育 pattern); eyebrow separator is \" · \" with spaces; no U+3000; no —— inside an H1; H2 ≤ 16 characters; no trailing full stop; no pronoun.",
+   "Negation rule for controlled words: 折扣 / 优惠 / 折扣码 / 保证 may appear only inside a negation (并非…折扣), never as a positive claim; 免费 only on the guide CTA (免费索取) because the English source says free.",
+   "UI microcopy and chatbot strings (form labels, validation, ProgrammeAssistant, WhatsApp labels) follow the same 您 / 索取 / 预约 rules; 你 is banned there too.",
+   "Participant nouns by context: 学员 for programme participants, 申请者 for scholarship and HRD Corp applicants, 雇主 for the company in HRD Corp sentences; never 学生 for this programme."
+  ]
+ }
+]

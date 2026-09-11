@@ -1,0 +1,28 @@
+{
+  "unit": "mba-for-sme-owners",
+  "language": "zh",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/app/(zh)/zh/mba-for-sme-owners/page.tsx",
+      "line": "H1 (~line 71)",
+      "problem": "H1 \"从脑中决策，到书面决策。\" carried a trailing full stop, violating the headline typography rule (zh-register.md §5 rule 27: no trailing full stop on a headline).",
+      "fix_applied": "Removed the trailing 。; H1 now reads \"从脑中决策，到书面决策\" (11 characters, unchanged otherwise)."
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-sme-owners/page.tsx",
+      "line": "hero lede (~line 77) and section-3 intro (~line 146)",
+      "problem": "Both paragraphs opened a new sentence with sentence-initial 它 standing in for the applied business project, the classic English-subject calque flagged as a hard watch item (zh-register.md checklist item 17, audit §6 item 4).",
+      "fix_applied": "Removed the pronoun-led sentence break: \"…经导师评阅的书面方案。它锤炼管理能力\" → \"…经导师评阅的书面方案，用以锤炼管理能力\"; and \"…领导力与衡量指标。它锤炼的是管理能力\" → \"…领导力与衡量指标，用以锤炼管理能力\"."
+    },
+    {
+      "file": "src/app/(zh)/zh/mba-for-sme-owners/page.tsx",
+      "line": "H2s at ~line 116 and ~line 202",
+      "problem": "Two section H2s (\"企业还依赖您的地方。\" and \"一种让您留在企业、照常进修的安排。\") used 您 in a headline-level heading, the same no-pronoun-in-headline violation as the general rule.",
+      "fix_applied": "Reworded to name the group instead of the reader: \"企业还依赖企业主拍板的地方。\" and \"一种让企业主留任企业、照常进修的安排。\"."
+    }
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": [],
+  "notes": "Fact tokens, the owner-decision CMI claim (由 CMI 颁发并认可), 届/开课日期 instead of 班次/周末 in the FIT card, and the scholarship sentence's bound 名额有限/评估/书面批准/并非自动授予 wording were already correct from the writer's pass — no changes needed there. npm run typecheck and node scripts/content-clarity-audit.mjs both pass with zero warnings in this unit's file."
+}

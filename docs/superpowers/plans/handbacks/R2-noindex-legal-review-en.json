@@ -1,0 +1,19 @@
+{
+  "unit": "noindex-and-legal",
+  "language": "en",
+  "filesReviewed": [
+    "src/app/(en)/unsubscribed/page.tsx",
+    "src/app/(en)/not-found.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "fixesApplied": [],
+  "notes": [
+    "unsubscribed/page.tsx: H1s calm and compliant ('You're unsubscribed.', 'That link didn't check out.', 'We couldn't process that just now.'); conversation link uses CTA_LABELS.conversation; no legal/PDPA wording touched.",
+    "not-found.tsx: H1 'That page is not here.' (5 words); links to home, the programme and CTA_LABELS.conversation; no urgency or verdict-on-the-reader language.",
+    "No banned vocabulary found on a manual grep for ladder/rung/climb/deserve/still open/last chance/promotion/salary/etc.",
+    "npm run typecheck: 0. node scripts/content-clarity-audit.mjs: passed, 0 warnings attributable to these two files."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

@@ -1,9 +1,10 @@
 import ExecutiveDiagnostic from "@/components/site/ExecutiveDiagnostic";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/zh/diagnostic", {
-  title: "私人课程匹配检查",
-  description: "回答四道问题，生成一份用于核对课程安排、费用、认可与个人需求的私人清单。不评分、不储存，也不上传任何资料。",
+  title: PROGRAMME_FIT_CHECK.zh,
+  description: "回答四道私人问题，看清与您的责任、日程、费用及 CMI 认可有关的事实。这不是入学测试，也不会预测职业结果。",
 });
 
 export default function DiagnosticPage() {

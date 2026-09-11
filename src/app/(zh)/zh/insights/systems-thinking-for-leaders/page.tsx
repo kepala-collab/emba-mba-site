@@ -5,11 +5,12 @@ import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/compo
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 
 export const metadata = withSeo("/zh/insights/systems-thinking-for-leaders", {
   title: "领导者的系统思维",
   description:
-    "写给商业领导者的系统思维实战指南：反馈回路、延迟效应、杠杆点，以及在出手之前预见二阶、三阶后果的方法。",
+    "为什么同一个问题反复出现？系统思维问的是比追责更慢的一个问题：是什么样的结构，让这次砸锅几乎成了必然。",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,14 +21,14 @@ export const metadata = withSeo("/zh/insights/systems-thinking-for-leaders", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "领导者的系统思维",
+  headline: "问题反复出现 领导者的系统思维",
   mainEntityOfPage: "https://futurereadymba.com/zh/insights/systems-thinking-for-leaders",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "zh-Hans-MY",
   description:
-    "写给商业领导者的系统思维实战指南——反馈回路、延迟效应、杠杆点，以及在出手之前预见二阶、三阶后果的方法。",
+    "追责是最快的答案，系统思维问的是更慢的一个问题——是什么样的结构，让这次失败几乎成了必然——领导者服务的是结构，而不是审判某个人。",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,
@@ -55,12 +56,14 @@ export default function SystemsThinkingForLeaders() {
               <span className="mono sec-k">洞察 · 思维方法</span>
             </div>
             <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "16ch" }}>
-              领导者的系统思维
+              问题反复出现 领导者的系统思维
             </h1>
             <ArticleAttribution lang="zh" />
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              系统思维帮助领导者看清那个一次次制造出同一个问题的结构。
-              它把目光从孤立的事件，移到真正左右结果的关系、反馈回路与延迟效应上。
+              追责是最快的答案，感觉像是在做事。系统思维问的是更慢的一个问题：
+              是什么样的结构，让这次失败几乎成了必然？领导者对结构负责，
+              服务的正是身处其中的人。
+              此事并非天生，靠的是练习，也是 F.A.S.T. 方法七个学科之一。
             </p>
           </Reveal>
 
@@ -69,7 +72,7 @@ export default function SystemsThinkingForLeaders() {
             <p>
               系统思维，是一种看见整体、而不只是零件的能力：看见各要素之间如何彼此牵连，
               看见把因与果串起来的反馈回路，也看见让一个行动与其全部后果错开时间的延迟效应。
-              它与线性、拆解式的做法正好相反——那种做法把问题切成碎块，
+              此法与线性、拆解式的做法正好相反——那种做法把问题切成碎块，
               修好其中一块，就当它和其余部分互不相干。
             </p>
             <p>
@@ -98,6 +101,8 @@ export default function SystemsThinkingForLeaders() {
               <strong>“这次砸锅该谁背？”</strong>，而是{" "}
               <strong>“是什么样的结构，让这次砸锅几乎成了必然？”</strong>
               前一个问题换来的是追责和人员流失，后一个问题换来的是真正持久的改变。
+              对结构负责的领导者，服务的是身处结构之中、必须在其中做事的人，
+              而不只是发号施令。
             </p>
 
             <h2>几个核心概念，说白了</h2>
@@ -168,20 +173,17 @@ export default function SystemsThinkingForLeaders() {
               </li>
               <li>
                 <strong>预演二阶、三阶后果。</strong> 出手之前，
-                一连追问三遍“然后呢？”第一个答案往往一目了然，
+                一连追问三遍“然后呢？”第一个答案立刻一目了然，
                 真正要命的后果，常常藏在第三个答案里。
               </li>
             </ul>
 
             <h2>这是一项练得出来的本事</h2>
             <p>
-              这一切都不是天生的。系统思维是一项能靠结构化练习、刻意复盘、
-              以及给所见之物一一命名而不断精进的能力。
-              它是{" "}
-              <Link href="/zh/how-it-works">F.A.S.T. 方法</Link>{" "}
-              核心的七个学科之一，也塑造着{" "}
-              <Link href="/zh/executive-mba">Future Ready Executive MBA</Link>{" "}
-              ——这门课要把领导者从疲于应付一桩桩事件，带到亲手重新设计那个不断制造事件的系统。
+              此事并非天生。系统思维是一项能靠结构化练习、刻意复盘、
+              以及给所见之物一一命名而不断精进的能力，也是 F.A.S.T. 方法
+              七个学科之一。<Link href="/zh/diagnostic">{PROGRAMME_FIT_CHECK.zh}</Link>
+              ，把这个问题变成您现在正权衡的决定。
             </p>
             <p>
               一旦学会看清整盘棋，您就不会再一次次重复同一步臭棋，
@@ -196,7 +198,7 @@ export default function SystemsThinkingForLeaders() {
         </div>
       </section>
 
-      <CtaSection lang="zh" programme="Executive MBA" heading="看清整个系统，再带着它往前走。" />
+      <CtaSection lang="zh" programme="Executive MBA" heading="用在眼下正权衡的决定上" />
     </>
   );
 }

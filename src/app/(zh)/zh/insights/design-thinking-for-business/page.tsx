@@ -7,9 +7,9 @@ import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/zh/insights/design-thinking-for-business", {
-  title: "商业中的设计思维",
+  title: "从您要服务的人开始",
   description:
-    "写给领导者的设计思维实战指南：读懂客户、界定真问题、快速做原型，并在渴望度、可行性与商业可行性之间找到平衡。",
+    "写给领导者的设计思维：先找对问题，再动手；与真正要服务的人一起验证想法；把渴望度、可行性与商业可行性放在一起权衡。",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,14 +20,14 @@ export const metadata = withSeo("/zh/insights/design-thinking-for-business", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "商业中的设计思维：面向领导者的实用指南",
+  headline: "从您要服务的人开始",
   mainEntityOfPage: "https://futurereadymba.com/zh/insights/design-thinking-for-business",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "zh-Hans-MY",
   description:
-    "读懂客户、界定对的问题、快速做原型，并在渴望度、可行性与商业可行性之间取得平衡的实战指南。",
+    "写给领导者的设计思维：先找对问题，再动手；与真正要服务的人一起验证想法；把渴望度、可行性与商业可行性放在一起权衡。",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,
@@ -39,7 +39,7 @@ const jsonLd = {
     name: "Asian Business Consulting",
   },
   articleSection: "Insights",
-  about: "面向商业领导者及战略的设计思维",
+  about: "设计思维：动手之前先找对问题",
 };
 
 export default function Page() {
@@ -56,13 +56,14 @@ export default function Page() {
               <span className="mono sec-k">洞察 · 思维方法</span>
             </div>
             <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "18ch" }}>
-              商业中的设计思维
+              从您要服务的人开始
             </h1>
             <ArticleAttribution lang="zh" />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              产品再精致，若对准了错误的问题，也无济于事。设计思维正是为化解这个风险而生——
-              它以人为本、小步快跑，从客户的真实需求出发，而非从内部的想当然出发；
-              把每一个想法都当作有待验证的假设，而不是急于捍卫的结论。
+              产品做得再好，一旦解错了问题、认错了人，照样会失败。设计思维的功夫，
+              是先找对问题：从您要服务的人开始，验证过后再投入，把每个想法都当作
+              有待证明的假设，而不是要捍卫的结论。并非与生俱来的天分，而是练出来
+              的功夫——练在真实的决策上，而不是假设上。
             </p>
           </Reveal>
 
@@ -70,9 +71,9 @@ export default function Page() {
             <h2>设计思维到底是什么</h2>
             <p>
               设计思维把设计师的工作习惯提炼成一套通用方法，用来对付复杂而模糊的难题。
-              它的核心动作说来简单：从您要服务的人入手，仔细观察他们的真实处境，
+              核心动作说来简单：从您要服务的人入手，仔细观察他们的真实处境，
               让眼前的事实来塑造方案——而不是先认定一个自己中意的方案，
-              再回过头去找市场替它背书。
+              再回过头去找证据来支持它。
             </p>
             <p>
               这套方法有意反复打磨，而不是一条道走到底。团队在全面上线之前，
@@ -86,7 +87,7 @@ export default function Page() {
 
             <h2>企业场景中的五个阶段</h2>
             <p>
-              经典模型分为五个阶段。它们是您可以来回切换的工作模式，而不是走完一遍就打勾的流程。
+              经典模型分为五个阶段，是您可以来回切换的工作模式，而不是走完一遍就打勾的流程。
             </p>
             <ul>
               <li>
@@ -96,7 +97,7 @@ export default function Page() {
               </li>
               <li>
                 <strong>界定。</strong> 把听来的内容提炼成一句精准、以人为核心的问题陈述。
-                一句到位的界定——比如“忙碌的临床医生每个班次要花二十分钟核对记录”——
+                一句到位的界定——比如“忙碌的临床医生每次轮班要花二十分钟核对记录”——
                 远比“提升效率”这种空泛的指令管用。
               </li>
               <li>
@@ -116,12 +117,12 @@ export default function Page() {
 
             <h2>为什么对领导者与战略至关重要</h2>
             <p>
-              对高管来说，设计思维的价值在商业，而非在美学。它系统性地压低了一项关键风险：
-              辛苦打造出客户根本不会选的东西。靠着及早引入证据，它把失败发生的时点，
-              从代价高昂的正式上线，提前到几乎不花钱的原型阶段。
+              对高管来说，设计思维的价值在商业，而非在美学，因为它系统性地压低了一项
+              关键风险：辛苦打造出客户根本不会选的东西。靠着及早引入证据，这套方法
+              把失败发生的时点，从代价高昂的正式上线，提前到几乎不花钱的原型阶段。
             </p>
             <p>
-              它还用一个简单而严谨的视角，把创造力与商业逻辑打通。
+              设计思维还用一个简单而严谨的视角，把创造力与商业逻辑打通。
               一项站得住脚的创新，必须同时闯过三关：
             </p>
             <ul>
@@ -140,11 +141,11 @@ export default function Page() {
               领导者的本事，是把三者一并拿捏，而不是顾此失彼，只优化一项、牺牲另外两项。
             </p>
 
-            <h3>回到客户真正想“搞定”的那件事</h3>
+            <h3>真正要完成的任务（the right job to be done）</h3>
             <p>
               设想一家中端银行，正把年轻客户一个个丢给金融科技应用。
               直觉反应是加入功能军备竞赛：多加预算图表、重做仪表板、把上线节奏提速。
-              可真正坐下来做几场客户访谈，往往会浮现出另一件事。
+              可真正坐下来做几场客户访谈，就会浮现出另一件事。
               客户买的不是图表；他们“雇”这项服务，是为回答一个让他们心里发慌的问题——
               “这笔钱我现在花得起吗，回头会不会冒出意外的坏消息？”
             </p>
@@ -155,7 +156,7 @@ export default function Page() {
               客户群没变，手上的数据也没变，变的只是团队把客户真正要办的事看得更准了。
             </p>
 
-            <h2>常见的坑</h2>
+            <h2>捷径在三处让人付出代价</h2>
             <ul>
               <li>
                 <strong>跳过客户研究。</strong> 一上来就构思，很容易把内部的臆测当成客户的需求。
@@ -171,21 +172,23 @@ export default function Page() {
               </li>
             </ul>
 
-            <h2>从会用到用得得心应手</h2>
+            <h2>这套方法在课程中的位置</h2>
             <p>
-              设计整合思维，是{" "}
-              <Link href="/zh/how-it-works">Future Ready Executive MBA</Link>{" "}
-              F.A.S.T. 方法七个思维学科之一，与前文的
-              Jobs-To-Be-Done、以及渴望度、可行性、商业可行性框架并列——
-              课程不是把它当理论来讲，而是当作一件您能直接用在自家战略课题上的工具来教。
-              如果您希望自己主导的创新经得起真实客户的检验，
-              <Link href="/zh/executive-mba">Executive MBA</Link>{" "}
-              课程会帮您把这套方法练成一种本能。
+              设计整合思维，是 Future Ready Executive MBA F.A.S.T. 方法七个思维学科
+              之一，与前文的 Jobs-To-Be-Done、以及渴望度、可行性、商业可行性框架并列——
+              课程不是把它当理论来讲，而是让您在六个月里，把这套方法用在自己的
+              决策上反复练习。
             </p>
             <h2>资料来源与延伸阅读</h2>
             <p>
               关于渴望度、可行性、商业可行性这套经典框架，以及 IDEO 对这套迭代方法的最新阐述，参见{" "}
               <a href="https://designthinking.ideo.com/introduction" target="_blank" rel="noopener noreferrer">IDEO 设计思维简介（英文）</a>。
+            </p>
+            <p>
+              把它用在您现在正面对的决策上。{" "}
+              <Link className="text-action" href="/zh/diagnostic">
+                查看课程适配检查 <span aria-hidden="true">↗</span>
+              </Link>
             </p>
           </div>
         </div>
@@ -194,7 +197,7 @@ export default function Page() {
       <CtaSection
         lang="zh"
         programme="Executive MBA"
-        heading="投入资源之前，先弄清客户真正在乎什么。"
+        heading="先弄清要服务的人，再动手"
       />
     </>
   );

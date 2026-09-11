@@ -1,0 +1,61 @@
+{
+  "unit": "conversion-pages",
+  "files_changed": [
+    "src/app/(en)/apply/page.tsx",
+    "src/app/(en)/contact/page.tsx",
+    "src/app/(en)/intakes/page.tsx",
+    "src/app/(en)/diagnostic/page.tsx",
+    "src/app/(ms)/ms/apply/page.tsx",
+    "src/app/(ms)/ms/contact/page.tsx",
+    "src/app/(ms)/ms/intakes/page.tsx",
+    "src/app/(ms)/ms/diagnostic/page.tsx",
+    "src/app/(zh)/zh/apply/page.tsx",
+    "src/app/(zh)/zh/contact/page.tsx",
+    "src/app/(zh)/zh/intakes/page.tsx",
+    "src/app/(zh)/zh/diagnostic/page.tsx"
+  ],
+  "h1_and_lede": {
+    "apply": {
+      "note": "apply/page.tsx is only metadata + BreadcrumbJsonLd wrapping the already-reviewed GuideApplyPage component; no in-page H1 exists to change. Rewrote title/description/breadcrumb label only.",
+      "en": { "h1": "(component-owned, unchanged)", "lede": "Request the 2026 programme guide: the six-month structure, published dates, standard fee, scholarship assessment and CMI recognition. An enquiry does not commit you to enrol or pay." },
+      "ms": { "h1": "(component-owned, unchanged)", "lede": "Minta panduan program 2026: struktur enam bulan, tarikh yang diterbitkan, yuran standard, penilaian biasiswa dan pengiktirafan CMI. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." },
+      "zh": { "h1": "(component-owned, unchanged)", "lede": "2026 课程指南涵盖 6 个月的课程结构、已公布日期、标准费用、奖学金评估方式及 CMI 认可。咨询不构成报读或付款承诺。" }
+    },
+    "contact": {
+      "en": { "h1": "Talk to the programme team.", "lede": "Questions about programme fit, dates, the fee, HRD Corp or the scholarship? Reach the Asian Business Consulting team directly, or arrange a call, an online meeting or an in-person meeting at an agreed location — or ask for the 2026 programme guide first. An enquiry does not commit you to enrol or pay." },
+      "ms": { "h1": "Bercakap dengan pasukan program.", "lede": "Tanya kami tentang kesesuaian program, tarikh mula, yuran, biasiswa atau permohonan HRD Corp — atau minta panduan program 2026 dahulu. Pertanyaan tidak mengikat anda untuk mendaftar atau membayar." },
+      "zh": { "h1": "与课程团队对话。", "lede": "咨询课程适配、开课日期、学费、奖学金或 HRD Corp 申领，或先索取 2026 年课程指南。咨询不构成报读或付款承诺。" }
+    },
+    "intakes": {
+      "en": { "h1": "Choose when your six months start.", "lede": "English Cohorts 17, 18 and 19, plus Mandarin Cohorts 2 and 3, are published below. The dates shown are the published 2026 schedule. If ABC changes a date, registered participants receive the replacement date in writing." },
+      "ms": { "h1": "Pilih bila enam bulan anda bermula.", "lede": "Setiap kohort yang diterbitkan selesai dalam 6 bulan menerusi 3 sesi berjadual. Tarikh yang ditunjukkan ialah jadual 2026 yang diterbitkan; jika ABC mengubah sesuatu tarikh, peserta berdaftar menerima tarikh gantian secara bertulis. Chartered Manager pula ialah laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI." },
+      "zh": { "h1": "选择起点，六个月由此开始。", "lede": "已公布的五届课程，都在 6 个月内以 3 次上课日期完成。Chartered Manager 属于独立可选的 CMI 路线，不含在本课程与已公布费用之内。" }
+    },
+    "diagnostic": {
+      "en": { "h1": "(component-owned, unchanged)", "lede": "Answer four private questions to see the facts that matter for your responsibilities, schedule, fee and CMI recognition. This is not an admission test or a prediction of career outcomes." },
+      "ms": { "h1": "(component-owned, unchanged)", "lede": "Jawab empat soalan peribadi untuk melihat fakta yang penting bagi tanggungjawab, jadual, yuran dan pengiktirafan CMI anda. Ini bukan ujian kemasukan dan bukan ramalan hasil kerjaya." },
+      "zh": { "h1": "(component-owned, unchanged)", "lede": "回答四道私人问题，看清与您的责任、日程、费用及 CMI 认可有关的事实。这不是入学测试，也不会预测职业结果。" }
+    }
+  },
+  "constants_used": [
+    "PROGRAMME_YEAR", "ENQUIRY_COMMITMENT", "ENQUIRY_COMMITMENT_MS", "ENQUIRY_COMMITMENT_ZH",
+    "CTA_LABELS.conversation / .zh.conversation / .zh.guide / .ms.conversation",
+    "PROGRAMME_FIT_CHECK.en / .ms / .zh",
+    "DELIVERY_CONTROL.schedule", "FACTS.trainingDays", "FACTS.liveSessions", "FACTS.durationMonths", "SITE.provider"
+  ],
+  "exit_codes": {
+    "npm_run_typecheck": 0,
+    "content_clarity_audit": "0 (2 locale warnings reported, both in src/lib/content-zh.ts intakes block, a shared file this unit did not and must not edit — not attributable to conversion-pages files)"
+  },
+  "self_checks": {
+    "ms_register_self_check_section_7": "passed: no kamu/awak/nak/tak/-lah colloquials; no biasanya/kebanyakan/lebih kurang; replaced banned 'laluan pilihan CMI yang berasingan' on ms/intakes with 'laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI'; replaced the vague cohort-availability sentence with the locked 'Dibuka untuk pertanyaan.'; ENQUIRY_COMMITMENT_MS rendered verbatim (not paraphrased) on ms/apply and ms/contact; H1s at or under 9 words; no exclamation marks; RM/date formats untouched (no dates typed on these pages outside the IntakeSchedule component)",
+    "zh_register_self_check_section_7": "passed: replaced banned 班次 with 届/届次 on zh/intakes and zh/contact descriptions; replaced generic '三个周末' framing (banned outside a genuine Sat–Sun cohort) with '三次上课日期'; added the locked '开放咨询' availability line on zh/intakes in place of a 名额-adjacent-to-cohort sentence (名额 reserved for the scholarship sentence only, which this unit does not touch); dropped '免费下载' as a leading word on zh/apply and replaced with CTA_LABELS.zh.guide plus ENQUIRY_COMMITMENT_ZH; H1s within the 14-character/two-beat limit; no 参与者/首席执行官/创始人/营销/在线-as-error; full-width punctuation preserved; ENQUIRY_COMMITMENT_ZH rendered verbatim on zh/apply and zh/contact"
+  },
+  "notes_for_reviewer": [
+    "apply/page.tsx and diagnostic/page.tsx in all three languages are metadata-only wrappers around GuideApplyPage and ExecutiveDiagnostic (both already rewritten/reviewed components); no page-level H1 or lede exists to change beyond metadata, breadcrumb label and (for diagnostic) the locked 'Programme fit check' name via PROGRAMME_FIT_CHECK.",
+    "diagnostic metadata descriptions match, but do not literally import, the 'This is not an admission test or a prediction of career outcomes.' sentence that already lives verbatim inside ExecutiveDiagnostic.tsx (component file, out of scope) — worth a reviewer check that the two surfaces stay in sync if the component copy changes later.",
+    "en/contact and en/intakes previously used ad hoc English (not the CTA_LABELS constant) for the 'Arrange a programme conversation' button on en/intakes; switched it to {CTA_LABELS.conversation} for single-source naming, matching ms/zh which already used the constant.",
+    "content-ms.ts and content-zh.ts were read only, never edited, per instructions; the two pre-existing clarity-audit warnings on content-zh.ts's intakes block (班次) belong to a different unit and are flagged here only for visibility.",
+    "Did not commit; did not run npm run build or e2e."
+  ]
+}

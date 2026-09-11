@@ -1,0 +1,46 @@
+{
+  "unit": "noindex-and-legal",
+  "language": "zh",
+  "filesReviewed": [
+    "src/app/(zh)/zh/unsubscribed/page.tsx",
+    "src/app/(zh)/not-found.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/unsubscribed/page.tsx",
+      "line": 13,
+      "problem": "H1 '您已退订。' contained 您 in a headline (banned) and had a trailing full stop.",
+      "fix": "Rewrote as '退订已完成' (no pronoun, no trailing punctuation, same meaning)."
+    },
+    {
+      "file": "src/app/(zh)/zh/unsubscribed/page.tsx",
+      "line": 17,
+      "problem": "H1 (invalid state) '链接无法验证。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/unsubscribed/page.tsx",
+      "line": 21,
+      "problem": "H1 (error state) '暂时无法处理。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/not-found.tsx",
+      "line": 9,
+      "problem": "H1 '找不到这个页面。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    }
+  ],
+  "checksPassed": [
+    "No sentence-initial 它/这 (the not-found H1 uses '这个' mid-phrase as a determiner, not sentence-initial as a stand-in subject, so it is not a violation).",
+    "营销 already replaced with 推广 in unsubscribed.page.tsx per the writer's prior fix; confirmed still correct (推广邮件 appears twice, metadata and body, no 营销 remaining).",
+    "CTA_LABELS.zh.conversation used verbatim on both pages ('预约课程咨询').",
+    "No cleft sentences; no 免费; no scholarship/amount language (not applicable to these utility pages); no CMI/认可/认证 claims on these pages so no boundary-adjacency requirement applies.",
+    "Pangu spacing intact; no traditional glyphs; full-width punctuation used throughout body copy."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "None — these are short utility pages with no facts, fees, or CMI claims requiring owner confirmation."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "unit": "faq",
+  "language": "ms",
+  "verdict_before_fixes": "fail",
+  "problems_found": [
+    {
+      "file": "src/lib/content-ms.ts",
+      "line": 135,
+      "problem": "FAQS_MS answer to 'Apakah yang akan saya perolehi pada akhir program, dan apakah yang tidak?' read 'Chartered Manager ialah laluan pilihan CMI yang berasingan...' — banned phrase, same issue as the fees unit. The FAQ writer's own handback had flagged this exact line and left it in place, believing the guide mandated it; the guide's mandate was superseded by owner decision (spec §13: 'never a phrase that reads as CMI's preferred route or a next stage') and by the high-confidence audit finding that added 'laluan pilihan' to the ban list.",
+      "fix_applied": "Reworded to 'Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI, dan tidak termasuk dalam program ini atau yuran yang diterbitkan.'"
+    },
+    {
+      "file": "src/lib/content-ms.ts",
+      "line": 136,
+      "problem": "FAQS_MS answer to 'Adakah ini program pendidikan eksekutif atau ijazah MBA akademik?' half-translated the programme name: 'Ini ialah Executive MBA dalam kepimpinan perniagaan masa hadapan...'. ms-register-audit-rules.json (high confidence) bans half-translation of the programme name; owner decision §14.1 requires the programme name to stay in English in all three languages: 'Executive MBA on Future Ready Business Leadership'.",
+      "fix_applied": "Replaced with 'Ini ialah Executive MBA on Future Ready Business Leadership, dianugerahkan dan disokong oleh CMI.'"
+    },
+    {
+      "file": "src/lib/content-ms.ts",
+      "line": 140,
+      "problem": "FAQS_MS answer to 'Bolehkah syarikat mendaftarkan pengasas atau pasukan kanannya?' opened with 'Program ini terbuka kepada eksekutif dan ke atas' — a calque of 'executives and above' (ms-register.md Do/Don't item 25 and audit item 14); BM ranks with 'peringkat ... ke atas'.",
+      "fix_applied": "Reworded to 'Program ini terbuka kepada peserta peringkat eksekutif ke atas, termasuk pengurus kanan, pengarah, pemilik perniagaan dan pengasas.'"
+    }
+  ],
+  "notes": [
+    "Left the MQA question at content-ms.ts:137 ('Adakah ini ijazah terakreditasi MQA?') and its answer completely untouched — this string is locked byte-identical by src/lib/__tests__/fact-parity.test.ts ('keeps the Malay MQA FAQ selector byte-identical to its source question'). Verified the test still passes after all other fixes (npx vitest run fact-parity.test.ts: 7 passed).",
+    "src/app/(ms)/ms/faq/page.tsx (H1, lede, metadata, JSON-LD wiring) checked clean: no calques, no exclamation marks, 'anda' correctly present in the reader-facing lede but absent from fact sentences within FAQS_MS answers.",
+    "All 12 FAQS_MS answers checked for direct-answer openers where the question is yes/no-shaped ('Boleh.', 'Bukan.') — confirmed on the two questions that are yes/no ('Bolehkah saya meneruskan...' and the locked MQA question); the remaining questions are open (what/who/how) and correctly do not force a yes/no opener."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "owner_questions": []
+}

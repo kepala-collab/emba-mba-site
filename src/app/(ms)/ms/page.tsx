@@ -3,12 +3,12 @@ import { SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms", {
-  title: "Executive MBA Enam Bulan untuk Pengurus Bekerja",
-  description: "Program pembangunan profesional Future Ready Executive MBA selama enam bulan untuk pengurus bekerja, pemilik perniagaan dan pemimpin kanan.",
+  title: "Executive MBA 6 Bulan untuk Pengurus yang Bekerja",
+  description: "Program pembangunan profesional Future Ready Executive MBA selama 6 bulan untuk pengurus yang bekerja, pemilik perniagaan dan pemimpin kanan.",
   openGraph: {
     type: "website",
-    title: "Executive MBA Enam Bulan untuk Pengurus Bekerja",
-    description: "Tajamkan pertimbangan pengurusan, keputusan dan pelaksanaan anda menerusi isu perniagaan sebenar.",
+    title: "Executive MBA 6 Bulan untuk Pengurus yang Bekerja",
+    description: "Bawa satu isu perniagaan sebenar dan pulang dengan pelan tindakan yang boleh dilaksanakan oleh pasukan anda.",
     locale: "ms_MY",
     url: `${SITE.url}/ms`,
   },

@@ -8,7 +8,7 @@ const content = CORE_PAGES_ZH.fees;
 
 export const metadata = withSeo(path, {
   title: "学费、奖学金与 HRD Corp 申领",
-  description: `Future Ready Executive MBA 标准费用为 ${FACTS.priceStd}；符合资格的马来西亚申请者可择优接受奖学金评估，最终奖学金与应付费用均以书面个别确认。`,
+  description: `${FACTS.priceStd} 标准费用；${FACTS.scholarshipProvider} 奖学金个别评估，以书面确认，并非自动授予。`,
 });
 
 export default function Page() {

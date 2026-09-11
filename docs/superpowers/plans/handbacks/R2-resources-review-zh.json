@@ -1,0 +1,94 @@
+{
+  "unit": "resources",
+  "language": "zh",
+  "filesReviewed": [
+    "src/app/(zh)/zh/resources/page.tsx",
+    "src/app/(zh)/zh/resources/advancement-brief/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/resources/page.tsx",
+      "line": 14,
+      "problem": "Compare-programmes card title '如何比较管理课程' did not match the article's own title or the insights-index card title, violating the rule that the compare-programmes title must be identical across index, article and resources.",
+      "fix": "Changed to '如何比较领导力课程', matching the article metadata title and the (corrected) insights-index card title."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/page.tsx",
+      "line": 24,
+      "problem": "H1 '留下资料之前，先把情况了解清楚。' carried a trailing full stop, banned on headlines.",
+      "fix": "Removed the trailing period."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/page.tsx",
+      "line": 48,
+      "problem": "H2 '从真实的工作需要，建立学习的理由。' carried a trailing period and, at 15 characters, exceeded the 14-character headline limit.",
+      "fix": "Shortened to '从真实需要，建立学习理由' (11 characters, no trailing period)."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/page.tsx",
+      "line": 61,
+      "problem": "H2 '做选择之前，应该提出的问题。' carried a trailing period.",
+      "fix": "Removed the trailing period."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/page.tsx",
+      "line": 52,
+      "problem": "Employer guide checklist item used '{FACTS.liveSessions} 个指定周末' (bound the session count to 'weekend'), which misstates the schedule for the four cohorts that run Friday–Saturday, not Saturday–Sunday (zh-register-audit.json high-confidence issues #1 and #16).",
+      "fix": "Reworded to '分 {FACTS.liveSessions} 次指定课次是否安排得开', a neutral session noun that does not assert a weekend."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/advancement-brief/page.tsx",
+      "line": 25,
+      "problem": "H2 '从工作需要开始，不从头衔开始。' carried a trailing period.",
+      "fix": "Reworded to '从工作需要开始，不看头衔' (removes the period and the repeated verb)."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/advancement-brief/page.tsx",
+      "line": 26,
+      "problem": "H2 '把结构化的探究，用到真实情境中。' carried a trailing period.",
+      "fix": "Shortened to '结构化探究，用在真实情境' (11 characters, no period)."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/advancement-brief/page.tsx",
+      "line": 27,
+      "problem": "H2 '{FACTS.durationMonths} 个月，完整课程。' carried a trailing period; the certificate sentence in the same section rendered 'CMI Certificate of Recognition' without the Chinese term (获颁 CMI Certificate of Recognition), against the glossary rule that the certificate is named 'CMI 认可证书（CMI Certificate of Recognition）' and against the canonical wording already used in content-zh.ts.",
+      "fix": "Removed the trailing period and changed the certificate sentence to '将获颁 CMI 认可证书（CMI Certificate of Recognition）', matching the canonical rendering used elsewhere on the site."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/advancement-brief/page.tsx",
+      "line": 28,
+      "problem": "The section 04 heading rendered the raw English string CERTIFICATE_POSITIONING.headline ('Awarded and endorsed by CMI · professional development') on a Chinese page — no Chinese heading. The body also named the certificate without the Chinese gloss and used an ad hoc boundary sentence instead of the canonical professionalRelevance sentence, so the not-an-MQA-degree boundary was not guaranteed to be in the same viewport as the CMI claim.",
+      "fix": "Replaced the heading with a Chinese heading '由 CMI 颁发并认可 · 专业发展' (matches owner decision 2026-09-10 §14.1 wording 'issued and recognised by CMI'), fixed the certificate sentence to include the Chinese gloss, and replaced the ad hoc boundary text with CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH imported from content-zh.ts, so the canonical no-guarantee sentence renders in the same block. Removed the now-unused CERTIFICATE_POSITIONING import."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/advancement-brief/page.tsx",
+      "line": 29,
+      "problem": "H2 '标准费用与奖学金资格。' carried a trailing period; the scholarship sentence ended '并非自动获得' instead of the canonical '并非自动授予' used by every other scholarship sentence on the site.",
+      "fix": "Removed the trailing period and changed '并非自动获得' to '并非自动授予'."
+    },
+    {
+      "file": "src/app/(zh)/zh/resources/advancement-brief/page.tsx",
+      "line": 30,
+      "problem": "H2 '报名之前，先确认这些问题。' carried a trailing period and used 报名 (enrol) rather than the site's controlled enrolment-adjacent verb.",
+      "fix": "Reworded to '报读之前，先确认这些问题' (no trailing period; 报读 matches the glossary's preferred verb for enrolling on a course)."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/page.tsx",
+      "line": 17,
+      "problem": "Insights-index card title '如何比较专业管理课程' did not match the article's own metadata title ('如何比较领导力课程') or the resources card title, breaking the required cross-surface title match.",
+      "fix": "Changed to '如何比较领导力课程' to match the other two surfaces."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/page.tsx",
+      "line": 148,
+      "problem": "CtaSection heading '把这些方法，用在您手上的决策上。' carried a trailing period.",
+      "fix": "Removed the trailing period."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "The EN resources-writer flagged that CTA_LABELS.guide (the guide CTA) links to /apply from the advancement-brief page itself, even though that page is the programme guide — the same architecture question applies to the Chinese CTA_LABELS.zh.guide button on the brief page (section 07). This is a shared cross-language CTA-routing decision, not a translation defect, and is left for the owner/orchestrator to resolve once, for all three languages.",
+      "Confirm '由 CMI 颁发并认可 · 专业发展' (added as the section-04 Chinese heading, since no Chinese mirror of CERTIFICATE_POSITIONING.headline exists in content-zh.ts) is an acceptable phrasing, or whether the owner wants a proper CERTIFICATE_POSITIONING_HEADLINE_ZH constant added to content-zh.ts at source for all pages that reference the English headline."
+  ]
+}

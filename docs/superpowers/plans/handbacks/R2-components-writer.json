@@ -1,0 +1,60 @@
+{
+  "unit": "components",
+  "files_changed": [
+    "src/components/site/LeadForm.tsx",
+    "src/components/site/GuideApplyPage.tsx",
+    "src/components/site/ExecutiveDiagnostic.tsx",
+    "src/components/site/CmiProgressionChart.tsx",
+    "src/components/site/ProgrammeComparison.tsx",
+    "src/components/site/ProgrammeIntroduction.tsx",
+    "src/components/site/ProgrammeAssistant.tsx"
+  ],
+  "files_reviewed_no_change_needed": [
+    "src/components/site/IntakeSchedule.tsx (only two Chinese 班次 -> 届别 word-choice fixes; core structure, CTA_LABELS.conversation usage and 'Open for enquiries' wording were already compliant)"
+  ],
+  "note_on_file_layout": "All eight files are single-file components carrying en/ms/zh blocks inline (no separate (ms)/(zh) tree files exist for this unit); the plan's tree-file note did not apply here.",
+  "h1_and_lede_by_component": {
+    "GuideApplyPage": {
+      "en": { "h1": "Get the 2026 programme guide first.", "lede": "Review the 6 months structure, published dates, standard fee, scholarship assessment and CMI recognition in one document, then decide whether a conversation is worthwhile." },
+      "ms": { "h1": "Dapatkan panduan program 2026 dahulu.", "lede": "Semak struktur 6 bulan, tarikh diterbitkan, yuran standard, penilaian biasiswa dan pengiktirafan CMI dalam satu dokumen, kemudian tentukan sama ada perbualan diperlukan." },
+      "zh": { "h1": "先索取 2026 年课程指南。", "lede": "在一份文件中查看 6 个月课程结构、已公布日期、标准费用、奖学金择优评估方式及 CMI 认可，再决定是否需要进一步沟通。" }
+    },
+    "ExecutiveDiagnostic": {
+      "en": { "h1": "Which decision is your role now asking you to make differently?" },
+      "ms": { "h1": "Keputusan mana yang kini perlu anda buat secara berbeza?" },
+      "zh": { "h1": "现在，哪个决策需要不同的做法？" },
+      "note": "Result H2 changed to spec-mandated 'Here is a starting point, not a verdict.' / 'Ini titik permulaan, bukan penilaian muktamad.' / '这是起点，不是结论。'; added a reflect-back line quoting the reader's Q1 answer before the checklist."
+    }
+  },
+  "constants_used": [
+    "CTA_LABELS.submit / CTA_LABELS.zh.submit / CTA_LABELS.ms.submit (LeadForm submit button)",
+    "CTA_LABELS.conversation / .zh.conversation / .ms.conversation (already in IntakeSchedule, ExecutiveDiagnostic)",
+    "ENQUIRY_COMMITMENT / ENQUIRY_COMMITMENT_MS / ENQUIRY_COMMITMENT_ZH (LeadForm fine print, GuideApplyPage reassurance line)",
+    "PROGRAMME_FIT_CHECK.en/.ms/.zh (ExecutiveDiagnostic eyebrow)",
+    "COMPARISON_SCOPE (ProgrammeComparison, English only — see reviewer note on ms/zh mirrors)",
+    "FACTS.*, PROGRAMME_YEAR, CMI_PATHWAY.qualifications, FEES.* (interpolated, unchanged elsewhere)"
+  ],
+  "key_rule_fixes": [
+    "LeadForm: intent label 'Career progression' -> 'For my own role' (EN/MS/ZH mirrors); 'applying from outside Malaysia' -> 'enquiring from outside Malaysia' (banned apply/application word for an enquiry); MS submit label fixed from 'Hantar permohonan program saya' (banned 'permohonan') to CTA_LABELS.ms.submit; guide naming standardised to 'the {PROGRAMME_YEAR} programme guide' on every surface (compact/campaign titles, EN/MS/ZH)",
+    "ExecutiveDiagnostic: added Q1 option naming responsibility for others; reworded Q3 option to 'A written action plan on my own business, reviewed by faculty' (EN/MS/ZH); renamed to Programme fit check; replaced banned 'outgrown' H1 with spec's approved reader-question H1; result now 'a starting point, not a verdict' with an answer-reflecting line, never a verdict on the reader",
+    "CmiProgressionChart: removed 'ladder' (EN) and its literal Malay calque 'Tangga' from the section H2; confirmed no 'laluan pilihan' / rung / stage-label language anywhere in the file (already compliant)",
+    "ProgrammeComparison: added a 'Built for' first row (EN/MS/ZH, describing the academic MBA neutrally as serving a different job, no disparagement) and rendered the comparison-scope line (COMPARISON_SCOPE for EN; local MS/ZH mirrors, since no shared content-ms.ts/content-zh.ts constant exists yet) adjacent to the table",
+    "ProgrammeIntroduction: added a lang prop (default 'en', backward compatible with existing English-only call sites) and full MS/ZH copy for the film caption, dialog, placeholder and transcript; fixed 'in {FACTS.liveSessions} scheduled sessions' to 'across' per governance checklist item 3",
+    "ProgrammeAssistant (UI strings only): replaced the EN/MS/ZH prompt chip that compared the certificate to a generic attendance/HRD Corp certificate (a banned disparaging-comparison axis) with a neutral 'What does the CMI certificate represent?' question; knowledge-base/RAG content untouched"
+  ],
+  "typecheck_exit_code": 0,
+  "audit_exit_code": 0,
+  "audit_warnings_in_my_files": 0,
+  "self_check_results": {
+    "ms_register_section7": "Pass on manual review: anda used throughout, no exclamation marks, no -lah/nak/tak, DBP spelling conventions preserved from source strings, no 'laluan pilihan' introduced in my files, Malay headline word counts within limits (diagnostic H1 = 9 words), 'Jadualkan sesi perbincangan program' already used via CTA_LABELS.ms.conversation, no new occurrences of banned MS calques (pengurus bekerja, projek aplikasi, perbualan program, laluan lanjutan) introduced by this unit",
+    "zh_register_section7": "Pass on manual review: no sentence-initial 它/这 introduced, pangu spacing preserved from existing strings, numbers before adjectives preserved, 认可 used for CMI claims (never 认证, which stays reserved for MQA), no 背书/班次(after fix)/参与者/创始人/首席执行官/营销(after fix) introduced by this unit; replaced my own 班次 and 营销 occurrences after the audit flagged them",
+    "audit_high_confidence_items": "Reviewed ms-register-audit-rules.json/checklist.json and zh-register-audit.json high-confidence entries relevant to CMI/Chartered Manager/enquiry wording; matched the audit's overturn of the register guide's endorsement-verb ban (left PROGRAMME_POSITIONING_MS/ZH untouched, out of my file scope)"
+  },
+  "left_for_reviewer": [
+    "ProgrammeComparison's Malay/Chinese COMPARISON_SCOPE text is a local transcreation inside the component (no shared content-ms.ts/content-zh.ts constant exists yet for this string); reviewer/owner may want it hoisted to a shared constant later for reuse on /executive-mba-vs-mba.",
+    "ProgrammeIntroduction previously had no lang prop at all (English-only in all call sites). I added it as an optional, backward-compatible prop with full MS/ZH copy, but no page.tsx in the app currently passes lang='ms'|'zh' to it (page.tsx files are out of my scope to edit) — the reviewer or a page-owning writer should wire the prop on Malay/Chinese pages that embed this component so the new copy actually renders there.",
+    "IntakeSchedule.tsx's 'Confirm availability' / zh '请确认名额' / ms 'Sahkan kekosongan tempat' fallback strings for a non-open cohort are currently unreachable (every row in INTAKES has seats: 'Open'), so I left them rather than risk an unreviewed change to unused strings; flagging in case seats data changes later.",
+    "Genuine pre-existing register-audit warnings (not touched, not in my file list) remain in src/lib/content.ts, content-ms.ts, content-zh.ts and several page.tsx files (mostly the Malay 'laluan pilihan' calque and Chinese 班次/营销/wrong-participant-noun warnings) — these are owned by content.ts and other units' pages, not this components unit, and were already present before this pass.",
+    "Did not touch e2e/site-smoke.spec.ts: I deliberately avoided changing any string it reads (field labels 'Email', 'Phone / WhatsApp (optional)', guide heading text, structural markup, field names/ids/aria/analytics event names) so the existing smoke test should still pass unmodified."
+  ]
+}

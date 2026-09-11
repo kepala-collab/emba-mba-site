@@ -4,12 +4,13 @@ import CtaSection from "@/components/site/CtaSection";
 import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/components/site/ArticleAttribution";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/insights/first-principles-thinking", {
-  title: "Pemikiran Prinsip Pertama untuk Pemimpin Perniagaan",
+  title: "Daripada Jawapan Warisan kepada Keputusan yang Boleh Disahkan",
   description:
-    "Panduan praktikal pemikiran prinsip pertama untuk strategi perniagaan: dedahkan andaian, kenal pasti kebenaran asas dan bina semula pilihan yang lebih baik daripadanya.",
+    "Kaedah untuk menguji sama ada keputusan perniagaan berpijak pada fakta disahkan atau jawapan warisan, lalu bina semula daripada apa yang anda benar-benar tahu.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,18 +21,18 @@ export const metadata = withSeo("/ms/insights/first-principles-thinking", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Pemikiran Prinsip Pertama untuk Pemimpin Perniagaan",
+  headline: "Daripada jawapan warisan kepada keputusan yang boleh disahkan",
   mainEntityOfPage: "https://futurereadymba.com/ms/insights/first-principles-thinking",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "ms-MY",
   description:
-    "Panduan praktikal untuk mendedahkan andaian, mengenal pasti kebenaran asas dan membina semula pilihan strategik yang lebih baik daripada prinsip pertama.",
+    "Kaedah untuk menguji sama ada keputusan perniagaan berpijak pada fakta disahkan atau jawapan warisan, lalu bina semula daripada apa yang anda benar-benar tahu.",
   author: { "@type": "Organization", "@id": EDITORIAL_TEAM_ID, name: "Asian Business Consulting Editorial Team" },
   publisher: { "@type": "Organization", "@id": PROVIDER_ID, name: "Asian Business Consulting" },
   articleSection: "Wawasan",
-  about: "Pemikiran prinsip pertama untuk strategi perniagaan",
+  about: "Pemikiran prinsip pertama sebagai kaedah menguji keputusan perniagaan yang diwarisi",
 };
 
 export default function FirstPrinciplesThinkingPage() {
@@ -57,16 +58,16 @@ export default function FirstPrinciplesThinkingPage() {
                 maxWidth: "16ch",
               }}
             >
-              Pemikiran prinsip pertama untuk pemimpin perniagaan
+              Daripada jawapan yang diwarisi kepada keputusan yang boleh disahkan
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="sec-sub" style={{ maxWidth: "62ch" }}>
-              Pemikiran prinsip pertama bermula apabila kita asingkan fakta yang
-              benar-benar disahkan daripada kebiasaan yang sekadar diwarisi, lalu
-              bina keputusan bermula daripada fakta itu. Artikel ini
-              menerangkan apa itu pemikiran prinsip pertama, mengapa ramai pemimpin
-              terlepas pandang, dan satu kaedah yang boleh anda mula guna esok
-              di pejabat.
+              Panggilan harga, pembekuan pengambilan pekerja, keputusan buat-atau-beli
+              — ia boleh datang dalam pakaian &quot;memang beginilah caranya.&quot;
+              Pemikiran prinsip pertama ialah cara anda menguji sama ada jawapan itu
+              masih berpijak pada fakta, atau ia sekadar dipinjam daripada masalah
+              orang lain. Tiada satu pun daripada ini bakat semula jadi; ia dilatih,
+              dan inilah kaedahnya.
             </p>
           </Reveal>
 
@@ -91,17 +92,17 @@ export default function FirstPrinciplesThinkingPage() {
               menerimanya.
             </p>
 
-            <h2>Mengapa pemimpin cenderung meniru</h2>
+            <h2>Mengapa pemimpin memilih perbandingan yang paling dekat</h2>
             <p>
               &quot;Amalan terbaik&quot; dan penanda aras pesaing terasa seperti
               keputusan yang selamat. Ia mudah dipertahankan dalam mesyuarat
               lembaga, tidak menuntut banyak inovasi, dan memberi ketenangan bahawa
               orang lain sudah pun merintis jalan. Tetapi masalahnya ada pada
-              strukturnya: jika strategi anda disusun daripada jawapan orang lain,
-              paling hebat pun anda hanya sampai sedikit lebih awal ke destinasi
-              yang sama. Analogi mengurung anda dalam keuntungan yang bertambah
+              strukturnya: jika strategi disusun daripada jawapan orang lain,
+              paling hebat pun ia hanya sampai sedikit lebih awal ke destinasi
+              yang sama. Analogi mengurung hasilnya dalam keuntungan yang bertambah
               sedikit demi sedikit. Ia berguna untuk memperhalus
-              permainan yang sedia diketahui, tetapi lemah apabila anda perlu
+              permainan yang sedia diketahui, tetapi lemah apabila perlu
               mengubah permainan itu sendiri.
             </p>
 
@@ -157,7 +158,7 @@ export default function FirstPrinciplesThinkingPage() {
               kepada pelanggan yang sebenarnya menggunakannya secara amat berbeza;
               input ini pula berharga sekian kerana pembekalnya dipilih
               bertahun-tahun lalu dan tidak pernah dikaji semula. Bina semula
-              struktur kos daripada input yang sebenar, dan selalunya anda akan
+              struktur kos daripada input yang sebenar, dan anda akan
               dapati &quot;margin industri&quot; itu hanya andaian yang dikongsi
               bersama, bukan siling yang tetap — lalu terbukalah ruang untuk
               tawaran yang jauh berbeza.
@@ -180,19 +181,15 @@ export default function FirstPrinciplesThinkingPage() {
               itu — bukan alasan untuk membahaskan semula segala-galanya.
             </p>
 
-            <h2>Latih disiplin ini</h2>
+            <h2>Disiplin yang boleh dilatih</h2>
             <p>
-              Berita baiknya, tiada satu pun daripada ini bergantung pada bakat
+              Tiada satu pun daripada ini bergantung pada bakat
               semula jadi. Berfikir daripada asas ialah kemahiran yang semakin
               tajam dengan struktur dan latihan, sama seperti pertimbangan
-              kewangan atau seni rundingan. Ia salah satu daripada tujuh disiplin
-              pemikiran teras {" "}
-              <Link href="/ms/executive-mba">Future Ready Executive MBA</Link>,
-              diajar menerusi {" "}
-              <Link href="/ms/how-it-works">kaedah F.A.S.T.</Link> program supaya
-              memecahkan masalah dan membina semula strategi daripada prinsip
-              pertama menjadi naluri yang anda bawa ke dalam keputusan sebenar,
-              bukan sekadar konsep yang anda kagumi dari jauh.
+              kewangan atau seni rundingan — memecahkan masalah dan membina
+              semula jawapan daripada kebenaran yang disahkan, pada keputusan
+              yang ada di depan anda, sehingga ia menjadi cara anda membuat
+              keputusan, bukan sekadar kaedah yang anda kagumi dari jauh.
             </p>
 
             <h2>Bacaan lanjut</h2>
@@ -201,8 +198,9 @@ export default function FirstPrinciplesThinkingPage() {
               <li><a href="https://ocw.mit.edu/courses/15-351-managing-innovation-and-entrepreneurship-spring-2008/" target="_blank" rel="noopener noreferrer">MIT OpenCourseWare: Managing Innovation and Entrepreneurship</a> — bahan sokongan tentang mencabar andaian dan merangka pendekatan baharu.</li>
             </ul>
             <p>
-              <Link href="/ms/executive-mba" className="btn btn-primary">
-                Terokai program
+              Gunakan ini untuk keputusan yang sedang anda pikul sekarang.{" "}
+              <Link className="text-action" href="/ms/diagnostic">
+                Buka {PROGRAMME_FIT_CHECK.ms} <span aria-hidden="true">↗</span>
               </Link>
             </p>
           </div>
@@ -212,7 +210,7 @@ export default function FirstPrinciplesThinkingPage() {
       <CtaSection
         lang="ms"
         programme="Executive MBA"
-        heading="Berfikir semula daripada prinsip pertama."
+        heading="Gunakan ini untuk keputusan yang sedang anda pikul sekarang."
       />
     </>
   );

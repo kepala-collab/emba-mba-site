@@ -1,0 +1,73 @@
+{
+  "unit": "mba-for-sme-owners",
+  "archetype": "Audience cluster page (spec section 8); Service rung lives naturally here (the owner decides for the people who depend on the business, never as ROI or outcome); Course/CourseInstance JSON-LD structure kept, text fields rewritten.",
+  "files_changed": [
+    "src/app/(en)/mba-for-sme-owners/page.tsx",
+    "src/app/(ms)/ms/mba-for-sme-owners/page.tsx",
+    "src/app/(zh)/zh/mba-for-sme-owners/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "From decisions in your head to decisions in writing.",
+      "lede": "Owners carry client knowledge, pricing calls and operating control in their own heads. Across {FACTS.durationLong} the applied business project takes one operating issue — pricing, succession or a client dependency — from problem to a written plan with owners and measures, reviewed by faculty. It develops management capability; growth and return depend on the decisions and execution that follow. (This H1 and lede are the spec's own approved example for this route, section 8.)"
+    },
+    "ms": {
+      "h1": "Daripada keputusan di kepala kepada keputusan bertulis.",
+      "lede": "Pemilik menyimpan pengetahuan pelanggan, soal harga dan kawalan operasi di kepala sendiri. Sepanjang {FACTS.durationMonths} bulan, projek amali perniagaan membawa satu isu operasi — harga, penggantian atau pergantungan pelanggan — daripada masalah kepada pelan bertulis berserta pemilik dan ukuran, disemak oleh fakulti. Ia membina keupayaan pengurusan; pertumbuhan dan pulangan bergantung pada keputusan dan pelaksanaan yang menyusul."
+    },
+    "zh": {
+      "h1": "从脑中决策，到书面决策。",
+      "lede": "企业主把客户认知、定价判断与运作控制权都留在自己脑中。{FACTS.durationMonths} 个月内，企业应用项目把一项运作课题——定价、接班或客户依赖——从问题推进到一份附带责任人与衡量指标、经导师评阅的书面方案。它锤炼管理能力；增长与回报取决于此后的决策与执行。"
+    }
+  },
+  "constants_used": [
+    "FACTS.durationLong / FACTS.durationMonths",
+    "FACTS.trainingDays",
+    "FACTS.liveSessions",
+    "FACTS.priceStd",
+    "FACTS.scholarshipProvider",
+    "FACTS.scholarshipEligibility (EN only; MS/ZH inline the equivalent sentence per the existing content-ms.ts / content-zh.ts pattern, since no single MS/ZH mirror constant exists for it)",
+    "CTA_LABELS.guide / CTA_LABELS.company and the .ms / .zh mirrors",
+    "HRD_CORP_CLAIM.label / .short",
+    "HRD_CORP_CLAIM_LABEL_MS, HRD_CORP_CLAIM_MS (content-ms.ts)",
+    "HRD_CORP_CLAIM_LABEL_ZH, HRD_CORP_CLAIM_ZH (content-zh.ts)",
+    "CERTIFICATE_POSITIONING.distinction / .professionalRelevance",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (content-ms.ts)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (content-zh.ts)",
+    "ENQUIRY_COMMITMENT_MS, ENQUIRY_COMMITMENT_ZH (content-ms.ts / content-zh.ts)"
+  ],
+  "changes_summary": [
+    "H1 replaced the old feature framing ('Build the systems that reduce owner dependence.') with the spec's own approved from-to example H1 and lede for this exact route (section 8), word-for-word in EN, transcreated into MS (7 words, Daripada...kepada pattern) and ZH (from脑中决策，到书面决策 — 10 chars, two beats, no pronoun).",
+    "Hero now carries the fact strip (training days/sessions), the certificate distinction + professionalRelevance together (CMI named in the first viewport, so the boundary sentence renders in the same block in all three languages per spec section 14 rule 2), and the fee/HRD Corp/scholarship sentence with 'An enquiry does not commit you to enrol or pay.' / ENQUIRY_COMMITMENT_MS / ENQUIRY_COMMITMENT_ZH.",
+    "Added a CTA_LABELS.company / .ms.company / .zh.company link (employer readers) beside the guide CTA in the hero, per the audience-cluster archetype rule.",
+    "Section 2 ('Operating indicators') rewritten from diagnosis-toned headings ('Unclear succession', 'Reactive management') to neutral activity descriptions, per the map digest's risk flag that the original cards could read as blaming the reader; added an explicit 'not a verdict on how you run the business' line.",
+    "Section 3 ('What changes') reordered and rewritten along the 5S rungs per the map digest's opportunity note: Survival (business runs without you in the room) -> Safety (succession has a written plan) -> Social/Success (team acts on decisions) -> Service (other leaders are built, the plan is for the people who depend on your decisions). Kept the verbatim capability disclaimer 'It develops management capability; growth and return depend on the decisions and execution that follow.' / MS / ZH mirrors.",
+    "Replaced blanket 'weekend'/'hujung minggu'/'周末' claims with the canonical 'training days across N scheduled sessions' wording; ZH FIT card no longer says 指定周末 (four of five published cohorts run Fri-Sat, not Sat-Sun, per the zh-register audit's high-confidence correction) and instead points to the published intake table's per-cohort Fri-Sat/Sat-Sun schedule.",
+    "Fixed banned MS calque 'projek aplikasi' (CTA nudge section) -> 'projek amali perniagaan'.",
+    "Fixed banned ZH word 班次 (transport-schedule cohort word) in the CTA-adjacent line '再挑选开课班次' -> '再挑选开课日期'; FIT card cohort schedule line now uses 届 (cohort) instead of 班次.",
+    "CtaSection heading reworded in all three languages to name the reader's own decision ('Get the facts for the operating issue in front of you.' / 'Dapatkan fakta untuk isu operasi yang sedang anda hadapi.' / '针对您正在权衡的运作课题，索取相关事实。') instead of the old generic 'Discuss the systems your business needs beyond the owner.'",
+    "Metadata title/description and JSON-LD Course/CourseInstance description rewritten in all three languages to reflect the new change-of-experience framing while keeping the Course/CourseInstance JSON-LD structure (id, provider, url, hasCourseInstance) unchanged."
+  ],
+  "left_unchanged_by_design": [
+    "JSON-LD structure (Course/CourseInstance fields, ids, provider, courseMode, timeRequired) kept exactly as before; only the free-text `description` fields were rewritten.",
+    "CtaSection and Reveal component internals not touched; only string props passed to them changed.",
+    "The programme name 'Executive MBA on Future Ready Business Leadership' kept in English on all three pages per owner decision 14.1.",
+    "Malay endorsement verb kept as 'disokong' (not 'diperakukan') per owner decision 14.1 and the ms-register-audit-rules.json high-confidence finding that overturns the base guide's ban on 'disokong oleh CMI'.",
+    "Chinese CMI claim kept as '由 CMI 颁发并认可' (not 背书) per owner decision 14.1."
+  ],
+  "audit_and_typecheck": {
+    "npm_run_typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 0,
+    "notes": "node scripts/content-clarity-audit.mjs reports 178 public content files passed; the non-blocking locale-register warning list contains zero entries for any of this unit's three files."
+  },
+  "self_checks": {
+    "ms_register": "anda used throughout body copy; no exclamation marks; no kamu/awak/korang/engkau/nak/tak/macam/-lah; RM figure comes only from FACTS.priceStd; H1 is 7 words (under the 9-word cap); 'projek aplikasi' and 'laluan pilihan' not present; Chartered Manager is not named on this page (no CMgr claim to police here); 'disokong oleh CMI' kept intentionally per owner decision 14.1; scholarship sentence names LIFE Innoversity, 'tertakluk kepada'/'kelulusan bertulis', and states 'Biasiswa tidak automatik'; HRD Corp sentence names majikan as applicant and HRD Corp as decision-maker (via HRD_CORP_CLAIM_MS).",
+    "zh_register": "您 used throughout, no 你 outside quotation; no pronoun in H1/H2; H1 is 10 characters in two beats (under the 14-character cap); numbers before adjectives; 学员, 进修 not needed on this page but 报读-family CTAs avoided in favour of 索取/预约; 认可 used for CMI, 认证 reserved for MQA; 班次 removed (replaced with 届 / 开课日期); 参与者/创始人/首席执行官/营销/免费获取/折扣码/背书 not present; 名额有限 appears only bound to the scholarship sentence (须经评估/书面批准/个别以书面确认/并非自动授予), matching the audit's high-confidence correction that 名额有限 is banned for seats/CTAs but required as a scholarship fact; full-width punctuation and pangu spacing applied; no sentence-initial 这 (existing site-style 它 retained only where it refers back to the immediately preceding concrete noun, matching the pattern already used elsewhere on the site)."
+  },
+  "left_for_reviewer": [
+    "Confirm the ZH H1 '从脑中决策，到书面决策。' and the 5S-ordered section 3 card headings read naturally to a Malaysian Simplified Chinese ear (the reviewer's register-audit pass is the authority here).",
+    "Confirm the MS phrase 'projek amali perniagaan atas isu dalam tanggungjawab anda sendiri' (hero supporting line) and the 5S card headings match the register guide's sentence-length and rhythm expectations on a full read-aloud pass.",
+    "The employer/company CTA (CTA_LABELS.company, linking to /apply?intent=employer_sponsored) is new on this page — confirm this matches the intended enquiry-intent routing for an SME-owner audience page (mirrors the pattern already used on /hrd-corp-claimable).",
+    "Section 2 and 4 body-copy sentences beyond the H1/lede were rewritten but not cross-checked word-for-word against every register-guide model sentence; flag if a fuller line-by-line register pass is wanted."
+  ]
+}
