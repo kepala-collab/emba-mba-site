@@ -138,6 +138,9 @@ export const CORE_PAGES_MS = {
   },
 } as const;
 
+export const CHARTERED_MANAGER_BOUNDARY_MS =
+  "Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib. CMI menentukan kelayakan, menilai setiap permohonan dan mengawal masa, keahlian serta yuran. Ia tidak termasuk dalam program Executive MBA yang diterbitkan atau yurannya.";
+
 export const FAQS_MS = [
   ["Apakah yang berubah untuk saya sepanjang program?", `Anda membawa satu isu perniagaan sebenar dalam tanggungjawab anda sendiri, dan mengubahnya sepanjang ${FACTS.durationMonths} bulan menjadi satu pelan tindakan bertulis dengan keputusan, tindakan, pemilik dan ukuran, yang disemak oleh fasilitator. Rangka kerja dan templat kerja kekal bersama anda.`],
   ["Bolehkah saya meneruskan program ini sambil bekerja sepenuh masa?", `Boleh. Anda menyelesaikan ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berjadual mengikut tarikh yang diterbitkan, dan projek amali perniagaan berjalan dalam organisasi anda sendiri di antara sesi, sementara anda kekal dalam peranan anda.`],

@@ -115,8 +115,8 @@ export const CORE_PAGES_ZH = {
   },
   intakes: {
     eyebrow: "2026 英语及华语班开课日期",
-    title: "选择最适合您工作日程的班次",
-    intro: `每个班次均在 ${FACTS.liveSessions} 个指定周末完成 ${FACTS.liveSessions} 次导师带领的研习课。课程团队会在回复咨询时确认班次名额。`,
+    title: "选择最适合您工作日程的届别",
+    intro: `每一届均在 ${FACTS.liveSessions} 个指定周末完成 ${FACTS.liveSessions} 次导师带领的研习课。课程团队会在回复咨询时确认届别名额。`,
     sections: [
       ...INTAKES.map((intake) => [
         `${intake.language === "Mandarin" ? "华语" : "英语"} ${intake.co}`,
@@ -137,6 +137,9 @@ export const CORE_PAGES_ZH = {
     ],
   },
 } as const;
+
+export const CHARTERED_MANAGER_BOUNDARY_ZH =
+  "Chartered Manager 是独立可选的 CMI 路线。其资格、每宗申请的评估、时间安排、会员与费用皆由 CMI 决定，不包含在已公布的 Executive MBA 课程或课程费用内。";
 
 export const FAQS_ZH = [
   ["课程期间，我的工作会有什么改变？", `您把自己职责范围内的一项真实业务课题，在 ${FACTS.durationMonths} 个月内转化为一份书面行动方案，当中列明决定、行动、负责人及衡量指标，并由导师评审。课程的框架与工作模板会留在您手上。`],

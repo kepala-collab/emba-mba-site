@@ -5,7 +5,7 @@ import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import TechnicalText from "@/components/site/TechnicalText";
 import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
-import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH } from "@/lib/content-zh";
+import {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH, CHARTERED_MANAGER_BOUNDARY_ZH } from "@/lib/content-zh";
 import { withSeo } from "@/lib/seo";
 
 const PATH = "/zh/chartered-manager-malaysia";
@@ -15,8 +15,6 @@ export const metadata = withSeo(PATH, {
   description: `看清 Future Ready Executive MBA 的 CMI 认可证书具体涵盖什么、其专业相关性边界，以及 Chartered Manager 作为独立可选 CMI 路线的定位。`,
 });
 
-const CHARTERED_MANAGER_BOUNDARY_ZH =
-  "Chartered Manager 是独立可选的 CMI 路线。其资格、每宗申请的评估、时间安排、会员与费用皆由 CMI 决定，不包含在已公布的 Executive MBA 课程或课程费用内。";
 
 const FAQS = [
   ["顺利结业能拿到什么？", `顺利结业的学员将获颁 Executive MBA 课程的 CMI 认可证书（${CERTIFICATE_POSITIONING.credential}）。证书的最终格式、措辞与签发均由 CMI 决定。`],
