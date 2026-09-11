@@ -13,6 +13,7 @@ const files = [
   "src/lib/content-zh.ts",
   "src/lib/content-ms.ts",
   "src/lib/lead-email.ts",
+  "src/lib/nurture-email.ts",
   "src/lib/chat-knowledge.ts",
   "src/lib/root-metadata.ts",
   "src/lib/seo.ts",

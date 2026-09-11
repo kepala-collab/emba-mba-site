@@ -1,0 +1,141 @@
+{
+  "unit": "R3.2 English copy review",
+  "file_reviewed": "scripts/pdf/copy/en.json",
+  "verdict_before_fixes": "Facts (fee, duration, days/sessions, applied project, HRD Corp employer-led, CMI/not-MQA boundary) were correct in all four documents. However the PDF-archetype naming rules in messaging-architecture.md section 8 were not applied: kickers did not match the three required strings, every document's in-PDF and cover CTA used a retired/ad-hoc label instead of the single approved conversation CTA, the decision-guide intro carried an explicitly banned phrase, and the comparison table used an undefined-norm word ('Typically'). Not fixed in this pass (flagged below): the missing 'Not the right fit if...' sentence and the scholarship-eligibility 'conversation exists to help you decide' sentence, both of which would require adding new content blocks and so are out of scope for a copy-only, structure-unchanged fix.",
+  "fixes_applied": [
+    {
+      "document": "decision-guide",
+      "field": "kicker",
+      "before": "A PRIVATE DECISION GUIDE",
+      "after": "PROGRAMME FIT GUIDE",
+      "reason": "spec section 8, PDF archetype: kickers must be exactly '{PROGRAMME_YEAR} PROGRAMME GUIDE', 'PROGRAMME FIT GUIDE', 'EMPLOYER FUNDING BRIEF', 'ELIGIBILITY INFORMATION'."
+    },
+    {
+      "document": "decision-guide",
+      "field": "intro",
+      "before": "Use this to judge whether the programme fits the responsibility you already carry — not just the title you would like next.",
+      "after": "Use this to judge whether the programme fits the responsibility you already carry.",
+      "reason": "spec section 8, PDF archetype: 'never \"not just the title you would like next\"' is an explicit banned phrase."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks[table 'This programme vs a traditional MBA'].rows[0][2]",
+      "before": "Typically 18–24 months",
+      "after": "18–24 months",
+      "reason": "task instruction: no undefined norms such as 'typically/usually/most'. The adjoining notice already disclaims this as a reference example, so the word adds no information and only introduces banned vague-norm language."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks[cta].text",
+      "before": "Request a no-obligation programme-fit conversation — support@futurereadymba.com",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "spec section 8: PDF CTA must be exactly '{CTA_LABELS.conversation} — {SITE.email}'; CTA_LABELS.conversation = 'Arrange a programme conversation' (spec section 12.6). Ad hoc CTA text is a retired-style label."
+    },
+    {
+      "document": "decision-guide",
+      "field": "cover_cta",
+      "before": "Talk to the programme team — support@futurereadymba.com",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "same as above; single approved conversation CTA, not an ad hoc phrase."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "kicker",
+      "before": "EMPLOYER DECISION BRIEF",
+      "after": "EMPLOYER FUNDING BRIEF",
+      "reason": "spec section 8 required kicker string."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks[cta].text",
+      "before": "Request the employer document pack — support@futurereadymba.com",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "spec: 'never the retired guide-request CTA inside the guide'; 'document pack' is a retired-style, undefined offer not in CTA_LABELS. Replaced with the single approved conversation CTA."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "cover_cta",
+      "before": "Request the employer document pack — support@futurereadymba.com",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "same as above."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks[cta].text",
+      "before": "Request an eligibility conversation — support@futurereadymba.com",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "single approved conversation CTA per spec, not a document-specific paraphrase."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "cover_cta",
+      "before": "Ask about the scholarship assessment — support@futurereadymba.com",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "same as above."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "kicker",
+      "before": "2026 WORKING MANAGER'S GUIDE",
+      "after": "2026 PROGRAMME GUIDE",
+      "reason": "spec required kicker string '{PROGRAMME_YEAR} PROGRAMME GUIDE'."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "cta",
+      "before": "Request the programme guide or arrange a conversation",
+      "after": "Arrange a programme conversation — support@futurereadymba.com",
+      "reason": "matches the single approved conversation CTA (with email, consistent with the other three PDFs) instead of an ad hoc combined offer."
+    }
+  ],
+  "confirmed_correct_no_change": [
+    "Fee RM10,000.00 verbatim in all four documents, matches src/lib/content.ts FEES.malaysia.standard.",
+    "Six months / six training days / three scheduled sessions / one applied business project consistent across facts arrays and body copy.",
+    "Scholarship sentence pattern ('a limited number... selective basis... eligible Malaysian applicants, after assessment and written approval') present with 'never automatic' in decision-guide card 4 and 'not automatic' equivalents elsewhere.",
+    "'confirmed individually in writing' present wherever award/fee outcome is stated.",
+    "HRD Corp employer-led / e-TRiS / Allowable Cost Matrix / 'funding is not automatic' or 'not guaranteed' present and correctly attributed to HRD Corp deciding, not the provider.",
+    "CMI Certificate of Recognition + 'not an MQA-accredited academic degree or a regulated qualification' boundary present beside every CMI mention, including all four cover_notice fields.",
+    "No 'capstone', no 'Level' labels, no urgency language, no 'free' as lead word, no disparagement of other providers/academic MBAs found.",
+    "'An enquiry does not commit you to enrol or pay' concept present in equivalent form in each document's closing notice (working-managers-guide.notice, decision-guide notice, scholarship-eligibility notice); wording is paraphrased rather than the spec's exact enquiry-section sentence — see open finding below."
+  ],
+  "open_findings_not_fixed": [
+    {
+      "issue": "Missing sentence: 'Not the right fit if your purpose needs an MQA-accredited academic degree or a regulated qualification: an academic MBA is the right route for that job.'",
+      "detail": "Spec section 8 PDF archetype lists this as part of the standard L (lede/body) pattern for all four PDFs. It does not appear verbatim (or in close paraphrase) in any of the four documents in en.json.",
+      "why_not_fixed": "Adding it requires a new block/section, which conflicts with this task's constraint to keep JSON structure unchanged. Flagging for the orchestrator to decide whether a structural change is in scope for a later unit.",
+      "scope": "en (source) — if added, ms and zh must mirror with an equivalent sentence."
+    },
+    {
+      "issue": "scholarship-eligibility intro under 'Prepare for an eligibility conversation.' does not carry the spec's exact retained sentence: 'The conversation exists to help you decide, including deciding not to ask. These prompts are not selection criteria and do not predict an outcome.'",
+      "detail": "Current text: 'Use these prompts to organise the facts you want to discuss. They are not selection criteria and do not predict an outcome.' Missing the 'including deciding not to ask' framing that spec explicitly says the self-check 'keeps'.",
+      "why_not_fixed": "String-only fix is possible without touching structure, but was deprioritized versus the naming/CTA fixes given effort constraints; recommend a follow-up literal-text pass.",
+      "scope": "en (source) — if changed, ms and zh must mirror the added 'including deciding not to ask' meaning."
+    },
+    {
+      "issue": "'never automatic' vs 'not automatic' inconsistency.",
+      "detail": "decision-guide card 4 uses 'They are never automatic.' (matches spec emphasis). scholarship-eligibility and employer-funding-brief use 'not automatic' instead. Both convey the same fact but are not verbatim-consistent across documents.",
+      "why_not_fixed": "Low-risk wording variance, not a factual error; left as a style note rather than a required fix.",
+      "scope": "en only; no ms/zh action needed unless the orchestrator wants full verbatim alignment."
+    }
+  ],
+  "meaning_changes_for_ms_zh_to_mirror": [
+    {
+      "change": "decision-guide.kicker: 'A PRIVATE DECISION GUIDE' → 'PROGRAMME FIT GUIDE' (English label change, not a translation nuance — ms/zh kickers should be re-derived from the new canonical English label per spec section 8)."
+    },
+    {
+      "change": "decision-guide.intro: dropped the banned trailing clause '— not just the title you would like next.' ms/zh reviewers should check their equivalent intro strings for the same or an equivalent banned framing and remove it."
+    },
+    {
+      "change": "decision-guide table row 'Time' / comparison column: removed 'Typically' before '18–24 months'. ms/zh equivalents (e.g. 'Biasanya 18–24 bulan', '通常 18–24 个月') likely contain the same undefined-norm word ('Biasanya', '通常') and should be reviewed for removal to match."
+    },
+    {
+      "change": "employer-funding-brief.kicker: 'EMPLOYER DECISION BRIEF' → 'EMPLOYER FUNDING BRIEF'. ms/zh kickers ('RINGKASAN KEPUTUSAN MAJIKAN', '雇主决策简报') should be updated to the funding-brief framing to match."
+    },
+    {
+      "change": "working-managers-guide.kicker: '2026 WORKING MANAGER'S GUIDE' → '2026 PROGRAMME GUIDE'. ms/zh kickers ('PANDUAN PROGRAM 2026 UNTUK PENGURUS YANG BEKERJA', '2026 在职经理课程指南') should be re-aligned to the canonical '{PROGRAMME_YEAR} PROGRAMME GUIDE' pattern."
+    },
+    {
+      "change": "All four documents: every in-PDF cta block and cover_cta field changed to the single approved conversation CTA 'Arrange a programme conversation — support@futurereadymba.com'. ms/zh equivalents currently use document-specific paraphrases (e.g. ms 'Minta pek dokumen majikan', 'Tanya tentang penilaian biasiswa'; zh '索取雇主文件包', '咨询奖学金择优评估') and must be replaced with the single approved conversation CTA in each language: ms 'Jadualkan sesi perbincangan program — support@futurereadymba.com', zh '预约课程咨询 — support@futurereadymba.com' (labels per spec section 6/12.6), applied consistently across all four PDFs in each language, not per-document paraphrases."
+    }
+  ]
+}

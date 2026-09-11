@@ -1,18 +1,13 @@
-import { ABC_PROFILE, FACTS, HRD_CORP_CLAIM, OPERATOR, PROGRAMME_POSITIONING_SENTENCE, SITE } from "@/lib/content";
-import { EN_ROUTES, LOCALE_PAIRS } from "@/lib/locale-routes";
+import { interpretationBullets, programmePositioning } from "@/lib/chat-knowledge";
+import { ABC_PROFILE, OPERATOR, SITE } from "@/lib/content";
+import { EN_ROUTES, LOCALE_PAIRS, NOINDEX_ROUTES as NOINDEX_ROUTE_LIST } from "@/lib/locale-routes";
 
 export const dynamic = "force-static";
 
 // Routes carrying a noindex directive: excluded from every AI-crawler discovery
-// document, in every language mirror.
-const NOINDEX_ROUTES = new Set<string>([
-  "/corporate-training",
-  "/online-executive-mba",
-  "/programmes/shift-hr",
-  "/lp/google",
-  "/lp/meta",
-  "/unsubscribed",
-]);
+// document, in every language mirror. Derived from the same export the sitemap
+// (R3.3) reads, so this list can never drift from what search engines see.
+const NOINDEX_ROUTES = new Set<string>(NOINDEX_ROUTE_LIST);
 
 const INDEXABLE_ROUTES = EN_ROUTES.filter((path) => !NOINDEX_ROUTES.has(path));
 
@@ -37,21 +32,31 @@ function labelForPath(path: string): string {
   return path.split("/").filter(Boolean).map(humanizeSegment).join(" – ");
 }
 
-// Placeholder-neutral for Release 1: R3.4 replaces these one-clause
-// descriptions with final copy once Malay and Chinese pages carry it.
+// R3.4: the localized "mirror" clause after each link is in the section's own
+// language — Malay and Chinese sections no longer carry English prose.
 function localizedSources(locale: "ms" | "zh"): string {
   const language = locale === "ms" ? "Bahasa Melayu" : "简体中文";
   return INDEXABLE_ROUTES.map((path) => {
     const pair = LOCALE_PAIRS.find((candidate) => candidate.en === path)!;
     const localizedPath = locale === "ms" ? pair.ms : pair.zh;
-    return `- [${labelForPath(path)}](${SITE.url}${localizedPath}): ${language} mirror of ${SITE.url}${pair.en}.`;
+    const clause =
+      locale === "ms"
+        ? `versi ${language} bagi ${SITE.url}${pair.en}`
+        : `${SITE.url}${pair.en} 的${language}版本`;
+    return `- [${labelForPath(path)}](${SITE.url}${localizedPath}): ${clause}.`;
   }).join("\n");
+}
+
+function bulletList(language: "en" | "ms" | "zh"): string {
+  return interpretationBullets(language)
+    .map((bullet) => `- ${bullet}`)
+    .join("\n");
 }
 
 export function GET() {
   const body = `# ${SITE.name}
 
-> ${PROGRAMME_POSITIONING_SENTENCE} The programme is delivered by ${SITE.provider} in Malaysia and is not an MQA-accredited academic qualification.
+> ${programmePositioning("en")} The programme is delivered by ${SITE.provider} in Malaysia and is not an MQA-accredited academic qualification.
 
 ${OPERATOR.name} is ABC's ${OPERATOR.role} for programme enquiries, pricing and enrolment coordination. ${OPERATOR.name} and ${SITE.provider} are separate independent companies; ${SITE.provider} provides and delivers the programme. ${ABC_PROFILE.name} is a ${ABC_PROFILE.hrdStatus} and develops and structures signature training programmes.
 
@@ -77,15 +82,7 @@ ${localizedSources("ms")}
 ${localizedSources("zh")}
 
 ## Important interpretation
-- The Executive MBA on Future Ready Business Leadership is awarded and endorsed by CMI; it is professional development, not an MQA-accredited academic qualification.
-- ${HRD_CORP_CLAIM.short} ${HRD_CORP_CLAIM.responsibility}
-- The standard programme fee is ${FACTS.priceStd}. Eligible Malaysian applicants may be considered, on a selective basis, for a ${FACTS.scholarshipProvider} scholarship, subject to limited availability, a selective assessment and written approval. Any award and resulting participant fee are confirmed individually in writing; the scholarship is not automatic.
-- Programme completion provides the CMI-recognised programme certificate. CMI's published CMI Recognised route lists Foundation Chartered Manager (fCMgr) status on completion; CMI controls activation, continued use and membership renewal.
-- The Executive MBA runs for six months and leads to the CMI-recognised programme certificate. Chartered Manager is a separate optional CMI route; CMI controls eligibility, assessment, membership and fees. It is not included in the published Executive MBA programme or fee.
-- ${HRD_CORP_CLAIM.process}
-- ${PROGRAMME_POSITIONING_SENTENCE} It is a six-month, non-academic professional development programme, not an MQA-accredited academic degree or a regulated qualification.
-- The linked official pages state the published dates and prices. The applicable written proposal and signed enrolment terms control each enrolment.
-- Prospective participants can request a call, online information meeting, in-person meeting at an agreed location, or details first without applying or paying.
+${bulletList("en")}
 
 ## Contact
 - Email: ${SITE.email}

@@ -10,12 +10,12 @@
         "text": "Ini ialah pembangunan pengurusan yang diguna pakai untuk pengurus berpengalaman yang sedang bekerja. Anda membawa cabaran perniagaan semasa, menggunakan rangka kerja berstruktur untuk menguji andaian dan pilihan, dan menyiapkan projek sebenar berdasarkan kerja anda sendiri — bukan kajian kes."
       },
       {
-        "body": "Enam hari latihan dalam tiga sesi berjadual, bimbingan dan projek aplikasi, diselesaikan sepanjang enam bulan sambil anda terus bekerja.",
+        "body": "Enam hari latihan dalam tiga sesi berjadual, bimbingan dan projek amali perniagaan, diselesaikan sepanjang enam bulan sambil anda terus bekerja.",
         "kind": "card",
         "title": "Bentuk enam bulan"
       },
       {
-        "body": "Peserta yang memenuhi keperluan menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager kekal sebagai laluan CMI pilihan yang berasingan.",
+        "body": "Peserta yang memenuhi keperluan menerima sijil program Executive MBA yang diiktiraf CMI. Chartered Manager kekal sebagai laluan CMI yang berasingan dan tidak wajib.",
         "kind": "card",
         "title": "Selepas tamat"
       },
@@ -58,7 +58,7 @@
           [
             "Tempoh",
             "Enam bulan, sambil bekerja sepenuh masa",
-            "Biasanya 18–24 bulan"
+            "18–24 bulan"
           ],
           [
             "Apa yang dibina",
@@ -67,7 +67,7 @@
           ],
           [
             "Penilaian",
-            "Satu projek aplikasi perniagaan — tiada peperiksaan atau tesis",
+            "Satu projek amali perniagaan — tiada peperiksaan atau tesis",
             "Tugasan atau peperiksaan, berserta tesis"
           ],
           [
@@ -118,7 +118,7 @@
         "title": "3.  Perlukah sokongan majikan?"
       },
       {
-        "body": "Bilangan biasiswa LIFE Innoversity yang terhad dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak pernah automatik.",
+        "body": "Biasiswa LIFE Innoversity terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis. Ia tidak pernah automatik.",
         "kind": "card",
         "title": "4.  Menilai biasiswa?"
       },
@@ -138,11 +138,11 @@
           ],
           [
             "Adakah saya menjadi Chartered Manager?",
-            "Tidak secara automatik. Selepas tamat anda menerima sijil CMI; Chartered Manager ialah laluan CMI pilihan yang berasingan dengan kelayakan, penilaian dan yuran tersendiri yang ditentukan CMI."
+            "Tidak secara automatik. Selepas tamat anda menerima sijil CMI; Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, dengan kelayakan, penilaian dan yuran tersendiri yang ditentukan CMI."
           ],
           [
             "Boleh saya ikut sambil bekerja sepenuh masa?",
-            "Boleh — ia direka untuk pengurus yang bekerja: tiga sesi berjadual sepanjang enam bulan, dengan projek aplikasi berdasarkan kerja anda sendiri. Tiada peperiksaan atau tesis."
+            "Boleh — ia direka untuk pengurus yang bekerja: tiga sesi berjadual sepanjang enam bulan, dengan projek amali perniagaan berdasarkan kerja anda sendiri. Tiada peperiksaan atau tesis."
           ]
         ],
         "kind": "faq"
@@ -153,7 +153,7 @@
       },
       {
         "kind": "cta",
-        "text": "Minta perbualan kesesuaian program tanpa obligasi — support@futurereadymba.com"
+        "text": "Jadualkan sesi perbincangan program — support@futurereadymba.com"
       },
       {
         "kind": "sp",
@@ -161,10 +161,10 @@
       },
       {
         "kind": "notice",
-        "text": "Yuran standard Malaysia yang diterbitkan: RM10,000.00. Sebarang anugerah biasiswa dan yuran peserta disahkan secara individu dalam bentuk bertulis. Panduan ini bukan tawaran kemasukan, kelulusan biasiswa atau komitmen bayaran."
+        "text": "Yuran standard Malaysia yang diterbitkan: RM10,000.00. Sebarang pemberian biasiswa dan yuran peserta yang berkenaan disahkan secara individu dan secara bertulis. Panduan ini bukan tawaran kemasukan, kelulusan biasiswa atau komitmen bayaran. Jika selepas membaca ini program bukan laluan yang tepat untuk tujuan anda, nyatakannya semasa perbualan — jawapan itu sama bergunanya kepada kami seperti jawapan \"ya\"."
       }
     ],
-    "cover_cta": "Hubungi pasukan program — support@futurereadymba.com",
+    "cover_cta": "Jadualkan sesi perbincangan program — support@futurereadymba.com",
     "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
     "facts": [
       [
@@ -181,11 +181,11 @@
       ],
       [
         "1",
-        "projek aplikasi"
+        "projek amali perniagaan"
       ]
     ],
-    "intro": "Gunakan panduan ini untuk menilai sama ada program sesuai dengan tanggungjawab yang anda pikul sekarang — bukan sekadar jawatan yang anda inginkan.",
-    "kicker": "PANDUAN KEPUTUSAN PERIBADI",
+    "intro": "Gunakan panduan ini untuk menilai sama ada program sesuai dengan tanggungjawab yang anda pikul sekarang.",
+    "kicker": "PANDUAN KESESUAIAN PROGRAM",
     "lead": "Panduan ringkas untuk pengurus di Malaysia yang mahu membuat langkah seterusnya yang lebih baik — tanpa berhenti bekerja.",
     "promise": "Gambaran jelas tentang program, sijil yang diiktiraf CMI, laluan Chartered Manager yang berasingan, komitmen masa sebenar, perbandingan dengan MBA akademik, dan soalan yang wajar ditanya sebelum anda membuat pertanyaan.",
     "promise_t": "Apa yang anda dapat",
@@ -203,12 +203,12 @@
         "text": "Keputusan pembangunan pengurusan yang praktikal menghubungkan tiga perkara: tanggungjawab peserta, isu perniagaan yang akan ditanganinya, dan keupayaan yang perlu diperkukuh oleh organisasi."
       },
       {
-        "body": "Peserta membawa cabaran perniagaan semasa, menggunakan rangka kerja pengurusan untuk menguji andaian dan pilihan, dan menyiapkan projek aplikasi perniagaan.",
+        "body": "Peserta membawa cabaran perniagaan semasa, menggunakan rangka kerja pengurusan untuk menguji andaian dan pilihan, dan menyiapkan projek amali perniagaan.",
         "kind": "card",
         "title": "Kerja aplikasi"
       },
       {
-        "body": "Enam bulan merentasi enam hari latihan, tiga sesi berjadual, bimbingan dan projek aplikasi.",
+        "body": "Enam bulan merentasi enam hari latihan, tiga sesi berjadual, bimbingan dan projek amali perniagaan.",
         "kind": "card",
         "title": "Komitmen yang jelas"
       },
@@ -246,7 +246,7 @@
         "title": "Keperluan keupayaan"
       },
       {
-        "body": "Peserta akan menangani [cabaran perniagaan semasa] dan menghasilkan projek aplikasi perniagaan yang boleh dibincangkan dengan organisasi.",
+        "body": "Peserta akan menangani [cabaran perniagaan semasa] dan menghasilkan projek amali perniagaan yang boleh dibincangkan dengan organisasi.",
         "kind": "card",
         "title": "Hasil aplikasi"
       },
@@ -280,7 +280,7 @@
           ],
           [
             "Apa yang diperoleh syarikat?",
-            "Projek aplikasi atas isu perniagaan sebenar yang telah dipikul pengurus, serta sijil program yang diiktiraf CMI apabila berjaya menamatkannya."
+            "Projek amali perniagaan atas isu perniagaan sebenar yang telah dipikul pengurus, serta sijil program yang diiktiraf CMI apabila berjaya menamatkannya."
           ]
         ],
         "kind": "faq"
@@ -291,7 +291,7 @@
       },
       {
         "kind": "cta",
-        "text": "Minta pek dokumen majikan — support@futurereadymba.com"
+        "text": "Jadualkan sesi perbincangan program — support@futurereadymba.com"
       },
       {
         "kind": "sp",
@@ -299,10 +299,10 @@
       },
       {
         "kind": "notice",
-        "text": "Right Dots Resources ialah rakan kongsi program yang diberi kuasa untuk pemasaran, pertanyaan, harga dan penyelarasan pendaftaran. Cadangan bertulis yang berkenaan mengawal penyampaian, harga dan terma."
+        "text": "Right Dots Resources ialah rakan kongsi program yang diberi kuasa untuk pemasaran, pertanyaan, harga dan penyelarasan pendaftaran. Cadangan bertulis yang berkenaan mengawal penyampaian, harga dan terma. Jika selepas membaca ini program bukan laluan yang tepat untuk tujuan anda, nyatakannya semasa perbualan — jawapan itu sama bergunanya kepada kami seperti jawapan \"ya\"."
       }
     ],
-    "cover_cta": "Minta pek dokumen majikan — support@futurereadymba.com",
+    "cover_cta": "Jadualkan sesi perbincangan program — support@futurereadymba.com",
     "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
     "facts": [
       [
@@ -319,11 +319,11 @@
       ],
       [
         "1",
-        "projek aplikasi"
+        "projek amali perniagaan"
       ]
     ],
-    "intro": "Ini program berstruktur yang dibina atas isu perniagaan sebenar dan projek aplikasi — supaya organisasi melihat keupayaan diperkukuh pada kerjanya sendiri, bukan sekadar rekod kehadiran.",
-    "kicker": "RINGKASAN KEPUTUSAN MAJIKAN",
+    "intro": "Ini program berstruktur yang dibina atas isu perniagaan sebenar dan projek amali perniagaan — supaya organisasi melihat keupayaan diperkukuh pada kerjanya sendiri, bukan sekadar rekod kehadiran.",
+    "kicker": "TAKLIMAT PEMBIAYAAN MAJIKAN",
     "lead": "Ringkasan dalaman yang padat untuk pengurus, pasukan HR atau pemimpin pembelajaran yang menilai pembangunan pengurusan yang praktikal.",
     "promise": "Proses pembiayaan yang diterajui majikan, format program yang diguna pakai, satu hujah dalaman ringkas yang boleh anda sesuaikan, dan jawapan kepada soalan yang biasa ditanya penaja.",
     "promise_t": "Apa yang anda dapat",
@@ -342,14 +342,14 @@
         "title": "Yuran standard program"
       },
       {
-        "body": "Bilangan yang terhad dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis.",
+        "body": "Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis. Sebarang pemberian biasiswa dan yuran peserta yang berkenaan disahkan secara individu dan secara bertulis.",
         "kind": "card",
         "title": "Biasiswa LIFE Innoversity"
       },
       {
-        "body": "Disahkan secara individu dalam bentuk bertulis selepas penilaian. Jadual ansuran diberikan secara bertulis sebelum bayaran.",
+        "body": "Disahkan secara individu dan secara bertulis selepas penilaian. Jadual ansuran diberikan secara bertulis sebelum bayaran.",
         "kind": "card",
-        "title": "Anugerah & yuran peserta"
+        "title": "Pemberian biasiswa & yuran peserta"
       },
       {
         "kind": "h2",
@@ -410,7 +410,7 @@
         "items": [
           [
             "Adakah semua rakyat Malaysia mendapat biasiswa?",
-            "Tidak. Bilangan yang terhad dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Ia tidak automatik dan bukan kod diskaun."
+            "Tidak. Biasiswa terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis. Sebarang pemberian biasiswa dan yuran peserta yang berkenaan disahkan secara individu dan secara bertulis. Ia tidak automatik dan bukan kod diskaun."
           ],
           [
             "Adakah biasiswa sama dengan pembiayaan HRD Corp?",
@@ -418,7 +418,7 @@
           ],
           [
             "Bila yuran saya disahkan?",
-            "Anugerah anda (jika ada) dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis selepas penilaian, dengan jadual ansuran sebelum bayaran."
+            "Pemberian biasiswa anda (jika ada) dan yuran peserta berkenaan disahkan secara individu dan secara bertulis selepas penilaian, dengan jadual ansuran sebelum bayaran."
           ]
         ],
         "kind": "faq"
@@ -429,7 +429,7 @@
       },
       {
         "kind": "cta",
-        "text": "Minta perbualan kelayakan — support@futurereadymba.com"
+        "text": "Jadualkan sesi perbincangan program — support@futurereadymba.com"
       },
       {
         "kind": "sp",
@@ -437,10 +437,10 @@
       },
       {
         "kind": "notice",
-        "text": "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Penilaian Chartered Manager, keahlian, yuran dan anugerah dikawal secara berasingan oleh CMI."
+        "text": "Executive MBA on Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Penilaian Chartered Manager, keahlian, yuran dan anugerah dikawal secara berasingan oleh CMI. Jika selepas membaca ini program bukan laluan yang tepat untuk tujuan anda, nyatakannya semasa perbualan — jawapan itu sama bergunanya kepada kami seperti jawapan \"ya\"."
       }
     ],
-    "cover_cta": "Tanya tentang penilaian biasiswa — support@futurereadymba.com",
+    "cover_cta": "Jadualkan sesi perbincangan program — support@futurereadymba.com",
     "cover_notice": "Future Ready Executive MBA ialah program pembangunan profesional yang diiktiraf oleh CMI (UK). Ia bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.",
     "facts": [
       [
@@ -457,7 +457,7 @@
       ],
       [
         "1",
-        "projek aplikasi"
+        "projek amali perniagaan"
       ]
     ],
     "intro": "Biasiswa adalah terhad dan dianugerahkan secara terpilih. Kelayakan dinilai, dan sesuatu anugerah wujud hanya setelah disahkan secara bertulis. Mengetahui perkara ini lebih awal menjadikan perbualan anda dengan pasukan program lebih pantas dan jelas.",
@@ -471,13 +471,13 @@
   "working-managers-guide": {
     "checks": [
       "Anda bertanggungjawab terhadap hasil perniagaan, pasukan atau keputusan penting.",
-      "Anda boleh membawa isu perniagaan semasa ke dalam projek aplikasi.",
+      "Anda boleh membawa isu perniagaan semasa ke dalam projek amali perniagaan.",
       "Anda boleh menghadiri semua tarikh sesi dan menyiapkan kerja sepanjang enam bulan.",
       "Anda memahami bahawa ini program pembangunan profesional, bukan ijazah MBA akademik.",
       "Anda mahu yuran, biasiswa atau pembiayaan majikan disahkan secara bertulis."
     ],
     "cover_h1": "Enam bulan. Satu hasil aplikasi.",
-    "cta": "Minta panduan program atau aturkan perbualan",
+    "cta": "Jadualkan sesi perbincangan program — support@futurereadymba.com",
     "facts": [
       [
         "6",
@@ -493,29 +493,29 @@
       ],
       [
         "1",
-        "projek aplikasi"
+        "projek amali perniagaan"
       ]
     ],
     "fit_title": "Gunakan lima semakan ini sebelum bertanya",
-    "kicker": "PANDUAN PENGURUS BEKERJA 2026",
+    "kicker": "PANDUAN PROGRAM 2026",
     "lead": "Semak struktur program, pengiktirafan CMI, yuran diterbitkan, penilaian biasiswa dan pembiayaan majikan sebelum membuat keputusan.",
-    "notice": "Tiada bayaran atau komitmen pendaftaran diperlukan untuk meminta maklumat.",
+    "notice": "Tiada bayaran atau komitmen pendaftaran diperlukan untuk meminta maklumat. Jika selepas membaca ini program bukan laluan yang tepat untuk tujuan anda, nyatakannya semasa perbualan — jawapan itu sama bergunanya kepada kami seperti jawapan \"ya\".",
     "sections": [
       [
         "Apa yang anda sedang nilai",
-        "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Program pembangunan profesional enam bulan ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang mahu menangani isu perniagaan sebenar sambil terus bekerja."
+        "Executive MBA on Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Program pembangunan profesional enam bulan ini direka untuk pemilik perniagaan, pengarah, pengurus besar dan pengurus kanan yang mahu menangani isu perniagaan sebenar sambil terus bekerja."
       ],
       [
         "Bagaimana enam bulan berjalan",
-        "Enam hari latihan berfasilitator dilaksanakan dalam tiga sesi berjadual. Bimbingan dan projek aplikasi diteruskan sepanjang program. Anda menggunakan rangka kerja pada cabaran perniagaan semasa dan menyiapkan satu projek aplikasi perniagaan. Tiada peperiksaan tradisional atau tesis."
+        "Enam hari latihan berfasilitator dilaksanakan dalam tiga sesi berjadual. Bimbingan dan projek amali perniagaan diteruskan sepanjang program. Anda menggunakan rangka kerja pada cabaran perniagaan semasa dan menyiapkan satu projek amali perniagaan. Tiada peperiksaan tradisional atau tesis."
       ],
       [
         "Pengiktirafan yang dinyatakan dengan tepat",
-        "Peserta yang berjaya menerima CMI Certificate of Recognition bagi program ini. Ini ialah program pembangunan profesional, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. Chartered Manager ialah laluan pilihan CMI yang berasingan dengan kelayakan, penilaian, keahlian dan yuran tersendiri."
+        "Peserta yang berjaya menerima CMI Certificate of Recognition bagi program ini. Ini ialah program pembangunan profesional, bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, dengan kelayakan, penilaian, keahlian dan yuran tersendiri."
       ],
       [
         "Yuran peserta Malaysia",
-        "Yuran standard program ialah RM10,000.00. Pemohon Malaysia yang layak boleh dipertimbangkan untuk biasiswa LIFE Innoversity, tertakluk pada kekosongan, penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis."
+        "Yuran standard program ialah RM10,000.00. Biasiswa LIFE Innoversity terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian individu dan kelulusan bertulis. Sebarang pemberian biasiswa dan yuran peserta berkenaan disahkan secara individu dan secara bertulis."
       ],
       [
         "Pembiayaan majikan",

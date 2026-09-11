@@ -119,7 +119,7 @@ export function smtpTransporter(config: SmtpConfiguration): Transporter {
 function safePersonName(name: string, language: Language): string {
   // oxlint-disable-next-line no-control-regex -- Stored legacy names are defensively normalised.
   const normalized = name.replace(/[\r\n\u0000-\u001F\u007F]/g, " ").replace(/\s+/g, " ").trim();
-  if (!normalized) return language === "zh" ? "您好" : language === "ms" ? "Encik/Puan" : "there";
+  if (!normalized) return language === "zh" ? "您好" : language === "ms" ? "Tuan/Puan" : "there";
   return (language === "zh" ? normalized : normalized.split(" ")[0]).slice(0, 60);
 }
 
@@ -211,16 +211,16 @@ export function buildApplicationReceivedEmail(input: {
     const text = [
       `${personName}，您好：`,
       "",
-      "感谢您联系我们。我们已收到您的请求；《2026 课程指南》已随邮件附上，课程资料也可通过以下链接查看。",
+      "感谢您联系我们。我们已收到您的请求；《2026 年课程指南》已随邮件附上，课程资料也可通过以下链接查看。",
       "",
       `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
       "",
       "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
       "",
-      `2026 课程资料：${siteUrl}`,
+      `2026 年课程资料：${siteUrl}`,
       `WhatsApp：${waUrl}`,
       "",
-      "Future Ready Programme Team",
+      "课程团队 敬上",
       DEFAULT_REPLY_TO,
     ].join("\n");
 
@@ -231,11 +231,11 @@ export function buildApplicationReceivedEmail(input: {
         language,
         preheader: "您的课程沟通请求已安全收到。",
         greeting: `${escapedName}，您好：`,
-        introduction: "感谢您联系我们。我们已收到您的请求；《2026 课程指南》已随邮件附上，课程资料也可通过以下链接查看。",
+        introduction: "感谢您联系我们。我们已收到您的请求；《2026 年课程指南》已随邮件附上，课程资料也可通过以下链接查看。",
         nextHeading: "接下来",
         nextCopy: `您的选择：${preferenceLabel}。课程团队将按此方式跟进。`,
         notice: "此邮件仅确认我们已收到沟通请求，并不构成录取或付款承诺。",
-        siteLabel: "查看 2026 课程资料",
+        siteLabel: "查看 2026 年课程资料",
         whatsAppLabel: "通过 WhatsApp 联系 Future Ready Executive MBA",
         siteUrl,
         waUrl,
@@ -246,7 +246,7 @@ export function buildApplicationReceivedEmail(input: {
   if (language === "ms") {
     const subject = "Permintaan perbincangan program anda telah kami terima";
     const text = [
-      `${personName}, salam sejahtera,`,
+      `Salam sejahtera, ${personName},`,
       "",
       "Terima kasih kerana menghubungi kami. Permintaan anda telah kami terima; Panduan Program 2026 disertakan bersama e-mel ini, dan rangka kerja program turut tersedia melalui pautan di bawah.",
       "",
@@ -257,7 +257,8 @@ export function buildApplicationReceivedEmail(input: {
       `Rangka kerja program 2026: ${siteUrl}`,
       `WhatsApp: ${waUrl}`,
       "",
-      "Future Ready Programme Team",
+      "Salam hormat,",
+      "Pasukan Program Future Ready Executive MBA",
       DEFAULT_REPLY_TO,
     ].join("\n");
 
@@ -267,7 +268,7 @@ export function buildApplicationReceivedEmail(input: {
       html: emailHtml({
         language,
         preheader: "Permintaan perbincangan program anda telah selamat diterima.",
-        greeting: `${escapedName}, salam sejahtera,`,
+        greeting: `Salam sejahtera, ${escapedName},`,
         introduction: "Terima kasih kerana menghubungi kami. Permintaan anda telah kami terima; Panduan Program 2026 disertakan bersama e-mel ini, dan rangka kerja program turut tersedia melalui pautan di bawah.",
         nextHeading: "Langkah seterusnya",
         nextCopy: `Pilihan anda: ${preferenceLabel}. Pasukan program akan menghubungi anda mengikut pilihan ini.`,
@@ -356,7 +357,7 @@ function emailHtml(input: {
             <p style="margin:14px 0 0;font-size:13px;line-height:21px;color:#6b7280;">${escapeHtml(input.notice)}</p>
           </td></tr>
           <tr><td style="padding:20px 30px;background:#f8fafc;border-top:1px solid #e5e7eb;font-size:12px;line-height:19px;color:#6b7280;">
-            <strong style="color:#374151;">Future Ready Programme Team</strong><br>
+            <strong style="color:#374151;">${input.language === "zh" ? "课程团队 敬上" : input.language === "ms" ? "Salam hormat,<br>Pasukan Program Future Ready Executive MBA" : "Future Ready Programme Team"}</strong><br>
             <a href="mailto:${DEFAULT_REPLY_TO}" style="color:#6b7280;">${DEFAULT_REPLY_TO}</a> · ${escapeHtml(SITE.phone)}
           </td></tr>
         </table>

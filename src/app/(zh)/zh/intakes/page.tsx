@@ -1,21 +1,48 @@
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
+import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS, FACTS, PROGRAMME_YEAR } from "@/lib/content";
-import { withSeo } from "@/lib/seo";
+import { CTA_LABELS, FACTS, INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
+import { CORE_PAGES_ZH } from "@/lib/content-zh";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
 const path = "/zh/intakes";
+const content = CORE_PAGES_ZH.intakes;
 
 export const metadata = withSeo(path, {
   title: `${PROGRAMME_YEAR} Executive MBA 英语届与华语届开课日期`,
   description: `开放咨询：查看 ${PROGRAMME_YEAR} 年英语届（Cohort 17–19）与华语届（Cohort 2–3）三次上课日期与时间。`,
 });
 
+const courseJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "@id": `${SITE.url}${path}#course`,
+  name: content.title,
+  description: content.intro,
+  provider: {
+    "@type": "EducationalOrganization",
+    "@id": ORGANIZATION_ID,
+    name: SITE.provider,
+  },
+  url: `${SITE.url}${path}`,
+  inLanguage: "zh-Hans-MY",
+  hasCourseInstance: INTAKES.map((c) => ({
+    "@type": "CourseInstance",
+    "@id": `${SITE.url}${path}#${c.language.toLowerCase()}-${c.co.toLowerCase().replace(" ", "-")}`,
+    name: `${SITE.name} — ${c.language} ${c.co}`,
+    courseMode: "onsite",
+    courseWorkload: `Three ${c.days} sessions, 9am–6pm, during the six-month programme`,
+    startDate: c.startDate,
+  })),
+};
+
 export default function Page() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "首页", path: "/zh" }, { name: "开课日期", path }]} />
+      <JsonLd data={courseJsonLd} />
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal>

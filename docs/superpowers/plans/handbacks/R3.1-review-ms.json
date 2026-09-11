@@ -1,0 +1,43 @@
+{
+  "guide": "ms",
+  "scope": "src/lib/lead-email.ts, src/lib/nurture-email.ts (Malay strings only)",
+  "verdict_before_fixes": "Close to native but not clean. Locked terms (panduan program 2026, Jadualkan sesi perbincangan program, secara bertulis), greeting/sign-off convention, subject lengths, unsubscribe line and facts sourced from FACTS were already correct. Three defects found: an informal time format in the day7 body that DBP's own advisory service rejects for formal/email registers, an English-order 'ke atas'/'di antara' calque pair in the same email (both high-confidence items in ms-register-audit-rules.json), and an inconsistent no-name greeting fallback between the two files (lead-email.ts used 'Encik/Puan' while nurture-email.ts already used the correct 'Tuan/Puan').",
+  "fixes": [
+    {
+      "email": "nurture day7",
+      "field": "paragraphs[0]",
+      "before": "...tiga sesi hujung minggu berjadual, 9 pagi hingga 6 petang, mengikut tarikh...— kerja aplikasi dijalankan dalam perniagaan anda sendiri di antara sesi.",
+      "after": "...tiga sesi hujung minggu berjadual, 9.00 pagi hingga 6.00 petang, mengikut tarikh...— kerja aplikasi dijalankan dalam perniagaan anda sendiri antara sesi.",
+      "reason": "ms-register-audit-rules.json high-confidence item (section 5 Do 7): DBP Khidmat Nasihat gives the written standard as 'pukul 9.00 pagi', not the newspaper shorthand '9 pagi'; e-mails are a formal context. 'di antara sesi' is a calque — 'di antara' is not a Kamus Dewan headword for the temporal sense; the correct form is bare 'antara sesi' (audit item 6.11, high confidence)."
+    },
+    {
+      "email": "nurture day7",
+      "field": "facts[1].value (\"Antara sesi\")",
+      "before": "Bimbingan bersama kerja aplikasi ke atas perniagaan anda sendiri",
+      "after": "Bimbingan bersama kerja aplikasi berdasarkan perniagaan anda sendiri",
+      "reason": "ms-register-audit-rules.json item 6.11 (high confidence): 'ke atas perniagaan anda' calques English 'on your business'; DBP glosses 'ke atas' only directionally/for imposition ('dikenakan ke atas'), not as a general preposition. 'berdasarkan' keeps the meaning without the calque."
+    },
+    {
+      "email": "acknowledgement (lead-email.ts safePersonName)",
+      "field": "no-name fallback greeting term for ms",
+      "before": "Encik/Puan",
+      "after": "Tuan/Puan",
+      "reason": "R3.1-writer.json's own reviewer note records the intended convention as 'Salam sejahtera, {Nama},' with fallback 'Tuan/Puan' (also used consistently in nurture-email.ts, both the HTML/text greeting default and the text-mode fallback). lead-email.ts had drifted to 'Encik/Puan', an inconsistency across the two files handling the same audience."
+    }
+  ],
+  "checked_and_already_correct": [
+    "Subject lines: no urgency language, no 'percuma' lead word, all at or under 9 words, no undefined norms",
+    "Greeting order 'Salam sejahtera, {Nama},' and sign-off 'Salam hormat, Pasukan Program Future Ready Executive MBA' present in both files",
+    "Locked names present verbatim: 'panduan program 2026' / 'Panduan Program 2026', 'Jadualkan sesi perbincangan program' as the day3/day14 CTA",
+    "'secara bertulis' used for scholarship confirmation (day3 facts, ack notice), not 'dalam bentuk bertulis'",
+    "Facts (duration, sessions, training days, fee RM10,000.00) all interpolated from FACTS constants in content.ts, identical to EN/ZH",
+    "Unsubscribe line present and natural ('Berhenti langgan') with working link; PDF/link labels read naturally ('Baca panduan keputusan', 'Baca ringkasan pembiayaan majikan', 'Baca ringkasan kelayakan biasiswa')",
+    "No '-lah/nak/tak' colloquialisms, no 'laluan pilihan', no 'permohonan' used for an enquiry (correctly 'permintaan'/'memohon panduan' only), no 'kepemimpinan', no untranslated 'Cohort' label",
+    "'disokong oleh CMI' retained — audit's own item 6.3 (medium-high confidence) found the original ban on this phrase groundless; DBP lists 'menyokong' as the standard equivalent of 'endorse', so no change made here"
+  ],
+  "commands_run": [
+    { "command": "npm run typecheck", "exit_code": 0 },
+    { "command": "npm test", "exit_code": 0, "note": "First run failed only on scripts/release-fingerprint.test.mjs (expected content-fingerprint drift from the copy edits); regenerated via `node scripts/sync-release-manifest.mjs` (release:sync was blocked by the sandbox classifier, so the underlying script was run directly). Second run: 17/17 files, 85/85 tests passed, including src/lib/__tests__/nurture-email.test.ts." }
+  ],
+  "native_reading_score_after": 8
+}

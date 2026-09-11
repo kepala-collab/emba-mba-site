@@ -1,0 +1,80 @@
+{
+  "unit": "R3.2 mirror en->ms/zh + close two open items",
+  "files_edited": [
+    "scripts/pdf/copy/en.json",
+    "scripts/pdf/copy/ms.json",
+    "scripts/pdf/copy/zh.json"
+  ],
+  "changes": {
+    "en.json": [
+      "decision-guide card4: replaced shortened scholarship sentence with the full FACTS.scholarshipEligibility wording ('...following individual assessment and written approval. Any award and resulting participant fee are confirmed individually in writing...').",
+      "decision-guide closing notice: appended honest-no sentence.",
+      "scholarship-eligibility card2 (LIFE Innoversity scholarship): appended the missing 'Any award...confirmed individually in writing' clause.",
+      "scholarship-eligibility FAQ 'Do all Malaysians get the scholarship?': inserted the full scholarship-eligibility sentence.",
+      "scholarship-eligibility closing notice: appended honest-no sentence.",
+      "employer-funding-brief closing notice: appended honest-no sentence.",
+      "working-managers-guide 'Published Malaysian fee' section: replaced paraphrase with full scholarship-eligibility wording.",
+      "working-managers-guide notice field: appended honest-no sentence.",
+      "(kickers, CTAs, banned phrase, undefined-norm word were already fixed in en.json prior to this unit per R3.2-review-en.json fixes_applied)"
+    ],
+    "ms.json": [
+      "decision-guide.kicker: 'PANDUAN KEPUTUSAN PERIBADI' -> 'PANDUAN KESESUAIAN PROGRAM' (mirrors PROGRAMME FIT GUIDE).",
+      "decision-guide.intro: removed banned trailing clause '— bukan sekadar jawatan yang anda inginkan.'",
+      "decision-guide table row 'Tempoh': removed undefined-norm 'Biasanya' before '18–24 bulan'.",
+      "decision-guide card4 (scholarship): full-sentence scholarship wording added, then trimmed back (kept single full sentence, dropped a duplicate confirmation clause) to fix a page-4 overflow to page 5 on rebuild; final text still carries the eligibility half of the full sentence, confirmation half remains in the closing notice on the same document.",
+      "decision-guide blocks[cta].text and cover_cta: replaced ad hoc CTA with 'Jadualkan sesi perbincangan program — support@futurereadymba.com'.",
+      "decision-guide closing notice: appended honest-no sentence (Malay transcreation, no exclamation marks).",
+      "employer-funding-brief.kicker: 'RINGKASAN KEPUTUSAN MAJIKAN' -> 'TAKLIMAT PEMBIAYAAN MAJIKAN' (mirrors EMPLOYER FUNDING BRIEF).",
+      "employer-funding-brief blocks[cta].text and cover_cta: replaced 'Minta pek dokumen majikan' with the approved conversation CTA.",
+      "employer-funding-brief closing notice: appended honest-no sentence.",
+      "scholarship-eligibility card 'Biasiswa LIFE Innoversity' and FAQ 'Adakah semua rakyat Malaysia mendapat biasiswa?': both now carry the full scholarship-eligibility sentence (eligibility clause + individual written-confirmation clause) instead of the shortened form.",
+      "scholarship-eligibility blocks[cta].text and cover_cta: replaced document-specific paraphrases with the approved conversation CTA.",
+      "scholarship-eligibility closing notice: appended honest-no sentence.",
+      "working-managers-guide.kicker: 'PANDUAN PROGRAM 2026 UNTUK PENGURUS YANG BEKERJA' -> 'PANDUAN PROGRAM 2026'.",
+      "working-managers-guide.cta: replaced ad hoc combined offer with the approved conversation CTA.",
+      "working-managers-guide.notice: appended honest-no sentence.",
+      "working-managers-guide 'Yuran peserta Malaysia' section: replaced paraphrase with the full scholarship-eligibility sentence.",
+      "All ms register fixes from R3.2-review-ms.json (projek amali perniagaan, secara bertulis, pemberian biasiswa, tertakluk kepada, English programme name) were already present and left intact."
+    ],
+    "zh.json": [
+      "decision-guide.kicker: '个人课程决策指南' -> '课程适配指南' (mirrors PROGRAMME FIT GUIDE).",
+      "decision-guide.intro: removed banned trailing clause '——而不仅仅是您想要的职衔。'",
+      "decision-guide card4 (scholarship): added the missing written-confirmation clause to make the sentence full.",
+      "decision-guide blocks[cta].text and cover_cta: replaced ad hoc CTA with '预约课程咨询 — support@futurereadymba.com'.",
+      "decision-guide closing notice: appended honest-no sentence (Chinese transcreation, no exclamation marks, no 您 — this is body text not a heading).",
+      "employer-funding-brief.kicker: '雇主决策简报' -> '雇主资助简报' (mirrors EMPLOYER FUNDING BRIEF).",
+      "employer-funding-brief blocks[cta].text and cover_cta: replaced '索取雇主文件包' with the approved conversation CTA.",
+      "employer-funding-brief closing notice: appended honest-no sentence.",
+      "scholarship-eligibility card 'LIFE Innoversity 奖学金' and FAQ '所有马来西亚人都能获得奖学金吗？': both now carry the full scholarship-eligibility sentence.",
+      "scholarship-eligibility blocks[cta].text and cover_cta: replaced document-specific paraphrases with the approved conversation CTA.",
+      "scholarship-eligibility closing notice: appended honest-no sentence.",
+      "working-managers-guide.kicker: '2026 在职经理课程指南' -> '2026 课程指南'.",
+      "working-managers-guide.cta: replaced ad hoc combined offer with the approved conversation CTA.",
+      "working-managers-guide.notice: appended honest-no sentence.",
+      "working-managers-guide '马来西亚学员费用' section: replaced paraphrase with the full scholarship-eligibility sentence.",
+      "All zh register fixes from R3.2-review-zh.json (研习课, 它/它们 sentence-initial fix, HRD Corp gloss, levy/grant glosses, 通常 removal, 须视...而定, 行销, 届) were already present and left intact."
+    ]
+  },
+  "honest_no_sentence": {
+    "en": "If, after reading this, the programme is not the right route for your purpose, say so in the conversation; that answer is as useful to us as a yes.",
+    "ms": "Jika selepas membaca ini program bukan laluan yang tepat untuk tujuan anda, nyatakannya semasa perbualan — jawapan itu sama bergunanya kepada kami seperti jawapan \"ya\".",
+    "zh": "读完之后，若这项课程并非适合您目的的正确路线，请在沟通中坦诚说明；这个答案对我们和「是」同样有价值。",
+    "placement": "appended to the closing notice/notice field of all four PDFs in all three languages"
+  },
+  "page_counts": {
+    "decision-guide": { "en": 4, "ms": 4, "zh": 4 },
+    "employer-funding-brief": { "en": 3, "ms": 3, "zh": 3 },
+    "scholarship-eligibility": { "en": 3, "ms": 3, "zh": 3 },
+    "working-managers-guide": { "en": 3, "ms": 3, "zh": 3 },
+    "note": "ms decision-guide overflowed to 5 pages on first rebuild after adding the honest-no sentence plus a full scholarship sentence in card4; fixed by trimming card4's duplicate written-confirmation clause (the confirmation clause remains present in the same document's closing notice). Re-verified at 4 pages on subsequent builds."
+  },
+  "proof_pngs": "rendered via py -3 scripts/render-lead-magnet-pdfs.py into tmp/pdfs/render/*.png; every changed page (closing notice pages of all 12 files, decision-guide comparison-table page) visually inspected — no overflow, no cut text, all within page margins.",
+  "build_verification": {
+    "json_validate": "python json.load on en.json, ms.json, zh.json: OK",
+    "pdfs_build_run1": "exit 0",
+    "pdfs_build_run2": "exit 0",
+    "pdfs_check": "exit 0 — pdfs:check OK [semantic: page count / page text / embedded fonts] - 12 files match public/downloads",
+    "pdfs_check_bytes": "exit 0 — pdfs:check OK [byte-identical] - 12 files match public/downloads",
+    "render_script": "exit 0"
+  }
+}

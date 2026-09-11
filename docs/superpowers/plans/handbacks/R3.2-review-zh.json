@@ -1,0 +1,141 @@
+{
+  "reviewer": "independent zh-MY reviewer, fresh context",
+  "scope": "scripts/pdf/copy/zh.json only, branch feat/r3-derived-artefacts",
+  "verdict_before_fixes": "Facts, CMI/MQA boundary, HRD Corp process, and scholarship conditions were all accurate and identical to en.json. Register had six recurring defects: sentence-initial 它/它们 standing for an abstract subject (calque, banned by zh-register.md rule 7 / checklist 17) in 8 spots; the session unit '指定课程' collided with '课程' meaning the whole programme (ambiguous, not in glossary but flagged in zh-register-audit.json missingRules as needing a distinct session noun); HRD Corp never glossed as 人力资源发展机构（HRD Corp）on first mention per document, contrary to the task's explicit requirement; 'levy' and 'grant' left as bare English with no Chinese gloss; a hedge word 通常 before a quantity and before 会问的问题 (banned, zh-register.md rule 11); 须视…而定 hedge pattern (audit high-confidence item, should drop 须); and 营销 used instead of the Malaysian-register 行销 (zh-register.md rule 16). employer-funding-brief still had residual 班次 (banned; should be 届) that the writer's earlier register_fixes_applied pass missed in one spot.",
+  "fixes": [
+    {
+      "document": "all four (11 occurrences)",
+      "field": "various body/card/facts text",
+      "before": "指定课程",
+      "after": "指定研习课",
+      "reason": "'课程' means the whole programme elsewhere in the same documents ('这项课程', '本课程'); reusing it for a single session is ambiguous and inaccurate against the English 'scheduled session'. zh-register-audit.json missingRules calls for a distinct session noun; adopted 研习课."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks[9].text (notice)",
+      "before": "它不是：大学学位、MQA 认证的学术型 MBA、升职承诺，或自动授予的 Chartered Manager 资格。",
+      "after": "这项课程不是：大学学位、MQA 认证的学术型 MBA、升职承诺，或自动授予的 Chartered Manager 资格。",
+      "reason": "Sentence-initial 它 standing for an abstract English subject; zh-register.md rule 7 / checklist item 17 ban this. Repeated the noun instead."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks (table notice)",
+      "before": "此表以 18–24 个月、以学术模块与论文为核心的学术型 MBA 为参照。它并不代表每一项 MBA 课程。",
+      "after": "此表以 18–24 个月、以学术模块与论文为核心的学术型 MBA 为参照，并不代表每一项 MBA 课程。",
+      "reason": "Same sentence-initial 它 fix, done by merging the two clauses instead of adding a pronoun."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks (FAQ 'Is this a real MBA?')",
+      "before": "这是一项获 CMI（英国）依据 CMI Professional Standards 认可的 Executive MBA 课程。它属于专业发展，而非 MQA 认证的学术学位。",
+      "after": "这是一项获 CMI（英国）依据 CMI Professional Standards 认可的 Executive MBA 课程，属于专业发展，而非 MQA 认证的学术学位。",
+      "reason": "Sentence-initial 它 fix by merging clauses."
+    },
+    {
+      "document": "decision-guide, employer-funding-brief, scholarship-eligibility",
+      "field": "cover_notice",
+      "before": "Future Ready Executive MBA 是一项获 CMI（英国）认可的专业发展课程。它并非 MQA 认证的学术学位或受监管资格。",
+      "after": "Future Ready Executive MBA 是一项获 CMI（英国）认可的专业发展课程，并非 MQA 认证的学术学位或受监管资格。",
+      "reason": "Same shared cover_notice string in all three docs had sentence-initial 它; merged into one sentence."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks (p, 'Prepare for an eligibility conversation.')",
+      "before": "用以下提示整理您想讨论的事实。它们并非甄选标准，也不预示结果。",
+      "after": "用以下提示整理您想讨论的事实，但它们并非甄选标准，也不预示结果。",
+      "reason": "Sentence-initial 它们; merged with 但 rather than starting a new sentence on the pronoun."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks (FAQ 'Do all Malaysians get the scholarship?')",
+      "before": "不是。名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准。它并非自动，也不是折扣码。",
+      "after": "不是。名额有限，仅择优授予符合资格的马来西亚申请者，须经评估与书面批准，并非自动，也不是折扣码。",
+      "reason": "Sentence-initial 它 fix by merging clauses."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "lead",
+      "before": "在您咨询奖学金之前使用它。它帮助您准备恰当的问题——它并非申请或批准表格。",
+      "after": "在您咨询奖学金之前，先使用本指南准备恰当的问题——但它本身并非申请或批准表格。",
+      "reason": "Two sentence-initial 它 in one lead; repeated the noun (本指南) once and kept the mid-sentence 它 after the em dash, which is not a violation."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks card '3. 需要雇主支持吗？'",
+      "before": "...要求进行雇主沟通与 HRD Corp 说明。",
+      "after": "...要求进行雇主沟通与人力资源发展机构（HRD Corp）说明。",
+      "reason": "Task instruction requires 人力资源发展机构 (HRD Corp) on first use; this document never glossed it. Each of the four PDFs is a standalone document, so each needed its own first-use gloss."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks (numbered HRD Corp process, item 1)",
+      "before": "1.  雇主确认当前的资格与可用 levy 余额。",
+      "after": "1.  雇主确认在人力资源发展机构（HRD Corp）的资格与可动用的征费（levy）余额。",
+      "reason": "First HRD Corp/levy mention in this document was ungl​ossed English; added Chinese gloss for both terms on first use per zh-register.md rule 14 and the task instruction."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks (FAQ 'Does the levy cover the full fee?')",
+      "before": "...且资助不得超过雇主的可用 levy 余额。",
+      "after": "...资助额以雇主可动用的征费余额为上限。",
+      "reason": "zh-register-audit.json high-confidence item 10: '不得超过' is a negative calque; the corpus construction is 以…为上限. levy already glossed earlier in the same document, so plain 征费 used here."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks (bullet list 'The scholarship is not')",
+      "before": "•  HRD Corp 的决定",
+      "after": "•  人力资源发展机构（HRD Corp）的决定",
+      "reason": "First HRD Corp mention in this document; added gloss."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "sections[4] '雇主资助'",
+      "before": "符合资格的 HRD Corp 注册雇主可在培训开始前提交 grant 申请。",
+      "after": "符合资格的人力资源发展机构（HRD Corp）注册雇主可在培训开始前提交资助申请。",
+      "reason": "First HRD Corp mention in this document glossed; also replaced the bare English word 'grant' with 资助申请, matching the term used everywhere else in the corpus (en.json says 'grant application')."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks card '资助问题'",
+      "before": "是否应在所选班次之前...",
+      "after": "是否应在所选届别之前...",
+      "reason": "班次 (transport schedule) is banned; 届 is the correct cohort term. This one instance was missed by the writer's earlier register_fixes_applied pass, which fixed the parallel scholarship-eligibility occurrence but not this one."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "sections[3] '马来西亚学员费用'",
+      "before": "...须视名额、评估及书面批准而定。",
+      "after": "...视名额、评估及书面批准而定。",
+      "reason": "zh-register-audit.json high-confidence item: 须视…而定 is a hedge pattern that should drop 须, per the glossary's own #31 form (视…而定)."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks (comparison table, row 'Time')",
+      "before": "通常 18–24 个月",
+      "after": "18–24 个月",
+      "reason": "zh-register.md rule 11: no 通常/约/大约/一般/左右 before a quantity. The range itself already conveys the variation."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "promise",
+      "before": "...以及赞助方通常会问的问题的答案。",
+      "after": "...以及赞助方常见问题的答案。",
+      "reason": "通常 as an undefined-norm hedge word is banned by the task instruction; replaced with 常见 (matches the 常见问题/FAQ heading used throughout the corpus)."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks (notice, bottom)",
+      "before": "Right Dots Resources 是获授权处理营销、咨询、定价与报名协调的课程合作伙伴。",
+      "after": "Right Dots Resources 是获授权处理行销、咨询、定价与报名协调的课程合作伙伴。",
+      "reason": "zh-register.md rule 16: use 行销/市场推广, not 营销 (mainland form)."
+    }
+  ],
+  "not_changed_and_why": [
+    "面向未来商业领导力的 Executive MBA 由 CMI 颁发并认可 (scholarship-eligibility notice) — already fixed to 颁发并认可 by an earlier writer pass; zh-register-audit.json confirms 面向未来 is normal Malaysian press usage, not a mainland calque, so left as-is.",
+    "可以——它专为在职经理人设计 (decision-guide FAQ 3) and 选择一个...——它将成为您的项目 (decision-guide card 1) — 它 here follows an em dash inside the same sentence, not sentence-initial, so it does not violate the rule against 它/这 standing in for an abstract subject at a sentence start.",
+    "折扣码或保证 / 课程提供方不保证资助获批 — both are negations describing what the scholarship/funding is NOT (matches the English 'not... a guarantee' and 'funding is not guaranteed'), not a forbidden promise, so 保证 was kept.",
+    "用它来判断这项课程... (decision-guide intro) — 它 is the object of 用, not a sentence-initial subject pronoun, so no change needed."
+  ],
+  "native_reading_score_after_fixes": 8,
+  "score_rationale": "Facts, the CMI/MQA boundary, and HRD Corp mechanics are all precise and match en.json. Register now avoids the calque pronoun pattern, hedge words, and the 课程/研习课 ambiguity, and HRD Corp/levy are glossed on first use per document as instructed. Score held at 8 rather than higher because: the four PDFs still occasionally lean on stacked short clauses in card bodies rather than the press's number-first lede rhythm (zh-register.md rule 2), and a full typography pass (pangu spacing edge cases, decoration-budget audit of every heading) was not exhaustively re-verified beyond spot checks in this session."
+}

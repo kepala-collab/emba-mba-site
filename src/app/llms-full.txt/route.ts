@@ -1,4 +1,4 @@
-import { verifiedProgrammeFacts } from "@/lib/chat-knowledge";
+import { interpretationBullets, verifiedProgrammeFacts } from "@/lib/chat-knowledge";
 import {
   FACTS,
   INTAKES,
@@ -22,6 +22,12 @@ function intakeLines(): string {
   ).join("\n");
 }
 
+function bulletLines(language: "en" | "ms" | "zh"): string {
+  return interpretationBullets(language)
+    .map((bullet) => `- ${bullet}`)
+    .join("\n");
+}
+
 function malaySection(): string {
   return `## Bahasa Melayu
 - Program: ${SITE.name}. ${PROGRAMME_POSITIONING_MS}
@@ -33,7 +39,10 @@ function malaySection(): string {
 - Terma bayaran balik: ${REFUND_TERMS_MS}
 - Kohort tersiar:
 ${intakeLines()}
-- Laman web: ${SITE.url}`;
+- Laman web: ${SITE.url}
+
+Tafsiran penting:
+${bulletLines("ms")}`;
 }
 
 function chineseSection(): string {
@@ -47,7 +56,10 @@ function chineseSection(): string {
 - 退款条款：${REFUND_TERMS_ZH}
 - 已公布批次：
 ${intakeLines()}
-- 网站：${SITE.url}`;
+- 网站：${SITE.url}
+
+重要说明：
+${bulletLines("zh")}`;
 }
 
 export function GET() {
@@ -57,6 +69,9 @@ export function GET() {
 
 ## English
 ${verifiedProgrammeFacts("en")}
+
+Important interpretation:
+${bulletLines("en")}
 
 ${malaySection()}
 

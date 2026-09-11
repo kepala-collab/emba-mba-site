@@ -1,11 +1,14 @@
 import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import IntakeSchedule from "@/components/site/IntakeSchedule";
+import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS, FACTS, PROGRAMME_YEAR } from "@/lib/content";
-import { withSeo } from "@/lib/seo";
+import { CTA_LABELS, FACTS, INTAKES, PROGRAMME_YEAR, SITE } from "@/lib/content";
+import { CORE_PAGES_MS } from "@/lib/content-ms";
+import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 
 const path = "/ms/intakes";
+const content = CORE_PAGES_MS.intakes;
 
 export const metadata = withSeo(path, {
   title: `Tarikh Kohort Executive MBA ${PROGRAMME_YEAR} — Bahasa Inggeris dan Mandarin`,
@@ -13,10 +16,34 @@ export const metadata = withSeo(path, {
     `Dibuka untuk pertanyaan: semak tarikh dan waktu ${FACTS.liveSessions} sesi berjadual bagi Kohort 17–19 (Bahasa Inggeris) dan Kohort 2–3 (Mandarin) untuk tahun ${PROGRAMME_YEAR}.`,
 });
 
+const courseJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "@id": `${SITE.url}${path}#course`,
+  name: content.title,
+  description: content.intro,
+  provider: {
+    "@type": "EducationalOrganization",
+    "@id": ORGANIZATION_ID,
+    name: SITE.provider,
+  },
+  url: `${SITE.url}${path}`,
+  inLanguage: "ms-MY",
+  hasCourseInstance: INTAKES.map((c) => ({
+    "@type": "CourseInstance",
+    "@id": `${SITE.url}${path}#${c.language.toLowerCase()}-${c.co.toLowerCase().replace(" ", "-")}`,
+    name: `${SITE.name} — ${c.language} ${c.co}`,
+    courseMode: "onsite",
+    courseWorkload: `Three ${c.days} sessions, 9am–6pm, during the six-month programme`,
+    startDate: c.startDate,
+  })),
+};
+
 export default function Page() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Laman Utama", path: "/ms" }, { name: "Tarikh kohort", path }]} />
+      <JsonLd data={courseJsonLd} />
       <section className="section">
         <div className="wrap maxw-820">
           <Reveal>

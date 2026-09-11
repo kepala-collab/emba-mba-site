@@ -1,10 +1,56 @@
 import { describe, expect, it } from "vitest";
 import {
   ChatLanguage,
+  interpretationBullets,
   programmeChatSystemPrompt,
+  programmePositioning,
 } from "../chat-knowledge";
-import { FACTS, INTAKES, PROGRAMME_POSITIONING_MS } from "@/lib/content";
+import {
+  FACTS,
+  INTAKES,
+  PROGRAMME_POSITIONING_MS,
+  PROGRAMME_POSITIONING_SENTENCE,
+  PROGRAMME_POSITIONING_ZH,
+} from "@/lib/content";
 import { HRD_CORP_CLAIM_MS } from "@/lib/content-ms";
+import { GET as getLlmsTxt } from "@/app/llms.txt/route";
+import { GET as getLlmsFullTxt } from "@/app/llms-full.txt/route";
+
+describe("programmePositioning — single source, no drift", () => {
+  it("matches the shared constants per language", () => {
+    expect(programmePositioning("en")).toBe(PROGRAMME_POSITIONING_SENTENCE);
+    expect(programmePositioning("ms")).toBe(PROGRAMME_POSITIONING_MS);
+    expect(programmePositioning("zh")).toBe(PROGRAMME_POSITIONING_ZH);
+  });
+
+  it("appears in the chat system prompt for all three languages", () => {
+    for (const lang of ["en", "ms", "zh"] as ChatLanguage[]) {
+      expect(programmeChatSystemPrompt(lang)).toContain(programmePositioning(lang));
+    }
+  });
+});
+
+describe("interpretationBullets — anti-drift", () => {
+  it("English bullets are non-empty and each appears verbatim in llms.txt", async () => {
+    const bullets = interpretationBullets("en");
+    expect(bullets.length).toBeGreaterThan(0);
+    const body = await getLlmsTxt().text();
+    for (const bullet of bullets) {
+      expect(body).toContain(bullet);
+    }
+  });
+
+  it("Malay and Chinese bullets are non-empty and each appears verbatim in llms-full.txt", async () => {
+    const fullBody = await getLlmsFullTxt().text();
+    for (const lang of ["ms", "zh"] as ChatLanguage[]) {
+      const bullets = interpretationBullets(lang);
+      expect(bullets.length).toBeGreaterThan(0);
+      for (const bullet of bullets) {
+        expect(fullBody).toContain(bullet);
+      }
+    }
+  });
+});
 
 describe("programmeChatSystemPrompt — ms", () => {
   const prompt = programmeChatSystemPrompt("ms");

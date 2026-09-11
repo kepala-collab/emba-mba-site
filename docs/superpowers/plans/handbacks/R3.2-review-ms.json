@@ -1,0 +1,151 @@
+{
+  "reviewer": "independent Bahasa Melayu reviewer (fresh context)",
+  "scope": "scripts/pdf/copy/ms.json — all four PDFs (decision-guide, employer-funding-brief, scholarship-eligibility, working-managers-guide)",
+  "verdict_before_fixes": "Facts (fee RM10,000.00, six months, six training days, three sessions, HRD Corp employer-led process, CMI certificate boundary, no-guarantee sentence) all matched en.json correctly. Register had four recurring, high-confidence defects: (1) the credential term 'projek aplikasi' used 12 times instead of the governed 'projek amali perniagaan' (owner-vocabulary-rules.md section 10 and ms-register.md item 11 both require the latter — 'aplikasi' reads as a software application, not the applied project); (2) the calque 'dalam bentuk bertulis' used 4 times instead of 'secara bertulis', paired with 'anugerah' used as a bare noun for the scholarship award (banned — should be verb 'dianugerahkan' or noun 'pemberian biasiswa'); (3) the programme name translated as 'Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan' in 2 places, violating the owner decision (spec section 14, decision 1) that the programme name stays in English — 'Executive MBA on Future Ready Business Leadership' — in all three languages; (4) one instance of 'tertakluk pada' instead of the preferred collocation 'tertakluk kepada'. No instances of kamu/awak/-lah, missing meN- prefixes, English month abbreviations, 'ke atas' calque, 'pengurus bekerja' (already correctly rendered as 'pengurus yang bekerja'), 'laluan pilihan' misuse, undefined-norm qualifiers (biasanya/selalunya/kebanyakan), exclamation marks, or 'percuma' as lead word. 'disokong oleh CMI' is correct per owner decision 14.1 (overrides the general register-guide ban on that verb) and was left unchanged. CTA copy in all four documents already matched en.json meaning exactly and needed no change.",
+  "fixes": [
+    {
+      "document": "decision-guide",
+      "field": "blocks[2].body (Bentuk enam bulan card)",
+      "before": "Enam hari latihan dalam tiga sesi berjadual, bimbingan dan projek aplikasi, diselesaikan sepanjang enam bulan sambil anda terus bekerja.",
+      "after": "Enam hari latihan dalam tiga sesi berjadual, bimbingan dan projek amali perniagaan, diselesaikan sepanjang enam bulan sambil anda terus bekerja.",
+      "reason": "'projek aplikasi' is a banned calque ('aplikasi' = software application); governed term is 'projek amali perniagaan'."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks[table].rows[2][1] (comparison table, Penilaian row)",
+      "before": "Satu projek aplikasi perniagaan — tiada peperiksaan atau tesis",
+      "after": "Satu projek amali perniagaan — tiada peperiksaan atau tesis",
+      "reason": "Same calque fix, governed term."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks[faq].items[2][1]",
+      "before": "...dengan projek aplikasi berdasarkan kerja anda sendiri. Tiada peperiksaan atau tesis.",
+      "after": "...dengan projek amali perniagaan berdasarkan kerja anda sendiri. Tiada peperiksaan atau tesis.",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "decision-guide",
+      "field": "blocks[notice] (fee/scholarship closing notice)",
+      "before": "Sebarang anugerah biasiswa dan yuran peserta disahkan secara individu dalam bentuk bertulis.",
+      "after": "Sebarang pemberian biasiswa dan yuran peserta yang berkenaan disahkan secara individu dan secara bertulis.",
+      "reason": "'dalam bentuk bertulis' is a banned calque of 'in writing form'; governed phrasing is 'secara bertulis'. 'anugerah biasiswa' as a bare compound noun reads awkwardly; 'pemberian biasiswa' matches the audit's corrected form and avoids 'anugerah' as a standalone noun for the award."
+    },
+    {
+      "document": "decision-guide",
+      "field": "facts[3][1]",
+      "before": "projek aplikasi",
+      "after": "projek amali perniagaan",
+      "reason": "Same calque fix, applied to the facts strip label."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks[2].body (Kerja aplikasi card)",
+      "before": "...dan menyiapkan projek aplikasi perniagaan.",
+      "after": "...dan menyiapkan projek amali perniagaan.",
+      "reason": "Same calque fix; also removed the redundant double noun 'aplikasi perniagaan'."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks[Format card].body",
+      "before": "Enam bulan merentasi enam hari latihan, tiga sesi berjadual, bimbingan dan projek aplikasi.",
+      "after": "Enam bulan merentasi enam hari latihan, tiga sesi berjadual, bimbingan dan projek amali perniagaan.",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks[Hasil aplikasi card].body",
+      "before": "...dan menghasilkan projek aplikasi perniagaan yang boleh dibincangkan dengan organisasi.",
+      "after": "...dan menghasilkan projek amali perniagaan yang boleh dibincangkan dengan organisasi.",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "blocks[faq].items[2][1] (Apa yang diperoleh syarikat?)",
+      "before": "Projek aplikasi atas isu perniagaan sebenar yang telah dipikul pengurus, serta sijil program...",
+      "after": "Projek amali perniagaan atas isu perniagaan sebenar yang telah dipikul pengurus, serta sijil program...",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "employer-funding-brief",
+      "field": "intro",
+      "before": "Ini program berstruktur yang dibina atas isu perniagaan sebenar dan projek aplikasi...",
+      "after": "Ini program berstruktur yang dibina atas isu perniagaan sebenar dan projek amali perniagaan...",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks[Anugerah & yuran peserta card].title and .body",
+      "before": "title: 'Anugerah & yuran peserta'; body: 'Disahkan secara individu dalam bentuk bertulis selepas penilaian. Jadual ansuran diberikan secara bertulis sebelum bayaran.'",
+      "after": "title: 'Pemberian biasiswa & yuran peserta'; body: 'Disahkan secara individu dan secara bertulis selepas penilaian. Jadual ansuran diberikan secara bertulis sebelum bayaran.'",
+      "reason": "'Anugerah' alone as a bare noun for the scholarship award is banned (register guide Don't 24); 'dalam bentuk bertulis' is a banned calque."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks[faq].items[2][1] (Bila yuran saya disahkan?)",
+      "before": "Anugerah anda (jika ada) dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis selepas penilaian...",
+      "after": "Pemberian biasiswa anda (jika ada) dan yuran peserta berkenaan disahkan secara individu dan secara bertulis selepas penilaian...",
+      "reason": "Same two fixes: bare 'anugerah' noun and 'dalam bentuk bertulis' calque."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "blocks[notice] (closing CMI notice)",
+      "before": "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI...",
+      "after": "Executive MBA on Future Ready Business Leadership dianugerahkan dan disokong oleh CMI...",
+      "reason": "Owner decision (spec section 14, decision 1) requires the programme name to stay in English verbatim in all three languages; the translated form is not a locked identifier."
+    },
+    {
+      "document": "scholarship-eligibility",
+      "field": "facts[3][1]",
+      "before": "projek aplikasi",
+      "after": "projek amali perniagaan",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "checks[1]",
+      "before": "Anda boleh membawa isu perniagaan semasa ke dalam projek aplikasi.",
+      "after": "Anda boleh membawa isu perniagaan semasa ke dalam projek amali perniagaan.",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "facts[3][1]",
+      "before": "projek aplikasi",
+      "after": "projek amali perniagaan",
+      "reason": "Same calque fix."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "sections[0][1] (Apa yang anda sedang nilai)",
+      "before": "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan dianugerahkan dan disokong oleh CMI. Program pembangunan profesional enam bulan ini direka untuk...",
+      "after": "Executive MBA on Future Ready Business Leadership dianugerahkan dan disokong oleh CMI. Program pembangunan profesional enam bulan ini direka untuk...",
+      "reason": "Same programme-name fix as scholarship-eligibility."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "sections[1][1] (Bagaimana enam bulan berjalan)",
+      "before": "...Bimbingan dan projek aplikasi diteruskan sepanjang program. ...dan menyiapkan satu projek aplikasi perniagaan. Tiada peperiksaan tradisional atau tesis.",
+      "after": "...Bimbingan dan projek amali perniagaan diteruskan sepanjang program. ...dan menyiapkan satu projek amali perniagaan. Tiada peperiksaan tradisional atau tesis.",
+      "reason": "Same calque fix, both occurrences in the paragraph."
+    },
+    {
+      "document": "working-managers-guide",
+      "field": "sections[3][1] (Yuran peserta Malaysia)",
+      "before": "...tertakluk pada kekosongan, penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta berkenaan disahkan secara individu dalam bentuk bertulis.",
+      "after": "...tertakluk kepada kekosongan, penilaian dan kelulusan bertulis. Sebarang pemberian biasiswa dan yuran peserta berkenaan disahkan secara individu dan secara bertulis.",
+      "reason": "'tertakluk kepada' is the governed collocation (Do rule 5) over 'tertakluk pada'; same bare-'anugerah'-noun and 'dalam bentuk bertulis' fixes as elsewhere."
+    }
+  ],
+  "unchanged_and_verified_correct": [
+    "'dianugerahkan dan disokong oleh CMI' kept as-is per owner decision 2026-09-10 (spec section 14.1), which explicitly overrides the general register-guide objection to 'disokong'.",
+    "'pengurus yang bekerja' already used the corrected relative-clause form, not the banned 'pengurus bekerja' calque.",
+    "All four cta/cover_cta strings already matched en.json meaning exactly (varied per document, not a single fixed phrase) — no change needed.",
+    "Fee (RM10,000.00), six months, six training days, three scheduled sessions, HRD Corp employer-led application/decision split, CMI Certificate of Recognition boundary, and the no-guarantee/not-an-MQA-degree sentence all verified identical in meaning to en.json."
+  ],
+  "build_verification": {
+    "pdfs_build": "exit 0 — all 12 PDFs regenerated (working-managers-guide, decision-guide, employer-funding-brief, scholarship-eligibility across en/ms/zh)",
+    "pdfs_check": "exit 0 — pdfs:check OK [semantic: page count / page text / embedded fonts] - 12 files match public/downloads"
+  },
+  "native_reading_score_after_fixes": 9
+}
