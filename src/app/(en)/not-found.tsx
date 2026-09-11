@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CTA_LABELS } from "@/lib/content";
 
 export default function NotFound() {
   return (
@@ -13,6 +14,9 @@ export default function NotFound() {
           </p>
           <p>
             <Link href="/executive-mba" className="text-action">See the programme <span aria-hidden="true">→</span></Link>
+          </p>
+          <p>
+            <Link href="/apply" className="text-action">{CTA_LABELS.conversation} <span aria-hidden="true">→</span></Link>
           </p>
         </div>
       </div>

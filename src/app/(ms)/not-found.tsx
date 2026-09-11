@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CTA_LABELS } from "@/lib/content";
 
 export default function NotFound() {
   return (
@@ -13,6 +14,9 @@ export default function NotFound() {
           </p>
           <p>
             <Link href="/ms/executive-mba" className="text-action">Lihat program <span aria-hidden="true">→</span></Link>
+          </p>
+          <p>
+            <Link href="/ms/apply" className="text-action">{CTA_LABELS.ms.conversation} <span aria-hidden="true">→</span></Link>
           </p>
         </div>
       </div>

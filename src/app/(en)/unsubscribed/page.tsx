@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE } from "@/lib/content";
+import { CTA_LABELS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/unsubscribed", {
@@ -39,6 +39,9 @@ export default async function UnsubscribedPage({ searchParams }: { searchParams:
           </p>
           <p>
             <Link href="/home" className="text-action">Back to the programme <span aria-hidden="true">→</span></Link>
+          </p>
+          <p>
+            <Link href="/apply" className="text-action">{CTA_LABELS.conversation} <span aria-hidden="true">→</span></Link>
           </p>
         </div>
       </div>

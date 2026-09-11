@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE } from "@/lib/content";
+import { CTA_LABELS, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms/unsubscribed", {
@@ -15,11 +15,11 @@ const COPY = {
   },
   invalid: {
     heading: "Pautan tidak dapat disahkan.",
-    body: "Pautan berhenti melanggan ini tidak lengkap atau tidak sah, jadi keutamaan anda belum diubah. E-mel sahaja kami dan kami akan hentikan langganan anda secara manual.",
+    body: "Pautan berhenti melanggan ini tidak lengkap atau tidak sah, jadi keutamaan anda belum diubah. Hubungi kami melalui e-mel dan kami akan membatalkan langganan anda secara manual.",
   },
   error: {
     heading: "Buat masa ini permintaan tidak dapat diproses.",
-    body: "Buat masa ini kami tidak dapat mengemas kini keutamaan anda. E-mel sahaja kami dan kami akan hentikan langganan anda secara manual.",
+    body: "Buat masa ini kami tidak dapat mengemas kini keutamaan anda. Hubungi kami melalui e-mel dan kami akan membatalkan langganan anda secara manual.",
   },
 } as const;
 
@@ -39,6 +39,9 @@ export default async function UnsubscribedMsPage({ searchParams }: { searchParam
           </p>
           <p>
             <Link href="/ms" className="text-action">Kembali ke laman program <span aria-hidden="true">→</span></Link>
+          </p>
+          <p>
+            <Link href="/ms/apply" className="text-action">{CTA_LABELS.ms.conversation} <span aria-hidden="true">→</span></Link>
           </p>
         </div>
       </div>

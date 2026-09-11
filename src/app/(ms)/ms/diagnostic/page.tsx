@@ -1,9 +1,11 @@
 import ExecutiveDiagnostic from "@/components/site/ExecutiveDiagnostic";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms/diagnostic", {
-  title: "Semakan Padanan Program Peribadi",
-  description: "Jawab empat soalan untuk membina senarai semak peribadi bagi susunan program, yuran, pengiktirafan dan keperluan anda. Tiada markah diberikan; tiada data disimpan atau dihantar.",
+  title: PROGRAMME_FIT_CHECK.ms,
+  description:
+    "Jawab empat soalan peribadi untuk melihat fakta yang penting bagi tanggungjawab, jadual, yuran dan pengiktirafan CMI anda. Ini bukan ujian kemasukan dan bukan ramalan hasil kerjaya.",
 });
 
 export default function DiagnosticPage() {

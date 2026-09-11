@@ -2,13 +2,13 @@ import LeadForm from "@/components/site/LeadForm";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import ProgrammeMarks from "@/components/site/ProgrammeMarks";
-import { SITE, FACTS, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM } from "@/lib/content";
+import { SITE, FACTS, COMPLIANCE, OPERATOR, HRD_CORP_CLAIM, ABC_PROFILE, CERTIFICATE_POSITIONING, CTA_LABELS, PROGRAMME_YEAR } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/lp/meta", {
-  title: "A Practical Management Programme for Working Leaders",
+  title: `From Informal Decisions to a Method You Can Show — Executive MBA ${PROGRAMME_YEAR}`,
   description:
-    `Complete the ${FACTS.durationMonths}-month CMI-recognised Executive MBA while continuing to work. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.`,
+    `Across ${FACTS.durationLong}, ${FACTS.trainingDays} facilitated training days across ${FACTS.liveSessions} scheduled sessions, coaching and an applied project on a current issue in your own organisation, while you keep working. Chartered Manager is a separate optional CMI route with its own eligibility, assessment and fees.`,
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/meta" },
 });
@@ -16,15 +16,15 @@ export const metadata = withSeo("/lp/meta", {
 const SOURCE = "lp-meta";
 
 const PRESSURES = [
-  ["Your role has grown", "You now make decisions across people, operations and strategy, but your management approach has developed informally."],
-  ["The decisions are less obvious", "Important issues cross functions, assumptions are difficult to test and the right next move is not always visible."],
-  ["You cannot pause your career", "You need structured professional development that can be applied while you continue working."],
+  ["Your role has grown", "The decisions you carry become the material of the applied project."],
+  ["The decisions are less obvious", "You define the decision, test the evidence and expose the trade-offs with a method."],
+  ["You cannot pause your career", `${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions; the work happens inside your organisation between them.`],
 ] as const;
 
 const PROCESS = [
-  ["01", "Bring a current challenge", "Start with a decision, growth constraint or organisational issue that matters in your work."],
-  ["02", "Apply the management frameworks", "Use a structured process to define the problem, test assumptions and compare practical options."],
-  ["03", "Build the action plan", "Turn the analysis into a faculty-reviewed applied project you can explain and use."],
+  ["01", "Bring a current decision", "Start with a decision you are responsible for in your own organisation."],
+  ["02", "Apply the frameworks", "Use a structured process to define the problem, test assumptions and compare practical options."],
+  ["03", "Build the action plan", "Turn the analysis into a written action plan reviewed by faculty."],
 ] as const;
 
 export default function MetaLandingPage() {
@@ -34,23 +34,26 @@ export default function MetaLandingPage() {
         <div className="wrap cold-funnel-hero-grid">
           <div className="cold-funnel-copy">
             <Reveal>
-              <div className="eyebrow"><span className="l" /><span className="mono sec-k">For experienced Malaysian managers</span></div>
+              <div className="eyebrow"><span className="l" /><span className="mono sec-k">For managers deciding across people, operations and strategy</span></div>
             </Reveal>
             <Reveal delay={50}>
-              <h1>Complete the CMI-recognised Executive MBA in {FACTS.durationMonths} months.</h1>
+              <h1>From informal decisions to a method you can show.</h1>
             </Reveal>
             <Reveal delay={90}>
               <p className="cold-funnel-lede">
-                Continue working while you complete {FACTS.trainingDays} facilitated training days, coaching and an applied project.
+                Across {FACTS.durationLong}, {FACTS.trainingDays} facilitated training days across {FACTS.liveSessions} scheduled sessions, coaching and an applied project on a current issue in your own organisation, while you keep working. {ABC_PROFILE.programmePositioning}
               </p>
             </Reveal>
             <Reveal delay={130}>
-              <ul className="cold-funnel-proof-list" aria-label="Programme highlights">
-                <li>{FACTS.durationMonths}-month CMI-recognised professional programme</li>
-                <li>{FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions</li>
-                <li>Designed around full-time work</li>
-                <li>No traditional examination or thesis</li>
+              <ul className="cold-funnel-proof-list" aria-label="Programme facts">
+                <li>{FACTS.durationLong}, {FACTS.trainingDays} training days across {FACTS.liveSessions} scheduled sessions</li>
+                <li>One-to-one coaching and an applied business project inside your own organisation</li>
+                <li>You continue in your role throughout</li>
+                <li>Assessment is a written action plan reviewed by faculty</li>
               </ul>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="fine" style={{ maxWidth: "48ch" }}>{CERTIFICATE_POSITIONING.professionalRelevance}</p>
             </Reveal>
             <Reveal delay={170}>
               <div className="cold-funnel-marks">
@@ -72,8 +75,8 @@ export default function MetaLandingPage() {
           {[
             ["CMI", "Awarded and endorsed by CMI"],
             [FACTS.trainingDays, `Facilitated training days across ${FACTS.liveSessions} scheduled sessions`],
-            ["1", "Applied project built around a live business issue"],
-            ["Eligibility", "Scholarship assessment for Malaysian applicants"],
+            [FACTS.cohorts, "Cohorts completed, reported by ABC"],
+            ["Selective", "Scholarship assessment for eligible Malaysian applicants"],
           ].map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
         </div>
       </div>
@@ -81,7 +84,7 @@ export default function MetaLandingPage() {
       <section className="section cold-funnel-pressure">
         <div className="wrap">
           <Reveal><p className="mono sec-k">Why managers begin looking</p></Reveal>
-          <Reveal><h2 className="sec-h">Your responsibility can grow faster than your management toolkit.</h2></Reveal>
+          <Reveal><h2 className="sec-h">A leader can still be learning how to decide.</h2></Reveal>
           <div className="cold-funnel-pressure-grid">
             {PRESSURES.map(([title, body], index) => (
               <Reveal key={title} delay={index * 45}>
@@ -95,7 +98,7 @@ export default function MetaLandingPage() {
       <section className="section cold-funnel-process">
         <div className="wrap">
           <Reveal><p className="mono sec-k">What you will do</p></Reveal>
-          <Reveal><h2 className="sec-h">A business issue enters. A structured action plan leaves.</h2></Reveal>
+          <Reveal><h2 className="sec-h">A business issue enters. A written action plan leaves.</h2></Reveal>
           <div className="campaign-path mt-m">
             {PROCESS.map(([number, title, body]) => (
               <Reveal key={number}><article><span className="mono">{number}</span><h3>{title}</h3><p>{body}</p></article></Reveal>
@@ -109,13 +112,13 @@ export default function MetaLandingPage() {
           <Reveal>
             <div>
               <p className="mono sec-k">Recognition, explained plainly</p>
-              <h2 className="sec-h">What successful participants receive on completing the programme.</h2>
+              <h2 className="sec-h">What successful participants hold at the end, and what they do not.</h2>
               <p className="sec-sub">Clear recognition information before you decide.</p>
             </div>
           </Reveal>
           <div className="cold-funnel-recognition-steps">
             <Reveal>
-              <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>Successful participants complete the Executive MBA on Future Ready Business Leadership, which is awarded and endorsed by CMI. It is not an MQA-accredited academic degree or regulated qualification.</p></article>
+              <article><span className="mono">On completion</span><h3>CMI Certificate of Recognition</h3><p>{CERTIFICATE_POSITIONING.distinction} {CERTIFICATE_POSITIONING.professionalRelevance} Chartered Manager is a separate optional CMI route, decided by CMI, and is not included in the programme or its published fee.</p></article>
             </Reveal>
           </div>
         </div>
@@ -124,8 +127,8 @@ export default function MetaLandingPage() {
       <CtaSection
         programme="Executive MBA"
         source={SOURCE}
-        heading="Get the Working Manager’s 2026 Progression Guide."
-        sub={`Review the programme structure, published dates, ${FACTS.priceStd} standard fee, the scholarship assessment process and CMI recognition before deciding whether to speak with the team. ${HRD_CORP_CLAIM.responsibility}`}
+        heading={`${CTA_LABELS.guide}.`}
+        sub={`Review the programme structure, published dates, ${FACTS.priceStd} standard fee and CMI recognition before deciding whether to arrange a conversation. ${FACTS.scholarshipEligibility} The scholarship is never automatic. ${HRD_CORP_CLAIM.responsibility}`}
         formVariant="campaign"
         sectionId="request-guide-again"
         steps={["Receive the guide", "Review the facts privately", "Choose whether you want a conversation"]}

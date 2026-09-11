@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import { CTA_LABELS, SITE } from "@/lib/content";
+import { CTA_LABELS, ENQUIRY_COMMITMENT, PROGRAMME_YEAR, SITE } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/contact", {
   title: "Contact Future Ready EMBA",
-  description:
-    "Contact the Future Ready Executive MBA programme team by WhatsApp, phone or email, or arrange an online or in-person information meeting.",
+  description: `Contact the Future Ready Executive MBA programme team by WhatsApp, phone or email, or arrange an online or in-person meeting. ${ENQUIRY_COMMITMENT}`,
 });
 
 const waText = encodeURIComponent(
@@ -22,10 +21,10 @@ export default function ContactPage() {
           <div>
             <Reveal>
               <div className="eyebrow"><span className="l" /><span className="mono sec-k">Contact</span></div>
-              <h1 className="sec-h" style={{ maxWidth: "18ch" }}>Contact Future Ready EMBA.</h1>
+              <h1 className="sec-h" style={{ maxWidth: "18ch" }}>Talk to the programme team.</h1>
               <p className="sec-sub">
-                Questions about fit, intakes, HRD Corp or the scholarship? Reach the {SITE.provider} team directly, or
-                arrange a call, an online information meeting or an in-person meeting at an agreed location. You can also ask for details first.
+                Questions about programme fit, dates, the fee, HRD Corp or the scholarship? Reach the {SITE.provider} team directly, or
+                arrange a call, an online meeting or an in-person meeting at an agreed location — or ask for the {PROGRAMME_YEAR} programme guide first. {ENQUIRY_COMMITMENT}
               </p>
             </Reveal>
 
@@ -51,8 +50,8 @@ export default function ContactPage() {
           <Reveal delay={120}>
             <div className="card" style={{ padding: 28 }}>
               <p className="mono sec-k acc" style={{ marginBottom: 6 }}>Choose the next step</p>
-              <h2 style={{ fontSize: "1.8rem", color: "var(--ink)", marginBottom: 12, lineHeight: 1.15 }}>One place for programme requests.</h2>
-              <p style={{ color: "var(--ink-2)", margin: "0 0 20px" }}>Use the enquiry page to request the guide, choose a contact method or arrange a programme conversation.</p>
+              <h2 style={{ fontSize: "1.8rem", color: "var(--ink)", marginBottom: 12, lineHeight: 1.15 }}>One place for programme enquiries.</h2>
+              <p style={{ color: "var(--ink-2)", margin: "0 0 20px" }}>Use the enquiry page to request the {PROGRAMME_YEAR} programme guide, choose a contact method or arrange a programme conversation.</p>
               <Link href="/apply" className="btn btn-primary" style={{ width: "100%" }}>{CTA_LABELS.conversation} →</Link>
               <a href={`mailto:${SITE.email}`} className="btn btn-ghost" style={{ width: "100%", marginTop: 10 }}>Email {SITE.email}</a>
             </div>
