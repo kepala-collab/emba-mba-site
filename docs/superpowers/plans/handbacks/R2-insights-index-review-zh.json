@@ -1,0 +1,22 @@
+{
+  "unit": "insights-index",
+  "language": "zh",
+  "filesReviewed": ["src/app/(zh)/zh/insights/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/insights/page.tsx",
+      "line": 17,
+      "problem": "Card title for the advancement-question article read '如何比较专业管理课程', which matched neither the article's own metadata title ('如何比较领导力课程') nor the resources index card title, breaking the rule that the compare-programmes title must be identical across index, article and resources.",
+      "fix": "Changed to '如何比较领导力课程' to match the other two surfaces (see companion fixes in the resources and insights-advancement-question review handbacks)."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/page.tsx",
+      "line": 148,
+      "problem": "CtaSection heading '把这些方法，用在您手上的决策上。' carried a trailing full stop, banned on headlines.",
+      "fix": "Removed the trailing period."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

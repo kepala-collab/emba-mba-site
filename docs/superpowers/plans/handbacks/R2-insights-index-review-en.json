@@ -1,0 +1,16 @@
+{
+  "unit": "insights-index",
+  "language": "en",
+  "filesReviewed": ["src/app/(en)/insights/page.tsx"],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "crossUnitChecks": {
+    "compareProgrammesTitleMatch": "Pass — index card title 'How to Compare Leadership Programmes' matches the resources index item 03 and the article's own title exactly.",
+    "bannedLabels": "Pass — no 'advancement', 'progression' or 'capstone' anywhere in visible text.",
+    "programmePointerViaConstant": "N/A for this page — it is a card grid to the five articles, not itself carrying a programme pointer; the closing CtaSection is the standard site-wide component.",
+    "servantLeadershipNaming": "N/A — term not present."
+  },
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "auditAfterFixes": { "typecheckExitCode": 0, "contentClarityAuditExitCode": 0 }
+}

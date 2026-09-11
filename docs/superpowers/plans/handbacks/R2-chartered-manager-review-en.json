@@ -1,0 +1,22 @@
+{
+  "unit": "chartered-manager-malaysia",
+  "language": "en",
+  "filesReviewed": [
+    "src/app/(en)/chartered-manager-malaysia/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "fixesApplied": [],
+  "notes": [
+    "H1 'Recognition for work you can show.' (6 words, no product/count/outcome noun).",
+    "Chartered Manager is presented only as a separate optional CMI route via STAGES[2].d, in the hero lede, the featured outcome card and the FAQ answer to 'Does the programme automatically award Chartered Manager status?' (answered 'No.'); never framed as a stage or as automatic.",
+    "CERTIFICATE_POSITIONING.professionalRelevance renders in the hero block and again in the 'What the recognition adds' and 'Where the evidence gets used' section heads, keeping the no-guarantee sentence adjacent to every certificate/CMI mention in each viewport.",
+    "No unqualified CMI claim; CMI is consistently named as the controlling body (assesses, confirms eligibility, controls timing/membership/fees).",
+    "No banned vocabulary found on a manual grep for ladder/rung/climb/deserve/still open/last chance/fast-track/shortcut/etc.",
+    "npm run typecheck: 0. node scripts/content-clarity-audit.mjs: passed, 0 warnings attributable to this file."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "content-ms.ts and content-zh.ts have no hoisted mirror of STAGES[2].d (the writer composed local CHARTERED_MANAGER_BOUNDARY_MS/_ZH consts per their handback). Not an English-file issue, but flagging per the writer's own suggestion: consider hoisting a shared STAGES_MS[2].d / STAGES_ZH[2].d export so this boundary sentence has one source across all three languages."
+  ]
+}

@@ -40,6 +40,12 @@ export const PROGRAMME_AUDIENCE_ZH =
 export const REFUND_TERMS_ZH =
   "ABC 经签署的报名条款列明退款资格、通知期限、可退金额、教材归还条件及处理日期。学员在付款前收到并审阅该条款；已签署条款以外不作退款承诺。";
 
+// Chinese mirror of COMPARISON_SCOPE (English constant in src/lib/content.ts):
+// the reference-group definition required beside every rendering of the
+// comparison table.
+export const COMPARISON_SCOPE_ZH =
+  "本表所指的参考学术 MBA，是一项为期 18 至 24 个月、以学术模块、作业或考试及论文为核心的课程；并不代表所有 MBA 课程。";
+
 export const COMPARISON_ZH = [
   { k: "修读时间", them: "18–24 个月", us: `${FACTS.durationMonths} 个月：${FACTS.trainingDays} 个培训日，分 ${FACTS.liveSessions} 次导师带领的研习课完成` },
   { k: "学习重点", them: "学术理论、研究及案例分析", us: "企业情境、战略判断及可重复使用的决策框架" },

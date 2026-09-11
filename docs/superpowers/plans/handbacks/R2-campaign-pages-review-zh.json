@@ -1,0 +1,74 @@
+{
+  "unit": "campaign-pages",
+  "language": "zh",
+  "filesReviewed": [
+    "src/app/(zh)/zh/lp/google/page.tsx",
+    "src/app/(zh)/zh/lp/meta/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/lp/google/page.tsx",
+      "line": 40,
+      "problem": "H1 ended with a trailing full stop (带着方案走。) — zh-register.md rule 27 bans a trailing full stop on headlines.",
+      "fix": "Removed the trailing 。 from the H1."
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/google/page.tsx",
+      "line": 89,
+      "problem": "H2 '课程费用之内，涵盖的学习与支持。' had a trailing full stop.",
+      "fix": "Rewrote as '课程费用，涵盖这些支持' (14 chars, two beats, no trailing punctuation)."
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/google/page.tsx",
+      "line": 107,
+      "problem": "H2 '从课程目的、形式、考核到证书性质，逐项比较。' was 18 characters (over the 14-character headline cap) and had a trailing full stop.",
+      "fix": "Rewrote as '课程目的不同，逐项比较' (10 chars, no trailing punctuation)."
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/google/page.tsx",
+      "line": 124,
+      "problem": "H2 rendering {CTA_LABELS.zh.guide} had an appended trailing full stop.",
+      "fix": "Removed the trailing 。 (the constant value itself is unchanged)."
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/meta/page.tsx",
+      "line": 41,
+      "problem": "H1 '从随性决策，到可展示的方法。' had a trailing full stop.",
+      "fix": "Removed the trailing 。"
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/meta/page.tsx",
+      "line": 69,
+      "problem": "H2 '领导者仍可一边在职，一边学会怎么决策。' was 17 characters (over the 14-character cap) and had a trailing full stop.",
+      "fix": "Rewrote as '在职期间，仍可精进决策' (11 chars, no trailing punctuation), keeping the owner's 'a leader can still' vocabulary sense without exceeding the cap."
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/meta/page.tsx",
+      "line": 95,
+      "problem": "H2 '一项课题进来，一份书面行动方案出去。' was 16 characters (over cap) and had a trailing full stop.",
+      "fix": "Rewrote as '一项课题进来，一份方案出去' (12 chars, no trailing punctuation)."
+    },
+    {
+      "file": "src/app/(zh)/zh/lp/meta/page.tsx",
+      "line": 112,
+      "problem": "H2 rendering {CTA_LABELS.zh.guide} had an appended trailing full stop.",
+      "fix": "Removed the trailing 。"
+    }
+  ],
+  "checksPassed": [
+    "认可/认证 usage correct: 由 CMI（英国）颁发并认可 and 成功完成课程可获颁 CMI 认可证书 — 认可 used for CMI, no 认证 misuse.",
+    "No sentence-initial 它/这 found in either file.",
+    "No 您/你 in any headline (H1/H2) in either file.",
+    "No cleft sentences found.",
+    "届 used correctly for cohorts (ABC 已开办 {FACTS.cohorts} 届); no 班次/批次.",
+    "Scholarship sentences use 名额有限/须经评估/书面批准/并非自动授予 — never an amount or a discount.",
+    "免费 does not appear as a lead word anywhere on either page.",
+    "Pangu spacing intact around Latin/number tokens (FACTS interpolations, CMI, MBA).",
+    "Fee, scholarship, HRD Corp and comparison paragraphs each carry a controlling document or decision-maker."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "None — no fact, name or claim ambiguity found in these two files."
+  ]
+}

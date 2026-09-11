@@ -636,6 +636,29 @@ test("assistant explicitly executes Turnstile and returns an answer", async ({ p
   )).toBe(1);
 });
 
+test("Malay assistant explicitly executes Turnstile and returns a Malay answer", async ({ page }) => {
+  await mockTurnstile(page);
+  await page.route("**/api/chat", async (route) => {
+    const request = route.request().postDataJSON() as { turnstile_token?: string; lang?: string };
+    expect(request.turnstile_token).toBe("chat-test-token");
+    expect(request.lang).toBe("ms");
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ answer: "Jawapan ujian ini tersedia dalam Bahasa Melayu." }),
+    });
+  });
+  await goto(page, "/ms/intakes");
+  await dismissConsent(page);
+  await page.getByRole("button", { name: /Tanya pembantu program/i }).click();
+  await expect(page.getByRole("link", { name: "Hubungi Future Ready EMBA di WhatsApp" })).toHaveAttribute("href", /^https:\/\/wa\.me\/60129818533/);
+  await page.getByRole("button", { name: /Berapakah yuran program/i }).click();
+  await expect(page.getByText("Jawapan ujian ini tersedia dalam Bahasa Melayu.")).toBeVisible();
+  await expect.poll(() => page.evaluate(() =>
+    (window as typeof window & { __turnstileResetCount?: number }).__turnstileResetCount || 0,
+  )).toBe(1);
+});
+
 test("content pages defer assistant Turnstile until the assistant is opened", async ({ page }) => {
   await goto(page, "/curriculum");
   await dismissConsent(page);

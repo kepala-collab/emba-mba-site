@@ -1,0 +1,46 @@
+{
+  "unit": "campaign-pages",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/lp/google/page.tsx",
+    "src/app/(ms)/ms/lp/meta/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/lp/google/page.tsx",
+      "line": 12,
+      "problem": "Metadata title used Title Case with function words capitalised ('Datang Dengan Isu Perniagaan, Pulang Dengan Pelan Tindakan'), violating the DBP function-word lowercasing rule for headings (yang/dan/untuk/di/ke/kepada/daripada/dengan/atau/bagi/adalah stay lowercase); sentence case is required except for named documents.",
+      "fixApplied": "Changed to sentence case: 'Datang dengan isu perniagaan, pulang dengan pelan tindakan — Executive MBA 2026'."
+    },
+    {
+      "file": "src/app/(ms)/ms/lp/google/page.tsx",
+      "line": 125,
+      "problem": "'tarikh sesi pengambilan' misuses the site-specific senses: 'sesi' is reserved for the three weekend training sessions only, 'pengambilan' is the intake window; 'sesi pengambilan' is a banned compound (ms-register-audit-rules.json missingRules, 'pengambilan / kohort / sesi').",
+      "fixApplied": "Changed to 'tarikh pengambilan'."
+    },
+    {
+      "file": "src/app/(ms)/ms/lp/meta/page.tsx",
+      "line": 12,
+      "problem": "Same Title Case defect as google/page.tsx ('Daripada Keputusan Tidak Formal Kepada Kaedah Yang Boleh Ditunjukkan').",
+      "fixApplied": "Changed to sentence case."
+    },
+    {
+      "file": "src/app/(ms)/ms/lp/meta/page.tsx",
+      "line": 113,
+      "problem": "'tarikh mula sesi pengambilan' — same banned 'sesi pengambilan' compound.",
+      "fixApplied": "Changed to 'tarikh mula pengambilan'."
+    },
+    {
+      "file": "src/app/(ms)/ms/lp/meta/page.tsx",
+      "line": 69,
+      "problem": "'Pemimpin tetap boleh sedang belajar cara membuat keputusan.' stacks two auxiliaries ('boleh sedang') which is not grammatical Malay and exceeds the tense-marker density rule (at most one telah/akan/sedang/sudah per sentence).",
+      "fixApplied": "Changed to 'Pemimpin masih boleh belajar cara membuat keputusan.'"
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "'Terpilih' is used to render 'Selective' (scholarship assessment) on both pages. 'Terpilih' literally means 'chosen/selected', not 'discriminating/selective'; it is defensible as marketing idiom but drifts from the English sense. Left unchanged pending an owner call — 'Terhad' (limited) would track the source meaning more closely.",
+    "Both pages diverge structurally from the English source (no 'campaign-method' 4-step section on lp/google, no compliance/operator footer paragraph) — this is a pre-existing writer omission, not a language defect, so left untouched; flagging for the owner/spec reviewer."
+  ]
+}

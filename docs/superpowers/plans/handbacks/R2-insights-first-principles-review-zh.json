@@ -1,0 +1,28 @@
+{
+  "unit": "insights-first-principles",
+  "language": "zh",
+  "filesReviewed": ["src/app/(zh)/zh/insights/first-principles-thinking/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/insights/first-principles-thinking/page.tsx",
+      "line": 179,
+      "problem": "CtaSection heading '把它用在您现在正扛着的那项决策上。' carried a trailing period, contained the pronoun 您, and at roughly 16 characters exceeded the 14-character headline limit.",
+      "fix": "Shortened to '用在眼下扛着的决策上' (10 characters, no trailing period, no pronoun)."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/first-principles-thinking/page.tsx",
+      "line": 78,
+      "problem": "Sentence-initial '它不肯直接沿用任何一个还没针对眼前问题验证过的结论。' used 它 as the sentence subject standing in for the abstract concept named two sentences earlier, the recognisable translationese pattern flagged by zh-register.md ('它 as a stand-in for an abstract English subject').",
+      "fix": "Replaced the pronoun with the demonstrative noun phrase: '此法不肯直接沿用任何一个还没针对眼前问题验证过的结论。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/first-principles-thinking/page.tsx",
+      "line": 82,
+      "problem": "Sentence began '可它在搬来旧解法的同时……', the conjunction-plus-它 pattern that reads as a literal 'But it…' calque.",
+      "fix": "Replaced with '可这套逻辑在搬来旧解法的同时……', naming the referent instead of using the bare pronoun."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

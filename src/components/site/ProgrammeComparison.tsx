@@ -1,6 +1,6 @@
 import { COMPARISON, COMPARISON_SCOPE } from "@/lib/content";
-import { COMPARISON_MS } from "@/lib/content-ms";
-import { COMPARISON_ZH } from "@/lib/content-zh";
+import { COMPARISON_MS, COMPARISON_SCOPE_MS } from "@/lib/content-ms";
+import { COMPARISON_ZH, COMPARISON_SCOPE_ZH } from "@/lib/content-zh";
 
 type ProgrammeComparisonProps = {
   lang?: "en" | "zh" | "ms";
@@ -20,14 +20,6 @@ const BUILT_FOR_ROW = {
   zh: { k: "定位", them: "透过学术研究、作业与考试，修读学术学位。", us: "在职期间，把一项真实企业课题处理成经导师评审的行动方案。" },
   ms: { k: "Direka untuk", them: "Memperoleh ijazah akademik melalui pengajian akademik, penilaian dan penyelidikan.", us: "Menangani satu isu perniagaan sebenar sehingga menjadi pelan tindakan yang disemak fakulti, sambil kekal dalam jawatan anda." },
 } as const;
-
-// Malay and Chinese mirrors of COMPARISON_SCOPE (English constant in
-// src/lib/content.ts): the reference-group definition required beside
-// every rendering of this table.
-const COMPARISON_SCOPE_MS =
-  "Jadual ini mentakrifkan MBA akademik rujukan sebagai program 18–24 bulan yang dibina di sekitar modul akademik, tugasan atau peperiksaan, dan disertasi atau tesis. Ia tidak menggambarkan setiap program MBA.";
-const COMPARISON_SCOPE_ZH =
-  "本表所指的参考学术 MBA，是一项为期 18 至 24 个月、以学术模块、作业或考试及论文为核心的课程；并不代表所有 MBA 课程。";
 
 const STRINGS = {
   en: {

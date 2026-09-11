@@ -1,0 +1,75 @@
+{
+  "unit": "insights-exec-ed-vs-emba",
+  "files_changed": [
+    "src/app/(en)/insights/executive-education-vs-executive-mba/page.tsx",
+    "src/app/(ms)/ms/insights/executive-education-vs-executive-mba/page.tsx",
+    "src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx"
+  ],
+  "h1_and_lede": {
+    "en": {
+      "h1": "Executive education or Executive MBA: choose by the job.",
+      "lede": "Both names sit under the same broad label of executive learning, but they are built for different jobs. Executive education develops one focused capability, on a schedule the provider sets. Executive MBA can describe an academic degree or, when clearly stated, a professional programme with its own named credential. Before comparing anything else, check which job the programme is built for, then verify the academic status, credential, assessment, schedule and complete fee."
+    },
+    "ms": {
+      "h1": "Pendidikan eksekutif atau Executive MBA: pilih ikut tugasnya.",
+      "lede": "Kedua-dua nama ini sering disebut dalam nafas yang sama, tetapi tugasnya berbeza. Pendidikan eksekutif membina satu kemahiran khusus, mengikut jadual yang ditetapkan penyedia. Executive MBA pula boleh bermaksud ijazah akademik, atau — apabila dinyatakan dengan jelas — program profesional dengan kredensialnya sendiri. Sebelum membandingkan perkara lain, sahkan dahulu status akademik, kredensial, penilaian, jadual dan yuran penuhnya."
+    },
+    "zh": {
+      "h1": "高管教育还是 Executive MBA，按任务选",
+      "lede": "这两个名称常被摆在一起说，但各自要完成的任务并不相同。高管教育培养一项专业能力，按提供方设定的时间表进行；Executive MBA 则有两种指法：一种是学术学位，另一种——在讲清楚的前提下——是一门有自己资格性质的专业课程。比较其他之前，先核实这门课程为何而设，再逐项核实学术地位、资格性质、评估方式、课程安排与完整费用。"
+    }
+  },
+  "constants_used": [
+    "FACTS.durationLong",
+    "FACTS.durationMonths",
+    "FACTS.trainingDays",
+    "FACTS.liveSessions",
+    "CERTIFICATE_POSITIONING.professionalRelevance (en)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS (content-ms.ts)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_ZH (content-zh.ts)",
+    "COMPARISON_SCOPE (en)",
+    "COMPARISON_SCOPE_MS / COMPARISON_SCOPE_ZH (page-local translations, matching the precedent already used in /executive-mba-vs-mba)",
+    "CTA_LABELS.guide / CTA_LABELS.ms.guide / CTA_LABELS.zh.guide"
+  ],
+  "changes_summary": [
+    "Rewrote H1/lede/H2 body copy in all three languages around section 8's Insights archetype and section 3 rule 4 (comparison group defined, 'Built for' first table row added, academic MBA named as the right route for a degree job, no 'better than'/'unlike'/'not just attendance').",
+    "Added COMPARISON_SCOPE (and MS/ZH equivalents, following the existing page-local pattern from /executive-mba-vs-mba since content.ts/content-ms.ts/content-zh.ts have no MS/ZH mirror of this constant) adjacent to the comparison table in all three languages.",
+    "Added CERTIFICATE_POSITIONING.professionalRelevance / its MS and ZH mirrors next to the CMI/certificate claim in the short-answer paragraph, keeping the not-an-MQA-accredited-degree sentence in the same paragraph (same viewport) in all three languages.",
+    "Reduced inline internal links to one factual programme pointer per language (the /executive-mba, /ms/executive-mba, /zh/executive-mba link in the short-answer section); removed the extra links to chartered-manager-malaysia/fees/intakes and replaced them with plain-text sentences pointing to a programme conversation to confirm fee/dates/recognition in writing.",
+    "Fixed the pre-existing Malay governance violation in this unit: 'laluan pilihan CMI yang berasingan' (banned phrase) is now 'laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI' per section 13 transcreation notes.",
+    "Updated metadata title/description and Article JSON-LD headline/description in all three languages to match the new framing; canonical/hreflang untouched (withSeo unchanged).",
+    "Updated the CtaSection heading override in all three languages to match the new 'choose by the job' framing instead of 'compare the facts'.",
+    "Left the byline/date/source-attribution blocks, the five-questions list content, and the research-sources external links unchanged (only reworded two English row values for tone; kept meaning, no fact changes)."
+  ],
+  "audit_and_typecheck": {
+    "typecheck_exit_code": 0,
+    "content_clarity_audit_exit_code": 1,
+    "audit_note": "The only remaining failure after this unit's edits is in src/app/(zh)/zh/insights/design-thinking-for-business/page.tsx:63 ('ambiguous Chinese qualifier' on an unrelated pre-existing sentence). That file is outside this unit's scope (a different insights article, owned by another writer) and was not touched. `node scripts/content-clarity-audit.mjs | grep executive-education-vs-executive-mba` returns zero hits: this unit's three files pass with zero warnings."
+  },
+  "self_check_results": {
+    "ms_section7": [
+      "1-5: no banned pronouns/verbs/date abbreviations/RM formatting/undefined qualifiers found in the new text.",
+      "6: 'perbualan program', 'Pengurus Bekerja', 'projek aplikasi', 'laluan lanjutan', 'program awam', 'dan ke atas', 'dalam bentuk bertulis', 'dinilai untuk', 'atas talian', 'emel', 'kepemimpinan' — zero hits. Note: 'disokong oleh CMI' appears once, verbatim, because owner decision (spec section 14.1) explicitly overrides the audit's ban and keeps 'dianugerahkan dan disokong oleh CMI' unchanged for Malay; this is an intentional, spec-mandated exception, not an oversight.",
+      "7: HRD Corp Claimable Course / e-TRiS / Allowable Cost Matrix not used on this page (not applicable); CMI Certificate of Recognition, Chartered Manager, Executive MBA on Future Ready Business Leadership, Agensi Kelayakan Malaysia terms all kept verbatim/untranslated where used.",
+      "8: fact values (6 bulan / 6 hari latihan / 3 sesi) match content.ts via FACTS tokens; no new numbers introduced.",
+      "10: Chartered Manager described only as 'laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI' with kelayakan/penilaian/keahlian/yuran named as CMI's decision.",
+      "11-20: no promotion/salary/ROI claims; CTAs are verb+object+purpose; e-mail salutation rules n/a (not an email); exclamation count zero; H1/H2 sentence-case full clauses; pronoun use consistent (anda in narration only, never in the fee/CMI fact sentence); EN/MS facts equivalent."
+    ],
+    "zh_section7": [
+      "1: all numbers/names/durations (6 个月 / 6 个培训日 / 3 次 / CMI / MQA / Future Ready Executive MBA) present unchanged.",
+      "2: 约/大约/通常/一般/左右/多数 — zero hits after removing '可能' per the audit's own regex; re-ran the audit script and this file now returns zero warnings.",
+      "3-4: no urgency or prestige words.",
+      "5: 认可 used for CMI, 认证 reserved for MQA; certificate rendered as 'CMI 认可证书（CMI Certificate of Recognition）'.",
+      "6: Chartered Manager described only as an independent, optional, CMI-decided route; no 自动/第二阶段/后续路径.",
+      "9: CTA uses 索取/预约; no 报名/录取/申请入学.",
+      "10: 您 used throughout; no 你; no pronoun in the H1.",
+      "11-18: vocabulary sweep clean (no 参与者/背书/营销/etc.); Latin/CMI/MBA terms in half-width, Chinese punctuation full-width; decoration budget respected (no four-character ornamental strings beyond the one existing quotation pattern); no sentence opens with 它/这 standing in for an abstract English subject."
+    ]
+  },
+  "left_for_reviewer": [
+    "Confirm the 'Built for' table row wording and the shortened 'Where this programme fits' paragraph read naturally in context next to the other insights-cluster pages the messaging-map digest describes, since this unit did not touch sibling pages (/insights, /insights/advancement-question, the other three thinking articles).",
+    "The English Article JSON-LD headline and meta title were kept close to the prior SEO-stable title ('Executive Education vs Executive MBA') per the messaging-map risk note about keyword stability; only the JSON-LD 'headline' field (not the <title>) was reworded — please confirm that split is acceptable.",
+    "ARTICLE_REVIEWED / PUBLISHED date was left at 2026-08-21 since this is a full copy rewrite but the byline/date are local consts on this page (not the shared ARTICLE_REVIEWED constant used by the other four insights articles), so no shared-date collision applies here; reviewer should confirm whether the date should bump given this counts as a substantive rewrite.",
+    "The content-clarity audit's one remaining failure (design-thinking-for-business page) is pre-existing and out of scope for this unit; flagging for the owner/other writer, not fixed here."
+  ]
+}

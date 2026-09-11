@@ -1,0 +1,47 @@
+{
+  "unit": "insights-design-thinking",
+  "files_changed": [
+    "src/app/(en)/insights/design-thinking-for-business/page.tsx",
+    "src/app/(ms)/ms/insights/design-thinking-for-business/page.tsx",
+    "src/app/(zh)/zh/insights/design-thinking-for-business/page.tsx"
+  ],
+  "archetype": "Insights (spec section 8): opens on the reader's moment, not the method; shortcut critique aimed only at methods; no verdict on the reader; one factual programme pointer at most (the Programme fit check); servant-leadership posture (serving the people the decision affects) carried without naming the term on this page, since section 6 reserves the literal term for /how-it-works or the guide introduction.",
+  "h1_and_lede": {
+    "en": {
+      "h1": "Begin with the person you are trying to serve.",
+      "lede": "A product can be built well and still fail, because it answers the wrong question for the wrong person. Design thinking is the discipline of finding the right problem first: start with the person you are trying to serve, test what you learn before you commit, and treat every idea as something to be proven, not defended. None of this is innate; it is practised, on a real decision, not a hypothetical one."
+    },
+    "ms": {
+      "h1": "Mulakan dengan orang yang ingin anda layani.",
+      "lede": "Produk boleh dibina dengan baik dan masih gagal, kerana ia menjawab soalan yang salah untuk orang yang salah. Pemikiran reka bentuk ialah disiplin mencari masalah yang tepat terlebih dahulu: mulakan dengan orang yang ingin anda layani, uji apa yang anda pelajari sebelum melabur, dan anggap setiap idea sebagai sesuatu yang perlu dibuktikan, bukan dipertahankan. Ini bukan naluri semula jadi; ia kemahiran yang dipraktikkan, pada keputusan sebenar, bukan andaian."
+    },
+    "zh": {
+      "h1": "从您要服务的人开始",
+      "lede": "产品做得再好，一旦解错了问题、认错了人，照样会失败。设计思维的功夫，是先找对问题：从您要服务的人开始，验证过后再投入，把每个想法都当作有待证明的假设，而不是要捍卫的结论。并非与生俱来的天分，而是练出来的功夫——练在真实的决策上，而不是假设上。"
+    }
+  },
+  "h1_source": "English and Malay/Chinese H1s taken verbatim from spec section 8's approved design-thinking example and section 13's headline shapes (\"Mulakan dengan orang yang ingin anda layani.\" / \"从您要服务的人开始\").",
+  "sections_reframed": [
+    "Renamed \"Reframing around the real \\u2018job to be done\\u2019\" -> \"The real job to be done\" / MS heading uses the owner term \"Tugas sebenar yang perlu diselesaikan (the right job to be done)\" with English gloss on first use / ZH heading uses the owner term \"真正要完成的任务（the right job to be done）\".",
+    "Renamed \"Common traps\" -> \"Where the shortcut cuts\" (and MS/ZH equivalents), with an intro sentence naming the shortcut, so \"the shortcut cuts\" is said only about methods per rule 3.5 of the spec.",
+    "Renamed \"From method to mastery\" -> \"Where this sits in the method\" (and MS/ZH equivalents) and removed the outcome-framing close (\"builds the habit until it becomes instinct\" / \"练成一种本能\" / \"sehingga menjadi naluri\"), replacing it with the spec's instead-of/write table row 58 pattern (\"practised on your own decisions across the six months\").",
+    "Removed the two in-body programme links (/how-it-works, /executive-mba and locale equivalents) and added a single closing programme pointer to the Programme fit check (/diagnostic, /ms/diagnostic, /zh/diagnostic), matching the sibling article /insights/advancement-question's existing pattern and the archetype's \"one factual programme pointer at most\" rule."
+  ],
+  "constants_used": "None imported directly (page did not previously import src/lib/content*.ts and the unit brief does not require adding new constant imports); \"the six months\" is named in running copy per spec section 11 (\"the six months may name the period in running copy\"), not tied to a numeric fact needing a token. The Programme fit check name matches PROGRAMME_FIT_CHECK constant values (\"Programme fit check\" / \"Semakan kesesuaian program\" / \"课程适配检查\") without importing, consistent with the sibling /insights/advancement-question page.",
+  "jsonld": "Article JSON-LD structure kept unchanged (same @type, mainEntityOfPage, image, datePublished/dateModified via ARTICLE_PUBLISHED/ARTICLE_REVIEWED, inLanguage, author, publisher, articleSection); only headline, description and about text fields rewritten to match the new H1/lede in each language. ARTICLE_REVIEWED left untouched (shared across all four insight articles; not bumped since ArticleAttribution.tsx is a component file out of scope for this unit).",
+  "exit_codes": {
+    "typecheck": 0,
+    "content_clarity_audit_default": 0,
+    "content_clarity_audit_strict_locales": 0
+  },
+  "audit_notes": "Fixed one real warning found in the new Chinese copy during self-check: '每个班次要花二十分钟' triggered the 'Chinese transport-schedule cohort word' banned pattern even though it correctly means a work shift, not a cohort; reworded to '每次轮班' so the unit carries zero warnings, per the instruction that warnings for this unit's files must be zero. Also fixed one Malay 'undefined norm' word (sering) and several sentence-initial 它/这 constructions in the pre-existing Chinese body copy (zh self-check item 17) while touching those paragraphs.",
+  "self_checks": {
+    "ms_section_7": "Ran the 20-item ms-register.md self-validation checklist by hand: no kamu/awak/korang/-lah/nak/tak/macam outside quotes (grep only matched legitimate substrings such as ialah/masalah/sering, all fixed or false positives); no undefined-norm qualifiers after the 'sering' fix; RM/date strings not used on this page (no facts introduced); Chartered Manager/HRD Corp/CMI/scholarship not mentioned (out of scope for this archetype); CTA at the end uses a verb+object+purpose form ('Gunakan ini pada keputusan yang sedang anda tangani sekarang' + 'Buka Semakan kesesuaian program'); no exclamation marks; headings are full noun phrases; no pengurus bekerja / projek aplikasi / perbualan program / laluan pilihan / program awam / atas talian / emel / kepemimpinan hits.",
+    "zh_section_7": "Ran the 18-item zh-register.md self-validation checklist by hand: no 约/大约/通常/一般/左右 before a quantity (fixed one '可能' ambiguous-qualifier hit flagged by the audit script); no urgency or prestige words; CMI/Chartered Manager/HRD Corp/scholarship not mentioned (out of scope); CTA verbs are 查看/使用-pattern ('把它用在您现在正面对的决策上' + '查看课程适配检查'), never 报名/录取/申请; 您 used throughout, no 你 outside quotes, no pronoun in any H1/H2; vocabulary sweep clean (no 参与者/创始人/首席执行官/营销/渠道/免费获取/班次-as-cohort after the fix); decoration budget respected (no more than one light turn of phrase per heading, none in the fee/recognition-adjacent areas since none exist on this page); full-width punctuation and 《》/\"\" conventions preserved from the existing file; fixed several pre-existing sentence-initial 它/这 constructions encountered while editing surrounding paragraphs (item 17)."
+  },
+  "left_for_reviewer": [
+    "Confirm the MS/ZH headings using the owner's local-term rule for 'the right job to be done' (\"Tugas sebenar yang perlu diselesaikan (the right job to be done)\" / \"真正要完成的任务（the right job to be done）\") read naturally as section headings and not as calques; I placed the English gloss in an italic span for MS per the on-first-use bracket rule.",
+    "I deliberately did not name 'servant leadership' / 'kepimpinan berkhidmat (servant leadership)' / '仆人式领导 (servant leadership)' anywhere on this page, reading spec section 6 as reserving that literal term for /how-it-works or the guide introduction; the messaging-map digest's 'opps' note suggested naming it here, so please confirm this reading is correct for the review pass.",
+    "ARTICLE_REVIEWED (shared review date across all four insight articles) was not changed, since it lives in a component file (ArticleAttribution.tsx) that is out of scope for this unit; if this rewrite counts as the 'substantive review' the messaging-map risk flags, the owner/orchestrator may want to bump it once across all four articles together rather than per-unit."
+  ]
+}

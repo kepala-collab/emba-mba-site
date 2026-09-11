@@ -1,0 +1,20 @@
+{
+  "unit": "insights-first-principles",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/insights/first-principles-thinking/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "checksRun": [
+    "Watchlist scan: zero hits on selalunya/biasanya/kebanyakan (writer already removed 'selalunya' per audit rule), laluan pilihan, Tempah, kamu/awak/-lah/nak/tak.",
+    "H1 'Daripada jawapan yang diwarisi kepada keputusan yang boleh disahkan' = 9 words, at the limit, acceptable.",
+    "No verdict on reader; shortcut critique aimed only at the benchmarking method, never at the reader or other programmes.",
+    "One factual programme pointer only (PROGRAMME_FIT_CHECK.ms).",
+    "No facts/fees/CMI claims on this page (generic editorial content), so no boundary check applies.",
+    "node scripts/content-clarity-audit.mjs and npm run typecheck: clean, zero warnings on this file."
+  ],
+  "fixesApplied": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

@@ -63,6 +63,8 @@ const bannedMs = [
   ["Malay Chartered Manager as next stage", /\blaluan lanjutan\b/i],
   ["Malay retired preferred-route phrasing", /\blaluan pilihan\b/i],
   ["Malay retired session-booking phrasing", /\bTempah sesi\b/i],
+  ["Malay investment-framing fees link", /\bhalaman pelaburan\b/i],
+  ["Malay written-form calque", /\bdalam bentuk bertulis\b/i],
 ];
 
 const bannedZh = [

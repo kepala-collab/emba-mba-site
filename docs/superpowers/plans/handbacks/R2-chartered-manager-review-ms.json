@@ -1,0 +1,21 @@
+{
+  "unit": "chartered-manager-malaysia",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/chartered-manager-malaysia/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "checksPassed": [
+    "Chartered Manager described consistently as 'laluan CMI yang berasingan dan tidak wajib' / 'laluan yang berasingan', never 'laluan pilihan'.",
+    "H1 'Pengiktirafan untuk kerja yang anda boleh tunjukkan.' = 7 words, within the 9-word cap.",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS appears in the hero and again beside every subsequent CMI/certificate mention, keeping the boundary in the same viewport as each claim.",
+    "'secara bertulis' used correctly in the preparation list; no 'dalam bentuk bertulis'.",
+    "Programme name kept in English throughout ('program Executive MBA', 'Future Ready Executive MBA' contexts elsewhere on site); CMI credential name in English with Malay framing.",
+    "No 'permohonan' used for an enquiry (only for the Chartered Manager membership application, a genuine application, which is correct)."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "CHARTERED_MANAGER_BOUNDARY_MS is composed locally in this file rather than hoisted into content-ms.ts, matching the writer's note; no change made since the wording matches the site-wide pattern already used verbatim elsewhere."
+  ]
+}

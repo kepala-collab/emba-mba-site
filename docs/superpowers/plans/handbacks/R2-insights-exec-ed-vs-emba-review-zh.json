@@ -1,0 +1,30 @@
+{
+  "unit": "insights-exec-ed-vs-emba",
+  "language": "zh",
+  "filesReviewed": ["src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx",
+      "line": 74,
+      "problem": "'Executive MBA 则有两种指法' used 指法 (finger technique / piano fingering), a wrong-word error that makes the sentence read as nonsense to a native speaker; the intended meaning is 'two ways of referring to it'.",
+      "fix": "Corrected to '两种说法'."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx",
+      "line": 116,
+      "problem": "Comparison question used '离岗时间', a mainland corporate-HR calque (在岗/离岗) flagged by zh-register.md as off-register for Malaysian Chinese.",
+      "fix": "Changed to '请假时间'."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/executive-education-vs-executive-mba/page.tsx",
+      "line": 140,
+      "problem": "CtaSection heading '聊聊您下一步要解决的任务。' carried a trailing period and the pronoun 您 in a headline.",
+      "fix": "Reworded to '聊聊下一步要解决的任务' (no trailing period, no pronoun)."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "The Malay sentence '(disokong oleh CMI)' equivalent — the EN writer's handback for this unit notes the Malay CMI-endorsement verb is a spec-mandated exception (owner decision 2026-09-10 §14.1). The Chinese rendering here already uses the owner's locked '由 CMI 颁发并认可' wording (issued and recognised), so no zh-specific action was needed; flagging only for cross-checking against the Malay reviewer's pass, since the two languages resolve the same owner decision differently by design."
+  ]
+}

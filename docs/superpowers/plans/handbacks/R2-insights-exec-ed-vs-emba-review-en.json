@@ -1,0 +1,26 @@
+{
+  "unit": "insights-exec-ed-vs-emba",
+  "language": "en",
+  "filesReviewed": ["src/app/(en)/insights/executive-education-vs-executive-mba/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/insights/executive-education-vs-executive-mba/page.tsx",
+      "line": 119,
+      "problem": "This article carried two internal programme pointers: an inline /executive-mba link naming the programme (required alongside the CMI recognition claim, kept) and a separate closing CTA_LABELS.guide button routing to /apply. The four sibling insight articles each converged on a single closing pointer to the Programme fit check via the PROGRAMME_FIT_CHECK constant; this article's closing button instead re-offered the guide, breaking the cross-unit 'at most one programme pointer, naming the check via the constant' pattern.",
+      "fixApplied": "Replaced the closing `<Link href=\"/apply\">{CTA_LABELS.guide}</Link>` button with `<Link href=\"/diagnostic\">Open the {PROGRAMME_FIT_CHECK.en}</Link>`, importing PROGRAMME_FIT_CHECK and dropping the now-unused CTA_LABELS import. Left the inline /executive-mba citation in 'The short answer' section untouched: it is not a promotional pointer but the factual naming required to carry CERTIFICATE_POSITIONING.professionalRelevance in the same paragraph as the CMI claim (governance checklist item 4)."
+    }
+  ],
+  "crossUnitChecks": {
+    "compareProgrammesTitleMatch": "N/A — different article.",
+    "bannedLabels": "Pass.",
+    "programmePointerViaConstant": "Fixed — see above; now one pointer, via the constant, consistent with the other four insight articles.",
+    "servantLeadershipNaming": "N/A — term not used; this is a comparison archetype (spec section 8 'Insights' comparison example), which appropriately carries the 'Built for'/COMPARISON_SCOPE machinery instead."
+  },
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "This unit's writer flagged that ARTICLE_REVIEWED/PUBLISHED for this page is a page-local const (2026-08-21), not the shared component constant the other four articles use — confirming this is intentional per the writer's note, but flagging again since it means this page's 'reviewed' date will not move in step with the other three if the owner later bumps ARTICLE_REVIEWED site-wide.",
+      "Confirm the 'Built for' row and comparison-table framing in this article reads consistently against the same pattern on /executive-mba-vs-mba, which this reviewer did not open (out of scope: only the (en)/insights tree was in this dispatch)."
+  ],
+  "auditAfterFixes": { "typecheckExitCode": 0, "contentClarityAuditExitCode": 0 }
+}

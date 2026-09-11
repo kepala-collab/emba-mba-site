@@ -1,12 +1,12 @@
 import Link from "next/link";
 import PrintBriefButton from "@/components/site/PrintBriefButton";
-import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, SIGNATURE_QUOTE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, PROGRAMME_YEAR, SIGNATURE_QUOTE } from "@/lib/content";
 import { HRD_CORP_CLAIM_MS, PROGRAMME_AUDIENCE_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms/resources/advancement-brief", {
-  title: "Panduan Program Executive MBA",
-  description: "Panduan program yang boleh dicetak: untuk siapa program ini, struktur enam bulan, kaedah aplikasi, yuran peserta Malaysia, pengiktirafan CMI dan langkah seterusnya.",
+  title: `Panduan program ${PROGRAMME_YEAR}`,
+  description: "Ringkasan keputusan yang boleh dicetak untuk pengurus yang bekerja: kesesuaian program, projek amali perniagaan, struktur enam bulan, yuran penuh untuk peserta Malaysia, pengiktirafan CMI dan perkara yang perlu disahkan.",
 });
 
 export default function AdvancementBriefPage() {
@@ -18,9 +18,9 @@ export default function AdvancementBriefPage() {
       </div>
       <article className="brief-document">
         <header>
-          <p className="mono sec-k">Panduan program Executive MBA</p>
-          <h1>Panduan Program Executive MBA</h1>
-          <p>Penerangan program yang ringkas dan padat untuk pengurus yang sedang bekerja — untuk anda yang sedang menimbang keupayaan yang patut dibina pada fasa pembangunan profesional seterusnya.</p>
+          <p className="mono sec-k">Panduan program {PROGRAMME_YEAR}</p>
+          <h1>Ringkasan keputusan untuk pengurus yang bekerja.</h1>
+          <p>Tanggungjawab anda semakin luas. Gunakan ringkasan ini untuk menentukan sama ada satu isu perniagaan sebenar dalam tanggungjawab anda sudah sedia untuk pelan yang disemak oleh fakulti.</p>
         </header>
         <section className="brief-chapter"><span className="mono">01 / Kesesuaian</span><div><h2>Mulakan daripada keperluan kerja, bukan daripada gelaran.</h2><p>{PROGRAMME_AUDIENCE_MS}</p><p>Bawa satu situasi perniagaan sebenar yang anda hadapi sekarang: isu strategik, keutamaan transformasi, jurang keupayaan, atau keputusan yang memberi kesan besar.</p></div></section>
         <section className="brief-chapter"><span className="mono">02 / Kaedah</span><div><h2>Gunakan cara berfikir yang tersusun pada situasi sebenar anda.</h2><p>{FACTS.durationMonths} bulan ini merangkumi {FACTS.trainingDays} hari latihan, {FACTS.liveSessions} sesi berpandu, rangka kerja pengamal, diagnostik, bimbingan dan projek amali perniagaan. Fokus pembelajaran meliputi sistem, bukti, andaian, pilihan dan pelaksanaan.</p><div className="brief-facts"><div><strong>{FACTS.trainingDays} hari</strong><span>Latihan program</span></div><div><strong>{FACTS.liveSessions} sesi</strong><span>Diatur sepanjang program</span></div><div><strong>{FACTS.moduleCount} modul</strong><span>Rangka kerja aplikasi</span></div></div></div></section>

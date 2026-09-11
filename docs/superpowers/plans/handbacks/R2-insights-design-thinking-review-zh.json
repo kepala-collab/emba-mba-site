@@ -1,0 +1,25 @@
+{
+  "unit": "insights-design-thinking",
+  "language": "zh",
+  "filesReviewed": ["src/app/(zh)/zh/insights/design-thinking-for-business/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/insights/design-thinking-for-business/page.tsx",
+      "line": 148,
+      "problem": "Body sentence used the hedge word '往往' before an unsupported generalisation ('往往会浮现出另一件事'), an undefined-norm violation.",
+      "fix": "Removed '往往', rewording to '就会浮现出另一件事'."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/design-thinking-for-business/page.tsx",
+      "line": 200,
+      "problem": "CtaSection heading '动手之前，先弄清您要服务的人真正在乎什么。' carried a trailing period, contained the pronoun 您, and at roughly 19 characters far exceeded the 14-character headline limit.",
+      "fix": "Shortened to '先弄清要服务的人，再动手' (11 characters, no trailing period, no pronoun)."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "The page H1 '从您要服务的人开始' contains 您, which the general register limit ('no 您 or 你 in any headline') forbids. This exact string is, however, the owner-approved verbatim Chinese headline given in spec section 8 (Insights archetype example) and section 13 (headline shapes for design thinking). Left unchanged as a spec-locked exception; flagging for owner confirmation that this specific headline is meant to override the general no-pronoun-in-headline rule.",
+    "The writer's handback records an explicit decision not to name 'servant leadership' / 仆人式领导（servant leadership）anywhere on this page, reading spec section 6 as reserving the literal term for /how-it-works or the guide introduction. Confirmed correct on review: the English source page for design-thinking-for-business does not name 'servant leadership' literally either, so the Chinese page is consistent with the rule that the term renders only where the English names it."
+  ]
+}

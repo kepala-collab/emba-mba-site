@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import JsonLd from "@/components/site/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo";
 import { isCampaignRoute, localeOfPath } from "@/lib/locale-routes";
-import { PROGRAMME_FIT_CHECK } from "@/lib/content";
+import { PROGRAMME_FIT_CHECK, PROGRAMME_YEAR } from "@/lib/content";
 
 type Item = { name: string; path: string };
 
@@ -44,7 +44,7 @@ const ROUTES: Record<string, Item[]> = {
   "/how-it-works": [HOME, PROGRAMME, { name: "How it works", path: "/how-it-works" }],
   "/hrd-corp-claimable": [HOME, FEES, { name: "Employer-led HRD Corp funding", path: "/hrd-corp-claimable" }],
   "/insights": [HOME, RESOURCES, INSIGHTS],
-  "/insights/advancement-question": [HOME, RESOURCES, INSIGHTS, { name: "How to compare programmes", path: "/insights/advancement-question" }],
+  "/insights/advancement-question": [HOME, RESOURCES, INSIGHTS, { name: "How to compare leadership programmes", path: "/insights/advancement-question" }],
   "/insights/design-thinking-for-business": [HOME, RESOURCES, INSIGHTS, { name: "Design thinking", path: "/insights/design-thinking-for-business" }],
   "/insights/executive-education-vs-executive-mba": [HOME, RESOURCES, INSIGHTS, { name: "Executive education vs Executive MBA", path: "/insights/executive-education-vs-executive-mba" }],
   "/insights/first-principles-thinking": [HOME, RESOURCES, INSIGHTS, { name: "First-principles thinking", path: "/insights/first-principles-thinking" }],
@@ -55,7 +55,7 @@ const ROUTES: Record<string, Item[]> = {
   "/mba-for-working-professionals": [HOME, PROGRAMME, { name: "For working professionals", path: "/mba-for-working-professionals" }],
   "/privacy": [HOME, { name: "Privacy policy", path: "/privacy" }],
   "/resources": [HOME, RESOURCES],
-  "/resources/advancement-brief": [HOME, RESOURCES, { name: "Advancement brief", path: "/resources/advancement-brief" }],
+  "/resources/advancement-brief": [HOME, RESOURCES, { name: `The ${PROGRAMME_YEAR} programme guide`, path: "/resources/advancement-brief" }],
   "/terms": [HOME, { name: "Terms & conditions", path: "/terms" }],
 
   "/zh/apply": [ZH_HOME, { name: "课程咨询", path: "/zh/apply" }],
@@ -69,11 +69,11 @@ const ROUTES: Record<string, Item[]> = {
   "/zh/faq": [ZH_HOME, ZH_RESOURCES, { name: "常见问题", path: "/zh/faq" }],
   "/zh/fees": [ZH_HOME, ZH_FEES],
   "/zh/how-it-works": [ZH_HOME, ZH_PROGRAMME, { name: "课程方法", path: "/zh/how-it-works" }],
-  "/zh/insights/advancement-question": [ZH_HOME, ZH_RESOURCES, { name: "如何比较管理课程", path: "/zh/insights/advancement-question" }],
+  "/zh/insights/advancement-question": [ZH_HOME, ZH_RESOURCES, { name: "如何比较领导力课程", path: "/zh/insights/advancement-question" }],
   "/zh/intakes": [ZH_HOME, ZH_FEES, { name: "2026 开课日期", path: "/zh/intakes" }],
   "/zh/privacy": [ZH_HOME, { name: "隐私政策", path: "/zh/privacy" }],
   "/zh/resources": [ZH_HOME, ZH_RESOURCES],
-  "/zh/resources/advancement-brief": [ZH_HOME, ZH_RESOURCES, { name: "管理晋升决策简报", path: "/zh/resources/advancement-brief" }],
+  "/zh/resources/advancement-brief": [ZH_HOME, ZH_RESOURCES, { name: `${PROGRAMME_YEAR} 年课程指南`, path: "/zh/resources/advancement-brief" }],
   "/zh/terms": [ZH_HOME, { name: "条款与条件", path: "/zh/terms" }],
 
   "/ms/apply": [MS_HOME, { name: "Pertanyaan program", path: "/ms/apply" }],
@@ -87,11 +87,11 @@ const ROUTES: Record<string, Item[]> = {
   "/ms/faq": [MS_HOME, MS_RESOURCES, { name: "Soalan lazim", path: "/ms/faq" }],
   "/ms/fees": [MS_HOME, MS_FEES],
   "/ms/how-it-works": [MS_HOME, MS_PROGRAMME, { name: "Cara program berjalan", path: "/ms/how-it-works" }],
-  "/ms/insights/advancement-question": [MS_HOME, MS_RESOURCES, { name: "Cara membandingkan program pengurusan", path: "/ms/insights/advancement-question" }],
+  "/ms/insights/advancement-question": [MS_HOME, MS_RESOURCES, { name: "Cara membandingkan program kepimpinan", path: "/ms/insights/advancement-question" }],
   "/ms/intakes": [MS_HOME, MS_FEES, { name: "Pengambilan 2026", path: "/ms/intakes" }],
   "/ms/privacy": [MS_HOME, { name: "Dasar privasi", path: "/ms/privacy" }],
   "/ms/resources": [MS_HOME, MS_RESOURCES],
-  "/ms/resources/advancement-brief": [MS_HOME, MS_RESOURCES, { name: "Ringkasan keputusan langkah seterusnya", path: "/ms/resources/advancement-brief" }],
+  "/ms/resources/advancement-brief": [MS_HOME, MS_RESOURCES, { name: `Panduan program ${PROGRAMME_YEAR}`, path: "/ms/resources/advancement-brief" }],
   "/ms/terms": [MS_HOME, { name: "Terma dan syarat", path: "/ms/terms" }],
 };
 

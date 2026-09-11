@@ -20,7 +20,7 @@ export const HRD_CORP_CLAIM_MS =
 
 // Mirror of HRD_CORP_CLAIM.label in content.ts.
 export const HRD_CORP_CLAIM_LABEL_MS =
-  "Pembiayaan HRD Corp yang diterajui majikan · tertakluk kepada kelulusan";
+  "Pembiayaan HRD Corp yang dipohon oleh majikan, ditentukan oleh HRD Corp · tertakluk kepada kelulusan";
 
 // Mirror of INCLUSIONS[5].s in content.ts.
 export const INCLUSIONS_CMI_CERTIFICATE_MS =
@@ -40,6 +40,12 @@ export const PROGRAMME_AUDIENCE_MS =
 export const REFUND_TERMS_MS =
   "Terma pendaftaran ABC yang ditandatangani menyatakan kelayakan bayaran balik, tempoh notis, jumlah yang boleh dikembalikan, syarat pemulangan bahan pembelajaran dan tarikh pemprosesan. Peserta menerima dan menyemak terma tersebut sebelum membuat bayaran; tiada janji bayaran balik dibuat di luar terma yang ditandatangani.";
 
+// Malay mirror of COMPARISON_SCOPE (English constant in src/lib/content.ts):
+// the reference-group definition required beside every rendering of the
+// comparison table.
+export const COMPARISON_SCOPE_MS =
+  "Jadual ini mentakrifkan MBA akademik rujukan sebagai program 18–24 bulan yang dibina di sekitar modul akademik, tugasan atau peperiksaan, dan disertasi atau tesis. Ia tidak menggambarkan setiap program MBA.";
+
 export const COMPARISON_MS = [
   { k: "Tempoh pengajian", them: "18–24 bulan", us: `${FACTS.durationMonths} bulan: ${FACTS.trainingDays} hari latihan, diselesaikan dalam ${FACTS.liveSessions} sesi berpandu` },
   { k: "Fokus pembelajaran", them: "Teori akademik, penyelidikan dan analisis kes", us: "Situasi perniagaan sebenar, keputusan strategik, dan rangka kerja yang boleh anda guna berulang kali" },
@@ -47,7 +53,7 @@ export const COMPARISON_MS = [
   { k: "Peranan fasilitator", them: "Pengajaran akademik dan penyeliaan penyelidikan", us: "Pengamal industri, perunding dan jurulatih eksekutif" },
   { k: "Alat utama", them: "Buku teks akademik, literatur penyelidikan dan kajian kes", us: `Metodologi F.A.S.T. dan ${FACTS.moduleCount} rangka kerja perniagaan praktikal` },
   { k: "Bentuk pengajian", them: "Mengikut jadual akademik yang ditetapkan institusi penganugerah", us: `${FACTS.liveSessions} hujung minggu berjadual sepanjang program selama ${FACTS.durationMonths} bulan; peserta terus bekerja sepenuh masa` },
-  { k: "Yuran program", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: `Yuran standard ${FACTS.priceStd}; biasiswa ${FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis, dengan sebarang anugerah dan yuran peserta disahkan secara individu dalam bentuk bertulis` },
+  { k: "Yuran program", them: "Yuran pengajian dan caj tambahan yang ditetapkan institusi", us: `Yuran standard ${FACTS.priceStd}; biasiswa ${FACTS.scholarshipProvider} terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis, dengan sebarang anugerah dan yuran peserta disahkan secara individu secara bertulis` },
   { k: "Sifat kelayakan", them: "Ijazah MBA akademik daripada institusi penganugerah", us: "Sijil pengiktirafan program profesional CMI; bukan ijazah akademik terakreditasi MQA" },
 ] as const;
 
@@ -71,7 +77,7 @@ export const CORE_PAGES_MS = {
   programme: {
     eyebrow: `Executive MBA ${FACTS.durationMonths} bulan · Diiktiraf CMI (UK)`,
     title: "Bawa satu keputusan sebenar. Pulang dengan kaedahnya.",
-    intro: `Sepanjang ${FACTS.durationMonths} bulan, anda mengambil satu isu semasa dalam tanggungjawab anda sendiri dan membawanya daripada takrifan masalah kepada pelan tindakan bertulis yang disemak fasilitator. Ini berlaku dalam ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berjadual, dengan bimbingan individu dan satu projek amali perniagaan, sambil anda kekal dalam jawatan anda. ${PROGRAMME_POSITIONING_MS} Ia program pembangunan profesional bukan akademik selama enam bulan; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.`,
+    intro: `Sepanjang ${FACTS.durationMonths} bulan, anda mengambil satu isu semasa dalam tanggungjawab anda sendiri dan membawanya daripada takrifan masalah kepada pelan tindakan bertulis yang disemak fasilitator. Ini berlaku dalam ${FACTS.trainingDays} hari latihan merentasi ${FACTS.liveSessions} sesi berjadual, dengan bimbingan individu dan satu projek amali perniagaan, sambil anda kekal dalam jawatan anda. ${PROGRAMME_POSITIONING_MS} Ia program pembangunan profesional bukan akademik selama ${FACTS.durationMonths} bulan; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia.`,
     sections: [
       [`Susunan program ${FACTS.durationMonths} bulan`, `Selesaikan ${FACTS.trainingDays} hari latihan, ${FACTS.liveSessions} sesi berpandu, projek amali perniagaan dan bimbingan. Peserta yang memenuhi keperluan program menerima CMI Certificate of Recognition. ${CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}`],
       ["Laluan Chartered Manager yang berasingan", "Chartered Manager ialah laluan CMI yang berasingan dan tidak wajib, ditentukan oleh CMI, dengan kelayakan, penilaian dan yuran tersendiri. Ia tidak termasuk dalam program ini atau yuran yang diterbitkan, dan tidak diberikan secara automatik kerana menamatkan program."],
@@ -140,7 +146,7 @@ export const FAQS_MS = [
   ["Adakah ini ijazah terakreditasi MQA?", "Bukan. Ini ialah program pembangunan profesional yang diiktiraf oleh CMI, United Kingdom — bukan ijazah akademik terakreditasi MQA."],
   ["Berapakah kos program ini, secara bertulis?", `Yuran standard ialah ${FACTS.priceStd}. Biasiswa ${FACTS.scholarshipProvider} adalah terhad dan dianugerahkan secara terpilih kepada pemohon Malaysia yang layak, selepas penilaian dan kelulusan bertulis. Sebarang anugerah dan yuran peserta disahkan secara individu secara bertulis; biasiswa tidak automatik.`],
   ["Siapa yang menentukan pembiayaan majikan?", HRD_CORP_CLAIM_MS],
-  ["Bolehkah syarikat mendaftarkan pengasas atau pasukan kanannya?", "Program ini terbuka kepada peserta peringkat eksekutif ke atas, termasuk pengurus kanan, pengarah, pemilik perniagaan dan pengasas. Untuk pembiayaan HRD Corp yang diterajui majikan, syarikat mesti berdaftar dengan HRD Corp, mempunyai baki levi dan mengemukakan permohonan sebelum program bermula. Pengasas atau pemilik boleh disertakan apabila syarikat mengesahkan peserta berada dalam senarai gaji. HRD Corp menentukan kelayakan dan jumlah yang diluluskan."],
+  ["Bolehkah syarikat mendaftarkan pengasas atau pasukan kanannya?", "Program ini terbuka kepada peserta peringkat eksekutif ke atas, termasuk pengurus kanan, pengarah, pemilik perniagaan dan pengasas. Untuk pembiayaan HRD Corp yang dipohon oleh majikan, ditentukan oleh HRD Corp, syarikat mesti berdaftar dengan HRD Corp, mempunyai baki levi dan mengemukakan permohonan sebelum program bermula. Pengasas atau pemilik boleh disertakan apabila syarikat mengesahkan peserta berada dalam senarai gaji. HRD Corp menentukan kelayakan dan jumlah yang diluluskan."],
   ["Bagaimana CMI menentukan laluan Chartered Manager?", "CMI kini menerbitkan laluan Full Assessment, CMI Fast Track dan Apprenticeship. Full Assessment terbuka kepada pengurus yang memiliki ijazah dalam pengurusan, perniagaan atau kepimpinan berserta tiga tahun pengalaman pengurusan, atau sekurang-kurangnya lima tahun pengalaman pengurusan tanpa kelayakan khusus pengurusan. Fast Track memerlukan kelayakan CMI yang tersenarai dan disiapkan dalam tempoh lima tahun berserta sekurang-kurangnya tiga tahun pengalaman pengurusan. Program ini diiktiraf CMI (CMI Recognised), bukan kelayakan CMI, jadi CMI perlu mengesahkan laluan yang berkenaan bagi setiap peserta."],
   ["Bagaimana jika saya tidak dapat menghadiri satu sesi?", "Hubungi pasukan program sebelum sesi bermula. ABC akan mengesahkan secara bertulis urusan gantian melalui video yang ditetapkan atau kohort susulan yang ditetapkan."],
   ["Apakah terma bayaran balik?", REFUND_TERMS_MS],

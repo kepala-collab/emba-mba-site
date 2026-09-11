@@ -27,7 +27,7 @@ export const PROGRAMME_POSITIONING_ZH =
   "面向未来商业领导力的 Executive MBA，由 CMI 颁发并认可。";
 
 export const PROGRAMME_POSITIONING_MS =
-  "Executive MBA dalam Kepimpinan Perniagaan Masa Hadapan, dianugerahkan dan disokong oleh CMI.";
+  "Executive MBA on Future Ready Business Leadership, dianugerahkan dan disokong oleh CMI.";
 
 export const CTA_LABELS = {
   guide: `Get the ${PROGRAMME_YEAR} programme guide`,

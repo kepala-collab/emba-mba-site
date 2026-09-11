@@ -1,0 +1,52 @@
+{
+  "unit": "campaign-pages",
+  "filesChanged": [
+    "src/app/(en)/lp/google/page.tsx",
+    "src/app/(en)/lp/meta/page.tsx",
+    "src/app/(ms)/ms/lp/google/page.tsx",
+    "src/app/(ms)/ms/lp/meta/page.tsx",
+    "src/app/(zh)/zh/lp/google/page.tsx",
+    "src/app/(zh)/zh/lp/meta/page.tsx"
+  ],
+  "filesUntouched": [
+    "No component or src/lib/content*.ts files were edited, per the dispatch instruction. All facts are drawn from existing constants (FACTS, ABC_PROFILE, CERTIFICATE_POSITIONING, COMPARISON, COMPARISON_SCOPE, CTA_LABELS, HRD_CORP_CLAIM and their content-ms.ts/content-zh.ts mirrors)."
+  ],
+  "h1AndLede": {
+    "google": {
+      "en": { "h1": "Bring a business issue. Leave with an action plan.", "lede": "Across 6 months, 6 facilitated training days across 3 scheduled sessions, coaching and an applied project on a current issue in your own organisation, while you keep working. [ABC_PROFILE.programmePositioning]" },
+      "ms": { "h1": "Datang dengan isu perniagaan, pulang dengan pelan tindakan.", "lede": "Sepanjang 6 bulan, 6 hari latihan merentasi 3 sesi berjadual, bimbingan dan projek amali dijalankan atas isu semasa dalam organisasi anda sendiri, sambil anda terus bekerja. [PROGRAMME_POSITIONING_MS + bukan-MQA sentence]" },
+      "zh": { "h1": "带着课题来，带着方案走。", "lede": "照常在职工作的同时，6 个月内通过 6 个培训日、3 次研习课、教练与应用项目，把您所在机构的一项现有课题变成书面行动方案。[PROGRAMME_POSITIONING_ZH + 非学术性质句]" }
+    },
+    "meta": {
+      "en": { "h1": "From informal decisions to a method you can show.", "lede": "Across 6 months, 6 facilitated training days across 3 scheduled sessions, coaching and an applied project on a current issue in your own organisation, while you keep working. [ABC_PROFILE.programmePositioning]" },
+      "ms": { "h1": "Daripada keputusan tidak formal kepada kaedah yang boleh ditunjukkan.", "lede": "Sepanjang 6 bulan, 6 hari latihan merentasi 3 sesi berjadual, bimbingan dan projek amali dijalankan atas isu semasa dalam organisasi anda sendiri, sambil anda terus bekerja. [PROGRAMME_POSITIONING_MS + bukan-MQA sentence]" },
+      "zh": { "h1": "从随性决策，到可展示的方法。", "lede": "照常在职工作的同时，6 个月内通过 6 个培训日、3 次研习课、教练与应用项目，把您所在机构的一项现有课题变成书面行动方案。[PROGRAMME_POSITIONING_ZH + 非学术性质句]" }
+    }
+  },
+  "constantsUsed": [
+    "FACTS.durationLong/durationMonths/trainingDays/liveSessions/priceStd/scholarshipEligibility/cohorts",
+    "ABC_PROFILE.programmePositioning (EN hero/lede — carries positioning + not-an-MQA boundary in one block)",
+    "CERTIFICATE_POSITIONING.professionalRelevance and .distinction (EN, added beside every certificate/CMI mention in the first viewport, per owner decision 14.2)",
+    "CTA_LABELS.guide / CTA_LABELS.zh.guide / CTA_LABELS.ms.guide (CtaSection heading and buttons)",
+    "CTA_LABELS.zh.conversation / CTA_LABELS.ms.conversation (secondary WhatsApp/conversation copy)",
+    "COMPARISON / COMPARISON_MS / COMPARISON_ZH and COMPARISON_SCOPE (EN comparison table now uses the literal COMPARISON_SCOPE constant instead of a hand-written paraphrase)",
+    "HRD_CORP_CLAIM.responsibility / HRD_CORP_CLAIM_MS / HRD_CORP_CLAIM_ZH",
+    "PROGRAMME_POSITIONING_MS / PROGRAMME_POSITIONING_ZH, composed locally with the standard 'non-academic six-month programme, not MQA-accredited' boundary sentence used elsewhere in content-ms.ts/content-zh.ts (no new constant added; matches the existing CORE_PAGES_MS.method.intro pattern)",
+    "CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS / _ZH, INCLUSIONS_CMI_CERTIFICATE_MS / _ZH"
+  ],
+  "auditResults": {
+    "typecheckExitCode": 0,
+    "contentClarityAuditExitCode": 0,
+    "note": "Initial run flagged 4 'Chinese transport-schedule cohort word' warnings in the two zh files for '班次' (cohort count labels). Fixed by switching to '届' per the glossary rule (届/班, never 班次). Re-run: 0 warnings attributable to the 6 unit files; audit passed across 178 files overall."
+  },
+  "selfCheckResults": {
+    "ms": "Grepped both ms files for: laluan pilihan, perbualan program, pengurus bekerja, projek aplikasi, exclamation marks, and kamu/awak/-lah/nak/tak — zero hits. Headlines: google H1 'Datang dengan isu perniagaan, pulang dengan pelan tindakan.' = 8 words; meta H1 'Daripada keputusan tidak formal kepada kaedah yang boleh ditunjukkan.' = 9 words (both within the 9-word cap). Conversation CTA sourced from CTA_LABELS.ms.conversation ('Jadualkan sesi perbincangan program'), never 'tempah'. RM figures use FACTS.priceStd (no space, comma thousands) unchanged.",
+    "zh": "Grepped both zh files for: 班次 (fixed), 参与者, 颁授并背书, 身份启用, 折扣码, 免费获取, 渠道, 创始人, 首席执行官, 营销, 周末 — zero hits. H1s: google '带着课题来，带着方案走' = 10 characters; meta '从随性决策，到可展示的方法' = 12 characters (both within the 14-character, two-beat cap; no sentence-initial 它/这; no pronoun in either H1). Scholarship lines keep 名额有限 bound to 须经评估/书面批准/并非自动授予 (never as a bare seat-urgency device). Fee uses FACTS.priceStd verbatim."
+  },
+  "leftForReviewer": [
+    "Google and Meta pages differ in hero framing (Google: 'bring an issue / leave with a plan', decision-execution emphasis; Meta: 'informal decisions to a method', cross-functional pressure emphasis) but share every fact token, the same INCLUSIONS/COMPARISON data, the same HRD Corp/scholarship sentences and the same not-an-MQA boundary — please confirm the two emphases read as distinct enough for the ad platforms without diverging on any governed fact.",
+    "The professionalRelevance sentence (owner decision 14.2) was added as an additional fine-print paragraph in the hero column on all three languages, since the existing hero markup has no other sentence-level slot in the first viewport beside the lede — this adds one extra <p> per hero versus the pre-existing structure, but does not touch the campaign-navbar/campaign-footer/one-primary-CTA/mobile ordering structure the e2e suite checks.",
+    "Malay and Chinese scholarship/HRD Corp sentences in the lp/meta CTA sections were tightened to use the exact FACTS/HRD_CORP_CLAIM_MS/_ZH tokens; please double check the Chinese meta CtaSection area still reads naturally given it now carries slightly more boilerplate than the original hand-written sentence.",
+    "e2e-relevant structure (ids #apply, .campaign-fact-band, .campaign-path, .lpg-grid/.lpg-cmp classnames, CtaSection props, form placement before/after content) was left untouched everywhere; only text content, array literals' string values, and constant imports changed."
+  ]
+}

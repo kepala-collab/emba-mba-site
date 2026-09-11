@@ -1,0 +1,27 @@
+{
+  "unit": "conversion-pages",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/apply/page.tsx",
+    "src/app/(ms)/ms/contact/page.tsx",
+    "src/app/(ms)/ms/intakes/page.tsx",
+    "src/app/(ms)/ms/diagnostic/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass with one minor defect",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/apply/page.tsx",
+      "line": 10,
+      "problem": "Metadata title Title Case with function word capitalised ('Dapatkan Panduan Program 2026'); DBP heading rule wants sentence case.",
+      "fixApplied": "Changed to 'Dapatkan panduan program 2026'."
+    }
+  ],
+  "checksPassed": [
+    "contact/page.tsx: ENQUIRY_COMMITMENT_MS rendered verbatim via the constant; H1 'Bercakap dengan pasukan program.' = 4 words; no 'permohonan' used for the enquiry itself (only for the HRD Corp application, which is a genuine application).",
+    "diagnostic/page.tsx: title correctly uses PROGRAMME_FIT_CHECK.ms ('Semakan kesesuaian program'); no in-page copy beyond metadata.",
+    "intakes/page.tsx: 'secara bertulis' used correctly (not 'dalam bentuk bertulis'); 'Dibuka untuk pertanyaan.' used verbatim as the only availability wording; Chartered Manager rendered as 'laluan Chartered Manager yang berasingan dan tidak wajib, ditentukan oleh CMI' — never 'laluan pilihan'; H1 'Pilih bila enam bulan anda bermula.' = 6 words.",
+    "apply/page.tsx: ENQUIRY_COMMITMENT_MS rendered verbatim; is a metadata-only wrapper around the already-reviewed GuideApplyPage component, consistent with the writer hand-back."
+  ],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": []
+}

@@ -1,0 +1,22 @@
+{
+  "unit": "insights-design-thinking",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/insights/design-thinking-for-business/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "checksRun": [
+    "Servant leadership: correctly NOT named on this page (spec section 6 reserves the literal term for /how-it-works or the guide introduction). Confirmed English source also does not name it here — the writer's choice was correct.",
+    "Watchlist scan: zero hits on selalunya/biasanya/kebanyakan/laluan pilihan/Tempah/kamu/awak/-lah/nak/tak/ke atas/di antara.",
+    "H1 'Mulakan dengan orang yang ingin anda layani.' = 7 words, within limit.",
+    "'The right job to be done' rendered with owner local-term bracket rule on first use, English gloss kept.",
+    "One factual programme pointer only (Programme fit check / Semakan kesesuaian program).",
+    "node scripts/content-clarity-audit.mjs and npm run typecheck: clean, zero warnings on this file."
+  ],
+  "fixesApplied": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [
+    "Writer flagged uncertainty about whether servant leadership should be named here; review confirms it should not be (spec section 6), so no owner decision needed unless the owner wants to loosen that restriction site-wide."
+  ]
+}

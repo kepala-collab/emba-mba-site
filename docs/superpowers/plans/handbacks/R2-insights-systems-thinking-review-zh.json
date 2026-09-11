@@ -1,0 +1,36 @@
+{
+  "unit": "insights-systems-thinking",
+  "language": "zh",
+  "filesReviewed": ["src/app/(zh)/zh/insights/systems-thinking-for-leaders/page.tsx"],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(zh)/zh/insights/systems-thinking-for-leaders/page.tsx",
+      "line": 24,
+      "problem": "H1/JSON-LD headline '问题反复出现。领导者的系统思维。' used a full stop as the internal beat separator and carried a trailing full stop; both are banned on headlines (zh-register.md rule 27: beats separated by a space or 　, never a period; no trailing full stop).",
+      "fix": "Changed to '问题反复出现 领导者的系统思维' (space-separated beats, 14 characters, no trailing period) in both the H1 and the JSON-LD headline field."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/systems-thinking-for-leaders/page.tsx",
+      "lines": "64-66, 104-105",
+      "problem": "The page named the literal term '仆人式领导（servant leadership）' twice (lede and body), but the English source page (src/app/(en)/insights/systems-thinking-for-leaders/page.tsx) never names 'servant leadership' literally — it only uses 'serves'/'serving' as posture language. Spec section 6 also restricts naming the literal term to /how-it-works or the guide introduction. Naming it here is both an unlicensed addition beyond the English source and a second site-wide occurrence of a term meant to be named once.",
+      "fix": "Removed both occurrences of the named term, replacing them with the same 'serves the people inside the structure' posture language the English page uses, without naming servant leadership: lede now reads '……服务的正是身处其中的人。'; body now reads '……对结构负责的领导者，服务的是身处结构之中、必须在其中做事的人，而不只是发号施令。'"
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/systems-thinking-for-leaders/page.tsx",
+      "line": 176,
+      "problem": "Body sentence used the hedge word '往往' ('第一个答案往往一目了然'), an undefined-norm violation.",
+      "fix": "Replaced with '立刻' (removes the unsupported generalisation while keeping the meaning)."
+    },
+    {
+      "file": "src/app/(zh)/zh/insights/systems-thinking-for-leaders/page.tsx",
+      "line": 201,
+      "problem": "CtaSection heading '把它用在您现在正权衡的决定上。' carried a trailing period, contained the pronoun 您, and at 14 characters (excluding 您) was at the edge of the limit once the pronoun and filler were removed.",
+      "fix": "Shortened to '用在眼下正权衡的决定上' (11 characters, no trailing period, no pronoun)."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "This unit's own writer handback flagged the servant-leadership naming as something to confirm with the reviewer; on review, it is removed because the English source for this specific page does not name the term and spec section 6 limits the literal naming to /how-it-works or the guide introduction — flagging to the owner in case the intent was instead to update spec section 6 to permit naming it on additional insights pages."
+  ]
+}

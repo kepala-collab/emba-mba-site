@@ -5,11 +5,12 @@ import ArticleAttribution, { ARTICLE_PUBLISHED, ARTICLE_REVIEWED } from "@/compo
 import BreadcrumbJsonLd from "@/components/site/BreadcrumbJsonLd";
 import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
+import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 
 export const metadata = withSeo("/insights/systems-thinking-for-leaders", {
   title: "Systems Thinking for Leaders",
   description:
-    "A practical guide to systems thinking for business: feedback loops, delays, leverage points and anticipating second- and third-order consequences.",
+    "Why the same problem keeps returning, and the slower question systems thinking asks instead of assigning blame: what structure makes this failure the natural result?",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,14 +21,14 @@ export const metadata = withSeo("/insights/systems-thinking-for-leaders", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Systems Thinking for Leaders",
+  headline: "The same problem keeps returning. Systems thinking for leaders.",
   mainEntityOfPage: "https://futurereadymba.com/insights/systems-thinking-for-leaders",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "en-MY",
   description:
-    "A practical guide to systems thinking for business — feedback loops, delays, leverage points, and how to anticipate second- and third-order consequences before you act.",
+    "Blame is the quick answer. Systems thinking asks the slower question — what structure makes this failure the natural result — and treats the structure, not the person, as what a leader serves.",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,
@@ -54,14 +55,17 @@ export default function SystemsThinkingForLeaders() {
               <span className="l" />
               <span className="mono sec-k">Insights · Thinking</span>
             </div>
-            <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "16ch" }}>
-              Systems Thinking for Leaders
+            <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "20ch" }}>
+              The same problem keeps returning. Systems thinking for leaders.
             </h1>
             <ArticleAttribution />
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Systems thinking helps leaders examine the structure that repeatedly
-              produces a problem. It moves the analysis from isolated events to the
-              relationships, feedback loops and delays that influence the result.
+              Blame is the quick answer and it feels like action. Systems
+              thinking asks the slower question: what structure makes this
+              failure the natural result? A leader who takes responsibility for
+              the structure serves the people inside it. None of this is
+              innate; it is practised, and it is one of the seven disciplines
+              in the F.A.S.T. method.
             </p>
           </Reveal>
 
@@ -103,7 +107,9 @@ export default function SystemsThinkingForLeaders() {
               <strong>&ldquo;who is responsible for this failure?&rdquo;</strong>{" "}
               but <strong>&ldquo;what structure makes this failure the
               natural result?&rdquo;</strong> The first question produces blame
-              and turnover. The second produces durable change.
+              and turnover. The second produces durable change: a leader who
+              takes responsibility for the structure is serving the people who
+              have to work inside it, not just directing them.
             </p>
 
             <h2>The core concepts, explained simply</h2>
@@ -194,18 +200,16 @@ export default function SystemsThinkingForLeaders() {
 
             <h2>A trainable discipline</h2>
             <p>
-              None of this is innate. Systems thinking is a skill that improves
-              with structured practice, deliberate reflection and the language to
-              name what you are seeing. It is one of the seven disciplines at the
-              core of the{" "}
-              <Link href="/how-it-works">F.A.S.T. method</Link> that shapes the{" "}
-              <Link href="/executive-mba">Future Ready Executive MBA</Link> — a
-              programme built to move leaders from reacting to events toward
-              redesigning the systems that produce them.
+              None of this is innate; it is practised. Systems thinking is a
+              skill that improves with structured practice, deliberate
+              reflection and the language to name what you are seeing. It is
+              one of the seven disciplines in the F.A.S.T. method. The{" "}
+              <Link href="/diagnostic">{PROGRAMME_FIT_CHECK.en}</Link> turns
+              this question into the decision you are carrying now.
             </p>
             <p>
-              Learn to see the whole board, and you stop playing the same move
-              over and over. You start changing the game.
+              Learn to see the whole board, and you stop repeating the same
+              move. You start redesigning the game itself.
             </p>
             <h2>Source and further reading</h2>
             <p>
@@ -216,7 +220,7 @@ export default function SystemsThinkingForLeaders() {
         </div>
       </section>
 
-      <CtaSection programme="Executive MBA" heading="See the whole system. Lead it." />
+      <CtaSection programme="Executive MBA" heading="Apply it to the decision you are carrying now." />
     </>
   );
 }

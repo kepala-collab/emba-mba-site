@@ -1,0 +1,22 @@
+{
+  "unit": "resources",
+  "language": "ms",
+  "filesReviewed": [
+    "src/app/(ms)/ms/resources/page.tsx",
+    "src/app/(ms)/ms/resources/advancement-brief/page.tsx"
+  ],
+  "verdictBeforeFixes": "pass",
+  "problemsFound": [],
+  "checksRun": [
+    "Watchlist scan (selalunya/biasanya/kebanyakan, laluan pilihan, dalam bentuk bertulis, halaman pelaburan, Tempah, kamu/awak/-lah/nak/tak, ke atas, di antara): zero hits.",
+    "Naming: 'Executive MBA' kept in English throughout; 'kepimpinan' spelling used consistently (not kepemimpinan).",
+    "Boundaries: CMI Certificate of Recognition claim and the not-an-MQA-degree/not-a-regulated-qualification sentence sit in the same section (04 / Pengiktirafan) on the brief; Chartered Manager described as a separate, optional, CMI-decided route ('laluan CMI berasingan yang bersifat pilihan') both on the index CTA ('Lihat laluan CMI berasingan') and the brief.",
+    "Facts: FACTS.trainingDays/.liveSessions/.durationMonths/.moduleCount/.priceStd and HRD_CORP_CLAIM_MS used via constants, not retyped.",
+    "Governance: node scripts/content-clarity-audit.mjs — no warnings on either file.",
+    "Headline length: brief H1 'Ringkasan keputusan untuk pengurus yang bekerja.' (6 words); index H1 unchanged, already compliant."
+  ],
+  "fixesApplied": [],
+  "nativeReadingScoreAfterFixes": 9,
+  "ownerQuestions": [],
+  "notes": "Matches the writer's handback closely; the Chartered Manager CTA and boundary placement were already correct. No changes needed."
+}

@@ -6,48 +6,55 @@ import { withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/insights", {
-  title: "Insights — Thinking Frameworks for Leaders",
+  title: "Insights — Reasoning Methods for Your Own Decisions",
   description:
-    "Practical introductions to first-principles reasoning, systems thinking and design thinking for business decisions.",
+    "Practical guides to comparing programmes, and to first-principles, systems and design thinking, applied to a decision you already carry.",
 });
 
 const ARTICLES = [
   {
     kicker: "Decision guide",
+    title: "How to Compare Leadership Programmes",
+    slug: "/insights/advancement-question",
+    blurb:
+      "How to weigh capability, application, evidence, time and recognition before you commit to any programme.",
+  },
+  {
+    kicker: "Decision guide",
     title: "Executive Education vs Executive MBA",
     slug: "/insights/executive-education-vs-executive-mba",
     blurb:
-      "How to compare credential, duration, assessment, workplace application and academic status before choosing a programme.",
+      "How to weigh credential, duration, assessment, workplace application and academic status before you choose a programme.",
   },
   {
     kicker: "Thinking",
     title: "First-Principles Thinking for Business Leaders",
     slug: "/insights/first-principles-thinking",
     blurb:
-      "How to separate verified constraints from assumptions and develop options from foundational facts.",
+      "How to separate verified constraints from assumptions and build options from the facts underneath a decision.",
   },
   {
     kicker: "Thinking",
     title: "Systems Thinking for Leaders",
     slug: "/insights/systems-thinking-for-leaders",
     blurb:
-      "How to examine relationships, feedback loops and second-order consequences before deciding.",
+      "How to examine relationships, feedback loops and second-order consequences before you decide.",
   },
   {
     kicker: "Thinking",
     title: "Design Thinking for Business",
     slug: "/insights/design-thinking-for-business",
     blurb:
-      "How to combine customer evidence, prototypes and commercial constraints before committing resources.",
+      "How to weigh customer evidence, prototypes and commercial constraints before you commit resources.",
   },
 ];
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Insights — Thinking Frameworks for Leaders",
+  name: "Insights — Reasoning Methods for Your Own Decisions",
   description:
-    "Programme decision guides and practical introductions to first-principles, systems and design thinking for business decisions.",
+    "Programme comparison guides and practical introductions to first-principles, systems and design thinking, applied to a decision you already carry.",
   hasPart: {
     "@type": "ItemList",
     itemListElement: ARTICLES.map((a, i) => ({
@@ -70,11 +77,13 @@ export default function InsightsPage() {
           <Reveal>
             <div className="eyebrow">
               <span className="l" />
-              <span className="mono sec-k">Insights · Thinking</span>
+              <span className="mono sec-k">Insights · Reasoning methods</span>
             </div>
-            <h1 className="sec-h">Thinking frameworks for leaders</h1>
+            <h1 className="sec-h">The methods you practise on your own decisions</h1>
             <p className="sec-sub" style={{ maxWidth: 640 }}>
-              Decision guides and practical introductions to the reasoning methods used in the programme.
+              Each guide below takes a reasoning method — comparing programmes, examining a system, testing an
+              assumption, serving a customer — and applies it to a decision you already carry. None of this is
+              innate; it is practised.
             </p>
           </Reveal>
 
@@ -136,7 +145,7 @@ export default function InsightsPage() {
 
       <CtaSection
         programme="Executive MBA"
-        heading="Apply the thinking methods to your own business decisions."
+        heading="Apply these methods to the decision you are carrying now."
       />
     </>
   );

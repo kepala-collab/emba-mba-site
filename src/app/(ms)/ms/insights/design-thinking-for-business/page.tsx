@@ -7,9 +7,9 @@ import { EDITORIAL_TEAM_ID, PROVIDER_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/ms/insights/design-thinking-for-business", {
-  title: "Pemikiran Reka Bentuk untuk Perniagaan",
+  title: "Mulakan Dengan Orang yang Ingin Anda Layani",
   description:
-    "Panduan praktikal pemikiran reka bentuk untuk pemimpin: fahami pelanggan, takrifkan masalah, bina prototaip dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
+    "Pemikiran reka bentuk untuk pemimpin: cari masalah yang tepat sebelum membina, uji idea bersama orang yang ia ditujukan untuknya, dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -20,14 +20,14 @@ export const metadata = withSeo("/ms/insights/design-thinking-for-business", {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Pemikiran Reka Bentuk untuk Perniagaan: Panduan Praktikal untuk Pemimpin",
+  headline: "Mulakan Dengan Orang yang Ingin Anda Layani",
   mainEntityOfPage: "https://futurereadymba.com/ms/insights/design-thinking-for-business",
   image: "https://futurereadymba.com/opengraph-image",
   datePublished: `${ARTICLE_PUBLISHED}T12:04:03+08:00`,
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "ms-MY",
   description:
-    "Panduan praktikal untuk memahami pelanggan, mentakrifkan masalah yang tepat, membina prototaip dengan pantas dan mengimbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
+    "Pemikiran reka bentuk untuk pemimpin: cari masalah yang tepat sebelum membina, uji idea bersama orang yang ia ditujukan untuknya, dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,
@@ -39,7 +39,7 @@ const jsonLd = {
     name: "Asian Business Consulting",
   },
   articleSection: "Wawasan",
-  about: "Pemikiran reka bentuk untuk pemimpin perniagaan dan strategi",
+  about: "Pemikiran reka bentuk sebagai cara mencari masalah yang tepat sebelum membina",
 };
 
 export default function Page() {
@@ -56,16 +56,18 @@ export default function Page() {
               <span className="mono sec-k">Wawasan · Pemikiran</span>
             </div>
             <h1 style={{ fontFamily: "var(--font-fraunces)", maxWidth: "18ch" }}>
-              Pemikiran reka bentuk untuk perniagaan
+              Mulakan dengan orang yang ingin anda layani.
             </h1>
             <ArticleAttribution lang="ms" />
             <p className="lead" style={{ maxWidth: "64ch" }}>
-              Produk sehebat mana pun boleh gagal jika ia menyelesaikan
-              masalah pelanggan yang salah. Di sinilah pemikiran reka bentuk masuk
-              — satu kaedah menyelesaikan masalah yang berpusatkan manusia dan
-              berulang, yang bermula daripada keperluan sebenar pelanggan, bukan
-              andaian dalaman syarikat. Setiap idea dianggap hipotesis yang perlu
-              diuji, bukan keputusan yang perlu dipertahankan mati-matian.
+              Produk boleh dibina dengan baik dan masih gagal, kerana ia
+              menjawab soalan yang salah untuk orang yang salah. Pemikiran
+              reka bentuk ialah disiplin mencari masalah yang tepat terlebih
+              dahulu: mulakan dengan orang yang ingin anda layani, uji apa
+              yang anda pelajari sebelum melabur, dan anggap setiap idea
+              sebagai sesuatu yang perlu dibuktikan, bukan dipertahankan. Ini
+              bukan naluri semula jadi; ia kemahiran yang dipraktikkan, pada
+              keputusan sebenar, bukan andaian.
             </p>
           </Reveal>
 
@@ -74,10 +76,10 @@ export default function Page() {
             <p>
               Pemikiran reka bentuk mengambil cara seorang pereka bentuk bekerja, lalu
               menjadikannya kaedah umum untuk merungkai masalah yang rumit dan kabur.
-              Langkahnya kedengaran mudah: mulakan dengan orang yang anda mahu bantu,
+              Langkahnya kedengaran mudah: mulakan dengan orang yang ingin anda layani,
               perhatikan realiti mereka dengan teliti, dan biarkan apa yang anda pelajari
               membentuk penyelesaian. Bukan sebaliknya — bermula dengan penyelesaian
-              yang sudah anda minati, kemudian sibuk mencari pasaran untuk mengesahkannya.
+              yang sudah anda minati, kemudian sibuk mencari bukti untuk mengesahkannya.
             </p>
             <p>
               Prosesnya memang berulang, bukan lurus dari satu titik ke titik lain.
@@ -169,12 +171,12 @@ export default function Page() {
               satu dengan mengorbankan yang lain.
             </p>
 
-            <h3>Mentakrif semula &ldquo;kerja sebenar yang perlu diselesaikan&rdquo;</h3>
+            <h3>Tugas sebenar yang perlu diselesaikan <span style={{ fontStyle: "italic" }}>(the right job to be done)</span></h3>
             <p>
               Ambil contoh sebuah bank pasaran pertengahan yang kehilangan pelanggan muda
               kepada aplikasi fintech. Gerak balas naluri ialah perlumbaan ciri: tambah
               carta bajet, reka bentuk semula papan pemuka, lancarkan lebih pantas. Namun,
-              meluangkan masa menemu bual pelanggan sebenar sering mendedahkan kerja yang
+              meluangkan masa menemu bual pelanggan sebenar mendedahkan kerja yang
               sama sekali berbeza. Mereka bukan membeli carta; mereka sebenarnya
               mengharapkan perkhidmatan itu menjawab satu persoalan yang membimbangkan
               hati — &ldquo;mampukah saya menanggung kos ini sekarang, tanpa kejutan buruk
@@ -191,7 +193,10 @@ export default function Page() {
               tentang apa yang sebenarnya pelanggan mahukan.
             </p>
 
-            <h2>Perangkap biasa</h2>
+            <h2>Di mana jalan pintas mengenakan kos</h2>
+            <p>
+              Jalan pintas mengenakan kos pada tiga tempat:
+            </p>
             <ul>
               <li>
                 <strong>Melangkau kajian pelanggan.</strong> Terus melompat ke peringkat
@@ -207,22 +212,19 @@ export default function Page() {
                 <strong>Menganggapnya sekadar gimik bengkel.</strong> Nota melekit dan
                 sesi luar pejabat tidak menjadikannya satu disiplin. Pemikiran reka
                 bentuk hanya berhasil apabila penemuannya benar-benar mengubah apa yang
-                dibiayai, dilancarkan dan diberhentikan.
+                dibiayai, dilancarkan dan dihentikan.
               </li>
             </ul>
 
-            <h2>Asah kaedah ini menjadi naluri</h2>
+            <h2>Tempat kaedah ini dalam program</h2>
             <p>
-              Pemikiran reka bentuk integratif ialah salah satu daripada tujuh disiplin
-              dalam kaedah F.A.S.T. {" "}
-              <Link href="/ms/how-it-works">Future Ready Executive MBA</Link>. Di sini,
-              ia berganding dengan rangka kerja Jobs-To-Be-Done serta ujian
-              Diingini–Boleh Dilaksanakan–Boleh Disara yang diperkenalkan tadi — diajar
-              bukan sebagai teori, tetapi sebagai alat yang terus anda gunakan pada
-              masalah strategik anda sendiri. Jika hasrat anda menerajui inovasi yang
-              mampu bertahan apabila berdepan pelanggan sebenar, {" "}
-              <Link href="/ms/executive-mba">Executive MBA</Link> mengasah kebiasaan itu
-              sehingga menjadi naluri.
+              Pemikiran reka bentuk integratif ialah salah satu daripada tujuh
+              disiplin dalam kaedah F.A.S.T. Future Ready Executive MBA. Di
+              sini, ia berganding dengan rangka kerja Jobs-To-Be-Done serta
+              ujian Diingini–Boleh Dilaksanakan–Boleh Disara yang
+              diperkenalkan tadi — diajar bukan sebagai teori, tetapi sebagai
+              sesuatu yang dipraktikkan pada keputusan anda sendiri sepanjang
+              enam bulan itu.
             </p>
             <h2>Sumber dan bacaan lanjut</h2>
             <p>
@@ -231,6 +233,12 @@ export default function Page() {
               ini — rujuk{" "}
               <a href="https://designthinking.ideo.com/introduction" target="_blank" rel="noopener noreferrer">pengenalan IDEO kepada pemikiran reka bentuk</a>.
             </p>
+            <p>
+              Gunakan ini pada keputusan yang sedang anda tangani sekarang.{" "}
+              <Link className="text-action" href="/ms/diagnostic">
+                Buka Semakan kesesuaian program <span aria-hidden="true">↗</span>
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -238,7 +246,7 @@ export default function Page() {
       <CtaSection
         lang="ms"
         programme="Executive MBA"
-        heading="Uji apa yang benar-benar dihargai pelanggan sebelum anda melabur sumber."
+        heading="Uji apa yang benar-benar dihargai oleh orang yang anda layani, sebelum anda membina."
       />
     </>
   );

@@ -1,0 +1,41 @@
+{
+  "unit": "resources",
+  "language": "en",
+  "filesReviewed": [
+    "src/app/(en)/resources/page.tsx",
+    "src/app/(en)/resources/advancement-brief/page.tsx"
+  ],
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/resources/page.tsx",
+      "line": 54,
+      "problem": "Employer conversation guide list item retyped the scholarship fact in the writer's own words ('scholarships are limited to eligible Malaysian applicants after assessment and written approval; any award and resulting participant fee are confirmed individually') instead of the FACTS.scholarshipEligibility constant, and omitted the mandatory 'The scholarship is never automatic.' sentence (spec section 12, checklist item 6; section 1, fact-fidelity rule).",
+      "fixApplied": "Replaced with `State the {FACTS.priceStd} standard fee. {FACTS.scholarshipEligibility} The scholarship is never automatic.`"
+    },
+    {
+      "file": "src/app/(en)/resources/advancement-brief/page.tsx",
+      "line": 104,
+      "problem": "Section 06 wrote 'The scholarship is not automatic.' instead of the spec's exact controlled sentence 'The scholarship is never automatic.' (spec section 4, section 12 checklist item 6).",
+      "fixApplied": "Changed 'not automatic' to 'never automatic'."
+    },
+    {
+      "file": "src/app/(en)/resources/advancement-brief/page.tsx",
+      "line": 76,
+      "problem": "Section 04 ('Six months') named 'the CMI-recognised programme certificate' without CERTIFICATE_POSITIONING.professionalRelevance rendering in the same block; the boundary sentence only appears two sections later in 05 (spec section 12 checklist item 4: the no-guarantee sentence must render in the same viewport wherever the certificate or CMI is named).",
+      "fixApplied": "Reworded the sentence to describe the six months' output as a written action plan reviewed by faculty and pointed the reader to section 05 for what the certificate is and is not, removing the standalone CMI claim from section 04 so the boundary is not orphaned from its required companion sentence."
+    }
+  ],
+  "crossUnitChecks": {
+    "compareProgrammesTitleMatch": "Pass — 'How to Compare Leadership Programmes' is identical on resources/page.tsx item 03, insights/page.tsx card, and the article's own <title>/breadcrumb/H1 wording (advancement-question/page.tsx). No fix needed in this unit's files.",
+    "bannedLabels": "Pass — grepped 'advancement', 'progression', 'capstone' across both files; only route segments (/resources/advancement-brief) and internal component/function names remain, no visible label or heading uses them.",
+    "programmePointerViaConstant": "N/A for the resources index/brief archetype (these are dossier/document pages, not the five-article Insights archetype the 'one pointer via PROGRAMME_FIT_CHECK' rule targets); the index item 01 already uses PROGRAMME_FIT_CHECK.en directly as its title.",
+    "servantLeadershipNaming": "N/A — the term does not appear in either resources file."
+  },
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": [
+    "The advancement-brief's closing CTA still uses CTA_LABELS.guide ('Get the {PROGRAMME_YEAR} programme guide') linking to /apply, even though this page IS the programme guide the reader is already reading — this is a pre-existing shared-constant collision the writer flagged and I did not change, since CTA_LABELS is used across many pages outside this unit's scope. Owner/orchestrator should decide whether this page's closing CTA should instead be the conversation CTA.",
+    "Section 04 of the brief now defers the full CMI recognition statement to section 05 rather than repeating it — confirm this reads naturally as a printed document rather than as an omission."
+  ],
+  "auditAfterFixes": { "typecheckExitCode": 0, "contentClarityAuditExitCode": 0 }
+}
