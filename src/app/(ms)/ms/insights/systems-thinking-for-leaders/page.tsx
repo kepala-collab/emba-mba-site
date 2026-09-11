@@ -10,7 +10,7 @@ import { PROGRAMME_FIT_CHECK } from "@/lib/content";
 export const metadata = withSeo("/ms/insights/systems-thinking-for-leaders", {
   title: "Pemikiran Sistem untuk Pemimpin",
   description:
-    "Mengapa masalah yang sama sentiasa berulang, dan soalan perlahan yang ditanya oleh pemikiran sistem berbanding menyalahkan seseorang: struktur apakah yang menjadikan kegagalan ini hasil semula jadi?",
+    "Mengapa masalah sama sentiasa berulang, dan soalan perlahan pemikiran sistem berbanding menyalahkan seseorang: struktur apakah yang menjadikan kegagalan ini semula jadi?",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",

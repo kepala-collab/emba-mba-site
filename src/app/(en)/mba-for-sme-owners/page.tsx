@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
-import { CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
+import { BOUNDARY_COMPACT, CERTIFICATE_POSITIONING, CTA_LABELS, FACTS, HRD_CORP_CLAIM, SITE } from "@/lib/content";
 import { ORGANIZATION_ID, withSeo } from "@/lib/seo";
 import JsonLd from "@/components/site/JsonLd";
 
 export const metadata = withSeo("/mba-for-sme-owners", {
   title: "Executive MBA for SME Owners & Founders",
   description:
-    `From decisions in your head to decisions in writing: the applied business project takes one operating issue to a faculty-reviewed plan across ${FACTS.durationLong}. Professional programme recognised against CMI Professional Standards, not an MQA-accredited academic degree.`,
+    `Decisions in your head become decisions in writing: one operating issue to a plan across ${FACTS.durationLong}, ${BOUNDARY_COMPACT}.`,
 });
 
 const jsonLd = {
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": `${SITE.url}/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `Owners take one operating issue, pricing, succession or a client dependency, from problem to a written plan with owners and measures, reviewed by faculty, across ${FACTS.durationLong} and ${FACTS.liveSessions} scheduled sessions. Professional programme recognised against CMI Professional Standards, not an MQA-accredited academic degree.`,
+    `Owners take one operating issue, pricing, succession or a client dependency, from problem to a written plan with owners and measures, reviewed by faculty, across ${FACTS.durationLong} and ${FACTS.liveSessions} scheduled sessions. Professional programme, ${BOUNDARY_COMPACT}.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,

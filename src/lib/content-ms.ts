@@ -1,5 +1,9 @@
 import { FACTS, FACULTY, INTAKES, PROGRAMME_POSITIONING_MS } from "@/lib/content";
 
+// Compact boundary for short metadata descriptions: pair with any CMI/certificate mention.
+export const BOUNDARY_COMPACT_MS =
+  "diiktiraf terhadap Piawaian Profesional CMI, bukan ijazah akademik terakreditasi MQA";
+
 const MODULES_MS = [
   { c: "M01", title: "Tinjauan Masa Hadapan", outcome: "Membaca landskap perniagaan" },
   { c: "M02", title: "JTBD", outcome: "Inovasi dan pertumbuhan berpusatkan pelanggan" },

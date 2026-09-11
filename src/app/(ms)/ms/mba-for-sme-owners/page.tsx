@@ -3,6 +3,7 @@ import Reveal from "@/components/site/Reveal";
 import CtaSection from "@/components/site/CtaSection";
 import { CTA_LABELS, FACTS, SITE } from "@/lib/content";
 import {
+  BOUNDARY_COMPACT_MS,
   CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS,
   ENQUIRY_COMMITMENT_MS,
   HRD_CORP_CLAIM_LABEL_MS,
@@ -14,7 +15,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/mba-for-sme-owners", {
   title: "Executive MBA untuk Pemilik & Pengasas PKS",
   description:
-    `Daripada keputusan yang tersimpan di kepala kepada keputusan yang tertulis: projek amali perniagaan membawa satu isu operasi kepada pelan yang disemak fakulti sepanjang ${FACTS.durationMonths} bulan. Dianugerahkan dan disokong oleh CMI; bukan ijazah akademik terakreditasi MQA.`,
+    `Keputusan di kepala jadi bertulis: satu isu operasi ke pelan fakulti dalam ${FACTS.durationMonths} bulan, ${BOUNDARY_COMPACT_MS}.`,
 });
 
 const jsonLd = {
@@ -23,7 +24,7 @@ const jsonLd = {
   "@id": `${SITE.url}/ms/mba-for-sme-owners#course`,
   name: "Future Ready Executive MBA (CMI UK)",
   description:
-    `Pemilik membawa satu isu operasi — harga, penggantian atau pergantungan pelanggan — daripada masalah kepada pelan bertulis berserta pemilik dan ukuran, disemak oleh fakulti, sepanjang ${FACTS.durationMonths} bulan merentas ${FACTS.liveSessions} sesi berpandu. Dianugerahkan dan disokong oleh CMI; bukan ijazah akademik terakreditasi MQA.`,
+    `Pemilik membawa satu isu operasi — harga, penggantian atau pergantungan pelanggan — daripada masalah kepada pelan bertulis berserta pemilik dan ukuran, disemak oleh fakulti, sepanjang ${FACTS.durationMonths} bulan merentas ${FACTS.liveSessions} sesi berpandu; ${BOUNDARY_COMPACT_MS}.`,
   provider: {
     "@type": "EducationalOrganization",
     "@id": ORGANIZATION_ID,

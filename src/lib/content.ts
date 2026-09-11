@@ -29,6 +29,10 @@ export const PROGRAMME_POSITIONING_ZH =
 export const PROGRAMME_POSITIONING_MS =
   "Executive MBA on Future Ready Business Leadership, dianugerahkan dan disokong oleh CMI.";
 
+// Compact boundary for short metadata descriptions: pair with any CMI/certificate mention.
+export const BOUNDARY_COMPACT =
+  "recognised against CMI Professional Standards, not an MQA-accredited degree";
+
 export const CTA_LABELS = {
   guide: `Get the ${PROGRAMME_YEAR} programme guide`,
   conversation: "Arrange a programme conversation",

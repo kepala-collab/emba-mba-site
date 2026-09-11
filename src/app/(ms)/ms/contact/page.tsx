@@ -9,7 +9,7 @@ const waText = encodeURIComponent("Hai, saya ingin bertanya tentang Future Ready
 
 export const metadata = withSeo(path, {
   title: "Hubungi Future Ready Executive MBA",
-  description: `Hubungi pasukan program Future Ready Executive MBA melalui WhatsApp, telefon, e-mel atau borang dalam talian untuk pertanyaan tentang kesesuaian program, kohort, yuran dan HRD Corp. ${ENQUIRY_COMMITMENT_MS}`,
+  description: `Hubungi kami melalui WhatsApp, telefon, e-mel atau borang untuk soalan kesesuaian, kohort, yuran dan HRD Corp. ${ENQUIRY_COMMITMENT_MS}`,
 });
 
 export default function Page() {

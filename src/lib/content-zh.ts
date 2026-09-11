@@ -1,5 +1,8 @@
 import { FACTS, FACULTY, INTAKES, PROGRAMME_POSITIONING_ZH } from "@/lib/content";
 
+// Compact boundary for short metadata descriptions: pair with any CMI/certificate mention.
+export const BOUNDARY_COMPACT_ZH = "获 CMI 专业标准认可，并非 MQA 认证的学术学位";
+
 const MODULES_ZH = [
   { c: "M01", title: "未来前瞻", outcome: "洞察商业格局" },
   { c: "M02", title: "JTBD 待办任务理论", outcome: "以客户为中心的创新与增长" },

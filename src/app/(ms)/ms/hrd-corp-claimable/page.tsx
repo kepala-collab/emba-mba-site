@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/hrd-corp-claimable", {
   title: "Pembiayaan HRD Corp Diterajui Majikan: Majikan Memohon",
   description:
-    "Pembiayaan HRD Corp bermula dengan keputusan majikan sendiri untuk membangunkan seorang pengurus yang bertanggungjawab ke atas satu pasukan. Majikan memohon sebelum latihan; HRD Corp memutuskan kelayakan dan jumlah yang diluluskan.",
+    "Pembiayaan HRD Corp bermula dengan keputusan majikan membangunkan seorang pengurus. Majikan memohon sebelum latihan; HRD Corp memutuskan kelayakan dan jumlah.",
 });
 
 const STEPS = [

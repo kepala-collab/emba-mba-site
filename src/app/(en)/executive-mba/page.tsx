@@ -26,7 +26,7 @@ import { COURSE_ID, ORGANIZATION_ID, withSeo } from "@/lib/seo";
 export const metadata = withSeo("/executive-mba", {
   title: "Executive MBA Programme Malaysia | Structure, Fee and CMI Recognition",
   description:
-    `${PROGRAMME_POSITIONING_SENTENCE} ${FACTS.trainingDays} training days across ${FACTS.liveSessions} scheduled sessions, coaching and an applied business project across ${FACTS.durationLong}.`,
+    `${PROGRAMME_POSITIONING_SENTENCE} ${FACTS.trainingDays} training days, ${FACTS.liveSessions} sessions, coaching and an applied project across ${FACTS.durationLong}.`,
 });
 
 const courseSchema = {

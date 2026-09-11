@@ -5,7 +5,7 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/apply", {
   title: `Get the ${PROGRAMME_YEAR} Programme Guide`,
-  description: `Request the ${PROGRAMME_YEAR} programme guide: the six-month structure, published dates, standard fee, scholarship assessment and CMI recognition. ${ENQUIRY_COMMITMENT}`,
+  description: `Request the ${PROGRAMME_YEAR} programme guide: structure, dates, fee, scholarship assessment and CMI recognition. ${ENQUIRY_COMMITMENT}`,
 });
 
 export default function ApplyPage() {

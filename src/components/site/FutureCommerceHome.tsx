@@ -204,11 +204,11 @@ export default function FutureCommerceHome({ locale }: { locale: HomeLocale }) {
               <p className="mono commerce-product">{copy.product}</p>
               <h1 id="commerce-hero-title">{copy.title}</h1>
               <p className="commerce-hero-lede">{copy.lede}</p>
-              <p className="commerce-hero-support">{copy.heroSupport}</p>
               <div className="commerce-actions">
                 <Link href="#programme-guide" className="btn btn-primary">{copy.guide} <span aria-hidden="true">↗</span></Link>
                 <Link href={programmeHref} className="commerce-text-link">{copy.explore} <span aria-hidden="true">→</span></Link>
               </div>
+              <p className="commerce-hero-support">{copy.heroSupport}</p>
             </Reveal>
             <Reveal delay={80}>
               <div className="commerce-hero-facts" aria-label={locale === "zh" ? "课程概览" : locale === "ms" ? "Ringkasan program" : "Programme at a glance"}>

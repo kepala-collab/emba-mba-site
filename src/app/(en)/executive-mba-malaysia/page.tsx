@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/executive-mba-malaysia", {
   title: "Executive MBA Malaysia for Working Leaders",
   description:
-    "For Malaysian owners, directors and senior managers: take one live business issue to a faculty-reviewed plan across six months, with the standard fee, scholarship eligibility and employer-led HRD Corp funding confirmed in writing.",
+    "For Malaysian owners, directors and senior managers: one live issue to a faculty-reviewed plan across six months, with fee, scholarship and HRD Corp funding in writing.",
 });
 
 const TERMS = [

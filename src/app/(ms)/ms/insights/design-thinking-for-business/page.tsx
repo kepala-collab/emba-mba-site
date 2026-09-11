@@ -9,7 +9,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/insights/design-thinking-for-business", {
   title: "Mulakan Dengan Orang yang Ingin Anda Layani",
   description:
-    "Pemikiran reka bentuk untuk pemimpin: cari masalah yang tepat sebelum membina, uji idea bersama orang yang ia ditujukan untuknya, dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
+    "Pemikiran reka bentuk untuk pemimpin: cari masalah tepat sebelum membina, uji idea bersama penerima, dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -27,7 +27,7 @@ const jsonLd = {
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "ms-MY",
   description:
-    "Pemikiran reka bentuk untuk pemimpin: cari masalah yang tepat sebelum membina, uji idea bersama orang yang ia ditujukan untuknya, dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
+    "Pemikiran reka bentuk untuk pemimpin: cari masalah tepat sebelum membina, uji idea bersama penerima, dan imbangi keinginan, kebolehlaksanaan dan kebolehsaraan.",
   author: {
     "@type": "Organization",
     "@id": EDITORIAL_TEAM_ID,

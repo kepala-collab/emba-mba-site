@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/executive-mba-malaysia", {
   title: "Executive MBA Malaysia untuk Pemimpin yang Bekerja",
   description:
-    "Untuk pemilik perniagaan, pengarah dan pengurus kanan di Malaysia: bawa satu isu perniagaan sebenar kepada pelan disemak fasilitator sepanjang enam bulan, dengan yuran standard, kelayakan biasiswa dan pembiayaan HRD Corp yang diterajui majikan disahkan secara bertulis.",
+    "Untuk pemilik, pengarah dan pengurus kanan Malaysia: satu isu sebenar ke pelan disemak fasilitator dalam enam bulan, yuran, biasiswa dan pembiayaan HRD Corp bertulis.",
 });
 
 const TERMA = [

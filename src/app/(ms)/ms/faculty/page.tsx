@@ -12,7 +12,7 @@ const content = CORE_PAGES_MS.faculty;
 export const metadata = withSeo(path, {
   title: "Fasilitator dan Jurulatih Perniagaan",
   description:
-    "Kenali fasilitator dan jurulatih Future Ready Executive MBA yang menyemak sebab di sebalik pelan anda, bukan sekadar pelan itu sendiri, merentasi strategi, operasi, kewangan, bakat dan pengurusan perubahan.",
+    "Kenali fasilitator dan jurulatih yang menyemak sebab di sebalik pelan anda, merentasi strategi, operasi, kewangan, bakat dan pengurusan perubahan.",
 });
 
 export default function Page() {

@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.method;
 export const metadata = withSeo(path, {
   title: "Apa yang Berubah Sepanjang Enam Bulan",
   description:
-    `Lihat apa yang berubah sepanjang ${FACTS.durationMonths} bulan: apa yang anda lakukan pada setiap sesi berjadual dan antara sesi, pelan tindakan bertulis yang disemak fasilitator, dan apa yang kekal bersama anda selepas itu.`,
+    `Lihat apa yang berubah sepanjang ${FACTS.durationMonths} bulan: apa yang anda lakukan pada setiap sesi, pelan tindakan bertulis disemak fasilitator, dan apa yang kekal selepas itu.`,
 });
 
 export default function Page() {

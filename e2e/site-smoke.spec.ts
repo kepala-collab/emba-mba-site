@@ -308,22 +308,22 @@ test("page navigation starts at the top while intentional anchors still work", a
 test("CMI recognition pages keep technical terms legible and the offer unambiguous", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await goto(page, "/chartered-manager-malaysia");
-  await expect(page.getByRole("heading", { name: "Professional recognition for work you can use." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Recognition for work you can show." })).toBeVisible();
   await page.locator("details").filter({ hasText: "Does the programme automatically award Chartered Manager status?" }).locator("summary").click();
-  await expect(page.getByText(/Chartered Manager is a separate optional CMI route/i).first()).toBeVisible();
+  await expect(page.getByText(/Chartered Manager is a separate CMI route/i).first()).toBeVisible();
   await expect(page.getByText(/£|USD 2,500/)).toHaveCount(0);
 
   await goto(page, "/zh/chartered-manager-malaysia");
-  await expect(page.getByRole("heading", { name: "让真实的管理成果，获得专业认可。" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "看得见的成果，拿得到的认可" })).toBeVisible();
   await page.locator("details").filter({ hasText: "结业后会自动成为 Chartered Manager 吗？" }).locator("summary").click();
-  await expect(page.getByText(/Chartered Manager 是一条独立可选的 CMI 路线/).first()).toBeVisible();
+  await expect(page.getByText(/Chartered Manager 是独立可选的 CMI 路线/).first()).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.fonts.status)).toBe("loaded");
 });
 
 test("indexed content routes expose visible breadcrumb orientation", async ({ page }) => {
   for (const [route, current] of [
     ["/mba-for-sme-owners", "For SME owners"],
-    ["/resources/advancement-brief", "Advancement brief"],
+    ["/resources/advancement-brief", "The 2026 programme guide"],
     ["/zh/faculty", "师资与导师"],
   ] as const) {
     await goto(page, route);
@@ -337,7 +337,7 @@ test("indexed content routes expose visible breadcrumb orientation", async ({ pa
 test("desktop hero exposes a primary conversion action in the first viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await goto(page, "/home");
-  const box = await page.locator(".navbar").getByRole("link", { name: /Get the guide/i }).boundingBox();
+  const box = await page.locator(".navbar").getByRole("link", { name: /Get the .*programme guide/i }).boundingBox();
   expect(box).not.toBeNull();
   expect((box?.y || 9999) + (box?.height || 0)).toBeLessThanOrEqual(800);
   const primaryAction = await page.locator('.commerce-actions a[href="#programme-guide"]').boundingBox();
@@ -520,7 +520,7 @@ test("mobile enquiry sections stack copy above a full-width form", async ({ page
   const heroGrid = page.locator(".commerce-decision-layout");
   const heroForm = heroGrid.locator("form[data-form-id]");
   await expect(heroForm).toBeVisible();
-  await expect(heroForm.getByRole("heading", { name: "Get the 2026 Future Ready EMBA guide." })).toBeVisible();
+  await expect(heroForm.getByRole("heading", { name: "Get the 2026 programme guide." })).toBeVisible();
   await expect(heroForm.getByLabel("Email")).toBeVisible();
   await expect(heroForm.getByLabel("Phone / WhatsApp (optional)")).toBeVisible();
   const columns = await heroGrid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
@@ -551,7 +551,7 @@ test("home hero presents a still image beside a visible text caption", async ({ 
   await expect(image).toHaveAttribute("fetchpriority", "high");
   await expect(media.locator("video")).toHaveCount(0);
   await expect(page.locator(".commerce-media-control")).toHaveCount(0);
-  await expect(media.locator("figcaption")).toContainText("Programme and cohort clarity");
+  await expect(media.locator("figcaption")).toContainText("One issue. One plan you can lead.");
 });
 
 test("mobile programme fit check returns to its factual result", async ({ page }) => {
@@ -562,7 +562,7 @@ test("mobile programme fit check returns to its factual result", async ({ page }
     await page.locator(".diagnostic-option").first().click();
     await page.getByRole("button", { name: question === 3 ? /See a starting point/i : /Continue/i }).click();
   }
-  await expect(page.getByRole("heading", { name: "Here is what to evaluate next." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Check these four programme facts" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Your selected priorities" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Keep the result and review the full guide." })).toBeVisible();
   const result = await page.locator(".diagnostic-result").boundingBox();
@@ -791,7 +791,7 @@ test("English, Malay and Chinese guide forms submit through the guarded contract
 
   const locales = [
     { route: "/apply", language: "en", name: "Parity Test", result: "Request received" },
-    { route: "/ms/apply", language: "ms", name: "Ujian Kesetaraan", result: "Permohonan diterima" },
+    { route: "/ms/apply", language: "ms", name: "Ujian Kesetaraan", result: "Pertanyaan diterima" },
     { route: "/zh/apply", language: "zh", name: "语言测试", result: "沟通请求已收到" },
   ] as const;
 

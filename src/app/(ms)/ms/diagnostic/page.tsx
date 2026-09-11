@@ -5,7 +5,7 @@ import { withSeo } from "@/lib/seo";
 export const metadata = withSeo("/ms/diagnostic", {
   title: PROGRAMME_FIT_CHECK.ms,
   description:
-    "Jawab empat soalan peribadi untuk melihat fakta yang penting bagi tanggungjawab, jadual, yuran dan pengiktirafan CMI anda. Ini bukan ujian kemasukan dan bukan ramalan hasil kerjaya.",
+    "Jawab empat soalan peribadi untuk melihat fakta tanggungjawab, jadual, yuran dan pengiktirafan CMI anda. Bukan ujian kemasukan atau ramalan hasil kerjaya.",
 });
 
 export default function DiagnosticPage() {

@@ -13,7 +13,7 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/fees", {
   title: "Executive MBA Fees, Scholarship & HRD Corp",
-  description: `${FACTS.priceStd} standard fee. ${FACTS.scholarshipEligibility} The scholarship is never automatic.`,
+  description: `${FACTS.priceStd} standard fee, with selective scholarship assessment; never automatic.`,
 });
 
 export default function FeesPage() {

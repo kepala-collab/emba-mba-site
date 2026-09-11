@@ -5,14 +5,14 @@ import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import TechnicalText from "@/components/site/TechnicalText";
 import { CERTIFICATE_POSITIONING, CTA_LABELS, PROGRAMME_POSITIONING_MS } from "@/lib/content";
-import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS, CHARTERED_MANAGER_BOUNDARY_MS } from "@/lib/content-ms";
+import { BOUNDARY_COMPACT_MS, CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS, CHARTERED_MANAGER_BOUNDARY_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
 const PATH = "/ms/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "Pengiktirafan CMI: Apa Dianugerahkan, Apa Berasingan",
-  description: "Ketahui dengan tepat apa yang dirangkumi CMI Certificate of Recognition bagi Future Ready Executive MBA, sempadan relevannya kepada kerjaya, dan Chartered Manager sebagai laluan CMI yang berasingan dan tidak wajib.",
+  description: `Sijil ini ${BOUNDARY_COMPACT_MS}; Chartered Manager ialah laluan CMI berasingan yang tidak wajib.`,
 });
 
 const FAQS = [

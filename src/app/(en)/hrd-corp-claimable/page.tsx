@@ -8,7 +8,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/hrd-corp-claimable", {
   title: "Employer-Led HRD Corp Funding: The Employer Applies",
   description:
-    "HRD Corp funding starts with the employer's own decision to develop a manager responsible for a team. The employer applies before training; HRD Corp decides eligibility and the approved amount.",
+    "HRD Corp funding starts with the employer's decision to develop a manager. The employer applies before training; HRD Corp decides eligibility and amount.",
 });
 
 const STEPS = [

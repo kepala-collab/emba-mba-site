@@ -4,14 +4,14 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import TechnicalText from "@/components/site/TechnicalText";
-import { CERTIFICATE_POSITIONING, CTA_LABELS, STAGES } from "@/lib/content";
+import { BOUNDARY_COMPACT, CERTIFICATE_POSITIONING, CTA_LABELS, STAGES } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 const PATH = "/chartered-manager-malaysia";
 
 export const metadata = withSeo(PATH, {
   title: "CMI Recognition: What Is Awarded, What Is Separate",
-  description: "See exactly what the Future Ready Executive MBA's CMI Certificate of Recognition covers, its professional-relevance boundary, and Chartered Manager as a separate optional CMI route.",
+  description: `See what the CMI Certificate of Recognition covers, ${BOUNDARY_COMPACT}, and Chartered Manager as a separate CMI route.`,
 });
 
 const FAQS = [
@@ -38,7 +38,7 @@ export default function CmiRecognitionPage() {
 
       <section className="section chartered-positioning">
         <div className="wrap">
-          <Reveal><div className="reading-section-head"><p className="mono sec-k">What the recognition adds</p><h2 className="sec-h">Benchmarked against CMI&rsquo;s Professional Standard, evidenced by your own applied project.</h2><p>{CERTIFICATE_POSITIONING.professionalRelevance}</p></div></Reveal>
+          <Reveal><div className="reading-section-head"><p className="mono sec-k">What the recognition adds</p><h2 className="sec-h"><TechnicalText>{"Benchmarked against CMI’s Professional Standard, evidenced by your own applied project."}</TechnicalText></h2><p>{CERTIFICATE_POSITIONING.professionalRelevance}</p></div></Reveal>
           <div className="chartered-outcome-grid">
             <Reveal><article><span className="mono">01</span><h3>Recognised completion</h3><p>CMI Recognition means the programme has been benchmarked against CMI&rsquo;s Professional Standard. Successful participants receive the {CERTIFICATE_POSITIONING.credential}.</p></article></Reveal>
             <Reveal delay={45}><article><span className="mono">02</span><h3>Evidence you can explain</h3><p>The certificate and the applied business project on your own organisation give you a documented account of the reasoning you built, to describe on a professional profile or to a hiring panel.</p></article></Reveal>

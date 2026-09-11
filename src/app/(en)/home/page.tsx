@@ -1,10 +1,10 @@
 import FutureCommerceHome from "@/components/site/FutureCommerceHome";
-import { ABC_PROFILE } from "@/lib/content";
+import { BOUNDARY_COMPACT } from "@/lib/content";
 import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/home", {
   title: "Executive MBA for Working Managers in Malaysia",
-  description: `${ABC_PROFILE.programmePositioning} Bring one live business issue and leave with a plan your team can act on.`,
+  description: `Bring one live business issue and leave with a plan your team can act on. Executive MBA, ${BOUNDARY_COMPACT}.`,
   alternates: { canonical: "/home" },
 });
 

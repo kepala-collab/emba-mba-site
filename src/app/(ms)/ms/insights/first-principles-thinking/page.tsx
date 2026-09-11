@@ -10,7 +10,7 @@ import JsonLd from "@/components/site/JsonLd";
 export const metadata = withSeo("/ms/insights/first-principles-thinking", {
   title: "Daripada Jawapan Warisan kepada Keputusan yang Boleh Disahkan",
   description:
-    "Satu kaedah untuk menguji sama ada keputusan perniagaan berpijak pada fakta yang disahkan atau jawapan yang dipinjam: asingkan apa yang benar-benar anda tahu daripada apa yang diberitahu kepada anda, lalu bina semula daripadanya.",
+    "Kaedah untuk menguji sama ada keputusan perniagaan berpijak pada fakta disahkan atau jawapan warisan, lalu bina semula daripada apa yang anda benar-benar tahu.",
   openGraph: {
     type: "article",
     publishedTime: "2026-07-22T12:04:03+08:00",
@@ -28,7 +28,7 @@ const jsonLd = {
   dateModified: `${ARTICLE_REVIEWED}T00:00:00+08:00`,
   inLanguage: "ms-MY",
   description:
-    "Kaedah praktikal untuk menguji sama ada keputusan perniagaan berpijak pada fakta yang disahkan atau jawapan warisan, dan membina semula daripada apa yang benar-benar anda tahu.",
+    "Kaedah untuk menguji sama ada keputusan perniagaan berpijak pada fakta disahkan atau jawapan warisan, lalu bina semula daripada apa yang anda benar-benar tahu.",
   author: { "@type": "Organization", "@id": EDITORIAL_TEAM_ID, name: "Asian Business Consulting Editorial Team" },
   publisher: { "@type": "Organization", "@id": PROVIDER_ID, name: "Asian Business Consulting" },
   articleSection: "Wawasan",

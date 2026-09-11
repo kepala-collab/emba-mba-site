@@ -16,7 +16,7 @@ const COMPARISON_SCOPE_MS =
 export const metadata = withSeo("/ms/insights/executive-education-vs-executive-mba", {
   title: "Pendidikan Eksekutif lawan Executive MBA | Malaysia",
   description:
-    "Pendidikan eksekutif dan Executive MBA ini direka untuk tugas yang berbeza. Bandingkan status akademik, kredensial, penilaian, jadual dan yuran penuh sebelum anda membuat keputusan.",
+    "Pendidikan eksekutif dan Executive MBA direka untuk tugas berbeza. Bandingkan status akademik, kredensial, penilaian, jadual dan yuran sebelum membuat keputusan.",
   openGraph: {
     type: "article",
     publishedTime: `${PUBLISHED}T16:00:00+08:00`,

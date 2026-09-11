@@ -6,7 +6,7 @@ import { withSeo } from "@/lib/seo";
 
 export const metadata = withSeo("/ms/resources/advancement-brief", {
   title: `Panduan program ${PROGRAMME_YEAR}`,
-  description: "Ringkasan keputusan yang boleh dicetak untuk pengurus yang bekerja: kesesuaian program, projek amali perniagaan, struktur enam bulan, yuran penuh untuk peserta Malaysia, pengiktirafan CMI dan perkara yang perlu disahkan.",
+  description: "Ringkasan keputusan boleh dicetak untuk pengurus yang bekerja: kesesuaian program, projek amali, struktur enam bulan, yuran, pengiktirafan CMI dan perkara perlu disahkan.",
 });
 
 export default function AdvancementBriefPage() {

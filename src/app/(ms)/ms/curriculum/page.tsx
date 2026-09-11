@@ -11,7 +11,7 @@ const content = CORE_PAGES_MS.curriculum;
 export const metadata = withSeo(path, {
   title: `Kurikulum — ${FACTS.moduleCount} Modul`,
   description:
-    `Terokai ${FACTS.moduleCount} modul Executive MBA, tiga peringkat pembelajaran dan satu projek amali perniagaan berasaskan cabaran sebenar, dengan penilaian melalui penyertaan sesi, bimbingan dan projek — tanpa peperiksaan atau tesis tradisional.`,
+    `Terokai ${FACTS.moduleCount} modul Executive MBA, tiga peringkat pembelajaran dan satu projek amali perniagaan, dinilai melalui penyertaan, bimbingan dan projek — tanpa peperiksaan atau tesis.`,
 });
 
 export default function Page() {

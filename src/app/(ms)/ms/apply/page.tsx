@@ -8,7 +8,7 @@ const path = "/ms/apply";
 
 export const metadata = withSeo(path, {
   title: `Dapatkan panduan program ${PROGRAMME_YEAR}`,
-  description: `Minta panduan program ${PROGRAMME_YEAR}: struktur enam bulan, tarikh yang diterbitkan, yuran standard, penilaian biasiswa dan pengiktirafan CMI. ${ENQUIRY_COMMITMENT_MS}`,
+  description: `Minta panduan program ${PROGRAMME_YEAR}: struktur, tarikh, yuran standard, penilaian biasiswa dan pengiktirafan CMI. ${ENQUIRY_COMMITMENT_MS}`,
 });
 
 export default function Page() {
