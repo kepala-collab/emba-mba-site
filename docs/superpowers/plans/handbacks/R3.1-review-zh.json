@@ -1,0 +1,85 @@
+{
+  "reviewer": "zh-Hans-MY independent reviewer",
+  "scope": ["src/lib/lead-email.ts", "src/lib/nurture-email.ts"],
+  "verdictBeforeFixes": "Mostly clean and consistent with governance and house glossary (correct 认可/认证 boundary, 届 not 班次, no urgency devices, no hedges, correct pronoun and punctuation register, pangu spacing intact, no sentence-initial 它/这, no cleft sentences). Found two defect classes: the locked programme-guide name dropped 年 in both lead-email variants, and the nurture email hard-codes 周末 for a schedule that includes Fri–Sat cohorts (matches zh-register-audit.json high-confidence item, section 3/glossary #52), with one HRD Corp first-use mention left unglossed in day7.",
+  "fixes": [
+    {
+      "email": "ack (lead-email.ts, text variant)",
+      "field": "introduction / text body, line 214",
+      "before": "《2026 课程指南》已随邮件附上",
+      "after": "《2026 年课程指南》已随邮件附上",
+      "reason": "Locked name is '2026 年课程指南' everywhere else on the site (content.ts, content-zh.ts, resources pages, breadcrumbs); the email had dropped 年."
+    },
+    {
+      "email": "ack (lead-email.ts, text variant)",
+      "field": "text link label, line 220",
+      "before": "2026 课程资料：",
+      "after": "2026 年课程资料：",
+      "reason": "Consistency with PROGRAMME_YEAR 年 convention used for this same page (advancement-brief) elsewhere on the site."
+    },
+    {
+      "email": "ack (lead-email.ts, html variant)",
+      "field": "introduction, line 234",
+      "before": "《2026 课程指南》已随邮件附上",
+      "after": "《2026 年课程指南》已随邮件附上",
+      "reason": "Same locked-name fix as the text variant, so text and HTML stay identical."
+    },
+    {
+      "email": "ack (lead-email.ts, html variant)",
+      "field": "siteLabel, line 238",
+      "before": "查看 2026 课程资料",
+      "after": "查看 2026 年课程资料",
+      "reason": "Consistency with PROGRAMME_YEAR 年 convention."
+    },
+    {
+      "email": "nurture day3",
+      "field": "facts.课程安排 value",
+      "before": "为期 6 个月 · 3 个指定周末的导师带领研习课 · 无需离岗",
+      "after": "为期 6 个月 · 3 次指定研习课（每次两天）· 无需离岗",
+      "reason": "zh-register-audit.json high-confidence finding: four of five published cohorts run Fri-Sat, not Sat-Sun, so 周末 (which means Sat-Sun in KL usage) misstates the schedule; 周末 must be reserved for Sat-Sun cohorts only."
+    },
+    {
+      "email": "nurture day7",
+      "field": "preheader",
+      "before": "每届三个周末。日程安排比资料本身更能决定选择。",
+      "after": "每届 3 次指定研习课。日程安排比资料本身更能决定选择。",
+      "reason": "Same session/weekend correction as day3, applied to the preheader."
+    },
+    {
+      "email": "nurture day7",
+      "field": "paragraphs[0]",
+      "before": "3 个指定周末的导师带领研习课，上课时间为上午 9 时至下午 6 时",
+      "after": "3 次指定研习课，上课时间为上午 9 时至下午 6 时",
+      "reason": "Same session/weekend correction; also removes a redundant '的导师带领' that duplicated 'coaching' language already covered elsewhere."
+    },
+    {
+      "email": "nurture day7",
+      "field": "paragraphs[1]",
+      "before": "附上的资助简报说明了 HRD Corp 的申请步骤",
+      "after": "附上的资助简报说明了人力资源发展机构（HRD Corp）的申请步骤",
+      "reason": "House rule: gloss 人力资源发展机构（HRD Corp）on first mention per document; this email's first HRD Corp mention was left unglossed even though later mentions correctly use the bare English abbreviation."
+    },
+    {
+      "email": "nurture day7",
+      "field": "facts.时间投入 value",
+      "before": "3 个周末共 6 个培训日",
+      "after": "3 次研习课共 6 个培训日",
+      "reason": "Same session/weekend correction as above."
+    }
+  ],
+  "itemsConsidokAndLeftUnchanged": [
+    "Subjects: no urgency device, no 免费 lead word, no 往往/通常 hedge, no trailing 。; day3/day7 subjects run to 14-15 characters including the leading '2026' digits and full-width comma, judged acceptable under 'at most 14 characters where possible' given the digit-year cannot be shortened.",
+    "认可 vs 认证 boundary: 认证 never applied to CMI in either file; MQA is not mentioned in these two emails so no boundary sentence was needed there, and 认可 mentions in nurture day3/day14 already sit beside 'CMI 认可的专业发展课程，非学术学位' or an explicit 'recognition means and does not mean' framing.",
+    "届 not 班次: neither file uses 班次; day7 subject correctly uses 届次.",
+    "预约课程咨询 used consistently as the conversation CTA in both day3 and day14, matching CTA_LABELS.zh.conversation at the source constant.",
+    "PROGRAMME_POSITIONING_ZH footer statement ('由 CMI 颁发并认可…') is reused verbatim from src/lib/content.ts and is identical across en/zh/ms; a positioning-wording change is a cross-language, source-constant decision outside a Chinese-only small-edit pass (flagged as a missingRule in zh-register-audit.json, needs ABC sign-off).",
+    "Unsubscribe line ('退订') and contact block read naturally and match the site's footer convention; PDF/resource link labels (阅读决策指南, 阅读雇主资助简报, 阅读奖学金资格简报) are natural and consistent.",
+    "Pangu spacing verified programmatically across both files: no CJK/Latin or CJK/digit boundary is missing a space.",
+    "No sentence-initial 它/这 and no pseudo-cleft (…的，不是…而是…) constructions found in either file."
+  ],
+  "verificationAfterFixes": {
+    "typecheck": "npm run typecheck passed with no errors",
+    "test": "npm test: 84/85 passed; the only failure is scripts/release-fingerprint.test.mjs (frozen release manifest vs current source hash), a pre-existing drift issue unrelated to this content edit and out of scope for a language-only pass; nurture-email tests remain green"
+  },
+  "nativeReadingScoreAfterFixes": 8
+}

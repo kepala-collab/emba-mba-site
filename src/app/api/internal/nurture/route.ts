@@ -4,6 +4,7 @@ import { getDatabasePool } from "@/lib/db";
 import { bearerSecretStatus } from "@/lib/internal-auth";
 import { smtpConfiguration, smtpTransporter } from "@/lib/lead-email";
 import { NURTURE_STEPS, renderNurtureEmail, type NurtureLanguage, type NurtureStepKey } from "@/lib/nurture-email";
+import { NURTURE_MAX_ATTEMPTS, NURTURE_RETRY_DELAY_MINUTES } from "@/lib/nurture-retry";
 import { unsubscribeConfigured, unsubscribeUrl } from "@/lib/unsubscribe";
 
 export const runtime = "nodejs";
@@ -26,32 +27,72 @@ function json(body: object, status = 200) {
 }
 
 async function candidatesForStep(step: NurtureStepKey, afterDays: number, limit: number): Promise<CandidateRow[]> {
+  // A candidate is either a lead never yet logged for this step (fresh send)
+  // or a lead whose earlier attempt failed once and is now past the
+  // NURTURE_RETRY_DELAY_MINUTES cool-down (retry). A row already at
+  // NURTURE_MAX_ATTEMPTS (message_id = 'send_failed') or already sent is
+  // never a candidate again.
   const [rows] = await getDatabasePool().execute<CandidateRow[]>({
     sql: `SELECT l.id, l.name, l.email, l.page_language AS language
           FROM leads l
+          LEFT JOIN lead_nurture_log g ON g.lead_id = l.id AND g.step = ?
           WHERE l.lifecycle_stage = 'new'
             AND l.marketing_opt_out = 0
             AND l.consent_at IS NOT NULL
             AND l.created_at <= NOW() - INTERVAL ? DAY
             AND l.created_at > NOW() - INTERVAL ? DAY
-            AND NOT EXISTS (
-              SELECT 1 FROM lead_nurture_log g WHERE g.lead_id = l.id AND g.step = ?
+            AND (
+              g.id IS NULL
+              OR (
+                g.message_id IS NULL
+                AND g.attempt_count = 1
+                AND g.sent_at <= DATE_SUB(NOW(), INTERVAL ? MINUTE)
+              )
             )
           ORDER BY l.created_at ASC
           LIMIT ${Math.max(1, Math.min(200, limit))}`,
-    values: [afterDays, MAX_LEAD_AGE_DAYS, step],
+    values: [step, afterDays, MAX_LEAD_AGE_DAYS, NURTURE_RETRY_DELAY_MINUTES],
     timeout: 10_000,
   });
   return rows;
 }
 
-async function logStep(leadId: number, step: NurtureStepKey, language: NurtureLanguage, messageId: string | null): Promise<boolean> {
-  const [result] = await getDatabasePool().execute<import("mysql2/promise").ResultSetHeader>({
-    sql: `INSERT IGNORE INTO lead_nurture_log (lead_id, step, language, message_id) VALUES (?, ?, ?, ?)`,
-    values: [leadId, step, language, messageId],
+// Claims a step for a lead: either a first attempt (INSERT) or a retry of a
+// row that failed once and is past its cool-down (UPDATE). Returns true if
+// this call claimed the row, false if another process already has it.
+async function claimStep(leadId: number, step: NurtureStepKey, language: NurtureLanguage): Promise<boolean> {
+  const [insertResult] = await getDatabasePool().execute<import("mysql2/promise").ResultSetHeader>({
+    sql: `INSERT IGNORE INTO lead_nurture_log (lead_id, step, language, message_id, attempt_count) VALUES (?, ?, ?, NULL, 0)`,
+    values: [leadId, step, language],
     timeout: 5_000,
   });
-  return result.affectedRows > 0;
+  if (insertResult.affectedRows > 0) return true;
+
+  const [updateResult] = await getDatabasePool().execute<import("mysql2/promise").ResultSetHeader>({
+    sql: `UPDATE lead_nurture_log
+          SET sent_at = NOW(), message_id = NULL
+          WHERE lead_id = ? AND step = ?
+            AND message_id IS NULL
+            AND attempt_count = 1
+            AND sent_at <= DATE_SUB(NOW(), INTERVAL ? MINUTE)`,
+    values: [leadId, step, NURTURE_RETRY_DELAY_MINUTES],
+    timeout: 5_000,
+  });
+  return updateResult.affectedRows > 0;
+}
+
+// Records a delivery failure: increments attempt_count and marks the row
+// terminal (message_id = 'send_failed') once NURTURE_MAX_ATTEMPTS is reached;
+// otherwise clears message_id so the row stays claimable for a later retry.
+async function recordFailure(leadId: number, step: NurtureStepKey): Promise<void> {
+  await getDatabasePool().execute({
+    sql: `UPDATE lead_nurture_log
+          SET attempt_count = attempt_count + 1,
+              message_id = IF(attempt_count + 1 >= ?, 'send_failed', NULL)
+          WHERE lead_id = ? AND step = ?`,
+    values: [NURTURE_MAX_ATTEMPTS, leadId, step],
+    timeout: 5_000,
+  }).catch(() => undefined);
 }
 
 async function handle(request: Request) {
@@ -94,9 +135,11 @@ async function handle(request: Request) {
         continue;
       }
 
-      // Claim the step first — the unique key makes double-sends impossible even
-      // if two cron runs overlap.
-      const claimed = await logStep(row.id, step, language, null);
+      // Claim the step first (first attempt or, for a row that failed once
+      // and is past its 60-minute cool-down, a retry) — the unique key and
+      // the guarded UPDATE make double-sends impossible even if two cron
+      // runs overlap.
+      const claimed = await claimStep(row.id, step, language);
       if (!claimed) {
         skipped += 1;
         continue;
@@ -130,13 +173,10 @@ async function handle(request: Request) {
         });
         sent += 1;
       } catch {
-        // Leave the claim in place with a failure marker rather than retrying
-        // forever into a broken mailbox; operators can inspect and clear rows.
-        await getDatabasePool().execute({
-          sql: `UPDATE lead_nurture_log SET message_id = 'send_failed' WHERE lead_id = ? AND step = ? AND message_id IS NULL`,
-          values: [row.id, step],
-          timeout: 5_000,
-        }).catch(() => undefined);
+        // First failure: increment attempt_count and clear message_id so the
+        // row is retried once, 60 minutes later. Second failure: terminal —
+        // message_id = 'send_failed'; operators can inspect and clear rows.
+        await recordFailure(row.id, step);
         skipped += 1;
       }
 

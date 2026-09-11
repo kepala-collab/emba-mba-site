@@ -1,0 +1,75 @@
+{
+  "brief": "R3.1-email-flow",
+  "executed_by": "single-session self-review (no separate Opus writer/reviewer dispatch; branch/commit/push/real-send/db steps executed by the operator per session override)",
+  "session_note": "The calling session overrode the plan's own branch-creation, commit and real-send steps: work was done directly on the pre-checked-out branch feat/r3-derived-artefacts, nothing was committed or pushed, and no real send or DB access was attempted. Acceptance was scoped to `npm run typecheck`, `npm test`, `npm run audit:content` only, per the session's explicit instruction. The full Acceptance list, the dry run, the three real sends, and the branch/merge/deploy steps are recorded below as owner steps, not executed.",
+  "commands_run": [
+    { "command": "npm run typecheck", "exit_code": 0 },
+    { "command": "npm test", "exit_code": 0, "note": "85/85 tests passed across 17 files, including src/lib/__tests__/nurture-email.test.ts (10 tests) and the new src/lib/__tests__/nurture-retry.test.ts (8 tests). release-id.txt was regenerated with `npm run release:sync` (content-only fingerprint, no logic change) after copy edits so scripts/release-fingerprint.test.mjs stayed green." },
+    { "command": "npm run audit:content", "exit_code": 0, "note": "Passed across 180 public content files. src/lib/nurture-email.ts was added to the audit's file list (scripts/content-clarity-audit.mjs) alongside src/lib/lead-email.ts, which was already present — both now run through the strict-locale checks." }
+  ],
+  "step_link_attachment_table": [
+    { "step": "Ack", "delay": "day 0", "link_target": "—", "attachment": "programme guide by language (unchanged)", "resolved_on_disk": "n/a" },
+    { "step": "day3", "delay": "3 days", "link_target": "/downloads/future-ready-decision-guide[-ms|-zh].pdf", "attachment": "none", "resolved_on_disk": {
+        "en": "public/downloads/future-ready-decision-guide.pdf ✓",
+        "ms": "public/downloads/future-ready-decision-guide-ms.pdf ✓",
+        "zh": "public/downloads/future-ready-decision-guide-zh.pdf ✓"
+      } },
+    { "step": "day7", "delay": "7 days", "link_target": "/downloads/future-ready-employer-funding-brief[-ms|-zh].pdf + /intakes, /ms/intakes, /zh/intakes", "attachment": "none", "resolved_on_disk": {
+        "en": "public/downloads/future-ready-employer-funding-brief.pdf ✓",
+        "ms": "public/downloads/future-ready-employer-funding-brief-ms.pdf ✓",
+        "zh": "public/downloads/future-ready-employer-funding-brief-zh.pdf ✓"
+      } },
+    { "step": "day14", "delay": "14 days", "link_target": "/downloads/future-ready-scholarship-eligibility[-ms|-zh].pdf + /apply, /ms/apply, /zh/apply", "attachment": "none", "resolved_on_disk": {
+        "en": "public/downloads/future-ready-scholarship-eligibility.pdf ✓",
+        "ms": "public/downloads/future-ready-scholarship-eligibility-ms.pdf ✓",
+        "zh": "public/downloads/future-ready-scholarship-eligibility-zh.pdf ✓"
+      } }
+  ],
+  "reviewer_checklists": {
+    "note": "No separate fresh-context Opus reviewer was dispatched in this session (single self-review pass only, matching the session's 'do the work yourself' instruction). Full section-7 register-guide line-by-line pass/fail against ms-register.md (20 checks) and zh-register.md (18 checks) was not run against the guide documents themselves in this pass; instead the explicit vocabulary/format rules quoted in the task brief were applied directly and mechanically re-verified with grep: banned Malay terms (perbualan program, projek aplikasi, biasanya, kalendar langsung, masih tinggal, jujur predicated of a guide) and banned Chinese terms (诚实边界, 日历, 宣传册, 班次, 获取, 营销) no longer appear in src/lib/nurture-email.ts or src/lib/lead-email.ts. `npm run audit:content --strict-locales` (which encodes a large subset of the register rules as automated lint) passes clean on both files. Malay greeting is now 'Salam sejahtera, {Nama},' with fallback 'Tuan/Puan' (never 'anda'); sign-off is 'Salam hormat, Pasukan Program Future Ready Executive MBA'. Chinese greeting is '{姓名}，您好：'; sign-off is '课程团队 敬上'. This is a reduced-confidence substitute for the full 20/18-item register audit — recommend a follow-up pass against ms-register.md section 7 and zh-register.md section 7 line-by-line before this ships.",
+    "malay_checks_run": 0,
+    "malay_checks_total": 20,
+    "chinese_checks_run": 0,
+    "chinese_checks_total": 18
+  },
+  "dry_run": { "status": "not executed — owner step (no DB access in this session, per instruction)" },
+  "real_sends": { "status": "not executed — owner step (no real sends in this session, per instruction)" },
+  "migration_010_sql": "ALTER TABLE lead_nurture_log\n  ADD COLUMN attempt_count TINYINT UNSIGNED NOT NULL DEFAULT 0;",
+  "retry_tests": {
+    "file": "src/lib/__tests__/nurture-retry.test.ts",
+    "tests": [
+      "a failed send (attempt_count 1) is not eligible before 60 minutes have passed — pass",
+      "a failed send (attempt_count 1) is eligible exactly 60 minutes after the first attempt — pass",
+      "a never-attempted row (attempt_count 0) is not a retry candidate — pass",
+      "a row already at the max attempt count is not retried again — pass",
+      "the first failure (attempt_count 0 before failure) stays claimable, not terminal — pass",
+      "the second failure (attempt_count 1 before failure) is terminal — pass",
+      "a row within MAX_LEAD_AGE_DAYS is retryable — pass",
+      "a row older than MAX_LEAD_AGE_DAYS is never retried — pass"
+    ],
+    "implementation_note": "Pure decision logic lives in src/lib/nurture-retry.ts (no DB), wired into src/app/api/internal/nurture/route.ts via candidatesForStep (now LEFT JOINs lead_nurture_log and admits a retriable row: message_id IS NULL, attempt_count = 1, sent_at older than 60 minutes), claimStep (INSERT for a fresh claim, guarded UPDATE for a retry claim), and recordFailure (increments attempt_count; sets message_id = 'send_failed' once attempt_count reaches NURTURE_MAX_ATTEMPTS = 2). MAX_LEAD_AGE_DAYS (45) continues to gate candidatesForStep via l.created_at, so aged-out leads are never retried. Route-level integration was not exercised against a live database in this session."
+  },
+  "git_diff_stat": {
+    "note": "Diff against the pre-existing working tree state at session start (git diff --stat codex/hostinger-deployment..feat/r3-1-email-flow was not run — no branch was created per instruction; nothing was committed).",
+    "files_changed_by_this_brief": {
+      "src/lib/nurture-email.ts": "135 lines changed — added resources field/rendering, rewrote all 9 EN/ZH/MS step bodies with the 2026-programme-guide term, added pangu spacing and sign-off lines, fixed MS greeting order and Tuan/Puan fallback, removed banned vocabulary",
+      "src/lib/lead-email.ts": "11 lines changed — MS greeting reordered to 'Salam sejahtera, {name},', localized ZH/MS sign-offs in text and HTML footer (attachment filenames/paths at lines 17-27 left untouched)",
+      "src/app/api/internal/nurture/route.ts": "76 lines changed — added retry claim/failure logic (candidatesForStep, claimStep, recordFailure)",
+      "src/lib/__tests__/nurture-email.test.ts": "57 lines changed — extended to all 3 languages, asserts PDF hrefs, two-link day7/day14, UTM on every link, no attachment marker",
+      "src/lib/__tests__/nurture-retry.test.ts": "new file — 8 tests for the pure retry policy",
+      "src/lib/nurture-retry.ts": "new file — pure retry-decision helpers",
+      "database/migrations/010_add_nurture_attempt_count.sql": "new file — verbatim per plan",
+      "scripts/content-clarity-audit.mjs": "1 line added — registered src/lib/nurture-email.ts in the audit's file list (was previously only referenced in the ms/zh locale-detection helper, never actually scanned)",
+      "release-id.txt": "regenerated via npm run release:sync (content fingerprint only, required for scripts/release-fingerprint.test.mjs to pass after the copy edits)"
+    },
+    "files_untouched": "public/downloads/**, scripts/pdf/**, src/app/sitemap.ts, src/lib/locale-routes.ts, src/lib/seo.ts, src/app/opengraph-image/**, (ms)/ms/intakes, (zh)/zh/intakes — all show as modified in `git status` from the two concurrent agents, not from this session."
+  },
+  "loop_count_per_language": { "en": 1, "zh": 1, "ms": 1, "note": "Single self-authored pass per language, not the two-loop Opus writer/reviewer dispatch specified in the plan — see session_note." },
+  "rendered_emails": "See attached rendered-emails.json content below (subject + full text part, all 3 languages, all 4 emails: ack + day3/day7/day14). HTML parts were exercised by the test suite but are omitted here for brevity; every subject line is listed.",
+  "subjects": {
+    "en": { "ack": "We’ve received your programme conversation request", "day3": "A second look at the 2026 programme guide", "day7": "The remaining 2026 cohorts, in one view", "day14": "One conversation. No commitment." },
+    "zh": { "ack": "我们已收到您的课程沟通请求", "day3": "2026 年课程指南，再读一遍", "day7": "2026 年剩余届次，一目了然", "day14": "一次沟通，零承诺" },
+    "ms": { "ack": "Permintaan perbincangan program anda telah kami terima", "day3": "Semakan semula panduan program 2026", "day7": "Kohort 2026 yang berbaki, dalam satu paparan", "day14": "Satu perbualan. Tiada komitmen." }
+  },
+  "subject_checks": "No subject contains an undefined norm, urgency language, or 'free' as a lead word."
+}

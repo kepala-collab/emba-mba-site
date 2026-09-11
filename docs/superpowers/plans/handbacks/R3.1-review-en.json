@@ -1,0 +1,60 @@
+{
+  "brief": "R3.1-review-en",
+  "reviewer": "independent English copy reviewer, fresh context, single session",
+  "scope": "English strings only in src/lib/lead-email.ts and src/lib/nurture-email.ts; ms/zh strings untouched (edited concurrently by other reviewers)",
+  "verdict_before_fixes": "FAIL — nurture-email.ts EN violated two locked-language rules in docs/superpowers/specs/2026-09-04-messaging-architecture.md: day14 subject used the banned 'No commitment.' fragment (§8 explicitly forbids this as a subject), and the locked sentence 'An enquiry does not commit you to enrol or pay.' (§10, §12.15) was paraphrased ('no payment, no enrolment commitment...') in day3 and day14 instead of appearing verbatim. day7 also rendered a duplicate link/label ('See the live 2026 calendar' → /intakes) once in the resources list and again as the CTA button, producing a repeated line in the plain-text part. lead-email.ts ack email had no comparable violations. All other checks (locked names, hope-as-activity, PDF link labels, unsubscribe line, plain-text part, no tracking-pixel language, headers/attachment name) passed as found.",
+  "fixes": [
+    {
+      "email": "nurture day3",
+      "field": "paragraphs[1] (closing clause)",
+      "before": "that is exactly what a programme conversation is for: no payment, no enrolment commitment, just answers.",
+      "after": "that is exactly what a programme conversation is for. An enquiry does not commit you to enrol or pay.",
+      "reason": "§10/§12.15 require the locked commitment sentence verbatim wherever commitment is stated, not a paraphrase."
+    },
+    {
+      "email": "nurture day7",
+      "field": "resources",
+      "before": "resources: [employer funding brief PDF, { label: 'See the live 2026 calendar', path: '/intakes' }]",
+      "after": "resources: [employer funding brief PDF]  (calendar link removed — the identical ctaLabel/ctaPath 'See the live 2026 calendar' → /intakes already renders as the primary CTA button)",
+      "reason": "Duplicate identical link+label rendered twice in the plain-text part (confirmed in R3.1-rendered-emails.json day7 text, lines repeat 'See the live 2026 calendar' with the same URL). Removing the redundant resource entry does not remove the link — the CTA still points to /intakes — and npm test still asserts the page href is present."
+    },
+    {
+      "email": "nurture day14",
+      "field": "subject",
+      "before": "One conversation. No commitment.",
+      "after": "One conversation, whenever you're ready",
+      "reason": "§8 states subjects must 'never [use] \"No commitment.\" as a subject'. Replacement keeps the day-14 archetype (hands the decision back, no urgency) without the banned fragment."
+    },
+    {
+      "email": "nurture day14",
+      "field": "paragraphs[1] (closing clause)",
+      "before": "one short conversation settles it. No payment, no enrolment commitment, no follow-up pressure.",
+      "after": "one short conversation settles it. An enquiry does not commit you to enrol or pay.",
+      "reason": "Same as day3 — locked sentence required verbatim, not paraphrased."
+    }
+  ],
+  "meaning_changes_for_ms_zh_to_mirror": [
+    "day3: the commitment clause now ends on the locked sentence 'An enquiry does not commit you to enrol or pay.' instead of a three-part 'no payment / no enrolment commitment / just answers' list — ms/zh should render their own locked equivalents ('Pertanyaan tidak mengikat anda untuk mendaftar atau membayar.' / '咨询不构成报读或付款承诺。') verbatim in the same place, replacing their current paraphrases.",
+    "day7: the resources array should drop the second entry that duplicates the CTA link (in EN: 'See the live 2026 calendar' → /intakes). The rendered ms/zh emails in R3.1-rendered-emails.json show the same duplicate line twice ('Lihat jadual terkini 2026' / '查看 2026 实时日程表'), so both locale objects have the identical structural bug and should drop their second resources entry the same way.",
+    "day14: subject changed from a 'No commitment.' fragment to 'One conversation, whenever you're ready' — ms/zh subjects ('Satu perbualan. Tiada komitmen.' / '一次沟通，零承诺') are the same banned fragment pattern (§8) and should be reworded to the equivalent 'hands the decision back' framing without a bare 'no commitment' clause.",
+    "day14: the commitment clause now ends on the locked sentence instead of 'No payment, no enrolment commitment, no follow-up pressure.' — ms/zh should replace their equivalent paraphrases with their locked-sentence translations in the same place."
+  ],
+  "open_findings_not_fixed": [
+    "Governance §12.4 requires the not-an-MQA-degree sentence and CERTIFICATE_POSITIONING.professionalRelevance (the no-guarantee sentence) to render in the same viewport wherever 'awarded', 'CMI', the certificate or 'progress' appears. The shared FOOTER object (all three languages) states '...is awarded and endorsed by CMI...' in every nurture email's footer with no adjacent no-guarantee sentence. day3's 'Recognition' fact row states 'not an academic degree' but not the full no-guarantee framing. This is a structural gap affecting the shared FOOTER text used by all three locales, not an English-only string fix — flagging for the owner/spec team rather than editing FOOTER unilaterally, since it needs an identical addition mirrored in ms/zh in the same edit per the transcreation rule.",
+    "Reported as a code concern only, no logic changed: src/lib/lead-email.ts's programmeGuideAttachment() and PROGRAMME_GUIDE_FILENAME/PROGRAMME_GUIDE_DELIVERED_NAME maps resolve correctly for all three languages and the attachment display name matches the locked guide name pattern; no issue found there.",
+    "The retry/superseded logic in R3.1-writer.json (candidatesForStep, claimStep, recordFailure, NURTURE_MAX_ATTEMPTS = 2, 60-minute retry window, MAX_LEAD_AGE_DAYS = 45) is internally consistent with itself but was not cross-checked line-by-line against CONVERSION-OPERATIONS.md in this pass — recommend a follow-up pass focused specifically on that file before this ships, since this review's scope was the English copy strings, not the outbox/retry code paths."
+  ],
+  "commands_run": [
+    { "command": "npm run typecheck", "exit_code": 0 },
+    { "command": "npm test", "exit_code": 0, "note": "85/85 passed after regenerating release-id.txt via node scripts/sync-release-manifest.mjs (content-only fingerprint, required after the copy edits)." },
+    { "command": "npm run audit:content -- --strict-locales", "exit_code": 0, "note": "Passed across 180 public content files with strict locale checks on." }
+  ],
+  "files_touched": [
+    "src/lib/nurture-email.ts (EN object only: day3 paragraphs, day7 resources, day14 subject + paragraphs)",
+    "release-id.txt (regenerated fingerprint, no logic change)"
+  ],
+  "files_not_touched": [
+    "src/lib/lead-email.ts (no English-string issue found)",
+    "src/lib/nurture-email.ts ZH/MS objects (owned by concurrent reviewers)"
+  ]
+}
