@@ -1,0 +1,68 @@
+{
+  "unit": "resources",
+  "filesChanged": [
+    "src/app/(en)/resources/page.tsx",
+    "src/app/(en)/resources/advancement-brief/page.tsx",
+    "src/app/(ms)/ms/resources/page.tsx",
+    "src/app/(ms)/ms/resources/advancement-brief/page.tsx",
+    "src/app/(zh)/zh/resources/page.tsx",
+    "src/app/(zh)/zh/resources/advancement-brief/page.tsx"
+  ],
+  "h1AndLede": {
+    "en": {
+      "index_h1": "Check the details before you enquire. (unchanged — already compliant)",
+      "brief_h1": "What working managers confirm before they decide.",
+      "brief_lede": "Your responsibilities have grown. Use this brief to decide whether one live business issue in your own role is ready for a faculty-reviewed plan."
+    },
+    "ms": {
+      "index_h1": "Fahami dengan jelas sebelum memberikan maklumat anda. (unchanged — already compliant)",
+      "brief_h1": "Ringkasan keputusan untuk pengurus yang bekerja.",
+      "brief_lede": "Tanggungjawab anda semakin luas. Gunakan ringkasan ini untuk menentukan sama ada satu isu perniagaan sebenar dalam tanggungjawab anda sudah sedia untuk pelan yang disemak oleh fakulti."
+    },
+    "zh": {
+      "index_h1": "留下资料之前，先把情况了解清楚。(unchanged — already compliant)",
+      "brief_h1": "写给在职管理者的决策手册",
+      "brief_lede": "您的职责范围正在扩大。用这份手册判断：您现在负责的一项真实商业问题，是否已适合进入由师资评阅的行动方案。"
+    }
+  },
+  "namingChanges": [
+    "Naming rule (spec §10 / FOLLOWUPS.md item 3): removed every use of 'advancement'/'progression'/'Kemajuan kerjaya'/晋升 as a page title or label across all six files. Route paths were left untouched, including the /resources/advancement-brief and /ms/.../advancement-brief and /zh/.../advancement-brief segments, per the brief.",
+    "EN index dossier 01 title now PROGRAMME_FIT_CHECK.en ('Programme fit check'), replacing 'Working Manager Progression Check'.",
+    "EN index dossier 02 title now `The ${PROGRAMME_YEAR} programme guide` (the locked guide name), replacing 'Working Manager's 2026 Progression Guide'.",
+    "MS index item 01 now PROGRAMME_FIT_CHECK.ms ('Semakan kesesuaian program'), replacing 'Semakan padanan program' (a non-locked variant).",
+    "MS index item 02 now `Panduan program ${PROGRAMME_YEAR}`, replacing 'Panduan program Executive MBA'.",
+    "ZH index item 01 now PROGRAMME_FIT_CHECK.zh ('课程适配检查'), replacing '课程匹配检查' (a non-locked variant).",
+    "ZH index item 02 now `${PROGRAMME_YEAR} 年课程指南`, replacing 'Executive MBA 课程指南'.",
+    "Brief page masthead/kicker in all three languages now carries the locked guide name ('The {PROGRAMME_YEAR} programme guide' / 'Panduan program {PROGRAMME_YEAR}' / '{PROGRAMME_YEAR} 年课程指南'); metadata <title> updated to match in all three files.",
+    "Brief H1 in all three languages renamed to describe what the reader does with the document (confirms facts / weighs a decision) instead of the retired 'Progression Guide' framing — consistent across languages (see h1AndLede above). First attempt at the EN H1 ('The decision brief for working managers.') tripped the audit's 'opaque programme language' regex (banned phrase 'decision brief'); replaced with 'What working managers confirm before they decide.'",
+    "Chartered Manager CTA on the index softened from 'Understand the pathway' / 'Fahami laluan profesional' / '了解专业路线' to 'See the separate CMI route' / 'Lihat laluan CMI berasingan' / '了解独立的 CMI 路线', matching the governance rule that Chartered Manager is a separate optional CMI route, never a fixed second stage (digest flagged 'pathway' framing as a risk on this exact CTA)."
+  ],
+  "otherFixes": [
+    "EN index employer-guide item 3: 'the {FACTS.liveSessions}-session certificate-phase schedule' rewritten to 'across {FACTS.liveSessions} scheduled sessions' — removed retired 'certificate-phase' wording flagged in the messaging-map digest as a governance collision (evades the audit regex only because of its hyphen).",
+    "ZH brief §05 fee paragraph: removed the trailing '也不是折扣码' clause — it tripped the audit's Chinese e-commerce-framing warning (折扣码) even though used as a negation; the surrounding sentence already states the scholarship is selective, assessed and never automatic, so the clause was redundant."
+  ],
+  "constantsUsed": [
+    "PROGRAMME_FIT_CHECK.en/.ms/.zh (locked fit-check name, all three index pages)",
+    "PROGRAMME_YEAR (locked guide name composition, all six files)",
+    "FACTS.trainingDays / .liveSessions / .durationMonths / .moduleCount / .priceStd / .scholarshipEligibility (unchanged usage, verified still present and correct)",
+    "CERTIFICATE_POSITIONING.headline / .distinction / .professionalRelevance (unchanged usage in the brief's recognition section, all three languages)",
+    "HRD_CORP_CLAIM.short / .responsibility (EN brief), HRD_CORP_CLAIM_MS (MS brief), HRD_CORP_CLAIM_ZH (ZH brief) — unchanged usage",
+    "PROGRAMME_AUDIENCE (EN), PROGRAMME_AUDIENCE_MS, PROGRAMME_AUDIENCE_ZH — unchanged usage",
+    "SIGNATURE_QUOTE, CTA_LABELS.guide / .ms.guide / .zh.guide — unchanged usage",
+    "No edits made to src/lib/content.ts, content-ms.ts or content-zh.ts, per the dispatch restriction; no new constants were needed since PROGRAMME_FIT_CHECK and PROGRAMME_YEAR already existed."
+  ],
+  "auditResults": {
+    "typecheckExitCode": 0,
+    "contentClarityAuditExitCode": 0,
+    "note": "First audit run flagged 2 new hits in my files under 'opaque programme language' (the words 'decision brief' and 'recognition boundary' in my first-draft EN copy) plus a pre-existing, unrelated failure in src/app/(en)/insights/advancement-question/page.tsx (a file another writer owns, untouched by me, git diff confirms it was already modified before I started). I reworded the two flagged EN strings and reran: exit 0, zero warnings on any of the six resources files. A ZH e-commerce-framing warning (折扣码) on my brief file was also fixed (see otherFixes). Final run: 'Content clarity audit passed across 178 public content files' with no resources-file lines in the warnings list."
+  },
+  "selfCheckResults": {
+    "ms": "Grepped output for kamu/awak/korang/engkau/-lah/nak/tak, laluan pilihan, perbualan program, projek aplikasi, pengurus bekerja (without 'yang'), Tempah sesi — zero hits. 'pengurus yang bekerja' used correctly (with 'yang', not the banned calque). RM strings unchanged (sourced from FACTS, no space, comma thousands). No exclamation marks introduced. New H1 is 6 words (well under the 9-word Malay headline limit); lede is two short sentences.",
+    "zh": "Grepped output for 班次, 参与者, 颁授并背书, 身份启用, 折扣码, 免费获取, 渠道, 创始人, 首席执行官, 营销 — zero hits after the fee-paragraph fix. New H1 '写给在职管理者的决策手册' is 12 characters (under the 14-character limit) with no sentence-initial 它/这 and no 您/你 in the headline itself. Numbers/dates unchanged from source constants."
+  },
+  "leftForReviewer": [
+    "The EN brief's closing CTA still reads CTA_LABELS.guide ('Get the {PROGRAMME_YEAR} programme guide') linking to /apply, even though this page IS the programme guide (flagged in the messaging-map digest as a pre-existing collision: 'CTA_LABELS.guide ... routes to /apply and sits on /resources/advancement-brief, which is itself the guide'). This is a shared constant used across many pages, so I did not change its value or its destination — only the surrounding on-page naming (kicker, H1, metadata) was brought into line with the locked guide name. The reviewer/owner may want a different closing CTA specific to this page (e.g. the conversation CTA) instead of re-offering the guide the reader is already reading.",
+    "The EN index dossier 02 body copy references 'what the CMI certificate does not cover' rather than repeating the full CERTIFICATE_POSITIONING.professionalRelevance sentence verbatim, to keep the index card short; the full boundary sentence is present in the brief itself (section 05). Governance rule 4 (boundary sentence in the same viewport wherever 'CMI'/'certificate' is named) is satisfied on the brief page but the index card is a short teaser, not a claim — flagging in case the reviewer wants the full sentence surfaced on the index too.",
+    "Did not touch src/app/(en)/insights/advancement-question/page.tsx even though it links into /resources/advancement-brief and currently fails the content-clarity audit under 'opaque programme language' — that file is outside this unit's file list and git history shows another agent already has uncommitted changes there."
+  ]
+}

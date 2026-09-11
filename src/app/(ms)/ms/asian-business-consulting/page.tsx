@@ -5,22 +5,23 @@ import CtaSection from "@/components/site/CtaSection";
 import JsonLd from "@/components/site/JsonLd";
 import Reveal from "@/components/site/Reveal";
 import YouTubeFilm from "@/components/site/YouTubeFilm";
-import { OPERATOR, PROGRAMME_PROOF, SITE } from "@/lib/content";
+import { FACTS, OPERATOR, PROGRAMME_POSITIONING_MS, PROGRAMME_PROOF, SITE } from "@/lib/content";
+import { CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS } from "@/lib/content-ms";
 import { withSeo } from "@/lib/seo";
 
 const ABC_URL = "https://www.asianbusinessconsulting.biz";
 
 export const metadata = withSeo("/ms/asian-business-consulting", {
-  title: "Tentang Asian Business Consulting — Penyedia Program",
+  title: "Asian Business Consulting — organisasi yang mereka bentuk program",
   description:
     "Kenali Asian Business Consulting (ABC), organisasi latihan Malaysia yang mereka bentuk dan menyampaikan Future Ready Executive MBA sebagai pusat CMI (UK).",
 });
 
 const MILESTONES = [
   { n: "2020", s: "ABC didaftarkan di Malaysia" },
-  { n: "Julai 2024", s: "Status dianugerahkan dan disokong oleh CMI (UK)" },
+  { n: "Julai 2024", s: "Dianugerahkan dan disokong oleh CMI (UK)" },
   { n: String(PROGRAMME_PROOF.cohorts), s: `kohort telah dikendalikan: ${PROGRAMME_PROOF.englishCohorts} kohort Bahasa Inggeris dan ${PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin` },
-  { n: String(PROGRAMME_PROOF.graduates), s: "graduan program" },
+  { n: String(PROGRAMME_PROOF.graduates), s: "peserta menerima sijil program" },
 ];
 
 const LEADERS = [
@@ -76,12 +77,12 @@ export default function AbcPageMs() {
           </Reveal>
           <Reveal delay={40}>
             <h1 className="sec-h" style={{ maxWidth: "22ch" }}>
-              Organisasi di sebalik <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Future Ready Executive MBA</em>.
+              Organisasi yang mereka bentuk <em style={{ color: "var(--crimson)", fontStyle: "italic" }}>Future Ready Executive MBA</em>.
             </h1>
           </Reveal>
           <Reveal delay={80}>
             <p className="sec-sub" style={{ maxWidth: "60ch" }}>
-              Asian Business Consulting (ABC) ialah organisasi perundingan pengurusan, latihan korporat dan pembelajaran eksekutif yang didaftarkan di Malaysia pada 2020. Selepas hampir tiga tahun pembangunan bersama CMI (UK), ABC mereka bentuk Future Ready Executive MBA selama enam bulan dan menyampaikannya sebagai pusat yang diiktiraf CMI (UK).
+              Asian Business Consulting (ABC), organisasi perundingan pengurusan, latihan korporat dan pembelajaran eksekutif yang didaftarkan di Malaysia pada 2020, telah membawa {PROGRAMME_PROOF.graduates} peserta hingga menerima sijil program, merentasi {PROGRAMME_PROOF.cohorts} kohort. {PROGRAMME_POSITIONING_MS} Ia program pembangunan profesional bukan akademik selama {FACTS.durationMonths} bulan; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}
             </p>
           </Reveal>
           <Reveal delay={110}>
@@ -134,16 +135,16 @@ export default function AbcPageMs() {
       <section id="abc-film" className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap" style={{ maxWidth: 960 }}>
           <Reveal>
-            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Majlis graduasi sulung · Ogos 2026</span></div>
-            <h2 className="sec-h">{PROGRAMME_PROOF.cohorts} kohort, {PROGRAMME_PROOF.graduates} graduan, satu detik bersejarah yang dikongsi bersama.</h2>
-            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA mengadakan majlis graduasi sulungnya pada Ogos 2026. Seramai {PROGRAMME_PROOF.graduationAttendance} graduan hadir, mewakili komuniti {PROGRAMME_PROOF.graduates} graduan merentasi {PROGRAMME_PROOF.cohorts} kohort: {PROGRAMME_PROOF.englishCohorts} kohort Bahasa Inggeris dan {PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin.</p>
+            <div className="eyebrow"><span className="l" /><span className="mono sec-k">Majlis penyampaian sijil sulung · Ogos 2026</span></div>
+            <h2 className="sec-h">{PROGRAMME_PROOF.cohorts} kohort, {PROGRAMME_PROOF.graduates} peserta menerima sijil, satu detik bersejarah yang dikongsi bersama.</h2>
+            <p className="sec-sub" style={{ maxWidth: "56ch" }}>Future Ready Executive MBA mengadakan majlis penyampaian sijil sulungnya pada Ogos 2026. Seramai {PROGRAMME_PROOF.graduationAttendance} penerima sijil hadir, mewakili komuniti {PROGRAMME_PROOF.graduates} peserta yang menerima sijil merentasi {PROGRAMME_PROOF.cohorts} kohort: {PROGRAMME_PROOF.englishCohorts} kohort Bahasa Inggeris dan {PROGRAMME_PROOF.mandarinCohorts} kohort Mandarin.</p>
           </Reveal>
           <Reveal delay={60}>
             <div className="film-prestige" style={{ marginTop: 24 }}>
-              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Majlis graduasi sulung · {PROGRAMME_PROOF.graduationAttendance} graduan hadir · Ogos 2026</div>
-              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Filem Majlis Graduasi Sulung", description: `Sorotan majlis graduasi sulung Future Ready Executive MBA pada Ogos 2026, dihadiri ${PROGRAMME_PROOF.graduationAttendance} graduan.`, "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "ms-MY" }} />
+              <div className="film-ribbon"><span className="dot" aria-hidden="true" /> Majlis penyampaian sijil sulung · {PROGRAMME_PROOF.graduationAttendance} penerima sijil hadir · Ogos 2026</div>
+              <JsonLd data={{ "@context": "https://schema.org", "@type": "VideoObject", name: "Future Ready Executive MBA — Filem Majlis Penyampaian Sijil Sulung", description: `Sorotan majlis penyampaian sijil sulung Future Ready Executive MBA pada Ogos 2026, dihadiri ${PROGRAMME_PROOF.graduationAttendance} penerima sijil.`, "thumbnailUrl": `${SITE.url}/brand/abc-graduation-poster.webp`, "uploadDate": "2026-08-22", "embedUrl": "https://www.youtube-nocookie.com/embed/6uEbqYOZxkg", "contentUrl": "https://youtu.be/6uEbqYOZxkg", "inLanguage": "ms-MY" }} />
               <YouTubeFilm videoId="6uEbqYOZxkg" poster="/brand/abc-graduation-poster.webp" lang="ms" />
-              <div className="film-cap"><strong>{PROGRAMME_PROOF.graduationAttendance} graduan menghadiri majlis tersebut,</strong> bersama fasilitator serta tetamu daripada komuniti perniagaan dan sektor awam Malaysia bagi meraikan detik bersejarah ini.</div>
+              <div className="film-cap"><strong>{PROGRAMME_PROOF.graduationAttendance} peserta menerima sijil di majlis tersebut,</strong> bersama fasilitator serta tetamu daripada komuniti perniagaan dan sektor awam Malaysia bagi meraikan detik bersejarah ini.</div>
             </div>
           </Reveal>
         </div>
@@ -158,7 +159,7 @@ export default function AbcPageMs() {
           <div className="grid-forces" style={{ marginTop: 26 }}>
             <div>
               <h3 style={{ fontSize: "1.15rem" }}>Chartered Management Institute (CMI), UK</h3>
-              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI ialah badan kualiti luaran. Program ini dianugerahkan dan disokong oleh CMI sejak Julai 2024, dan ABC tersenarai sebagai pusat antarabangsa yang diiktirafnya.</p>
+              <p style={{ color: "var(--ink-2)", fontSize: ".92rem", marginTop: 8 }}>CMI ialah badan kualiti luaran. Program ini dianugerahkan dan disokong oleh CMI sejak Julai 2024, dan ABC tersenarai sebagai pusat antarabangsa yang diiktirafnya. Ia program bukan akademik; bukan ijazah akademik terakreditasi MQA atau kelayakan yang dikawal selia. {CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS}</p>
               <a href="https://www.managers.org.uk/community/cmi-internationally/centres/" className="text-action" target="_blank" rel="noopener" style={{ marginTop: 10 }}>Sahkan dalam direktori CMI <span aria-hidden="true">↗</span></a>
             </div>
             <div>
@@ -179,7 +180,7 @@ export default function AbcPageMs() {
         </div>
       </section>
 
-      <CtaSection lang="ms" programme="Executive MBA" heading="Berhubung dengan pasukan program." sub="Ajukan pertanyaan tentang Future Ready Executive MBA, atau lawati asianbusinessconsulting.biz untuk mengenali Asian Business Consulting dengan lebih dekat." />
+      <CtaSection lang="ms" programme="Executive MBA" heading="Lihat dengan jelas apa yang dianugerahkan, apa yang berasingan dan siapa yang menentukan." sub="Ajukan pertanyaan tentang Future Ready Executive MBA, atau lawati asianbusinessconsulting.biz untuk mengenali Asian Business Consulting dengan lebih dekat." />
     </>
   );
 }

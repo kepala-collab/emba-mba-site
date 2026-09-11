@@ -1,0 +1,21 @@
+{
+  "unit": "about",
+  "language": "en",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(en)/about/page.tsx",
+      "line": 77,
+      "problem": "H2 'More Malaysians, deciding with confidence.' used the banned to-state phrase 'more confident' (spec section 2 explicitly bans this as an after-state claim; confidence is a status, not an activity performed during the six months).",
+      "fixApplied": "Reworded to 'More Malaysians, deciding on tested evidence.', an activity-based claim consistent with the paragraph beneath it about testing and writing decisions down."
+    },
+    {
+      "file": "src/app/(en)/about/page.tsx",
+      "line": 65,
+      "problem": "Partnership-seal image alt text still read '...in collaboration — strategic partnership' while the visible figcaption had already been reworded to the neutral 'Asian Business Consulting × Right Dots Resources · in collaboration' (per the writer hand-back's own governance note about not implying a formal partnership). The alt text and caption disagreed, and the alt text alone still carried the disallowed 'strategic partnership' framing.",
+      "fixApplied": "Removed '— strategic partnership' from the alt text so it matches the caption's neutral wording."
+    }
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": []
+}

@@ -1,0 +1,44 @@
+{
+  "unit": "insights-index",
+  "filesChanged": [
+    "src/app/(en)/insights/page.tsx",
+    "src/app/(ms)/ms/insights/page.tsx",
+    "src/app/(zh)/zh/insights/page.tsx"
+  ],
+  "pageType": "insights index (spec section 8, insights archetype)",
+  "newH1AndLede": {
+    "en": {
+      "h1": "The methods you practise on your own decisions",
+      "lede": "Each guide below takes a reasoning method — comparing programmes, examining a system, testing an assumption, serving a customer — and applies it to a decision you already carry. None of this is innate; it is practised."
+    },
+    "ms": {
+      "h1": "Kaedah yang anda amalkan pada keputusan anda sendiri",
+      "lede": "Setiap panduan di bawah mengambil satu kaedah menaakul — membandingkan program, meneliti sistem, menguji andaian, melayani pelanggan — lalu menerapkannya pada keputusan yang sudah di tangan anda. Ini bukan bakat semula jadi; ia dibina melalui latihan."
+    },
+    "zh": {
+      "h1": "方法，练在自己的决策上",
+      "lede": "下面每篇指南都取一种思维方法——比较课程、拆解系统、检验假设、服务客户——练在您手上的决策上。并非天赋，而是练出来的。"
+    }
+  },
+  "otherChanges": [
+    "Added the advancement-question article as the first card on all three index pages, titled 'How to Compare Leadership Programmes' / 'Cara Membandingkan Program Pengurusan Profesional' / '如何比较专业管理课程', matching the title already used on that article's own page (that article's page files are owned by another writer and were not edited).",
+    "Reworded all article kickers/blurbs and the CollectionPage/ItemList JSON-LD name+description fields to frame each article as a reasoning method practised on the reader's own decision, never as a programme feature.",
+    "Reworded the closing CtaSection heading on all three pages to name the reader's decision ('the decision you are carrying now' / 'keputusan yang sudah di tangan anda' / '您手上的决策'), per the insights archetype's soft-close pattern; the CtaSection default sub/checklist props (which already carry ENQUIRY_COMMITMENT tokens from content.ts/content-ms.ts/content-zh.ts) were left untouched.",
+    "Kept the CollectionPage/ItemList JSON-LD structure, canonical and hreflang untouched; only text fields changed."
+  ],
+  "constantsUsed": "None directly interpolated on this page — it carries no facts, fees, dates or counts; all copy is card titles/blurbs and navigation text, consistent with the page having no {FACTS} tokens in its original form either.",
+  "namingRuleCompliance": "The advancement-question article is labelled 'How to Compare Leadership Programmes' / natural Malay and Chinese equivalents on the index card; none of 'advancement', 'progression', 'Kemajuan kerjaya' or 晋升 appear anywhere in the three files.",
+  "auditAndTypecheck": {
+    "typecheckExitCode": 0,
+    "contentClarityAuditExitCode": 0,
+    "note": "node scripts/content-clarity-audit.mjs reported 4 pre-existing failures, all in files outside this unit (src/app/(en)/resources/page.tsx, src/app/(en)/resources/advancement-brief/page.tsx, src/app/(en)/insights/advancement-question/page.tsx) — none in the three insights-index files touched here. Overall process exit code was 0."
+  },
+  "selfChecks": {
+    "ms": "Checked against ms-register.md sections 3/5/7 and the high-confidence items in ms-register-audit-rules.json/checklist.json: 'anda' used throughout, no exclamation marks, no -lah/nak/tak, no banned qualifiers (biasanya/kebanyakan/lebih kurang), no 'projek aplikasi', 'pengurus bekerja', 'perbualan program' or 'laluan pilihan'. H1 is 8 words (under the 9-word limit). No facts/dates/fees on this page so DBP date/currency spelling rules did not apply.",
+    "zh": "Checked against zh-register.md sections 3/5/7 and the high-confidence items in zh-register-audit.json: no 您/你 in the H1, 您 used sparingly in body, no sentence-initial 它 or 这, full-width punctuation, pangu spacing between Chinese and Latin, no banned lexis (参与者/渠道/创始人/首席执行官/营销/免费获取/班次), no mention of 周末 or session-day facts (page carries no schedule facts so the weekend-mislabelling issue in the audit does not arise here). H1 is 10 characters (under the 14-character limit)."
+  },
+  "leftForReviewer": [
+    "Confirm the advancement-question article's own EN/MS/ZH page content and metadata (owned by a different unit/writer) match exactly what this index page now links to and titles it as — I only read those files, did not edit them.",
+    "The pre-existing content-clarity-audit failures in resources/page.tsx, resources/advancement-brief/page.tsx and insights/advancement-question/page.tsx are out of scope for this unit but will block a clean full-repo audit run; flagging for whichever unit owns those files."
+  ]
+}

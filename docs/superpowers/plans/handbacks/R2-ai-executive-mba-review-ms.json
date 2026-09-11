@@ -1,0 +1,25 @@
+{
+  "unit": "ai-executive-mba",
+  "language": "ms",
+  "verdictBeforeFixes": "fail",
+  "problemsFound": [
+    {
+      "file": "src/app/(ms)/ms/ai-executive-mba/page.tsx",
+      "line": 47,
+      "problem": "Hero lede retyped the programme duration as the literal word 'enam bulan' in the not-an-MQA-degree boundary sentence, only two sentences after already correctly using the {FACTS.durationMonths} token ('{FACTS.durationMonths} bulan yang sama' on line 46). Breaks governance checklist item 3 (facts must always be tokens, never retyped) and is internally inconsistent within the same paragraph.",
+      "fixApplied": "Changed 'selama enam bulan' to 'selama {FACTS.durationMonths} bulan' (FACTS was already imported on this page)."
+    }
+  ],
+  "confirmedCompliant": [
+    "H1 'Mulakan dengan masalah perniagaan, bukan model AI.' is 7 words, under the 9-word cap, and matches the EN source meaning exactly.",
+    "'laluan pilihan' does not appear on this page.",
+    "CTA_LABELS.ms.conversation / .guide / .company are used from the constants; 'Tempah' does not appear.",
+    "'secara bertulis' is used correctly for the scholarship confirmation sentence (not the banned 'dalam bentuk bertulis' calque).",
+    "Malay keeps 'Dianugerahkan dan disokong oleh CMI' per owner decision 14.1; the not-an-MQA-degree boundary and CERTIFICATE_POSITIONING_PROFESSIONAL_RELEVANCE_MS render in the same card as the CMI mention (facts strip) and in the hero (after the fix).",
+    "No graduation/certificate-presentation language on this page (not applicable — no graduation content here).",
+    "No calques from the ms-register.md Don't list (kamu/awak/-lah, projek aplikasi, program awam, dan ke atas, disokong-for-endorsed is intentionally exempted per owner decision) found.",
+    "Facts strip correctly tokenises {FACTS.priceStd}, {FACTS.trainingDays}, {FACTS.liveSessions}, {FACTS.durationMonths}, {FACTS.scholarshipProvider} — no other retyped numbers found besides the one fixed."
+  ],
+  "nativeReadingScoreAfterFixes": 8,
+  "ownerQuestions": []
+}
