@@ -802,6 +802,7 @@ html[lang^="zh-Hans"]{--font-noto-sans-sc:"Noto Sans SC"}
 html[lang^="zh-Hans"] body{font-family:var(--font-noto-sans-sc),"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif}
 html[lang^="zh-Hans"] h1,html[lang^="zh-Hans"] h2,html[lang^="zh-Hans"] h3,html[lang^="zh-Hans"] h4{font-family:"Noto Sans SC","Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;font-weight:600;letter-spacing:0}
 html[lang^="zh-Hans"] .technical-term{font-family:var(--font-archivo),ui-sans-serif,"Microsoft YaHei",sans-serif}
+html[lang^="zh-Hans"] h1,html[lang^="zh-Hans"] h2,html[lang^="zh-Hans"] h3{text-wrap:balance}
 
 @media(max-width:1023px){
   .programme-film{max-width:650px}

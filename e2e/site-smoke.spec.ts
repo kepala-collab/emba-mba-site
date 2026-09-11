@@ -423,7 +423,10 @@ test("Chinese headings never wrap to a single orphaned character on priority pag
             const rects = Array.from(range.getClientRects()).filter((rect) => rect.width > 0 && rect.height > 0);
             const lastLineWidth = rects.length ? rects[rects.length - 1].width : 0;
             const charWidth = heading.getBoundingClientRect().height * 0.6;
-            return { text: heading.textContent, lastLineWidth, isMultiline: rects.length > 1, orphan: rects.length > 1 && lastLineWidth <= charWidth };
+            // Tolerate font metric differences across platforms (CI uses different CJK fonts than
+            // local dev): only flag a genuine widow, i.e. two characters or fewer on the last line.
+            const maxOrphanWidth = charWidth * 2;
+            return { text: heading.textContent, lastLineWidth, isMultiline: rects.length > 1, orphan: rects.length > 1 && lastLineWidth <= maxOrphanWidth };
           })
           .filter((entry) => entry.orphan),
       );
