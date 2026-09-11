@@ -50,6 +50,22 @@ export const LOCALE_PAIRS: LocaleTriple[] = EN_ROUTES.map((en) => ({
   ms: en === "/home" ? "/ms" : `/ms${en}`,
 }));
 
+/**
+ * English paths that must never appear in the sitemap: three are
+ * index:false/follow:true, three are index:false/follow:false. (The `/`
+ * root stub is also noindex but is not an `EN_ROUTES` entry — English home
+ * lives at `/home` — so it never reaches `LOCALE_PAIRS`/the sitemap and is
+ * not counted here.)
+ */
+export const NOINDEX_ROUTES: string[] = [
+  "/corporate-training",
+  "/online-executive-mba",
+  "/programmes/shift-hr",
+  "/lp/google",
+  "/lp/meta",
+  "/unsubscribed",
+];
+
 export function isCampaignRoute(path: string) {
   return path.startsWith("/lp/") || path.startsWith("/zh/lp/") || path.startsWith("/ms/lp/");
 }

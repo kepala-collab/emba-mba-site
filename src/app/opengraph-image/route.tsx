@@ -1,9 +1,17 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { FACTS } from "@/lib/content";
 
 const size = { width: 1200, height: 630 };
 
 export const dynamic = "force-static";
+
+// Subset of Noto Sans SC (OFL-1.1, see ./fonts/OFL.txt) covering only the
+// Chinese glyphs used on this image — the /zh executive-mba page title and
+// description, quoted verbatim, plus the eyebrow line — so no tofu boxes
+// appear when this shared OG image renders for a Chinese route.
+const notoSansSC = readFileSync(join(process.cwd(), "src/app/opengraph-image/fonts/NotoSansSC-Subset-Bold.ttf"));
 
 export function GET() {
   return new ImageResponse(
@@ -39,12 +47,25 @@ export function GET() {
         <div style={{ marginTop: 26, fontSize: 32, lineHeight: 1.3, color: "#405674" }}>
           {`${FACTS.trainingDays} training days, ${FACTS.liveSessions} scheduled sessions and an applied business project.`}
         </div>
+        <div style={{ marginTop: 18, fontSize: 26, lineHeight: 1.5, color: "#405674", fontFamily: "Noto Sans SC" }}>
+          Executive MBA 课程详情（英国 CMI 认可）
+        </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#667891" }}>
         <span>Professional development · CMI-recognised programme certificate</span>
         <span>futurereadymba.com</span>
       </div>
     </div>,
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Noto Sans SC",
+          data: notoSansSC,
+          weight: 700,
+          style: "normal",
+        },
+      ],
+    },
   );
 }

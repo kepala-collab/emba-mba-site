@@ -1,0 +1,94 @@
+{
+  "brief": "R3.3-seo-schemas-sitemap",
+  "branch_note": "Executed on the already-checked-out feat/r3-derived-artefacts branch per the dispatching session's explicit instruction, NOT feat/r3-3-seo-schemas-sitemap from codex/hostinger-deployment as the plan's Steps section 1/28 describe. No branch was created, no commit was made, no push was made, consistent with that instruction.",
+  "files_changed": [
+    "src/app/sitemap.ts",
+    "src/lib/locale-routes.ts (added NOINDEX_ROUTES export)",
+    "src/app/(ms)/ms/intakes/page.tsx (added Course/CourseInstance JSON-LD)",
+    "src/app/(zh)/zh/intakes/page.tsx (added Course/CourseInstance JSON-LD)",
+    "src/app/opengraph-image/route.tsx (bundled Noto Sans SC subset)",
+    "src/app/opengraph-image/fonts/NotoSansSC-Subset-Bold.ttf (new)",
+    "src/app/opengraph-image/fonts/OFL.txt (new, licence copy)",
+    "src/app/__tests__/sitemap.test.ts (new)",
+    "playwright.r33.config.ts (new, uncommitted, added to .git/info/exclude — see e2e note)"
+  ],
+  "files_not_touched": "ms/zh about and faculty pages already carried Person and ItemList+Person schema respectively before this session started (verified by reading them) — no edit was needed there. src/lib/lead-email.ts, nurture-email.ts, database/migrations, scripts/pdf/** and public/downloads/** were left untouched as instructed; they show as modified/untracked in git status because other concurrent agents are editing them.",
+  "sitemap_url_counts_per_locale": {
+    "en": 31,
+    "zh": 31,
+    "ms": 31,
+    "total": 93
+  },
+  "count_arithmetic_correction": "The plan's Steps/Acceptance sections state the expected total as 3*(37-7)=90, treating the noindex set as 7 EN_ROUTES entries. In the actual code, EN_ROUTES has 37 entries but only 6 of them are noindex routes (/corporate-training, /online-executive-mba, /programmes/shift-hr, /lp/google, /lp/meta, /unsubscribed). The 7th noindex item named in the research doc and the plan's Constraints section is the `/` root stub, which is NOT an EN_ROUTES entry (English home lives at /home, per locale-routes.ts) and therefore was never going to be counted by a `3*(EN_ROUTES.length - NOINDEX_ROUTES.length)` formula. The correct total is 3*(37-6)=93. This was verified live: `curl -s http://localhost:3114/sitemap.xml | grep -c '<loc>'` returned 93, and `npm run audit:release` independently reported '93 indexed pages'. NOINDEX_ROUTES in src/lib/locale-routes.ts has 6 entries; the test's exact-count assertion uses the same live formula (3 * (EN_ROUTES.length - NOINDEX_ROUTES.length)) so it is self-consistent and will not drift.",
+  "noindex_greps": {
+    "note": "grep -c against a live /sitemap.xml fetch for each of the 6 EN_ROUTES noindex paths, across all 3 locale prefixes, plus the root stub — all returned 0",
+    "corporate-training": { "en": 0, "zh": 0, "ms": 0 },
+    "online-executive-mba": { "en": 0, "zh": 0, "ms": 0 },
+    "programmes/shift-hr": { "en": 0, "zh": 0, "ms": 0 },
+    "lp/google": { "en": 0, "zh": 0, "ms": 0 },
+    "lp/meta": { "en": 0, "zh": 0, "ms": 0 },
+    "unsubscribed": { "en": 0, "zh": 0, "ms": 0 },
+    "root_stub": 0
+  },
+  "schema_types_per_localised_page": {
+    "/ms/intakes": ["Course", "CourseInstance", "EducationalOrganization", "BreadcrumbList", "WebSite", "Organization"],
+    "/zh/intakes": ["Course", "CourseInstance", "EducationalOrganization", "BreadcrumbList", "WebSite", "Organization"],
+    "/ms/about": ["Person", "EducationalOrganization", "BreadcrumbList", "WebSite", "Organization"],
+    "/zh/about": ["Person", "EducationalOrganization", "BreadcrumbList", "WebSite", "Organization"],
+    "/ms/faculty": ["ItemList", "Person", "EducationalOrganization", "BreadcrumbList", "WebSite", "Organization"],
+    "/zh/faculty": ["ItemList", "Person", "EducationalOrganization", "BreadcrumbList", "WebSite", "Organization"],
+    "note": "ms/zh about and faculty already had Person and ItemList+Person schema before this session; only ms/zh intakes needed the new Course/CourseInstance block, mirrored from src/app/(en)/intakes/page.tsx with text from CORE_PAGES_MS.intakes / CORE_PAGES_ZH.intakes and dates/cohort ids from INTAKES."
+  },
+  "route_class_map": {
+    "primary": ["/home", "/executive-mba", "/apply"],
+    "core": ["/how-it-works", "/curriculum", "/fees", "/intakes", "/faculty", "/faq"],
+    "cluster": ["/chartered-manager-malaysia", "/hrd-corp-claimable", "/executive-mba-vs-mba", "/ai-executive-mba", "/mba-for-working-professionals", "/executive-mba-malaysia", "/mba-for-sme-owners", "/mba-for-entrepreneurs"],
+    "insights": ["/insights", "/insights/first-principles-thinking", "/insights/systems-thinking-for-leaders", "/insights/design-thinking-for-business", "/insights/advancement-question", "/insights/executive-education-vs-executive-mba"],
+    "info": ["/about", "/asian-business-consulting", "/contact", "/resources", "/resources/advancement-brief", "/diagnostic"],
+    "legal": ["/privacy", "/terms"],
+    "noindex_excluded_from_settings": ["/corporate-training", "/online-executive-mba", "/programmes/shift-hr", "/lp/google", "/lp/meta", "/unsubscribed"],
+    "settings": {
+      "primary": { "priority": 0.95, "changeFrequency": "weekly" },
+      "core": { "priority": 0.8, "changeFrequency": "weekly" },
+      "cluster": { "priority": 0.75, "changeFrequency": "monthly" },
+      "insights": { "priority": 0.7, "changeFrequency": "monthly" },
+      "info": { "priority": 0.4, "changeFrequency": "monthly" },
+      "legal": { "priority": 0.4, "changeFrequency": "monthly" }
+    },
+    "last_modified": "2026-09-11 for every non-legal route (Release 2 touched all public pages); 2026-08-14 (the existing REVIEW_DATES.legal value) for /privacy and /terms."
+  },
+  "og_font": {
+    "approach": "Bundled a Noto Sans SC 700-weight subset (OFL-1.1, licence copied to src/app/opengraph-image/fonts/OFL.txt from scripts/pdf/fonts/OFL.txt) into src/app/opengraph-image/route.tsx via fs.readFileSync + the ImageResponse `fonts` array, assigned only to the new Chinese line (`fontFamily: \"Noto Sans SC\"`). That line quotes the /zh/executive-mba page's actual merged-copy metadata title verbatim ('Executive MBA 课程详情（英国 CMI 认可）') rather than inventing new copy. force-static and 1200x630 were kept unchanged. Latin text keeps the existing default font path (no explicit font needed for the Arial-style fallback Satori already renders).",
+    "subset_tool": "py -3 -m fontTools.subset, source scripts/pdf/fonts/NotoSansSC-Bold.ttf, --text-file of the exact strings used (the Chinese OG line plus the /zh/executive-mba metadata description and a spare eyebrow phrase, to leave headroom for reuse), --no-layout-closure --layout-features='' --glyph-names",
+    "byte_size": "14800 bytes (14.8 KB) for src/app/opengraph-image/fonts/NotoSansSC-Subset-Bold.ttf",
+    "verdict": "Rendered and visually inspected via a fetched PNG (1200x630) from the running standalone server: the Chinese line 'Executive MBA 课程详情（英国 CMI 认可）' renders every glyph cleanly with no tofu boxes; Latin text is unaffected. Build time impact was negligible (the /opengraph-image route built as a normal static route in the full `npm run build` run)."
+  },
+  "acceptance_commands": {
+    "npm run lint": { "exit_code": 0 },
+    "npm run typecheck": { "exit_code": 0 },
+    "npm test": {
+      "exit_code_final_run": "1 (1 failed / 85 total)",
+      "note": "The only failing test is scripts/release-fingerprint.test.mjs, which compares the committed release-id.txt against a live-computed content fingerprint. This repo has multiple concurrent agents actively editing src/lib/lead-email.ts, nurture-email.ts, database/migrations/**, scripts/pdf/** and public/downloads/** (confirmed via `git status --short`), so the fingerprint moves between the `npm run release:sync` call and the subsequent `npm test` run — it is not caused by any file in this brief's scope. Immediately after `npm run release:sync`, `npm run release:check` passed (release manifest verified). All 5 sitemap.test.ts assertions and all other 79 pre-existing tests passed throughout."
+    },
+    "npm run audit:content": { "exit_code": 0, "output": "Content clarity audit passed across 179 public content files." },
+    "npm run audit:styles": { "exit_code": 0 },
+    "npm run validate:env:contract": { "exit_code": 0, "output": "Production environment contract is complete in .env.production.example." },
+    "npm run build": { "exit_code": 0, "output": "132 static pages generated; postbuild prepare-standalone succeeded." },
+    "npm run audit:seo": { "exit_code": 0, "output": "SEO regression checks passed for 25 core pages." },
+    "npm run audit:release": { "exit_code": 0, "output": "Release audit passed: 93 indexed pages, 235 valid JSON-LD blocks, no broken internal page targets." },
+    "npm run test:e2e": {
+      "exit_code": "1 (50 passed / 1 failed)",
+      "note": "Run against an uncommitted playwright.r33.config.ts (not playwright.agent.config.ts — that filename was already in use by a concurrent agent's own run on port 3110, so a second uncommitted config was added instead, pointed at port 3114, and added to .git/info/exclude alongside the existing entry). The only failure is the same release-fingerprint mismatch as npm test, in 'release fingerprint and representative routes resolve in all three locales' — again caused by concurrent unrelated edits shifting the content hash between server start and test run, not by anything in this brief's file set. All 50 other e2e tests passed, including accessibility, layout, locale-parity and hero tests across en/ms/zh."
+    },
+    "npm run pdfs:check": {
+      "exit_code": 1,
+      "note": "Pre-existing failure unrelated to this brief: 3 of 12 PDFs (future-ready-decision-guide.pdf, future-ready-employer-funding-brief.pdf, future-ready-scholarship-eligibility.pdf) fail a page-text match. scripts/pdf/** and public/downloads/** are out of scope for this brief per the dispatching session's file-ownership instruction and are being actively edited by a concurrent agent (visible in git status). Not investigated or touched."
+    },
+    "npm run release:sync && npm run release:check": {
+      "exit_code": 0,
+      "note": "release:sync updated release-id.txt to content-ae4c799fcddb and release:check verified it at that moment. Because other concurrent agents kept editing files outside this brief's scope after that point, the fingerprint had already drifted again (content-b94c14200744 observed moments later in a fresh `npm test` run). The architect should re-run `npm run release:sync && npm run release:check` once all R3.3-parallel briefs have landed, immediately before any merge/deploy action."
+    }
+  },
+  "new_release_id_txt_value": "content-ae4c799fcddb (as synced at the time this handback was written; see release:sync note above about later drift from concurrent edits)",
+  "indexnow": "IndexNow submission was not performed; it is a post-deployment step."
+}
