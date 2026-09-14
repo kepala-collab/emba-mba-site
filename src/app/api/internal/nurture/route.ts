@@ -85,10 +85,12 @@ async function claimStep(leadId: number, step: NurtureStepKey, language: Nurture
 // terminal (message_id = 'send_failed') once NURTURE_MAX_ATTEMPTS is reached;
 // otherwise clears message_id so the row stays claimable for a later retry.
 async function recordFailure(leadId: number, step: NurtureStepKey): Promise<void> {
+  // MySQL evaluates SET assignments left to right: decide from the old count
+  // before incrementing it, so the first failure remains eligible for retry.
   await getDatabasePool().execute({
     sql: `UPDATE lead_nurture_log
-          SET attempt_count = attempt_count + 1,
-              message_id = IF(attempt_count + 1 >= ?, 'send_failed', NULL)
+          SET message_id = IF(attempt_count + 1 >= ?, 'send_failed', NULL),
+              attempt_count = attempt_count + 1
           WHERE lead_id = ? AND step = ?`,
     values: [NURTURE_MAX_ATTEMPTS, leadId, step],
     timeout: 5_000,
